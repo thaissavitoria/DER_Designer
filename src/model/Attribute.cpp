@@ -1,0 +1,205 @@
+﻿#include "Attribute.h"
+
+// -----------------------------------------------------------------------------------------------------
+
+Attribute::Attribute(
+    QObject* parent
+)
+    : BasicElement(
+        ElementType::Attribute,
+        parent
+    ),
+    m_attributeType(AttributeType::Type::Normal),
+    m_isPrimaryKey(false)
+{
+    setSize(preferredSize());
+    updateFromAttributeType();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+Attribute::Attribute(
+    const QString& name,
+    QObject* parent
+)
+    : BasicElement(
+        ElementType::Attribute,
+        parent
+    ),
+    m_attributeType(AttributeType::Type::Normal),
+    m_isPrimaryKey(false)
+{
+    setName(name);
+    setSize(preferredSize());
+    updateFromAttributeType();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+Attribute::Attribute(
+    const QString& name,
+    AttributeType::Type type,
+    QObject* parent
+)
+    : BasicElement(
+        ElementType::Attribute,
+        parent
+    ),
+    m_attributeType(type),
+    m_isPrimaryKey(false)
+{
+    setName(name);
+    setSize(preferredSize());
+    updateFromAttributeType();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QSizeF Attribute::minimumSize() const
+{
+    return QSizeF(60, 30);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QSizeF Attribute::preferredSize() const
+{
+    return QSizeF(100, 50);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+std::unique_ptr<BasicElement> Attribute::clone() const
+{
+    auto cloned = std::make_unique<Attribute>();
+
+    QVariantMap data = serialize();
+    cloned->deserialize(data);
+
+    cloned->setAttributeType(m_attributeType);
+    cloned->setPrimaryKey(m_isPrimaryKey);
+
+    return std::move(cloned);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QString Attribute::typeDisplayName() const
+{
+    return AttributeType::attributeTypeToString(m_attributeType);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+AttributeType::Type Attribute::attributeType() const
+{
+    return m_attributeType;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void Attribute::setAttributeType(
+    AttributeType::Type type
+)
+{
+    if (m_attributeType != type) {
+        m_attributeType = type;
+        updateFromAttributeType();
+        emit attributeTypeChanged(type);
+        emit elementChanged();
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QString Attribute::attributeTypeString() const
+{
+    return AttributeType::attributeTypeToString(m_attributeType);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isPrimaryKey() const
+{
+    return m_isPrimaryKey;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void Attribute::setPrimaryKey(
+    bool isPrimary
+)
+{
+    if (m_isPrimaryKey != isPrimary) {
+        m_isPrimaryKey = isPrimary;
+        
+        if (isPrimary && m_attributeType != AttributeType::Type::Key) {
+            m_attributeType = AttributeType::Type::Key;
+            emit attributeTypeChanged(m_attributeType);
+        }
+        
+        emit primaryKeyChanged(isPrimary);
+        emit elementChanged();
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isNormalAttribute() const
+{
+    return m_attributeType == AttributeType::Normal;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isKeyAttribute() const
+{
+    return m_attributeType == AttributeType::Key;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isDerivedAttribute() const
+{
+    return m_attributeType == AttributeType::Derived;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isMultivaluedAttribute() const
+{
+    return m_attributeType == AttributeType::Multivalued;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Attribute::isCompositeAttribute() const
+{
+    return m_attributeType == AttributeType::Composite;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void Attribute::updateFromAttributeType()
+{
+    switch (m_attributeType) {
+        case AttributeType::Type::Key:
+            if (!m_isPrimaryKey) {
+                m_isPrimaryKey = true;
+                emit primaryKeyChanged(true);
+            }
+            break;
+        case AttributeType::Type::Normal:
+        case AttributeType::Type::Derived:
+        case AttributeType::Type::Multivalued:
+        case AttributeType::Type::Composite:
+        default:
+            if (m_isPrimaryKey) {
+                m_isPrimaryKey = false;
+                emit primaryKeyChanged(false);
+            }
+            break;
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------
