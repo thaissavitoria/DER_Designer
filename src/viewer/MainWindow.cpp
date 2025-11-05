@@ -13,15 +13,15 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QMessageBox>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QTreeWidgetItem>
 #include <QtWidgets/QToolBar>
+#include <QtWidgets/QTreeWidgetItem>
 #include <QtWidgets/QVBoxLayout>
 
 #include "ElementGraphicsItem.h"
 #include "QuickAcessToolbar.h"
-#include "model/Entity.h"
 #include "model/Attribute.h"
 #include "model/AttributeType.h"
+#include "model/Entity.h"
 
 // -----------------------------------------------------------------------------------------------------
 
@@ -194,40 +194,18 @@ void MainWindow::createSidePanel()
     m_drawingLayout->setContentsMargins(10, 10, 10, 10);
     m_drawingLayout->setSpacing(10);
 
-    auto entitiesGroup = new QGroupBox("Entidades");
-    auto entitiesLayout = new QVBoxLayout(entitiesGroup);
-
-    QPushButton* entityBtn = createPushButton("Entidade");
+    auto entityBtn = new DraggableButton("Entity");
     connect(entityBtn, &QPushButton::clicked, this, &MainWindow::onAddEntityClicked);
-    QPushButton* weakEntityBtn = createPushButton("Entidade Fraca");
-    entitiesLayout->addWidget(entityBtn);
-    entitiesLayout->addWidget(weakEntityBtn);
+    m_drawingLayout->addWidget(entityBtn);
 
-    auto attributesGroup = new QGroupBox("Atributos");
-    auto attributesLayout = new QVBoxLayout(attributesGroup);
-
-    QPushButton* attributeBtn = createPushButton("Atributo");
+    auto attributeBtn = new DraggableButton("Attribute");
     connect(attributeBtn, &QPushButton::clicked, this, &MainWindow::onAddAttributeClicked);
+    m_drawingLayout->addWidget(attributeBtn);
 
-    QPushButton* keyAttributeBtn = createPushButton("Atributo Chave");
-    QPushButton* derivedAttributeBtn = createPushButton("Atributo Derivado");
-    QPushButton* multivaluedAttributeBtn = createPushButton("Atributo Multivalorado");
-    attributesLayout->addWidget(attributeBtn);
-    attributesLayout->addWidget(keyAttributeBtn);
-    attributesLayout->addWidget(derivedAttributeBtn);
-    attributesLayout->addWidget(multivaluedAttributeBtn);
+    auto relationshipBtn = new DraggableButton("Relationship");
 
-    auto relationshipsGroup = new QGroupBox("Relacionamentos");
-    auto relationshipsLayout = new QVBoxLayout(relationshipsGroup);
+    m_drawingLayout->addWidget(relationshipBtn);
 
-    QPushButton* relationshipBtn = createPushButton("Relacionamento");
-    QPushButton* weakRelationshipBtn = createPushButton("Relacionamento Fraco");
-    relationshipsLayout->addWidget(relationshipBtn);
-    relationshipsLayout->addWidget(weakRelationshipBtn);
-
-    m_drawingLayout->addWidget(entitiesGroup);
-    m_drawingLayout->addWidget(attributesGroup);
-    m_drawingLayout->addWidget(relationshipsGroup);
     m_drawingLayout->addStretch();
 
     m_sideTabWidget->addTab(m_drawingTab, "Desenho");
@@ -390,13 +368,42 @@ void MainWindow::createDiagramArea()
 
     m_diagramScene = new DiagramScene(this);
 
-    m_graphicsView = new QGraphicsView(m_diagramScene);
-    m_graphicsView->setRenderHint(QPainter::Antialiasing);
-    m_graphicsView->setDragMode(QGraphicsView::RubberBandDrag);
+    m_graphicsView = new DiagramView(m_diagramScene);  
     m_graphicsView->setBackgroundBrush(QColor(245, 245, 245));
+
+    connect(m_graphicsView, &DiagramView::elementDropped, this, &MainWindow::onElementDropped);
 
     m_diagramLayout->addWidget(m_graphicsView);
     m_mainSplitter->addWidget(m_diagramWidget);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void MainWindow::onElementDropped(
+    const QString& elementType,
+    const QPointF& position
+)
+{
+    BasicElement* element = nullptr;
+
+    if (elementType == "Entity") {
+        element = new Entity("Entidade");
+    }
+    else if (elementType == "Attribute") {
+        element = new Attribute("Atributo");
+    }
+
+    if (element) {
+        element->setPosition(position);
+        m_diagramScene->addElement(element);
+
+        m_isModified = true;
+        updateWindowTitle();
+        updateStatusBar(QString("%1 adicionado na posição (%2, %3)")
+            .arg(elementType)
+            .arg(position.x(), 0, 'f', 1)
+            .arg(position.y(), 0, 'f', 1));
+    }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -758,7 +765,7 @@ void MainWindow::onAddEntityClicked()
 
     QPointF pos =  QPointF(0, 0);
 
-    auto entity = new Entity();
+    auto entity = new Entity("Entidade");
 
 	m_diagramScene->addElement(entity);
     if (entity) {
@@ -780,7 +787,7 @@ void MainWindow::onAddAttributeClicked()
 
     QPointF pos = QPointF(0, 0);
 
-    auto attribute = new Attribute("NovoAtributo");
+    auto attribute = new Attribute("Atributo");
 
     m_diagramScene->addElement(attribute);
     if (attribute) {

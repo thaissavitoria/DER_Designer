@@ -1,9 +1,11 @@
-<RCC>
+﻿<RCC>
     <qresource prefix="/">
 	<file alias="app_icon">viewer/icons/app_icon.png</file>
         <file alias="export">viewer/icons/export.png</file>
         <file alias="import">viewer/icons/import.png</file>
         <file alias="undo">viewer/icons/undo.png</file>
         <file alias="redo">viewer/icons/redo.png</file>
+	<file alias="entidade">viewer/icons/entidade.png</file>
+	<file alias="atributo">viewer/icons/atributo.png</file>
     </qresource>
 </RCC>

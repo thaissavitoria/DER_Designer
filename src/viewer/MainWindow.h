@@ -1,12 +1,15 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtCore/QPointer>
 #include <QtCore/QHash>
+#include <QtCore/QPointer>
+#include <QtWidgets/QCheckBox>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGraphicsScene>
 #include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
@@ -18,10 +21,9 @@
 #include <QtWidgets/QTreeWidgetItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <QtWidgets/QComboBox>
-#include <QtWidgets/QCheckBox>
-#include <QtWidgets/QLineEdit>
 
+#include "DiagramView.h"
+#include "DraggableButton.h"
 #include "controller/DiagramScene.h"
 #include "model/BasicElement.h"
 
@@ -63,6 +65,11 @@ public slots:
     void showHelp();
 
 private slots:
+    void onElementDropped(
+        const QString& elementType,
+        const QPointF& position
+    );
+
     void onTabChanged(
         int index
     );
@@ -172,7 +179,7 @@ private:
     QWidget* m_diagramWidget;
     QVBoxLayout* m_diagramLayout;
     DiagramScene* m_diagramScene;
-    QGraphicsView* m_graphicsView;
+    DiagramView* m_graphicsView;
 
     QTabWidget* m_sideTabWidget;
     QWidget* m_drawingTab;

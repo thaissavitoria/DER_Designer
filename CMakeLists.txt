@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16)
+﻿cmake_minimum_required(VERSION 3.16)
 
 project(DERDesigner VERSION 1.0.0 LANGUAGES CXX)
 
@@ -21,6 +21,10 @@ set(SOURCES
     src/model/Attribute.h
     src/model/AttributeType.h
     src/model/AttributeType.cpp
+    src/viewer/DraggableButton.h
+    src/viewer/DraggableButton.cpp
+    src/viewer/DiagramView.h
+    src/viewer/DiagramView.cpp
     src/viewer/QuickAcessToolBar.cpp
     src/viewer/QuickAcessToolBar.h
     src/viewer/MainWindow.cpp

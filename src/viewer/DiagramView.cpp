@@ -1,438 +1,227 @@
-#include "DiagramView.h"
-#include "DiagramScene.h"
-#include <QtWidgets/QApplication>
+ï»¿#include "DiagramView.h"
+#include "controller/DiagramScene.h"
+
+#include <QtCore/QMimeData>
+#include <QtGui/QDragEnterEvent>
+#include <QtGui/QDragMoveEvent>
+#include <QtGui/QDropEvent>
 #include <QtGui/QWheelEvent>
-#include <QtGui/QMouseEvent>
-#include <QtGui/QKeyEvent>
-#include <QtGui/QResizeEvent>
-#include <QtGui/QPainter>
-#include <QtWidgets/QScrollBar>
-#include <QtCore/qmath.h>
-#include <QtCore/QDebug>
+#include <QtWidgets/QApplication>
 
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 DiagramView::DiagramView(
-    QWidget* parent
-)
-    : QGraphicsView(parent)
-    , m_scene(nullptr)
-    , m_zoomLevel(1.0)
-    , m_minZoom(0.1)
-    , m_maxZoom(5.0)
-    , m_zoomStep(1.2)
-    , m_showGrid(true)
-    , m_snapToGrid(true)
-    , m_interactionMode(SelectMode)
-    , m_isPanning(false)
-{
-    setupView();
-}
-
-//-----------------------------------------------------------
-
-DiagramView::DiagramView(
-    DiagramScene* scene, 
+    DiagramScene* scene,
     QWidget* parent
 )
     : QGraphicsView(scene, parent)
-    , m_scene(scene)
-    , m_zoomLevel(1.0)
-    , m_minZoom(0.1)
-    , m_maxZoom(5.0)
-    , m_zoomStep(1.2)
-    , m_showGrid(true)
-    , m_snapToGrid(true)
-    , m_interactionMode(SelectMode)
-    , m_isPanning(false)
+    , m_currentZoom(DEFAULT_ZOOM)
 {
-    setupView();
-
-    if (m_scene) {
-        connect(m_scene, &DiagramScene::changed, this, &DiagramView::onSceneChanged);
-    }
+    setAcceptDrops(true);
+    setRenderHint(QPainter::Antialiasing);
+    setDragMode(QGraphicsView::RubberBandDrag);
+    setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
+    setResizeAnchor(QGraphicsView::AnchorUnderMouse);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 }
 
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-void DiagramView::setDiagramScene(
-    DiagramScene* scene
+void DiagramView::dragEnterEvent(
+    QDragEnterEvent* event
 )
 {
-    if (m_scene) {
-        disconnect(m_scene, &DiagramScene::changed, this, &DiagramView::onSceneChanged);
-    }
-
-    m_scene = scene;
-    setScene(scene);
-
-    if (m_scene) {
-        connect(m_scene, &DiagramScene::changed, this, &DiagramView::onSceneChanged);
-    }
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::zoomIn()
-{
-    setZoomLevel(m_zoomLevel * m_zoomStep);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::zoomOut()
-{
-    setZoomLevel(m_zoomLevel / m_zoomStep);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::zoomToFit()
-{
-    if (!m_scene) {
-        return;
-    }
-
-    QRectF itemsRect = m_scene->itemsBoundingRect();
-    if (itemsRect.isEmpty()) {
-        return;
-    }
-
-    itemsRect.adjust(-50, -50, 50, 50);
-
-    fitInView(itemsRect, Qt::KeepAspectRatio);
-
-    QTransform transform = this->transform();
-    m_zoomLevel = transform.m11(); 
-
-    constrainZoom();
-    emit zoomChanged(m_zoomLevel);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::zoomToActualSize()
-{
-    setZoomLevel(1.0);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::setZoomLevel(
-    qreal level
-)
-{
-    qreal newZoom = qBound(m_minZoom, level, m_maxZoom);
-
-    if (qAbs(newZoom - m_zoomLevel) < 0.01) {
-        return;
-    }
-
-    qreal scaleFactor = newZoom / m_zoomLevel;
-    scale(scaleFactor, scaleFactor);
-
-    m_zoomLevel = newZoom;
-    emit zoomChanged(m_zoomLevel);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::centerOnDiagram()
-{
-    if (!m_scene) {
-        return;
-    }
-
-    QRectF itemsRect = m_scene->itemsBoundingRect();
-    if (!itemsRect.isEmpty()) {
-        centerOn(itemsRect.center());
-    }
-    else {
-        centerOn(0, 0);
-    }
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::panTo(
-    const QPointF& point
-) // Changes the focus/center to a specific point
-{
-    centerOn(point);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::setShowGrid(
-    bool show
-)
-{
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::setSnapToGrid(
-    bool snap
-)
-{
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::setInteractionMode(
-    InteractionMode mode
-)
-{
-    if (m_interactionMode != mode) {
-        m_interactionMode = mode;
-
-        switch (mode) {
-            case SelectMode:
-                setCursor(Qt::ArrowCursor);
-                setDragMode(QGraphicsView::RubberBandDrag);
-                break;
-            case CreateEntityMode:
-            case CreateRelationshipMode:
-            case CreateAttributeMode:
-                setCursor(Qt::CrossCursor);
-                setDragMode(QGraphicsView::NoDrag);
-                break;
-            case ConnectMode:
-                setCursor(Qt::PointingHandCursor);
-                setDragMode(QGraphicsView::NoDrag);
-                break;
+    if (event->mimeData()->hasFormat("application/x-element-type")) {
+        QString elementType = QString::fromUtf8(event->mimeData()->data("application/x-element-type"));
+        
+        if (isValidElementType(elementType)) {
+            event->acceptProposedAction();
+            return;
         }
-
-        emit interactionModeChanged(mode);
     }
+    
+    QGraphicsView::dragEnterEvent(event);
 }
 
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::dragMoveEvent(
+    QDragMoveEvent* event
+)
+{
+    if (event->mimeData()->hasFormat("application/x-element-type")) {
+        QString elementType = QString::fromUtf8(event->mimeData()->data("application/x-element-type"));
+        
+        if (isValidElementType(elementType)) {
+            event->acceptProposedAction();
+            return;
+        }
+    }
+    
+    QGraphicsView::dragMoveEvent(event);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::dropEvent(
+    QDropEvent* event
+)
+{
+    if (event->mimeData()->hasFormat("application/x-element-type")) {
+        QString elementType = QString::fromUtf8(event->mimeData()->data("application/x-element-type"));
+        
+        if (isValidElementType(elementType)) {
+            QPointF scenePos = mapToScene(event->pos());
+            emit elementDropped(elementType, scenePos);
+            event->acceptProposedAction();
+            return;
+        }
+    }
+    
+    QGraphicsView::dropEvent(event);
+}
+
+//----------------------------------------------------------------------------------------------
 
 void DiagramView::wheelEvent(
     QWheelEvent* event
 )
 {
-    if (event->modifiers() & Qt::ControlModifier) {
-        const qreal scaleFactor = event->angleDelta().y() > 0 ? m_zoomStep : 1.0 / m_zoomStep;
-        setZoomLevel(m_zoomLevel * scaleFactor);
+    if (QApplication::keyboardModifiers() & Qt::ControlModifier) {
+        const qreal scaleFactor = (event->angleDelta().y() > 0) ? ZOOM_STEP : (1.0 / ZOOM_STEP);
+        const QPointF centerPoint = mapToScene(event->position().toPoint());
+        
+        applyZoom(scaleFactor, centerPoint);
         event->accept();
-    }
-    else {
+    } else {
         QGraphicsView::wheelEvent(event);
     }
 }
 
-//-----------------------------------------------------------
-
-void DiagramView::mousePressEvent(
-    QMouseEvent* event
-)
-{
-    if (event->button() == Qt::MiddleButton ||
-        (event->button() == Qt::LeftButton && event->modifiers() & Qt::AltModifier)) {
-        m_isPanning = true;
-        m_lastPanPoint = event->pos();
-        setCursor(Qt::ClosedHandCursor);
-        event->accept();
-        return;
-    }
-
-    if (event->button() == Qt::LeftButton && m_interactionMode != SelectMode) {
-        // Modo de criação
-        QPointF scenePos = mapToScene(event->pos());
-        ElementType elementType = getModeElementType();
-
-        if (elementType != ElementType::Unknown) {
-            emit elementCreationRequested(elementType, scenePos);
-        }
-
-        event->accept();
-        return;
-    }
-
-    QGraphicsView::mousePressEvent(event);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::mouseMoveEvent(
-    QMouseEvent* event
-)
-{
-    if (m_isPanning) {
-        QPoint delta = event->pos() - m_lastPanPoint;
-        m_lastPanPoint = event->pos();
-
-        QPointF sceneDelta = mapToScene(delta) - mapToScene(QPoint(0, 0));
-
-        QScrollBar* hBar = horizontalScrollBar();
-        QScrollBar* vBar = verticalScrollBar();
-
-        hBar->setValue(hBar->value() - sceneDelta.x());
-        vBar->setValue(vBar->value() - sceneDelta.y());
-
-        event->accept();
-        return;
-    }
-
-    QGraphicsView::mouseMoveEvent(event);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::mouseReleaseEvent(
-    QMouseEvent* event
-)
-{
-    if (m_isPanning && (event->button() == Qt::MiddleButton ||
-        (event->button() == Qt::LeftButton && event->modifiers() & Qt::AltModifier))) {
-        m_isPanning = false;
-        setCursor(Qt::ArrowCursor);
-        event->accept();
-        return;
-    }
-
-    QGraphicsView::mouseReleaseEvent(event);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::keyPressEvent(
-    QKeyEvent* event
-)
-{
-    switch (event->key()) {
-    case Qt::Key_Plus:
-    case Qt::Key_Equal:
-        if (event->modifiers() & Qt::ControlModifier) {
-            zoomIn();
-            event->accept();
-            return;
-        }
-        break;
-
-    case Qt::Key_Minus:
-        if (event->modifiers() & Qt::ControlModifier) {
-            zoomOut();
-            event->accept();
-            return;
-        }
-        break;
-
-    case Qt::Key_0:
-        if (event->modifiers() & Qt::ControlModifier) {
-            zoomToActualSize();
-            event->accept();
-            return;
-        }
-        break;
-
-    case Qt::Key_F:
-        if (event->modifiers() & Qt::ControlModifier) {
-            zoomToFit();
-            event->accept();
-            return;
-        }
-        break;
-
-    case Qt::Key_Escape:
-        setInteractionMode(SelectMode);
-        event->accept();
-        return;
-    }
-
-    QGraphicsView::keyPressEvent(event);
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::resizeEvent(
-    QResizeEvent* event
-)
-{
-    QGraphicsView::resizeEvent(event);
-    updateZoom();
-}
-
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 void DiagramView::drawBackground(
-    QPainter* painter, 
+    QPainter* painter,
     const QRectF& rect
 )
 {
-    QGraphicsView::drawBackground(painter, rect);
-}
+    painter->fillRect(rect, QColor(255, 255, 255));
 
-//-----------------------------------------------------------
-
-void DiagramView::onSceneChanged()
-{
-    update();
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::setupView()
-{
-    setRenderHint(QPainter::Antialiasing, true);
-    setRenderHint(QPainter::TextAntialiasing, true);
-    setDragMode(QGraphicsView::RubberBandDrag);
-    setTransformationAnchor(QGraphicsView::AnchorUnderMouse);
-    setResizeAnchor(QGraphicsView::AnchorUnderMouse);
-    setInteractive(true);
-
-    setViewportUpdateMode(QGraphicsView::FullViewportUpdate);
-
-    setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-
-    setBackgroundBrush(QBrush(Qt::white));
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::updateZoom()
-{
-    constrainZoom();
-}
-
-//-----------------------------------------------------------
-
-void DiagramView::constrainZoom()
-{
-    if (m_zoomLevel < m_minZoom) {
-        setZoomLevel(m_minZoom);
-    }
-    else if (m_zoomLevel > m_maxZoom) {
-        setZoomLevel(m_maxZoom);
+    if (m_gridVisible) {
+        drawGrid(painter, rect);
     }
 }
 
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-QPointF DiagramView::mapToScene(
-    const QPoint& point
+void DiagramView::drawGrid(
+    QPainter* painter,
+    const QRectF& rect
+)
+{
+    painter->save();
+
+    QPen gridPen(QColor(220, 220, 220, 200), 1, Qt::SolidLine);
+    painter->setPen(gridPen);
+
+    qreal left = static_cast<int>(rect.left() / GRID_SIZE) * GRID_SIZE;
+    qreal top = static_cast<int>(rect.top() / GRID_SIZE) * GRID_SIZE;
+
+    for (qreal x = left; x <= rect.right(); x += GRID_SIZE) {
+        painter->drawLine(QPointF(x, rect.top()), QPointF(x, rect.bottom()));
+    }
+
+    for (qreal y = top; y <= rect.bottom(); y += GRID_SIZE) {
+        painter->drawLine(QPointF(rect.left(), y), QPointF(rect.right(), y));
+    }
+
+    painter->restore();
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::zoomIn()
+{
+    applyZoom(ZOOM_STEP);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::zoomOut()
+{
+    applyZoom(1.0 / ZOOM_STEP);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::resetZoom()
+{
+    resetTransform();
+    m_currentZoom = DEFAULT_ZOOM;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::setZoomLevel(
+    qreal zoomLevel
+)
+{
+    if (zoomLevel < MIN_ZOOM || zoomLevel > MAX_ZOOM) {
+        return;
+    }
+    
+    resetTransform();
+    scale(zoomLevel, zoomLevel);
+    m_currentZoom = zoomLevel;
+}
+
+//----------------------------------------------------------------------------------------------
+
+qreal DiagramView::getZoomLevel() const
+{
+    return m_currentZoom;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramView::applyZoom(
+    qreal scaleFactor,
+    const QPointF& centerPoint
+)
+{
+    qreal newZoom = m_currentZoom * scaleFactor;
+    
+    if (newZoom < MIN_ZOOM || newZoom > MAX_ZOOM) {
+        return;
+    }
+    
+    if (!centerPoint.isNull()) {
+        centerOn(centerPoint);
+    }
+    
+    scale(scaleFactor, scaleFactor);
+    m_currentZoom = newZoom;
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool DiagramView::isValidElementType(
+    const QString& elementType
 ) const
 {
-    return QGraphicsView::mapToScene(point);
+    QStringList validTypes = {
+        "Entity",
+        "WeakEntity", 
+        "Attribute",
+        "KeyAttribute",
+        "DerivedAttribute",
+        "MultivaluedAttribute",
+        "Relationship",
+        "WeakRelationship"
+    };
+    
+    return validTypes.contains(elementType);
 }
 
-//-----------------------------------------------------------
-
-ElementType DiagramView::getModeElementType() const
-{
-    switch (m_interactionMode) {
-    case CreateEntityMode:
-        return ElementType::Entity;
-    case CreateRelationshipMode:
-        return ElementType::Relationship;
-    case CreateAttributeMode:
-        return ElementType::Attribute;
-    default:
-        return ElementType::Unknown;
-    }
-}
-
-//-----------------------------------------------------------
+//----------------------------------------------------------------------------------------------

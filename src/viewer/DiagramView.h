@@ -1,129 +1,85 @@
-#ifndef DIAGRAMVIEW_H
+ï»¿#ifndef DIAGRAMVIEW_H
 #define DIAGRAMVIEW_H
 
 #include <QtWidgets/QGraphicsView>
-#include <QtCore/QObject>
-#include <QtCore/QPointF>
-
-#include "model/BasicElement.h"
-
-QT_BEGIN_NAMESPACE
-class QMouseEvent;
-class QWheelEvent;
-class QKeyEvent;
-class QResizeEvent;
-QT_END_NAMESPACE
+#include <QtGui/QDragEnterEvent>
+#include <QtGui/QDragMoveEvent>
+#include <QtGui/QDropEvent>
+#include <QtGui/QWheelEvent>
 
 class DiagramScene;
 
-/**
- * @brief View para exibir e interagir com o diagrama ERD
- *
- * Esta classe herda de QGraphicsView e fornece:
- * - Visualização da cena do diagrama
- * - Controles de zoom e pan
- * - Gerenciamento de eventos de entrada
- * - Interface para criação de elementos
- */
 class DiagramView : public QGraphicsView
 {
     Q_OBJECT
 
 public:
     explicit DiagramView(
-        QWidget* parent = nullptr
-    );
-
-    explicit DiagramView(
-        DiagramScene* scene, 
+        DiagramScene* scene,
         QWidget* parent = nullptr
     );
     virtual ~DiagramView() = default;
 
-    void setDiagramScene(
-        DiagramScene* scene
-    );
-
-    DiagramScene* diagramScene() const { return m_scene;};
-
     void zoomIn();
     void zoomOut();
-    void zoomToFit();
-    void zoomToActualSize();
-    void setZoomLevel(qreal level);
-    qreal zoomLevel() const { return m_zoomLevel; }
-
-    // Navegação
-    void centerOnDiagram();
-    void panTo(const QPointF& point);
-
-    // Configurações de visualização
-    void setShowGrid(bool show);
-    bool isShowGrid() const { return m_showGrid; }
-
-    void setSnapToGrid(bool snap);
-    bool isSnapToGrid() const { return m_snapToGrid; }
-
-    // Modo de interação
-    enum InteractionMode {
-        SelectMode,
-        CreateEntityMode,
-        CreateRelationshipMode,
-        CreateAttributeMode,
-        ConnectMode
-    };
-
-    void setInteractionMode(InteractionMode mode);
-    InteractionMode interactionMode() const { return m_interactionMode; }
-
-signals:
-    void zoomChanged(qreal level);
-    void interactionModeChanged(InteractionMode mode);
-    void elementCreationRequested(ElementType type, const QPointF& position);
+    void resetZoom();
+    void setZoomLevel(
+        qreal zoomLevel
+    );
+    qreal getZoomLevel() const;
 
 protected:
-    // Eventos
-    void wheelEvent(QWheelEvent* event) override;
-    void mousePressEvent(QMouseEvent* event) override;
-    void mouseMoveEvent(QMouseEvent* event) override;
-    void mouseReleaseEvent(QMouseEvent* event) override;
-    void keyPressEvent(QKeyEvent* event) override;
-    void resizeEvent(QResizeEvent* event) override;
+    void dragEnterEvent(
+        QDragEnterEvent* event
+    ) override;
 
-    // Desenho
-    void drawBackground(QPainter* painter, const QRectF& rect) override;
+    void dragMoveEvent(
+        QDragMoveEvent* event
+    ) override;
 
-private slots:
-    void onSceneChanged();
+    void dropEvent(
+        QDropEvent* event
+    ) override;
+
+    void wheelEvent(
+        QWheelEvent* event
+    ) override;
+
+    void drawBackground(
+        QPainter* painter,
+        const QRectF& rect
+    ) override;
+
+signals:
+    void elementDropped(
+        const QString& elementType,
+        const QPointF& position
+    );
 
 private:
-    void setupView();
-    void updateZoom();
-    void constrainZoom();
+    bool isValidElementType(
+        const QString& elementType
+    ) const;
 
-    // Utilitários
-    QPointF mapToScene(const QPoint& point) const;
-    ElementType getModeElementType() const;
+    void applyZoom(
+        qreal scaleFactor,
+        const QPointF& centerPoint = QPointF()
+    );
 
-    // Dados
-    DiagramScene* m_scene;
+    void drawGrid(
+        QPainter* painter,
+        const QRectF& rect
+    );
 
-    // Estado de zoom
-    qreal m_zoomLevel;
-    qreal m_minZoom;
-    qreal m_maxZoom;
-    qreal m_zoomStep;
+    const qreal MIN_ZOOM = 0.1;
+    const qreal MAX_ZOOM = 5.0;
+    const qreal ZOOM_STEP = 1.25;
+    const qreal DEFAULT_ZOOM = 1.0;
+	const qreal GRID_SIZE = 30.0;
 
-    // Configurações
-    bool m_showGrid;
-    bool m_snapToGrid;
+    qreal m_currentZoom;
 
-    // Modo de interação
-    InteractionMode m_interactionMode;
-
-    // Estado de pan
-    bool m_isPanning;
-    QPoint m_lastPanPoint;
+	bool m_gridVisible = true; /*implementar grid on off depois?*/
 };
 
 #endif // DIAGRAMVIEW_H
