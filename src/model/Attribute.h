@@ -6,68 +6,79 @@
 
 class Attribute : public BasicElement
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit Attribute(
-        QObject* parent = nullptr
-    );
+  explicit Attribute(
+    QObject* parent = nullptr
+  );
 
-    explicit Attribute(
-        const QString& name,
-        QObject* parent = nullptr
-    );
+  explicit Attribute(
+    const QString& name,
+    QObject* parent = nullptr
+  );
 
-    explicit Attribute(
-        const QString& name,
-        AttributeType::Type type,
-        QObject* parent = nullptr
-    );
+  explicit Attribute(
+    const QString& name,
+    AttributeType::Type type,
+    QObject* parent = nullptr
+  );
 
-    virtual ~Attribute() = default;
+  virtual ~Attribute() = default;
 
-    QSizeF minimumSize() const override;
+  QSizeF minimumSize() const override;
 
-    QSizeF preferredSize() const override;
+  QSizeF preferredSize() const override;
 
-    std::unique_ptr<BasicElement> clone() const override;
+  std::unique_ptr<BasicElement> clone() const override;
 
-    QString typeDisplayName() const override;
+  QString typeDisplayName() const override;
 
-    AttributeType::Type attributeType() const;
+  AttributeType::Type attributeType() const;
 
-    void setAttributeType(
-        AttributeType::Type type
-    );
+  void setAttributeType(
+    AttributeType::Type type
+  );
 
-    QString attributeTypeString() const;
+  QString attributeTypeString() const;
 
-    bool isPrimaryKey() const;
+  bool isPrimaryKey() const;
 
-    void setPrimaryKey(
-        bool isPrimary
-    );
+  void setPrimaryKey(
+    bool isPrimary
+  );
 
-    bool isNormalAttribute() const;
-    bool isKeyAttribute() const;
-    bool isDerivedAttribute() const;
-    bool isMultivaluedAttribute() const;
-    bool isCompositeAttribute() const;
+  bool isNormalAttribute() const;
+  bool isKeyAttribute() const;
+  bool isDerivedAttribute() const;
+  bool isMultivaluedAttribute() const;
+  bool isCompositeAttribute() const;
+
+  void addSubAttribute(
+    Attribute* subAttribute
+  );
+
+  bool removeSubAttribute(
+    Attribute* subAttribute
+  );
+
+  QList<Attribute*> getSubAttributes() const;
 
 signals:
-    void attributeTypeChanged(
-        AttributeType::Type newType
-    );
+  void attributeTypeChanged(
+    AttributeType::Type newType
+  );
 
-    void primaryKeyChanged(
-        bool isPrimary
-    );
+  void primaryKeyChanged(
+    bool isPrimary
+  );
 
 private:
-    AttributeType::Type m_attributeType;
-    bool m_isPrimaryKey;
+  AttributeType::Type m_attributeType;
+  bool m_isPrimaryKey;
+  QList<Attribute*> m_subAttributes;
 
-    void updateFromAttributeType();
+  void updateFromAttributeType();
 };
 
 #endif // ATTRIBUTE_H

@@ -59,6 +59,10 @@ public:
         QGraphicsSceneHoverEvent* event
     ) override;
 
+    void hoverMoveEvent(
+        QGraphicsSceneHoverEvent* event
+    ) override;
+
     void onElementChanged(
         const BasicElement* element
     ) override;
@@ -77,6 +81,14 @@ public:
         bool selected
     );
 
+    void setConnectionPointsVisible(
+        bool visible
+    );
+
+    bool areConnectionPointsVisible() const { return m_connectionPointsVisible; }
+
+    ConnectionPoint* hoveredConnectionPoint() const { return m_hoveredConnectionPoint; }
+
 protected:
     QVariant itemChange(
         GraphicsItemChange change,
@@ -90,12 +102,30 @@ private:
     bool m_isSelected;
     bool m_isHovered;
     bool m_isDragging;
+    bool m_connectionPointsVisible;
 
     QPointF m_dragStartPosition;
+    ConnectionPoint* m_hoveredConnectionPoint;
 
     void updateFromElement();
     void setupRenderer();
     void editElementName();
+
+    void renderConnectionPoints(
+        QPainter* painter
+    );
+
+    ConnectionPoint* findConnectionPointAt(
+        const QPointF& localPosition
+    );
+
+    QRectF getConnectionPointRect(
+        ConnectionPoint* connectionPoint
+    ) const;
+
+    void updateHoveredConnectionPoint(
+        const QPointF& localPosition
+    );
 };
 
 #endif // ELEMENTGRAPHICSITEM_H

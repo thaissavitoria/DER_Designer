@@ -21,6 +21,12 @@ set(SOURCES
     src/model/Attribute.h
     src/model/AttributeType.h
     src/model/AttributeType.cpp
+    src/model/ConnectionPoint.h
+    src/model/ConnectionPoint.cpp
+    src/model/ConnectionLine.h
+    src/model/ConnectionLine.cpp
+    src/model/Relationship.h
+    src/model/Relationship.cpp
     src/viewer/DraggableButton.h
     src/viewer/DraggableButton.cpp
     src/viewer/DiagramView.h
@@ -29,6 +35,8 @@ set(SOURCES
     src/viewer/QuickAcessToolBar.h
     src/viewer/MainWindow.cpp
     src/viewer/MainWindow.h
+    src/viewer/ConnectionGraphicsItem.cpp
+    src/viewer/ConnectionGraphicsItem.h
     src/viewer/ElementGraphicsItem.cpp
     src/viewer/ElementGraphicsItem.h
     src/viewer/ElementRenderer.h 
@@ -37,6 +45,8 @@ set(SOURCES
     src/viewer/EntityRenderer.h
     src/viewer/AttributeRenderer.cpp
     src/viewer/AttributeRenderer.h
+    src/viewer/RelationshipRenderer.cpp
+    src/viewer/RelationshipRenderer.h
     src/controller/DiagramScene.cpp
     src/controller/DiagramScene.h
     src/controller/PropertyCommand.cpp

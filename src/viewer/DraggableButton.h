@@ -8,36 +8,37 @@
 
 class DraggableButton : public QPushButton
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit DraggableButton(
-        const QString& elementType,
-        QWidget* parent = nullptr
-    );
+  explicit DraggableButton(
+    const QString& elementType,
+    QWidget* parent = nullptr
+  );
 
-    void setElementType(
-        const QString& elementType
-    );
+  void setElementType(
+    const QString& elementType
+  );
 
-    QString elementType() const { return m_elementType; }
+  QString elementType() const { return m_elementType; }
 
 protected:
-    void mousePressEvent(
-        QMouseEvent* event
-    ) override;
+  void mousePressEvent(
+    QMouseEvent* event
+  ) override;
 
-    void mouseMoveEvent(
-        QMouseEvent* event
-    ) override;
+  void mouseMoveEvent(
+    QMouseEvent* event
+  ) override;
 
 private:
-    QString m_elementType;
-    QPoint m_dragStartPosition;
-    bool m_dragging;
+  QString m_elementType;
+  QPoint m_dragStartPosition;
+  bool m_dragging;
 
-    void setupIcon();
-    QString getIconPath() const;
+  void setupIcon();
+  QString getIconPath() const;
+  QString getDisplayName() const;
 };
 
 #endif // DRAGGABLEBUTTON_H

@@ -2,6 +2,7 @@
 #define ENTITY_H
 
 #include "BasicElement.h"
+#include "Attribute.h"
 
 class Entity : public BasicElement
 {
@@ -19,13 +20,26 @@ public:
 
     virtual ~Entity() = default;
 
-	QSizeF minimumSize() const override;
+	  QSizeF minimumSize() const override;
 
     QSizeF preferredSize() const override;
 
     std::unique_ptr<BasicElement> clone() const override;
 
     QString typeDisplayName() const override;
+
+    void addAttribute(
+        Attribute* attribute
+    );
+
+    bool removeAttribute(
+      Attribute* attribute
+    );
+
+    QList<Attribute*> getAttributes();
+
+  private:
+    QList<Attribute*> m_attributes;
 };
 
 #endif // ENTITY_H

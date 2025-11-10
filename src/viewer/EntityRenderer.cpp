@@ -23,9 +23,9 @@ void EntityRenderer::setupDefaultStyle()
     m_borderPen = QPen(Qt::black, 1.5, Qt::SolidLine);
     m_fillBrush = QBrush(Qt::white);
     m_textPen = QPen(Qt::black);
-    m_textFont = QFont("Arial", 12, QFont::Bold);
-    m_selectionPen = QPen(Qt::red, 1.5, Qt::SolidLine);
-    m_selectionBrush = QBrush(QColor(255, 0, 0, 50));
+    m_textFont = QFont("Arial", 12);
+    m_selectionPen = QPen(Qt::blue, 1.5, Qt::SolidLine);
+    m_selectionBrush = QBrush(QColor(0, 0, 225, 20));
 }
 
 // -----------------------------------------------------------------------------------------------------

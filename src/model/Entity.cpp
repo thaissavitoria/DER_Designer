@@ -61,3 +61,30 @@ QString Entity::typeDisplayName() const
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void Entity::addAttribute(
+  Attribute* attribute
+) 
+{
+  if (attribute && !m_attributes.contains(attribute)) {
+    m_attributes.append(attribute);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool Entity::removeAttribute(
+  Attribute* attribute
+) 
+{
+  return m_attributes.removeOne(attribute);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QList<Attribute*> Entity::getAttributes() 
+{
+  return m_attributes;
+}
+
+// -----------------------------------------------------------------------------------------------------

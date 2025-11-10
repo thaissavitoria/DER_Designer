@@ -1,7 +1,9 @@
 ﻿#include "DiagramScene.h"
 #include "model/Entity.h"
+#include "viewer/ConnectionGraphicsItem.h"
 
 #include <QtCore/QDebug>
+#include <QtCore/QTimer>
 
 #include <QtGui/QKeyEvent>
 
@@ -14,9 +16,17 @@ DiagramScene::DiagramScene(QObject* parent)
     : QGraphicsScene(parent)
     , m_selectionRectActive(false)
     , m_selectionRect(nullptr)
+    , m_isCreatingConnection(false)
+    , m_connectionStartPoint(nullptr)
+    , m_temporaryConnectionLine(nullptr)
 {
-    setItemIndexMethod(QGraphicsScene::NoIndex); 
+    setItemIndexMethod(QGraphicsScene::NoIndex);
     setSceneRect(-5000, -5000, 10000, 10000);
+
+    auto cleanupTimer = new QTimer(this);
+    connect(cleanupTimer, &QTimer::timeout,
+        this, &DiagramScene::cleanupInvalidConnections);
+    cleanupTimer->start(1000); 
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -36,6 +46,20 @@ DiagramScene::~DiagramScene()
         delete it.value();
     }
     m_elements.clear();
+
+    for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+        if (ConnectionGraphicsItem* item = it.value()) {
+            removeItem(item);
+            delete item;
+        }
+    }
+
+    m_connectionToItem.clear();
+
+    for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
+        delete it.value();
+    }
+    m_connections.clear();
 
     destroySelectionRect();
 }
@@ -148,7 +172,7 @@ QList<BasicElement*> DiagramScene::getSelectedElements() const
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::selectElement(
-    BasicElement* element, 
+    BasicElement* element,
     bool selected
 )
 {
@@ -170,7 +194,7 @@ void DiagramScene::selectElement(
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::selectElement(
-    const QString& elementId, 
+    const QString& elementId,
     bool selected
 )
 {
@@ -210,15 +234,35 @@ void DiagramScene::selectAll()
 
 // -----------------------------------------------------------------------------------------------------
 
+QList<ConnectionLine*> DiagramScene::getSelectedConnections() const
+{
+    QList<ConnectionLine*> selected;
+
+    for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+        if (it.value()->isSelected()) {
+            selected.append(it.key());
+        }
+    }
+
+    return selected;
+}
+
+//----------------------------------------------------------------------------------------------
+
 void DiagramScene::deleteSelected()
 {
-    QList<BasicElement*> selected = getSelectedElements();
+    QList<BasicElement*> selectedElements = getSelectedElements();
+    QList<ConnectionLine*> selectedConnections = getSelectedConnections();
 
-    for (BasicElement* element : selected) {
+    for (ConnectionLine* connection : selectedConnections) {
+        removeConnection(connection);
+    }
+
+    for (BasicElement* element : selectedElements) {
         removeElement(element);
     }
 
-    if (!selected.isEmpty()) {
+    if (!selectedElements.isEmpty() || !selectedConnections.isEmpty()) {
         emit selectionChanged();
     }
 }
@@ -272,6 +316,9 @@ void DiagramScene::mouseMoveEvent(
     if (m_selectionRectActive) {
         updateSelectionRect(event->scenePos());
     }
+    else if (m_isCreatingConnection) {
+        updateTemporaryConnection(event->scenePos());
+    }
 
     QGraphicsScene::mouseMoveEvent(event);
 }
@@ -313,7 +360,12 @@ void DiagramScene::keyPressEvent(
         break;
 
     case Qt::Key_Escape:
-        clearSelection();
+        if (m_isCreatingConnection) {
+            cancelConnection();
+        }
+        else {
+            clearSelection();
+        }
         break;
 
     default:
@@ -377,6 +429,189 @@ void DiagramScene::finishSelectionRect()
     }
 
     m_selectionRectActive = false;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::addConnection(
+    ConnectionLine* connection
+)
+{
+    if (!connection || m_connections.contains(connection->id())) {
+        return;
+    }
+
+    m_connections[connection->id()] = connection;
+
+    auto connectionItem = new ConnectionGraphicsItem(connection);
+    m_connectionToItem[connection] = connectionItem;
+    addItem(connectionItem);
+
+    emit connectionAdded(connection);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::removeConnection(
+    ConnectionLine* connection
+)
+{
+    if (!connection) return;
+
+    emit connectionRemoved(connection);
+
+    auto it = m_connectionToItem.find(connection);
+    if (it != m_connectionToItem.end()) {
+        removeItem(it.value());
+        delete it.value();
+        m_connectionToItem.erase(it);
+    }
+
+    m_connections.remove(connection->id());
+    connection->deleteLater();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::removeConnection(
+    const QString& connectionId
+)
+{
+    auto connection = findConnection(connectionId);
+    if (connection) {
+        removeConnection(connection);
+    }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+ConnectionLine* DiagramScene::findConnection(
+    const QString& id
+) const
+{
+    return m_connections.value(id, nullptr);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::startConnection(
+    ConnectionPoint* startPoint
+)
+{
+    if (!startPoint || m_isCreatingConnection) return;
+
+    m_isCreatingConnection = true;
+    m_connectionStartPoint = startPoint;
+
+    m_temporaryConnectionLine = new QGraphicsLineItem();
+    m_temporaryConnectionLine->setPen(QPen(QColor(0, 120, 215), 2, Qt::DashLine));
+    addItem(m_temporaryConnectionLine);
+
+    emit connectionStarted(startPoint);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::finishConnection(
+    ConnectionPoint* endPoint
+)
+{
+    if (!endPoint || !m_isCreatingConnection || !m_connectionStartPoint) return;
+
+    if (endPoint == m_connectionStartPoint) {
+        cancelConnection();
+        return;
+    }
+
+    auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
+    auto endElement = qobject_cast<BasicElement*>(endPoint->parent());
+
+    if (startElement && endElement && startElement == endElement) {
+        cancelConnection();
+        return;
+    }
+
+    auto connection = new ConnectionLine(startElement, endElement, this);
+    addConnection(connection);
+
+    if (m_temporaryConnectionLine) {
+        removeItem(m_temporaryConnectionLine);
+        delete m_temporaryConnectionLine;
+        m_temporaryConnectionLine = nullptr;
+    }
+
+    m_isCreatingConnection = false;
+    m_connectionStartPoint = nullptr;
+
+    emit connectionFinished(connection);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::cancelConnection()
+{
+    if (!m_isCreatingConnection) return;
+
+    if (m_temporaryConnectionLine) {
+        removeItem(m_temporaryConnectionLine);
+        delete m_temporaryConnectionLine;
+        m_temporaryConnectionLine = nullptr;
+    }
+
+    m_isCreatingConnection = false;
+    m_connectionStartPoint = nullptr;
+
+    emit connectionCancelled();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QList<ConnectionLine*> DiagramScene::getAllConnections() const
+{
+    return m_connections.values();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::updateTemporaryConnection(
+    const QPointF& endPosition
+)
+{
+    if (!m_temporaryConnectionLine || !m_connectionStartPoint) return;
+
+    auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
+    if (!startElement) return;
+
+    QPointF startPos = m_connectionStartPoint->absolutePosition(
+        startElement->position(),
+        startElement->size()
+    );
+
+    m_temporaryConnectionLine->setLine(QLineF(startPos, endPosition));
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::cleanupInvalidConnections()
+{
+    QList<ConnectionLine*> invalidConnections;
+
+    for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
+        auto connection = it.value();
+
+        try {
+            if (!connection->isValid()) {
+                invalidConnections.append(connection);
+            }
+        }
+        catch (...) {
+            invalidConnections.append(connection);
+        }
+    }
+
+    for (auto connection : invalidConnections) {
+        removeConnection(connection);
+    }
 }
 
 // -----------------------------------------------------------------------------------------------------

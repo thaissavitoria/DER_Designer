@@ -12,6 +12,8 @@
 
 #include <memory>
 
+#include "ConnectionPoint.h"
+
 // -----------------------------------------------------------------------------------------------------
 
 enum class ElementType {
@@ -52,6 +54,7 @@ public:
  * - Change notification system (Observer Pattern)
  * - Data validation
  * - Serialization/Deserialization – to facilitate conversion to JSON
+ * - Connection points for line connecting mechanism
  */
 class BasicElement : public QObject
 {
@@ -134,6 +137,30 @@ public:
         IElementObserver* observer
     );
 
+    QList<ConnectionPoint*> connectionPoints() const { return m_connectionPoints; }
+    
+    void addConnectionPoint(
+        ConnectionPoint* connectionPoint
+    );
+    
+    void removeConnectionPoint(
+        ConnectionPoint* connectionPoint
+    );
+    
+    void removeConnectionPoint(
+        const QString& connectionPointId
+    );
+    
+    ConnectionPoint* findConnectionPoint(
+        const QString& connectionPointId
+    ) const;
+    
+    ConnectionPoint* findNearestConnectionPoint(
+        const QPointF& worldPosition
+    ) const;
+    
+    void createDefaultConnectionPoints();
+
     virtual bool isValid() const;
     virtual QStringList validationErrors() const;
 
@@ -188,6 +215,12 @@ signals:
         const QVariant& value
     );
     void elementChanged();
+    void connectionPointAdded(
+        ConnectionPoint* connectionPoint
+    );
+    void connectionPointRemoved(
+        ConnectionPoint* connectionPoint
+    );
 
 private:
     QString m_id;
@@ -197,6 +230,7 @@ private:
     QSizeF m_size;
 
     QHash<QString, QVariant> m_customProperties;
+    QList<ConnectionPoint*> m_connectionPoints;
 
     QList<IElementObserver*> m_observers;
     Q_DISABLE_COPY(BasicElement)

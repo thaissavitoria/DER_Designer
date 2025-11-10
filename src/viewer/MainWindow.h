@@ -82,6 +82,8 @@ private slots:
 
     void onAddAttributeClicked();
 
+    void onAddRelationshipClicked();
+
     void onSelectionChanged();
 
     void onPropertyValueChanged(
@@ -100,6 +102,12 @@ private slots:
     void onLineEditChanged(
         const QString& text
     );
+
+    void onAddAttributeToEntityClicked();
+    void onRemoveAttributeFromEntityClicked();
+
+    void onAddSubAttributeToAttributeClicked();
+    void onRemoveSubAttributeFromAttributeClicked();
 
 private:
     void setupUI();
@@ -165,6 +173,18 @@ private:
         const QStringList& options,
         const QString& currentValue,
         const QString& propertyKey
+    );
+
+    void populateEntityProperties(
+      BasicElement* element,
+      QTreeWidgetItem* parent
+    );
+
+    QTreeWidgetItem* createButtonPropertyItem(
+      QTreeWidgetItem* parent,
+      const QString& propertyName,
+      const QString& buttonText,
+      const QString& propertyKey
     );
 
     void updatePropertyItemText(

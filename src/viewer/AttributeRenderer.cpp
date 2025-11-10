@@ -31,7 +31,7 @@ void AttributeRenderer::setupDefaultStyle()
     m_primaryKeyFont = QFont("Arial", 10);
     m_primaryKeyFont.setUnderline(true);
    
-    m_selectionBrush = QBrush(QColor(255, 0, 0, 50)); 
+    m_selectionBrush = QBrush(QColor(0, 0, 255, 20)); 
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -205,7 +205,7 @@ void AttributeRenderer::renderSelection(
     painter->save();
     painter->setRenderHint(QPainter::Antialiasing, true);
 
-    m_selectionPen = QPen(Qt::red, 1.5, getPenStyle(element));
+    m_selectionPen = QPen(Qt::blue, 1.5, getPenStyle(element));
     painter->setPen(m_selectionPen);
     painter->setBrush(m_selectionBrush);
     painter->drawEllipse(rect);

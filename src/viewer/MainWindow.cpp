@@ -22,6 +22,7 @@
 #include "model/Attribute.h"
 #include "model/AttributeType.h"
 #include "model/Entity.h"
+#include "model/Relationship.h"
 
 // -----------------------------------------------------------------------------------------------------
 
@@ -33,7 +34,7 @@ MainWindow::MainWindow(QWidget* parent)
     , m_diagramWidget(nullptr)
     , m_diagramLayout(nullptr)
     , m_diagramScene(nullptr)
-	, m_graphicsView(nullptr)
+	  , m_graphicsView(nullptr)
     , m_sideTabWidget(nullptr)
     , m_drawingTab(nullptr)
     , m_propertiesTab(nullptr)
@@ -203,7 +204,7 @@ void MainWindow::createSidePanel()
     m_drawingLayout->addWidget(attributeBtn);
 
     auto relationshipBtn = new DraggableButton("Relationship");
-
+    connect(relationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddRelationshipClicked);
     m_drawingLayout->addWidget(relationshipBtn);
 
     m_drawingLayout->addStretch();
@@ -392,6 +393,9 @@ void MainWindow::onElementDropped(
     else if (elementType == "Attribute") {
         element = new Attribute("Atributo");
     }
+    else if (elementType == "Relationship") {
+      element = new Relationship("Relacionamento");
+    }
 
     if (element) {
         element->setPosition(position);
@@ -474,71 +478,330 @@ void MainWindow::clearPropertiesPanel()
 //----------------------------------------------------------------------------------------------
 
 void MainWindow::populatePropertiesForElement(
-    BasicElement* element
+  BasicElement* element
 )
 {
-    if (!element || !m_propertiesTree) {
-        return;
+  if (!element || !m_propertiesTree) {
+    return;
+  }
+
+  QTreeWidgetItem* basicGroup = new QTreeWidgetItem(m_propertiesTree);
+  basicGroup->setText(0, "GERAL");
+  basicGroup->setExpanded(true);
+  basicGroup->setFlags(basicGroup->flags() & ~Qt::ItemIsEditable);
+
+  createPropertyItem(basicGroup, "Nome", element->name(), "name");
+  createPropertyItem(basicGroup, "Tipo", element->typeDisplayName(), "type", false);
+
+  auto attribute = qobject_cast<Attribute*>(element);
+  if (attribute) {
+    populateAttributeProperties(element, nullptr);
+  }
+
+  auto entity = qobject_cast<Entity*>(element);
+  if (entity) {
+    populateEntityProperties(element, nullptr);
+  }
+
+  auto geometryGroup = new QTreeWidgetItem(m_propertiesTree);
+  geometryGroup->setText(0, "GEOMETRIA");
+  geometryGroup->setExpanded(true);
+  geometryGroup->setFlags(geometryGroup->flags() & ~Qt::ItemIsEditable);
+
+  createPropertyItem(geometryGroup, "X", QString::number(element->position().x(), 'f', 2), "posX");
+  createPropertyItem(geometryGroup, "Y", QString::number(element->position().y(), 'f', 2), "posY");
+  createPropertyItem(geometryGroup, "Largura", QString::number(element->size().width(), 'f', 2), "width");
+  createPropertyItem(geometryGroup, "Altura", QString::number(element->size().height(), 'f', 2), "height");
+
+  QStringList customProperties = element->propertyKeys();
+  if (!customProperties.isEmpty()) {
+    auto customGroup = new QTreeWidgetItem(m_propertiesTree);
+    customGroup->setText(0, "PROPRIEDADES PERSONALIZADAS");
+    customGroup->setExpanded(true);
+    customGroup->setFlags(customGroup->flags() & ~Qt::ItemIsEditable);
+
+    for (const QString& key : customProperties) {
+      createPropertyItem(customGroup, key, element->getProperty(key).toString(), QString("custom:%1").arg(key));
     }
-
-    QTreeWidgetItem* basicGroup = new QTreeWidgetItem(m_propertiesTree);
-    basicGroup->setText(0, "GERAL");
-    basicGroup->setExpanded(true);
-    basicGroup->setFlags(basicGroup->flags() & ~Qt::ItemIsEditable);
-
-    createPropertyItem(basicGroup, "Nome", element->name(), "name");
-    createPropertyItem(basicGroup, "Tipo", element->typeDisplayName(), "type", false);
-
-    auto attribute = qobject_cast<Attribute*>(element);
-    if (attribute) {
-        auto customGroup = new QTreeWidgetItem(m_propertiesTree);
-        populateAttributeProperties(element, customGroup);
-    }
-
-    auto geometryGroup = new QTreeWidgetItem(m_propertiesTree);
-    geometryGroup->setText(0, "GEOMETRIA");
-    geometryGroup->setExpanded(true);
-    geometryGroup->setFlags(geometryGroup->flags() & ~Qt::ItemIsEditable);
-
-    createPropertyItem(geometryGroup, "X", QString::number(element->position().x(), 'f', 2), "posX");
-    createPropertyItem(geometryGroup, "Y", QString::number(element->position().y(), 'f', 2), "posY");
-    createPropertyItem(geometryGroup, "Largura", QString::number(element->size().width(), 'f', 2), "width");
-    createPropertyItem(geometryGroup, "Altura", QString::number(element->size().height(), 'f', 2), "height");
-
-    QStringList customProperties = element->propertyKeys();
-    if (!customProperties.isEmpty()) {
-        auto customGroup = new QTreeWidgetItem(m_propertiesTree);
-        customGroup->setText(0, "PROPRIEDADES PERSONALIZADAS");
-        customGroup->setExpanded(true);
-        customGroup->setFlags(customGroup->flags() & ~Qt::ItemIsEditable);
-
-        for (const QString& key : customProperties) {
-            createPropertyItem(customGroup, key, element->getProperty(key).toString(), QString("custom:%1").arg(key));
-        }
-    }
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
-void MainWindow::populateAttributeProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
+void MainWindow::populateEntityProperties(
+  BasicElement* element,
+  QTreeWidgetItem* parent
 )
 {
-    auto attribute = qobject_cast<Attribute*>(element);
-    if (!attribute) {
-        return;
+  auto entity = qobject_cast<Entity*>(element);
+  if (!entity) {
+    return;
+  }
+
+  auto attributesGroup = new QTreeWidgetItem(m_propertiesTree);
+  attributesGroup->setText(0, "ATRIBUTOS");
+  attributesGroup->setExpanded(true);
+  attributesGroup->setFlags(attributesGroup->flags() & ~Qt::ItemIsEditable);
+
+  createButtonPropertyItem(attributesGroup, "Adicionar Atributo", "+", "addAttribute");
+
+  QList<Attribute*> attributes = entity->getAttributes();
+  for (int i = 0; i < attributes.size(); ++i) {
+    Attribute* attr = attributes[i];
+    auto attrItem = new QTreeWidgetItem(attributesGroup);
+    attrItem->setText(0, QString("Atributo %1").arg(i + 1));
+    attrItem->setText(1, attr->name());
+    attrItem->setData(0, Qt::UserRole, QString("attribute_%1").arg(i));
+    attrItem->setFlags(attrItem->flags() & ~Qt::ItemIsEditable);
+
+    createPropertyItem(attrItem, "Nome", attr->name(), QString("attr_%1_name").arg(i));
+    createPropertyItem(attrItem, "Tipo", attr->attributeTypeString(), QString("attr_%1_type").arg(i), false);
+
+    createButtonPropertyItem(attrItem, "Remover", "-", QString("removeAttribute_%1").arg(i));
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+
+QTreeWidgetItem* MainWindow::createButtonPropertyItem(
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  const QString& buttonText,
+  const QString& propertyKey
+)
+{
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setData(0, Qt::UserRole, propertyKey);
+  item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+
+  auto button = new QPushButton(buttonText);
+  button->setProperty("propertyKey", propertyKey);
+  button->setMaximumWidth(30);
+
+  if (propertyKey == "addAttribute") {
+    connect(button, &QPushButton::clicked, this, &MainWindow::onAddAttributeToEntityClicked);
+  }
+  else if (propertyKey.startsWith("removeAttribute_")) {
+    connect(button, &QPushButton::clicked, this, &MainWindow::onRemoveAttributeFromEntityClicked);
+  }
+  else if (propertyKey == "addSubAttribute") {
+    connect(button, &QPushButton::clicked, this, &MainWindow::onAddSubAttributeToAttributeClicked);
+  }
+  else if (propertyKey.startsWith("removeSubAttribute_")) {
+    connect(button, &QPushButton::clicked, this, &MainWindow::onRemoveSubAttributeFromAttributeClicked);
+  }
+
+  m_propertiesTree->setItemWidget(item, 1, button);
+  m_propertyWidgets[propertyKey] = button;
+
+  return item;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onAddSubAttributeToAttributeClicked()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  auto attribute = qobject_cast<Attribute*>(selectedElements.first());
+  if (!attribute || !attribute->isCompositeAttribute()) {
+    return;
+  }
+
+  auto subAttribute = new Attribute(QString("SubAtributo_%1").arg(attribute->getSubAttributes().size() + 1));
+
+  QPointF attributePos = attribute->position();
+  QSizeF attributeSize = attribute->size();
+  int subAttributeCount = attribute->getSubAttributes().size();
+
+  qreal offsetX = attributeSize.width() + 50;
+  qreal offsetY = subAttributeCount * 70;
+  subAttribute->setPosition(attributePos.x() + offsetX, attributePos.y() + offsetY);
+
+  attribute->addSubAttribute(subAttribute);
+  m_diagramScene->addElement(subAttribute);
+
+  m_isModified = true;
+  updateWindowTitle();
+  updateStatusBar("Sub-atributo adicionado ao atributo composto");
+
+  updatePropertiesPanel();
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onRemoveSubAttributeFromAttributeClicked()
+{
+  auto button = qobject_cast<QPushButton*>(sender());
+  if (!button || !m_diagramScene) {
+    return;
+  }
+
+  QString propertyKey = button->property("propertyKey").toString();
+  QStringList parts = propertyKey.split("_");
+  if (parts.size() != 2) {
+    return;
+  }
+
+  int index = parts[1].toInt();
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  auto attribute = qobject_cast<Attribute*>(selectedElements.first());
+  if (!attribute || !attribute->isCompositeAttribute()) {
+    return;
+  }
+
+  QList<Attribute*> subAttributes = attribute->getSubAttributes();
+  if (index >= 0 && index < subAttributes.size()) {
+    Attribute* subAttr = subAttributes[index];
+    attribute->removeSubAttribute(subAttr);
+
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Sub-atributo removido do atributo composto");
+
+    updatePropertiesPanel();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onAddAttributeToEntityClicked()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  auto entity = qobject_cast<Entity*>(selectedElements.first());
+  if (!entity) {
+    return;
+  }
+
+  auto attribute = new Attribute(QString("Atributo_%1").arg(entity->getAttributes().size() + 1));
+
+  QPointF entityPos = entity->position();
+  QSizeF entitySize = entity->size();
+  int attributeCount = entity->getAttributes().size();
+
+  qreal offsetX = entitySize.width() + 50;
+  qreal offsetY = attributeCount * 80;
+  attribute->setPosition(entityPos.x() + offsetX, entityPos.y() + offsetY);
+
+  entity->addAttribute(attribute);
+  m_diagramScene->addElement(attribute);
+
+  m_isModified = true;
+  updateWindowTitle();
+  updateStatusBar("Atributo adicionado à entidade");
+
+  updatePropertiesPanel();
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onRemoveAttributeFromEntityClicked()
+{
+  auto button = qobject_cast<QPushButton*>(sender());
+  if (!button || !m_diagramScene) {
+    return;
+  }
+
+  QString propertyKey = button->property("propertyKey").toString();
+  QStringList parts = propertyKey.split("_");
+  if (parts.size() != 2) {
+    return;
+  }
+
+  int index = parts[1].toInt();
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  auto entity = qobject_cast<Entity*>(selectedElements.first());
+  if (!entity) {
+    return;
+  }
+
+  QList<Attribute*> attributes = entity->getAttributes();
+  if (index >= 0 && index < attributes.size()) {
+    Attribute* attr = attributes[index];
+    entity->removeAttribute(attr);
+
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Atributo removido da entidade");
+
+    updatePropertiesPanel();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::populateAttributeProperties(
+  BasicElement* element,
+  QTreeWidgetItem* parent
+)
+{
+  auto attribute = qobject_cast<Attribute*>(element);
+  if (!attribute) {
+    return;
+  }
+
+  auto attributeGroup = new QTreeWidgetItem(m_propertiesTree);
+  attributeGroup->setText(0, "ATRIBUTO");
+  attributeGroup->setExpanded(true);
+  attributeGroup->setFlags(attributeGroup->flags() & ~Qt::ItemIsEditable);
+
+  QStringList attributeTypes = AttributeType::getAllAttributeTypeStrings();
+  QString currentType = AttributeType::attributeTypeToString(attribute->attributeType());
+  createComboBoxPropertyItem(attributeGroup, "Tipo de Atributo", attributeTypes, currentType, "attributeType");
+
+  if (attribute->isCompositeAttribute()) {
+    auto subAttributesGroup = new QTreeWidgetItem(m_propertiesTree);
+    subAttributesGroup->setText(0, "SUB-ATRIBUTOS");
+    subAttributesGroup->setExpanded(true);
+    subAttributesGroup->setFlags(subAttributesGroup->flags() & ~Qt::ItemIsEditable);
+
+    createButtonPropertyItem(subAttributesGroup, "Adicionar Sub-Atributo", "+", "addSubAttribute");
+
+    QList<Attribute*> subAttributes = attribute->getSubAttributes();
+    for (int i = 0; i < subAttributes.size(); ++i) {
+      Attribute* subAttr = subAttributes[i];
+      auto subAttrItem = new QTreeWidgetItem(subAttributesGroup);
+      subAttrItem->setText(0, QString("Sub-Atributo %1").arg(i + 1));
+      subAttrItem->setText(1, subAttr->name());
+      subAttrItem->setData(0, Qt::UserRole, QString("subattribute_%1").arg(i));
+      subAttrItem->setFlags(subAttrItem->flags() & ~Qt::ItemIsEditable);
+
+      createPropertyItem(subAttrItem, "Nome", subAttr->name(), QString("subattr_%1_name").arg(i));
+      createPropertyItem(subAttrItem, "Tipo", subAttr->attributeTypeString(), QString("subattr_%1_type").arg(i), false);
+
+      createButtonPropertyItem(subAttrItem, "Remover", "-", QString("removeSubAttribute_%1").arg(i));
     }
-
-    auto attributeGroup = new QTreeWidgetItem(m_propertiesTree);
-    attributeGroup->setText(0, "ATRIBUTO");
-    attributeGroup->setExpanded(true);
-    attributeGroup->setFlags(attributeGroup->flags() & ~Qt::ItemIsEditable);
-
-    QStringList attributeTypes = AttributeType::getAllAttributeTypeStrings();
-    QString currentType = AttributeType::attributeTypeToString(attribute->attributeType());
-    createComboBoxPropertyItem(attributeGroup, "Tipo de Atributo", attributeTypes, currentType, "attributeType");
-
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -798,6 +1061,29 @@ void MainWindow::onAddAttributeClicked()
     else {
         updateStatusBar("Falha ao adicionar atributo");
     }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void MainWindow::onAddRelationshipClicked()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QPointF pos = QPointF(0, 0);
+
+  auto relationship = new Relationship("Relacionamento");
+
+  m_diagramScene->addElement(relationship);
+  if (relationship) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Atributo adicionado");
+  }
+  else {
+    updateStatusBar("Falha ao adicionar atributo");
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------

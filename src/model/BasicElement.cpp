@@ -17,6 +17,7 @@ BasicElement::BasicElement(
     , m_size(100, 50)
     , m_name(elementTypeToString(type))
 {
+    createDefaultConnectionPoints();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -24,6 +25,9 @@ BasicElement::BasicElement(
 BasicElement::~BasicElement()
 {
     m_observers.clear();
+
+    qDeleteAll(m_connectionPoints);
+    m_connectionPoints.clear();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -342,18 +346,18 @@ void BasicElement::onSizeChanged(
 }
 
 //----------------------------------------------------------------------------------------------
-
 QString BasicElement::elementTypeToString(
-    ElementType type
+  ElementType type
 )
 {
-    switch (type) {
-        case ElementType::Entity:
-            return "Entity";
-
-        default:
-            return "Unknown";
-    }
+  switch (type) {
+    case ElementType::Entity:
+      return "Entity";
+    case ElementType::Relationship:
+      return "Relationship";
+    default:
+      return "Unknown";
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -363,10 +367,112 @@ ElementType BasicElement::elementTypeFromString(
 )
 {
     if (typeString == "Entity")
-        return ElementType::Entity;
-
+      return ElementType::Entity;
+    if(typeString == "Attribute")
+      return ElementType::Attribute;
+    if (typeString == "Relationship")
+      return ElementType::Relationship;
 
     return ElementType::Unknown;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::addConnectionPoint(
+    ConnectionPoint* connectionPoint
+)
+{
+    if (!connectionPoint || m_connectionPoints.contains(connectionPoint)) {
+        return;
+    }
+    
+    connectionPoint->setParent(this);
+    m_connectionPoints.append(connectionPoint);
+    emit connectionPointAdded(connectionPoint);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::removeConnectionPoint(
+    ConnectionPoint* connectionPoint
+)
+{
+    if (!connectionPoint) {
+        return;
+    }
+    
+    if (m_connectionPoints.removeOne(connectionPoint)) {
+        emit connectionPointRemoved(connectionPoint);
+        connectionPoint->deleteLater();
+    }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::removeConnectionPoint(
+    const QString& connectionPointId
+)
+{
+    auto connectionPoint = findConnectionPoint(connectionPointId);
+    if (connectionPoint) {
+        removeConnectionPoint(connectionPoint);
+    }
+}
+
+//----------------------------------------------------------------------------------------------
+
+ConnectionPoint* BasicElement::findConnectionPoint(
+    const QString& connectionPointId
+) const
+{
+    for (auto connectionPoint : m_connectionPoints) {
+        if (connectionPoint->id() == connectionPointId) {
+            return connectionPoint;
+        }
+    }
+    return nullptr;
+}
+
+//----------------------------------------------------------------------------------------------
+
+ConnectionPoint* BasicElement::findNearestConnectionPoint(
+    const QPointF& worldPosition
+) const
+{
+    if (m_connectionPoints.isEmpty()) {
+        return nullptr;
+    }
+    
+    ConnectionPoint* nearest = nullptr;
+    qreal minDistance = std::numeric_limits<qreal>::max();
+    
+    for (auto connectionPoint : m_connectionPoints) {
+        QPointF absolutePos = connectionPoint->absolutePosition(m_position, m_size);
+        QPointF delta = worldPosition - absolutePos;
+        qreal distance = delta.x() * delta.x() + delta.y() * delta.y();
+        
+        if (distance < minDistance) {
+            minDistance = distance;
+            nearest = connectionPoint;
+        }
+    }
+    
+    return nearest;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::createDefaultConnectionPoints()
+{
+    for (auto connectionPoint : m_connectionPoints) {
+        connectionPoint->deleteLater();
+    }
+    m_connectionPoints.clear();
+    
+    auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints(this);
+    for (auto point : defaultPoints) {
+        addConnectionPoint(point);
+    }
 }
 
 //----------------------------------------------------------------------------------------------

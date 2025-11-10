@@ -5,7 +5,10 @@
 #include <QtWidgets/QGraphicsScene>
 
 #include "model/BasicElement.h"
+#include "model/ConnectionLine.h"
 #include "viewer/ElementGraphicsItem.h"
+
+class ConnectionGraphicsItem;
 
 /**
  * @brief Custom scene to manage ERD elements
@@ -47,8 +50,36 @@ public:
         BasicElement* element
     ) const;
 
+    void addConnection(
+        ConnectionLine* connection
+    );
+
+    void removeConnection(
+        ConnectionLine* connection
+    );
+
+    void removeConnection(
+        const QString& connectionId
+    );
+
+    ConnectionLine* findConnection(
+        const QString& id
+    ) const;
+
+    void startConnection(
+        ConnectionPoint* startPoint
+    );
+
+    void finishConnection(
+        ConnectionPoint* endPoint
+    );
+
+    void cancelConnection();
+
     QList<BasicElement*> getAllElements() const;
     QList<BasicElement*> getSelectedElements() const;
+    QList<ConnectionLine*> getAllConnections() const;
+    QList<ConnectionLine*> getSelectedConnections() const;
 
     void selectElement(
         BasicElement* element,
@@ -65,6 +96,8 @@ public:
 
     void deleteSelected();
     void duplicateSelected();
+
+    bool isCreatingConnection() const { return m_isCreatingConnection; }
 
 protected:
     void mousePressEvent(
@@ -102,13 +135,40 @@ signals:
 
     void selectionChanged();
 
+    void connectionAdded(
+        ConnectionLine* connection
+    );
+
+    void connectionRemoved(
+        ConnectionLine* connection
+    );
+
+    void connectionStarted(
+        ConnectionPoint* startPoint
+    );
+
+    void connectionFinished(
+        ConnectionLine* connection
+    );
+
+    void connectionCancelled();
+
+private slots:
+    void cleanupInvalidConnections();
+
 private:
     QHash<BasicElement*, ElementGraphicsItem*> m_elementToItem;
     QHash<QString, BasicElement*> m_elements;
+    QHash<ConnectionLine*, ConnectionGraphicsItem*> m_connectionToItem;
+    QHash<QString, ConnectionLine*> m_connections;
 
     bool m_selectionRectActive;
     QPointF m_selectionStartPoint;
     QGraphicsRectItem* m_selectionRect;
+
+    bool m_isCreatingConnection;
+    ConnectionPoint* m_connectionStartPoint;
+    QGraphicsLineItem* m_temporaryConnectionLine;
 
     void updateSelectionRect(
         const QPointF& currentPoint
@@ -116,6 +176,10 @@ private:
     void finishSelectionRect();
     void createSelectionRect();
     void destroySelectionRect();
+
+    void updateTemporaryConnection(
+        const QPointF& endPosition
+    );
 };
 
 #endif // DIAGRAMSCENE_H
