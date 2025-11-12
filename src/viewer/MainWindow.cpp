@@ -563,8 +563,6 @@ void MainWindow::populateEntityProperties(
 
 //----------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------------
-
 QTreeWidgetItem* MainWindow::createButtonPropertyItem(
   QTreeWidgetItem* parent,
   const QString& propertyName,
@@ -758,8 +756,6 @@ void MainWindow::onRemoveAttributeFromEntityClicked()
 
 //----------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------------
-
 void MainWindow::populateAttributeProperties(
   BasicElement* element,
   QTreeWidgetItem* parent
@@ -860,8 +856,6 @@ QTreeWidgetItem* MainWindow::createComboBoxPropertyItem(
 
 //----------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------------
-
 void MainWindow::onPropertyValueChanged(
     QTreeWidgetItem* item,
     int column
@@ -891,6 +885,11 @@ void MainWindow::onPropertyValueChanged(
         m_isModified = true;
         updateWindowTitle();
         updateStatusBar("Propriedade atualizada: " + item->text(0));
+        updatePropertiesPanel();
+
+        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
+          graphicsItem->update();
+        }
     }
     else {
         updateStatusBar("Erro ao atualizar propriedade: " + item->text(0));
@@ -926,6 +925,11 @@ void MainWindow::onComboBoxChanged(
         updateStatusBar("Propriedade atualizada: " + propertyKey);
 
         updatePropertyItemText(propertyKey, value);
+        updatePropertiesPanel();
+        
+        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
+          graphicsItem->update();
+        }
     }
     else {
         updateStatusBar("Erro ao atualizar propriedade: " + propertyKey);

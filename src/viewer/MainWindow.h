@@ -110,118 +110,118 @@ private slots:
     void onRemoveSubAttributeFromAttributeClicked();
 
 private:
-    void setupUI();
+  void setupUI();
 
-    void createMenuBar();
+  void createMenuBar();
 
-    QAction* createAction(
-        const QString& text,
-        QKeySequence shortcut,
-        const QString& statusTip,
-        QMenu* parentMenu
+  QAction* createAction(
+    const QString& text,
+    QKeySequence shortcut,
+    const QString& statusTip,
+    QMenu* parentMenu
+  );
+
+  QPushButton* createPushButton(
+    const QString& text,
+    const QString& iconPath = ""
+  );
+
+  void createHelpMenu();
+
+  void createFileMenu();
+
+  void createStatusBar();
+
+  void createCentralWidget();
+
+  void createDiagramArea();
+
+  void createSidePanel();
+
+  void connectSignals();
+
+  void updateWindowTitle();
+
+  void updateStatusBar(
+    const QString& message
+  );
+
+  void updatePropertiesPanel();
+
+  void clearPropertiesPanel();
+
+  void populatePropertiesForElement(
+    BasicElement* element
+  );
+
+  void populateAttributeProperties(
+    BasicElement* element,
+    QTreeWidgetItem* parent
     );
 
-    QPushButton* createPushButton(
-        const QString& text,
-        const QString& iconPath = ""
-    );
+  QTreeWidgetItem* createPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    const QVariant& value,
+    const QString& propertyKey,
+    bool editable = true
+  );
 
-    void createHelpMenu();
+  QTreeWidgetItem* createComboBoxPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    const QStringList& options,
+    const QString& currentValue,
+    const QString& propertyKey
+  );
 
-    void createFileMenu();
+  void populateEntityProperties(
+    BasicElement* element,
+    QTreeWidgetItem* parent
+  );
 
-    void createStatusBar();
+  QTreeWidgetItem* createButtonPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    const QString& buttonText,
+    const QString& propertyKey
+  );
 
-    void createCentralWidget();
+  void updatePropertyItemText(
+    const QString& propertyKey,
+    const QString& value
+  );
 
-    void createDiagramArea();
+  QWidget* m_centralWidget;
+  QHBoxLayout* m_mainLayout;
+  QSplitter* m_mainSplitter;
 
-    void createSidePanel();
+  QWidget* m_diagramWidget;
+  QVBoxLayout* m_diagramLayout;
+  DiagramScene* m_diagramScene;
+  DiagramView* m_graphicsView;
 
-    void connectSignals();
+  QTabWidget* m_sideTabWidget;
+  QWidget* m_drawingTab;
+  QWidget* m_propertiesTab;
 
-    void updateWindowTitle();
+  QVBoxLayout* m_drawingLayout;
+  QLabel* m_drawingLabel;
 
-    void updateStatusBar(
-        const QString& message
-    );
+  QVBoxLayout* m_propertiesLayout;
+  QTreeWidget* m_propertiesTree;
 
-    void updatePropertiesPanel();
+  QMenuBar* m_menuBar;
+  QMenu* m_fileMenu;
+  QMenu* m_helpMenu;
 
-    void clearPropertiesPanel();
+  QStatusBar* m_statusBar;
+  QLabel* m_statusLabel;
 
-    void populatePropertiesForElement(
-        BasicElement* element
-    );
+  QString m_currentFileName;
+  bool m_isModified;
 
-    void populateAttributeProperties(
-        BasicElement* element,
-        QTreeWidgetItem* parent
-    );
-
-    QTreeWidgetItem* createPropertyItem(
-        QTreeWidgetItem* parent,
-        const QString& propertyName,
-        const QVariant& value,
-        const QString& propertyKey,
-        bool editable = true
-    );
-
-    QTreeWidgetItem* createComboBoxPropertyItem(
-        QTreeWidgetItem* parent,
-        const QString& propertyName,
-        const QStringList& options,
-        const QString& currentValue,
-        const QString& propertyKey
-    );
-
-    void populateEntityProperties(
-      BasicElement* element,
-      QTreeWidgetItem* parent
-    );
-
-    QTreeWidgetItem* createButtonPropertyItem(
-      QTreeWidgetItem* parent,
-      const QString& propertyName,
-      const QString& buttonText,
-      const QString& propertyKey
-    );
-
-    void updatePropertyItemText(
-        const QString& propertyKey,
-        const QString& value
-    );
-
-    QWidget* m_centralWidget;
-    QHBoxLayout* m_mainLayout;
-    QSplitter* m_mainSplitter;
-
-    QWidget* m_diagramWidget;
-    QVBoxLayout* m_diagramLayout;
-    DiagramScene* m_diagramScene;
-    DiagramView* m_graphicsView;
-
-    QTabWidget* m_sideTabWidget;
-    QWidget* m_drawingTab;
-    QWidget* m_propertiesTab;
-
-    QVBoxLayout* m_drawingLayout;
-    QLabel* m_drawingLabel;
-
-    QVBoxLayout* m_propertiesLayout;
-    QTreeWidget* m_propertiesTree;
-
-    QMenuBar* m_menuBar;
-    QMenu* m_fileMenu;
-    QMenu* m_helpMenu;
-
-    QStatusBar* m_statusBar;
-    QLabel* m_statusLabel;
-
-    QString m_currentFileName;
-    bool m_isModified;
-
-    QHash<QString, QWidget*> m_propertyWidgets;
+  QHash<QString, QWidget*> m_propertyWidgets;
 };
 
 #endif // MAINWINDOW_H
