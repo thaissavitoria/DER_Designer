@@ -1,6 +1,7 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QList>
 #include <QtCore/QHash>
 #include <QtCore/QPointer>
 #include <QtWidgets/QCheckBox>
@@ -28,6 +29,7 @@
 #include "model/BasicElement.h"
 
 // -----------------------------------------------------------------------------------------------------
+class Attribute;
 class QAction;
 class QMenu;
 class QMenuBar;
@@ -192,6 +194,24 @@ private:
     const QString& value
   );
 
+  void populateAttributeList(
+    QTreeWidgetItem* parentItem,
+    const QList<Attribute*>& attributes,
+    const QString& propertyPrefix
+  );
+
+  bool handleAttributePropertyChange(
+    BasicElement* element,
+    const QString& propertyType,
+    const QString& newValue
+  );
+
+  bool handleAttributeTypeChange(
+    BasicElement* element,
+    const QString& propertyKey,
+    const QString& value
+  );
+
   QWidget* m_centralWidget;
   QHBoxLayout* m_mainLayout;
   QSplitter* m_mainSplitter;
@@ -221,7 +241,7 @@ private:
   QString m_currentFileName;
   bool m_isModified;
 
-  QHash<QString, QWidget*> m_propertyWidgets;
+  std::map<QString, QWidget*> m_propertyWidgets;
 };
 
 #endif // MAINWINDOW_H
