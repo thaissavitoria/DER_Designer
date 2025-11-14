@@ -28,6 +28,7 @@ BasicElement::~BasicElement()
 
     qDeleteAll(m_connectionPoints);
     m_connectionPoints.clear();
+    emit elementBeingDestroyed(this);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -388,49 +389,6 @@ void BasicElement::addConnectionPoint(
     
     connectionPoint->setParent(this);
     m_connectionPoints.append(connectionPoint);
-    emit connectionPointAdded(connectionPoint);
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::removeConnectionPoint(
-    ConnectionPoint* connectionPoint
-)
-{
-    if (!connectionPoint) {
-        return;
-    }
-    
-    if (m_connectionPoints.removeOne(connectionPoint)) {
-        emit connectionPointRemoved(connectionPoint);
-        connectionPoint->deleteLater();
-    }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::removeConnectionPoint(
-    const QString& connectionPointId
-)
-{
-    auto connectionPoint = findConnectionPoint(connectionPointId);
-    if (connectionPoint) {
-        removeConnectionPoint(connectionPoint);
-    }
-}
-
-//----------------------------------------------------------------------------------------------
-
-ConnectionPoint* BasicElement::findConnectionPoint(
-    const QString& connectionPointId
-) const
-{
-    for (auto connectionPoint : m_connectionPoints) {
-        if (connectionPoint->id() == connectionPointId) {
-            return connectionPoint;
-        }
-    }
-    return nullptr;
 }
 
 //----------------------------------------------------------------------------------------------

@@ -12,7 +12,6 @@ ConnectionPoint::ConnectionPoint(
     , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
     , m_relativePosition(0.5, 0.0)
     , m_direction(ConnectionDirection::Top)
-    , m_isConnected(false)
 {
 }
 
@@ -27,7 +26,6 @@ ConnectionPoint::ConnectionPoint(
     , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
     , m_relativePosition(relativePosition)
     , m_direction(direction)
-    , m_isConnected(false)
 {
 }
 
@@ -73,18 +71,6 @@ QPointF ConnectionPoint::absolutePosition(
     absolute.setX(elementPosition.x() + (m_relativePosition.x() * elementSize.width()));
     absolute.setY(elementPosition.y() + (m_relativePosition.y() * elementSize.height()));
     return absolute;
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void ConnectionPoint::setConnected(
-    bool connected
-)
-{
-    if (m_isConnected != connected) {
-        m_isConnected = connected;
-        emit connectionStateChanged(m_isConnected);
-    }
 }
 
 // -----------------------------------------------------------------------------------------------------

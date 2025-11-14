@@ -58,6 +58,10 @@ public:
         ConnectionLine* connection
     );
 
+    void removeConnectionFromContainers(
+      ConnectionLine* connection
+    );
+
     void removeConnection(
         const QString& connectionId
     );
@@ -139,10 +143,6 @@ signals:
         ConnectionLine* connection
     );
 
-    void connectionRemoved(
-        ConnectionLine* connection
-    );
-
     void connectionStarted(
         ConnectionPoint* startPoint
     );
@@ -152,9 +152,6 @@ signals:
     );
 
     void connectionCancelled();
-
-private slots:
-    void cleanupInvalidConnections();
 
 private:
     QHash<BasicElement*, ElementGraphicsItem*> m_elementToItem;

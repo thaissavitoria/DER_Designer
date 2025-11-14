@@ -23,7 +23,6 @@ class ConnectionPoint : public QObject
     Q_PROPERTY(QString id READ id CONSTANT)
     Q_PROPERTY(QPointF relativePosition READ relativePosition WRITE setRelativePosition NOTIFY relativePositionChanged)
     Q_PROPERTY(ConnectionDirection direction READ direction WRITE setDirection NOTIFY directionChanged)
-    Q_PROPERTY(bool isConnected READ isConnected NOTIFY connectionStateChanged)
 
 public:
     explicit ConnectionPoint(
@@ -41,7 +40,6 @@ public:
     QString id() const { return m_id; }
     QPointF relativePosition() const { return m_relativePosition; }
     ConnectionDirection direction() const { return m_direction; }
-    bool isConnected() const { return m_isConnected; }
 
     void setRelativePosition(
         const QPointF& position
@@ -55,10 +53,6 @@ public:
         const QPointF& elementPosition,
         const QSizeF& elementSize
     ) const;
-
-    void setConnected(
-        bool connected
-    );
 
     static QString directionToString(
         ConnectionDirection direction
@@ -80,10 +74,6 @@ signals:
     void directionChanged(
         ConnectionDirection newDirection
     );
-    
-    void connectionStateChanged(
-        bool isConnected
-    );
 
 private:
     static void addConectionPoint(
@@ -96,7 +86,6 @@ private:
     QString m_id;
     QPointF m_relativePosition;
     ConnectionDirection m_direction;
-    bool m_isConnected;
 
     Q_DISABLE_COPY(ConnectionPoint)
 };

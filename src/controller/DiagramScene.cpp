@@ -22,31 +22,12 @@ DiagramScene::DiagramScene(QObject* parent)
 {
     setItemIndexMethod(QGraphicsScene::NoIndex);
     setSceneRect(-5000, -5000, 10000, 10000);
-
-    auto cleanupTimer = new QTimer(this);
-    connect(cleanupTimer, &QTimer::timeout,
-        this, &DiagramScene::cleanupInvalidConnections);
-    cleanupTimer->start(1000); 
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 DiagramScene::~DiagramScene()
 {
-    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-        if (ElementGraphicsItem* item = it.value()) {
-            removeItem(item);
-            delete item;
-        }
-    }
-
-    m_elementToItem.clear();
-
-    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-        delete it.value();
-    }
-    m_elements.clear();
-
     for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
         if (ConnectionGraphicsItem* item = it.value()) {
             removeItem(item);
@@ -60,6 +41,20 @@ DiagramScene::~DiagramScene()
         delete it.value();
     }
     m_connections.clear();
+
+    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
+      if (ElementGraphicsItem* item = it.value()) {
+        removeItem(item);
+        delete item;
+      }
+    }
+
+    m_elementToItem.clear();
+
+    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+      delete it.value();
+    }
+    m_elements.clear();
 
     destroySelectionRect();
 }
@@ -94,8 +89,7 @@ void DiagramScene::removeElement(
         return;
     }
 
-    ElementGraphicsItem* item = m_elementToItem.value(element, nullptr);
-    if (item) {
+    if (ElementGraphicsItem* item = m_elementToItem.value(element, nullptr)) {
         removeItem(item);
         m_elementToItem.remove(element);
         delete item;
@@ -456,19 +450,35 @@ void DiagramScene::removeConnection(
     ConnectionLine* connection
 )
 {
-    if (!connection) return;
+  if (!connection) return;
 
-    emit connectionRemoved(connection);
+  if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
+    removeItem(item);
+    m_connectionToItem.remove(connection);
+    delete item;
+  }
 
-    auto it = m_connectionToItem.find(connection);
-    if (it != m_connectionToItem.end()) {
-        removeItem(it.value());
-        delete it.value();
-        m_connectionToItem.erase(it);
-    }
+  m_connections.remove(connection->id());
+  delete connection;
 
-    m_connections.remove(connection->id());
-    connection->deleteLater();
+  update();
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::removeConnectionFromContainers(
+  ConnectionLine* connection
+)
+{
+  if (!connection) return;
+
+  if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
+    removeItem(item);
+    m_connectionToItem.remove(connection);
+  }
+
+  m_connections.remove(connection->id());
+  update();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -477,8 +487,7 @@ void DiagramScene::removeConnection(
     const QString& connectionId
 )
 {
-    auto connection = findConnection(connectionId);
-    if (connection) {
+    if (auto connection = findConnection(connectionId)) {
         removeConnection(connection);
     }
 }
@@ -583,35 +592,11 @@ void DiagramScene::updateTemporaryConnection(
     if (!startElement) return;
 
     QPointF startPos = m_connectionStartPoint->absolutePosition(
-        startElement->position(),
-        startElement->size()
+      startElement->position(),
+      startElement->size()
     );
 
     m_temporaryConnectionLine->setLine(QLineF(startPos, endPosition));
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void DiagramScene::cleanupInvalidConnections()
-{
-    QList<ConnectionLine*> invalidConnections;
-
-    for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
-        auto connection = it.value();
-
-        try {
-            if (!connection->isValid()) {
-                invalidConnections.append(connection);
-            }
-        }
-        catch (...) {
-            invalidConnections.append(connection);
-        }
-    }
-
-    for (auto connection : invalidConnections) {
-        removeConnection(connection);
-    }
 }
 
 // -----------------------------------------------------------------------------------------------------

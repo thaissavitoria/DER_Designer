@@ -143,18 +143,6 @@ public:
         ConnectionPoint* connectionPoint
     );
     
-    void removeConnectionPoint(
-        ConnectionPoint* connectionPoint
-    );
-    
-    void removeConnectionPoint(
-        const QString& connectionPointId
-    );
-    
-    ConnectionPoint* findConnectionPoint(
-        const QString& connectionPointId
-    ) const;
-    
     ConnectionPoint* findNearestConnectionPoint(
         const QPointF& worldPosition
     ) const;
@@ -215,11 +203,9 @@ signals:
         const QVariant& value
     );
     void elementChanged();
-    void connectionPointAdded(
-        ConnectionPoint* connectionPoint
-    );
-    void connectionPointRemoved(
-        ConnectionPoint* connectionPoint
+
+    void elementBeingDestroyed(
+      BasicElement* element
     );
 
 private:

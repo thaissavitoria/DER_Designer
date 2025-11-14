@@ -19,12 +19,6 @@ ConnectionLine::ConnectionLine(
   , m_lineWidth(2.0)
 {
   connectToElements();
-
-  auto scene = qobject_cast<DiagramScene*>(parent);
-  if (scene) {
-    connect(scene, &DiagramScene::connectionRemoved,
-      this, &ConnectionLine::onConnectionBeingRemoved);
-  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -32,6 +26,7 @@ ConnectionLine::ConnectionLine(
 ConnectionLine::~ConnectionLine()
 {
   disconnectFromElements();
+  emit connectionBeingDestroyed();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -83,7 +78,7 @@ void ConnectionLine::setStartElement(
     if (m_startElement) {
       disconnect(m_startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      disconnect(m_startElement, &BasicElement::destroyed,
+      disconnect(m_startElement, &BasicElement::elementBeingDestroyed,
         this, &ConnectionLine::onElementDestroyed);
     }
 
@@ -92,7 +87,7 @@ void ConnectionLine::setStartElement(
     if (m_startElement) {
       connect(m_startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      connect(m_startElement, &BasicElement::destroyed,
+      connect(m_startElement, &BasicElement::elementBeingDestroyed,
         this, &ConnectionLine::onElementDestroyed);
     }
 
@@ -111,7 +106,7 @@ void ConnectionLine::setEndElement(
     if (m_endElement) {
       disconnect(m_endElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      disconnect(m_endElement, &BasicElement::destroyed,
+      disconnect(m_endElement, &BasicElement::elementBeingDestroyed,
         this, &ConnectionLine::onElementDestroyed);
     }
 
@@ -120,7 +115,7 @@ void ConnectionLine::setEndElement(
     if (m_endElement) {
       connect(m_endElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      connect(m_endElement, &BasicElement::destroyed,
+      connect(m_endElement, &BasicElement::elementBeingDestroyed,
         this, &ConnectionLine::onElementDestroyed);
     }
 
@@ -225,14 +220,14 @@ void ConnectionLine::connectToElements()
   if (m_startElement) {
     connect(m_startElement, &BasicElement::positionChanged,
       this, &ConnectionLine::onElementPositionChanged);
-    connect(m_startElement, &BasicElement::destroyed,
+    connect(m_startElement, &BasicElement::elementBeingDestroyed,
       this, &ConnectionLine::onElementDestroyed);
   }
 
   if (m_endElement) {
     connect(m_endElement, &BasicElement::positionChanged,
       this, &ConnectionLine::onElementPositionChanged);
-    connect(m_endElement, &BasicElement::destroyed,
+    connect(m_endElement, &BasicElement::elementBeingDestroyed,
       this, &ConnectionLine::onElementDestroyed);
   }
 }
@@ -244,14 +239,14 @@ void ConnectionLine::disconnectFromElements()
   if (m_startElement) {
     disconnect(m_startElement, &BasicElement::positionChanged,
       this, &ConnectionLine::onElementPositionChanged);
-    disconnect(m_startElement, &BasicElement::destroyed,
+    disconnect(m_startElement, &BasicElement::elementBeingDestroyed,
       this, &ConnectionLine::onElementDestroyed);
   }
 
   if (m_endElement) {
     disconnect(m_endElement, &BasicElement::positionChanged,
       this, &ConnectionLine::onElementPositionChanged);
-    disconnect(m_endElement, &BasicElement::destroyed,
+    disconnect(m_endElement, &BasicElement::elementBeingDestroyed,
       this, &ConnectionLine::onElementDestroyed);
   }
 }
@@ -272,7 +267,7 @@ ConnectionPoint* ConnectionLine::findBestConnectionPoint(
     return nullptr;
   }
 
-  // Calcular o centro do elemento de destino
+   //Calcular o centro do elemento de destino
   QPointF targetCenter = toElement->position() +
     QPointF(toElement->size().width() / 2, toElement->size().height() / 2);
 
@@ -302,29 +297,21 @@ void ConnectionLine::onElementPositionChanged()
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::onElementDestroyed()
+void ConnectionLine::onElementDestroyed(
+  BasicElement* basicElementSender
+)
 {
-  auto destroyedObject = sender();
+  disconnectFromElements();
 
-  if (destroyedObject == m_startElement) {
+  if (basicElementSender == m_startElement) {
     m_startElement = nullptr;
   }
-  else if (destroyedObject == m_endElement) {
+  else if (basicElementSender == m_endElement) {
     m_endElement = nullptr;
   }
-
+  
   deleteLater();
 }
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::onConnectionBeingRemoved(
-  ConnectionLine* connectionBeingRemoved
-)
-{
-  if (connectionBeingRemoved == this) {
-    disconnectFromElements();
-  }
-}
-
-//----------------------------------------------------------------------------------------------

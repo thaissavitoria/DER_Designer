@@ -104,11 +104,12 @@ signals:
 
     void connectionChanged();
 
+    void connectionBeingDestroyed();
+
 private slots:
     void onElementPositionChanged();
-    void onElementDestroyed();
-    void onConnectionBeingRemoved(
-        ConnectionLine* connectionBeingRemoved
+    void onElementDestroyed(
+      BasicElement* basicElementSender
     );
 
 private:

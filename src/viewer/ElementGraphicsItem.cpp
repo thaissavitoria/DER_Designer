@@ -127,10 +127,6 @@ void ElementGraphicsItem::renderConnectionPoints(
         if (point == m_hoveredConnectionPoint) {
             painter->setPen(QPen(QColor(0, 100, 0), 2));
             painter->setBrush(QBrush(QColor(34, 139, 34, 200)));
-        } else if (point->isConnected()) {
-            //  conectado
-            painter->setPen(QPen(QColor(0, 0, 0), 2));
-            painter->setBrush(QBrush(QColor(0, 0, 0, 150)));
         } else {
             // normal
             painter->setPen(QPen(QColor(34, 139, 34), 1));

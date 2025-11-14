@@ -55,6 +55,8 @@ protected:
 private slots:
   void updateFromConnection();
 
+  void onConnectionBeingDestroyed();
+
 private:
   ConnectionLine* m_connection;
   bool m_isHovered;
