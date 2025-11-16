@@ -451,24 +451,34 @@ void DiagramScene::updateSelectionRect(
 
 void DiagramScene::finishSelectionRect()
 {
-    if (m_selectionRect) {
-        QRectF selectionArea = m_selectionRect->rect();
+  if (m_selectionRect) {
+    QRectF selectionArea = m_selectionRect->rect();
 
-        for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-            ElementGraphicsItem* item = it.value();
-            BasicElement* element = it.key();
+    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
+      ElementGraphicsItem* item = it.value();
+      BasicElement* element = it.key();
 
-            if (selectionArea.intersects(item->boundingRect().translated(item->pos()))) {
-                selectElement(element, true);
-            }
-        }
-
-        destroySelectionRect();
+      if (selectionArea.intersects(item->boundingRect().translated(item->pos()))) {
+        selectElement(element, true);
+      }
     }
 
-    m_selectionRectActive = false;
-}
+    for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+      ConnectionGraphicsItem* item = it.value();
+      ConnectionLine* connection = it.key();
 
+      if (item && connection && connection->isValid()) {
+        if (selectionArea.intersects(item->boundingRect())) {
+          selectConnection(connection, true);
+        }
+      }
+    }
+
+    destroySelectionRect();
+  }
+
+  m_selectionRectActive = false;
+}
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::addConnection(
