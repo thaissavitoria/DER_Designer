@@ -14,7 +14,7 @@ ConnectionLine::ConnectionLine(
   , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
   , m_startPoint(startPoint)
   , m_endPoint(endPoint)
-  , m_lineType(ConnectionLineType::Bezier)
+  , m_lineType(ConnectionLineType::Straight)
   , m_lineColor(Qt::black)
   , m_lineWidth(2.0)
 {
