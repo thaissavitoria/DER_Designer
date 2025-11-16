@@ -15,7 +15,6 @@ ConnectionLine::ConnectionLine(
   , m_startPoint(startPoint)
   , m_endPoint(endPoint)
   , m_lineType(ConnectionLineType::Straight)
-  , m_lineColor(Qt::black)
   , m_lineWidth(2.0)
 {
   connectToPoints();
@@ -38,19 +37,6 @@ void ConnectionLine::setLineType(
   if (m_lineType != type) {
     m_lineType = type;
     emit lineTypeChanged(m_lineType);
-    emit connectionChanged();
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void ConnectionLine::setLineColor(
-  const QColor& color
-)
-{
-  if (m_lineColor != color) {
-    m_lineColor = color;
-    emit lineColorChanged(m_lineColor);
     emit connectionChanged();
   }
 }

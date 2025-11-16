@@ -2,18 +2,12 @@
 #define CONNECTIONGRAPHICSITEM_H
 
 #include <QtWidgets/QGraphicsItem>
-#include <QtGui/QPainter>
 #include <QtCore/QObject>
 
 #include "model/ConnectionLine.h"
 #include "model/ConnectionPoint.h"
+#include "viewer/BezierControlPoint.h"
 
-/**
- * @brief Graphic item that represents a ConnectionLine in the QGraphicsView
- *
- * Updates the visual representation of ConnectionLines with improved algorithms
- * for orthogonal and bezier paths based on connection point directions
- */
 class ConnectionGraphicsItem : public QObject, public QGraphicsItem
 {
   Q_OBJECT
@@ -37,7 +31,14 @@ public:
 
   QPainterPath shape() const override;
 
-  ConnectionLine* connection() const { return m_connection; }
+  void updateControlPointPosition(
+    ControlPointType type,
+    const QPointF& position
+  );
+
+  void setSelected(
+    const bool selected
+  );
 
 protected:
   void mousePressEvent(
@@ -54,16 +55,9 @@ protected:
 
 private slots:
   void updateFromConnection();
-
   void onConnectionBeingDestroyed();
 
 private:
-  ConnectionLine* m_connection;
-  bool m_isHovered;
-
-  void connectToConnection();
-  void disconnectFromConnection();
-
   QPainterPath createStraightPath() const;
   QPainterPath createOrthogonalPath() const;
   QPainterPath createBezierPath() const;
@@ -88,7 +82,21 @@ private:
     qreal distance
   ) const;
 
-  Q_DISABLE_COPY(ConnectionGraphicsItem)
+  void connectToConnection();
+  void disconnectFromConnection();
+
+  void createControlPoints();
+  void updateControlPointsPosition();
+  void storeControlPointOffsets();
+
+  ConnectionLine* m_connection;
+  bool m_isHovered;
+
+  BezierControlPoint* m_controlPoint1;
+  BezierControlPoint* m_controlPoint2;
+  QPointF m_control1Offset;
+  QPointF m_control2Offset;
+  bool m_hasCustomControlPoints;
 };
 
 #endif // CONNECTIONGRAPHICSITEM_H

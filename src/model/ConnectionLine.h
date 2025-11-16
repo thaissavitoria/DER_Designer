@@ -42,15 +42,10 @@ public:
   ConnectionPoint* startPoint() const { return m_startPoint; }
   ConnectionPoint* endPoint() const { return m_endPoint; }
   ConnectionLineType lineType() const { return m_lineType; }
-  QColor lineColor() const { return m_lineColor; }
   qreal lineWidth() const { return m_lineWidth; }
 
   void setLineType(
     ConnectionLineType type
-  );
-
-  void setLineColor(
-    const QColor& color
   );
 
   void setLineWidth(
@@ -94,10 +89,6 @@ signals:
     ConnectionLineType newType
   );
 
-  void lineColorChanged(
-    const QColor& newColor
-  );
-
   void lineWidthChanged(
     qreal newWidth
   );
@@ -118,11 +109,10 @@ private slots:
 private:
   Q_DISABLE_COPY(ConnectionLine)
 
-    QString m_id;
+  QString m_id;
   ConnectionPoint* m_startPoint;
   ConnectionPoint* m_endPoint;
   ConnectionLineType m_lineType;
-  QColor m_lineColor;
   qreal m_lineWidth;
 
   void connectToPoints();

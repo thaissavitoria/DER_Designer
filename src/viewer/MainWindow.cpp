@@ -430,7 +430,7 @@ void MainWindow::connectSignals()
 
 void MainWindow::onSelectionChanged()
 {
-    updatePropertiesPanel();
+  updatePropertiesPanel();
 }
 
 //----------------------------------------------------------------------------------------------
