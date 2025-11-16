@@ -6,26 +6,26 @@
 //----------------------------------------------------------------------------------------------
 
 ConnectionLine::ConnectionLine(
-  BasicElement* startElement,
-  BasicElement* endElement,
+  ConnectionPoint* startPoint,
+  ConnectionPoint* endPoint,
   QObject* parent
 )
   : QObject(parent)
   , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
-  , m_startElement(startElement)
-  , m_endElement(endElement)
-  , m_lineType(ConnectionLineType::Orthogonal)
+  , m_startPoint(startPoint)
+  , m_endPoint(endPoint)
+  , m_lineType(ConnectionLineType::Bezier)
   , m_lineColor(Qt::black)
   , m_lineWidth(2.0)
 {
-  connectToElements();
+  connectToPoints();
 }
 
 //----------------------------------------------------------------------------------------------
 
 ConnectionLine::~ConnectionLine()
 {
-  disconnectFromElements();
+  disconnectFromPoints();
   emit connectionBeingDestroyed();
 }
 
@@ -70,56 +70,76 @@ void ConnectionLine::setLineWidth(
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::setStartElement(
-  BasicElement* element
+void ConnectionLine::setStartPoint(
+  ConnectionPoint* point
 )
 {
-  if (m_startElement != element) {
-    if (m_startElement) {
-      disconnect(m_startElement, &BasicElement::positionChanged,
-        this, &ConnectionLine::onElementPositionChanged);
-      disconnect(m_startElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
+  if (m_startPoint != point) {
+    if (m_startPoint) {
+      auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
+      if (startElement) {
+        disconnect(startElement, &BasicElement::positionChanged,
+          this, &ConnectionLine::onElementPositionChanged);
+        disconnect(startElement, &BasicElement::elementBeingDestroyed,
+          this, &ConnectionLine::onElementDestroyed);
+      }
+      disconnect(m_startPoint, &ConnectionPoint::relativePositionChanged,
+        this, &ConnectionLine::onConnectionPointChanged);
     }
 
-    m_startElement = element;
+    m_startPoint = point;
 
-    if (m_startElement) {
-      connect(m_startElement, &BasicElement::positionChanged,
-        this, &ConnectionLine::onElementPositionChanged);
-      connect(m_startElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
+    if (m_startPoint) {
+      auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
+      if (startElement) {
+        connect(startElement, &BasicElement::positionChanged,
+          this, &ConnectionLine::onElementPositionChanged);
+        connect(startElement, &BasicElement::elementBeingDestroyed,
+          this, &ConnectionLine::onElementDestroyed);
+      }
+      connect(m_startPoint, &ConnectionPoint::relativePositionChanged,
+        this, &ConnectionLine::onConnectionPointChanged);
     }
 
-    emit startElementChanged(m_startElement);
+    emit startPointChanged(m_startPoint);
     emit connectionChanged();
   }
 }
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::setEndElement(
-  BasicElement* element
+void ConnectionLine::setEndPoint(
+  ConnectionPoint* point
 )
 {
-  if (m_endElement != element) {
-    if (m_endElement) {
-      disconnect(m_endElement, &BasicElement::positionChanged,
-        this, &ConnectionLine::onElementPositionChanged);
-      disconnect(m_endElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
+  if (m_endPoint != point) {
+    if (m_endPoint) {
+      auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
+      if (endElement) {
+        disconnect(endElement, &BasicElement::positionChanged,
+          this, &ConnectionLine::onElementPositionChanged);
+        disconnect(endElement, &BasicElement::elementBeingDestroyed,
+          this, &ConnectionLine::onElementDestroyed);
+      }
+      disconnect(m_endPoint, &ConnectionPoint::relativePositionChanged,
+        this, &ConnectionLine::onConnectionPointChanged);
     }
 
-    m_endElement = element;
+    m_endPoint = point;
 
-    if (m_endElement) {
-      connect(m_endElement, &BasicElement::positionChanged,
-        this, &ConnectionLine::onElementPositionChanged);
-      connect(m_endElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
+    if (m_endPoint) {
+      auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
+      if (endElement) {
+        connect(endElement, &BasicElement::positionChanged,
+          this, &ConnectionLine::onElementPositionChanged);
+        connect(endElement, &BasicElement::elementBeingDestroyed,
+          this, &ConnectionLine::onElementDestroyed);
+      }
+      connect(m_endPoint, &ConnectionPoint::relativePositionChanged,
+        this, &ConnectionLine::onConnectionPointChanged);
     }
 
-    emit endElementChanged(m_endElement);
+    emit endPointChanged(m_endPoint);
     emit connectionChanged();
   }
 }
@@ -128,63 +148,68 @@ void ConnectionLine::setEndElement(
 
 bool ConnectionLine::isValid() const
 {
-  return m_startElement && m_endElement && m_startElement != m_endElement;
+  if (!m_startPoint || !m_endPoint) {
+    return false;
+  }
+
+  auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
+  auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
+
+  return startElement && endElement && startElement != endElement;
 }
 
 //----------------------------------------------------------------------------------------------
 
 QPointF ConnectionLine::getStartPosition() const
 {
-  if (!m_startElement || !m_endElement) {
+  if (!m_startPoint) {
     return QPointF();
   }
 
-  auto connectionPoint = findBestConnectionPoint(m_startElement, m_endElement);
-  if (!connectionPoint) {
-    return m_startElement->position() + QPointF(m_startElement->size().width() / 2,
-      m_startElement->size().height() / 2);
+  auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
+  if (!startElement) {
+    return QPointF();
   }
 
-  return connectionPoint->absolutePosition(m_startElement->position(), m_startElement->size());
+  return m_startPoint->absolutePosition(startElement->position(), startElement->size());
 }
 
 //----------------------------------------------------------------------------------------------
 
 QPointF ConnectionLine::getEndPosition() const
 {
-  if (!m_startElement || !m_endElement) {
+  if (!m_endPoint) {
     return QPointF();
   }
 
-  auto connectionPoint = findBestConnectionPoint(m_endElement, m_startElement);
-  if (!connectionPoint) {
-    return m_endElement->position() + QPointF(m_endElement->size().width() / 2,
-      m_endElement->size().height() / 2);
+  auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
+  if (!endElement) {
+    return QPointF();
   }
 
-  return connectionPoint->absolutePosition(m_endElement->position(), m_endElement->size());
+  return m_endPoint->absolutePosition(endElement->position(), endElement->size());
 }
 
 //----------------------------------------------------------------------------------------------
 
-ConnectionPoint* ConnectionLine::getStartConnectionPoint() const
+BasicElement* ConnectionLine::getStartElement() const
 {
-  if (!m_startElement || !m_endElement) {
+  if (!m_startPoint) {
     return nullptr;
   }
 
-  return findBestConnectionPoint(m_startElement, m_endElement);
+  return qobject_cast<BasicElement*>(m_startPoint->parent());
 }
 
 //----------------------------------------------------------------------------------------------
 
-ConnectionPoint* ConnectionLine::getEndConnectionPoint() const
+BasicElement* ConnectionLine::getEndElement() const
 {
-  if (!m_startElement || !m_endElement) {
+  if (!m_endPoint) {
     return nullptr;
   }
 
-  return findBestConnectionPoint(m_endElement, m_startElement);
+  return qobject_cast<BasicElement*>(m_endPoint->parent());
 }
 
 //----------------------------------------------------------------------------------------------
@@ -215,77 +240,58 @@ ConnectionLineType ConnectionLine::lineTypeFromString(
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::connectToElements()
+void ConnectionLine::connectToPoints()
 {
-  if (m_startElement) {
-    connect(m_startElement, &BasicElement::positionChanged,
-      this, &ConnectionLine::onElementPositionChanged);
-    connect(m_startElement, &BasicElement::elementBeingDestroyed,
-      this, &ConnectionLine::onElementDestroyed);
-  }
-
-  if (m_endElement) {
-    connect(m_endElement, &BasicElement::positionChanged,
-      this, &ConnectionLine::onElementPositionChanged);
-    connect(m_endElement, &BasicElement::elementBeingDestroyed,
-      this, &ConnectionLine::onElementDestroyed);
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void ConnectionLine::disconnectFromElements()
-{
-  if (m_startElement) {
-    disconnect(m_startElement, &BasicElement::positionChanged,
-      this, &ConnectionLine::onElementPositionChanged);
-    disconnect(m_startElement, &BasicElement::elementBeingDestroyed,
-      this, &ConnectionLine::onElementDestroyed);
-  }
-
-  if (m_endElement) {
-    disconnect(m_endElement, &BasicElement::positionChanged,
-      this, &ConnectionLine::onElementPositionChanged);
-    disconnect(m_endElement, &BasicElement::elementBeingDestroyed,
-      this, &ConnectionLine::onElementDestroyed);
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-ConnectionPoint* ConnectionLine::findBestConnectionPoint(
-  BasicElement* fromElement,
-  BasicElement* toElement
-) const
-{
-  if (!fromElement || !toElement) {
-    return nullptr;
-  }
-
-  auto connectionPoints = fromElement->connectionPoints();
-  if (connectionPoints.isEmpty()) {
-    return nullptr;
-  }
-
-   //Calcular o centro do elemento de destino
-  QPointF targetCenter = toElement->position() +
-    QPointF(toElement->size().width() / 2, toElement->size().height() / 2);
-
-  ConnectionPoint* bestPoint = nullptr;
-  qreal minDistance = std::numeric_limits<qreal>::max();
-
-  for (auto* connectionPoint : connectionPoints) {
-    QPointF pointPosition = connectionPoint->absolutePosition(fromElement->position(),
-      fromElement->size());
-    qreal distance = QLineF(pointPosition, targetCenter).length();
-
-    if (distance < minDistance) {
-      minDistance = distance;
-      bestPoint = connectionPoint;
+  if (m_startPoint) {
+    auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
+    if (startElement) {
+      connect(startElement, &BasicElement::positionChanged,
+        this, &ConnectionLine::onElementPositionChanged);
+      connect(startElement, &BasicElement::elementBeingDestroyed,
+        this, &ConnectionLine::onElementDestroyed);
     }
+    connect(m_startPoint, &ConnectionPoint::relativePositionChanged,
+      this, &ConnectionLine::onConnectionPointChanged);
   }
 
-  return bestPoint;
+  if (m_endPoint) {
+    auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
+    if (endElement) {
+      connect(endElement, &BasicElement::positionChanged,
+        this, &ConnectionLine::onElementPositionChanged);
+      connect(endElement, &BasicElement::elementBeingDestroyed,
+        this, &ConnectionLine::onElementDestroyed);
+    }
+    connect(m_endPoint, &ConnectionPoint::relativePositionChanged,
+      this, &ConnectionLine::onConnectionPointChanged);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void ConnectionLine::disconnectFromPoints()
+{
+  if (m_startPoint) {
+    if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())) {
+      disconnect(startElement, &BasicElement::positionChanged,
+        this, &ConnectionLine::onElementPositionChanged);
+      disconnect(startElement, &BasicElement::elementBeingDestroyed,
+        this, &ConnectionLine::onElementDestroyed);
+    }
+    disconnect(m_startPoint, &ConnectionPoint::relativePositionChanged,
+      this, &ConnectionLine::onConnectionPointChanged);
+  }
+
+  if (m_endPoint) {
+    if (auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent())) {
+      disconnect(endElement, &BasicElement::positionChanged,
+        this, &ConnectionLine::onElementPositionChanged);
+      disconnect(endElement, &BasicElement::elementBeingDestroyed,
+        this, &ConnectionLine::onElementDestroyed);
+    }
+    disconnect(m_endPoint, &ConnectionPoint::relativePositionChanged,
+      this, &ConnectionLine::onConnectionPointChanged);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -297,21 +303,30 @@ void ConnectionLine::onElementPositionChanged()
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionLine::onElementDestroyed(
-  BasicElement* basicElementSender
-)
+void ConnectionLine::onConnectionPointChanged()
 {
-  disconnectFromElements();
-
-  if (basicElementSender == m_startElement) {
-    m_startElement = nullptr;
-  }
-  else if (basicElementSender == m_endElement) {
-    m_endElement = nullptr;
-  }
-  
-  deleteLater();
+  emit connectionChanged();
 }
 
 //----------------------------------------------------------------------------------------------
 
+void ConnectionLine::onElementDestroyed(
+  BasicElement* basicElementSender
+)
+{
+  disconnectFromPoints();
+
+  auto startElement = m_startPoint ? qobject_cast<BasicElement*>(m_startPoint->parent()) : nullptr;
+  auto endElement = m_endPoint ? qobject_cast<BasicElement*>(m_endPoint->parent()) : nullptr;
+
+  if (basicElementSender == startElement) {
+    m_startPoint = nullptr;
+  }
+  else if (basicElementSender == endElement) {
+    m_endPoint = nullptr;
+  }
+
+  deleteLater();
+}
+
+//----------------------------------------------------------------------------------------------

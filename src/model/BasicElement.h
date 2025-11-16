@@ -143,10 +143,6 @@ public:
         ConnectionPoint* connectionPoint
     );
     
-    ConnectionPoint* findNearestConnectionPoint(
-        const QPointF& worldPosition
-    ) const;
-    
     void createDefaultConnectionPoints();
 
     virtual bool isValid() const;

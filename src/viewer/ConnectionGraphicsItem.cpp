@@ -162,25 +162,14 @@ QPainterPath ConnectionGraphicsItem::createOrthogonalPath() const
 
   path.moveTo(startPos);
 
-  // Melhorar o algoritmo ortogonal baseado na direção dos connection points
-  auto startElement = m_connection->startElement();
-  auto endElement = m_connection->endElement();
+  auto startPoint = m_connection->startPoint();
+  auto endPoint = m_connection->endPoint();
 
-  if (startElement && endElement) {
-    auto startConnectionPoint = m_connection->getStartConnectionPoint();
-    auto endConnectionPoint = m_connection->getEndConnectionPoint();
+  if (startPoint && endPoint) {
+    auto startDirection = startPoint->direction();
+    auto endDirection = endPoint->direction();
 
-    if (startConnectionPoint && endConnectionPoint) {
-      // Usar as direções dos connection points para criar um path mais inteligente
-      auto startDirection = startConnectionPoint->direction();
-      auto endDirection = endConnectionPoint->direction();
-
-      createOrthogonalPathWithDirections(path, startPos, endPos, startDirection, endDirection);
-    }
-    else {
-      // Fallback para o algoritmo original
-      createSimpleOrthogonalPath(path, startPos, endPos);
-    }
+    createOrthogonalPathWithDirections(path, startPos, endPos, startDirection, endDirection);
   }
   else {
     createSimpleOrthogonalPath(path, startPos, endPos);
@@ -199,26 +188,14 @@ QPainterPath ConnectionGraphicsItem::createBezierPath() const
 
   path.moveTo(startPos);
 
-  // Melhorar o algoritmo bezier baseado na direção dos connection points
-  auto startElement = m_connection->startElement();
-  auto endElement = m_connection->endElement();
+  auto startPoint = m_connection->startPoint();
+  auto endPoint = m_connection->endPoint();
 
   QPointF control1, control2;
 
-  if (startElement && endElement) {
-    auto startConnectionPoint = m_connection->getStartConnectionPoint();
-    auto endConnectionPoint = m_connection->getEndConnectionPoint();
-
-    if (startConnectionPoint && endConnectionPoint) {
-      // Calcular pontos de controle baseados nas direções dos connection points
-      control1 = calculateControlPointFromDirection(startPos, startConnectionPoint->direction(), 100);
-      control2 = calculateControlPointFromDirection(endPos, endConnectionPoint->direction(), -100);
-    }
-    else {
-      // Fallback para pontos de controle padrão
-      control1 = QPointF(startPos.x() + (endPos.x() - startPos.x()) * 0.3, startPos.y());
-      control2 = QPointF(endPos.x() - (endPos.x() - startPos.x()) * 0.3, endPos.y());
-    }
+  if (startPoint && endPoint) {
+    control1 = calculateControlPointFromDirection(startPos, startPoint->direction(), 50);
+    control2 = calculateControlPointFromDirection(endPos, endPoint->direction(), -59);
   }
   else {
     control1 = QPointF(startPos.x() + (endPos.x() - startPos.x()) * 0.3, startPos.y());
@@ -266,64 +243,30 @@ void ConnectionGraphicsItem::createOrthogonalPathWithDirections(
   ConnectionDirection endDirection
 ) const
 {
-  const qreal margin = 20.0; // Distância mínima para sair do elemento
+  path.lineTo(startPos);
 
-  // Calcular pontos de saída baseados na direção
-  QPointF startExitPoint = calculateExitPoint(startPos, startDirection, margin);
-  QPointF endExitPoint = calculateExitPoint(endPos, endDirection, -margin);
-
-  path.lineTo(startExitPoint);
-
-  // Criar segmentos intermediários
   if (startDirection == ConnectionDirection::Left || startDirection == ConnectionDirection::Right) {
     if (endDirection == ConnectionDirection::Left || endDirection == ConnectionDirection::Right) {
-      // Horizontal para horizontal
-      qreal midX = (startExitPoint.x() + endExitPoint.x()) / 2;
-      path.lineTo(QPointF(midX, startExitPoint.y()));
-      path.lineTo(QPointF(midX, endExitPoint.y()));
+      qreal midX = (startPos.x() + endPos.x()) / 2;
+      path.lineTo(QPointF(midX, startPos.y()));
+      path.lineTo(QPointF(midX, endPos.y()));
     }
     else {
-      // Horizontal para vertical
-      path.lineTo(QPointF(startExitPoint.x(), endExitPoint.y()));
+      path.lineTo(QPointF(startPos.x(), endPos.y()));
     }
   }
   else {
     if (endDirection == ConnectionDirection::Top || endDirection == ConnectionDirection::Bottom) {
-      // Vertical para vertical
-      qreal midY = (startExitPoint.y() + endExitPoint.y()) / 2;
-      path.lineTo(QPointF(startExitPoint.x(), midY));
-      path.lineTo(QPointF(endExitPoint.x(), midY));
+      qreal midY = (startPos.y() + endPos.y()) / 2;
+      path.lineTo(QPointF(startPos.x(), midY));
+      path.lineTo(QPointF(endPos.x(), midY));
     }
     else {
-      // Vertical para horizontal
-      path.lineTo(QPointF(endExitPoint.x(), startExitPoint.y()));
+      path.lineTo(QPointF(endPos.x(), startPos.y()));
     }
   }
 
-  path.lineTo(endExitPoint);
   path.lineTo(endPos);
-}
-
-//----------------------------------------------------------------------------------------------
-
-QPointF ConnectionGraphicsItem::calculateExitPoint(
-  const QPointF& position,
-  ConnectionDirection direction,
-  qreal distance
-) const
-{
-  switch (direction) {
-  case ConnectionDirection::Top:
-    return QPointF(position.x(), position.y() - distance);
-  case ConnectionDirection::Bottom:
-    return QPointF(position.x(), position.y() + distance);
-  case ConnectionDirection::Left:
-    return QPointF(position.x() - distance, position.y());
-  case ConnectionDirection::Right:
-    return QPointF(position.x() + distance, position.y());
-  default:
-    return position;
-  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -422,9 +365,9 @@ void ConnectionGraphicsItem::connectToConnection()
     this, &ConnectionGraphicsItem::updateFromConnection);
   connect(m_connection, &ConnectionLine::lineTypeChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
-  connect(m_connection, &ConnectionLine::startElementChanged,
+  connect(m_connection, &ConnectionLine::startPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
-  connect(m_connection, &ConnectionLine::endElementChanged,
+  connect(m_connection, &ConnectionLine::endPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
   connect(m_connection, &ConnectionLine::connectionBeingDestroyed,
     this, &ConnectionGraphicsItem::onConnectionBeingDestroyed);
@@ -444,9 +387,9 @@ void ConnectionGraphicsItem::disconnectFromConnection()
     this, &ConnectionGraphicsItem::updateFromConnection);
   disconnect(m_connection, &ConnectionLine::lineTypeChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
-  disconnect(m_connection, &ConnectionLine::startElementChanged,
+  disconnect(m_connection, &ConnectionLine::startPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
-  disconnect(m_connection, &ConnectionLine::endElementChanged,
+  disconnect(m_connection, &ConnectionLine::endPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
 }
 

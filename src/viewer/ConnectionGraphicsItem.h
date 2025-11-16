@@ -82,12 +82,6 @@ private:
     ConnectionDirection endDirection
   ) const;
 
-  QPointF calculateExitPoint(
-    const QPointF& position,
-    ConnectionDirection direction,
-    qreal distance
-  ) const;
-
   QPointF calculateControlPointFromDirection(
     const QPointF& position,
     ConnectionDirection direction,

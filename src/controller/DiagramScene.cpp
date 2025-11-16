@@ -540,7 +540,7 @@ void DiagramScene::finishConnection(
         return;
     }
 
-    auto connection = new ConnectionLine(startElement, endElement, this);
+    auto connection = new ConnectionLine(m_connectionStartPoint, endPoint, this);
     addConnection(connection);
 
     if (m_temporaryConnectionLine) {

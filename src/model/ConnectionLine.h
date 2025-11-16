@@ -14,120 +14,119 @@ class DiagramScene;
 // -----------------------------------------------------------------------------------------------------
 
 enum class ConnectionLineType {
-    Straight = 0,
-    Orthogonal,
-    Bezier
+  Straight = 0,
+  Orthogonal,
+  Bezier
 };
 
 // -----------------------------------------------------------------------------------------------------
 
 class ConnectionLine : public QObject
 {
-    Q_OBJECT
-        Q_PROPERTY(QString id READ id CONSTANT)
-        Q_PROPERTY(BasicElement* startElement READ startElement NOTIFY startElementChanged)
-        Q_PROPERTY(BasicElement* endElement READ endElement NOTIFY endElementChanged)
-        Q_PROPERTY(ConnectionLineType lineType READ lineType WRITE setLineType NOTIFY lineTypeChanged)
+  Q_OBJECT
+    Q_PROPERTY(QString id READ id CONSTANT)
+    Q_PROPERTY(ConnectionPoint* startPoint READ startPoint NOTIFY startPointChanged)
+    Q_PROPERTY(ConnectionPoint* endPoint READ endPoint NOTIFY endPointChanged)
+    Q_PROPERTY(ConnectionLineType lineType READ lineType WRITE setLineType NOTIFY lineTypeChanged)
 
 public:
-    explicit ConnectionLine(
-        BasicElement* startElement,
-        BasicElement* endElement,
-        QObject* parent = nullptr
-    );
+  explicit ConnectionLine(
+    ConnectionPoint* startPoint,
+    ConnectionPoint* endPoint,
+    QObject* parent = nullptr
+  );
 
-    virtual ~ConnectionLine();
+  virtual ~ConnectionLine();
 
-    QString id() const { return m_id; }
-    BasicElement* startElement() const { return m_startElement; }
-    BasicElement* endElement() const { return m_endElement; }
-    ConnectionLineType lineType() const { return m_lineType; }
-    QColor lineColor() const { return m_lineColor; }
-    qreal lineWidth() const { return m_lineWidth; }
+  QString id() const { return m_id; }
+  ConnectionPoint* startPoint() const { return m_startPoint; }
+  ConnectionPoint* endPoint() const { return m_endPoint; }
+  ConnectionLineType lineType() const { return m_lineType; }
+  QColor lineColor() const { return m_lineColor; }
+  qreal lineWidth() const { return m_lineWidth; }
 
-    void setLineType(
-        ConnectionLineType type
-    );
+  void setLineType(
+    ConnectionLineType type
+  );
 
-    void setLineColor(
-        const QColor& color
-    );
+  void setLineColor(
+    const QColor& color
+  );
 
-    void setLineWidth(
-        qreal width
-    );
+  void setLineWidth(
+    qreal width
+  );
 
-    void setStartElement(
-        BasicElement* element
-    );
+  void setStartPoint(
+    ConnectionPoint* point
+  );
 
-    void setEndElement(
-        BasicElement* element
-    );
+  void setEndPoint(
+    ConnectionPoint* point
+  );
 
-    bool isValid() const;
+  bool isValid() const;
 
-    QPointF getStartPosition() const;
-    QPointF getEndPosition() const;
+  QPointF getStartPosition() const;
+  QPointF getEndPosition() const;
 
-    ConnectionPoint* getStartConnectionPoint() const;
-    ConnectionPoint* getEndConnectionPoint() const;
+  BasicElement* getStartElement() const;
+  BasicElement* getEndElement() const;
 
-    static QString lineTypeToString(
-        ConnectionLineType type
-    );
+  static QString lineTypeToString(
+    ConnectionLineType type
+  );
 
-    static ConnectionLineType lineTypeFromString(
-        const QString& typeString
-    );
+  static ConnectionLineType lineTypeFromString(
+    const QString& typeString
+  );
 
 signals:
-    void startElementChanged(
-        BasicElement* newStartElement
-    );
+  void startPointChanged(
+    ConnectionPoint* newStartPoint
+  );
 
-    void endElementChanged(
-        BasicElement* newEndElement
-    );
+  void endPointChanged(
+    ConnectionPoint* newEndPoint
+  );
 
-    void lineTypeChanged(
-        ConnectionLineType newType
-    );
+  void lineTypeChanged(
+    ConnectionLineType newType
+  );
 
-    void lineColorChanged(
-        const QColor& newColor
-    );
+  void lineColorChanged(
+    const QColor& newColor
+  );
 
-    void lineWidthChanged(
-        qreal newWidth
-    );
+  void lineWidthChanged(
+    qreal newWidth
+  );
 
-    void connectionChanged();
+  void connectionChanged();
 
-    void connectionBeingDestroyed();
+  void connectionBeingDestroyed();
 
 private slots:
-    void onElementPositionChanged();
-    void onElementDestroyed(
-      BasicElement* basicElementSender
-    );
+  void onElementPositionChanged();
+
+  void onConnectionPointChanged();
+
+  void onElementDestroyed(
+    BasicElement* basicElementSender
+  );
 
 private:
-    Q_DISABLE_COPY(ConnectionLine)
+  Q_DISABLE_COPY(ConnectionLine)
 
     QString m_id;
-    BasicElement* m_startElement;
-    BasicElement* m_endElement;
-    ConnectionLineType m_lineType;
-    QColor m_lineColor;
-    qreal m_lineWidth;
+  ConnectionPoint* m_startPoint;
+  ConnectionPoint* m_endPoint;
+  ConnectionLineType m_lineType;
+  QColor m_lineColor;
+  qreal m_lineWidth;
 
-    void connectToElements();
-    void disconnectFromElements();
-    ConnectionPoint* findBestConnectionPoint(
-        BasicElement* fromElement,
-        BasicElement* toElement
-    ) const;
+  void connectToPoints();
+  void disconnectFromPoints();
 };
 
 #endif // CONNECTIONLINE_H

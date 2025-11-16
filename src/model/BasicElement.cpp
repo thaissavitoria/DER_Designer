@@ -24,11 +24,11 @@ BasicElement::BasicElement(
 
 BasicElement::~BasicElement()
 {
+    emit elementBeingDestroyed(this);
     m_observers.clear();
 
     qDeleteAll(m_connectionPoints);
     m_connectionPoints.clear();
-    emit elementBeingDestroyed(this);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -289,7 +289,6 @@ bool BasicElement::deserialize(
 
 void BasicElement::notifyObservers()
 {
-    // Create a copy of the observers list to avoid issues with concurrent modifications
     QList<IElementObserver*> observers = m_observers;
     for (IElementObserver* observer : observers) {
         if (m_observers.contains(observer)) {
@@ -389,33 +388,6 @@ void BasicElement::addConnectionPoint(
     
     connectionPoint->setParent(this);
     m_connectionPoints.append(connectionPoint);
-}
-
-//----------------------------------------------------------------------------------------------
-
-ConnectionPoint* BasicElement::findNearestConnectionPoint(
-    const QPointF& worldPosition
-) const
-{
-    if (m_connectionPoints.isEmpty()) {
-        return nullptr;
-    }
-    
-    ConnectionPoint* nearest = nullptr;
-    qreal minDistance = std::numeric_limits<qreal>::max();
-    
-    for (auto connectionPoint : m_connectionPoints) {
-        QPointF absolutePos = connectionPoint->absolutePosition(m_position, m_size);
-        QPointF delta = worldPosition - absolutePos;
-        qreal distance = delta.x() * delta.x() + delta.y() * delta.y();
-        
-        if (distance < minDistance) {
-            minDistance = distance;
-            nearest = connectionPoint;
-        }
-    }
-    
-    return nearest;
 }
 
 //----------------------------------------------------------------------------------------------
