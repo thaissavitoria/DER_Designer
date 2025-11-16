@@ -17,166 +17,184 @@ class ConnectionGraphicsItem;
  */
 class DiagramScene : public QGraphicsScene
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit DiagramScene(
-        QObject* parent = nullptr
-    );
+  explicit DiagramScene(
+    QObject* parent = nullptr
+  );
 
-    virtual ~DiagramScene();
+  virtual ~DiagramScene();
 
-    void addElement(
-        BasicElement* element
-    );
+  void addElement(
+    BasicElement* element
+  );
 
-    void removeElement(
-        BasicElement* element
-    );
+  void removeElement(
+    BasicElement* element
+  );
 
-    void removeElement(
-        const QString& elementId
-    );
+  void removeElement(
+    const QString& elementId
+  );
 
-    BasicElement* findElement(
-        const QString& id
-    ) const;
+  BasicElement* findElement(
+    const QString& id
+  ) const;
 
-    ElementGraphicsItem* findGraphicsItem(
-        const QString& elementId
-    ) const;
+  ElementGraphicsItem* findGraphicsItem(
+    const QString& elementId
+  ) const;
 
-    ElementGraphicsItem* findGraphicsItem(
-        BasicElement* element
-    ) const;
+  ElementGraphicsItem* findGraphicsItem(
+    BasicElement* element
+  ) const;
 
-    void addConnection(
-        ConnectionLine* connection
-    );
+  void addConnection(
+    ConnectionLine* connection
+  );
 
-    void removeConnection(
-        ConnectionLine* connection
-    );
+  void removeConnection(
+    ConnectionLine* connection
+  );
 
-    void removeConnectionFromContainers(
-      ConnectionLine* connection
-    );
+  void removeConnectionFromContainers(
+    ConnectionLine* connection
+  );
 
-    void removeConnection(
-        const QString& connectionId
-    );
+  void removeConnection(
+    const QString& connectionId
+  );
 
-    ConnectionLine* findConnection(
-        const QString& id
-    ) const;
+  ConnectionLine* findConnection(
+    const QString& id
+  ) const;
 
-    void startConnection(
-        ConnectionPoint* startPoint
-    );
+  void startConnection(
+    ConnectionPoint* startPoint
+  );
 
-    void finishConnection(
-        ConnectionPoint* endPoint
-    );
+  void finishConnection(
+    ConnectionPoint* endPoint
+  );
 
-    void cancelConnection();
+  void cancelConnection();
 
-    QList<BasicElement*> getAllElements() const;
-    QList<BasicElement*> getSelectedElements() const;
-    QList<ConnectionLine*> getAllConnections() const;
-    QList<ConnectionLine*> getSelectedConnections() const;
+  QList<BasicElement*> getAllElements() const;
+  QList<BasicElement*> getSelectedElements() const;
+  QList<ConnectionLine*> getAllConnections() const;
+  QList<ConnectionLine*> getSelectedConnections() const;
 
-    void selectElement(
-        BasicElement* element,
-        bool selected = true
-    );
+  void selectElement(
+    BasicElement* element,
+    bool selected = true
+  );
 
-    void selectElement(
-        const QString& elementId,
-        bool selected = true
-    );
+  void selectElement(
+    const QString& elementId,
+    bool selected = true
+  );
 
-    void clearSelection();
-    void selectAll();
+  void selectConnection(
+    ConnectionLine* connection,
+    bool selected = true
+  );
 
-    void deleteSelected();
-    void duplicateSelected();
+  void selectConnection(
+    const QString& connectionId,
+    bool selected = true
+  );
 
-    bool isCreatingConnection() const { return m_isCreatingConnection; }
+  void clearSelection();
+  void selectAll();
+
+  void deleteSelected();
+  void duplicateSelected();
+
+  bool isCreatingConnection() const { return m_isCreatingConnection; }
 
 protected:
-    void mousePressEvent(
-        QGraphicsSceneMouseEvent* event
-    ) override;
+  void mousePressEvent(
+    QGraphicsSceneMouseEvent* event
+  ) override;
 
-    void mouseMoveEvent(
-        QGraphicsSceneMouseEvent* event
-    ) override;
+  void mouseMoveEvent(
+    QGraphicsSceneMouseEvent* event
+  ) override;
 
-    void mouseReleaseEvent(
-        QGraphicsSceneMouseEvent* event
-    ) override;
+  void mouseReleaseEvent(
+    QGraphicsSceneMouseEvent* event
+  ) override;
 
-    void keyPressEvent(
-        QKeyEvent* event
-    ) override;
+  void keyPressEvent(
+    QKeyEvent* event
+  ) override;
 
 signals:
-    void elementAdded(
-        BasicElement* element
-    );
+  void elementAdded(
+    BasicElement* element
+  );
 
-    void elementRemoved(
-        BasicElement* element
-    );
+  void elementRemoved(
+    BasicElement* element
+  );
 
-    void elementSelected(
-        BasicElement* element
-    );
+  void elementSelected(
+    BasicElement* element
+  );
 
-    void elementDeselected(
-        BasicElement* element
-    );
+  void elementDeselected(
+    BasicElement* element
+  );
 
-    void selectionChanged();
+  void connectionSelected(
+    ConnectionLine* connection
+  );
 
-    void connectionAdded(
-        ConnectionLine* connection
-    );
+  void connectionDeselected(
+    ConnectionLine* connection
+  );
 
-    void connectionStarted(
-        ConnectionPoint* startPoint
-    );
+  void selectionChanged();
 
-    void connectionFinished(
-        ConnectionLine* connection
-    );
+  void connectionAdded(
+    ConnectionLine* connection
+  );
 
-    void connectionCancelled();
+  void connectionStarted(
+    ConnectionPoint* startPoint
+  );
+
+  void connectionFinished(
+    ConnectionLine* connection
+  );
+
+  void connectionCancelled();
 
 private:
-    QHash<BasicElement*, ElementGraphicsItem*> m_elementToItem;
-    QHash<QString, BasicElement*> m_elements;
-    QHash<ConnectionLine*, ConnectionGraphicsItem*> m_connectionToItem;
-    QHash<QString, ConnectionLine*> m_connections;
+  QHash<BasicElement*, ElementGraphicsItem*> m_elementToItem;
+  QHash<QString, BasicElement*> m_elements;
+  QHash<ConnectionLine*, ConnectionGraphicsItem*> m_connectionToItem;
+  QHash<QString, ConnectionLine*> m_connections;
 
-    bool m_selectionRectActive;
-    QPointF m_selectionStartPoint;
-    QGraphicsRectItem* m_selectionRect;
+  bool m_selectionRectActive;
+  QPointF m_selectionStartPoint;
+  QGraphicsRectItem* m_selectionRect;
 
-    bool m_isCreatingConnection;
-    ConnectionPoint* m_connectionStartPoint;
-    QGraphicsLineItem* m_temporaryConnectionLine;
+  bool m_isCreatingConnection;
+  ConnectionPoint* m_connectionStartPoint;
+  QGraphicsLineItem* m_temporaryConnectionLine;
 
-    void updateSelectionRect(
-        const QPointF& currentPoint
-    );
-    void finishSelectionRect();
-    void createSelectionRect();
-    void destroySelectionRect();
+  void updateSelectionRect(
+    const QPointF& currentPoint
+  );
+  void finishSelectionRect();
+  void createSelectionRect();
+  void destroySelectionRect();
 
-    void updateTemporaryConnection(
-        const QPointF& endPosition
-    );
+  void updateTemporaryConnection(
+    const QPointF& endPosition
+  );
 };
 
 #endif // DIAGRAMSCENE_H

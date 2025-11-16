@@ -27,6 +27,7 @@
 #include "DraggableButton.h"
 #include "controller/DiagramScene.h"
 #include "model/BasicElement.h"
+#include "model/ConnectionLine.h"
 
 // -----------------------------------------------------------------------------------------------------
 class Attribute;
@@ -41,75 +42,75 @@ class PropertiesPanel;
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+  Q_OBJECT
 
 public:
-    explicit MainWindow(
-        QWidget* parent = nullptr
-    );
+  explicit MainWindow(
+    QWidget* parent = nullptr
+  );
 
-    ~MainWindow() = default;
+  ~MainWindow() = default;
 
 protected:
-    void closeEvent(
-        QCloseEvent* event
-    ) override;
+  void closeEvent(
+    QCloseEvent* event
+  ) override;
 
 public slots:
-    void newFile();
-    void openFile();
-    void saveFile();
-    void saveAsFile();
-    void exportDiagram();
-    void exitApplication();
+  void newFile();
+  void openFile();
+  void saveFile();
+  void saveAsFile();
+  void exportDiagram();
+  void exitApplication();
 
-    void showAbout();
-    void showHelp();
+  void showAbout();
+  void showHelp();
 
 private slots:
-    void onElementDropped(
-        const QString& elementType,
-        const QPointF& position
-    );
+  void onElementDropped(
+    const QString& elementType,
+    const QPointF& position
+  );
 
-    void onTabChanged(
-        int index
-    );
+  void onTabChanged(
+    int index
+  );
 
-    void onTabCloseRequested(
-        int index
-    );
+  void onTabCloseRequested(
+    int index
+  );
 
-    void onAddEntityClicked();
+  void onAddEntityClicked();
 
-    void onAddAttributeClicked();
+  void onAddAttributeClicked();
 
-    void onAddRelationshipClicked();
+  void onAddRelationshipClicked();
 
-    void onSelectionChanged();
+  void onSelectionChanged();
 
-    void onPropertyValueChanged(
-        QTreeWidgetItem* item,
-        int column
-    );
+  void onPropertyValueChanged(
+    QTreeWidgetItem* item,
+    int column
+  );
 
-    void onComboBoxChanged(
-        const QString& value
-    );
+  void onComboBoxChanged(
+    const QString& value
+  );
 
-    void onCheckBoxChanged(
-        bool checked
-    );
+  void onCheckBoxChanged(
+    bool checked
+  );
 
-    void onLineEditChanged(
-        const QString& text
-    );
+  void onLineEditChanged(
+    const QString& text
+  );
 
-    void onAddAttributeToEntityClicked();
-    void onRemoveAttributeFromEntityClicked();
+  void onAddAttributeToEntityClicked();
+  void onRemoveAttributeFromEntityClicked();
 
-    void onAddSubAttributeToAttributeClicked();
-    void onRemoveSubAttributeFromAttributeClicked();
+  void onAddSubAttributeToAttributeClicked();
+  void onRemoveSubAttributeFromAttributeClicked();
 
 private:
   void setupUI();
@@ -156,10 +157,14 @@ private:
     BasicElement* element
   );
 
+  void populatePropertiesForConnection(
+    ConnectionLine* connection
+  );
+
   void populateAttributeProperties(
     BasicElement* element,
     QTreeWidgetItem* parent
-    );
+  );
 
   QTreeWidgetItem* createPropertyItem(
     QTreeWidgetItem* parent,
@@ -173,6 +178,15 @@ private:
     QTreeWidgetItem* parent,
     const QString& propertyName,
     const QStringList& options,
+    const QString& currentValue,
+    const QString& propertyKey
+  );
+
+  QTreeWidgetItem* createIconComboBoxPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    const QStringList& options,
+    const QList<QIcon>& icons,
     const QString& currentValue,
     const QString& propertyKey
   );
@@ -211,6 +225,8 @@ private:
     const QString& propertyKey,
     const QString& value
   );
+
+  QList<QIcon> getConnectionLineTypeIcons();
 
   QWidget* m_centralWidget;
   QHBoxLayout* m_mainLayout;

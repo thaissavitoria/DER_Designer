@@ -298,7 +298,15 @@ void ConnectionGraphicsItem::mousePressEvent(
 )
 {
   if (event->button() == Qt::LeftButton) {
-    setSelected(!isSelected());
+    const bool newSelectedState = !isSelected();
+    setSelected(newSelectedState);
+
+    if (auto diagramScene = dynamic_cast<DiagramScene*>(scene())) {
+      if (m_connection) {
+        diagramScene->selectConnection(m_connection, newSelectedState);
+      }
+    }
+
     event->accept();
     return;
   }

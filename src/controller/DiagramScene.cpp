@@ -187,6 +187,40 @@ void DiagramScene::selectElement(
 
 // -----------------------------------------------------------------------------------------------------
 
+void DiagramScene::selectConnection(
+  ConnectionLine* connection,
+  bool selected
+)
+{
+  auto connectionItem = m_connectionToItem.value(connection, nullptr);
+  if (connectionItem) {
+    connectionItem->setSelected(selected);
+
+    if (selected) {
+      emit connectionSelected(connection);
+    }
+    else {
+      emit connectionDeselected(connection);
+    }
+
+    emit selectionChanged();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::selectConnection(
+  const QString& connectionId,
+  bool selected
+)
+{
+  if (auto connection = findConnection(connectionId)) {
+    selectConnection(connection, selected);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
 void DiagramScene::selectElement(
     const QString& elementId,
     bool selected
@@ -201,29 +235,39 @@ void DiagramScene::selectElement(
 
 void DiagramScene::clearSelection()
 {
-    QList<BasicElement*> selected = getSelectedElements();
+  QList<BasicElement*> selectedElements = getSelectedElements();
+  QList<ConnectionLine*> selectedConnections = getSelectedConnections();
 
-    for (BasicElement* element : selected) {
-        selectElement(element, false);
-    }
+  for (BasicElement* element : selectedElements) {
+    selectElement(element, false);
+  }
 
-    if (!selected.isEmpty()) {
-        emit selectionChanged();
-    }
+  for (ConnectionLine* connection : selectedConnections) {
+    selectConnection(connection, false);
+  }
+
+  if (!selectedElements.isEmpty() || !selectedConnections.isEmpty()) {
+    emit selectionChanged();
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::selectAll()
 {
-    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-        it.value()->setSelected(true);
-        emit elementSelected(it.key());
-    }
+  for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
+    it.value()->setSelected(true);
+    emit elementSelected(it.key());
+  }
 
-    if (!m_elementToItem.isEmpty()) {
-        emit selectionChanged();
-    }
+  for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+    it.value()->setSelected(true);
+    emit connectionSelected(it.key());
+  }
+
+  if (!m_elementToItem.isEmpty() || !m_connectionToItem.isEmpty()) {
+    emit selectionChanged();
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------

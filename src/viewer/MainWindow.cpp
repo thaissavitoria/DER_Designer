@@ -437,29 +437,34 @@ void MainWindow::onSelectionChanged()
 
 void MainWindow::updatePropertiesPanel()
 {
-    if (!m_propertiesTree || !m_diagramScene) {
-        return;
-    }
+  if (!m_propertiesTree || !m_diagramScene) {
+    return;
+  }
 
-    disconnect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
+  disconnect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
 
-    clearPropertiesPanel();
+  clearPropertiesPanel();
 
-    QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
 
-    if (selectedElements.size() == 1) {
-        populatePropertiesForElement(selectedElements.first());
-    }
-    else if (selectedElements.size() > 1) {
-        QTreeWidgetItem* multiSelectItem = new QTreeWidgetItem(m_propertiesTree);
-        multiSelectItem->setText(0, "Seleção Múltipla");
-        multiSelectItem->setText(1, QString("%1 elementos selecionados").arg(selectedElements.size()));
-        multiSelectItem->setFlags(multiSelectItem->flags() & ~Qt::ItemIsEditable);
-    }
+  if (selectedConnections.size() == 1 && selectedElements.isEmpty()) {
+    populatePropertiesForConnection(selectedConnections.first());
+  }
+  else if (selectedElements.size() == 1 && selectedConnections.isEmpty()) {
+    populatePropertiesForElement(selectedElements.first());
+  }
+  else if (selectedElements.size() > 1 || selectedConnections.size() > 1) {
+    QTreeWidgetItem* multiSelectItem = new QTreeWidgetItem(m_propertiesTree);
+    multiSelectItem->setText(0, "Seleção Múltipla");
+    int totalSelected = selectedElements.size() + selectedConnections.size();
+    multiSelectItem->setText(1, QString("%1 itens selecionados").arg(totalSelected));
+    multiSelectItem->setFlags(multiSelectItem->flags() & ~Qt::ItemIsEditable);
+  }
 
-    connect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
+  connect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
 
-    m_propertiesTree->expandAll();
+  m_propertiesTree->expandAll();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -878,6 +883,130 @@ QTreeWidgetItem* MainWindow::createComboBoxPropertyItem(
 
 //----------------------------------------------------------------------------------------------
 
+void MainWindow::populatePropertiesForConnection(
+  ConnectionLine* connection
+)
+{
+  if (!connection || !m_propertiesTree) {
+    return;
+  }
+
+  auto appearanceGroup = new QTreeWidgetItem(m_propertiesTree);
+  appearanceGroup->setText(0, "APARÊNCIA");
+  appearanceGroup->setExpanded(true);
+  appearanceGroup->setFlags(appearanceGroup->flags() & ~Qt::ItemIsEditable);
+
+  QStringList lineTypes;
+  lineTypes << "Straight" << "Orthogonal" << "Bezier";
+  QString currentType = ConnectionLine::lineTypeToString(connection->lineType());
+
+  QList<QIcon> lineTypeIcons = getConnectionLineTypeIcons();
+
+  createIconComboBoxPropertyItem(
+    appearanceGroup,
+    "Tipo de Linha",
+    lineTypes,
+    lineTypeIcons,
+    currentType,
+    "connectionLineType"
+  );
+
+  createPropertyItem(
+    appearanceGroup,
+    "Largura da Linha",
+    QString::number(connection->lineWidth(), 'f', 1),
+    "connectionLineWidth"
+  );
+}
+
+//----------------------------------------------------------------------------------------------
+
+QTreeWidgetItem* MainWindow::createIconComboBoxPropertyItem(
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  const QStringList& options,
+  const QList<QIcon>& icons,
+  const QString& currentValue,
+  const QString& propertyKey
+)
+{
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setText(1, currentValue);
+  item->setData(0, Qt::UserRole, propertyKey);
+  item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+
+  auto comboBox = new QComboBox();
+
+  for (int i = 0; i < options.size(); ++i) {
+    if (i < icons.size()) {
+      comboBox->addItem(icons[i], options[i]);
+    }
+    else {
+      comboBox->addItem(options[i]);
+    }
+  }
+
+  comboBox->setCurrentText(currentValue);
+  comboBox->setProperty("propertyKey", propertyKey);
+  comboBox->setIconSize(QSize(48, 24));
+
+  connect(
+    comboBox,
+    QOverload<const QString&>::of(&QComboBox::currentTextChanged),
+    this,
+    &MainWindow::onComboBoxChanged
+  );
+
+  m_propertiesTree->setItemWidget(item, 1, comboBox);
+  m_propertyWidgets[propertyKey] = comboBox;
+
+  return item;
+}
+
+//----------------------------------------------------------------------------------------------
+
+QList<QIcon> MainWindow::getConnectionLineTypeIcons()
+{
+  QList<QIcon> icons;
+
+  QPixmap straightPixmap(48, 24);
+  straightPixmap.fill(Qt::transparent);
+  QPainter straightPainter(&straightPixmap);
+  straightPainter.setRenderHint(QPainter::Antialiasing);
+  straightPainter.setPen(QPen(QColor(51, 51, 51), 2));
+  straightPainter.drawLine(4, 12, 44, 12);
+  icons.append(QIcon(straightPixmap));
+
+  QPixmap orthogonalPixmap(48, 24);
+  orthogonalPixmap.fill(Qt::transparent);
+  QPainter orthogonalPainter(&orthogonalPixmap);
+  orthogonalPainter.setRenderHint(QPainter::Antialiasing);
+  orthogonalPainter.setPen(QPen(QColor(51, 51, 51), 2));
+  QPainterPath orthogonalPath;
+  orthogonalPath.moveTo(4, 12);
+  orthogonalPath.lineTo(20, 12);
+  orthogonalPath.lineTo(20, 18);
+  orthogonalPath.lineTo(44, 18);
+  orthogonalPainter.drawPath(orthogonalPath);
+  icons.append(QIcon(orthogonalPixmap));
+
+  QPixmap bezierPixmap(48, 24);
+  bezierPixmap.fill(Qt::transparent);
+  QPainter bezierPainter(&bezierPixmap);
+  bezierPainter.setRenderHint(QPainter::Antialiasing);
+  bezierPainter.setPen(QPen(QColor(51, 51, 51), 2));
+  QPainterPath bezierPath;
+  bezierPath.moveTo(4, 12);
+  bezierPath.cubicTo(16, 4, 32, 20, 44, 12);
+  bezierPainter.drawPath(bezierPath);
+  icons.append(QIcon(bezierPixmap));
+
+  return icons;
+}
+
+//----------------------------------------------------------------------------------------------
+
 void MainWindow::onPropertyValueChanged(
   QTreeWidgetItem* item,
   int column
@@ -888,6 +1017,29 @@ void MainWindow::onPropertyValueChanged(
   }
 
   QString propertyType = item->data(0, Qt::UserRole).toString();
+
+  if (propertyType == "connectionLineWidth") {
+    QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+    if (selectedConnections.size() == 1) {
+      ConnectionLine* connection = selectedConnections.first();
+      bool ok;
+      qreal newWidth = item->text(1).toDouble(&ok);
+
+      if (ok && newWidth > 0.0 && newWidth <= 20.0) {
+        connection->setLineWidth(newWidth);
+
+        m_isModified = true;
+        updateWindowTitle();
+        updateStatusBar("Largura da linha atualizada: " + QString::number(newWidth, 'f', 1));
+        return;
+      }
+      else {
+        updateStatusBar("Largura inválida. Use valores entre 0.1 e 20.0");
+        updatePropertiesPanel();
+        return;
+      }
+    }
+  }
 
   QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
   if (selectedElements.size() != 1) {
@@ -993,6 +1145,21 @@ void MainWindow::onComboBoxChanged(
   }
 
   QString propertyKey = comboBox->property("propertyKey").toString();
+
+  if (propertyKey == "connectionLineType") {
+    QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+    if (selectedConnections.size() == 1) {
+      ConnectionLine* connection = selectedConnections.first();
+      ConnectionLineType newType = ConnectionLine::lineTypeFromString(value);
+      connection->setLineType(newType);
+
+      m_isModified = true;
+      updateWindowTitle();
+      updateStatusBar("Tipo de linha atualizado: " + value);
+      updatePropertyItemText(propertyKey, value);
+      return;
+    }
+  }
 
   QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
   if (selectedElements.size() != 1) {
