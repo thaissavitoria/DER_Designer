@@ -62,3 +62,43 @@ QString Relationship::typeDisplayName() const
 }
 
 //----------------------------------------------------------------------------------------------
+
+void Relationship::addEnd(
+  RelationshipEnd* end
+)
+{
+  m_ends.append(end);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void Relationship::removeEnd(
+  RelationshipEnd* end
+)
+{
+  m_ends.removeAll(end);
+}
+
+//----------------------------------------------------------------------------------------------
+
+void Relationship::clearEnds()
+{
+  m_ends.clear();
+}
+
+//----------------------------------------------------------------------------------------------
+
+RelationshipEnd* Relationship::findEndByEntityId(
+  const QString& entityId
+) const
+{
+  for(RelationshipEnd* end : m_ends){
+    if(end->entityId() == entityId){
+      return end;
+    }
+  }
+
+  return nullptr;
+}
+
+//----------------------------------------------------------------------------------------------

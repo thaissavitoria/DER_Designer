@@ -27,6 +27,8 @@ set(SOURCES
     src/model/ConnectionLine.cpp
     src/model/Relationship.h
     src/model/Relationship.cpp
+    src/model/RelationshipEnd.h
+    src/model/RelationshipEnd.cpp
     src/viewer/BezierControlPoint.h
     src/viewer/BezierControlPoint.cpp
     src/viewer/DraggableButton.h
