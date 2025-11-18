@@ -1,6 +1,9 @@
 ﻿#include "DiagramScene.h"
 #include "model/Entity.h"
+#include "model/Relationship.h"
+#include "model/RelationshipConnectionLine.h"
 #include "viewer/ConnectionGraphicsItem.h"
+#include "viewer/RelationshipConnectionLineGraphicsItem.h"
 
 #include <QtCore/QDebug>
 #include <QtCore/QTimer>
@@ -82,24 +85,42 @@ void DiagramScene::addElement(
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::removeElement(
-    BasicElement* element
+  BasicElement* element
 )
 {
-    if (!element || !m_elements.contains(element->id())) {
-        return;
+  if (!element || !m_elements.contains(element->id())) {
+    return;
+  }
+
+  removeElementConnections(element);
+
+  if (ElementGraphicsItem* item = m_elementToItem.value(element, nullptr)) {
+    removeItem(item);
+    m_elementToItem.remove(element);
+    delete item;
+  }
+
+  m_elements.remove(element->id());
+
+  delete element;
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::removeElementConnections(
+  BasicElement* element
+)
+{
+  QSet<ConnectionLine*> connectionsToRemove;
+  for (ConnectionLine* connection : getAllConnections()) {
+    if (connection->getStartElement() == element || connection->getEndElement() == element) {
+      connectionsToRemove.insert(connection);
     }
+  }
 
-    if (ElementGraphicsItem* item = m_elementToItem.value(element, nullptr)) {
-        removeItem(item);
-        m_elementToItem.remove(element);
-        delete item;
-    }
-
-    m_elements.remove(element->id());
-
-    emit elementRemoved(element);
-
-    delete element;
+  for (ConnectionLine* connection : connectionsToRemove) {
+    removeConnection(connection);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -108,9 +129,9 @@ void DiagramScene::removeElement(
     const QString& elementId
 )
 {
-    if (BasicElement* element = findElement(elementId)) {
-        removeElement(element);
-    }
+  if (BasicElement* element = findElement(elementId)) {
+    removeElement(element);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -119,7 +140,7 @@ BasicElement* DiagramScene::findElement(
     const QString& id
 ) const
 {
-    return m_elements.value(id, nullptr);
+  return m_elements.value(id, nullptr);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -128,24 +149,24 @@ ElementGraphicsItem* DiagramScene::findGraphicsItem(
     const QString& elementId
 ) const
 {
-    BasicElement* element = findElement(elementId);
-    return element ? findGraphicsItem(element) : nullptr;
+  BasicElement* element = findElement(elementId);
+  return element ? findGraphicsItem(element) : nullptr;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 ElementGraphicsItem* DiagramScene::findGraphicsItem(
-    BasicElement* element
+  BasicElement* element
 ) const
 {
-    return m_elementToItem.value(element, nullptr);
+  return m_elementToItem.value(element, nullptr);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QList<BasicElement*> DiagramScene::getAllElements() const
 {
-    return m_elements.values();
+  return m_elements.values();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -236,7 +257,7 @@ void DiagramScene::selectElement(
 void DiagramScene::clearSelection()
 {
   QList<BasicElement*> selectedElements = getSelectedElements();
-  QList<ConnectionLine*> selectedConnections = getSelectedConnections();
+  QSet<ConnectionLine*> selectedConnections = getSelectedConnections();
 
   for (BasicElement* element : selectedElements) {
     selectElement(element, false);
@@ -272,40 +293,65 @@ void DiagramScene::selectAll()
 
 // -----------------------------------------------------------------------------------------------------
 
-QList<ConnectionLine*> DiagramScene::getSelectedConnections() const
+QSet<ConnectionLine*> DiagramScene::getSelectedConnections() const
 {
-    QList<ConnectionLine*> selected;
+  QSet<ConnectionLine*> selected;
 
-    for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
-        if (it.value()->isSelected()) {
-            selected.append(it.key());
-        }
+  for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+    if (it.value()->isSelected()) {
+      selected.insert(it.key());
     }
+  }
 
-    return selected;
+  return selected;
 }
 
 //----------------------------------------------------------------------------------------------
 
 void DiagramScene::deleteSelected()
 {
-    QList<BasicElement*> selectedElements = getSelectedElements();
-    QList<ConnectionLine*> selectedConnections = getSelectedConnections();
+  QList<BasicElement*> selectedElements = getSelectedElements();
 
-    for (ConnectionLine* connection : selectedConnections) {
-        removeConnection(connection);
-    }
+  for (BasicElement* element : selectedElements) {
+    removeElement(element);
+  }
 
-    for (BasicElement* element : selectedElements) {
-        removeElement(element);
-    }
+  QSet<ConnectionLine*> selectedConnections = getSelectedConnections();
 
-    if (!selectedElements.isEmpty() || !selectedConnections.isEmpty()) {
-        emit selectionChanged();
-    }
+  for (ConnectionLine* connection : selectedConnections) {
+    removeConnection(connection);
+  }
+
+  if (!selectedElements.isEmpty() || !selectedConnections.isEmpty()) {
+    emit selectionChanged();
+  }
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::removeConnection(
+  ConnectionLine* connection
+)
+{
+  if (!connection) return;
+  
+  if(auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(connection)) {
+    handleRelationshipDisconnection(relationshipConnection);
+  }
+
+  if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
+    removeItem(item);
+    m_connectionToItem.remove(connection);
+    delete item;
+  }
+
+  m_connections.remove(connection->id());
+  delete connection;
+
+  update();
+}
+
+//----------------------------------------------------------------------------------------------
 
 void DiagramScene::duplicateSelected()
 {
@@ -482,57 +528,35 @@ void DiagramScene::finishSelectionRect()
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::addConnection(
-    ConnectionLine* connection
-)
-{
-    if (!connection || m_connections.contains(connection->id())) {
-        return;
-    }
-
-    m_connections[connection->id()] = connection;
-
-    auto connectionItem = new ConnectionGraphicsItem(connection);
-    m_connectionToItem[connection] = connectionItem;
-    addItem(connectionItem);
-
-    emit connectionAdded(connection);
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void DiagramScene::removeConnection(
-    ConnectionLine* connection
-)
-{
-  if (!connection) return;
-
-  if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
-    removeItem(item);
-    m_connectionToItem.remove(connection);
-    delete item;
-  }
-
-  m_connections.remove(connection->id());
-  delete connection;
-
-  update();
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void DiagramScene::removeConnectionFromContainers(
   ConnectionLine* connection
 )
 {
-  if (!connection) return;
-
-  if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
-    removeItem(item);
-    m_connectionToItem.remove(connection);
+  if (!connection || m_connections.contains(connection->id())) {
+    return;
   }
 
-  m_connections.remove(connection->id());
-  update();
+  m_connections[connection->id()] = connection;
+
+  auto connectionItem = new ConnectionGraphicsItem(connection);
+  m_connectionToItem[connection] = connectionItem;
+  addItem(connectionItem);
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::addRelationshipConnection(
+  RelationshipConnectionLine* connection
+)
+{
+  if (!connection || m_connections.contains(connection->id())) {
+    return;
+  }
+
+  m_connections[connection->id()] = connection;
+
+  auto connectionItem = new RelationshipConnectionLineGraphicsItem(connection);
+  m_connectionToItem[connection] = connectionItem;
+  addItem(connectionItem);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -541,9 +565,9 @@ void DiagramScene::removeConnection(
     const QString& connectionId
 )
 {
-    if (auto connection = findConnection(connectionId)) {
-        removeConnection(connection);
-    }
+  if (auto connection = findConnection(connectionId)) {
+    removeConnection(connection);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -576,37 +600,126 @@ void DiagramScene::startConnection(
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::finishConnection(
-    ConnectionPoint* endPoint
+  ConnectionPoint* endPoint
 )
 {
-    if (!endPoint || !m_isCreatingConnection || !m_connectionStartPoint) return;
+  if (!m_isCreatingConnection || !m_connectionStartPoint || !endPoint || m_connectionStartPoint == endPoint) {
+    cancelConnection();
+    return;
+  }
 
-    if (endPoint == m_connectionStartPoint) {
-        cancelConnection();
-        return;
-    }
+  auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
+  auto endElement = qobject_cast<BasicElement*>(endPoint->parent());
 
-    auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
-    auto endElement = qobject_cast<BasicElement*>(endPoint->parent());
+  if (!startElement || !endElement || startElement == endElement) {
+    cancelConnection();
+    return;
+  }
 
-    if (startElement && endElement && startElement == endElement) {
-        cancelConnection();
-        return;
-    }
+  Relationship* relationship = nullptr;
+  Entity* entity = nullptr;
 
-    auto connection = new ConnectionLine(m_connectionStartPoint, endPoint, this);
+  if (isRelationshipToEntityConnection(startElement, endElement, &relationship, &entity)) {
+    auto relationshipEnd = new RelationshipEnd(
+      entity->id(),
+      Cardinality::One,
+      false,
+      relationship
+    );
+
+    relationship->addEnd(relationshipEnd);
+
+    auto relationshipConnection = new RelationshipConnectionLine(
+      m_connectionStartPoint,
+      endPoint,
+      relationshipEnd,
+      this
+    );
+
+    addRelationshipConnection(relationshipConnection);
+  }
+  else {
+    auto connection = new ConnectionLine(
+      m_connectionStartPoint,
+      endPoint,
+      this
+    );
+
     addConnection(connection);
+  }
 
-    if (m_temporaryConnectionLine) {
-        removeItem(m_temporaryConnectionLine);
-        delete m_temporaryConnectionLine;
-        m_temporaryConnectionLine = nullptr;
-    }
+  m_isCreatingConnection = false;
+  m_connectionStartPoint = nullptr;
 
-    m_isCreatingConnection = false;
-    m_connectionStartPoint = nullptr;
+  if (m_temporaryConnectionLine) {
+    removeItem(m_temporaryConnectionLine);
+    delete m_temporaryConnectionLine;
+    m_temporaryConnectionLine = nullptr;
+  }
+}
 
-    emit connectionFinished(connection);
+//----------------------------------------------------------------------------------------------
+
+bool DiagramScene::isRelationshipToEntityConnection(
+  BasicElement* startElement,
+  BasicElement* endElement,
+  Relationship** outRelationship,
+  Entity** outEntity
+) const
+{
+  if (!startElement || !endElement) {
+    return false;
+  }
+
+  auto relationship1 = qobject_cast<Relationship*>(startElement);
+  auto entity1 = qobject_cast<Entity*>(endElement);
+
+  if (relationship1 && entity1) {
+    if (outRelationship) *outRelationship = relationship1;
+    if (outEntity) *outEntity = entity1;
+    return true;
+  }
+
+  auto relationship2 = qobject_cast<Relationship*>(endElement);
+  auto entity2 = qobject_cast<Entity*>(startElement);
+
+  if (relationship2 && entity2) {
+    if (outRelationship) *outRelationship = relationship2;
+    if (outEntity) *outEntity = entity2;
+    return true;
+  }
+
+  return false;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::handleRelationshipDisconnection(
+  ConnectionLine* connection
+)
+{
+  auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(connection);
+  if (!relationshipConnection) {
+    return;
+  }
+
+  auto relationshipEnd = relationshipConnection->relationshipEnd();
+  if (!relationshipEnd) {
+    return;
+  }
+
+  auto startElement = connection->getStartElement();
+  auto endElement = connection->getEndElement();
+
+  auto relationship = qobject_cast<Relationship*>(startElement);
+  if (!relationship) {
+    relationship = qobject_cast<Relationship*>(endElement);
+  }
+
+  if (relationship) {
+    relationship->removeEnd(relationshipEnd);
+    relationshipEnd->deleteLater();
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------

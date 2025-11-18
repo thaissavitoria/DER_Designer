@@ -95,16 +95,10 @@ signals:
 
   void connectionChanged();
 
-  void connectionBeingDestroyed();
-
 private slots:
   void onElementPositionChanged();
 
   void onConnectionPointChanged();
-
-  void onElementDestroyed(
-    BasicElement* basicElementSender
-  );
 
 private:
   Q_DISABLE_COPY(ConnectionLine)

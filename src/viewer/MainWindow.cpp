@@ -445,11 +445,11 @@ void MainWindow::updatePropertiesPanel()
 
   clearPropertiesPanel();
 
-  QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+  QSet<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
   QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
 
   if (selectedConnections.size() == 1 && selectedElements.isEmpty()) {
-    populatePropertiesForConnection(selectedConnections.first());
+    populatePropertiesForConnection(*selectedConnections.begin());
   }
   else if (selectedElements.size() == 1 && selectedConnections.isEmpty()) {
     populatePropertiesForElement(selectedElements.first());
@@ -499,14 +499,16 @@ void MainWindow::populatePropertiesForElement(
   createPropertyItem(basicGroup, "Nome", element->name(), "name");
   createPropertyItem(basicGroup, "Tipo", element->typeDisplayName(), "type", false);
 
-  auto attribute = qobject_cast<Attribute*>(element);
-  if (attribute) {
+  if (auto attribute = qobject_cast<Attribute*>(element)) {
     populateAttributeProperties(element, nullptr);
   }
 
-  auto entity = qobject_cast<Entity*>(element);
-  if (entity) {
+  if (auto entity = qobject_cast<Entity*>(element)) {
     populateEntityProperties(element, nullptr);
+  }
+
+  if (auto relationship = qobject_cast<Relationship*>(element)) {
+    populateRelationshipProperties(element, nullptr);
   }
 
   auto geometryGroup = new QTreeWidgetItem(m_propertiesTree);
@@ -1019,9 +1021,9 @@ void MainWindow::onPropertyValueChanged(
   QString propertyType = item->data(0, Qt::UserRole).toString();
 
   if (propertyType == "connectionLineWidth") {
-    QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+    QSet<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
     if (selectedConnections.size() == 1) {
-      ConnectionLine* connection = selectedConnections.first();
+      ConnectionLine* connection = *selectedConnections.begin();
       bool ok;
       qreal newWidth = item->text(1).toDouble(&ok);
 
@@ -1147,9 +1149,9 @@ void MainWindow::onComboBoxChanged(
   QString propertyKey = comboBox->property("propertyKey").toString();
 
   if (propertyKey == "connectionLineType") {
-    QList<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
+    QSet<ConnectionLine*> selectedConnections = m_diagramScene->getSelectedConnections();
     if (selectedConnections.size() == 1) {
-      ConnectionLine* connection = selectedConnections.first();
+      ConnectionLine* connection = *selectedConnections.begin();
       ConnectionLineType newType = ConnectionLine::lineTypeFromString(value);
       connection->setLineType(newType);
 
@@ -1169,6 +1171,10 @@ void MainWindow::onComboBoxChanged(
   BasicElement* element = selectedElements.first();
 
   if (handleAttributeTypeChange(element, propertyKey, value)) {
+    return;
+  }
+
+  if (handleRelationshipEndCardinalityChange(element, propertyKey, value)) {
     return;
   }
 
@@ -1254,68 +1260,196 @@ bool MainWindow::handleAttributeTypeChange(
 
 //----------------------------------------------------------------------------------------------
 
-void MainWindow::onCheckBoxChanged(
-    bool checked
+bool MainWindow::handleRelationshipEndCardinalityChange(
+  BasicElement* element,
+  const QString& propertyKey,
+  const QString& value
 )
 {
-    auto checkBox = qobject_cast<QCheckBox*>(sender());
-    if (!checkBox || !m_diagramScene) {
-        return;
+  if (!propertyKey.contains("relend_") || !propertyKey.endsWith("_cardinality")) {
+    return false;
+  }
+
+  auto relationship = qobject_cast<Relationship*>(element);
+  if (!relationship) {
+    return false;
+  }
+
+  QStringList parts = propertyKey.split("_");
+  if (parts.size() < 3) {
+    return false;
+  }
+
+  int index = parts[1].toInt();
+  QList<RelationshipEnd*> ends = relationship->ends();
+
+  if (index >= 0 && index < ends.size()) {
+    RelationshipEnd* end = ends[index];
+    Cardinality newCardinality = RelationshipEnd::cardinalityFromString(value);
+    end->setCardinality(newCardinality);
+
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Cardinalidade atualizada: " + value);
+    updatePropertiesPanel();
+
+    if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
+      graphicsItem->update();
     }
 
-    QString propertyKey = checkBox->property("propertyKey").toString();
+    return true;
+  }
 
-    QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
-    if (selectedElements.size() != 1) {
-        return;
+  return false;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onCheckBoxChanged(
+  bool checked
+)
+{
+  auto checkBox = qobject_cast<QCheckBox*>(sender());
+  if (!checkBox || !m_diagramScene) {
+    return;
+  }
+
+  QString propertyKey = checkBox->property("propertyKey").toString();
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  BasicElement* element = selectedElements.first();
+
+  if (handleRelationshipEndParticipationChange(element, propertyKey, checked)) {
+    return;
+  }
+
+  bool success = PropertyCommand::setElementProperty(element, propertyKey, checked);
+
+  if (success) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Propriedade atualizada: " + propertyKey);
+  }
+  else {
+    updateStatusBar("Erro ao atualizar propriedade: " + propertyKey);
+    updatePropertiesPanel();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool MainWindow::handleRelationshipEndParticipationChange(
+  BasicElement* element,
+  const QString& propertyKey,
+  bool value
+)
+{
+  if (!propertyKey.contains("relend_") || !propertyKey.endsWith("_participation")) {
+    return false;
+  }
+
+  auto relationship = qobject_cast<Relationship*>(element);
+  if (!relationship) {
+    return false;
+  }
+
+  QStringList parts = propertyKey.split("_");
+  if (parts.size() < 3) {
+    return false;
+  }
+
+  int index = parts[1].toInt();
+  QList<RelationshipEnd*> ends = relationship->ends();
+
+  if (index >= 0 && index < ends.size()) {
+    RelationshipEnd* end = ends[index];
+    end->setIsTotalParticipation(value);
+
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar(QString("Participação %1: %2").arg(value ? "total" : "parcial").arg(end->entityId()));
+    updatePropertiesPanel();
+
+    if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
+      graphicsItem->update();
     }
 
-    BasicElement* element = selectedElements.first();
+    return true;
+  }
 
-    bool success = PropertyCommand::setElementProperty(element, propertyKey, checked);
-
-    if (success) {
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Propriedade atualizada: " + propertyKey);
-    }
-    else {
-        updateStatusBar("Erro ao atualizar propriedade: " + propertyKey);
-        updatePropertiesPanel();
-    }
+  return false;
 }
 
 //----------------------------------------------------------------------------------------------
 
 void MainWindow::onLineEditChanged(
-    const QString& text
+  const QString& text
 )
 {
-    auto lineEdit = qobject_cast<QLineEdit*>(sender());
-    if (!lineEdit || !m_diagramScene) {
-        return;
-    }
+  auto lineEdit = qobject_cast<QLineEdit*>(sender());
+  if (!lineEdit || !m_diagramScene) {
+    return;
+  }
 
-    QString propertyKey = lineEdit->property("propertyKey").toString();
+  QString propertyKey = lineEdit->property("propertyKey").toString();
 
+  if (propertyKey.contains("relend_") && propertyKey.endsWith("_cardinalitytext")) {
     QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
     if (selectedElements.size() != 1) {
-        return;
+      return;
     }
 
-    BasicElement* element = selectedElements.first();
-
-    bool success = PropertyCommand::setElementProperty(element, propertyKey, text);
-
-    if (success) {
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Propriedade atualizada: " + propertyKey);
+    auto relationship = qobject_cast<Relationship*>(selectedElements.first());
+    if (!relationship) {
+      return;
     }
-    else {
-        updateStatusBar("Erro ao atualizar propriedade: " + propertyKey);
-        updatePropertiesPanel();
+
+    QStringList parts = propertyKey.split("_");
+    if (parts.size() < 3) {
+      return;
     }
+
+    int index = parts[1].toInt();
+    QList<RelationshipEnd*> ends = relationship->ends();
+
+    if (index >= 0 && index < ends.size()) {
+      RelationshipEnd* end = ends[index];
+      end->setCustomCardinalityText(text);
+
+      m_isModified = true;
+      updateWindowTitle();
+      updateStatusBar("Texto da cardinalidade atualizado: " + end->customCardinalityText());
+
+      if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(relationship)) {
+        graphicsItem->update();
+      }
+
+      return;
+    }
+  }
+
+  QList<BasicElement*> selectedElements = m_diagramScene->getSelectedElements();
+  if (selectedElements.size() != 1) {
+    return;
+  }
+
+  BasicElement* element = selectedElements.first();
+
+  bool success = PropertyCommand::setElementProperty(element, propertyKey, text);
+
+  if (success) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Propriedade atualizada: " + propertyKey);
+  }
+  else {
+    updateStatusBar("Erro ao atualizar propriedade: " + propertyKey);
+    updatePropertiesPanel();
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -1467,3 +1601,139 @@ void MainWindow::updateStatusBar(const QString& message)
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void MainWindow::populateRelationshipProperties(
+  BasicElement* element,
+  QTreeWidgetItem* parent
+)
+{
+  auto relationship = qobject_cast<Relationship*>(element);
+  if (!relationship) {
+    return;
+  }
+
+  auto relationshipGroup = new QTreeWidgetItem(m_propertiesTree);
+  relationshipGroup->setText(0, "RELACIONAMENTO");
+  relationshipGroup->setExpanded(true);
+  relationshipGroup->setFlags(relationshipGroup->flags() & ~Qt::ItemIsEditable);
+
+  QList<RelationshipEnd*> ends = relationship->ends();
+
+  if (ends.isEmpty()) {
+    auto noConnectionsItem = new QTreeWidgetItem(relationshipGroup);
+    noConnectionsItem->setText(0, "Nenhuma conexão");
+    noConnectionsItem->setText(1, "Conecte entidades ao relacionamento");
+    noConnectionsItem->setFlags(noConnectionsItem->flags() & ~Qt::ItemIsEditable);
+  }
+  else {
+    for (int i = 0; i < ends.size(); ++i) {
+      RelationshipEnd* end = ends[i];
+
+      auto endItem = new QTreeWidgetItem(relationshipGroup);
+
+      BasicElement* entity = m_diagramScene->findElement(end->entityId());
+      QString entityName = entity ? entity->name() : "";
+
+      endItem->setText(0, QString("Conexão %1").arg(i + 1));
+      endItem->setText(1, entityName);
+      endItem->setData(0, Qt::UserRole, QString("relend_%1").arg(i));
+      endItem->setFlags(endItem->flags() & ~Qt::ItemIsEditable);
+
+      QStringList cardinalityOptions;
+      cardinalityOptions << "Um" << "Muitos";
+
+      QString currentCardinality = RelationshipEnd::cardinalityToString(end->cardinality());
+      createComboBoxPropertyItem(
+        endItem,
+        "Cardinalidade",
+        cardinalityOptions,
+        currentCardinality,
+        QString("relend_%1_cardinality").arg(i)
+      );
+
+      if (end->cardinality() == Cardinality::Many) {
+        QString customText = end->customCardinalityText().isEmpty() ? "M" : end->customCardinalityText();
+        createLineEditPropertyItem(
+          endItem,
+          "Texto Cardinalidade",
+          customText,
+          QString("relend_%1_cardinalitytext").arg(i)
+        );
+      }
+
+      createCheckBoxPropertyItem(
+        endItem,
+        "Participação Total",
+        end->isTotalParticipation(),
+        QString("relend_%1_participation").arg(i)
+      );
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+QTreeWidgetItem* MainWindow::createCheckBoxPropertyItem(
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  bool currentValue,
+  const QString& propertyKey
+)
+{
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setText(1, currentValue ? "Sim" : "Não");
+  item->setData(0, Qt::UserRole, propertyKey);
+  item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+
+  auto checkBox = new QCheckBox();
+  checkBox->setChecked(currentValue);
+  checkBox->setProperty("propertyKey", propertyKey);
+
+  connect(
+    checkBox,
+    &QCheckBox::toggled,
+    this,
+    &MainWindow::onCheckBoxChanged
+  );
+
+  m_propertiesTree->setItemWidget(item, 1, checkBox);
+  m_propertyWidgets[propertyKey] = checkBox;
+
+  return item;
+}
+
+//----------------------------------------------------------------------------------------------
+
+QTreeWidgetItem* MainWindow::createLineEditPropertyItem(
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  const QString& currentValue,
+  const QString& propertyKey
+)
+{
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setText(1, currentValue);
+  item->setData(0, Qt::UserRole, propertyKey);
+  item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+
+  auto lineEdit = new QLineEdit();
+  lineEdit->setText(currentValue);
+  lineEdit->setProperty("propertyKey", propertyKey);
+  lineEdit->setMaxLength(1);
+
+  connect(
+    lineEdit,
+    &QLineEdit::textChanged,
+    this,
+    &MainWindow::onLineEditChanged
+  );
+
+  m_propertiesTree->setItemWidget(item, 1, lineEdit);
+  m_propertyWidgets[propertyKey] = lineEdit;
+
+  return item;
+}
+
+//----------------------------------------------------------------------------------------------

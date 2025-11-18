@@ -8,13 +8,15 @@
 #include "model/ConnectionLine.h"
 #include "viewer/ElementGraphicsItem.h"
 
-class ConnectionGraphicsItem;
+//------------------------------------------------------------------------------
 
-/**
- * @brief Custom scene to manage ERD elements
- *
- * Manages the interaction BasicElement and ElementGraphicsItem
- */
+class ConnectionGraphicsItem;
+class Entity;
+class Relationship;
+class RelationshipConnectionLine;
+
+//------------------------------------------------------------------------------
+
 class DiagramScene : public QGraphicsScene
 {
   Q_OBJECT
@@ -54,11 +56,11 @@ public:
     ConnectionLine* connection
   );
 
-  void removeConnection(
-    ConnectionLine* connection
+  void addRelationshipConnection(
+    RelationshipConnectionLine* connection
   );
 
-  void removeConnectionFromContainers(
+  void removeConnection(
     ConnectionLine* connection
   );
 
@@ -83,7 +85,7 @@ public:
   QList<BasicElement*> getAllElements() const;
   QList<BasicElement*> getSelectedElements() const;
   QList<ConnectionLine*> getAllConnections() const;
-  QList<ConnectionLine*> getSelectedConnections() const;
+  QSet<ConnectionLine*> getSelectedConnections() const;
 
   void selectElement(
     BasicElement* element,
@@ -135,10 +137,6 @@ signals:
     BasicElement* element
   );
 
-  void elementRemoved(
-    BasicElement* element
-  );
-
   void elementSelected(
     BasicElement* element
   );
@@ -157,16 +155,8 @@ signals:
 
   void selectionChanged();
 
-  void connectionAdded(
-    ConnectionLine* connection
-  );
-
   void connectionStarted(
     ConnectionPoint* startPoint
-  );
-
-  void connectionFinished(
-    ConnectionLine* connection
   );
 
   void connectionCancelled();
@@ -195,6 +185,22 @@ private:
   void updateTemporaryConnection(
     const QPointF& endPosition
   );
+
+  void handleRelationshipDisconnection(
+    ConnectionLine* connection
+  );
+
+  bool isRelationshipToEntityConnection(
+    BasicElement* startElement,
+    BasicElement* endElement,
+    Relationship** outRelationship,
+    Entity** outEntity
+  ) const;
+
+  void removeElementConnections(
+    BasicElement* element
+  );
+
 };
 
 #endif // DIAGRAMSCENE_H

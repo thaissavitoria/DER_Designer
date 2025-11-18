@@ -7,74 +7,83 @@
 // -----------------------------------------------------------------------------------------------------
 
 enum class Cardinality {
-    One,          // 1
-    Many         // M,N
+  One,          // 1
+  Many         // M,N, etc
 };
 
 // -----------------------------------------------------------------------------------------------------
 
 class RelationshipEnd : public QObject
 {
-    Q_OBJECT
+  Q_OBJECT
     Q_PROPERTY(QString entityId READ entityId WRITE setEntityId NOTIFY entityIdChanged)
     Q_PROPERTY(Cardinality cardinality READ cardinality WRITE setCardinality NOTIFY cardinalityChanged)
     Q_PROPERTY(bool isTotalParticipation READ isTotalParticipation WRITE setIsTotalParticipation NOTIFY totalParticipationChanged)
+    Q_PROPERTY(QString customCardinalityText READ customCardinalityText WRITE setCustomCardinalityText NOTIFY customCardinalityTextChanged)
 
 public:
-    explicit RelationshipEnd(
-        QObject* parent = nullptr
-    );
+  explicit RelationshipEnd(
+    const QString& entityId,
+    Cardinality cardinality,
+    bool isTotalParticipation,
+    QObject* parent = nullptr
+  );
 
-    explicit RelationshipEnd(
-        const QString& entityId,
-        Cardinality cardinality,
-        bool isTotalParticipation,
-        QObject* parent = nullptr
-    );
+  virtual ~RelationshipEnd() = default;
 
-    virtual ~RelationshipEnd() = default;
+  QString entityId() const { return m_entityId; }
+  Cardinality cardinality() const { return m_cardinality; }
+  bool isTotalParticipation() const { return m_isTotalParticipation; }
+  QString customCardinalityText() const { return m_customCardinalityText; }
 
-    QString entityId() const { return m_entityId; }
-    Cardinality cardinality() const { return m_cardinality; }
-    bool isTotalParticipation() const { return m_isTotalParticipation; }
+  void setEntityId(
+    const QString& entityId
+  );
 
-    void setEntityId(
-        const QString& entityId
-    );
+  void setCardinality(
+    Cardinality cardinality
+  );
 
-    void setCardinality(
-        Cardinality cardinality
-    );
+  void setIsTotalParticipation(
+    bool isTotalParticipation
+  );
 
-    void setIsTotalParticipation(
-        bool isTotalParticipation
-    );
+  void setCustomCardinalityText(
+    const QString& text
+  );
 
-    static QString cardinalityToString(
-        Cardinality cardinality
-    );
+  QString getDisplayCardinalityText() const;
 
-    static Cardinality cardinalityFromString(
-        const QString& cardinalityString
-    );
+  static QString cardinalityToString(
+    Cardinality cardinality
+  );
+
+  static Cardinality cardinalityFromString(
+    const QString& cardinalityString
+  );
 
 signals:
-    void entityIdChanged(
-        const QString& newEntityId
-    );
+  void entityIdChanged(
+    const QString& newEntityId
+  );
 
-    void cardinalityChanged(
-        Cardinality newCardinality
-    );
+  void cardinalityChanged(
+    Cardinality newCardinality
+  );
 
-    void totalParticipationChanged(
-        bool isTotalParticipation
-    );
+  void totalParticipationChanged(
+    bool isTotalParticipation
+  );
+
+  void customCardinalityTextChanged(
+    const QString& newText
+  );
 
 private:
-    QString m_entityId;
-    Cardinality m_cardinality;
-    bool m_isTotalParticipation;
+  QString m_entityId;
+  Cardinality m_cardinality;
+  bool m_isTotalParticipation;
+  QString m_customCardinalityText;
 };
 
 #endif // RELATIONSHIPEND_H

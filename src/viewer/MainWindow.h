@@ -228,6 +228,37 @@ private:
 
   QList<QIcon> getConnectionLineTypeIcons();
 
+  void populateRelationshipProperties(
+    BasicElement* element,
+    QTreeWidgetItem* parent
+  );
+
+  QTreeWidgetItem* createCheckBoxPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    bool currentValue,
+    const QString& propertyKey
+  );
+
+  bool handleRelationshipEndCardinalityChange(
+    BasicElement* element,
+    const QString& propertyKey,
+    const QString& value
+  );
+
+  bool handleRelationshipEndParticipationChange(
+    BasicElement* element,
+    const QString& propertyKey,
+    bool value
+  );
+
+  QTreeWidgetItem* createLineEditPropertyItem(
+    QTreeWidgetItem* parent,
+    const QString& propertyName,
+    const QString& currentValue,
+    const QString& propertyKey
+  );
+
   QWidget* m_centralWidget;
   QHBoxLayout* m_mainLayout;
   QSplitter* m_mainSplitter;

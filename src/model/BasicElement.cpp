@@ -24,10 +24,7 @@ BasicElement::BasicElement(
 
 BasicElement::~BasicElement()
 {
-    emit elementBeingDestroyed(this);
     m_observers.clear();
-
-    qDeleteAll(m_connectionPoints);
     m_connectionPoints.clear();
 }
 

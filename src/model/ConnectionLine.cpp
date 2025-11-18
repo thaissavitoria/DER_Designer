@@ -25,7 +25,6 @@ ConnectionLine::ConnectionLine(
 ConnectionLine::~ConnectionLine()
 {
   disconnectFromPoints();
-  emit connectionBeingDestroyed();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -66,8 +65,6 @@ void ConnectionLine::setStartPoint(
       if (startElement) {
         disconnect(startElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
-        disconnect(startElement, &BasicElement::elementBeingDestroyed,
-          this, &ConnectionLine::onElementDestroyed);
       }
       disconnect(m_startPoint, &ConnectionPoint::relativePositionChanged,
         this, &ConnectionLine::onConnectionPointChanged);
@@ -80,8 +77,6 @@ void ConnectionLine::setStartPoint(
       if (startElement) {
         connect(startElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
-        connect(startElement, &BasicElement::elementBeingDestroyed,
-          this, &ConnectionLine::onElementDestroyed);
       }
       connect(m_startPoint, &ConnectionPoint::relativePositionChanged,
         this, &ConnectionLine::onConnectionPointChanged);
@@ -104,8 +99,6 @@ void ConnectionLine::setEndPoint(
       if (endElement) {
         disconnect(endElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
-        disconnect(endElement, &BasicElement::elementBeingDestroyed,
-          this, &ConnectionLine::onElementDestroyed);
       }
       disconnect(m_endPoint, &ConnectionPoint::relativePositionChanged,
         this, &ConnectionLine::onConnectionPointChanged);
@@ -118,8 +111,6 @@ void ConnectionLine::setEndPoint(
       if (endElement) {
         connect(endElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
-        connect(endElement, &BasicElement::elementBeingDestroyed,
-          this, &ConnectionLine::onElementDestroyed);
       }
       connect(m_endPoint, &ConnectionPoint::relativePositionChanged,
         this, &ConnectionLine::onConnectionPointChanged);
@@ -233,8 +224,6 @@ void ConnectionLine::connectToPoints()
     if (startElement) {
       connect(startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      connect(startElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
     }
     connect(m_startPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
@@ -245,8 +234,6 @@ void ConnectionLine::connectToPoints()
     if (endElement) {
       connect(endElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      connect(endElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
     }
     connect(m_endPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
@@ -261,8 +248,6 @@ void ConnectionLine::disconnectFromPoints()
     if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())) {
       disconnect(startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      disconnect(startElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
     }
     disconnect(m_startPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
@@ -272,8 +257,6 @@ void ConnectionLine::disconnectFromPoints()
     if (auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent())) {
       disconnect(endElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
-      disconnect(endElement, &BasicElement::elementBeingDestroyed,
-        this, &ConnectionLine::onElementDestroyed);
     }
     disconnect(m_endPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
@@ -292,27 +275,6 @@ void ConnectionLine::onElementPositionChanged()
 void ConnectionLine::onConnectionPointChanged()
 {
   emit connectionChanged();
-}
-
-//----------------------------------------------------------------------------------------------
-
-void ConnectionLine::onElementDestroyed(
-  BasicElement* basicElementSender
-)
-{
-  disconnectFromPoints();
-
-  auto startElement = m_startPoint ? qobject_cast<BasicElement*>(m_startPoint->parent()) : nullptr;
-  auto endElement = m_endPoint ? qobject_cast<BasicElement*>(m_endPoint->parent()) : nullptr;
-
-  if (basicElementSender == startElement) {
-    m_startPoint = nullptr;
-  }
-  else if (basicElementSender == endElement) {
-    m_endPoint = nullptr;
-  }
-
-  deleteLater();
 }
 
 //----------------------------------------------------------------------------------------------

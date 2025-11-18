@@ -55,7 +55,6 @@ protected:
 
 private slots:
   void updateFromConnection();
-  void onConnectionBeingDestroyed();
 
 private:
   QPainterPath createStraightPath() const;

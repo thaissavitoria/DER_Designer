@@ -414,19 +414,6 @@ void ConnectionGraphicsItem::updateFromConnection()
 
 //----------------------------------------------------------------------------------------------
 
-void ConnectionGraphicsItem::onConnectionBeingDestroyed()
-{
-  if (auto diagramScene = dynamic_cast<DiagramScene*>(scene())) {
-    diagramScene->removeConnectionFromContainers(m_connection);
-  }
-
-  m_connection = nullptr;
-
-  deleteLater();
-}
-
-//----------------------------------------------------------------------------------------------
-
 void ConnectionGraphicsItem::connectToConnection()
 {
   if (!m_connection) return;
@@ -441,8 +428,6 @@ void ConnectionGraphicsItem::connectToConnection()
     this, &ConnectionGraphicsItem::updateFromConnection);
   connect(m_connection, &ConnectionLine::endPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
-  connect(m_connection, &ConnectionLine::connectionBeingDestroyed,
-    this, &ConnectionGraphicsItem::onConnectionBeingDestroyed);
 }
 
 //----------------------------------------------------------------------------------------------

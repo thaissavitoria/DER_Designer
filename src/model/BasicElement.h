@@ -200,10 +200,6 @@ signals:
     );
     void elementChanged();
 
-    void elementBeingDestroyed(
-      BasicElement* element
-    );
-
 private:
     QString m_id;
     QString m_name;

@@ -3,95 +3,129 @@
 //----------------------------------------------------------------------------------------------
 
 RelationshipEnd::RelationshipEnd(
-    QObject* parent
+  const QString& entityId,
+  Cardinality cardinality,
+  bool isTotalParticipation,
+  QObject* parent
 )
-    : QObject(parent)
-    , m_entityId("")
-    , m_cardinality(Cardinality::One)
-    , m_isTotalParticipation(false)
-{
-}
-
-//----------------------------------------------------------------------------------------------
-
-RelationshipEnd::RelationshipEnd(
-    const QString& entityId,
-    Cardinality cardinality,
-    bool isTotalParticipation,
-    QObject* parent
-)
-    : QObject(parent)
-    , m_entityId(entityId)
-    , m_cardinality(cardinality)
-    , m_isTotalParticipation(isTotalParticipation)
+  : QObject(parent)
+  , m_entityId(entityId)
+  , m_cardinality(cardinality)
+  , m_isTotalParticipation(isTotalParticipation)
+  , m_customCardinalityText("")
 {
 }
 
 //----------------------------------------------------------------------------------------------
 
 void RelationshipEnd::setEntityId(
-    const QString& entityId
+  const QString& entityId
 )
 {
-    if (m_entityId != entityId) {
-        m_entityId = entityId;
-        emit entityIdChanged(m_entityId);
-    }
+  if (m_entityId != entityId) {
+    m_entityId = entityId;
+    emit entityIdChanged(m_entityId);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void RelationshipEnd::setCardinality(
-    Cardinality cardinality
+  Cardinality cardinality
 )
 {
-    if (m_cardinality != cardinality) {
-        m_cardinality = cardinality;
-        emit cardinalityChanged(m_cardinality);
+  if (m_cardinality != cardinality) {
+    m_cardinality = cardinality;
+
+    if (cardinality == Cardinality::One) {
+      m_customCardinalityText = "";
     }
+    else if (m_customCardinalityText.isEmpty()) {
+      m_customCardinalityText = "M";
+    }
+
+    emit cardinalityChanged(m_cardinality);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void RelationshipEnd::setIsTotalParticipation(
-    bool isTotalParticipation
+  bool isTotalParticipation
 )
 {
-    if (m_isTotalParticipation != isTotalParticipation) {
-        m_isTotalParticipation = isTotalParticipation;
-        emit totalParticipationChanged(m_isTotalParticipation);
-    }
+  if (m_isTotalParticipation != isTotalParticipation) {
+    m_isTotalParticipation = isTotalParticipation;
+    emit totalParticipationChanged(m_isTotalParticipation);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void RelationshipEnd::setCustomCardinalityText(
+  const QString& text
+)
+{
+  QString sanitizedText = text.toUpper().trimmed();
+
+  if (sanitizedText.length() > 1) {
+    sanitizedText = sanitizedText.left(1);
+  }
+
+  bool isValidLetter = sanitizedText.isEmpty() ||
+    (sanitizedText.length() == 1 && sanitizedText[0].isLetter());
+
+  if (!isValidLetter) {
+    return;
+  }
+
+  if (m_customCardinalityText != sanitizedText) {
+    m_customCardinalityText = sanitizedText;
+    emit customCardinalityTextChanged(m_customCardinalityText);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+QString RelationshipEnd::getDisplayCardinalityText() const
+{
+  if (m_cardinality == Cardinality::One) {
+    return "1";
+  }
+
+  if (!m_customCardinalityText.isEmpty()) {
+    return m_customCardinalityText;
+  }
+
+  return "M";
 }
 
 //----------------------------------------------------------------------------------------------
 
 QString RelationshipEnd::cardinalityToString(
-    Cardinality cardinality
+  Cardinality cardinality
 )
 {
-    switch (cardinality) {
-        case Cardinality::Many:
-            return "M";
-        case Cardinality::One:
-        default:
-            return "1";
-    }
+  switch (cardinality) {
+  case Cardinality::One:
+    return "Um";
+  case Cardinality::Many:
+  default:
+    return "Muitos";
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 Cardinality RelationshipEnd::cardinalityFromString(
-    const QString& cardinalityString
+  const QString& cardinalityString
 )
 {
-    if (cardinalityString == "1") {
-        return Cardinality::One;
-    }
-    else if (cardinalityString == "M" || cardinalityString == "N") {
-        return Cardinality::Many;
-    }
-    
+  if (cardinalityString == "Um") {
     return Cardinality::One;
+  }
+
+  return Cardinality::Many;
 }
 
 //----------------------------------------------------------------------------------------------
