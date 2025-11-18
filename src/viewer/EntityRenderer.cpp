@@ -44,6 +44,12 @@ void EntityRenderer::render(
     painter->setBrush(m_fillBrush);
 
     painter->drawRect(rect);
+    
+    if(dynamic_cast<const Entity*>(element)->isWeakEntity()) {
+      qreal margin = 4.0;
+      QRectF innerRect = rect.adjusted(margin, margin, -margin, -margin);
+      painter->drawRect(innerRect);
+    }
 
     painter->setPen(m_textPen);
     painter->setFont(m_textFont);

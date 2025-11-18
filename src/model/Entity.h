@@ -38,8 +38,15 @@ public:
 
     QList<Attribute*> getAttributes();
 
+    bool isWeakEntity() const;
+
+    void setIsWeakEntity(
+      const bool isWeak
+    );
+
   private:
     QList<Attribute*> m_attributes;
+    bool m_isWeakEntity = false;
 };
 
 #endif // ENTITY_H
