@@ -76,6 +76,7 @@ void AttributeRenderer::renderByAttributeType(
 {
     switch (attribute->attributeType()) {
         case AttributeType::Normal:
+        case AttributeType::Composite:
             renderNormalAttribute(painter, rect);
             break;
         case AttributeType::Key:
@@ -86,9 +87,6 @@ void AttributeRenderer::renderByAttributeType(
             break;
         case AttributeType::Multivalued:
             renderMultivaluedAttribute(painter, rect);
-            break;
-        case AttributeType::Composite:
-            renderCompositeAttribute(painter, rect);
             break;
     }
 }
@@ -144,25 +142,6 @@ void AttributeRenderer::renderMultivaluedAttribute(
     qreal margin = 4.0;
     QRectF innerRect = rect.adjusted(margin, margin, -margin, -margin);
     painter->drawEllipse(innerRect);
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void AttributeRenderer::renderCompositeAttribute(
-    QPainter* painter,
-    const QRectF& rect
-)
-{
-    painter->setPen(m_borderPen);
-    painter->setBrush(m_fillBrush);
-    painter->drawEllipse(rect);
-    
-    QPointF center = rect.center();
-    qreal halfWidth = rect.width() * 0.3;
-    painter->drawLine(
-        QPointF(center.x() - halfWidth, center.y()),
-        QPointF(center.x() + halfWidth, center.y())
-    );
 }
 
 // -----------------------------------------------------------------------------------------------------

@@ -74,11 +74,6 @@ private:
         const QRectF& rect
     );
 
-    void renderCompositeAttribute(
-        QPainter* painter,
-        const QRectF& rect
-    );
-
     QRectF getTextRect(
         const QRectF& elementRect
     ) const;
