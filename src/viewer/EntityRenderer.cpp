@@ -10,10 +10,10 @@
 // -----------------------------------------------------------------------------------------------------
 
 EntityRenderer::EntityRenderer()
-    : m_cornerRadius(5.0)
-    , m_textMargin(8.0)
+:
+  m_textMargin(8.0)
 {
-    setupDefaultStyle();
+  setupDefaultStyle();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -43,7 +43,7 @@ void EntityRenderer::render(
     painter->setPen(m_borderPen);
     painter->setBrush(m_fillBrush);
 
-    painter->drawRoundedRect(rect, m_cornerRadius, m_cornerRadius);
+    painter->drawRect(rect);
 
     painter->setPen(m_textPen);
     painter->setFont(m_textFont);
@@ -96,7 +96,7 @@ void EntityRenderer::renderSelection(
 
     painter->setPen(m_selectionPen);
     painter->setBrush(m_selectionBrush);
-    painter->drawRoundedRect(rect, m_cornerRadius, m_cornerRadius);
+    painter->drawRect(rect);
 
     painter->restore();
 }

@@ -41,7 +41,6 @@ private:
     QPen m_textPen;
     QPen m_selectionPen;
 
-    qreal m_cornerRadius;
     qreal m_textMargin;
 
     void setupDefaultStyle();
