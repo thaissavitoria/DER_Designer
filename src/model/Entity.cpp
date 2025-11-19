@@ -27,6 +27,24 @@ Entity::Entity(
   setName(name);
   setSize(preferredSize());
 }
+
+// -----------------------------------------------------------------------------------------------------
+
+Entity::Entity(
+  const QString& name,
+  const bool isWeak,
+  QObject* parent
+)
+  : BasicElement(
+    ElementType::Entity,
+    parent
+  )
+{
+  setName(name);
+  setIsWeakEntity(isWeak);
+  setSize(preferredSize());
+}
+
 // -----------------------------------------------------------------------------------------------------
 
 QSizeF Entity::minimumSize() const

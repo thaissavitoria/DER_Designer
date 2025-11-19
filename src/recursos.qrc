@@ -6,7 +6,9 @@
         <file alias="undo">viewer/icons/undo.png</file>
         <file alias="redo">viewer/icons/redo.png</file>
 	      <file alias="entidade">viewer/icons/entidade.png</file>
-	      <file alias="atributo">viewer/icons/atributo.png</file>
+        <file alias="entidadeFraca">viewer/icons/entidadeFraca.png</file>
+        <file alias="atributo">viewer/icons/atributo.png</file>
         <file alias="relacionamento">viewer/icons/relacionamento.png</file>
+        <file alias="relacionamentoIdentificador">viewer/icons/relacionamentoIdentificador.png</file>
     </qresource>
 </RCC>

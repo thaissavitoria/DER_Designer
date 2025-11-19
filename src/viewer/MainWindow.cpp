@@ -208,6 +208,10 @@ void MainWindow::createSidePanel()
     connect(relationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddRelationshipClicked);
     m_drawingLayout->addWidget(relationshipBtn);
 
+    auto weakEntityBtn = new DraggableButton("WeakEntity");
+    connect(weakEntityBtn, &QPushButton::clicked, this, &MainWindow::onAddWeakEntityClicked);
+    m_drawingLayout->addWidget(weakEntityBtn);
+
     m_drawingLayout->addStretch();
 
     m_sideTabWidget->addTab(m_drawingTab, "Desenho");
@@ -390,6 +394,9 @@ void MainWindow::onElementDropped(
 
     if (elementType == "Entity") {
         element = new Entity("Entidade");
+    }
+    else if (elementType == "WeakEntity") {
+      element = new Entity("Entidade Fraca", true);
     }
     else if (elementType == "Attribute") {
         element = new Attribute("Atributo");
@@ -1536,6 +1543,29 @@ void MainWindow::onAddRelationshipClicked()
   }
   else {
     updateStatusBar("Falha ao adicionar atributo");
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void MainWindow::onAddWeakEntityClicked()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QPointF pos = QPointF(0, 0);
+
+  auto weakEntity = new Entity("Entidade Fraca", true);
+
+  m_diagramScene->addElement(weakEntity);
+  if (weakEntity) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Entidade fraca adicionada");
+  }
+  else {
+    updateStatusBar("Falha ao adicionar entidade fraca");
   }
 }
 

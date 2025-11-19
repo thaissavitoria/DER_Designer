@@ -76,6 +76,9 @@ QString DraggableButton::getIconPath() const
   else if (m_elementType == "Relationship") {
     return ":/relacionamento";
   }
+  else if (m_elementType == "WeakEntity") {
+    return ":/entidadeFraca";
+  }
 
   return QString();
 }
@@ -92,6 +95,9 @@ QString DraggableButton::getDisplayName() const
   }
   else if (m_elementType == "Relationship") {
     return "Relacionamento";
+  }
+  else if (m_elementType == "WeakEntity") {
+    return "Entidade Fraca";
   }
 
   return m_elementType.toUpper();

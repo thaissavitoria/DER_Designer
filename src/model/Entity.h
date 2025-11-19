@@ -18,6 +18,12 @@ public:
       QObject* parent = nullptr
     );
 
+    explicit Entity(
+      const QString& name,
+      const bool isWeak,
+      QObject* parent = nullptr
+    );
+
     virtual ~Entity() = default;
 
 	  QSizeF minimumSize() const override;

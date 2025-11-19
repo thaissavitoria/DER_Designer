@@ -87,6 +87,8 @@ private slots:
 
   void onAddRelationshipClicked();
 
+  void onAddWeakEntityClicked();
+
   void onSelectionChanged();
 
   void onPropertyValueChanged(
