@@ -24,7 +24,7 @@ public:
     QObject* parent = nullptr
   );
 
-  virtual ~Attribute() = default;
+  virtual ~Attribute();
 
   QSizeF minimumSize() const override;
 
@@ -71,6 +71,10 @@ signals:
 
   void primaryKeyChanged(
     bool isPrimary
+  );
+
+  void subAttributeRemoved(
+    Attribute* subAttribute
   );
 
 private:

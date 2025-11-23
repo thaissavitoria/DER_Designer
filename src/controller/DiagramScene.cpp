@@ -79,6 +79,16 @@ void DiagramScene::addElement(
 
     addItem(item);
 
+    if (auto attribute = qobject_cast<Attribute*>(element)) {
+        connect(attribute, &Attribute::subAttributeRemoved,
+          this, &DiagramScene::onSubAttributeOrAttributeOfEntityRemoved);
+    }
+
+    if (auto attribute = qobject_cast<Entity*>(element)) {
+      connect(attribute, &Entity::attributeRemoved,
+        this, &DiagramScene::onSubAttributeOrAttributeOfEntityRemoved);
+    }
+
     emit elementAdded(element);
 }
 
@@ -90,6 +100,10 @@ void DiagramScene::removeElement(
 {
   if (!element || !m_elements.contains(element->id())) {
     return;
+  }
+
+  if (auto attribute = qobject_cast<Attribute*>(element)) {
+    removeAttributeFromParents(attribute);
   }
 
   removeElementConnections(element);
@@ -106,6 +120,22 @@ void DiagramScene::removeElement(
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::removeAttributeFromParents(
+  Attribute* attribute
+)
+{
+  if (auto entityParent = qobject_cast<Entity*>(attribute->parent())) {
+    entityParent->removeAttribute(attribute);
+    return;
+  }
+
+  if (auto parentAttribute = qobject_cast<Attribute*>(attribute->parent())) {
+    parentAttribute->removeSubAttribute(attribute);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
 
 void DiagramScene::removeElementConnections(
   BasicElement* element
@@ -767,3 +797,14 @@ void DiagramScene::updateTemporaryConnection(
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::onSubAttributeOrAttributeOfEntityRemoved(
+  Attribute* subAttribute
+)
+{
+  if (subAttribute && m_elements.contains(subAttribute->id())) {
+    removeElement(subAttribute);
+  }
+}
+
+//----------------------------------------------------------------------------------------------

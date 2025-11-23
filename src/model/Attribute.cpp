@@ -55,6 +55,15 @@ Attribute::Attribute(
 
 // -----------------------------------------------------------------------------------------------------
 
+Attribute::~Attribute()
+{
+  for (Attribute* attribute : m_subAttributes) {
+    attribute->setParent(nullptr);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
 QSizeF Attribute::minimumSize() const
 {
   return QSizeF(60, 30);
@@ -103,6 +112,15 @@ void Attribute::setAttributeType(
 )
 {
   if (m_attributeType != type) {
+    if (m_attributeType == AttributeType::Composite) {
+      QList<Attribute*> subAttributesToRemove = m_subAttributes;
+      m_subAttributes.clear();
+
+      for (auto subAttr : subAttributesToRemove) {
+        emit subAttributeRemoved(subAttr);
+      }
+    }
+
     m_attributeType = type;
     updateFromAttributeType();
     emit attributeTypeChanged(type);
@@ -195,7 +213,12 @@ bool Attribute::removeSubAttribute(
   Attribute* subAttribute
 )
 {
-  return m_subAttributes.removeOne(subAttribute);
+  bool removed = m_subAttributes.removeOne(subAttribute);
+  if (removed) {
+    subAttribute->setParent(nullptr);
+    emit subAttributeRemoved(subAttribute);
+  }
+  return removed;
 }
 
 // -----------------------------------------------------------------------------------------------------

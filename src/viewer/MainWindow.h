@@ -263,6 +263,11 @@ private:
     const QString& propertyKey
   );
 
+  void ConnectBasicElementsWithConnectionLine(
+    BasicElement* startElement,
+    BasicElement* endElement
+  );
+
   QWidget* m_centralWidget;
   QHBoxLayout* m_mainLayout;
   QSplitter* m_mainSplitter;

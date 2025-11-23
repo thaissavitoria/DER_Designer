@@ -47,6 +47,15 @@ Entity::Entity(
 
 // -----------------------------------------------------------------------------------------------------
 
+Entity::~Entity()
+{
+  for (Attribute* attribute : m_attributes) {
+    attribute->setParent(nullptr);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
 QSizeF Entity::minimumSize() const
 {
     return QSizeF(80, 40);
@@ -95,6 +104,8 @@ bool Entity::removeAttribute(
   Attribute* attribute
 ) 
 {
+  attribute->setParent(nullptr);
+  emit attributeRemoved(attribute);
   return m_attributes.removeOne(attribute);
 }
 

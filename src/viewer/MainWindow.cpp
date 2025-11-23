@@ -626,7 +626,7 @@ void MainWindow::onAddSubAttributeToAttributeClicked()
     return;
   }
 
-  auto subAttribute = new Attribute(QString("SubAtributo_%1").arg(attribute->getSubAttributes().size() + 1));
+  auto subAttribute = new Attribute(QString("SubAtributo_%1").arg(attribute->getSubAttributes().size() + 1), attribute);
 
   QPointF attributePos = attribute->position();
   QSizeF attributeSize = attribute->size();
@@ -638,6 +638,8 @@ void MainWindow::onAddSubAttributeToAttributeClicked()
 
   attribute->addSubAttribute(subAttribute);
   m_diagramScene->addElement(subAttribute);
+
+  ConnectBasicElementsWithConnectionLine(attribute, subAttribute);
 
   m_isModified = true;
   updateWindowTitle();
@@ -704,7 +706,7 @@ void MainWindow::onAddAttributeToEntityClicked()
     return;
   }
 
-  auto attribute = new Attribute(QString("Atributo_%1").arg(entity->getAttributes().size() + 1));
+  auto attribute = new Attribute(QString("Atributo_%1").arg(entity->getAttributes().size() + 1), entity);
 
   QPointF entityPos = entity->position();
   QSizeF entitySize = entity->size();
@@ -717,11 +719,34 @@ void MainWindow::onAddAttributeToEntityClicked()
   entity->addAttribute(attribute);
   m_diagramScene->addElement(attribute);
 
+  ConnectBasicElementsWithConnectionLine(entity, attribute);
+
   m_isModified = true;
   updateWindowTitle();
   updateStatusBar("Atributo adicionado à entidade");
 
   updatePropertiesPanel();
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::ConnectBasicElementsWithConnectionLine(
+  BasicElement* startElement,
+  BasicElement* endElement
+)
+{ 
+  const bool isRelationshipEntityConnection = startElement->type() == ElementType::Relationship && endElement->type() == ElementType::Entity ||
+                                              startElement->type() == ElementType::Entity && endElement->type() == ElementType::Relationship;
+
+  if (isRelationshipEntityConnection) {
+    return;
+  }
+
+  auto startElementConnectionPoint = startElement->connectionPoints()[2];
+  auto endElementConnectionPoint = endElement->connectionPoints()[3];
+
+  auto connection = new ConnectionLine(startElementConnectionPoint, endElementConnectionPoint);
+  m_diagramScene->addConnection(connection);
 }
 
 //----------------------------------------------------------------------------------------------

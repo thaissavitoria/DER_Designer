@@ -24,7 +24,7 @@ public:
       QObject* parent = nullptr
     );
 
-    virtual ~Entity() = default;
+    virtual ~Entity();
 
 	  QSizeF minimumSize() const override;
 
@@ -48,6 +48,11 @@ public:
 
     void setIsWeakEntity(
       const bool isWeak
+    );
+
+  signals:
+    void attributeRemoved(
+      Attribute* attribute
     );
 
   private:
