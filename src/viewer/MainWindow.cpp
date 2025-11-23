@@ -212,6 +212,10 @@ void MainWindow::createSidePanel()
     connect(weakEntityBtn, &QPushButton::clicked, this, &MainWindow::onAddWeakEntityClicked);
     m_drawingLayout->addWidget(weakEntityBtn);
 
+    auto identifyingRelationshipBtn = new DraggableButton("IdentifyingRelationship");
+    connect(identifyingRelationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddIdentifyingRelationshipClicked);
+    m_drawingLayout->addWidget(identifyingRelationshipBtn);
+
     m_drawingLayout->addStretch();
 
     m_sideTabWidget->addTab(m_drawingTab, "Desenho");
@@ -399,10 +403,13 @@ void MainWindow::onElementDropped(
       element = new Entity("Entidade Fraca", true);
     }
     else if (elementType == "Attribute") {
-        element = new Attribute("Atributo");
+      element = new Attribute("Atributo");
     }
     else if (elementType == "Relationship") {
       element = new Relationship("Relacionamento");
+    }
+    else if (elementType == "IdentifyingRelationship") {
+      element = new Relationship("Rel. Identificador", true);
     }
 
     if (element) {
@@ -1566,6 +1573,29 @@ void MainWindow::onAddWeakEntityClicked()
   }
   else {
     updateStatusBar("Falha ao adicionar entidade fraca");
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+void MainWindow::onAddIdentifyingRelationshipClicked()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QPointF pos = QPointF(0, 0);
+
+  auto identifyingRel = new Relationship("Rel. Identificador", true);
+
+  m_diagramScene->addElement(identifyingRel);
+  if (identifyingRel) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Relacionamento identificador adicionado");
+  }
+  else {
+    updateStatusBar("Falha ao adicionar relacionamento identificador");
   }
 }
 

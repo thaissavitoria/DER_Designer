@@ -11,54 +11,12 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-set(SOURCES
-    src/main.cpp
-    src/model/BasicElement.cpp
-    src/model/BasicElement.h
-    src/model/Entity.cpp
-    src/model/Entity.h
-    src/model/Attribute.cpp
-    src/model/Attribute.h
-    src/model/AttributeType.h
-    src/model/AttributeType.cpp
-    src/model/ConnectionPoint.h
-    src/model/ConnectionPoint.cpp
-    src/model/ConnectionLine.h
-    src/model/ConnectionLine.cpp
-    src/model/Relationship.h
-    src/model/Relationship.cpp
-    src/model/RelationshipEnd.h
-    src/model/RelationshipEnd.cpp
-    src/model/RelationshipConnectionLine.h
-    src/model/RelationshipConnectionLine.cpp
-    src/viewer/RelationshipConnectionLineGraphicsItem.h
-    src/viewer/RelationshipConnectionLineGraphicsItem.cpp
-    src/viewer/BezierControlPoint.h
-    src/viewer/BezierControlPoint.cpp
-    src/viewer/DraggableButton.h
-    src/viewer/DraggableButton.cpp
-    src/viewer/DiagramView.h
-    src/viewer/DiagramView.cpp
-    src/viewer/QuickAcessToolBar.cpp
-    src/viewer/QuickAcessToolBar.h
-    src/viewer/MainWindow.cpp
-    src/viewer/MainWindow.h
-    src/viewer/ConnectionGraphicsItem.cpp
-    src/viewer/ConnectionGraphicsItem.h
-    src/viewer/ElementGraphicsItem.cpp
-    src/viewer/ElementGraphicsItem.h
-    src/viewer/ElementRenderer.h 
-    src/viewer/ElementRenderer.cpp
-    src/viewer/EntityRenderer.cpp
-    src/viewer/EntityRenderer.h
-    src/viewer/AttributeRenderer.cpp
-    src/viewer/AttributeRenderer.h
-    src/viewer/RelationshipRenderer.cpp
-    src/viewer/RelationshipRenderer.h
-    src/controller/DiagramScene.cpp
-    src/controller/DiagramScene.h
-    src/controller/PropertyCommand.cpp
-    src/controller/PropertyCommand.h
+file(GLOB_RECURSE SOURCES
+    "src/*.cpp"
+    "src/*.h"
+)
+
+list(APPEND SOURCES
     src/app.rc
     src/recursos.qrc
 )

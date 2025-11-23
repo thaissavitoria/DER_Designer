@@ -19,6 +19,7 @@ public:
 
   explicit Relationship(
     const QString& name,
+    const bool isIdentifying = false,
     QObject* parent = nullptr
   );
 
@@ -48,7 +49,20 @@ public:
     const QString& entityId
   ) const;
 
+  bool isIdentifying() const { return m_isIdentifying; }
+
+  void setIsIdentifying(
+    const bool isIdentifying
+  );
+
+  QVariantMap serialize() const override;
+
+  bool deserialize(
+    const QVariantMap& data
+  ) override;
+
 private:
+  bool m_isIdentifying;
   QList<RelationshipEnd*> m_ends;
 };
 

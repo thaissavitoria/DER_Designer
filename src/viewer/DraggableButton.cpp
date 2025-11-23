@@ -79,6 +79,9 @@ QString DraggableButton::getIconPath() const
   else if (m_elementType == "WeakEntity") {
     return ":/entidadeFraca";
   }
+  else if (m_elementType == "IdentifyingRelationship") {
+    return ":/relacionamentoIdentificador";
+  }
 
   return QString();
 }
@@ -98,6 +101,9 @@ QString DraggableButton::getDisplayName() const
   }
   else if (m_elementType == "WeakEntity") {
     return "Entidade Fraca";
+  }
+  else if (m_elementType == "IdentifyingRelationship") {
+    return "Relacionamento\n Identificador";
   }
 
   return m_elementType.toUpper();

@@ -218,7 +218,7 @@ bool DiagramView::isValidElementType(
         "DerivedAttribute",
         "MultivaluedAttribute",
         "Relationship",
-        "WeakRelationship"
+        "IdentifyingRelationship"
     };
     
     return validTypes.contains(elementType);

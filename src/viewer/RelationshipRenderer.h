@@ -48,7 +48,8 @@ private:
 
   void renderDiamond(
     QPainter* painter,
-    const QRectF& rect
+    const QRectF& rect,
+    const bool isIdentifying
   );
 
   QRectF getTextRect(

@@ -71,7 +71,7 @@ bool RelationshipConnectionLine::isRelationshipAtStart() const
   }
 
   return startElement->type() == ElementType::Relationship ||
-    startElement->type() == ElementType::WeakRelationship;
+    startElement->type() == ElementType::IdentifyingRelationship;
 }
 
 //----------------------------------------------------------------------------------------------

@@ -25,7 +25,7 @@ enum class ElementType {
     DerivedAttribute,
     MultivaluedAttribute,
     Relationship,
-    WeakRelationship
+    IdentifyingRelationship
 };
 
 // -----------------------------------------------------------------------------------------------------

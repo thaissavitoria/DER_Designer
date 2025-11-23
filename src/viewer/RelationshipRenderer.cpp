@@ -26,7 +26,6 @@ void RelationshipRenderer::setupDefaultStyle()
 
   m_textPen = QPen(Qt::black);
   m_textFont = QFont("Arial", 10);
-  m_textFont.setBold(false);
 
   m_selectionBrush = QBrush(QColor(0, 0, 255, 20));
   m_selectionPen = QPen(Qt::blue, 2.5, Qt::SolidLine);
@@ -47,8 +46,7 @@ void RelationshipRenderer::render(
 
   painter->save();
   painter->setRenderHint(QPainter::Antialiasing, true);
-
-  renderDiamond(painter, rect);
+  renderDiamond(painter, rect, relationship->isIdentifying());
 
   painter->setPen(m_textPen);
   painter->setFont(m_textFont);
@@ -63,14 +61,22 @@ void RelationshipRenderer::render(
 
 void RelationshipRenderer::renderDiamond(
   QPainter* painter,
-  const QRectF& rect
+  const QRectF& rect,
+  const bool isIdentifying
 )
 {
   painter->setPen(m_borderPen);
   painter->setBrush(m_fillBrush);
 
-  QPolygonF diamond = getDiamondPolygon(rect);
+  const QPolygonF diamond = getDiamondPolygon(rect);
   painter->drawPolygon(diamond);
+
+  if (isIdentifying) {
+    const qreal offset = 6.0;
+    const QRectF innerRect = rect.adjusted(offset, offset, -offset, -offset);
+    const QPolygonF innerDiamond = getDiamondPolygon(innerRect);
+    painter->drawPolygon(innerDiamond);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
