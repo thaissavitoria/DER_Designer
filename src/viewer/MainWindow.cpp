@@ -810,6 +810,9 @@ void MainWindow::populateAttributeProperties(
   QString currentType = AttributeType::attributeTypeToString(attribute->attributeType());
   createComboBoxPropertyItem(attributeGroup, "Tipo de Atributo", attributeTypes, currentType, "attributeType");
 
+  if(attribute->isNormalAttribute() || attribute->isCompositeAttribute())
+    createCheckBoxPropertyItem(attributeGroup, "Chave Primária", attribute->isPrimaryKey(), "isPrimaryKey");
+
   if (attribute->isCompositeAttribute()) {
     auto subAttributesGroup = new QTreeWidgetItem(m_propertiesTree);
     subAttributesGroup->setText(0, "SUB-ATRIBUTOS");
@@ -1361,6 +1364,22 @@ void MainWindow::onCheckBoxChanged(
   }
 
   BasicElement* element = selectedElements.first();
+
+  if (propertyKey == "isPrimaryKey") {
+    auto attribute = qobject_cast<Attribute*>(element);
+    if (attribute) {
+      attribute->setPrimaryKey(checked);
+      m_isModified = true;
+      updateWindowTitle();
+      updateStatusBar(QString("Chave primária: %1").arg(checked ? "Sim" : "Não"));
+      updatePropertiesPanel();
+
+      if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
+        graphicsItem->update();
+      }
+      return;
+    }
+  }
 
   if (handleRelationshipEndParticipationChange(element, propertyKey, checked)) {
     return;

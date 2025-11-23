@@ -13,7 +13,6 @@ Attribute::Attribute(
   m_isPrimaryKey(false)
 {
   setSize(preferredSize());
-  updateFromAttributeType();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -31,7 +30,6 @@ Attribute::Attribute(
 {
   setName(name);
   setSize(preferredSize());
-  updateFromAttributeType();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -50,7 +48,6 @@ Attribute::Attribute(
 {
   setName(name);
   setSize(preferredSize());
-  updateFromAttributeType();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -112,7 +109,7 @@ void Attribute::setAttributeType(
 )
 {
   if (m_attributeType != type) {
-    if (m_attributeType == AttributeType::Composite) {
+    if (m_attributeType == AttributeType::Composite && type != AttributeType::Composite) {
       QList<Attribute*> subAttributesToRemove = m_subAttributes;
       m_subAttributes.clear();
 
@@ -122,7 +119,6 @@ void Attribute::setAttributeType(
     }
 
     m_attributeType = type;
-    updateFromAttributeType();
     emit attributeTypeChanged(type);
     emit elementChanged();
   }
@@ -150,12 +146,6 @@ void Attribute::setPrimaryKey(
 {
   if (m_isPrimaryKey != isPrimary) {
     m_isPrimaryKey = isPrimary;
-
-    if (isPrimary && m_attributeType != AttributeType::Type::Key) {
-      m_attributeType = AttributeType::Type::Key;
-      emit attributeTypeChanged(m_attributeType);
-    }
-
     emit primaryKeyChanged(isPrimary);
     emit elementChanged();
   }
@@ -166,13 +156,6 @@ void Attribute::setPrimaryKey(
 bool Attribute::isNormalAttribute() const
 {
   return m_attributeType == AttributeType::Normal;
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-bool Attribute::isKeyAttribute() const
-{
-  return m_attributeType == AttributeType::Key;
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -226,30 +209,6 @@ bool Attribute::removeSubAttribute(
 QList<Attribute*> Attribute::getSubAttributes() const
 {
   return m_subAttributes;
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void Attribute::updateFromAttributeType()
-{
-  switch (m_attributeType) {
-  case AttributeType::Type::Key:
-    if (!m_isPrimaryKey) {
-      m_isPrimaryKey = true;
-      emit primaryKeyChanged(true);
-    }
-    break;
-  case AttributeType::Type::Normal:
-  case AttributeType::Type::Derived:
-  case AttributeType::Type::Multivalued:
-  case AttributeType::Type::Composite:
-  default:
-    if (m_isPrimaryKey) {
-      m_isPrimaryKey = false;
-      emit primaryKeyChanged(false);
-    }
-    break;
-  }
 }
 
 // -----------------------------------------------------------------------------------------------------

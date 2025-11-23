@@ -8,10 +8,7 @@ AttributeType::Type AttributeType::attributeTypeFromString(
     const QString& typeString
 )
 {
-    if (typeString == "Atributo Chave") {
-        return Type::Key;
-    }
-    else if (typeString == "Atributo Derivado") {
+    if (typeString == "Atributo Derivado") {
         return Type::Derived;
     }
     else if (typeString == "Atributo Multivalorado") {
@@ -32,18 +29,15 @@ QString AttributeType::attributeTypeToString(
 )
 {
     switch (type) {
-    case Type::Normal:
+      case Type::Derived:
+          return "Atributo Derivado";
+      case Type::Multivalued:
+          return "Atributo Multivalorado";
+      case Type::Composite:
+          return "Atributo Composto";
+      case Type::Normal:
+      default:
         return "Atributo Simples";
-    case Type::Key:
-        return "Atributo Chave";
-    case Type::Derived:
-        return "Atributo Derivado";
-    case Type::Multivalued:
-        return "Atributo Multivalorado";
-    case Type::Composite:
-        return "Atributo Composto";
-    default:
-        return "";
     }
 }
 
@@ -53,7 +47,6 @@ QStringList AttributeType::getAllAttributeTypeStrings()
 {
     QStringList types;
     types << attributeTypeToString(Type::Normal);
-    types << attributeTypeToString(Type::Key);
     types << attributeTypeToString(Type::Derived);
     types << attributeTypeToString(Type::Multivalued);
     types << attributeTypeToString(Type::Composite);
@@ -66,7 +59,6 @@ QList<AttributeType::Type> AttributeType::getAllAttributeTypes()
 {
     QList<Type> types;
     types << Type::Normal;
-    types << Type::Key;
     types << Type::Derived;
     types << Type::Multivalued;
     types << Type::Composite;

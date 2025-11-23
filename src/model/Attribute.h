@@ -49,7 +49,6 @@ public:
   );
 
   bool isNormalAttribute() const;
-  bool isKeyAttribute() const;
   bool isDerivedAttribute() const;
   bool isMultivaluedAttribute() const;
   bool isCompositeAttribute() const;
@@ -81,8 +80,6 @@ private:
   AttributeType::Type m_attributeType;
   bool m_isPrimaryKey;
   QList<Attribute*> m_subAttributes;
-
-  void updateFromAttributeType();
 };
 
 #endif // ATTRIBUTE_H

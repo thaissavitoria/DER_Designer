@@ -10,7 +10,6 @@ class AttributeType {
 public:
     enum Type {
         Normal = 0,
-        Key,
         Derived,
         Multivalued,
         Composite
