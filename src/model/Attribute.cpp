@@ -199,7 +199,6 @@ bool Attribute::removeSubAttribute(
   bool removed = m_subAttributes.removeOne(subAttribute);
   if (removed) {
     subAttribute->setParent(nullptr);
-    emit subAttributeRemoved(subAttribute);
   }
   return removed;
 }

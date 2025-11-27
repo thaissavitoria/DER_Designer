@@ -84,11 +84,6 @@ void DiagramScene::addElement(
           this, &DiagramScene::onSubAttributeOrAttributeOfEntityRemoved);
     }
 
-    if (auto attribute = qobject_cast<Entity*>(element)) {
-      connect(attribute, &Entity::attributeRemoved,
-        this, &DiagramScene::onSubAttributeOrAttributeOfEntityRemoved);
-    }
-
     emit elementAdded(element);
 }
 

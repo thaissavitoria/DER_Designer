@@ -105,7 +105,6 @@ bool Entity::removeAttribute(
 ) 
 {
   attribute->setParent(nullptr);
-  emit attributeRemoved(attribute);
   return m_attributes.removeOne(attribute);
 }
 

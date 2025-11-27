@@ -680,6 +680,8 @@ void MainWindow::onRemoveSubAttributeFromAttributeClicked()
     Attribute* subAttr = subAttributes[index];
     attribute->removeSubAttribute(subAttr);
 
+    m_diagramScene->removeElement(subAttr);
+
     m_isModified = true;
     updateWindowTitle();
     updateStatusBar("Sub-atributo removido do atributo composto");
@@ -780,6 +782,8 @@ void MainWindow::onRemoveAttributeFromEntityClicked()
   if (index >= 0 && index < attributes.size()) {
     Attribute* attr = attributes[index];
     entity->removeAttribute(attr);
+
+    m_diagramScene->removeElement(attr);
 
     m_isModified = true;
     updateWindowTitle();

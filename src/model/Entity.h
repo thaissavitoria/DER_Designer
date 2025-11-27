@@ -50,11 +50,6 @@ public:
       const bool isWeak
     );
 
-  signals:
-    void attributeRemoved(
-      Attribute* attribute
-    );
-
   private:
     QList<Attribute*> m_attributes;
     bool m_isWeakEntity = false;
