@@ -565,9 +565,72 @@ void DiagramScene::addConnection(
   auto connectionItem = new ConnectionGraphicsItem(connection);
   m_connectionToItem[connection] = connectionItem;
   addItem(connectionItem);
+
+  handleAttributeConnection(connection);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::handleAttributeConnection(
+  ConnectionLine* connection
+)
+{
+  if (!connection || !connection->isValid()) {
+    return;
+  }
+
+  auto startElement = connection->getStartElement();
+  auto endElement = connection->getEndElement();
+
+  if (!startElement || !endElement) {
+    return;
+  }
+
+  auto startEntity = qobject_cast<Entity*>(startElement);
+  auto endAttribute = qobject_cast<Attribute*>(endElement);
+
+  if (startEntity && endAttribute) {
+    if (endAttribute->parent() != startEntity) {
+      startEntity->addAttribute(endAttribute);
+      endAttribute->setParent(startEntity);
+    }
+    return;
+  }
+
+  auto endEntity = qobject_cast<Entity*>(endElement);
+  auto startAttribute = qobject_cast<Attribute*>(startElement);
+
+  if (endEntity && startAttribute) {
+    if (startAttribute->parent() != endEntity) {
+      endEntity->addAttribute(startAttribute);
+      startAttribute->setParent(endEntity);
+    }
+    return;
+  }
+
+  auto parentAttribute = qobject_cast<Attribute*>(startElement);
+  auto subAttribute = qobject_cast<Attribute*>(endElement);
+
+  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
+    if (subAttribute->parent() != parentAttribute) {
+      parentAttribute->addSubAttribute(subAttribute);
+      subAttribute->setParent(parentAttribute);
+    }
+    return;
+  }
+
+  parentAttribute = qobject_cast<Attribute*>(endElement);
+  subAttribute = qobject_cast<Attribute*>(startElement);
+
+  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
+    if (subAttribute->parent() != parentAttribute) {
+      parentAttribute->addSubAttribute(subAttribute);
+      subAttribute->setParent(parentAttribute);
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
 
 void DiagramScene::addRelationshipConnection(
   RelationshipConnectionLine* connection

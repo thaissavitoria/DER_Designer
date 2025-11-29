@@ -211,6 +211,10 @@ private:
     Attribute* attribute
   );
 
+  void handleAttributeConnection(
+    ConnectionLine* connection
+  );
+
 };
 
 #endif // DIAGRAMSCENE_H
