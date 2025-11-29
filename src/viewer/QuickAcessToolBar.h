@@ -17,10 +17,6 @@ public:
     QWidget* parent = nullptr
   );
 
-  void setMainWindow(
-    MainWindow* mainWindow
-  );
-
 private slots:
   void onNewAction();
   void onSaveAction();

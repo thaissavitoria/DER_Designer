@@ -11,19 +11,10 @@ QuickAccessToolbar::QuickAccessToolbar(
   QWidget* parent
 ) : 
   QToolBar(parent), 
-  m_mainWindow(nullptr) 
+  m_mainWindow(qobject_cast<MainWindow*>(parent)) 
 {
   setupToolbar();
   addDefaultActions();
-}
-
-//----------------------------------------------------------------------------------------------
-
-void QuickAccessToolbar::setMainWindow(
-  MainWindow* mainWindow
-) 
-{
-  m_mainWindow = mainWindow;
 }
 
 //----------------------------------------------------------------------------------------------
