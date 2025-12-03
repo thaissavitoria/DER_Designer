@@ -1,6 +1,6 @@
 ﻿#include "Attribute.h"
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Attribute::Attribute(
   QObject* parent
@@ -15,7 +15,7 @@ Attribute::Attribute(
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Attribute::Attribute(
   const QString& name,
@@ -32,7 +32,7 @@ Attribute::Attribute(
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Attribute::Attribute(
   const QString& name,
@@ -50,30 +50,21 @@ Attribute::Attribute(
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
-
-Attribute::~Attribute()
-{
-  for (Attribute* attribute : m_subAttributes) {
-    attribute->setParent(nullptr);
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QSizeF Attribute::minimumSize() const
 {
   return QSizeF(60, 30);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QSizeF Attribute::preferredSize() const
 {
   return QSizeF(100, 50);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 std::unique_ptr<BasicElement> Attribute::clone() const
 {
@@ -88,21 +79,21 @@ std::unique_ptr<BasicElement> Attribute::clone() const
   return std::move(cloned);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QString Attribute::typeDisplayName() const
 {
   return AttributeType::attributeTypeToString(m_attributeType);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 AttributeType::Type Attribute::attributeType() const
 {
   return m_attributeType;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 void Attribute::setAttributeType(
   AttributeType::Type type
@@ -110,12 +101,18 @@ void Attribute::setAttributeType(
 {
   if (m_attributeType != type) {
     if (m_attributeType == AttributeType::Composite && type != AttributeType::Composite) {
-      QList<Attribute*> subAttributesToRemove = m_subAttributes;
-      m_subAttributes.clear();
+      QList<QString> subAttributeIdsToRemove = m_subAttributeIds;
+      m_subAttributeIds.clear();
 
-      for (auto subAttr : subAttributesToRemove) {
-        emit subAttributeRemoved(subAttr);
+      for (const QString& subAttrId : subAttributeIdsToRemove) {
+        emit subAttributeRemoved(subAttrId);
       }
+
+      setPrimaryKey(false);
+    }
+
+    if (m_attributeType == AttributeType::Normal && type != AttributeType::Normal) {
+      setPrimaryKey(false);
     }
 
     m_attributeType = type;
@@ -124,21 +121,21 @@ void Attribute::setAttributeType(
   }
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QString Attribute::attributeTypeString() const
 {
   return AttributeType::attributeTypeToString(m_attributeType);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 bool Attribute::isPrimaryKey() const
 {
   return m_isPrimaryKey;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 void Attribute::setPrimaryKey(
   bool isPrimary
@@ -151,63 +148,118 @@ void Attribute::setPrimaryKey(
   }
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 bool Attribute::isNormalAttribute() const
 {
   return m_attributeType == AttributeType::Normal;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 bool Attribute::isDerivedAttribute() const
 {
   return m_attributeType == AttributeType::Derived;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 bool Attribute::isMultivaluedAttribute() const
 {
   return m_attributeType == AttributeType::Multivalued;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 bool Attribute::isCompositeAttribute() const
 {
   return m_attributeType == AttributeType::Composite;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-void Attribute::addSubAttribute(
-  Attribute* subAttribute
+void Attribute::addSubAttributeId(
+  const QString& subAttributeId
 )
 {
-  if (subAttribute && !m_subAttributes.contains(subAttribute)) {
-    m_subAttributes.append(subAttribute);
+  if (!subAttributeId.isEmpty() && !m_subAttributeIds.contains(subAttributeId)) {
+    m_subAttributeIds.append(subAttributeId);
   }
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-bool Attribute::removeSubAttribute(
-  Attribute* subAttribute
+bool Attribute::removeSubAttributeId(
+  const QString& subAttributeId
 )
 {
-  bool removed = m_subAttributes.removeOne(subAttribute);
-  if (removed) {
-    subAttribute->setParent(nullptr);
-  }
-  return removed;
+  return m_subAttributeIds.removeOne(subAttributeId);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-QList<Attribute*> Attribute::getSubAttributes() const
+QList<QString> Attribute::getSubAttributeIds() const
 {
-  return m_subAttributes;
+  return m_subAttributeIds;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+QVariantMap Attribute::serialize() const
+{
+  QVariantMap data = BasicElement::serialize();
+
+  data["attributeType"] = static_cast<int>(m_attributeType);
+  data["isPrimaryKey"] = m_isPrimaryKey;
+
+  if (!m_subAttributeIds.isEmpty()) {
+    QVariantList subAttributesList;
+    for (const QString& subAttrId : m_subAttributeIds) {
+      subAttributesList.append(subAttrId);
+    }
+    data["subAttributeIds"] = subAttributesList;
+  }
+
+  return data;
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool Attribute::deserialize(
+  const QVariantMap& data
+)
+{
+  if (!BasicElement::deserialize(data)) {
+    return false;
+  }
+
+  try {
+    if (data.contains("attributeType")) {
+      m_attributeType = static_cast<AttributeType::Type>(data["attributeType"].toInt());
+    }
+
+    if (data.contains("isPrimaryKey")) {
+      m_isPrimaryKey = data["isPrimaryKey"].toBool();
+    }
+
+    m_subAttributeIds.clear();
+
+    if (data.contains("subAttributeIds")) {
+      QVariantList subAttributesList = data["subAttributeIds"].toList();
+      for (const QVariant& subAttrVariant : subAttributesList) {
+        QString subAttrId = subAttrVariant.toString();
+        if (!subAttrId.isEmpty()) {
+          m_subAttributeIds.append(subAttrId);
+        }
+      }
+    }
+
+    return true;
+  }
+  catch (...) {
+    qWarning() << "Erro ao deserializar atributo" << id();
+    return false;
+  }
+}
+
+//----------------------------------------------------------------------------------------------

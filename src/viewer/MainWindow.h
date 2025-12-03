@@ -221,7 +221,7 @@ private:
   bool handleAttributePropertyChange(
     BasicElement* element,
     const QString& propertyType,
-    const QString& newValue
+    const QVariant& newValue
   );
 
   bool handleAttributeTypeChange(
@@ -266,6 +266,19 @@ private:
   void ConnectBasicElementsWithConnectionLine(
     BasicElement* startElement,
     BasicElement* endElement
+  );
+
+  bool loadDiagramElements(
+    const QJsonObject& diagramData
+  );
+
+  BasicElement* createElementByType(
+    ElementType elementType
+  );
+
+  bool loadDiagramConnections(
+    const QJsonArray& connectionsArray,
+    const QHash<QString, BasicElement*>& loadedElements
   );
 
   QWidget* m_centralWidget;

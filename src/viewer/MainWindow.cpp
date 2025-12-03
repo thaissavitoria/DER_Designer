@@ -1,7 +1,13 @@
 ﻿#include "MainWindow.h"
 #include "controller/PropertyCommand.h"
+#include "model/JsonHelper.h"
 
 #include <QtCore/QDir>
+#include <QtCore/QFile>
+#include <QtCore/QFileInfo>
+#include <QtCore/QJsonArray>
+#include <QtCore/QJsonDocument>
+#include <QtCore/QJsonObject>
 #include <QtCore/QStandardPaths>
 
 #include <QtGui/QAction>
@@ -24,6 +30,7 @@
 #include "model/AttributeType.h"
 #include "model/Entity.h"
 #include "model/Relationship.h"
+#include "model/RelationshipConnectionLine.h"
 
 // -----------------------------------------------------------------------------------------------------
 
@@ -35,7 +42,7 @@ MainWindow::MainWindow(QWidget* parent)
     , m_diagramWidget(nullptr)
     , m_diagramLayout(nullptr)
     , m_diagramScene(nullptr)
-	  , m_graphicsView(nullptr)
+    , m_graphicsView(nullptr)
     , m_sideTabWidget(nullptr)
     , m_drawingTab(nullptr)
     , m_propertiesTab(nullptr)
@@ -298,7 +305,7 @@ void MainWindow::newFile()
         }
     }
 
-    m_diagramScene->clear();
+    m_diagramScene->clearDiagram();
 
     m_currentFileName.clear();
     m_isModified = false;
@@ -310,42 +317,262 @@ void MainWindow::newFile()
 
 void MainWindow::openFile()
 {
-    QString fileName = QFileDialog::getOpenFileName(this,
-        "Abrir Diagrama DER", "", "Arquivos DER (*.der);;Todos os arquivos (*)");
+  if (m_isModified) {
+    QMessageBox::StandardButton ret = QMessageBox::warning(
+      this,
+      "DER Designer",
+      "O diagrama atual foi modificado.\n"
+      "Deseja salvar as alterações?",
+      QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel
+    );
 
-    if (!fileName.isEmpty()) {
-        m_currentFileName = fileName;
-        m_isModified = false;
-        updateWindowTitle();
-        updateStatusBar("Diagrama carregado: " + QFileInfo(fileName).baseName());
+    if (ret == QMessageBox::Save) {
+      saveFile();
     }
+    else if (ret == QMessageBox::Cancel) {
+      return;
+    }
+  }
+
+  QString fileName = QFileDialog::getOpenFileName(
+    this,
+    "Abrir Diagrama DER",
+    "",
+    "Arquivos DER (*.der);;Todos os arquivos (*)"
+  );
+
+  if (fileName.isEmpty()) {
+    return;
+  }
+
+  QJsonObject diagramData;
+  bool success = JsonHelper::loadDiagramFromFile(fileName, diagramData);
+
+  if (!success) {
+    QMessageBox::warning(
+      this,
+      "Erro ao Abrir",
+      "Arquivo inválido ou corrompido."
+    );
+    updateStatusBar("Erro ao abrir arquivo");
+    return;
+  }
+
+  m_diagramScene->clear();
+
+  if (!loadDiagramElements(diagramData)) {
+    QMessageBox::warning(
+      this,
+      "Erro ao Abrir",
+      "Erro ao carregar elementos do diagrama."
+    );
+    updateStatusBar("Erro ao carregar elementos");
+    return;
+  }
+
+  m_currentFileName = fileName;
+  m_isModified = false;
+  updateWindowTitle();
+  updateStatusBar("Diagrama carregado: " + QFileInfo(fileName).baseName());
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::saveFile()
 {
-    if (m_currentFileName.isEmpty()) {
-        saveAsFile();
-        return;
+  if (m_currentFileName.isEmpty()) {
+    saveAsFile();
+    return;
+  }
+
+  if (!m_diagramScene) {
+    updateStatusBar("Erro: Cena do diagrama não encontrada");
+    return;
+  }
+
+  QList<BasicElement*> elements = m_diagramScene->getAllElements();
+  QList<ConnectionLine*> connections = m_diagramScene->getAllConnections();
+
+  bool success = JsonHelper::saveDiagramToFile(m_currentFileName, elements, connections);
+
+  if (!success) {
+    QMessageBox::warning(
+      this,
+      "Erro ao Salvar",
+      QString("Não foi possível salvar o arquivo:\n%1").arg(m_currentFileName)
+    );
+    updateStatusBar("Erro ao salvar arquivo");
+    return;
+  }
+
+  m_isModified = false;
+  updateWindowTitle();
+  updateStatusBar("Diagrama salvo: " + QFileInfo(m_currentFileName).baseName());
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool MainWindow::loadDiagramElements(
+  const QJsonObject& diagramData
+)
+{
+  QHash<QString, BasicElement*> loadedElements;
+  QJsonArray elementsArray = diagramData["elements"].toArray();
+
+  for (const QJsonValue& elementValue : elementsArray) {
+    QJsonObject elementJson = elementValue.toObject();
+    QVariantMap elementData = elementJson.toVariantMap();
+
+    if (!elementData.contains("type")) {
+      continue;
     }
 
-    m_isModified = false;
-    updateWindowTitle();
-    updateStatusBar("Diagrama salvo: " + QFileInfo(m_currentFileName).baseName());
+    auto elementType = static_cast<ElementType>(elementData["type"].toInt());
+    auto element = createElementByType(elementType);
+
+    if (element) {
+      if (element->deserialize(elementData)) {
+        m_diagramScene->addElement(element);
+        loadedElements[element->id()] = element;
+      }
+      else {
+        delete element;
+      }
+    }
+  }
+
+  QJsonArray connectionsArray = diagramData["connections"].toArray();
+  return loadDiagramConnections(connectionsArray, loadedElements);
+}
+
+//----------------------------------------------------------------------------------------------
+
+BasicElement* MainWindow::createElementByType(
+  ElementType elementType
+)
+{
+  switch (elementType) {
+  case ElementType::Entity:
+    return new Entity("Entidade");
+
+  case ElementType::WeakEntity:
+    return new Entity("Entidade Fraca", true);
+
+  case ElementType::Attribute:
+  case ElementType::KeyAttribute:
+  case ElementType::DerivedAttribute:
+  case ElementType::MultivaluedAttribute:
+    return new Attribute("Atributo");
+
+  case ElementType::Relationship:
+    return new Relationship("Relacionamento");
+
+  case ElementType::IdentifyingRelationship:
+    return new Relationship("Rel. Identificador", true);
+
+  default:
+    return nullptr;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool MainWindow::loadDiagramConnections(
+  const QJsonArray& connectionsArray,
+  const QHash<QString, BasicElement*>& loadedElements
+)
+{
+  for (const QJsonValue& connectionValue : connectionsArray) {
+    QJsonObject connectionJson = connectionValue.toObject();
+
+    QString startElementId = connectionJson["startElementId"].toString();
+    QString endElementId = connectionJson["endElementId"].toString();
+
+    if (!loadedElements.contains(startElementId) || !loadedElements.contains(endElementId)) {
+      continue;
+    }
+
+    BasicElement* startElement = loadedElements[startElementId];
+    BasicElement* endElement = loadedElements[endElementId];
+
+    if (!startElement || !endElement) {
+      continue;
+    }
+
+    ConnectionPoint* startPoint = startElement->getConnectionPointByDirection(
+      static_cast<ConnectionDirection>(connectionJson["startConnectionPointDirection"].toInt())
+    );
+    ConnectionPoint* endPoint = endElement->getConnectionPointByDirection(
+      static_cast<ConnectionDirection>(connectionJson["endConnectionPointDirection"].toInt())
+    );
+
+    if (!startPoint || !endPoint) {
+      continue;
+    }
+
+    const bool isRelationshipEntityConnection = connectionJson.contains("cardinalityOffsetX"); //Propriedade exclusiva
+
+    if (isRelationshipEntityConnection) {
+      auto relationship = qobject_cast<Relationship*>(startElement);
+      BasicElement* entity = endElement;
+
+      if (!relationship) {
+        relationship = qobject_cast<Relationship*>(endElement);
+        entity = startElement;
+      }
+
+      if (relationship && entity) {
+        RelationshipEnd* relationshipEnd = nullptr;
+        QList<RelationshipEnd*> ends = relationship->ends();
+
+        for (RelationshipEnd* end : ends) {
+          if (end->entityId() == entity->id()) {
+            relationshipEnd = end;
+            break;
+          }
+        }
+
+        if (relationshipEnd) {
+          auto relConnection = new RelationshipConnectionLine(
+            startPoint,
+            endPoint,
+            relationshipEnd,
+            nullptr
+          );
+
+          if (relConnection) {
+            QVariantMap connectionData = connectionJson.toVariantMap();
+            relConnection->deserialize(connectionData);
+            m_diagramScene->addRelationshipConnection(relConnection);
+           }
+        }
+      }
+    }
+    else {
+      auto connection = new ConnectionLine(startPoint, endPoint);
+
+      if (connection) {
+        QVariantMap connectionData = connectionJson.toVariantMap();
+        connection->deserialize(connectionData);
+        m_diagramScene->addConnection(connection);
+      }
+    }
+  }
+
+  return true;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::saveAsFile()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,
-        "Salvar Diagrama DER", "", "Arquivos DER (*.der);;Todos os arquivos (*)");
+  QString fileName = QFileDialog::getSaveFileName(this,
+    "Salvar Diagrama DER", "", "Arquivos DER (*.der);;Todos os arquivos (*)");
 
-    if (!fileName.isEmpty()) {
-        m_currentFileName = fileName;
-        saveFile();
-    }
+  if (!fileName.isEmpty()) {
+    m_currentFileName = fileName;
+    saveFile();
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -397,7 +624,7 @@ void MainWindow::onElementDropped(
     BasicElement* element = nullptr;
 
     if (elementType == "Entity") {
-        element = new Entity("Entidade");
+      element = new Entity("Entidade");
     }
     else if (elementType == "WeakEntity") {
       element = new Entity("Entidade Fraca", true);
@@ -567,9 +794,20 @@ void MainWindow::populateEntityProperties(
 
   createButtonPropertyItem(attributesGroup, "Adicionar Atributo", "+", "addAttribute");
 
-  QList<Attribute*> attributes = entity->getAttributes();
+  QList<QString> attributeIds = entity->getAttributeIds();
+  QList<Attribute*> attributes;
+
+  for (const QString& attrId : attributeIds) {
+    if (BasicElement* elem = m_diagramScene->findElement(attrId)) {
+      if (auto attr = qobject_cast<Attribute*>(elem)) {
+        attributes.append(attr);
+      }
+    }
+  }
+
   populateAttributeList(attributesGroup, attributes, "attr");
 }
+
 
 //----------------------------------------------------------------------------------------------
 
@@ -626,18 +864,19 @@ void MainWindow::onAddSubAttributeToAttributeClicked()
     return;
   }
 
-  auto subAttribute = new Attribute(QString("SubAtributo_%1").arg(attribute->getSubAttributes().size() + 1), attribute);
+  auto subAttribute = new Attribute(QString("SubAtributo_%1").arg(attribute->getSubAttributeIds().size() + 1), attribute);
 
   QPointF attributePos = attribute->position();
   QSizeF attributeSize = attribute->size();
-  int subAttributeCount = attribute->getSubAttributes().size();
+  int subAttributeCount = attribute->getSubAttributeIds().size();
 
   qreal offsetX = attributeSize.width() + 50;
   qreal offsetY = subAttributeCount * 70;
   subAttribute->setPosition(attributePos.x() + offsetX, attributePos.y() + offsetY);
 
-  attribute->addSubAttribute(subAttribute);
   m_diagramScene->addElement(subAttribute);
+
+  attribute->addSubAttributeId(subAttribute->id());
 
   ConnectBasicElementsWithConnectionLine(attribute, subAttribute);
 
@@ -675,12 +914,15 @@ void MainWindow::onRemoveSubAttributeFromAttributeClicked()
     return;
   }
 
-  QList<Attribute*> subAttributes = attribute->getSubAttributes();
-  if (index >= 0 && index < subAttributes.size()) {
-    Attribute* subAttr = subAttributes[index];
-    attribute->removeSubAttribute(subAttr);
+  QList<QString> subAttributeIds = attribute->getSubAttributeIds();
+  if (index >= 0 && index < subAttributeIds.size()) {
+    QString subAttrId = subAttributeIds[index];
 
-    m_diagramScene->removeElement(subAttr);
+    attribute->removeSubAttributeId(subAttrId);
+
+    if (BasicElement* subAttr = m_diagramScene->findElement(subAttrId)) {
+      m_diagramScene->removeElement(subAttr);
+    }
 
     m_isModified = true;
     updateWindowTitle();
@@ -708,18 +950,19 @@ void MainWindow::onAddAttributeToEntityClicked()
     return;
   }
 
-  auto attribute = new Attribute(QString("Atributo_%1").arg(entity->getAttributes().size() + 1), entity);
+  auto attribute = new Attribute(QString("Atributo_%1").arg(entity->getAttributeIds().size() + 1), entity);
 
   QPointF entityPos = entity->position();
   QSizeF entitySize = entity->size();
-  int attributeCount = entity->getAttributes().size();
+  int attributeCount = entity->getAttributeIds().size();
 
   qreal offsetX = entitySize.width() + 50;
   qreal offsetY = attributeCount * 80;
   attribute->setPosition(entityPos.x() + offsetX, entityPos.y() + offsetY);
 
-  entity->addAttribute(attribute);
   m_diagramScene->addElement(attribute);
+
+  entity->addAttributeId(attribute->id());
 
   ConnectBasicElementsWithConnectionLine(entity, attribute);
 
@@ -778,12 +1021,15 @@ void MainWindow::onRemoveAttributeFromEntityClicked()
     return;
   }
 
-  QList<Attribute*> attributes = entity->getAttributes();
-  if (index >= 0 && index < attributes.size()) {
-    Attribute* attr = attributes[index];
-    entity->removeAttribute(attr);
+  QList<QString> attributeIds = entity->getAttributeIds();
+  if (index >= 0 && index < attributeIds.size()) {
+    QString attrId = attributeIds[index];
 
-    m_diagramScene->removeElement(attr);
+    entity->removeAttributeId(attrId);
+
+    if (BasicElement* attr = m_diagramScene->findElement(attrId)) {
+      m_diagramScene->removeElement(attr);
+    }
 
     m_isModified = true;
     updateWindowTitle();
@@ -805,28 +1051,69 @@ void MainWindow::populateAttributeProperties(
     return;
   }
 
-  auto attributeGroup = new QTreeWidgetItem(m_propertiesTree);
-  attributeGroup->setText(0, "ATRIBUTO");
-  attributeGroup->setExpanded(true);
-  attributeGroup->setFlags(attributeGroup->flags() & ~Qt::ItemIsEditable);
+  QTreeWidgetItem* attributeGroup;
+  if (parent) {
+    attributeGroup = parent;
+  }
+  else {
+    attributeGroup = new QTreeWidgetItem(m_propertiesTree);
+    attributeGroup->setText(0, "ATRIBUTO");
+    attributeGroup->setExpanded(true);
+    attributeGroup->setFlags(attributeGroup->flags() & ~Qt::ItemIsEditable);
+  }
 
   QStringList attributeTypes = AttributeType::getAllAttributeTypeStrings();
   QString currentType = AttributeType::attributeTypeToString(attribute->attributeType());
-  createComboBoxPropertyItem(attributeGroup, "Tipo de Atributo", attributeTypes, currentType, "attributeType");
 
-  if(attribute->isNormalAttribute() || attribute->isCompositeAttribute())
-    createCheckBoxPropertyItem(attributeGroup, "Chave Primária", attribute->isPrimaryKey(), "isPrimaryKey");
+  QString typePropertyKey = parent ?
+    QString("%1_type").arg(parent->data(0, Qt::UserRole).toString()) :
+    "attributeType";
+
+  createComboBoxPropertyItem(attributeGroup, "Tipo de Atributo", attributeTypes, currentType, typePropertyKey);
+
+  if (attribute->isNormalAttribute() || attribute->isCompositeAttribute()) {
+    QString keyPropertyKey = parent ?
+      QString("%1_isPrimaryKey").arg(parent->data(0, Qt::UserRole).toString()) :
+      "isPrimaryKey";
+
+    createCheckBoxPropertyItem(attributeGroup, "Chave Primária", attribute->isPrimaryKey(), keyPropertyKey);
+  }
 
   if (attribute->isCompositeAttribute()) {
-    auto subAttributesGroup = new QTreeWidgetItem(m_propertiesTree);
+    QTreeWidgetItem* subAttributesGroup;
+    if (parent) {
+      subAttributesGroup = new QTreeWidgetItem(attributeGroup);
+    }
+    else {
+      subAttributesGroup = new QTreeWidgetItem(m_propertiesTree);
+    }
+
     subAttributesGroup->setText(0, "SUB-ATRIBUTOS");
     subAttributesGroup->setExpanded(true);
     subAttributesGroup->setFlags(subAttributesGroup->flags() & ~Qt::ItemIsEditable);
 
-    createButtonPropertyItem(subAttributesGroup, "Adicionar Sub-Atributo", "+", "addSubAttribute");
+    QString addButtonKey = parent ?
+      QString("addSubAttribute_%1").arg(parent->data(0, Qt::UserRole).toString()) :
+      "addSubAttribute";
 
-    QList<Attribute*> subAttributes = attribute->getSubAttributes();
-    populateAttributeList(subAttributesGroup, subAttributes, "subattr");
+    createButtonPropertyItem(subAttributesGroup, "Adicionar Sub-Atributo", "+", addButtonKey);
+
+    QList<QString> subAttributeIds = attribute->getSubAttributeIds();
+    QList<Attribute*> subAttributes;
+
+    for (const QString& subAttrId : subAttributeIds) {
+      if (BasicElement* elem = m_diagramScene->findElement(subAttrId)) {
+        if (auto subAttr = qobject_cast<Attribute*>(elem)) {
+          subAttributes.append(subAttr);
+        }
+      }
+    }
+
+    QString propertyPrefix = parent ?
+      QString("%1_subattr").arg(parent->data(0, Qt::UserRole).toString()) :
+      "subattr";
+
+    populateAttributeList(subAttributesGroup, subAttributes, propertyPrefix);
   }
 }
 
@@ -844,10 +1131,10 @@ void MainWindow::populateAttributeList(
     auto attrItem = new QTreeWidgetItem(parentItem);
 
     QString itemLabel;
-    if (propertyPrefix == "attr") {
+    if (propertyPrefix.startsWith("attr")) {
       itemLabel = QString("Atributo %1").arg(i + 1);
     }
-    else if (propertyPrefix == "subattr") {
+    else if (propertyPrefix.contains("subattr")) {
       itemLabel = QString("Sub-Atributo %1").arg(i + 1);
     }
 
@@ -858,15 +1145,13 @@ void MainWindow::populateAttributeList(
 
     createPropertyItem(attrItem, "Nome", attr->name(), QString("%1_%2_name").arg(propertyPrefix).arg(i));
 
-    QStringList attributeTypes = AttributeType::getAllAttributeTypeStrings();
-    QString currentType = AttributeType::attributeTypeToString(attr->attributeType());
-    createComboBoxPropertyItem(attrItem, "Tipo", attributeTypes, currentType, QString("%1_%2_type").arg(propertyPrefix).arg(i));
+    populateAttributeProperties(attr, attrItem);
 
     QString removeKey;
-    if (propertyPrefix == "attr") {
+    if (propertyPrefix.startsWith("attr") && !propertyPrefix.contains("subattr")) {
       removeKey = QString("removeAttribute_%1").arg(i);
     }
-    else if (propertyPrefix == "subattr") {
+    else {
       removeKey = QString("removeSubAttribute_%1").arg(i);
     }
 
@@ -1128,13 +1413,9 @@ void MainWindow::onPropertyValueChanged(
 bool MainWindow::handleAttributePropertyChange(
   BasicElement* element,
   const QString& propertyType,
-  const QString& newValue
+  const QVariant& newValue
 )
 {
-  if (!propertyType.endsWith("_name")) {
-    return false;
-  }
-
   QStringList parts = propertyType.split("_");
   if (parts.size() < 3) {
     return false;
@@ -1143,39 +1424,32 @@ bool MainWindow::handleAttributePropertyChange(
   QString prefix = parts[0];
   int index = parts[1].toInt();
 
+  Attribute* attribute = nullptr;
   if (prefix == "attr") {
     if (auto entity = qobject_cast<Entity*>(element)) {
-      QList<Attribute*> attributes = entity->getAttributes();
-      if (index >= 0 && index < attributes.size()) {
-        attributes[index]->setName(newValue);
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Nome do atributo atualizado");
-        updatePropertiesPanel();
-        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
-          graphicsItem->update();
+      QList<QString> attributeIds = entity->getAttributeIds();
+      if (index >= 0 && index < attributeIds.size()) {
+        if (BasicElement* attrElem = m_diagramScene->findElement(attributeIds[index])) {
+          attribute = qobject_cast<Attribute*>(attrElem);
         }
-        return true;
       }
     }
   }
   else if (prefix == "subattr") {
-    auto attribute = qobject_cast<Attribute*>(element);
-    if (attribute && attribute->isCompositeAttribute()) {
-      QList<Attribute*> subAttributes = attribute->getSubAttributes();
-      if (index >= 0 && index < subAttributes.size()) {
-        Attribute* subAttr = subAttributes[index];
-        subAttr->setName(newValue);
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Nome do sub-atributo atualizado");
-        updatePropertiesPanel();
-        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(subAttr)) {
-          graphicsItem->update();
+    auto parentAttribute = qobject_cast<Attribute*>(element);
+    if (parentAttribute && parentAttribute->isCompositeAttribute()) {
+      QList<QString> subAttributeIds = parentAttribute->getSubAttributeIds();
+      if (index >= 0 && index < subAttributeIds.size()) {
+        if (BasicElement* subAttrElem = m_diagramScene->findElement(subAttributeIds[index])) {
+          attribute = qobject_cast<Attribute*>(subAttrElem);
         }
-        return true;
       }
     }
+  }
+
+  if (attribute != nullptr)
+  {
+    PropertyCommand::setElementProperty(attribute, parts[2], newValue);
   }
 
   return false;
@@ -1266,37 +1540,43 @@ bool MainWindow::handleAttributeTypeChange(
   AttributeType::Type newType = AttributeType::attributeTypeFromString(value);
 
   if (prefix == "attr") {
-    auto entity = qobject_cast<Entity*>(element);
-    if (entity) {
-      QList<Attribute*> attributes = entity->getAttributes();
-      if (index >= 0 && index < attributes.size()) {
-        attributes[index]->setAttributeType(newType);
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Tipo do atributo atualizado");
-        updatePropertiesPanel();
-        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
-          graphicsItem->update();
+    if (auto entity = qobject_cast<Entity*>(element)) {
+      QList<QString> attributeIds = entity->getAttributeIds();
+      if (index >= 0 && index < attributeIds.size()) {
+        if (BasicElement* attrElem = m_diagramScene->findElement(attributeIds[index])) {
+          if (auto attr = qobject_cast<Attribute*>(attrElem)) {
+            attr->setAttributeType(newType);
+            m_isModified = true;
+            updateWindowTitle();
+            updateStatusBar("Tipo do atributo atualizado");
+            updatePropertiesPanel();
+            if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(attr)) {
+              graphicsItem->update();
+            }
+            return true;
+          }
         }
-        return true;
       }
     }
   }
   else if (prefix == "subattr") {
     auto attribute = qobject_cast<Attribute*>(element);
     if (attribute && attribute->isCompositeAttribute()) {
-      QList<Attribute*> subAttributes = attribute->getSubAttributes();
-      if (index >= 0 && index < subAttributes.size()) {
-        Attribute* subAttr = subAttributes[index];
-        subAttr->setAttributeType(newType);
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Tipo do sub-atributo atualizado");
-        updatePropertiesPanel();
-        if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(subAttr)) {
-          graphicsItem->update();
+      QList<QString> subAttributeIds = attribute->getSubAttributeIds();
+      if (index >= 0 && index < subAttributeIds.size()) {
+        if (BasicElement* subAttrElem = m_diagramScene->findElement(subAttributeIds[index])) {
+          if (auto subAttr = qobject_cast<Attribute*>(subAttrElem)) {
+            subAttr->setAttributeType(newType);
+            m_isModified = true;
+            updateWindowTitle();
+            updateStatusBar("Tipo do sub-atributo atualizado");
+            updatePropertiesPanel();
+            if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(subAttr)) {
+              graphicsItem->update();
+            }
+            return true;
+          }
         }
-        return true;
       }
     }
   }
@@ -1369,9 +1649,12 @@ void MainWindow::onCheckBoxChanged(
 
   BasicElement* element = selectedElements.first();
 
+  if (handleAttributePropertyChange(element, propertyKey, checked)) {
+    return;
+  }
+
   if (propertyKey == "isPrimaryKey") {
-    auto attribute = qobject_cast<Attribute*>(element);
-    if (attribute) {
+    if (auto attribute = qobject_cast<Attribute*>(element)) {
       attribute->setPrimaryKey(checked);
       m_isModified = true;
       updateWindowTitle();
@@ -1545,7 +1828,7 @@ void MainWindow::onAddEntityClicked()
 
     auto entity = new Entity("Entidade");
 
-	m_diagramScene->addElement(entity);
+  m_diagramScene->addElement(entity);
     if (entity) {
         m_isModified = true;
         updateWindowTitle();

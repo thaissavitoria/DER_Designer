@@ -59,11 +59,6 @@ private:
         const QRectF& rect
     );
 
-    void renderKeyAttribute(
-        QPainter* painter,
-        const QRectF& rect
-    );
-
     void renderDerivedAttribute(
         QPainter* painter,
         const QRectF& rect

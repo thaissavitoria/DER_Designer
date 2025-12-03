@@ -72,8 +72,6 @@ bool PropertyCommand::setElementProperty(
 
 //----------------------------------------------------------------------------------------------
 
-//----------------------------------------------------------------------------------------------
-
 bool PropertyCommand::validateProperty(
     BasicElement* element,
     const QString& propertyName,

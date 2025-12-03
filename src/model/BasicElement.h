@@ -142,11 +142,14 @@ public:
     void addConnectionPoint(
         ConnectionPoint* connectionPoint
     );
+
+    ConnectionPoint* getConnectionPointByDirection(
+      ConnectionDirection connectionDirection
+    );
     
     void createDefaultConnectionPoints();
 
     virtual bool isValid() const;
-    virtual QStringList validationErrors() const;
 
     virtual QVariantMap serialize() const;
     virtual bool deserialize(

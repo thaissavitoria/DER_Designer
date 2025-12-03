@@ -242,3 +242,64 @@ void RelationshipConnectionLine::onRelationshipEndChanged()
 }
 
 //----------------------------------------------------------------------------------------------
+
+QVariantMap RelationshipConnectionLine::serialize() const
+{
+  QVariantMap data = ConnectionLine::serialize();
+
+  data["cardinalityOffsetX"] = m_cardinalityOffset.x();
+  data["cardinalityOffsetY"] = m_cardinalityOffset.y();
+
+  if (m_relationshipEnd) {
+    data["relationshipEndEntityId"] = m_relationshipEnd->entityId();
+    data["relationshipEndCardinality"] = static_cast<int>(m_relationshipEnd->cardinality());
+    data["relationshipEndTotalParticipation"] = m_relationshipEnd->isTotalParticipation();
+    data["relationshipEndCustomText"] = m_relationshipEnd->customCardinalityText();
+  }
+
+  return data;
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool RelationshipConnectionLine::deserialize(
+  const QVariantMap& data
+)
+{
+  if (data.isEmpty()) {
+    return false;
+  }
+
+  if (data.contains("cardinalityOffsetX") && data.contains("cardinalityOffsetY")) {
+    qreal offsetX = data["cardinalityOffsetX"].toDouble();
+    qreal offsetY = data["cardinalityOffsetY"].toDouble();
+    QPointF offset(offsetX, offsetY);
+
+    if (isCardinalityOffsetValid(offset)) {
+      m_cardinalityOffset = offset;
+    }
+  }
+
+  if (m_relationshipEnd) {
+    if (data.contains("relationshipEndEntityId")) {
+      m_relationshipEnd->setEntityId(data["relationshipEndEntityId"].toString());
+    }
+
+    if (data.contains("relationshipEndCardinality")) {
+      auto cardinality = static_cast<Cardinality>(data["relationshipEndCardinality"].toInt());
+      m_relationshipEnd->setCardinality(cardinality);
+    }
+
+    if (data.contains("relationshipEndTotalParticipation")) {
+      m_relationshipEnd->setIsTotalParticipation(data["relationshipEndTotalParticipation"].toBool());
+    }
+
+    if (data.contains("relationshipEndCustomText")) {
+      m_relationshipEnd->setCustomCardinalityText(data["relationshipEndCustomText"].toString());
+    }
+  }
+
+  return true;
+}
+
+//----------------------------------------------------------------------------------------------

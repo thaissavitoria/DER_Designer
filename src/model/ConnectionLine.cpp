@@ -278,3 +278,48 @@ void ConnectionLine::onConnectionPointChanged()
 }
 
 //----------------------------------------------------------------------------------------------
+
+QVariantMap ConnectionLine::serialize() const
+{
+  QVariantMap data;
+
+  data["id"] = m_id;
+
+  BasicElement* startElement = getStartElement();
+  BasicElement* endElement = getEndElement();
+
+  if (startElement && endElement) {
+    data["startConnectionPointDirection"] = static_cast<int>(m_startPoint->direction());
+    data["endConnectionPointDirection"] = static_cast<int>(m_endPoint->direction());
+    data["startElementId"] = startElement->id();
+    data["endElementId"] = endElement->id();
+    data["lineType"] = static_cast<int>(lineType());
+    data["lineWidth"] = lineWidth();
+  }
+
+  return data;
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool ConnectionLine::deserialize(
+  const QVariantMap& data
+)
+{
+  if (data.isEmpty()) {
+    return false;
+  }
+
+  if (data.contains("lineType")) {
+    auto lineType = static_cast<ConnectionLineType>(data["lineType"].toInt());
+    setLineType(lineType);
+  }
+
+  if (data.contains("lineWidth")) {
+    setLineWidth(data["lineWidth"].toDouble());
+  }
+
+  return true;
+}
+
+//----------------------------------------------------------------------------------------------

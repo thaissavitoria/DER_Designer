@@ -24,7 +24,7 @@ public:
     QObject* parent = nullptr
   );
 
-  virtual ~Attribute();
+  virtual ~Attribute() = default;
 
   QSizeF minimumSize() const override;
 
@@ -53,15 +53,20 @@ public:
   bool isMultivaluedAttribute() const;
   bool isCompositeAttribute() const;
 
-  void addSubAttribute(
-    Attribute* subAttribute
+  void addSubAttributeId(
+    const QString& subAttributeId
   );
 
-  bool removeSubAttribute(
-    Attribute* subAttribute
+  bool removeSubAttributeId(
+    const QString& subAttributeId
   );
 
-  QList<Attribute*> getSubAttributes() const;
+  QList<QString> getSubAttributeIds() const;
+
+  QVariantMap serialize() const override;
+  bool deserialize(
+    const QVariantMap& data
+  ) override;
 
 signals:
   void attributeTypeChanged(
@@ -73,13 +78,13 @@ signals:
   );
 
   void subAttributeRemoved(
-    Attribute* subAttribute
+    const QString& subAttributeId
   );
 
 private:
   AttributeType::Type m_attributeType;
   bool m_isPrimaryKey;
-  QList<Attribute*> m_subAttributes;
+  QList<QString> m_subAttributeIds;
 };
 
 #endif // ATTRIBUTE_H

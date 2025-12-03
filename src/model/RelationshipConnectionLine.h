@@ -49,6 +49,12 @@ public:
 
   bool isRelationshipAtStart() const;
 
+  QVariantMap serialize() const override;
+
+  bool deserialize(
+    const QVariantMap& data
+  ) override;
+
 signals:
   void relationshipEndChanged(
     RelationshipEnd* newRelationshipEnd

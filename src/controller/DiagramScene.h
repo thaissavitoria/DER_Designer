@@ -116,6 +116,8 @@ public:
 
   bool isCreatingConnection() const { return m_isCreatingConnection; }
 
+  void clearDiagram();
+
 protected:
   void mousePressEvent(
     QGraphicsSceneMouseEvent* event
@@ -162,11 +164,6 @@ signals:
 
   void connectionCancelled();
 
-private slots:
-  void onSubAttributeOrAttributeOfEntityRemoved(
-    Attribute* subAttribute
-  );
-
 private:
   QHash<BasicElement*, ElementGraphicsItem*> m_elementToItem;
   QHash<QString, BasicElement*> m_elements;
@@ -193,6 +190,10 @@ private:
   );
 
   void handleRelationshipDisconnection(
+    ConnectionLine* connection
+  );
+
+  void handleAttributeDisconnection(
     ConnectionLine* connection
   );
 

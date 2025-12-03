@@ -31,35 +31,7 @@ DiagramScene::DiagramScene(QObject* parent)
 
 DiagramScene::~DiagramScene()
 {
-    for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
-        if (ConnectionGraphicsItem* item = it.value()) {
-            removeItem(item);
-            delete item;
-        }
-    }
-
-    m_connectionToItem.clear();
-
-    for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
-        delete it.value();
-    }
-    m_connections.clear();
-
-    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-      if (ElementGraphicsItem* item = it.value()) {
-        removeItem(item);
-        delete item;
-      }
-    }
-
-    m_elementToItem.clear();
-
-    for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-      delete it.value();
-    }
-    m_elements.clear();
-
-    destroySelectionRect();
+  clearDiagram();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -68,26 +40,62 @@ void DiagramScene::addElement(
     BasicElement* element
 )
 {
-    if (!element || m_elements.contains(element->id())) {
-        return;
-    }
+  if (!element || m_elements.contains(element->id())) {
+    return;
+  }
 
-    m_elements[element->id()] = element;
+  m_elements[element->id()] = element;
 
-    auto item = new ElementGraphicsItem(element);
-    m_elementToItem[element] = item;
+  auto item = new ElementGraphicsItem(element);
+  m_elementToItem[element] = item;
 
-    addItem(item);
+  addItem(item);
 
-    if (auto attribute = qobject_cast<Attribute*>(element)) {
-        connect(attribute, &Attribute::subAttributeRemoved,
-          this, &DiagramScene::onSubAttributeOrAttributeOfEntityRemoved);
-    }
-
-    emit elementAdded(element);
+  emit elementAdded(element);
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::clearDiagram()
+{
+  cancelConnection();
+
+  clearSelection();
+
+  for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
+    if (ConnectionGraphicsItem* item = it.value()) {
+      removeItem(item);
+      delete item;
+    }
+  }
+
+  m_connectionToItem.clear();
+
+  for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
+    removeConnection(it.value());
+  }
+  m_connections.clear();
+
+  for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
+    if (ElementGraphicsItem* item = it.value()) {
+      removeItem(item);
+      delete item;
+    }
+  }
+
+  m_elementToItem.clear();
+
+  for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
+    removeElement(it.value());
+  }
+  m_elements.clear();
+
+  destroySelectionRect();
+
+  QGraphicsScene::clear();
+}
+
+//----------------------------------------------------------------------------------------------
 
 void DiagramScene::removeElement(
   BasicElement* element
@@ -102,6 +110,10 @@ void DiagramScene::removeElement(
   }
 
   removeElementConnections(element);
+
+  for (QObject* child : element->children()) {
+    child->setParent(nullptr);
+  }
 
   if (ElementGraphicsItem* item = m_elementToItem.value(element, nullptr)) {
     removeItem(item);
@@ -121,16 +133,16 @@ void DiagramScene::removeAttributeFromParents(
 )
 {
   if (auto entityParent = qobject_cast<Entity*>(attribute->parent())) {
-    entityParent->removeAttribute(attribute);
+    entityParent->removeAttributeId(attribute->id());
     return;
   }
 
   if (auto parentAttribute = qobject_cast<Attribute*>(attribute->parent())) {
-    parentAttribute->removeSubAttribute(attribute);
+    parentAttribute->removeSubAttributeId(attribute->id());
   }
 }
 
-//----------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::removeElementConnections(
   BasicElement* element
@@ -363,6 +375,9 @@ void DiagramScene::removeConnection(
   if(auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(connection)) {
     handleRelationshipDisconnection(relationshipConnection);
   }
+  else {
+    handleAttributeDisconnection(connection);
+  }
 
   if (ConnectionGraphicsItem* item = m_connectionToItem.value(connection, nullptr)) {
     removeItem(item);
@@ -591,7 +606,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (startEntity && endAttribute) {
     if (endAttribute->parent() != startEntity) {
-      startEntity->addAttribute(endAttribute);
+      startEntity->addAttributeId(endAttribute->id());
       endAttribute->setParent(startEntity);
     }
     return;
@@ -602,7 +617,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (endEntity && startAttribute) {
     if (startAttribute->parent() != endEntity) {
-      endEntity->addAttribute(startAttribute);
+      endEntity->addAttributeId(startAttribute->id());
       startAttribute->setParent(endEntity);
     }
     return;
@@ -613,7 +628,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
     if (subAttribute->parent() != parentAttribute) {
-      parentAttribute->addSubAttribute(subAttribute);
+      parentAttribute->addSubAttributeId(subAttribute->id());
       subAttribute->setParent(parentAttribute);
     }
     return;
@@ -624,7 +639,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
     if (subAttribute->parent() != parentAttribute) {
-      parentAttribute->addSubAttribute(subAttribute);
+      parentAttribute->addSubAttributeId(subAttribute->id());
       subAttribute->setParent(parentAttribute);
     }
   }
@@ -812,6 +827,59 @@ void DiagramScene::handleRelationshipDisconnection(
 
 // -----------------------------------------------------------------------------------------------------
 
+void DiagramScene::handleAttributeDisconnection(
+  ConnectionLine* connection
+)
+{
+  if (!connection || !connection->isValid()) {
+    return;
+  }
+
+  auto startElement = connection->getStartElement();
+  auto endElement = connection->getEndElement();
+
+  if (!startElement || !endElement) {
+    return;
+  }
+
+  auto startEntity = qobject_cast<Entity*>(startElement);
+  auto endAttribute = qobject_cast<Attribute*>(endElement);
+
+  if (startEntity && endAttribute) {
+    startEntity->removeAttributeId(endAttribute->id());
+    endAttribute->setParent(nullptr);
+    return;
+  }
+
+  auto endEntity = qobject_cast<Entity*>(endElement);
+  auto startAttribute = qobject_cast<Attribute*>(startElement);
+
+  if (endEntity && startAttribute) {
+    endEntity->removeAttributeId(startAttribute->id());
+    startAttribute->setParent(nullptr);
+    return;
+  }
+
+  auto parentAttribute = qobject_cast<Attribute*>(startElement);
+  auto subAttribute = qobject_cast<Attribute*>(endElement);
+
+  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
+    parentAttribute->removeSubAttributeId(subAttribute->id());
+    subAttribute->setParent(nullptr);
+    return;
+  }
+
+  parentAttribute = qobject_cast<Attribute*>(endElement);
+  subAttribute = qobject_cast<Attribute*>(startElement);
+
+  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
+    parentAttribute->removeSubAttributeId(subAttribute->id());
+    subAttribute->setParent(nullptr);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
 void DiagramScene::cancelConnection()
 {
     if (!m_isCreatingConnection) return;
@@ -855,14 +923,3 @@ void DiagramScene::updateTemporaryConnection(
 }
 
 // -----------------------------------------------------------------------------------------------------
-
-void DiagramScene::onSubAttributeOrAttributeOfEntityRemoved(
-  Attribute* subAttribute
-)
-{
-  if (subAttribute && m_elements.contains(subAttribute->id())) {
-    removeElement(subAttribute);
-  }
-}
-
-//----------------------------------------------------------------------------------------------

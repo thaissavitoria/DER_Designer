@@ -184,40 +184,6 @@ bool BasicElement::isValid() const
 
 //----------------------------------------------------------------------------------------------
 
-QStringList BasicElement::validationErrors() const
-{
-    QStringList errors;
-
-    if (m_name.isEmpty()) {
-        errors << "Nome do elemento não pode estar vazio";
-    }
-
-    if (m_size.width() <= 0) {
-        errors << "Largura deve ser maior que zero";
-    }
-
-    if (m_size.height() <= 0) {
-        errors << "Altura deve ser maior que zero";
-    }
-
-    if (m_type == ElementType::Unknown) {
-        errors << "Tipo do elemento não pode ser desconhecido";
-    }
-
-    QSizeF minSize = minimumSize();
-    if (m_size.width() < minSize.width()) {
-        errors << QString("Largura deve ser pelo menos %1").arg(minSize.width());
-    }
-
-    if (m_size.height() < minSize.height()) {
-        errors << QString("Altura deve ser pelo menos %1").arg(minSize.height());
-    }
-
-    return errors;
-}
-
-//----------------------------------------------------------------------------------------------
-
 QVariantMap BasicElement::serialize() const
 {
     QVariantMap data;
@@ -225,8 +191,12 @@ QVariantMap BasicElement::serialize() const
     data["id"] = m_id;
     data["name"] = m_name;
     data["type"] = static_cast<int>(m_type);
-    data["position"] = m_position;
-    data["size"] = m_size;
+
+    data["positionX"] = m_position.x();
+    data["positionY"] = m_position.y();
+
+    data["width"] = m_size.width();
+    data["height"] = m_size.height();
 
     if (!m_customProperties.isEmpty()) {
         QVariantMap customProps;
@@ -258,12 +228,16 @@ bool BasicElement::deserialize(
             m_type = static_cast<ElementType>(data["type"].toInt());
         }
 
-        if (data.contains("position")) {
-            m_position = data["position"].toPointF();
+        if (data.contains("positionX") && data.contains("positionY")) {
+          qreal x = data["positionX"].toDouble();
+          qreal y = data["positionY"].toDouble();
+          m_position = QPointF(x, y);
         }
 
-        if (data.contains("size")) {
-            m_size = data["size"].toSizeF();
+        if (data.contains("width") && data.contains("height")) {
+          qreal width = data["width"].toDouble();
+          qreal height = data["height"].toDouble();
+          m_size = QSizeF(width, height);
         }
 
         if (data.contains("customProperties")) {
@@ -385,6 +359,21 @@ void BasicElement::addConnectionPoint(
     
     connectionPoint->setParent(this);
     m_connectionPoints.append(connectionPoint);
+}
+
+//----------------------------------------------------------------------------------------------
+
+ConnectionPoint* BasicElement::getConnectionPointByDirection(
+  ConnectionDirection connectionDirection
+)
+{
+  for(ConnectionPoint* point : m_connectionPoints) {
+    if (point->direction() == connectionDirection) {
+      return point;
+    }
+  }
+
+  return nullptr;
 }
 
 //----------------------------------------------------------------------------------------------

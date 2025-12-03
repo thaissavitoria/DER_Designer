@@ -1,34 +1,34 @@
 ﻿#include "Entity.h"
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Entity::Entity(
   QObject* parent
 )
   : BasicElement(
-      ElementType::Entity,
-      parent
-    )
+    ElementType::Entity,
+    parent
+  )
 {
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Entity::Entity(
   const QString& name,
   QObject* parent
 )
   : BasicElement(
-      ElementType::Entity,
-      parent
-    )
+    ElementType::Entity,
+    parent
+  )
 {
   setName(name);
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 Entity::Entity(
   const QString& name,
@@ -45,84 +45,74 @@ Entity::Entity(
   setSize(preferredSize());
 }
 
-// -----------------------------------------------------------------------------------------------------
-
-Entity::~Entity()
-{
-  for (Attribute* attribute : m_attributes) {
-    attribute->setParent(nullptr);
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QSizeF Entity::minimumSize() const
 {
-    return QSizeF(80, 40);
+  return QSizeF(80, 40);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QSizeF Entity::preferredSize() const
 {
-    return QSizeF(120, 60);
+  return QSizeF(120, 60);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 std::unique_ptr<BasicElement> Entity::clone() const
 {
-    auto cloned = std::make_unique<Entity>();
+  auto cloned = std::make_unique<Entity>();
 
-    QVariantMap data = serialize();
-    cloned->deserialize(data);
+  QVariantMap data = serialize();
+  cloned->deserialize(data);
 
-    return std::move(cloned);
+  return std::move(cloned);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 QString Entity::typeDisplayName() const
 {
-    return "Entidade";
+  return "Entidade";
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-void Entity::addAttribute(
-  Attribute* attribute
-) 
+void Entity::addAttributeId(
+  const QString& attributeId
+)
 {
-  if (attribute && !m_attributes.contains(attribute)) {
-    m_attributes.append(attribute);
+  if (!attributeId.isEmpty() && !m_attributeIds.contains(attributeId)) {
+    m_attributeIds.append(attributeId);
   }
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-bool Entity::removeAttribute(
-  Attribute* attribute
-) 
+bool Entity::removeAttributeId(
+  const QString& attributeId
+)
 {
-  attribute->setParent(nullptr);
-  return m_attributes.removeOne(attribute);
+  return m_attributeIds.removeOne(attributeId);
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-QList<Attribute*> Entity::getAttributes() 
+QList<QString> Entity::getAttributeIds() const
 {
-  return m_attributes;
+  return m_attributeIds;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
-bool Entity::isWeakEntity() const 
+bool Entity::isWeakEntity() const
 {
   return m_isWeakEntity;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 void Entity::setIsWeakEntity(
   const bool isWeak
@@ -131,4 +121,56 @@ void Entity::setIsWeakEntity(
   m_isWeakEntity = isWeak;
 }
 
-// -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
+
+QVariantMap Entity::serialize() const
+{
+  QVariantMap data = BasicElement::serialize();
+
+  data["isWeakEntity"] = m_isWeakEntity;
+
+  if (!m_attributeIds.isEmpty()) {
+    QVariantList attributesList;
+    for (const QString& attrId : m_attributeIds) {
+      attributesList.append(attrId);
+    }
+    data["attributeIds"] = attributesList;
+  }
+
+  return data;
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool Entity::deserialize(
+  const QVariantMap& data
+)
+{
+  if (!BasicElement::deserialize(data)) {
+    return false;
+  }
+
+  try {
+    m_isWeakEntity = data["isWeakEntity"].toBool();
+
+    m_attributeIds.clear();
+
+    if (data.contains("attributeIds")) {
+      QVariantList attributesList = data["attributeIds"].toList();
+      for (const QVariant& attrVariant : attributesList) {
+        QString attrId = attrVariant.toString();
+        if (!attrId.isEmpty()) {
+          m_attributeIds.append(attrId);
+        }
+      }
+    }
+
+    return true;
+  }
+  catch (...) {
+    qWarning() << "Erro ao deserializar entity" << id();
+    return false;
+  }
+}
+
+//----------------------------------------------------------------------------------------------

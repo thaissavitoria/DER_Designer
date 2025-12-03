@@ -76,6 +76,12 @@ public:
     const QString& typeString
   );
 
+  virtual QVariantMap serialize() const;
+
+  virtual bool deserialize(
+    const QVariantMap& data
+  );
+
 signals:
   void startPointChanged(
     ConnectionPoint* newStartPoint
