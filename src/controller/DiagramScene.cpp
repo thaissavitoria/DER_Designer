@@ -923,3 +923,23 @@ void DiagramScene::updateTemporaryConnection(
 }
 
 // -----------------------------------------------------------------------------------------------------
+
+void DiagramScene::updateConnectionControlPoint(
+  ConnectionLine* connection,
+  ControlPointType type,
+  const QPointF& offset
+)
+{
+  if (!connection) {
+    return;
+  }
+
+  if (type == ControlPointType::Control1) {
+    connection->setControl1Offset(offset);
+  }
+  else {
+    connection->setControl2Offset(offset);
+  }
+}
+
+// -----------------------------------------------------------------------------------------------------

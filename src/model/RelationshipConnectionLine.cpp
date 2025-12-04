@@ -266,10 +266,10 @@ bool RelationshipConnectionLine::deserialize(
   const QVariantMap& data
 )
 {
-  if (data.isEmpty()) {
+  if (!ConnectionLine::deserialize(data)) {
     return false;
   }
-
+  
   if (data.contains("cardinalityOffsetX") && data.contains("cardinalityOffsetY")) {
     qreal offsetX = data["cardinalityOffsetX"].toDouble();
     qreal offsetY = data["cardinalityOffsetY"].toDouble();

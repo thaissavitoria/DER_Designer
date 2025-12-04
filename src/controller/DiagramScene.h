@@ -7,6 +7,7 @@
 #include "model/BasicElement.h"
 #include "model/ConnectionLine.h"
 #include "viewer/ElementGraphicsItem.h"
+#include "viewer/BezierControlPoint.h"
 
 //------------------------------------------------------------------------------
 
@@ -82,6 +83,12 @@ public:
   );
 
   void cancelConnection();
+
+  void updateConnectionControlPoint(
+    ConnectionLine* connection,
+    ControlPointType type,
+    const QPointF& offset
+  );
 
   QList<BasicElement*> getAllElements() const;
   QList<BasicElement*> getSelectedElements() const;

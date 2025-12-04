@@ -43,6 +43,9 @@ public:
   ConnectionPoint* endPoint() const { return m_endPoint; }
   ConnectionLineType lineType() const { return m_lineType; }
   qreal lineWidth() const { return m_lineWidth; }
+  QPointF control1Offset() const { return m_control1Offset; }
+  QPointF control2Offset() const { return m_control2Offset; }
+  bool hasCustomControlPoints() const { return m_hasCustomControlPoints; }
 
   void setLineType(
     ConnectionLineType type
@@ -59,6 +62,20 @@ public:
   void setEndPoint(
     ConnectionPoint* point
   );
+
+  void setControl1Offset(
+    const QPointF& offset
+  );
+
+  void setControl2Offset(
+    const QPointF& offset
+  );
+
+  void setHasCustomControlPoints(
+    bool hasCustom
+  );
+
+  void resetControlPoints();
 
   bool isValid() const;
 
@@ -99,6 +116,8 @@ signals:
     qreal newWidth
   );
 
+  void controlPointsChanged();
+
   void connectionChanged();
 
 private slots:
@@ -114,6 +133,9 @@ private:
   ConnectionPoint* m_endPoint;
   ConnectionLineType m_lineType;
   qreal m_lineWidth;
+  QPointF m_control1Offset;
+  QPointF m_control2Offset;
+  bool m_hasCustomControlPoints;
 
   void connectToPoints();
   void disconnectFromPoints();

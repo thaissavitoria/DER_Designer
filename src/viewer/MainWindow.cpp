@@ -358,7 +358,7 @@ void MainWindow::openFile()
     return;
   }
 
-  m_diagramScene->clear();
+  m_diagramScene->clearDiagram();
 
   if (!loadDiagramElements(diagramData)) {
     QMessageBox::warning(

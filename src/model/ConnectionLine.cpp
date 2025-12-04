@@ -16,6 +16,9 @@ ConnectionLine::ConnectionLine(
   , m_endPoint(endPoint)
   , m_lineType(ConnectionLineType::Straight)
   , m_lineWidth(2.0)
+  , m_control1Offset(50, 0)
+  , m_control2Offset(-50, 0)
+  , m_hasCustomControlPoints(false)
 {
   connectToPoints();
 }
@@ -35,6 +38,11 @@ void ConnectionLine::setLineType(
 {
   if (m_lineType != type) {
     m_lineType = type;
+
+    if (type != ConnectionLineType::Bezier) {
+      resetControlPoints();
+    }
+
     emit lineTypeChanged(m_lineType);
     emit connectionChanged();
   }
@@ -119,6 +127,57 @@ void ConnectionLine::setEndPoint(
     emit endPointChanged(m_endPoint);
     emit connectionChanged();
   }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void ConnectionLine::setControl1Offset(
+  const QPointF& offset
+)
+{
+  if (m_control1Offset != offset) {
+    m_control1Offset = offset;
+    m_hasCustomControlPoints = true;
+    emit controlPointsChanged();
+    emit connectionChanged();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void ConnectionLine::setControl2Offset(
+  const QPointF& offset
+)
+{
+  if (m_control2Offset != offset) {
+    m_control2Offset = offset;
+    m_hasCustomControlPoints = true;
+    emit controlPointsChanged();
+    emit connectionChanged();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void ConnectionLine::setHasCustomControlPoints(
+  bool hasCustom
+)
+{
+  if (m_hasCustomControlPoints != hasCustom) {
+    m_hasCustomControlPoints = hasCustom;
+    emit controlPointsChanged();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void ConnectionLine::resetControlPoints()
+{
+  m_control1Offset = QPointF(50, 0);
+  m_control2Offset = QPointF(-50, 0);
+  m_hasCustomControlPoints = false;
+  emit controlPointsChanged();
+  emit connectionChanged();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -295,6 +354,20 @@ QVariantMap ConnectionLine::serialize() const
     data["endElementId"] = endElement->id();
     data["lineType"] = static_cast<int>(lineType());
     data["lineWidth"] = lineWidth();
+
+    if (m_hasCustomControlPoints && m_lineType == ConnectionLineType::Bezier) {
+      QVariantMap control1Data;
+      control1Data["x"] = m_control1Offset.x();
+      control1Data["y"] = m_control1Offset.y();
+
+      QVariantMap control2Data;
+      control2Data["x"] = m_control2Offset.x();
+      control2Data["y"] = m_control2Offset.y();
+
+      data["control1Offset"] = control1Data;
+      data["control2Offset"] = control2Data;
+      data["hasCustomControlPoints"] = m_hasCustomControlPoints;
+    }
   }
 
   return data;
@@ -317,6 +390,30 @@ bool ConnectionLine::deserialize(
 
   if (data.contains("lineWidth")) {
     setLineWidth(data["lineWidth"].toDouble());
+  }
+
+  if (data.contains("hasCustomControlPoints")) {
+    m_hasCustomControlPoints = data["hasCustomControlPoints"].toBool();
+  }
+
+  if (data.contains("control1Offset")) {
+    QVariantMap control1Data = data["control1Offset"].toMap();
+    if (control1Data.contains("x") && control1Data.contains("y")) {
+      m_control1Offset = QPointF(
+        control1Data["x"].toDouble(),
+        control1Data["y"].toDouble()
+      );
+    }
+  }
+
+  if (data.contains("control2Offset")) {
+    QVariantMap control2Data = data["control2Offset"].toMap();
+    if (control2Data.contains("x") && control2Data.contains("y")) {
+      m_control2Offset = QPointF(
+        control2Data["x"].toDouble(),
+        control2Data["y"].toDouble()
+      );
+    }
   }
 
   return true;

@@ -20,9 +20,6 @@ ConnectionGraphicsItem::ConnectionGraphicsItem(
   , m_isHovered(false)
   , m_controlPoint1(nullptr)
   , m_controlPoint2(nullptr)
-  , m_control1Offset(50, 0)
-  , m_control2Offset(-50, 0)
-  , m_hasCustomControlPoints(false)
 {
   if (m_connection) {
     connectToConnection();
@@ -89,8 +86,8 @@ QRectF ConnectionGraphicsItem::boundingRect() const
   qreal maxY = qMax(startPos.y(), endPos.y());
 
   if (m_connection->lineType() == ConnectionLineType::Bezier) {
-    QPointF control1 = startPos + m_control1Offset;
-    QPointF control2 = endPos + m_control2Offset;
+    QPointF control1 = startPos + m_connection->control1Offset();
+    QPointF control2 = endPos + m_connection->control2Offset();
 
     minX = qMin(minX, qMin(control1.x(), control2.x()));
     minY = qMin(minY, qMin(control1.y(), control2.y()));
@@ -150,8 +147,8 @@ void ConnectionGraphicsItem::paint(
     if (isSelected()) {
       QPointF startPos = m_connection->getStartPosition();
       QPointF endPos = m_connection->getEndPosition();
-      QPointF control1 = startPos + m_control1Offset;
-      QPointF control2 = endPos + m_control2Offset;
+      QPointF control1 = startPos + m_connection->control1Offset();
+      QPointF control2 = endPos + m_connection->control2Offset();
 
       painter->drawLine(startPos, control1);
       painter->drawLine(endPos, control2);
@@ -245,9 +242,9 @@ QPainterPath ConnectionGraphicsItem::createBezierPath() const
 
   QPointF control1, control2;
 
-  if (m_hasCustomControlPoints) {
-    control1 = startPos + m_control1Offset;
-    control2 = endPos + m_control2Offset;
+  if (m_connection->hasCustomControlPoints()) {
+    control1 = startPos + m_connection->control1Offset();
+    control2 = endPos + m_connection->control2Offset();
   }
   else {
     auto startPoint = m_connection->startPoint();
@@ -403,10 +400,6 @@ void ConnectionGraphicsItem::updateFromConnection()
 {
   if (!m_connection) return;
 
-  if (!m_hasCustomControlPoints) {
-    storeControlPointOffsets();
-  }
-
   prepareGeometryChange();
   updateControlPointsPosition();
   update();
@@ -428,6 +421,8 @@ void ConnectionGraphicsItem::connectToConnection()
     this, &ConnectionGraphicsItem::updateFromConnection);
   connect(m_connection, &ConnectionLine::endPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
+  connect(m_connection, &ConnectionLine::controlPointsChanged,
+    this, &ConnectionGraphicsItem::updateFromConnection);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -445,6 +440,8 @@ void ConnectionGraphicsItem::disconnectFromConnection()
   disconnect(m_connection, &ConnectionLine::startPointChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
   disconnect(m_connection, &ConnectionLine::endPointChanged,
+    this, &ConnectionGraphicsItem::updateFromConnection);
+  disconnect(m_connection, &ConnectionLine::controlPointsChanged,
     this, &ConnectionGraphicsItem::updateFromConnection);
 }
 
@@ -467,31 +464,8 @@ void ConnectionGraphicsItem::updateControlPointsPosition()
   QPointF startPos = m_connection->getStartPosition();
   QPointF endPos = m_connection->getEndPosition();
 
-  m_controlPoint1->updatePosition(startPos + m_control1Offset);
-  m_controlPoint2->updatePosition(endPos + m_control2Offset);
-}
-
-//----------------------------------------------------------------------------------------------
-
-void ConnectionGraphicsItem::storeControlPointOffsets()
-{
-  if (!m_connection || !m_connection->isValid()) {
-    return;
-  }
-
-  QPointF startPos = m_connection->getStartPosition();
-  QPointF endPos = m_connection->getEndPosition();
-
-  auto startPoint = m_connection->startPoint();
-  auto endPoint = m_connection->endPoint();
-
-  if (startPoint && endPoint) {
-    QPointF control1 = calculateControlPointFromDirection(startPos, startPoint->direction(), 50);
-    QPointF control2 = calculateControlPointFromDirection(endPos, endPoint->direction(), -50);
-
-    m_control1Offset = control1 - startPos;
-    m_control2Offset = control2 - endPos;
-  }
+  m_controlPoint1->updatePosition(startPos + m_connection->control1Offset());
+  m_controlPoint2->updatePosition(endPos + m_connection->control2Offset());
 }
 
 //----------------------------------------------------------------------------------------------
@@ -505,19 +479,20 @@ void ConnectionGraphicsItem::updateControlPointPosition(
     return;
   }
 
+  auto diagramScene = dynamic_cast<DiagramScene*>(scene());
+  if (!diagramScene) {
+    return;
+  }
+
   QPointF startPos = m_connection->getStartPosition();
   QPointF endPos = m_connection->getEndPosition();
 
   if (type == ControlPointType::Control1) {
-    m_control1Offset = position - startPos;
+    diagramScene->updateConnectionControlPoint(m_connection, type, position - startPos);
   }
   else {
-    m_control2Offset = position - endPos;
+    diagramScene->updateConnectionControlPoint(m_connection, type, position - endPos);
   }
-
-  m_hasCustomControlPoints = true;
-  prepareGeometryChange();
-  update();
 }
 
 //----------------------------------------------------------------------------------------------

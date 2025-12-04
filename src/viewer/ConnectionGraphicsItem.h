@@ -86,16 +86,12 @@ private:
 
   void createControlPoints();
   void updateControlPointsPosition();
-  void storeControlPointOffsets();
 
   ConnectionLine* m_connection;
   bool m_isHovered;
 
   BezierControlPoint* m_controlPoint1;
   BezierControlPoint* m_controlPoint2;
-  QPointF m_control1Offset;
-  QPointF m_control2Offset;
-  bool m_hasCustomControlPoints;
 };
 
 #endif // CONNECTIONGRAPHICSITEM_H
