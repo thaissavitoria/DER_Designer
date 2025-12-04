@@ -125,6 +125,16 @@ public:
 
   void clearDiagram();
 
+  bool exportToImage(
+    const QString& filePath,
+    const QString& format = "PNG",
+    qreal scaleFactor = 1.0
+  );
+
+  QImage renderToImage(
+    qreal scaleFactor = 1.0
+  );
+
 protected:
   void mousePressEvent(
     QGraphicsSceneMouseEvent* event
@@ -222,7 +232,6 @@ private:
   void handleAttributeConnection(
     ConnectionLine* connection
   );
-
 };
 
 #endif // DIAGRAMSCENE_H

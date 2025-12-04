@@ -9,6 +9,8 @@
 #include <QtCore/QTimer>
 
 #include <QtGui/QKeyEvent>
+#include <QtGui/QPainter>
+#include <QtGui/QPageLayout>
 
 #include <QtWidgets/QGraphicsRectItem>
 #include <QtWidgets/QGraphicsSceneMouseEvent>
@@ -940,6 +942,62 @@ void DiagramScene::updateConnectionControlPoint(
   else {
     connection->setControl2Offset(offset);
   }
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+bool DiagramScene::exportToImage(
+  const QString& filePath,
+  const QString& format,
+  qreal scaleFactor
+)
+{
+  if (filePath.isEmpty()) {
+    return false;
+  }
+
+  QImage image = renderToImage(scaleFactor);
+
+  if (image.isNull()) {
+    return false;
+  }
+
+  return image.save(filePath, format.toUtf8().constData());
+}
+
+// -----------------------------------------------------------------------------------------------------
+
+QImage DiagramScene::renderToImage(
+  qreal scaleFactor
+)
+{
+  QRectF contentRect = itemsBoundingRect();
+
+  if (contentRect.isEmpty()) {
+    return QImage();
+  }
+
+  contentRect.adjust(-20, -20, 20, 20);
+
+  QSize imageSize = (contentRect.size() * scaleFactor).toSize();
+
+  QImage image(imageSize, QImage::Format_ARGB32);
+  image.fill(Qt::white);
+
+  QPainter painter(&image);
+  painter.setRenderHint(QPainter::Antialiasing);
+  painter.setRenderHint(QPainter::TextAntialiasing);
+  painter.setRenderHint(QPainter::SmoothPixmapTransform);
+
+  QTransform transform;
+  transform.scale(scaleFactor, scaleFactor);
+  transform.translate(-contentRect.left(), -contentRect.top());
+
+  render(&painter, QRectF(), contentRect);
+
+  painter.end();
+
+  return image;
 }
 
 // -----------------------------------------------------------------------------------------------------

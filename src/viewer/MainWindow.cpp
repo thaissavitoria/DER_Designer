@@ -579,12 +579,48 @@ void MainWindow::saveAsFile()
 
 void MainWindow::exportDiagram()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,
-        "Exportar Diagrama", "", "PNG (*.png);;JPG (*.jpg);;PDF (*.pdf)");
+  if (!m_diagramScene) {
+    QMessageBox::warning(
+      this,
+      "Erro ao Exportar",
+      "Nenhum diagrama disponível para exportar."
+    );
+    updateStatusBar("Erro: Nenhum diagrama para exportar");
+    return;
+  }
 
-    if (!fileName.isEmpty()) {
-        updateStatusBar("Diagrama exportado: " + QFileInfo(fileName).baseName());
-    }
+  QString fileName = QFileDialog::getSaveFileName(
+    this,
+    "Exportar Diagrama",
+    "",
+    "PNG (*.png);;JPEG (*.jpeg);;JPG (*.jpg)"
+  );
+
+  if (fileName.isEmpty()) {
+    return;
+  }
+
+  QFileInfo fileInfo(fileName);
+  QString format = fileInfo.suffix().toUpper();
+
+  bool success = m_diagramScene->exportToImage(fileName, format);
+
+  if (success) {
+    QMessageBox::information(
+      this,
+      "Exportação Concluída",
+      QString("Diagrama exportado com sucesso:\n%1").arg(fileName)
+    );
+    updateStatusBar("Diagrama exportado: " + fileInfo.baseName());
+  }
+  else {
+    QMessageBox::warning(
+      this,
+      "Erro ao Exportar",
+      QString("Não foi possível exportar o diagrama:\n%1").arg(fileName)
+    );
+    updateStatusBar("Erro ao exportar diagrama");
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
