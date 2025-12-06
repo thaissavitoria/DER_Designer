@@ -22,6 +22,21 @@ BasicElement::BasicElement(
 
 //----------------------------------------------------------------------------------------------
 
+BasicElement::BasicElement(
+  const BasicElement& otherElement
+)
+  : QObject(nullptr)
+  , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
+  , m_type(otherElement.m_type)
+  , m_position(otherElement.m_position)
+  , m_size(otherElement.m_size)
+  , m_name(otherElement.m_name)
+{
+  createDefaultConnectionPoints();
+}
+
+//----------------------------------------------------------------------------------------------
+
 BasicElement::~BasicElement()
 {
     m_observers.clear();

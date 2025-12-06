@@ -18,15 +18,15 @@
 // -----------------------------------------------------------------------------------------------------
 
 DiagramScene::DiagramScene(QObject* parent)
-    : QGraphicsScene(parent)
-    , m_selectionRectActive(false)
-    , m_selectionRect(nullptr)
-    , m_isCreatingConnection(false)
-    , m_connectionStartPoint(nullptr)
-    , m_temporaryConnectionLine(nullptr)
+  : QGraphicsScene(parent)
+  , m_selectionRectActive(false)
+  , m_selectionRect(nullptr)
+  , m_isCreatingConnection(false)
+  , m_connectionStartPoint(nullptr)
+  , m_temporaryConnectionLine(nullptr)
 {
-    setItemIndexMethod(QGraphicsScene::NoIndex);
-    setSceneRect(-5000, -5000, 10000, 10000);
+  setItemIndexMethod(QGraphicsScene::NoIndex);
+  setSceneRect(-5000, -5000, 10000, 10000);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ DiagramScene::~DiagramScene()
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::addElement(
-    BasicElement* element
+  BasicElement* element
 )
 {
   if (!element || m_elements.contains(element->id())) {
@@ -63,6 +63,9 @@ void DiagramScene::clearDiagram()
   cancelConnection();
 
   clearSelection();
+
+  m_clipboardElements.clear();
+  m_clipboardConnections.clear();
 
   for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
     if (ConnectionGraphicsItem* item = it.value()) {
@@ -165,7 +168,7 @@ void DiagramScene::removeElementConnections(
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::removeElement(
-    const QString& elementId
+  const QString& elementId
 )
 {
   if (BasicElement* element = findElement(elementId)) {
@@ -176,7 +179,7 @@ void DiagramScene::removeElement(
 // -----------------------------------------------------------------------------------------------------
 
 BasicElement* DiagramScene::findElement(
-    const QString& id
+  const QString& id
 ) const
 {
   return m_elements.value(id, nullptr);
@@ -185,7 +188,7 @@ BasicElement* DiagramScene::findElement(
 // -----------------------------------------------------------------------------------------------------
 
 ElementGraphicsItem* DiagramScene::findGraphicsItem(
-    const QString& elementId
+  const QString& elementId
 ) const
 {
   BasicElement* element = findElement(elementId);
@@ -212,37 +215,36 @@ QList<BasicElement*> DiagramScene::getAllElements() const
 
 QList<BasicElement*> DiagramScene::getSelectedElements() const
 {
-    QList<BasicElement*> selected;
+  QList<BasicElement*> selected;
 
-    for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-        if (it.value()->isSelected()) {
-            selected.append(it.key());
-        }
+  for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
+    if (it.value()->isSelected()) {
+      selected.append(it.key());
     }
+  }
 
-    return selected;
+  return selected;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::selectElement(
-    BasicElement* element,
-    bool selected
+  BasicElement* element,
+  bool selected
 )
 {
-    ElementGraphicsItem* item = findGraphicsItem(element);
-    if (item) {
-        item->setSelected(selected);
+  if (ElementGraphicsItem* item = findGraphicsItem(element)) {
+    item->setSelected(selected);
 
-        if (selected) {
-            emit elementSelected(element);
-        }
-        else {
-            emit elementDeselected(element);
-        }
-
-        emit selectionChanged();
+    if (selected) {
+      emit elementSelected(element);
     }
+    else {
+      emit elementDeselected(element);
+    }
+
+    emit selectionChanged();
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -282,13 +284,13 @@ void DiagramScene::selectConnection(
 //----------------------------------------------------------------------------------------------
 
 void DiagramScene::selectElement(
-    const QString& elementId,
-    bool selected
+  const QString& elementId,
+  bool selected
 )
 {
-    if (BasicElement* element = findElement(elementId)) {
-        selectElement(element, selected);
-    }
+  if (BasicElement* element = findElement(elementId)) {
+    selectElement(element, selected);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -373,8 +375,8 @@ void DiagramScene::removeConnection(
 )
 {
   if (!connection) return;
-  
-  if(auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(connection)) {
+
+  if (auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(connection)) {
     handleRelationshipDisconnection(relationshipConnection);
   }
   else {
@@ -397,142 +399,337 @@ void DiagramScene::removeConnection(
 
 void DiagramScene::duplicateSelected()
 {
-    QList<BasicElement*> selected = getSelectedElements();
+  QList<BasicElement*> selected = getSelectedElements();
 
-    for (BasicElement* element : selected) {
-        auto cloned = element->clone();
-        if (cloned) {
-            QPointF offset(20, 20);
-            cloned->setPosition(element->position() + offset);
+  for (BasicElement* element : selected) {
+    if (auto cloned = element->clone()) {
+      QPointF offset(20, 20);
+      cloned->setPosition(element->position() + offset);
 
-            addElement(cloned.release());
-        }
+      addElement(cloned.release());
     }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::copySelected()
+{
+  m_clipboardElements.clear();
+  m_clipboardConnections.clear();
+
+  QList<BasicElement*> selectedElements = getSelectedElements();
+  QSet<ConnectionLine*> selectedConnections = getSelectedConnections();
+
+  QHash<QString, QString> originalToClipboardId;
+
+  for (BasicElement* element : selectedElements) {
+    if (auto cloned = element->clone()) {
+      originalToClipboardId[element->id()] = cloned->id();
+      m_clipboardElements.append(cloned.release());
+    }
+  }
+
+  for (ConnectionLine* connection : selectedConnections) {
+    auto startElement = connection->getStartElement();
+    auto endElement = connection->getEndElement();
+
+    if (selectedElements.contains(startElement) && selectedElements.contains(endElement)) {
+      m_clipboardConnections.insert(connection);
+    }
+  }
+
+  m_clipboardIdMap = originalToClipboardId;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void DiagramScene::pasteFromClipboard()
+{
+  if (m_clipboardElements.isEmpty()) {
+    return;
+  }
+
+  clearSelection();
+
+  QHash<QString, BasicElement*> clipboardIdToNewElement;
+  QList<BasicElement*> newElements;
+  QList<ConnectionLine*> newConnections;
+
+  static int pasteCount = 0;
+  QPointF offset(20 * pasteCount, 20 * pasteCount);
+  pasteCount = (pasteCount + 1) % 10;
+
+  for (BasicElement* clipboardElement : m_clipboardElements) {
+    if (auto cloned = clipboardElement->clone()) {
+      cloned->setPosition(clipboardElement->position() + offset);
+
+      clipboardIdToNewElement[clipboardElement->id()] = cloned.get();
+      newElements.append(cloned.get());
+
+      addElement(cloned.release());
+    }
+  }
+
+  for (ConnectionLine* originalConnection : m_clipboardConnections) {
+    auto startElement = originalConnection->getStartElement();
+    auto endElement = originalConnection->getEndElement();
+
+    if (!startElement || !endElement) {
+      continue;
+    }
+
+    QString clipboardStartId = m_clipboardIdMap.value(startElement->id(), QString());
+    QString clipboardEndId = m_clipboardIdMap.value(endElement->id(), QString());
+
+    if (clipboardStartId.isEmpty() || clipboardEndId.isEmpty()) {
+      continue;
+    }
+
+    auto newStartElement = clipboardIdToNewElement.value(clipboardStartId, nullptr);
+    auto newEndElement = clipboardIdToNewElement.value(clipboardEndId, nullptr);
+
+    if (!newStartElement || !newEndElement) {
+      continue;
+    }
+
+    auto originalStartPoint = originalConnection->startPoint();
+    auto originalEndPoint = originalConnection->endPoint();
+
+    if (!originalStartPoint || !originalEndPoint) {
+      continue;
+    }
+
+    auto newStartPoint = findConnectionPointInClonedElement(newStartElement, originalStartPoint);
+    auto newEndPoint = findConnectionPointInClonedElement(newEndElement, originalEndPoint);
+
+    if (!newStartPoint || !newEndPoint) {
+      continue;
+    }
+
+    if (auto relationshipConnection = qobject_cast<RelationshipConnectionLine*>(originalConnection)) {
+      auto relationship = qobject_cast<Relationship*>(newStartElement);
+      if (!relationship) {
+        relationship = qobject_cast<Relationship*>(newEndElement);
+      }
+
+      auto entity = qobject_cast<Entity*>(newStartElement);
+      if (!entity) {
+        entity = qobject_cast<Entity*>(newEndElement);
+      }
+
+      if (relationship && entity) {
+        auto relationshipEnd = new RelationshipEnd(
+          entity->id(),
+          relationshipConnection->relationshipEnd()->cardinality(),
+          relationshipConnection->relationshipEnd()->isTotalParticipation(),
+          relationship
+        );
+        relationshipEnd->setCustomCardinalityText(relationshipConnection->relationshipEnd()->customCardinalityText());
+
+        relationship->addEnd(relationshipEnd);
+
+        auto newConnection = new RelationshipConnectionLine(
+          newStartPoint,
+          newEndPoint,
+          relationshipEnd,
+          this
+        );
+
+        newConnection->setControl1Offset(originalConnection->control1Offset());
+        newConnection->setControl2Offset(originalConnection->control2Offset());
+        newConnection->setHasCustomControlPoints(originalConnection->hasCustomControlPoints());
+        newConnection->setCardinalityOffset(relationshipConnection->cardinalityOffset());
+        newConnection->setLineType(originalConnection->lineType());
+
+        addRelationshipConnection(newConnection);
+        newConnections.append(newConnection);
+      }
+    }
+    else {
+      auto newConnection = new ConnectionLine(
+        newStartPoint,
+        newEndPoint,
+        this
+      );
+
+      newConnection->setControl1Offset(originalConnection->control1Offset());
+      newConnection->setControl2Offset(originalConnection->control2Offset());
+      newConnection->setHasCustomControlPoints(originalConnection->hasCustomControlPoints());
+      newConnection->setLineType(originalConnection->lineType());
+
+      addConnection(newConnection);
+      newConnections.append(newConnection);
+    }
+  }
+
+  for (BasicElement* element : newElements) {
+    selectElement(element, true);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+ConnectionPoint* DiagramScene::findConnectionPointInClonedElement(
+  BasicElement* clonedElement,
+  ConnectionPoint* originalPoint
+) const
+{
+  if (!clonedElement || !originalPoint) {
+    return nullptr;
+  }
+
+  QString originalPointId = originalPoint->id();
+
+  QList<ConnectionPoint*> clonedPoints = clonedElement->connectionPoints();
+
+  for (int i = 0; i < clonedPoints.size(); ++i) {
+    ConnectionPoint* clonedPoint = clonedPoints[i];
+    if (clonedPoint && clonedPoint->direction() == originalPoint->direction()) {
+      return clonedPoint;
+    }
+  }
+
+  return nullptr;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::mousePressEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (event->button() == Qt::LeftButton) {
-        QGraphicsItem* item = itemAt(event->scenePos(), QTransform());
+  if (event->button() == Qt::LeftButton) {
+    QGraphicsItem* item = itemAt(event->scenePos(), QTransform());
 
-        if (!item) {
-            m_selectionRectActive = true;
-            m_selectionStartPoint = event->scenePos();
-            createSelectionRect();
+    if (!item) {
+      m_selectionRectActive = true;
+      m_selectionStartPoint = event->scenePos();
+      createSelectionRect();
 
-            if (!(event->modifiers() & Qt::ControlModifier)) {
-                clearSelection();
-            }
-        }
+      if (!(event->modifiers() & Qt::ControlModifier)) {
+        clearSelection();
+      }
     }
+  }
 
-    QGraphicsScene::mousePressEvent(event);
+  QGraphicsScene::mousePressEvent(event);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::mouseMoveEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (m_selectionRectActive) {
-        updateSelectionRect(event->scenePos());
-    }
-    else if (m_isCreatingConnection) {
-        updateTemporaryConnection(event->scenePos());
-    }
+  if (m_selectionRectActive) {
+    updateSelectionRect(event->scenePos());
+  }
+  else if (m_isCreatingConnection) {
+    updateTemporaryConnection(event->scenePos());
+  }
 
-    QGraphicsScene::mouseMoveEvent(event);
+  QGraphicsScene::mouseMoveEvent(event);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::mouseReleaseEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (event->button() == Qt::LeftButton && m_selectionRectActive) {
-        finishSelectionRect();
-    }
+  if (event->button() == Qt::LeftButton && m_selectionRectActive) {
+    finishSelectionRect();
+  }
 
-    QGraphicsScene::mouseReleaseEvent(event);
+  QGraphicsScene::mouseReleaseEvent(event);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::keyPressEvent(
-    QKeyEvent* event
+  QKeyEvent* event
 )
 {
-    switch (event->key()) {
-    case Qt::Key_Delete:
-        deleteSelected();
-        break;
+  switch (event->key()) {
+  case Qt::Key_Delete:
+    deleteSelected();
+    break;
 
-    case Qt::Key_A:
-        if (event->modifiers() & Qt::ControlModifier) {
-            selectAll();
-        }
-        break;
-
-    case Qt::Key_D:
-        if (event->modifiers() & Qt::ControlModifier) {
-            duplicateSelected();
-        }
-        break;
-
-    case Qt::Key_Escape:
-        if (m_isCreatingConnection) {
-            cancelConnection();
-        }
-        else {
-            clearSelection();
-        }
-        break;
-
-    default:
-        QGraphicsScene::keyPressEvent(event);
-        break;
+  case Qt::Key_A:
+    if (event->modifiers() & Qt::ControlModifier) {
+      selectAll();
     }
+    break;
+
+  case Qt::Key_C:
+    if (event->modifiers() & Qt::ControlModifier) {
+      copySelected();
+    }
+    break;
+
+  case Qt::Key_V:
+    if (event->modifiers() & Qt::ControlModifier) {
+      pasteFromClipboard();
+    }
+    break;
+
+  case Qt::Key_D:
+    if (event->modifiers() & Qt::ControlModifier) {
+      duplicateSelected();
+    }
+    break;
+
+  case Qt::Key_Escape:
+    if (m_isCreatingConnection) {
+      cancelConnection();
+    }
+    else {
+      clearSelection();
+      m_clipboardConnections.clear();
+      m_clipboardElements.clear();
+    }
+    break;
+
+  default:
+    QGraphicsScene::keyPressEvent(event);
+    break;
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::createSelectionRect()
 {
-    if (!m_selectionRect) {
-        m_selectionRect = new QGraphicsRectItem();
-        m_selectionRect->setPen(QPen(QColor(0, 120, 215), 1, Qt::DashLine));
-        m_selectionRect->setBrush(QBrush(QColor(0, 120, 215, 30)));
-        addItem(m_selectionRect);
-    }
+  if (!m_selectionRect) {
+    m_selectionRect = new QGraphicsRectItem();
+    m_selectionRect->setPen(QPen(QColor(0, 120, 215), 1, Qt::DashLine));
+    m_selectionRect->setBrush(QBrush(QColor(0, 120, 215, 30)));
+    addItem(m_selectionRect);
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::destroySelectionRect()
 {
-    if (m_selectionRect) {
-        removeItem(m_selectionRect);
-        delete m_selectionRect;
-        m_selectionRect = nullptr;
-    }
+  if (m_selectionRect) {
+    removeItem(m_selectionRect);
+    delete m_selectionRect;
+    m_selectionRect = nullptr;
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::updateSelectionRect(
-    const QPointF& currentPoint
+  const QPointF& currentPoint
 )
 {
-    if (m_selectionRect) {
-        QRectF rect(m_selectionStartPoint, currentPoint);
-        m_selectionRect->setRect(rect.normalized());
-    }
+  if (m_selectionRect) {
+    QRectF rect(m_selectionStartPoint, currentPoint);
+    m_selectionRect->setRect(rect.normalized());
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -667,7 +864,7 @@ void DiagramScene::addRelationshipConnection(
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::removeConnection(
-    const QString& connectionId
+  const QString& connectionId
 )
 {
   if (auto connection = findConnection(connectionId)) {
@@ -678,28 +875,28 @@ void DiagramScene::removeConnection(
 // -----------------------------------------------------------------------------------------------------
 
 ConnectionLine* DiagramScene::findConnection(
-    const QString& id
+  const QString& id
 ) const
 {
-    return m_connections.value(id, nullptr);
+  return m_connections.value(id, nullptr);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::startConnection(
-    ConnectionPoint* startPoint
+  ConnectionPoint* startPoint
 )
 {
-    if (!startPoint || m_isCreatingConnection) return;
+  if (!startPoint || m_isCreatingConnection) return;
 
-    m_isCreatingConnection = true;
-    m_connectionStartPoint = startPoint;
+  m_isCreatingConnection = true;
+  m_connectionStartPoint = startPoint;
 
-    m_temporaryConnectionLine = new QGraphicsLineItem();
-    m_temporaryConnectionLine->setPen(QPen(QColor(0, 120, 215), 2, Qt::DashLine));
-    addItem(m_temporaryConnectionLine);
+  m_temporaryConnectionLine = new QGraphicsLineItem();
+  m_temporaryConnectionLine->setPen(QPen(QColor(0, 120, 215), 2, Qt::DashLine));
+  addItem(m_temporaryConnectionLine);
 
-    emit connectionStarted(startPoint);
+  emit connectionStarted(startPoint);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -884,44 +1081,44 @@ void DiagramScene::handleAttributeDisconnection(
 
 void DiagramScene::cancelConnection()
 {
-    if (!m_isCreatingConnection) return;
+  if (!m_isCreatingConnection) return;
 
-    if (m_temporaryConnectionLine) {
-        removeItem(m_temporaryConnectionLine);
-        delete m_temporaryConnectionLine;
-        m_temporaryConnectionLine = nullptr;
-    }
+  if (m_temporaryConnectionLine) {
+    removeItem(m_temporaryConnectionLine);
+    delete m_temporaryConnectionLine;
+    m_temporaryConnectionLine = nullptr;
+  }
 
-    m_isCreatingConnection = false;
-    m_connectionStartPoint = nullptr;
+  m_isCreatingConnection = false;
+  m_connectionStartPoint = nullptr;
 
-    emit connectionCancelled();
+  emit connectionCancelled();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QList<ConnectionLine*> DiagramScene::getAllConnections() const
 {
-    return m_connections.values();
+  return m_connections.values();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void DiagramScene::updateTemporaryConnection(
-    const QPointF& endPosition
+  const QPointF& endPosition
 )
 {
-    if (!m_temporaryConnectionLine || !m_connectionStartPoint) return;
+  if (!m_temporaryConnectionLine || !m_connectionStartPoint) return;
 
-    auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
-    if (!startElement) return;
+  auto startElement = qobject_cast<BasicElement*>(m_connectionStartPoint->parent());
+  if (!startElement) return;
 
-    QPointF startPos = m_connectionStartPoint->absolutePosition(
-      startElement->position(),
-      startElement->size()
-    );
+  QPointF startPos = m_connectionStartPoint->absolutePosition(
+    startElement->position(),
+    startElement->size()
+  );
 
-    m_temporaryConnectionLine->setLine(QLineF(startPos, endPosition));
+  m_temporaryConnectionLine->setLine(QLineF(startPos, endPosition));
 }
 
 // -----------------------------------------------------------------------------------------------------

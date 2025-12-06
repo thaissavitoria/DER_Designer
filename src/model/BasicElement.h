@@ -71,6 +71,10 @@ public:
         QObject* parent = nullptr
     );
 
+    explicit BasicElement(
+      const BasicElement& otherElement
+    );
+
     virtual ~BasicElement();
 
     QString id() const { return m_id; }
@@ -214,7 +218,6 @@ private:
     QList<ConnectionPoint*> m_connectionPoints;
 
     QList<IElementObserver*> m_observers;
-    Q_DISABLE_COPY(BasicElement)
 };
 
 #endif // BASICELEMENT_H

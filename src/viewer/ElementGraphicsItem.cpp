@@ -279,60 +279,96 @@ void ElementGraphicsItem::hoverMoveEvent(
 //----------------------------------------------------------------------------------------------
 
 void ElementGraphicsItem::mousePressEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (event->button() == Qt::LeftButton) {
-        ConnectionPoint* clickedPoint = findConnectionPointAt(event->pos());
-        if (clickedPoint) {
-            auto diagramScene = qobject_cast<DiagramScene*>(scene());
-            if (diagramScene) {
-                if (diagramScene->isCreatingConnection()) {
-                    diagramScene->finishConnection(clickedPoint);
-                } else {
-                    diagramScene->startConnection(clickedPoint);
-                }
-            }
-            event->accept();
-            return;
+  if (event->button() == Qt::LeftButton) {
+    if (ConnectionPoint* clickedPoint = findConnectionPointAt(event->pos())) {
+      if (auto diagramScene = qobject_cast<DiagramScene*>(scene())) {
+        if (diagramScene->isCreatingConnection()) {
+          diagramScene->finishConnection(clickedPoint);
         }
-        
-        m_isDragging = true;
-        m_dragStartPosition = event->pos();
+        else {
+          diagramScene->startConnection(clickedPoint);
+        }
+      }
+      event->accept();
+      return;
     }
 
-    QGraphicsItem::mousePressEvent(event);
+    if (!m_isSelected && !(event->modifiers() & Qt::ControlModifier)) {
+      if (auto diagramScene = qobject_cast<DiagramScene*>(scene())) {
+        diagramScene->clearSelection();
+      }
+    }
+
+    m_isDragging = true;
+    m_dragStartPosition = pos();
+  }
+
+  QGraphicsItem::mousePressEvent(event);
 }
 
 //----------------------------------------------------------------------------------------------
 
 void ElementGraphicsItem::mouseMoveEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (m_isDragging && (event->buttons() & Qt::LeftButton)) {
-        QPointF newPos = event->scenePos() - m_dragStartPosition;
-        setPos(newPos);
-        
-        if (m_element) {
-            m_element->setPosition(newPos);
+  if (m_isDragging && (event->buttons() & Qt::LeftButton)) {
+    QPointF delta = pos() - m_dragStartPosition;
+
+    auto diagramScene = qobject_cast<DiagramScene*>(scene());
+    if (diagramScene && m_isSelected) {
+      QList<BasicElement*> selectedElements = diagramScene->getSelectedElements();
+
+      for (BasicElement* element : selectedElements) {
+        if (element != m_element) {
+          ElementGraphicsItem* otherItem = diagramScene->findGraphicsItem(element);
+          if (otherItem && !otherItem->m_isDragging) {
+            QPointF newPos = element->position() + delta;
+            otherItem->setPos(newPos);
+            element->setPosition(newPos);
+          }
         }
+      }
     }
 
-    QGraphicsItem::mouseMoveEvent(event);
+    m_dragStartPosition = pos();
+
+    if (m_element) {
+      m_element->setPosition(pos());
+    }
+  }
+
+  QGraphicsItem::mouseMoveEvent(event);
 }
 
 //----------------------------------------------------------------------------------------------
 
 void ElementGraphicsItem::mouseReleaseEvent(
-    QGraphicsSceneMouseEvent* event
+  QGraphicsSceneMouseEvent* event
 )
 {
-    if (event->button() == Qt::LeftButton) {
-        m_isDragging = false;
-    }
+  if (event->button() == Qt::LeftButton) {
+    m_isDragging = false;
 
-    QGraphicsItem::mouseReleaseEvent(event);
+    if (m_element) {
+      if (auto diagramScene = qobject_cast<DiagramScene*>(scene())) {
+        if (event->modifiers() & Qt::ControlModifier) {
+          diagramScene->selectElement(m_element, !m_isSelected);
+        }
+        else {
+          if (!m_isSelected) {
+            diagramScene->clearSelection();
+          }
+          diagramScene->selectElement(m_element, true);
+        }
+      }
+    }
+  }
+
+  QGraphicsItem::mouseReleaseEvent(event);
 }
 
 //----------------------------------------------------------------------------------------------

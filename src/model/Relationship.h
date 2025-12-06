@@ -23,6 +23,10 @@ public:
     QObject* parent = nullptr
   );
 
+  explicit Relationship(
+    const Relationship& otherAtrribute
+  );
+
   virtual ~Relationship() = default;
 
   QSizeF minimumSize() const override;

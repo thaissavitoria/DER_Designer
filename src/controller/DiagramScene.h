@@ -120,6 +120,8 @@ public:
 
   void deleteSelected();
   void duplicateSelected();
+  void copySelected();
+  void pasteFromClipboard();
 
   bool isCreatingConnection() const { return m_isCreatingConnection; }
 
@@ -195,6 +197,10 @@ private:
   ConnectionPoint* m_connectionStartPoint;
   QGraphicsLineItem* m_temporaryConnectionLine;
 
+  QList<BasicElement*> m_clipboardElements;
+  QSet<ConnectionLine*> m_clipboardConnections;
+  QHash<QString, QString> m_clipboardIdMap;
+
   void updateSelectionRect(
     const QPointF& currentPoint
   );
@@ -232,6 +238,11 @@ private:
   void handleAttributeConnection(
     ConnectionLine* connection
   );
+
+  ConnectionPoint* findConnectionPointInClonedElement(
+    BasicElement* clonedElement,
+    ConnectionPoint* originalPoint
+  ) const;
 };
 
 #endif // DIAGRAMSCENE_H

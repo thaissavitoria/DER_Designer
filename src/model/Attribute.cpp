@@ -52,6 +52,17 @@ Attribute::Attribute(
 
 //----------------------------------------------------------------------------------------------
 
+Attribute::Attribute(
+  const Attribute& otherAtrribute
+)
+  : BasicElement(otherAtrribute),
+  m_attributeType(otherAtrribute.m_attributeType),
+  m_isPrimaryKey(otherAtrribute.m_isPrimaryKey)
+{
+}
+
+//----------------------------------------------------------------------------------------------
+
 QSizeF Attribute::minimumSize() const
 {
   return QSizeF(60, 30);
@@ -68,15 +79,9 @@ QSizeF Attribute::preferredSize() const
 
 std::unique_ptr<BasicElement> Attribute::clone() const
 {
-  auto cloned = std::make_unique<Attribute>();
+  auto cloned = std::make_unique<Attribute>(*this);
 
-  QVariantMap data = serialize();
-  cloned->deserialize(data);
-
-  cloned->setAttributeType(m_attributeType);
-  cloned->setPrimaryKey(m_isPrimaryKey);
-
-  return std::move(cloned);
+  return cloned;
 }
 
 //----------------------------------------------------------------------------------------------

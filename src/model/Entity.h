@@ -24,6 +24,10 @@ public:
     QObject* parent = nullptr
   );
 
+  explicit Entity(
+    const Entity& otherEntity
+  );
+
   virtual ~Entity() = default;
 
   QSizeF minimumSize() const override;

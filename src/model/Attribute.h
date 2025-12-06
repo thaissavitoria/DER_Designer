@@ -24,6 +24,10 @@ public:
     QObject* parent = nullptr
   );
 
+  explicit Attribute(
+    const Attribute& otherAtrribute
+  );
+
   virtual ~Attribute() = default;
 
   QSizeF minimumSize() const override;

@@ -32,6 +32,16 @@ Relationship::Relationship(
 
 //----------------------------------------------------------------------------------------------
 
+Relationship::Relationship(
+  const Relationship& otherAtrribute
+)
+  : BasicElement(otherAtrribute),
+    m_isIdentifying(otherAtrribute.m_isIdentifying)
+{
+}
+
+//----------------------------------------------------------------------------------------------
+
 QSizeF Relationship::minimumSize() const
 {
   return QSizeF(100, 60);
@@ -48,10 +58,7 @@ QSizeF Relationship::preferredSize() const
 
 std::unique_ptr<BasicElement> Relationship::clone() const
 {
-  auto cloned = std::make_unique<Relationship>();
-
-  QVariantMap data = serialize();
-  cloned->deserialize(data);
+  auto cloned = std::make_unique<Relationship>(*this);
 
   return std::move(cloned);
 }

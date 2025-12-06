@@ -47,6 +47,16 @@ Entity::Entity(
 
 //----------------------------------------------------------------------------------------------
 
+Entity::Entity(
+  const Entity& otherEntity
+)
+  : BasicElement(otherEntity),
+  m_isWeakEntity(otherEntity.m_isWeakEntity)
+{
+}
+
+//----------------------------------------------------------------------------------------------
+
 QSizeF Entity::minimumSize() const
 {
   return QSizeF(80, 40);
@@ -63,12 +73,9 @@ QSizeF Entity::preferredSize() const
 
 std::unique_ptr<BasicElement> Entity::clone() const
 {
-  auto cloned = std::make_unique<Entity>();
+  auto cloned = std::make_unique<Entity>(*this);
 
-  QVariantMap data = serialize();
-  cloned->deserialize(data);
-
-  return std::move(cloned);
+  return cloned;
 }
 
 //----------------------------------------------------------------------------------------------
