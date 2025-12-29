@@ -38,16 +38,6 @@ public:
 
   QString typeDisplayName() const override;
 
-  void addAttributeId(
-    const QString& attributeId
-  );
-
-  bool removeAttributeId(
-    const QString& attributeId
-  );
-
-  QList<QString> getAttributeIds() const;
-
   bool isWeakEntity() const;
 
   void setIsWeakEntity(
@@ -60,7 +50,6 @@ public:
   );
 
 private:
-  QList<QString> m_attributeIds; 
   bool m_isWeakEntity = false;
 };
 

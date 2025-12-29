@@ -112,63 +112,6 @@ void BasicElement::move(
 
 //----------------------------------------------------------------------------------------------
 
-void BasicElement::setProperty(
-    const QString& key,
-    const QVariant& value
-)
-{
-    if (key.isEmpty()) return;
-
-    QVariant oldValue = m_customProperties.value(key);
-    if (oldValue != value) {
-        m_customProperties[key] = value;
-        emit propertyChanged(key, value);
-        emit elementChanged();
-        notifyObservers();
-    }
-}
-
-//----------------------------------------------------------------------------------------------
-
-QVariant BasicElement::getProperty(
-    const QString& key,
-    const QVariant& defaultValue
-) const
-{
-    return m_customProperties.value(key, defaultValue);
-}
-
-//----------------------------------------------------------------------------------------------
-
-bool BasicElement::hasProperty(
-    const QString& key
-) const
-{
-    return m_customProperties.contains(key);
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::removeProperty(
-    const QString& key
-)
-{
-    if (m_customProperties.remove(key)) {
-        emit propertyChanged(key, QVariant());
-        emit elementChanged();
-        notifyObservers();
-    }
-}
-
-//----------------------------------------------------------------------------------------------
-
-QStringList BasicElement::propertyKeys() const
-{
-    return m_customProperties.keys();
-}
-
-//----------------------------------------------------------------------------------------------
-
 void BasicElement::addObserver(
     IElementObserver* observer
 )
@@ -213,12 +156,12 @@ QVariantMap BasicElement::serialize() const
     data["width"] = m_size.width();
     data["height"] = m_size.height();
 
-    if (!m_customProperties.isEmpty()) {
-        QVariantMap customProps;
-        for (auto it = m_customProperties.begin(); it != m_customProperties.end(); ++it) {
-            customProps[it.key()] = it.value();
-        }
-        data["customProperties"] = customProps;
+    if (!m_attributeIds.isEmpty()) {
+      QVariantList attributesList;
+      for (const QString& attrId : m_attributeIds) {
+        attributesList.append(attrId);
+      }
+      data["attributeIds"] = attributesList;
     }
 
     return data;
@@ -255,12 +198,16 @@ bool BasicElement::deserialize(
           m_size = QSizeF(width, height);
         }
 
-        if (data.contains("customProperties")) {
-            QVariantMap customProps = data["customProperties"].toMap();
-            m_customProperties.clear();
-            for (auto it = customProps.begin(); it != customProps.end(); ++it) {
-                m_customProperties[it.key()] = it.value();
+        m_attributeIds.clear();
+
+        if (data.contains("attributeIds")) {
+          QVariantList attributesList = data["attributeIds"].toList();
+          for (const QVariant& attrVariant : attributesList) {
+            QString attrId = attrVariant.toString();
+            if (!attrId.isEmpty()) {
+              m_attributeIds.append(attrId);
             }
+          }
         }
 
         return true;
@@ -404,6 +351,40 @@ void BasicElement::createDefaultConnectionPoints()
     for (auto point : defaultPoints) {
         addConnectionPoint(point);
     }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::addAttributeId(
+  const QString& attributeId
+)
+{
+  if (!attributeId.isEmpty() && !m_attributeIds.contains(attributeId)) {
+    m_attributeIds.append(attributeId);
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+bool BasicElement::removeAttributeId(
+  const QString& attributeId
+)
+{
+  return m_attributeIds.removeOne(attributeId);
+}
+
+//----------------------------------------------------------------------------------------------
+
+QList<QString> BasicElement::getAttributeIds() const
+{
+  return m_attributeIds;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void BasicElement::clearAttributesIds()
+{
+  m_attributeIds.clear();
 }
 
 //----------------------------------------------------------------------------------------------

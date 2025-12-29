@@ -57,16 +57,6 @@ public:
   bool isMultivaluedAttribute() const;
   bool isCompositeAttribute() const;
 
-  void addSubAttributeId(
-    const QString& subAttributeId
-  );
-
-  bool removeSubAttributeId(
-    const QString& subAttributeId
-  );
-
-  QList<QString> getSubAttributeIds() const;
-
   QVariantMap serialize() const override;
   bool deserialize(
     const QVariantMap& data
@@ -81,14 +71,9 @@ signals:
     bool isPrimary
   );
 
-  void subAttributeRemoved(
-    const QString& subAttributeId
-  );
-
 private:
   AttributeType::Type m_attributeType;
   bool m_isPrimaryKey;
-  QList<QString> m_subAttributeIds;
 };
 
 #endif // ATTRIBUTE_H

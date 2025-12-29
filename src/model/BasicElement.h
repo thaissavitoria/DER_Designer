@@ -114,26 +114,6 @@ public:
         setSize(newSize);
     }
 
-    void setProperty(
-        const QString& key,
-        const QVariant& value
-    );
-
-    QVariant getProperty(
-        const QString& key,
-        const QVariant& defaultValue = QVariant()
-    ) const;
-
-    bool hasProperty(
-        const QString& key
-    ) const;
-
-    void removeProperty(
-        const QString& key
-    );
-
-    QStringList propertyKeys() const;
-
     void addObserver(
         IElementObserver* observer
     );
@@ -171,6 +151,18 @@ public:
     static ElementType elementTypeFromString(
         const QString& typeString
     );
+
+    void addAttributeId(
+      const QString& attributeId
+    );
+
+    bool removeAttributeId(
+      const QString& attributeId
+    );
+
+    QList<QString> getAttributeIds() const;
+
+    void clearAttributesIds();
 
 protected:
     void notifyObservers();
@@ -214,10 +206,11 @@ private:
     QPointF m_position;
     QSizeF m_size;
 
-    QHash<QString, QVariant> m_customProperties;
     QList<ConnectionPoint*> m_connectionPoints;
 
     QList<IElementObserver*> m_observers;
+
+    QList<QString> m_attributeIds;
 };
 
 #endif // BASICELEMENT_H

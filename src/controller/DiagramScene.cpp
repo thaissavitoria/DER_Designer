@@ -137,13 +137,8 @@ void DiagramScene::removeAttributeFromParents(
   Attribute* attribute
 )
 {
-  if (auto entityParent = qobject_cast<Entity*>(attribute->parent())) {
-    entityParent->removeAttributeId(attribute->id());
-    return;
-  }
-
-  if (auto parentAttribute = qobject_cast<Attribute*>(attribute->parent())) {
-    parentAttribute->removeSubAttributeId(attribute->id());
+  if (auto parent = qobject_cast<BasicElement*>(attribute->parent())) {
+    parent->removeAttributeId(attribute->id());
   }
 }
 
@@ -827,7 +822,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
     if (subAttribute->parent() != parentAttribute) {
-      parentAttribute->addSubAttributeId(subAttribute->id());
+      parentAttribute->addAttributeId(subAttribute->id());
       subAttribute->setParent(parentAttribute);
     }
     return;
@@ -838,7 +833,7 @@ void DiagramScene::handleAttributeConnection(
 
   if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
     if (subAttribute->parent() != parentAttribute) {
-      parentAttribute->addSubAttributeId(subAttribute->id());
+      parentAttribute->addAttributeId(subAttribute->id());
       subAttribute->setParent(parentAttribute);
     }
   }
@@ -1041,39 +1036,21 @@ void DiagramScene::handleAttributeDisconnection(
     return;
   }
 
-  auto startEntity = qobject_cast<Entity*>(startElement);
-  auto endAttribute = qobject_cast<Attribute*>(endElement);
+  auto attribute = qobject_cast<Attribute*>(startElement);
 
-  if (startEntity && endAttribute) {
-    startEntity->removeAttributeId(endAttribute->id());
-    endAttribute->setParent(nullptr);
-    return;
+  bool attributeChildIsEndElement = false;
+  if(!attribute || attribute->parent() != endElement) {
+    attributeChildIsEndElement = true;
+    attribute = qobject_cast<Attribute*>(endElement);
   }
 
-  auto endEntity = qobject_cast<Entity*>(endElement);
-  auto startAttribute = qobject_cast<Attribute*>(startElement);
+  attribute->setParent(nullptr);
 
-  if (endEntity && startAttribute) {
-    endEntity->removeAttributeId(startAttribute->id());
-    startAttribute->setParent(nullptr);
-    return;
+  if (attributeChildIsEndElement) {
+    startElement->removeAttributeId(attribute->id());
   }
-
-  auto parentAttribute = qobject_cast<Attribute*>(startElement);
-  auto subAttribute = qobject_cast<Attribute*>(endElement);
-
-  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
-    parentAttribute->removeSubAttributeId(subAttribute->id());
-    subAttribute->setParent(nullptr);
-    return;
-  }
-
-  parentAttribute = qobject_cast<Attribute*>(endElement);
-  subAttribute = qobject_cast<Attribute*>(startElement);
-
-  if (parentAttribute && subAttribute && parentAttribute->isCompositeAttribute()) {
-    parentAttribute->removeSubAttributeId(subAttribute->id());
-    subAttribute->setParent(nullptr);
+  else {
+    endElement->removeAttributeId(attribute->id());
   }
 }
 

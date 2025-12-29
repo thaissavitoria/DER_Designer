@@ -106,13 +106,7 @@ void Attribute::setAttributeType(
 {
   if (m_attributeType != type) {
     if (m_attributeType == AttributeType::Composite && type != AttributeType::Composite) {
-      QList<QString> subAttributeIdsToRemove = m_subAttributeIds;
-      m_subAttributeIds.clear();
-
-      for (const QString& subAttrId : subAttributeIdsToRemove) {
-        emit subAttributeRemoved(subAttrId);
-      }
-
+      clearAttributesIds();
       setPrimaryKey(false);
     }
 
@@ -183,47 +177,12 @@ bool Attribute::isCompositeAttribute() const
 
 //----------------------------------------------------------------------------------------------
 
-void Attribute::addSubAttributeId(
-  const QString& subAttributeId
-)
-{
-  if (!subAttributeId.isEmpty() && !m_subAttributeIds.contains(subAttributeId)) {
-    m_subAttributeIds.append(subAttributeId);
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-bool Attribute::removeSubAttributeId(
-  const QString& subAttributeId
-)
-{
-  return m_subAttributeIds.removeOne(subAttributeId);
-}
-
-//----------------------------------------------------------------------------------------------
-
-QList<QString> Attribute::getSubAttributeIds() const
-{
-  return m_subAttributeIds;
-}
-
-//----------------------------------------------------------------------------------------------
-
 QVariantMap Attribute::serialize() const
 {
   QVariantMap data = BasicElement::serialize();
 
   data["attributeType"] = static_cast<int>(m_attributeType);
   data["isPrimaryKey"] = m_isPrimaryKey;
-
-  if (!m_subAttributeIds.isEmpty()) {
-    QVariantList subAttributesList;
-    for (const QString& subAttrId : m_subAttributeIds) {
-      subAttributesList.append(subAttrId);
-    }
-    data["subAttributeIds"] = subAttributesList;
-  }
 
   return data;
 }
@@ -245,18 +204,6 @@ bool Attribute::deserialize(
 
     if (data.contains("isPrimaryKey")) {
       m_isPrimaryKey = data["isPrimaryKey"].toBool();
-    }
-
-    m_subAttributeIds.clear();
-
-    if (data.contains("subAttributeIds")) {
-      QVariantList subAttributesList = data["subAttributeIds"].toList();
-      for (const QVariant& subAttrVariant : subAttributesList) {
-        QString subAttrId = subAttrVariant.toString();
-        if (!subAttrId.isEmpty()) {
-          m_subAttributeIds.append(subAttrId);
-        }
-      }
     }
 
     return true;

@@ -87,33 +87,6 @@ QString Entity::typeDisplayName() const
 
 //----------------------------------------------------------------------------------------------
 
-void Entity::addAttributeId(
-  const QString& attributeId
-)
-{
-  if (!attributeId.isEmpty() && !m_attributeIds.contains(attributeId)) {
-    m_attributeIds.append(attributeId);
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-bool Entity::removeAttributeId(
-  const QString& attributeId
-)
-{
-  return m_attributeIds.removeOne(attributeId);
-}
-
-//----------------------------------------------------------------------------------------------
-
-QList<QString> Entity::getAttributeIds() const
-{
-  return m_attributeIds;
-}
-
-//----------------------------------------------------------------------------------------------
-
 bool Entity::isWeakEntity() const
 {
   return m_isWeakEntity;
@@ -136,14 +109,6 @@ QVariantMap Entity::serialize() const
 
   data["isWeakEntity"] = m_isWeakEntity;
 
-  if (!m_attributeIds.isEmpty()) {
-    QVariantList attributesList;
-    for (const QString& attrId : m_attributeIds) {
-      attributesList.append(attrId);
-    }
-    data["attributeIds"] = attributesList;
-  }
-
   return data;
 }
 
@@ -159,19 +124,6 @@ bool Entity::deserialize(
 
   try {
     m_isWeakEntity = data["isWeakEntity"].toBool();
-
-    m_attributeIds.clear();
-
-    if (data.contains("attributeIds")) {
-      QVariantList attributesList = data["attributeIds"].toList();
-      for (const QVariant& attrVariant : attributesList) {
-        QString attrId = attrVariant.toString();
-        if (!attrId.isEmpty()) {
-          m_attributeIds.append(attrId);
-        }
-      }
-    }
-
     return true;
   }
   catch (...) {

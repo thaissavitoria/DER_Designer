@@ -110,11 +110,8 @@ private slots:
     const QString& text
   );
 
-  void onAddAttributeToEntityClicked();
-  void onRemoveAttributeFromEntityClicked();
-
-  void onAddSubAttributeToAttributeClicked();
-  void onRemoveSubAttributeFromAttributeClicked();
+  void onAddAttributeOnTreeClicked();
+  void onRemoveAttributeOnTreeClicked();
 
 private:
   void setupUI();
@@ -170,6 +167,16 @@ private:
     QTreeWidgetItem* parent
   );
 
+  void populateEntityProperties(
+    BasicElement* element,
+    QTreeWidgetItem* parent
+  );
+
+  void populateRelationshipProperties(
+    BasicElement* element,
+    QTreeWidgetItem* parent
+  );
+
   QTreeWidgetItem* createPropertyItem(
     QTreeWidgetItem* parent,
     const QString& propertyName,
@@ -195,10 +202,6 @@ private:
     const QString& propertyKey
   );
 
-  void populateEntityProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
-  );
 
   QTreeWidgetItem* createButtonPropertyItem(
     QTreeWidgetItem* parent,
@@ -224,18 +227,8 @@ private:
     const QVariant& newValue
   );
 
-  bool handleAttributeTypeChange(
-    BasicElement* element,
-    const QString& propertyKey,
-    const QString& value
-  );
-
   QList<QIcon> getConnectionLineTypeIcons();
 
-  void populateRelationshipProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
-  );
 
   QTreeWidgetItem* createCheckBoxPropertyItem(
     QTreeWidgetItem* parent,
@@ -279,6 +272,18 @@ private:
   bool loadDiagramConnections(
     const QJsonArray& connectionsArray,
     const QHash<QString, BasicElement*>& loadedElements
+  );
+
+  QList<Attribute*> getAttributesFromIds(
+    const QList<QString>& attributeIds
+  );
+
+  void updatesAfterChangingProperty(
+    BasicElement* element
+  );
+
+  void updateElementGraphicsItem(
+    BasicElement* element
   );
 
   QWidget* m_centralWidget;
