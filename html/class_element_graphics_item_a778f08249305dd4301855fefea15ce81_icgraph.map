@@ -1,0 +1,11 @@
+<map id="ElementGraphicsItem::findConnectionPointAt" name="ElementGraphicsItem::findConnectionPointAt">
+<area shape="rect" id="Node000001" title=" " alt="" coords="462,39,621,81"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a793602d06f108dd05e8e103aa703974b" title=" " alt="" coords="234,5,381,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,47,382,40,382,34,450,46"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#acccf7d3285160c3f826d7b407c51ebc9" title=" " alt="" coords="201,72,414,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="444,74,415,81,414,75,450,73"/>
+<area shape="rect" id="Node000004" href="$class_element_graphics_item.html#acb0b801fcece8d5458fcb800b98fffa1" title=" " alt="" coords="5,39,153,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="183,76,153,73,153,68,188,75"/>
+<area shape="rect" id="Node000005" href="$class_element_graphics_item.html#abedc932a8098839741d3dc217be990e8" title=" " alt="" coords="5,105,153,148"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="183,112,153,119,153,113,188,111"/>
+</map>

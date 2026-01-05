@@ -1,0 +1,11 @@
+<map id="RelationshipConnectionLine::serialize" name="RelationshipConnectionLine::serialize">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,189,99"/>
+<area shape="rect" id="Node000002" href="$class_connection_line.html#a89b03bf381274e4504b1cde0f32972ee" title=" " alt="" coords="237,64,404,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,75,224,77,219,78,189,80"/>
+<area shape="rect" id="Node000003" href="$class_connection_line.html#ab11952b505976244aabc575e0ec7b118" title=" " alt="" coords="452,5,660,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="375,61,451,41,481,37,486,36,453,47,376,66"/>
+<area shape="rect" id="Node000004" href="$class_connection_line.html#ad957be37b7bbb9250366225fd357a5a6" title=" " alt="" coords="474,56,639,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="404,75,460,77,455,78,405,80"/>
+<area shape="rect" id="Node000005" href="$class_connection_line.html#aacfed243a999c948c87dab84ebc508aa" title=" " alt="" coords="470,123,643,149"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="376,89,453,108,486,119,480,118,451,113,375,94"/>
+</map>

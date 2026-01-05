@@ -1,0 +1,5 @@
+<map id="ConnectionLine::setControl2Offset" name="ConnectionLine::setControl2Offset">
+<area shape="rect" id="Node000001" title=" " alt="" coords="274,5,460,48"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#aa86baf842b30733709e85943661d6298" title=" " alt="" coords="5,5,226,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,27,226,29,226,24,261,27"/>
+</map>

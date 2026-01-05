@@ -1,0 +1,334 @@
+\doxysection{Diagram\+View Class Reference}
+\hypertarget{class_diagram_view}{}\label{class_diagram_view}\index{DiagramView@{DiagramView}}
+
+
+{\ttfamily \#include $<$Diagram\+View.\+h$>$}
+
+
+
+Inheritance diagram for Diagram\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_diagram_view__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Diagram\+View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_diagram_view__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4}{element\+Dropped}} (const QString \&element\+Type, const QPointF \&position)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diagram_view_a5887dca34f466c18f74de9626d3ba98a}{Diagram\+View}} (\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}scene, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_diagram_view_a0e592e8a9bfffa080804374052504075}{\texorpdfstring{$\sim$}{\string~}\+Diagram\+View}} ()=default
+\item 
+void \mbox{\hyperlink{class_diagram_view_acd7bb72b879a10043d61ad439d7badd6}{zoom\+In}} ()
+\item 
+void \mbox{\hyperlink{class_diagram_view_a3c4b587e191fbe21304dce51c8065270}{zoom\+Out}} ()
+\item 
+void \mbox{\hyperlink{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809}{reset\+Zoom}} ()
+\item 
+void \mbox{\hyperlink{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b}{set\+Zoom\+Level}} (qreal zoom\+Level)
+\item 
+qreal \mbox{\hyperlink{class_diagram_view_a8139f511ae2986efdce4477673b4510a}{get\+Zoom\+Level}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_diagram_view_aa5ab01046da74451f7f9dbd2861f0436}{drag\+Enter\+Event}} (QDrag\+Enter\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc}{drag\+Move\+Event}} (QDrag\+Move\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e}{drop\+Event}} (QDrop\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_diagram_view_a29f569db14078b94495ae3827b9f1b50}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_diagram_view_a181f6f529703f839d52d6017fdca1245}{draw\+Background}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506}{is\+Valid\+Element\+Type}} (const QString \&element\+Type) const
+\item 
+void \mbox{\hyperlink{class_diagram_view_a2820070673c09fe2114f3d93b15eb61e}{apply\+Zoom}} (qreal scale\+Factor, const QPointF \&center\+Point=QPointF())
+\item 
+void \mbox{\hyperlink{class_diagram_view_ace5b2051dde25580fa674166d9b1a442}{draw\+Grid}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const qreal \mbox{\hyperlink{class_diagram_view_a7a247c7b7961c4cff2fa622062e5f4c1}{MIN\+\_\+\+ZOOM}} = 0.\+1
+\item 
+const qreal \mbox{\hyperlink{class_diagram_view_a2a53df11097b99850c6e53e3ce8ca669}{MAX\+\_\+\+ZOOM}} = 5.\+0
+\item 
+const qreal \mbox{\hyperlink{class_diagram_view_ac781989fa99a8069e4e8d60f57b33d11}{ZOOM\+\_\+\+STEP}} = 1.\+25
+\item 
+const qreal \mbox{\hyperlink{class_diagram_view_a17daee2a852ef9d1b524b49084e650b1}{DEFAULT\+\_\+\+ZOOM}} = 1.\+0
+\item 
+const qreal \mbox{\hyperlink{class_diagram_view_a5169ff341b2a0ac130c41380b67d9edd}{GRID\+\_\+\+SIZE}} = 30.\+0
+\item 
+qreal \mbox{\hyperlink{class_diagram_view_a091ed511d5cc4f6d7bd0e510ae63f790}{m\+\_\+current\+Zoom}}
+\item 
+bool \mbox{\hyperlink{class_diagram_view_a1c4950b39b13705517561f2c6db152ae}{m\+\_\+grid\+Visible}} = true
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_diagram_view_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_diagram_view_a5887dca34f466c18f74de9626d3ba98a}\index{DiagramView@{DiagramView}!DiagramView@{DiagramView}}
+\index{DiagramView@{DiagramView}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{DiagramView()}{DiagramView()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a5887dca34f466c18f74de9626d3ba98a} 
+Diagram\+View\+::\+Diagram\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_diagram_view_a0e592e8a9bfffa080804374052504075}\index{DiagramView@{DiagramView}!````~DiagramView@{\texorpdfstring{$\sim$}{\string~}DiagramView}}
+\index{````~DiagramView@{\texorpdfstring{$\sim$}{\string~}DiagramView}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}DiagramView()}{\string~DiagramView()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a0e592e8a9bfffa080804374052504075} 
+virtual Diagram\+View\+::\texorpdfstring{$\sim$}{\string~}\+Diagram\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_diagram_view_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_diagram_view_a2820070673c09fe2114f3d93b15eb61e}\index{DiagramView@{DiagramView}!applyZoom@{applyZoom}}
+\index{applyZoom@{applyZoom}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{applyZoom()}{applyZoom()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a2820070673c09fe2114f3d93b15eb61e} 
+void Diagram\+View\+::apply\+Zoom (\begin{DoxyParamCaption}\item[{qreal}]{scale\+Factor}{, }\item[{const QPointF \&}]{center\+Point}{ = {\ttfamily QPointF()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a2820070673c09fe2114f3d93b15eb61e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_aa5ab01046da74451f7f9dbd2861f0436}\index{DiagramView@{DiagramView}!dragEnterEvent@{dragEnterEvent}}
+\index{dragEnterEvent@{dragEnterEvent}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{dragEnterEvent()}{dragEnterEvent()}}
+{\footnotesize\ttfamily \label{class_diagram_view_aa5ab01046da74451f7f9dbd2861f0436} 
+void Diagram\+View\+::drag\+Enter\+Event (\begin{DoxyParamCaption}\item[{QDrag\+Enter\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_aa5ab01046da74451f7f9dbd2861f0436_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc}\index{DiagramView@{DiagramView}!dragMoveEvent@{dragMoveEvent}}
+\index{dragMoveEvent@{dragMoveEvent}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{dragMoveEvent()}{dragMoveEvent()}}
+{\footnotesize\ttfamily \label{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc} 
+void Diagram\+View\+::drag\+Move\+Event (\begin{DoxyParamCaption}\item[{QDrag\+Move\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_a181f6f529703f839d52d6017fdca1245}\index{DiagramView@{DiagramView}!drawBackground@{drawBackground}}
+\index{drawBackground@{drawBackground}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{drawBackground()}{drawBackground()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a181f6f529703f839d52d6017fdca1245} 
+void Diagram\+View\+::draw\+Background (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a181f6f529703f839d52d6017fdca1245_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_ace5b2051dde25580fa674166d9b1a442}\index{DiagramView@{DiagramView}!drawGrid@{drawGrid}}
+\index{drawGrid@{drawGrid}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{drawGrid()}{drawGrid()}}
+{\footnotesize\ttfamily \label{class_diagram_view_ace5b2051dde25580fa674166d9b1a442} 
+void Diagram\+View\+::draw\+Grid (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_ace5b2051dde25580fa674166d9b1a442_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e}\index{DiagramView@{DiagramView}!dropEvent@{dropEvent}}
+\index{dropEvent@{dropEvent}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{dropEvent()}{dropEvent()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e} 
+void Diagram\+View\+::drop\+Event (\begin{DoxyParamCaption}\item[{QDrop\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4}\index{DiagramView@{DiagramView}!elementDropped@{elementDropped}}
+\index{elementDropped@{elementDropped}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{elementDropped}{elementDropped}}
+{\footnotesize\ttfamily \label{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4} 
+void Diagram\+View\+::element\+Dropped (\begin{DoxyParamCaption}\item[{const QString \&}]{element\+Type}{, }\item[{const QPointF \&}]{position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_a8139f511ae2986efdce4477673b4510a}\index{DiagramView@{DiagramView}!getZoomLevel@{getZoomLevel}}
+\index{getZoomLevel@{getZoomLevel}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{getZoomLevel()}{getZoomLevel()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a8139f511ae2986efdce4477673b4510a} 
+qreal Diagram\+View\+::get\+Zoom\+Level (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506}\index{DiagramView@{DiagramView}!isValidElementType@{isValidElementType}}
+\index{isValidElementType@{isValidElementType}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{isValidElementType()}{isValidElementType()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506} 
+bool Diagram\+View\+::is\+Valid\+Element\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{element\+Type}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809}\index{DiagramView@{DiagramView}!resetZoom@{resetZoom}}
+\index{resetZoom@{resetZoom}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{resetZoom()}{resetZoom()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809} 
+void Diagram\+View\+::reset\+Zoom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b}\index{DiagramView@{DiagramView}!setZoomLevel@{setZoomLevel}}
+\index{setZoomLevel@{setZoomLevel}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{setZoomLevel()}{setZoomLevel()}}
+{\footnotesize\ttfamily \label{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b} 
+void Diagram\+View\+::set\+Zoom\+Level (\begin{DoxyParamCaption}\item[{qreal}]{zoom\+Level}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_diagram_view_a29f569db14078b94495ae3827b9f1b50}\index{DiagramView@{DiagramView}!wheelEvent@{wheelEvent}}
+\index{wheelEvent@{wheelEvent}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a29f569db14078b94495ae3827b9f1b50} 
+void Diagram\+View\+::wheel\+Event (\begin{DoxyParamCaption}\item[{QWheel\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a29f569db14078b94495ae3827b9f1b50_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_acd7bb72b879a10043d61ad439d7badd6}\index{DiagramView@{DiagramView}!zoomIn@{zoomIn}}
+\index{zoomIn@{zoomIn}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{zoomIn()}{zoomIn()}}
+{\footnotesize\ttfamily \label{class_diagram_view_acd7bb72b879a10043d61ad439d7badd6} 
+void Diagram\+View\+::zoom\+In (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_acd7bb72b879a10043d61ad439d7badd6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_view_a3c4b587e191fbe21304dce51c8065270}\index{DiagramView@{DiagramView}!zoomOut@{zoomOut}}
+\index{zoomOut@{zoomOut}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{zoomOut()}{zoomOut()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a3c4b587e191fbe21304dce51c8065270} 
+void Diagram\+View\+::zoom\+Out (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a3c4b587e191fbe21304dce51c8065270_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_diagram_view_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_diagram_view_a17daee2a852ef9d1b524b49084e650b1}\index{DiagramView@{DiagramView}!DEFAULT\_ZOOM@{DEFAULT\_ZOOM}}
+\index{DEFAULT\_ZOOM@{DEFAULT\_ZOOM}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_ZOOM}{DEFAULT\_ZOOM}}
+{\footnotesize\ttfamily \label{class_diagram_view_a17daee2a852ef9d1b524b49084e650b1} 
+const qreal Diagram\+View\+::\+DEFAULT\+\_\+\+ZOOM = 1.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_a5169ff341b2a0ac130c41380b67d9edd}\index{DiagramView@{DiagramView}!GRID\_SIZE@{GRID\_SIZE}}
+\index{GRID\_SIZE@{GRID\_SIZE}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{GRID\_SIZE}{GRID\_SIZE}}
+{\footnotesize\ttfamily \label{class_diagram_view_a5169ff341b2a0ac130c41380b67d9edd} 
+const qreal Diagram\+View\+::\+GRID\+\_\+\+SIZE = 30.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_a091ed511d5cc4f6d7bd0e510ae63f790}\index{DiagramView@{DiagramView}!m\_currentZoom@{m\_currentZoom}}
+\index{m\_currentZoom@{m\_currentZoom}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{m\_currentZoom}{m\_currentZoom}}
+{\footnotesize\ttfamily \label{class_diagram_view_a091ed511d5cc4f6d7bd0e510ae63f790} 
+qreal Diagram\+View\+::m\+\_\+current\+Zoom\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_a1c4950b39b13705517561f2c6db152ae}\index{DiagramView@{DiagramView}!m\_gridVisible@{m\_gridVisible}}
+\index{m\_gridVisible@{m\_gridVisible}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{m\_gridVisible}{m\_gridVisible}}
+{\footnotesize\ttfamily \label{class_diagram_view_a1c4950b39b13705517561f2c6db152ae} 
+bool Diagram\+View\+::m\+\_\+grid\+Visible = true\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_a2a53df11097b99850c6e53e3ce8ca669}\index{DiagramView@{DiagramView}!MAX\_ZOOM@{MAX\_ZOOM}}
+\index{MAX\_ZOOM@{MAX\_ZOOM}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{MAX\_ZOOM}{MAX\_ZOOM}}
+{\footnotesize\ttfamily \label{class_diagram_view_a2a53df11097b99850c6e53e3ce8ca669} 
+const qreal Diagram\+View\+::\+MAX\+\_\+\+ZOOM = 5.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_a7a247c7b7961c4cff2fa622062e5f4c1}\index{DiagramView@{DiagramView}!MIN\_ZOOM@{MIN\_ZOOM}}
+\index{MIN\_ZOOM@{MIN\_ZOOM}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{MIN\_ZOOM}{MIN\_ZOOM}}
+{\footnotesize\ttfamily \label{class_diagram_view_a7a247c7b7961c4cff2fa622062e5f4c1} 
+const qreal Diagram\+View\+::\+MIN\+\_\+\+ZOOM = 0.\+1\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_diagram_view_ac781989fa99a8069e4e8d60f57b33d11}\index{DiagramView@{DiagramView}!ZOOM\_STEP@{ZOOM\_STEP}}
+\index{ZOOM\_STEP@{ZOOM\_STEP}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{ZOOM\_STEP}{ZOOM\_STEP}}
+{\footnotesize\ttfamily \label{class_diagram_view_ac781989fa99a8069e4e8d60f57b33d11} 
+const qreal Diagram\+View\+::\+ZOOM\+\_\+\+STEP = 1.\+25\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/viewer/\mbox{\hyperlink{_diagram_view_8h}{Diagram\+View.\+h}}\item 
+src/viewer/\mbox{\hyperlink{_diagram_view_8cpp}{Diagram\+View.\+cpp}}\end{DoxyCompactItemize}

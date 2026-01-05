@@ -1,0 +1,9 @@
+<map id="DiagramScene::addRelationshipConnection" name="DiagramScene::addRelationshipConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="538,23,746,65"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a8a3265678249b08f424e17fbfa8d0de5" title=" " alt="" coords="268,5,480,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="520,33,481,31,481,26,525,33"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a61e7061e5add947d09ad87feaf2b8dc1" title=" " alt="" coords="258,56,490,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="525,55,490,61,490,56,520,55"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="5,56,210,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="239,69,210,72,210,67,245,69"/>
+</map>

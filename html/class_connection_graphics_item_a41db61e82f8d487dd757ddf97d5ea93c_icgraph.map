@@ -1,0 +1,5 @@
+<map id="ConnectionGraphicsItem::mousePressEvent" name="ConnectionGraphicsItem::mousePressEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="268,5,433,48"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line_graphics_item.html#ab7d7310d11b41a9a2e032687312b56c8" title=" " alt="" coords="5,5,220,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="249,27,220,29,220,24,255,27"/>
+</map>

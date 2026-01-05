@@ -1,0 +1,9 @@
+<map id="DiagramView::isValidElementType" name="DiagramView::isValidElementType">
+<area shape="rect" id="Node000001" title=" " alt="" coords="252,56,473,83"/>
+<area shape="rect" id="Node000002" href="$class_diagram_view.html#aa5ab01046da74451f7f9dbd2861f0436" title=" " alt="" coords="6,5,203,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,53,176,35,176,30,278,51"/>
+<area shape="rect" id="Node000003" href="$class_diagram_view.html#aa9951a6e1b8fddf2eee28f91d0a77cbc" title=" " alt="" coords="5,56,204,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,70,204,72,204,67,239,69"/>
+<area shape="rect" id="Node000004" href="$class_diagram_view.html#a6d3626ec66c8ccda5d60f53e5ff46e1e" title=" " alt="" coords="21,107,188,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,86,177,109,176,103,273,87"/>
+</map>

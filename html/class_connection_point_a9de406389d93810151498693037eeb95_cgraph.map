@@ -1,0 +1,7 @@
+<map id="ConnectionPoint::createDefaultConnectionPoints" name="ConnectionPoint::createDefaultConnectionPoints">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,48"/>
+<area shape="rect" id="Node000002" href="$class_connection_point.html#a8977265b0868dad361fcbeec5a89bdeb" title=" " alt="" coords="257,5,462,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,24,244,27,239,27,209,29"/>
+<area shape="rect" id="Node000003" href="$class_connection_point.html#ac498b99d7f91805fea3eab19f2e8b260" title=" " alt="" coords="510,5,701,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="463,24,497,27,491,27,463,29"/>
+</map>

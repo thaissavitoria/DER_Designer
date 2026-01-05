@@ -1,0 +1,68 @@
+\doxysection{IElement\+Observer Class Reference}
+\hypertarget{class_i_element_observer}{}\label{class_i_element_observer}\index{IElementObserver@{IElementObserver}}
+
+
+{\ttfamily \#include $<$Basic\+Element.\+h$>$}
+
+
+
+Inheritance diagram for IElement\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_i_element_observer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IElement\+Observer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_i_element_observer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_element_observer_a700ec487f51e71860992407de8a32541}{\texorpdfstring{$\sim$}{\string~}\+IElement\+Observer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_element_observer_a66546a8acf1ca03d2c9639bd3bf895f5}{on\+Element\+Changed}} (const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_element_observer_a25dad770220cefbccc3dcca820e70fb2}{on\+Element\+Position\+Changed}} (const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QPointF \&old\+Position, const QPointF \&new\+Position)=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_element_observer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_element_observer_a700ec487f51e71860992407de8a32541}\index{IElementObserver@{IElementObserver}!````~IElementObserver@{\texorpdfstring{$\sim$}{\string~}IElementObserver}}
+\index{````~IElementObserver@{\texorpdfstring{$\sim$}{\string~}IElementObserver}!IElementObserver@{IElementObserver}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IElementObserver()}{\string~IElementObserver()}}
+{\footnotesize\ttfamily \label{class_i_element_observer_a700ec487f51e71860992407de8a32541} 
+virtual IElement\+Observer\+::\texorpdfstring{$\sim$}{\string~}\+IElement\+Observer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_element_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_element_observer_a66546a8acf1ca03d2c9639bd3bf895f5}\index{IElementObserver@{IElementObserver}!onElementChanged@{onElementChanged}}
+\index{onElementChanged@{onElementChanged}!IElementObserver@{IElementObserver}}
+\doxysubsubsection{\texorpdfstring{onElementChanged()}{onElementChanged()}}
+{\footnotesize\ttfamily \label{class_i_element_observer_a66546a8acf1ca03d2c9639bd3bf895f5} 
+virtual void IElement\+Observer\+::on\+Element\+Changed (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\Hypertarget{class_i_element_observer_a25dad770220cefbccc3dcca820e70fb2}\index{IElementObserver@{IElementObserver}!onElementPositionChanged@{onElementPositionChanged}}
+\index{onElementPositionChanged@{onElementPositionChanged}!IElementObserver@{IElementObserver}}
+\doxysubsubsection{\texorpdfstring{onElementPositionChanged()}{onElementPositionChanged()}}
+{\footnotesize\ttfamily \label{class_i_element_observer_a25dad770220cefbccc3dcca820e70fb2} 
+virtual void IElement\+Observer\+::on\+Element\+Position\+Changed (\begin{DoxyParamCaption}\item[{const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QPointF \&}]{old\+Position}{, }\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_basic_element_8h}{Basic\+Element.\+h}}\end{DoxyCompactItemize}

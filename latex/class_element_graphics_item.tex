@@ -1,0 +1,590 @@
+\doxysection{Element\+Graphics\+Item Class Reference}
+\hypertarget{class_element_graphics_item}{}\label{class_element_graphics_item}\index{ElementGraphicsItem@{ElementGraphicsItem}}
+
+
+Graphic item that represents a \doxylink{class_basic_element}{Basic\+Element} in the QGraphics\+View.  
+
+
+
+
+{\ttfamily \#include $<$Element\+Graphics\+Item.\+h$>$}
+
+
+
+Inheritance diagram for Element\+Graphics\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_element_graphics_item__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Element\+Graphics\+Item\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_element_graphics_item__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_element_graphics_item_a15c1c0390715f724886f2c4f842bd7c0}{Element\+Graphics\+Item}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9}{element}}, QGraphics\+Item \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_element_graphics_item_ac2bb67709d44e5b7e84068e462e067f0}{\texorpdfstring{$\sim$}{\string~}\+Element\+Graphics\+Item}} ()
+\item 
+QRectF \mbox{\hyperlink{class_element_graphics_item_a8738b5a561b8bf3ac32fcd0c728e36b4}{bounding\+Rect}} () const override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_ae433ba5283fb30f272458f1970a46d06}{paint}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}option, QWidget \texorpdfstring{$\ast$}{*}widget=nullptr) override
+\item 
+QPainter\+Path \mbox{\hyperlink{class_element_graphics_item_aa40f357c133099eb418ef7f06dbbd02a}{shape}} () const override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a793602d06f108dd05e8e103aa703974b}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a215ad3b183b805a08039ce7929a0e1d0}{mouse\+Move\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a828d405f6aa63c86873076025f78905f}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_aa5ccbcc895f1d38417f664bd22486bc2}{mouse\+Double\+Click\+Event}} (QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_acb0b801fcece8d5458fcb800b98fffa1}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a42e21194294ed7b76486e0b76a4b40c6}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_abedc932a8098839741d3dc217be990e8}{hover\+Move\+Event}} (QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a155beaa7e5efea78ef1a0d8d04928b23}{on\+Element\+Changed}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9}{element}}) override
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_aa6e5a05f4d5ca39fd4a033808b09cd0e}{on\+Element\+Position\+Changed}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9}{element}}, const QPointF \&old\+Position, const QPointF \&new\+Position) override
+\item 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9}{element}} () const
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_afd6d70abc9eb6af8a69ebfee6f7d3c83}{is\+Selected}} () const
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_ae35888c5a7ef14f2a8b76853ebf8a153}{is\+Hovered}} () const
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a84c808f98eb7db50d7a887263669a6b5}{set\+Selected}} (bool selected)
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a86d44e191aadfab004d569382d8ee7bd}{set\+Connection\+Points\+Visible}} (bool visible)
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_a425b5dd7260c901902a621623af50d3d}{are\+Connection\+Points\+Visible}} () const
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_graphics_item_a072b72f86f836cd7ac5677bf258fc136}{hovered\+Connection\+Point}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_element_observer_a700ec487f51e71860992407de8a32541}{\texorpdfstring{$\sim$}{\string~}\+IElement\+Observer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_element_observer_a66546a8acf1ca03d2c9639bd3bf895f5}{on\+Element\+Changed}} (const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_element_observer_a25dad770220cefbccc3dcca820e70fb2}{on\+Element\+Position\+Changed}} (const class \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QPointF \&old\+Position, const QPointF \&new\+Position)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QVariant \mbox{\hyperlink{class_element_graphics_item_ab1af384cb7b15290102a8af04b8c5b23}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) override
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a70e12e4f6a93b670383d13bfee3dcc37}{update\+From\+Element}} ()
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a92ce5533958fd649032d962af0793ce6}{setup\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_aad2d5e3e5432811c07fd6a03c7c7a30d}{edit\+Element\+Name}} ()
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_a633fa954259daffed25643ebd0d2b342}{render\+Connection\+Points}} (QPainter \texorpdfstring{$\ast$}{*}painter)
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_graphics_item_a778f08249305dd4301855fefea15ce81}{find\+Connection\+Point\+At}} (const QPointF \&local\+Position)
+\item 
+QRectF \mbox{\hyperlink{class_element_graphics_item_aba16bb9e988fba3ef75a81587c6e75db}{get\+Connection\+Point\+Rect}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}connection\+Point) const
+\item 
+void \mbox{\hyperlink{class_element_graphics_item_acccf7d3285160c3f826d7b407c51ebc9}{update\+Hovered\+Connection\+Point}} (const QPointF \&local\+Position)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_graphics_item_acbd6c9fee4034e863d00796a850baef0}{m\+\_\+element}}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_element_renderer}{IElement\+Renderer}} $>$ \mbox{\hyperlink{class_element_graphics_item_a91fe4d63853f096c28cfe6d041abf30c}{m\+\_\+renderer}}
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_ad6a870883cef9ce5494676331b9d4727}{m\+\_\+is\+Selected}}
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_a341bb71430a400084cc3869be1803f54}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_ad573e5fb4c0128fcdfc998ee614ffeca}{m\+\_\+is\+Dragging}}
+\item 
+bool \mbox{\hyperlink{class_element_graphics_item_a6a5b840d39c314234d029b44b4cd43da}{m\+\_\+connection\+Points\+Visible}}
+\item 
+QPointF \mbox{\hyperlink{class_element_graphics_item_a54e235fa4ff08712205f82ae308a045b}{m\+\_\+drag\+Start\+Position}}
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_graphics_item_a930414b29f9053e5a58fdecfb89e341b}{m\+\_\+hovered\+Connection\+Point}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Graphic item that represents a \doxylink{class_basic_element}{Basic\+Element} in the QGraphics\+View. 
+
+Updates the visual representation of Basic\+Elements 
+
+\label{doc-constructors}
+\Hypertarget{class_element_graphics_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_element_graphics_item_a15c1c0390715f724886f2c4f842bd7c0}\index{ElementGraphicsItem@{ElementGraphicsItem}!ElementGraphicsItem@{ElementGraphicsItem}}
+\index{ElementGraphicsItem@{ElementGraphicsItem}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{ElementGraphicsItem()}{ElementGraphicsItem()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a15c1c0390715f724886f2c4f842bd7c0} 
+Element\+Graphics\+Item\+::\+Element\+Graphics\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{QGraphics\+Item \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a15c1c0390715f724886f2c4f842bd7c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_element_graphics_item_a15c1c0390715f724886f2c4f842bd7c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_ac2bb67709d44e5b7e84068e462e067f0}\index{ElementGraphicsItem@{ElementGraphicsItem}!````~ElementGraphicsItem@{\texorpdfstring{$\sim$}{\string~}ElementGraphicsItem}}
+\index{````~ElementGraphicsItem@{\texorpdfstring{$\sim$}{\string~}ElementGraphicsItem}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ElementGraphicsItem()}{\string~ElementGraphicsItem()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ac2bb67709d44e5b7e84068e462e067f0} 
+Element\+Graphics\+Item\+::\texorpdfstring{$\sim$}{\string~}\+Element\+Graphics\+Item (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_element_graphics_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_element_graphics_item_a425b5dd7260c901902a621623af50d3d}\index{ElementGraphicsItem@{ElementGraphicsItem}!areConnectionPointsVisible@{areConnectionPointsVisible}}
+\index{areConnectionPointsVisible@{areConnectionPointsVisible}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{areConnectionPointsVisible()}{areConnectionPointsVisible()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a425b5dd7260c901902a621623af50d3d} 
+bool Element\+Graphics\+Item\+::are\+Connection\+Points\+Visible (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_element_graphics_item_a8738b5a561b8bf3ac32fcd0c728e36b4}\index{ElementGraphicsItem@{ElementGraphicsItem}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a8738b5a561b8bf3ac32fcd0c728e36b4} 
+QRectF Element\+Graphics\+Item\+::bounding\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a8738b5a561b8bf3ac32fcd0c728e36b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_aad2d5e3e5432811c07fd6a03c7c7a30d}\index{ElementGraphicsItem@{ElementGraphicsItem}!editElementName@{editElementName}}
+\index{editElementName@{editElementName}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{editElementName()}{editElementName()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_aad2d5e3e5432811c07fd6a03c7c7a30d} 
+void Element\+Graphics\+Item\+::edit\+Element\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aad2d5e3e5432811c07fd6a03c7c7a30d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9}\index{ElementGraphicsItem@{ElementGraphicsItem}!element@{element}}
+\index{element@{element}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{element()}{element()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Element\+Graphics\+Item\+::element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a6742e9d215c1199d6e8b6a2550aad2c9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a778f08249305dd4301855fefea15ce81}\index{ElementGraphicsItem@{ElementGraphicsItem}!findConnectionPointAt@{findConnectionPointAt}}
+\index{findConnectionPointAt@{findConnectionPointAt}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{findConnectionPointAt()}{findConnectionPointAt()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a778f08249305dd4301855fefea15ce81} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} Element\+Graphics\+Item\+::find\+Connection\+Point\+At (\begin{DoxyParamCaption}\item[{const QPointF \&}]{local\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a778f08249305dd4301855fefea15ce81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a778f08249305dd4301855fefea15ce81_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_aba16bb9e988fba3ef75a81587c6e75db}\index{ElementGraphicsItem@{ElementGraphicsItem}!getConnectionPointRect@{getConnectionPointRect}}
+\index{getConnectionPointRect@{getConnectionPointRect}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{getConnectionPointRect()}{getConnectionPointRect()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_aba16bb9e988fba3ef75a81587c6e75db} 
+QRectF Element\+Graphics\+Item\+::get\+Connection\+Point\+Rect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{connection\+Point}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aba16bb9e988fba3ef75a81587c6e75db_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aba16bb9e988fba3ef75a81587c6e75db_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a072b72f86f836cd7ac5677bf258fc136}\index{ElementGraphicsItem@{ElementGraphicsItem}!hoveredConnectionPoint@{hoveredConnectionPoint}}
+\index{hoveredConnectionPoint@{hoveredConnectionPoint}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoveredConnectionPoint()}{hoveredConnectionPoint()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a072b72f86f836cd7ac5677bf258fc136} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} Element\+Graphics\+Item\+::hovered\+Connection\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_element_graphics_item_acb0b801fcece8d5458fcb800b98fffa1}\index{ElementGraphicsItem@{ElementGraphicsItem}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_acb0b801fcece8d5458fcb800b98fffa1} 
+void Element\+Graphics\+Item\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_acb0b801fcece8d5458fcb800b98fffa1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a42e21194294ed7b76486e0b76a4b40c6}\index{ElementGraphicsItem@{ElementGraphicsItem}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a42e21194294ed7b76486e0b76a4b40c6} 
+void Element\+Graphics\+Item\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a42e21194294ed7b76486e0b76a4b40c6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_abedc932a8098839741d3dc217be990e8}\index{ElementGraphicsItem@{ElementGraphicsItem}!hoverMoveEvent@{hoverMoveEvent}}
+\index{hoverMoveEvent@{hoverMoveEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoverMoveEvent()}{hoverMoveEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_abedc932a8098839741d3dc217be990e8} 
+void Element\+Graphics\+Item\+::hover\+Move\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_abedc932a8098839741d3dc217be990e8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_ae35888c5a7ef14f2a8b76853ebf8a153}\index{ElementGraphicsItem@{ElementGraphicsItem}!isHovered@{isHovered}}
+\index{isHovered@{isHovered}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{isHovered()}{isHovered()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ae35888c5a7ef14f2a8b76853ebf8a153} 
+bool Element\+Graphics\+Item\+::is\+Hovered (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_element_graphics_item_afd6d70abc9eb6af8a69ebfee6f7d3c83}\index{ElementGraphicsItem@{ElementGraphicsItem}!isSelected@{isSelected}}
+\index{isSelected@{isSelected}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{isSelected()}{isSelected()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_afd6d70abc9eb6af8a69ebfee6f7d3c83} 
+bool Element\+Graphics\+Item\+::is\+Selected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_element_graphics_item_ab1af384cb7b15290102a8af04b8c5b23}\index{ElementGraphicsItem@{ElementGraphicsItem}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ab1af384cb7b15290102a8af04b8c5b23} 
+QVariant Element\+Graphics\+Item\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change}{, }\item[{const QVariant \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_element_graphics_item_aa5ccbcc895f1d38417f664bd22486bc2}\index{ElementGraphicsItem@{ElementGraphicsItem}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
+\index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mouseDoubleClickEvent()}{mouseDoubleClickEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_aa5ccbcc895f1d38417f664bd22486bc2} 
+void Element\+Graphics\+Item\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aa5ccbcc895f1d38417f664bd22486bc2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a215ad3b183b805a08039ce7929a0e1d0}\index{ElementGraphicsItem@{ElementGraphicsItem}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a215ad3b183b805a08039ce7929a0e1d0} 
+void Element\+Graphics\+Item\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a215ad3b183b805a08039ce7929a0e1d0_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a793602d06f108dd05e8e103aa703974b}\index{ElementGraphicsItem@{ElementGraphicsItem}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a793602d06f108dd05e8e103aa703974b} 
+void Element\+Graphics\+Item\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a793602d06f108dd05e8e103aa703974b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a828d405f6aa63c86873076025f78905f}\index{ElementGraphicsItem@{ElementGraphicsItem}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a828d405f6aa63c86873076025f78905f} 
+void Element\+Graphics\+Item\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+\Hypertarget{class_element_graphics_item_a155beaa7e5efea78ef1a0d8d04928b23}\index{ElementGraphicsItem@{ElementGraphicsItem}!onElementChanged@{onElementChanged}}
+\index{onElementChanged@{onElementChanged}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{onElementChanged()}{onElementChanged()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a155beaa7e5efea78ef1a0d8d04928b23} 
+void Element\+Graphics\+Item\+::on\+Element\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_element_graphics_item_a155beaa7e5efea78ef1a0d8d04928b23_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_aa6e5a05f4d5ca39fd4a033808b09cd0e}\index{ElementGraphicsItem@{ElementGraphicsItem}!onElementPositionChanged@{onElementPositionChanged}}
+\index{onElementPositionChanged@{onElementPositionChanged}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{onElementPositionChanged()}{onElementPositionChanged()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_aa6e5a05f4d5ca39fd4a033808b09cd0e} 
+void Element\+Graphics\+Item\+::on\+Element\+Position\+Changed (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QPointF \&}]{old\+Position}{, }\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aa6e5a05f4d5ca39fd4a033808b09cd0e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_ae433ba5283fb30f272458f1970a46d06}\index{ElementGraphicsItem@{ElementGraphicsItem}!paint@{paint}}
+\index{paint@{paint}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ae433ba5283fb30f272458f1970a46d06} 
+void Element\+Graphics\+Item\+::paint (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QStyle\+Option\+Graphics\+Item \texorpdfstring{$\ast$}{*}}]{option}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{widget}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_ae433ba5283fb30f272458f1970a46d06_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a633fa954259daffed25643ebd0d2b342}\index{ElementGraphicsItem@{ElementGraphicsItem}!renderConnectionPoints@{renderConnectionPoints}}
+\index{renderConnectionPoints@{renderConnectionPoints}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{renderConnectionPoints()}{renderConnectionPoints()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a633fa954259daffed25643ebd0d2b342} 
+void Element\+Graphics\+Item\+::render\+Connection\+Points (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a633fa954259daffed25643ebd0d2b342_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a633fa954259daffed25643ebd0d2b342_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a86d44e191aadfab004d569382d8ee7bd}\index{ElementGraphicsItem@{ElementGraphicsItem}!setConnectionPointsVisible@{setConnectionPointsVisible}}
+\index{setConnectionPointsVisible@{setConnectionPointsVisible}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{setConnectionPointsVisible()}{setConnectionPointsVisible()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a86d44e191aadfab004d569382d8ee7bd} 
+void Element\+Graphics\+Item\+::set\+Connection\+Points\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a86d44e191aadfab004d569382d8ee7bd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a84c808f98eb7db50d7a887263669a6b5}\index{ElementGraphicsItem@{ElementGraphicsItem}!setSelected@{setSelected}}
+\index{setSelected@{setSelected}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{setSelected()}{setSelected()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a84c808f98eb7db50d7a887263669a6b5} 
+void Element\+Graphics\+Item\+::set\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_element_graphics_item_a92ce5533958fd649032d962af0793ce6}\index{ElementGraphicsItem@{ElementGraphicsItem}!setupRenderer@{setupRenderer}}
+\index{setupRenderer@{setupRenderer}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{setupRenderer()}{setupRenderer()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a92ce5533958fd649032d962af0793ce6} 
+void Element\+Graphics\+Item\+::setup\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a92ce5533958fd649032d962af0793ce6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a92ce5533958fd649032d962af0793ce6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_aa40f357c133099eb418ef7f06dbbd02a}\index{ElementGraphicsItem@{ElementGraphicsItem}!shape@{shape}}
+\index{shape@{shape}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{shape()}{shape()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_aa40f357c133099eb418ef7f06dbbd02a} 
+QPainter\+Path Element\+Graphics\+Item\+::shape (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_aa40f357c133099eb418ef7f06dbbd02a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_a70e12e4f6a93b670383d13bfee3dcc37}\index{ElementGraphicsItem@{ElementGraphicsItem}!updateFromElement@{updateFromElement}}
+\index{updateFromElement@{updateFromElement}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{updateFromElement()}{updateFromElement()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a70e12e4f6a93b670383d13bfee3dcc37} 
+void Element\+Graphics\+Item\+::update\+From\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_a70e12e4f6a93b670383d13bfee3dcc37_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_element_graphics_item_acccf7d3285160c3f826d7b407c51ebc9}\index{ElementGraphicsItem@{ElementGraphicsItem}!updateHoveredConnectionPoint@{updateHoveredConnectionPoint}}
+\index{updateHoveredConnectionPoint@{updateHoveredConnectionPoint}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{updateHoveredConnectionPoint()}{updateHoveredConnectionPoint()}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_acccf7d3285160c3f826d7b407c51ebc9} 
+void Element\+Graphics\+Item\+::update\+Hovered\+Connection\+Point (\begin{DoxyParamCaption}\item[{const QPointF \&}]{local\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_acccf7d3285160c3f826d7b407c51ebc9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_graphics_item_acccf7d3285160c3f826d7b407c51ebc9_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_element_graphics_item_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_element_graphics_item_a6a5b840d39c314234d029b44b4cd43da}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_connectionPointsVisible@{m\_connectionPointsVisible}}
+\index{m\_connectionPointsVisible@{m\_connectionPointsVisible}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_connectionPointsVisible}{m\_connectionPointsVisible}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a6a5b840d39c314234d029b44b4cd43da} 
+bool Element\+Graphics\+Item\+::m\+\_\+connection\+Points\+Visible\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_a54e235fa4ff08712205f82ae308a045b}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_dragStartPosition@{m\_dragStartPosition}}
+\index{m\_dragStartPosition@{m\_dragStartPosition}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_dragStartPosition}{m\_dragStartPosition}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a54e235fa4ff08712205f82ae308a045b} 
+QPointF Element\+Graphics\+Item\+::m\+\_\+drag\+Start\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_acbd6c9fee4034e863d00796a850baef0}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_element@{m\_element}}
+\index{m\_element@{m\_element}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_element}{m\_element}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_acbd6c9fee4034e863d00796a850baef0} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}}\texorpdfstring{$\ast$}{*} Element\+Graphics\+Item\+::m\+\_\+element\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_a930414b29f9053e5a58fdecfb89e341b}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_hoveredConnectionPoint@{m\_hoveredConnectionPoint}}
+\index{m\_hoveredConnectionPoint@{m\_hoveredConnectionPoint}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_hoveredConnectionPoint}{m\_hoveredConnectionPoint}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a930414b29f9053e5a58fdecfb89e341b} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*} Element\+Graphics\+Item\+::m\+\_\+hovered\+Connection\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_ad573e5fb4c0128fcdfc998ee614ffeca}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_isDragging@{m\_isDragging}}
+\index{m\_isDragging@{m\_isDragging}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_isDragging}{m\_isDragging}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ad573e5fb4c0128fcdfc998ee614ffeca} 
+bool Element\+Graphics\+Item\+::m\+\_\+is\+Dragging\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_a341bb71430a400084cc3869be1803f54}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_isHovered@{m\_isHovered}}
+\index{m\_isHovered@{m\_isHovered}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_isHovered}{m\_isHovered}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a341bb71430a400084cc3869be1803f54} 
+bool Element\+Graphics\+Item\+::m\+\_\+is\+Hovered\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_ad6a870883cef9ce5494676331b9d4727}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_isSelected@{m\_isSelected}}
+\index{m\_isSelected@{m\_isSelected}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_isSelected}{m\_isSelected}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_ad6a870883cef9ce5494676331b9d4727} 
+bool Element\+Graphics\+Item\+::m\+\_\+is\+Selected\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_element_graphics_item_a91fe4d63853f096c28cfe6d041abf30c}\index{ElementGraphicsItem@{ElementGraphicsItem}!m\_renderer@{m\_renderer}}
+\index{m\_renderer@{m\_renderer}!ElementGraphicsItem@{ElementGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_renderer}{m\_renderer}}
+{\footnotesize\ttfamily \label{class_element_graphics_item_a91fe4d63853f096c28cfe6d041abf30c} 
+std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{class_i_element_renderer}{IElement\+Renderer}}$>$ Element\+Graphics\+Item\+::m\+\_\+renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/viewer/\mbox{\hyperlink{_element_graphics_item_8h}{Element\+Graphics\+Item.\+h}}\item 
+src/viewer/\mbox{\hyperlink{_element_graphics_item_8cpp}{Element\+Graphics\+Item.\+cpp}}\end{DoxyCompactItemize}

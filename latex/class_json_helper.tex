@@ -1,0 +1,230 @@
+\doxysection{Json\+Helper Class Reference}
+\hypertarget{class_json_helper}{}\label{class_json_helper}\index{JsonHelper@{JsonHelper}}
+
+
+{\ttfamily \#include $<$Json\+Helper.\+h$>$}
+
+
+
+Collaboration diagram for Json\+Helper\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_json_helper__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_json_helper_a4fad5a49a87d6b35e12d37cee38e5e2e}{element\+To\+Json}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+static QJson\+Object \mbox{\hyperlink{class_json_helper_a2141a614711cf449951f1ebde5a9b119}{element\+To\+Json\+Object}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+static QJson\+Object \mbox{\hyperlink{class_json_helper_ace49a2bdc031d44388b744f93da1fd6d}{connection\+To\+Json\+Object}} (const \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}connection)
+\item 
+static bool \mbox{\hyperlink{class_json_helper_a189457b24e6d3d111c6f212ea1e65981}{element\+From\+Json}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QString \&json\+String)
+\item 
+static bool \mbox{\hyperlink{class_json_helper_adb4272c2eb4e63b0c8c1875252512e9c}{element\+From\+Json\+Object}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QJson\+Object \&json\+Object)
+\item 
+static QString \mbox{\hyperlink{class_json_helper_a27d74ef624077d3187ef066a8867ba70}{diagram\+To\+Json}} (const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&elements, const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&connections)
+\item 
+static QJson\+Object \mbox{\hyperlink{class_json_helper_a3dc80512edb9b1f8bc8e50015e27e864}{diagram\+To\+Json\+Object}} (const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&elements, const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&connections)
+\item 
+static bool \mbox{\hyperlink{class_json_helper_a7f720f1105f91b135fdfbcaf94e3f929}{save\+Diagram\+To\+File}} (const QString \&file\+Path, const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&elements, const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&connections)
+\item 
+static bool \mbox{\hyperlink{class_json_helper_ad27b520f4c2c303444d97451efe4ba2d}{load\+Diagram\+From\+File}} (const QString \&file\+Path, QJson\+Object \&diagram\+Data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_json_helper_ab980ac7a78c6797fcbd3c1c49d987392}{Json\+Helper}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_json_helper_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_json_helper_ab980ac7a78c6797fcbd3c1c49d987392}\index{JsonHelper@{JsonHelper}!JsonHelper@{JsonHelper}}
+\index{JsonHelper@{JsonHelper}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{JsonHelper()}{JsonHelper()}}
+{\footnotesize\ttfamily \label{class_json_helper_ab980ac7a78c6797fcbd3c1c49d987392} 
+Json\+Helper\+::\+Json\+Helper (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_json_helper_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_json_helper_ace49a2bdc031d44388b744f93da1fd6d}\index{JsonHelper@{JsonHelper}!connectionToJsonObject@{connectionToJsonObject}}
+\index{connectionToJsonObject@{connectionToJsonObject}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{connectionToJsonObject()}{connectionToJsonObject()}}
+{\footnotesize\ttfamily \label{class_json_helper_ace49a2bdc031d44388b744f93da1fd6d} 
+QJson\+Object Json\+Helper\+::connection\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_ace49a2bdc031d44388b744f93da1fd6d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_ace49a2bdc031d44388b744f93da1fd6d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a27d74ef624077d3187ef066a8867ba70}\index{JsonHelper@{JsonHelper}!diagramToJson@{diagramToJson}}
+\index{diagramToJson@{diagramToJson}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{diagramToJson()}{diagramToJson()}}
+{\footnotesize\ttfamily \label{class_json_helper_a27d74ef624077d3187ef066a8867ba70} 
+QString Json\+Helper\+::diagram\+To\+Json (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{elements}{, }\item[{const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{connections}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a27d74ef624077d3187ef066a8867ba70_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a3dc80512edb9b1f8bc8e50015e27e864}\index{JsonHelper@{JsonHelper}!diagramToJsonObject@{diagramToJsonObject}}
+\index{diagramToJsonObject@{diagramToJsonObject}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{diagramToJsonObject()}{diagramToJsonObject()}}
+{\footnotesize\ttfamily \label{class_json_helper_a3dc80512edb9b1f8bc8e50015e27e864} 
+QJson\+Object Json\+Helper\+::diagram\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{elements}{, }\item[{const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{connections}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a3dc80512edb9b1f8bc8e50015e27e864_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a3dc80512edb9b1f8bc8e50015e27e864_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a189457b24e6d3d111c6f212ea1e65981}\index{JsonHelper@{JsonHelper}!elementFromJson@{elementFromJson}}
+\index{elementFromJson@{elementFromJson}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{elementFromJson()}{elementFromJson()}}
+{\footnotesize\ttfamily \label{class_json_helper_a189457b24e6d3d111c6f212ea1e65981} 
+bool Json\+Helper\+::element\+From\+Json (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QString \&}]{json\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a189457b24e6d3d111c6f212ea1e65981_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_adb4272c2eb4e63b0c8c1875252512e9c}\index{JsonHelper@{JsonHelper}!elementFromJsonObject@{elementFromJsonObject}}
+\index{elementFromJsonObject@{elementFromJsonObject}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{elementFromJsonObject()}{elementFromJsonObject()}}
+{\footnotesize\ttfamily \label{class_json_helper_adb4272c2eb4e63b0c8c1875252512e9c} 
+bool Json\+Helper\+::element\+From\+Json\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QJson\+Object \&}]{json\+Object}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_adb4272c2eb4e63b0c8c1875252512e9c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_adb4272c2eb4e63b0c8c1875252512e9c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a4fad5a49a87d6b35e12d37cee38e5e2e}\index{JsonHelper@{JsonHelper}!elementToJson@{elementToJson}}
+\index{elementToJson@{elementToJson}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{elementToJson()}{elementToJson()}}
+{\footnotesize\ttfamily \label{class_json_helper_a4fad5a49a87d6b35e12d37cee38e5e2e} 
+QString Json\+Helper\+::element\+To\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a4fad5a49a87d6b35e12d37cee38e5e2e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a2141a614711cf449951f1ebde5a9b119}\index{JsonHelper@{JsonHelper}!elementToJsonObject@{elementToJsonObject}}
+\index{elementToJsonObject@{elementToJsonObject}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{elementToJsonObject()}{elementToJsonObject()}}
+{\footnotesize\ttfamily \label{class_json_helper_a2141a614711cf449951f1ebde5a9b119} 
+QJson\+Object Json\+Helper\+::element\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a2141a614711cf449951f1ebde5a9b119_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a2141a614711cf449951f1ebde5a9b119_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_ad27b520f4c2c303444d97451efe4ba2d}\index{JsonHelper@{JsonHelper}!loadDiagramFromFile@{loadDiagramFromFile}}
+\index{loadDiagramFromFile@{loadDiagramFromFile}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{loadDiagramFromFile()}{loadDiagramFromFile()}}
+{\footnotesize\ttfamily \label{class_json_helper_ad27b520f4c2c303444d97451efe4ba2d} 
+bool Json\+Helper\+::load\+Diagram\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path}{, }\item[{QJson\+Object \&}]{diagram\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_ad27b520f4c2c303444d97451efe4ba2d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_json_helper_a7f720f1105f91b135fdfbcaf94e3f929}\index{JsonHelper@{JsonHelper}!saveDiagramToFile@{saveDiagramToFile}}
+\index{saveDiagramToFile@{saveDiagramToFile}!JsonHelper@{JsonHelper}}
+\doxysubsubsection{\texorpdfstring{saveDiagramToFile()}{saveDiagramToFile()}}
+{\footnotesize\ttfamily \label{class_json_helper_a7f720f1105f91b135fdfbcaf94e3f929} 
+bool Json\+Helper\+::save\+Diagram\+To\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path}{, }\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{elements}{, }\item[{const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{connections}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a7f720f1105f91b135fdfbcaf94e3f929_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_helper_a7f720f1105f91b135fdfbcaf94e3f929_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_json_helper_8h}{Json\+Helper.\+h}}\item 
+src/model/\mbox{\hyperlink{_json_helper_8cpp}{Json\+Helper.\+cpp}}\end{DoxyCompactItemize}

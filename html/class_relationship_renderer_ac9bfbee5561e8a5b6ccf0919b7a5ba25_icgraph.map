@@ -1,0 +1,13 @@
+<map id="RelationshipRenderer::getDiamondPolygon" name="RelationshipRenderer::getDiamondPolygon">
+<area shape="rect" id="Node000001" title=" " alt="" coords="394,72,540,115"/>
+<area shape="rect" id="Node000002" href="$class_relationship_renderer.html#a4770db8be6d8166044ded1c635415782" title=" " alt="" coords="200,5,346,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="386,67,337,51,337,46,392,66"/>
+<area shape="rect" id="Node000004" href="$class_relationship_renderer.html#a9be2dbb4d772e69b5101c8cd762004c5" title=" " alt="" coords="200,72,346,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="376,94,346,96,346,91,381,93"/>
+<area shape="rect" id="Node000006" href="$class_relationship_renderer.html#ac9c727da6b99061b14e0421efbf534d4" title=" " alt="" coords="200,139,346,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="391,120,338,141,336,136,386,121"/>
+<area shape="rect" id="Node000003" href="$class_relationship_renderer.html#a543e7804a1ba65429372b0caeab2ac06" title=" " alt="" coords="5,5,152,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,28,153,29,151,24,186,25"/>
+<area shape="rect" id="Node000005" href="$class_relationship_renderer.html#ab8b5947fc5ebceb0a55072d85452376c" title=" " alt="" coords="5,72,152,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="181,94,152,96,151,91,186,92"/>
+</map>

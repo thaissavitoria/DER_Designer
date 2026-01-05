@@ -1,0 +1,16 @@
+<map id="src/model/ConnectionPoint.cpp" name="src/model/ConnectionPoint.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="355,5,558,32"/>
+<area shape="rect" id="Node000002" href="$_connection_point_8h.html" title=" " alt="" coords="276,80,404,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="439,32,375,74,373,69,434,34"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="420,155,524,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="460,31,472,140,467,138,456,34"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="494,80,560,107"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="469,30,507,69,502,68,468,35"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,155,121,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="293,110,127,153,125,148,291,105"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="145,155,261,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="319,107,241,149,239,145,314,108"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="285,155,396,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="342,105,342,141,338,137,338,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="364,105,439,147,434,147,363,110"/>
+</map>

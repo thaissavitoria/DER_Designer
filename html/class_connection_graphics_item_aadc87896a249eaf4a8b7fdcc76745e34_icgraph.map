@@ -1,0 +1,16 @@
+<map id="ConnectionGraphicsItem::updateControlPointsPosition" name="ConnectionGraphicsItem::updateControlPointsPosition">
+<area shape="rect" id="Node000001" title=" " alt="" coords="978,43,1172,85"/>
+<area shape="rect" id="Node000002" href="$class_connection_graphics_item.html#ae9e946d48f378aea3604fe67c95fe9a6" title=" " alt="" coords="764,43,930,85"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="960,64,930,67,930,61,965,64"/>
+<area shape="rect" id="Node000003" href="$class_connection_graphics_item.html#ab32d398765f9a4cd314e866585ac273d" title=" " alt="" coords="303,13,476,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="757,39,716,33,654,28,591,26,477,30,476,25,591,21,654,23,717,28,762,39"/>
+<area shape="rect" id="Node000005" href="$class_connection_graphics_item.html#ae2812529f5397be162547beaef4b9c51" title=" " alt="" coords="540,43,705,85"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="746,64,705,67,705,61,752,64"/>
+<area shape="rect" id="Node000006" href="$class_connection_graphics_item.html#a72e7dac6ba526930e9c71d2aac9b9fd2" title=" " alt="" coords="528,109,716,152"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="761,90,697,111,696,106,756,91"/>
+<area shape="rect" id="Node000004" href="$class_relationship_connection_line_graphics_item.html#a55839fb084501f42fc8a6e7f08cff4ba" title=" " alt="" coords="5,5,251,64"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="284,35,252,37,251,32,290,34"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="521,52,477,48,476,43,527,51"/>
+<area shape="rect" id="Node000007" href="$class_connection_graphics_item.html#a483aaf1b7f1dc4f19a279e56c1adaf74" title=" " alt="" coords="299,109,480,152"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="510,131,481,133,481,128,515,131"/>
+</map>

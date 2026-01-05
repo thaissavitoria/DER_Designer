@@ -1,0 +1,5 @@
+<map id="ConnectionGraphicsItem::disconnectFromConnection" name="ConnectionGraphicsItem::disconnectFromConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="235,5,423,48"/>
+<area shape="rect" id="Node000002" href="$class_connection_graphics_item.html#a483aaf1b7f1dc4f19a279e56c1adaf74" title=" " alt="" coords="5,5,187,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="217,27,187,29,187,24,222,26"/>
+</map>

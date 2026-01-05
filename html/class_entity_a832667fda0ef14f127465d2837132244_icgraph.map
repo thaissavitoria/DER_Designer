@@ -1,0 +1,10 @@
+<map id="Entity::Entity" name="Entity::Entity">
+<area shape="rect" id="Node000001" title=" " alt="" coords="151,56,248,83"/>
+<area shape="poly" id="edge4_Node000001_Node000001" title=" " alt="" coords="222,41,215,37,199,35,185,37,177,41,175,47,179,56,174,55,169,47,173,38,183,32,199,29,217,32,228,41"/>
+<area shape="rect" id="Node000002" href="$class_entity.html#a31504f27be637a877dec58aab9815109" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,52,95,35,95,30,147,49"/>
+<area shape="rect" id="Node000003" href="$class_entity.html#a34cdf84f2657fd59a07265c37d94c88d" title=" " alt="" coords="5,56,103,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,70,103,72,102,67,138,68"/>
+<area shape="rect" id="Node000004" href="$class_entity.html#ae562b28c015c3e376453d4b6dcf34f73" title=" " alt="" coords="5,107,103,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,88,95,109,94,104,142,89"/>
+</map>

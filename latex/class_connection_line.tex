@@ -1,0 +1,817 @@
+\doxysection{Connection\+Line Class Reference}
+\hypertarget{class_connection_line}{}\label{class_connection_line}\index{ConnectionLine@{ConnectionLine}}
+
+
+{\ttfamily \#include $<$Connection\+Line.\+h$>$}
+
+
+
+Inheritance diagram for Connection\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_connection_line__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Connection\+Line\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_connection_line__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_line_afcc2bd845912903497ccaa97e67b8a89}{start\+Point\+Changed}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}new\+Start\+Point)
+\item 
+void \mbox{\hyperlink{class_connection_line_aac502857bfb1af787f061a04ab4243be}{end\+Point\+Changed}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}new\+End\+Point)
+\item 
+void \mbox{\hyperlink{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8}{line\+Type\+Changed}} (\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} new\+Type)
+\item 
+void \mbox{\hyperlink{class_connection_line_a3c8e72d1084c985add08c5e37d54835f}{line\+Width\+Changed}} (qreal new\+Width)
+\item 
+void \mbox{\hyperlink{class_connection_line_a93e2b3868595cc0ac41de6c0f36c2365}{control\+Points\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_connection_line_a9de44ae385d7941f3aa79da06e97d510}{connection\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}{Connection\+Line}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}{start\+Point}}, \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_connection_line_af191985b0222d2730f6a976d7810eccf}{end\+Point}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_connection_line_a19d458f8acd7c91d1f08c49e17e26095}{\texorpdfstring{$\sim$}{\string~}\+Connection\+Line}} ()
+\item 
+QString \mbox{\hyperlink{class_connection_line_a4ad551988e8245ada0454fdf0eeb41c2}{id}} () const
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_a7d884269ce26bed2969d22ed9da477f7}{start\+Point}} () const
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_a7cd51b649ecd27412ad7bee221392d65}{end\+Point}} () const
+\item 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} \mbox{\hyperlink{class_connection_line_ad348ea8a7ba25d73d956eb6d88ffd62b}{line\+Type}} () const
+\item 
+qreal \mbox{\hyperlink{class_connection_line_aacfed243a999c948c87dab84ebc508aa}{line\+Width}} () const
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a82777aed1a351c0a6e8aaa4a26d72f53}{control1\+Offset}} () const
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a8b8d36df15a0c555bbe217c2894d9124}{control2\+Offset}} () const
+\item 
+bool \mbox{\hyperlink{class_connection_line_a49272dd3b8eaa41b367344449e973266}{has\+Custom\+Control\+Points}} () const
+\item 
+void \mbox{\hyperlink{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b}{set\+Line\+Type}} (\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} type)
+\item 
+void \mbox{\hyperlink{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90}{set\+Line\+Width}} (qreal width)
+\item 
+void \mbox{\hyperlink{class_connection_line_a1e6c91e7c182b1c750edf0264f44a60a}{set\+Start\+Point}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}point)
+\item 
+void \mbox{\hyperlink{class_connection_line_a2e68f5087725c547599796c887bc9c8b}{set\+End\+Point}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}point)
+\item 
+void \mbox{\hyperlink{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b}{set\+Control1\+Offset}} (const QPointF \&offset)
+\item 
+void \mbox{\hyperlink{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5}{set\+Control2\+Offset}} (const QPointF \&offset)
+\item 
+void \mbox{\hyperlink{class_connection_line_ad4d40dee4bb82aff5b1967a1ca93b069}{set\+Has\+Custom\+Control\+Points}} (bool has\+Custom)
+\item 
+void \mbox{\hyperlink{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11}{reset\+Control\+Points}} ()
+\item 
+bool \mbox{\hyperlink{class_connection_line_aea85162c28f293b1df0cce97d57bb471}{is\+Valid}} () const
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a45cb92cee71431ee04cfd1c5fba50acd}{get\+Start\+Position}} () const
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a1bc3513a7e6738cc886e185e5475e734}{get\+End\+Position}} () const
+\item 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_ad957be37b7bbb9250366225fd357a5a6}{get\+Start\+Element}} () const
+\item 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_ab11952b505976244aabc575e0ec7b118}{get\+End\+Element}} () const
+\item 
+virtual QVariant\+Map \mbox{\hyperlink{class_connection_line_a89b03bf381274e4504b1cde0f32972ee}{serialize}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0}{deserialize}} (const QVariant\+Map \&data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_connection_line_a5c583f6668558fa28129e310efebc192}{line\+Type\+To\+String}} (\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} type)
+\item 
+static \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} \mbox{\hyperlink{class_connection_line_a7d16c976218b3490e7a74b1c8f50bec4}{line\+Type\+From\+String}} (const QString \&type\+String)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_connection_line_a7803a9b196002e631166b7df7bba9663}{id}}
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}{start\+Point}}
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_af191985b0222d2730f6a976d7810eccf}{end\+Point}}
+\item 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} \mbox{\hyperlink{class_connection_line_a0420dd7947a15f0786b7145cd51751f2}{line\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173}{on\+Element\+Position\+Changed}} ()
+\item 
+void \mbox{\hyperlink{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34}{on\+Connection\+Point\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3}{connect\+To\+Points}} ()
+\item 
+void \mbox{\hyperlink{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b}{disconnect\+From\+Points}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_connection_line_aa48b87cfdcc2381779e8dd40dab5d2fa}{m\+\_\+id}}
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_a56ebd8ae8064e139525d7348871d2f20}{m\+\_\+start\+Point}}
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_connection_line_a4415edbaec9d8cf922d193c156dab9fd}{m\+\_\+end\+Point}}
+\item 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} \mbox{\hyperlink{class_connection_line_a0cb31126cae95ba9356aa5b8e54d144e}{m\+\_\+line\+Type}}
+\item 
+qreal \mbox{\hyperlink{class_connection_line_a1c41061928f13a02d13193a81189ea61}{m\+\_\+line\+Width}}
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a3b5c6511dbd93335139e7719ec92ee1f}{m\+\_\+control1\+Offset}}
+\item 
+QPointF \mbox{\hyperlink{class_connection_line_a21ba212775788287ee5ae3579e95ff36}{m\+\_\+control2\+Offset}}
+\item 
+bool \mbox{\hyperlink{class_connection_line_a5f649087a13d7d1552b1dd638fb09fff}{m\+\_\+has\+Custom\+Control\+Points}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_connection_line_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}\index{ConnectionLine@{ConnectionLine}!ConnectionLine@{ConnectionLine}}
+\index{ConnectionLine@{ConnectionLine}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{ConnectionLine()}{ConnectionLine()}}
+{\footnotesize\ttfamily \label{class_connection_line_a657559dca679d5fd04ae565b442b6a8b} 
+Connection\+Line\+::\+Connection\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{start\+Point}{, }\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{end\+Point}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a657559dca679d5fd04ae565b442b6a8b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a657559dca679d5fd04ae565b442b6a8b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a19d458f8acd7c91d1f08c49e17e26095}\index{ConnectionLine@{ConnectionLine}!````~ConnectionLine@{\texorpdfstring{$\sim$}{\string~}ConnectionLine}}
+\index{````~ConnectionLine@{\texorpdfstring{$\sim$}{\string~}ConnectionLine}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ConnectionLine()}{\string~ConnectionLine()}}
+{\footnotesize\ttfamily \label{class_connection_line_a19d458f8acd7c91d1f08c49e17e26095} 
+Connection\+Line\+::\texorpdfstring{$\sim$}{\string~}\+Connection\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a19d458f8acd7c91d1f08c49e17e26095_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_connection_line_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_connection_line_a9de44ae385d7941f3aa79da06e97d510}\index{ConnectionLine@{ConnectionLine}!connectionChanged@{connectionChanged}}
+\index{connectionChanged@{connectionChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{connectionChanged}{connectionChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a9de44ae385d7941f3aa79da06e97d510} 
+void Connection\+Line\+::connection\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a9de44ae385d7941f3aa79da06e97d510_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a9de44ae385d7941f3aa79da06e97d510_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3}\index{ConnectionLine@{ConnectionLine}!connectToPoints@{connectToPoints}}
+\index{connectToPoints@{connectToPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{connectToPoints()}{connectToPoints()}}
+{\footnotesize\ttfamily \label{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3} 
+void Connection\+Line\+::connect\+To\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a82777aed1a351c0a6e8aaa4a26d72f53}\index{ConnectionLine@{ConnectionLine}!control1Offset@{control1Offset}}
+\index{control1Offset@{control1Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{control1Offset()}{control1Offset()}}
+{\footnotesize\ttfamily \label{class_connection_line_a82777aed1a351c0a6e8aaa4a26d72f53} 
+QPointF Connection\+Line\+::control1\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_a8b8d36df15a0c555bbe217c2894d9124}\index{ConnectionLine@{ConnectionLine}!control2Offset@{control2Offset}}
+\index{control2Offset@{control2Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{control2Offset()}{control2Offset()}}
+{\footnotesize\ttfamily \label{class_connection_line_a8b8d36df15a0c555bbe217c2894d9124} 
+QPointF Connection\+Line\+::control2\+Offset (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_a93e2b3868595cc0ac41de6c0f36c2365}\index{ConnectionLine@{ConnectionLine}!controlPointsChanged@{controlPointsChanged}}
+\index{controlPointsChanged@{controlPointsChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{controlPointsChanged}{controlPointsChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a93e2b3868595cc0ac41de6c0f36c2365} 
+void Connection\+Line\+::control\+Points\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a93e2b3868595cc0ac41de6c0f36c2365_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0}\index{ConnectionLine@{ConnectionLine}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0} 
+bool Connection\+Line\+::deserialize (\begin{DoxyParamCaption}\item[{const QVariant\+Map \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_relationship_connection_line_ae096b0c8c07ce5d7d5bd8acfad489f1a}{Relationship\+Connection\+Line}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b}\index{ConnectionLine@{ConnectionLine}!disconnectFromPoints@{disconnectFromPoints}}
+\index{disconnectFromPoints@{disconnectFromPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{disconnectFromPoints()}{disconnectFromPoints()}}
+{\footnotesize\ttfamily \label{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b} 
+void Connection\+Line\+::disconnect\+From\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a7cd51b649ecd27412ad7bee221392d65}\index{ConnectionLine@{ConnectionLine}!endPoint@{endPoint}}
+\index{endPoint@{endPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{endPoint()}{endPoint()}}
+{\footnotesize\ttfamily \label{class_connection_line_a7cd51b649ecd27412ad7bee221392d65} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} Connection\+Line\+::end\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_aac502857bfb1af787f061a04ab4243be}\index{ConnectionLine@{ConnectionLine}!endPointChanged@{endPointChanged}}
+\index{endPointChanged@{endPointChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{endPointChanged}{endPointChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_aac502857bfb1af787f061a04ab4243be} 
+void Connection\+Line\+::end\+Point\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{new\+End\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_aac502857bfb1af787f061a04ab4243be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ab11952b505976244aabc575e0ec7b118}\index{ConnectionLine@{ConnectionLine}!getEndElement@{getEndElement}}
+\index{getEndElement@{getEndElement}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{getEndElement()}{getEndElement()}}
+{\footnotesize\ttfamily \label{class_connection_line_ab11952b505976244aabc575e0ec7b118} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Connection\+Line\+::get\+End\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ab11952b505976244aabc575e0ec7b118_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a1bc3513a7e6738cc886e185e5475e734}\index{ConnectionLine@{ConnectionLine}!getEndPosition@{getEndPosition}}
+\index{getEndPosition@{getEndPosition}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{getEndPosition()}{getEndPosition()}}
+{\footnotesize\ttfamily \label{class_connection_line_a1bc3513a7e6738cc886e185e5475e734} 
+QPointF Connection\+Line\+::get\+End\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a1bc3513a7e6738cc886e185e5475e734_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ad957be37b7bbb9250366225fd357a5a6}\index{ConnectionLine@{ConnectionLine}!getStartElement@{getStartElement}}
+\index{getStartElement@{getStartElement}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{getStartElement()}{getStartElement()}}
+{\footnotesize\ttfamily \label{class_connection_line_ad957be37b7bbb9250366225fd357a5a6} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Connection\+Line\+::get\+Start\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ad957be37b7bbb9250366225fd357a5a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a45cb92cee71431ee04cfd1c5fba50acd}\index{ConnectionLine@{ConnectionLine}!getStartPosition@{getStartPosition}}
+\index{getStartPosition@{getStartPosition}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{getStartPosition()}{getStartPosition()}}
+{\footnotesize\ttfamily \label{class_connection_line_a45cb92cee71431ee04cfd1c5fba50acd} 
+QPointF Connection\+Line\+::get\+Start\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a45cb92cee71431ee04cfd1c5fba50acd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a49272dd3b8eaa41b367344449e973266}\index{ConnectionLine@{ConnectionLine}!hasCustomControlPoints@{hasCustomControlPoints}}
+\index{hasCustomControlPoints@{hasCustomControlPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{hasCustomControlPoints()}{hasCustomControlPoints()}}
+{\footnotesize\ttfamily \label{class_connection_line_a49272dd3b8eaa41b367344449e973266} 
+bool Connection\+Line\+::has\+Custom\+Control\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_a4ad551988e8245ada0454fdf0eeb41c2}\index{ConnectionLine@{ConnectionLine}!id@{id}}
+\index{id@{id}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_connection_line_a4ad551988e8245ada0454fdf0eeb41c2} 
+QString Connection\+Line\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_aea85162c28f293b1df0cce97d57bb471}\index{ConnectionLine@{ConnectionLine}!isValid@{isValid}}
+\index{isValid@{isValid}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily \label{class_connection_line_aea85162c28f293b1df0cce97d57bb471} 
+bool Connection\+Line\+::is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_aea85162c28f293b1df0cce97d57bb471_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ad348ea8a7ba25d73d956eb6d88ffd62b}\index{ConnectionLine@{ConnectionLine}!lineType@{lineType}}
+\index{lineType@{lineType}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineType()}{lineType()}}
+{\footnotesize\ttfamily \label{class_connection_line_ad348ea8a7ba25d73d956eb6d88ffd62b} 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} Connection\+Line\+::line\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8}\index{ConnectionLine@{ConnectionLine}!lineTypeChanged@{lineTypeChanged}}
+\index{lineTypeChanged@{lineTypeChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineTypeChanged}{lineTypeChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8} 
+void Connection\+Line\+::line\+Type\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}}}]{new\+Type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a7d16c976218b3490e7a74b1c8f50bec4}\index{ConnectionLine@{ConnectionLine}!lineTypeFromString@{lineTypeFromString}}
+\index{lineTypeFromString@{lineTypeFromString}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineTypeFromString()}{lineTypeFromString()}}
+{\footnotesize\ttfamily \label{class_connection_line_a7d16c976218b3490e7a74b1c8f50bec4} 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} Connection\+Line\+::line\+Type\+From\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{type\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a7d16c976218b3490e7a74b1c8f50bec4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a5c583f6668558fa28129e310efebc192}\index{ConnectionLine@{ConnectionLine}!lineTypeToString@{lineTypeToString}}
+\index{lineTypeToString@{lineTypeToString}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineTypeToString()}{lineTypeToString()}}
+{\footnotesize\ttfamily \label{class_connection_line_a5c583f6668558fa28129e310efebc192} 
+QString Connection\+Line\+::line\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a5c583f6668558fa28129e310efebc192_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_aacfed243a999c948c87dab84ebc508aa}\index{ConnectionLine@{ConnectionLine}!lineWidth@{lineWidth}}
+\index{lineWidth@{lineWidth}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineWidth()}{lineWidth()}}
+{\footnotesize\ttfamily \label{class_connection_line_aacfed243a999c948c87dab84ebc508aa} 
+qreal Connection\+Line\+::line\+Width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_aacfed243a999c948c87dab84ebc508aa_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a3c8e72d1084c985add08c5e37d54835f}\index{ConnectionLine@{ConnectionLine}!lineWidthChanged@{lineWidthChanged}}
+\index{lineWidthChanged@{lineWidthChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineWidthChanged}{lineWidthChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a3c8e72d1084c985add08c5e37d54835f} 
+void Connection\+Line\+::line\+Width\+Changed (\begin{DoxyParamCaption}\item[{qreal}]{new\+Width}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a3c8e72d1084c985add08c5e37d54835f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34}\index{ConnectionLine@{ConnectionLine}!onConnectionPointChanged@{onConnectionPointChanged}}
+\index{onConnectionPointChanged@{onConnectionPointChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{onConnectionPointChanged}{onConnectionPointChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34} 
+void Connection\+Line\+::on\+Connection\+Point\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173}\index{ConnectionLine@{ConnectionLine}!onElementPositionChanged@{onElementPositionChanged}}
+\index{onElementPositionChanged@{onElementPositionChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{onElementPositionChanged}{onElementPositionChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173} 
+void Connection\+Line\+::on\+Element\+Position\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11}\index{ConnectionLine@{ConnectionLine}!resetControlPoints@{resetControlPoints}}
+\index{resetControlPoints@{resetControlPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{resetControlPoints()}{resetControlPoints()}}
+{\footnotesize\ttfamily \label{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11} 
+void Connection\+Line\+::reset\+Control\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a89b03bf381274e4504b1cde0f32972ee}\index{ConnectionLine@{ConnectionLine}!serialize@{serialize}}
+\index{serialize@{serialize}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_connection_line_a89b03bf381274e4504b1cde0f32972ee} 
+QVariant\+Map Connection\+Line\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_relationship_connection_line_a842e00383d27f1078be5ca78ed1e34ec}{Relationship\+Connection\+Line}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a89b03bf381274e4504b1cde0f32972ee_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a89b03bf381274e4504b1cde0f32972ee_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b}\index{ConnectionLine@{ConnectionLine}!setControl1Offset@{setControl1Offset}}
+\index{setControl1Offset@{setControl1Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setControl1Offset()}{setControl1Offset()}}
+{\footnotesize\ttfamily \label{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b} 
+void Connection\+Line\+::set\+Control1\+Offset (\begin{DoxyParamCaption}\item[{const QPointF \&}]{offset}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5}\index{ConnectionLine@{ConnectionLine}!setControl2Offset@{setControl2Offset}}
+\index{setControl2Offset@{setControl2Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setControl2Offset()}{setControl2Offset()}}
+{\footnotesize\ttfamily \label{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5} 
+void Connection\+Line\+::set\+Control2\+Offset (\begin{DoxyParamCaption}\item[{const QPointF \&}]{offset}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a2e68f5087725c547599796c887bc9c8b}\index{ConnectionLine@{ConnectionLine}!setEndPoint@{setEndPoint}}
+\index{setEndPoint@{setEndPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setEndPoint()}{setEndPoint()}}
+{\footnotesize\ttfamily \label{class_connection_line_a2e68f5087725c547599796c887bc9c8b} 
+void Connection\+Line\+::set\+End\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{point}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a2e68f5087725c547599796c887bc9c8b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_ad4d40dee4bb82aff5b1967a1ca93b069}\index{ConnectionLine@{ConnectionLine}!setHasCustomControlPoints@{setHasCustomControlPoints}}
+\index{setHasCustomControlPoints@{setHasCustomControlPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setHasCustomControlPoints()}{setHasCustomControlPoints()}}
+{\footnotesize\ttfamily \label{class_connection_line_ad4d40dee4bb82aff5b1967a1ca93b069} 
+void Connection\+Line\+::set\+Has\+Custom\+Control\+Points (\begin{DoxyParamCaption}\item[{bool}]{has\+Custom}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_ad4d40dee4bb82aff5b1967a1ca93b069_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b}\index{ConnectionLine@{ConnectionLine}!setLineType@{setLineType}}
+\index{setLineType@{setLineType}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setLineType()}{setLineType()}}
+{\footnotesize\ttfamily \label{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b} 
+void Connection\+Line\+::set\+Line\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}}}]{type}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90}\index{ConnectionLine@{ConnectionLine}!setLineWidth@{setLineWidth}}
+\index{setLineWidth@{setLineWidth}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setLineWidth()}{setLineWidth()}}
+{\footnotesize\ttfamily \label{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90} 
+void Connection\+Line\+::set\+Line\+Width (\begin{DoxyParamCaption}\item[{qreal}]{width}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a1e6c91e7c182b1c750edf0264f44a60a}\index{ConnectionLine@{ConnectionLine}!setStartPoint@{setStartPoint}}
+\index{setStartPoint@{setStartPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{setStartPoint()}{setStartPoint()}}
+{\footnotesize\ttfamily \label{class_connection_line_a1e6c91e7c182b1c750edf0264f44a60a} 
+void Connection\+Line\+::set\+Start\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{point}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_a1e6c91e7c182b1c750edf0264f44a60a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_line_a7d884269ce26bed2969d22ed9da477f7}\index{ConnectionLine@{ConnectionLine}!startPoint@{startPoint}}
+\index{startPoint@{startPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{startPoint()}{startPoint()}}
+{\footnotesize\ttfamily \label{class_connection_line_a7d884269ce26bed2969d22ed9da477f7} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} Connection\+Line\+::start\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_line_afcc2bd845912903497ccaa97e67b8a89}\index{ConnectionLine@{ConnectionLine}!startPointChanged@{startPointChanged}}
+\index{startPointChanged@{startPointChanged}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{startPointChanged}{startPointChanged}}
+{\footnotesize\ttfamily \label{class_connection_line_afcc2bd845912903497ccaa97e67b8a89} 
+void Connection\+Line\+::start\+Point\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{new\+Start\+Point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_line_afcc2bd845912903497ccaa97e67b8a89_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_connection_line_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_connection_line_a3b5c6511dbd93335139e7719ec92ee1f}\index{ConnectionLine@{ConnectionLine}!m\_control1Offset@{m\_control1Offset}}
+\index{m\_control1Offset@{m\_control1Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_control1Offset}{m\_control1Offset}}
+{\footnotesize\ttfamily \label{class_connection_line_a3b5c6511dbd93335139e7719ec92ee1f} 
+QPointF Connection\+Line\+::m\+\_\+control1\+Offset\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a21ba212775788287ee5ae3579e95ff36}\index{ConnectionLine@{ConnectionLine}!m\_control2Offset@{m\_control2Offset}}
+\index{m\_control2Offset@{m\_control2Offset}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_control2Offset}{m\_control2Offset}}
+{\footnotesize\ttfamily \label{class_connection_line_a21ba212775788287ee5ae3579e95ff36} 
+QPointF Connection\+Line\+::m\+\_\+control2\+Offset\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a4415edbaec9d8cf922d193c156dab9fd}\index{ConnectionLine@{ConnectionLine}!m\_endPoint@{m\_endPoint}}
+\index{m\_endPoint@{m\_endPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_endPoint}{m\_endPoint}}
+{\footnotesize\ttfamily \label{class_connection_line_a4415edbaec9d8cf922d193c156dab9fd} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*} Connection\+Line\+::m\+\_\+end\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a5f649087a13d7d1552b1dd638fb09fff}\index{ConnectionLine@{ConnectionLine}!m\_hasCustomControlPoints@{m\_hasCustomControlPoints}}
+\index{m\_hasCustomControlPoints@{m\_hasCustomControlPoints}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_hasCustomControlPoints}{m\_hasCustomControlPoints}}
+{\footnotesize\ttfamily \label{class_connection_line_a5f649087a13d7d1552b1dd638fb09fff} 
+bool Connection\+Line\+::m\+\_\+has\+Custom\+Control\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_aa48b87cfdcc2381779e8dd40dab5d2fa}\index{ConnectionLine@{ConnectionLine}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily \label{class_connection_line_aa48b87cfdcc2381779e8dd40dab5d2fa} 
+QString Connection\+Line\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a0cb31126cae95ba9356aa5b8e54d144e}\index{ConnectionLine@{ConnectionLine}!m\_lineType@{m\_lineType}}
+\index{m\_lineType@{m\_lineType}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_lineType}{m\_lineType}}
+{\footnotesize\ttfamily \label{class_connection_line_a0cb31126cae95ba9356aa5b8e54d144e} 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} Connection\+Line\+::m\+\_\+line\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a1c41061928f13a02d13193a81189ea61}\index{ConnectionLine@{ConnectionLine}!m\_lineWidth@{m\_lineWidth}}
+\index{m\_lineWidth@{m\_lineWidth}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_lineWidth}{m\_lineWidth}}
+{\footnotesize\ttfamily \label{class_connection_line_a1c41061928f13a02d13193a81189ea61} 
+qreal Connection\+Line\+::m\+\_\+line\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_line_a56ebd8ae8064e139525d7348871d2f20}\index{ConnectionLine@{ConnectionLine}!m\_startPoint@{m\_startPoint}}
+\index{m\_startPoint@{m\_startPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{m\_startPoint}{m\_startPoint}}
+{\footnotesize\ttfamily \label{class_connection_line_a56ebd8ae8064e139525d7348871d2f20} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*} Connection\+Line\+::m\+\_\+start\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_connection_line_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_connection_line_af191985b0222d2730f6a976d7810eccf}\index{ConnectionLine@{ConnectionLine}!endPoint@{endPoint}}
+\index{endPoint@{endPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{endPoint}{endPoint}}
+{\footnotesize\ttfamily \label{class_connection_line_af191985b0222d2730f6a976d7810eccf} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*} Connection\+Line\+::end\+Point\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_connection_line_a7803a9b196002e631166b7df7bba9663}\index{ConnectionLine@{ConnectionLine}!id@{id}}
+\index{id@{id}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_connection_line_a7803a9b196002e631166b7df7bba9663} 
+QString Connection\+Line\+::id\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_connection_line_a0420dd7947a15f0786b7145cd51751f2}\index{ConnectionLine@{ConnectionLine}!lineType@{lineType}}
+\index{lineType@{lineType}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{lineType}{lineType}}
+{\footnotesize\ttfamily \label{class_connection_line_a0420dd7947a15f0786b7145cd51751f2} 
+\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{Connection\+Line\+Type}} Connection\+Line\+::line\+Type\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}\index{ConnectionLine@{ConnectionLine}!startPoint@{startPoint}}
+\index{startPoint@{startPoint}!ConnectionLine@{ConnectionLine}}
+\doxysubsubsection{\texorpdfstring{startPoint}{startPoint}}
+{\footnotesize\ttfamily \label{class_connection_line_a3d014be3cb8c254a140432126ce9ca06} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*} Connection\+Line\+::start\+Point\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_connection_line_8h}{Connection\+Line.\+h}}\item 
+src/model/\mbox{\hyperlink{_connection_line_8cpp}{Connection\+Line.\+cpp}}\end{DoxyCompactItemize}

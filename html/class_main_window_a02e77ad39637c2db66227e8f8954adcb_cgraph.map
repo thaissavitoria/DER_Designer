@@ -1,0 +1,9 @@
+<map id="MainWindow::createHelpMenu" name="MainWindow::createHelpMenu">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,205,83"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#adc645337d8ad9b2b9300f13e251fb5cb" title=" " alt="" coords="253,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,53,263,35,258,37,172,58"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197" title=" " alt="" coords="257,56,426,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,67,244,69,239,70,205,72"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a3111788b36503e5ae8eabef2b32a6f62" title=" " alt="" coords="260,107,422,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="171,81,263,102,258,104,171,86"/>
+</map>

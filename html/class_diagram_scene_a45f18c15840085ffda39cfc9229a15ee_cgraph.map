@@ -1,0 +1,6 @@
+<map id="DiagramScene::findGraphicsItem" name="DiagramScene::findGraphicsItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,220,56"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="71,29,64,21,69,11,85,5,113,3,142,5,159,15,154,15,141,10,112,8,86,10,72,15,69,20,76,29"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a4da4018bb57166e46104700d2847c41d" title=" " alt="" coords="268,29,452,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,40,255,43,249,43,220,45"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="ConnectionGraphicsItem::createOrthogonalPath" name="ConnectionGraphicsItem::createOrthogonalPath">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,171,81"/>
+<area shape="rect" id="Node000002" href="$class_connection_graphics_item.html#a893317615dd09c41cceec37be3ad9f6f" title=" " alt="" coords="219,5,460,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,46,206,44,201,45,172,52"/>
+<area shape="rect" id="Node000003" href="$class_connection_graphics_item.html#a0e5a08b33a79f09561ec2a6d9348a292" title=" " alt="" coords="242,72,437,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,68,229,78,224,79,171,74"/>
+</map>

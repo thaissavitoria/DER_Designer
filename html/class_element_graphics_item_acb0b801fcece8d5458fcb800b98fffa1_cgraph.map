@@ -1,0 +1,13 @@
+<map id="ElementGraphicsItem::hoverEnterEvent" name="ElementGraphicsItem::hoverEnterEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,153,81"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a86d44e191aadfab004d569382d8ee7bd" title=" " alt="" coords="213,5,402,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,47,200,42,195,44,154,52"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#acccf7d3285160c3f826d7b407c51ebc9" title=" " alt="" coords="201,72,414,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,68,188,75,183,76,153,73"/>
+<area shape="rect" id="Node000004" href="$class_element_graphics_item.html#a778f08249305dd4301855fefea15ce81" title=" " alt="" coords="462,72,621,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="414,91,449,93,444,93,414,96"/>
+<area shape="rect" id="Node000005" href="$class_element_graphics_item.html#aba16bb9e988fba3ef75a81587c6e75db" title=" " alt="" coords="669,72,841,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="621,91,656,93,651,93,621,96"/>
+<area shape="rect" id="Node000006" href="$class_connection_point.html#a6bf5d1a8e9fbea5999a77aeb0f5ada2a" title=" " alt="" coords="889,72,1063,115"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="841,91,876,93,871,93,841,96"/>
+</map>

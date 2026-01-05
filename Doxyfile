@@ -1,0 +1,18 @@
+PROJECT_NAME           = "DER Designer"
+EXTRACT_ALL            = YES
+
+INPUT            = src
+RECURSIVE        = YES
+
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+UML_LOOK               = YES
+
+DOT_IMAGE_FORMAT       = svg
+INTERACTIVE_SVG        = YES
+
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+EXTRACT_PRIVATE        = YES
+EXTRACT_PROTECTED      = YES

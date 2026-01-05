@@ -1,0 +1,7 @@
+<map id="RelationshipConnectionLine::connectToRelationshipEnd" name="RelationshipConnectionLine::connectToRelationshipEnd">
+<area shape="rect" id="Node000001" title=" " alt="" coords="245,39,429,81"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line.html#a77c08ca0dffdc230d3f164d846b3c176" title=" " alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,45,197,43,197,38,232,44"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line.html#a7e2e06e83adcf3a6fd12c53aa21d71fa" title=" " alt="" coords="9,72,193,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="226,76,194,83,193,78,232,75"/>
+</map>

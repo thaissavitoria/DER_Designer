@@ -1,0 +1,92 @@
+\doxysection{Attribute\+Renderer.\+h}
+\hypertarget{_attribute_renderer_8h_source}{}\label{_attribute_renderer_8h_source}\index{src/viewer/AttributeRenderer.h@{src/viewer/AttributeRenderer.h}}
+\mbox{\hyperlink{_attribute_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ATTRIBUTERENDERER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ATTRIBUTERENDERER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_element_renderer_8h}{ElementRenderer.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtGui/QFont>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtGui/QBrush>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtGui/QPen>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b}{AttributeRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_element_renderer}{IElementRenderer}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b}{AttributeRenderer}}();}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba}{render}}(}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00020\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_attribute_renderer_a9b78289101166ca718edc4204a696475}{isInElementRect}}(}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point}
+\DoxyCodeLine{00025\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ QRectF\ \mbox{\hyperlink{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4}{selectionRect}}(}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00029\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d}{renderSelection}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00035\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ QPen\ \mbox{\hyperlink{class_attribute_renderer_aa5dda1523293676fb834e637073b8d3e}{m\_borderPen}};}
+\DoxyCodeLine{00039\ \ \ \ \ QPen\ \mbox{\hyperlink{class_attribute_renderer_a59e6a58cf9ac4d43629db680f0540c35}{m\_derivedPen}};}
+\DoxyCodeLine{00040\ \ \ \ \ QBrush\ \mbox{\hyperlink{class_attribute_renderer_a60dd0a22f49f01241e1e8b86f0baf732}{m\_fillBrush}};}
+\DoxyCodeLine{00041\ \ \ \ \ QBrush\ \mbox{\hyperlink{class_attribute_renderer_a14d8c04317513839045364bccef0c10b}{m\_selectionBrush}};}
+\DoxyCodeLine{00042\ \ \ \ \ QFont\ \mbox{\hyperlink{class_attribute_renderer_a6562320b1e84e5c22881bdd5232105c7}{m\_textFont}};}
+\DoxyCodeLine{00043\ \ \ \ \ QFont\ \mbox{\hyperlink{class_attribute_renderer_a56e223635bb7646088304cd50bca7103}{m\_primaryKeyFont}};}
+\DoxyCodeLine{00044\ \ \ \ \ QPen\ \mbox{\hyperlink{class_attribute_renderer_a82593554fc5b7cf532e446f3c2a7181e}{m\_textPen}};}
+\DoxyCodeLine{00045\ \ \ \ \ QPen\ \mbox{\hyperlink{class_attribute_renderer_a1776534869bdfeb2514054d47a3ab2f9}{m\_selectionPen}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ qreal\ \mbox{\hyperlink{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62b}{m\_textMargin}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_a1214697be0865498258ec1deabd16faf}{setupDefaultStyle}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b}{renderByAttributeType}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{class}\ \mbox{\hyperlink{class_attribute}{Attribute}}*\ attribute,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00055\ \ \ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966}{renderNormalAttribute}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00060\ \ \ \ \ );}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d}{renderDerivedAttribute}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00065\ \ \ \ \ );}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_attribute_renderer_a70053a97233d7db614e6a593319aa721}{renderMultivaluedAttribute}}(}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00070\ \ \ \ \ );}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ QRectF\ \mbox{\hyperlink{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23}{getTextRect}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ elementRect}
+\DoxyCodeLine{00074\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34}{isPointInEllipse}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ ellipseRect}
+\DoxyCodeLine{00079\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ Qt::PenStyle\ \mbox{\hyperlink{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f}{getPenStyle}}(}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00083\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ATTRIBUTERENDERER\_H}}
+
+\end{DoxyCode}

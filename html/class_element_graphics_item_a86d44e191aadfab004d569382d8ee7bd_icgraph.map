@@ -1,0 +1,7 @@
+<map id="ElementGraphicsItem::setConnectionPointsVisible" name="ElementGraphicsItem::setConnectionPointsVisible">
+<area shape="rect" id="Node000001" title=" " alt="" coords="201,39,390,81"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#acb0b801fcece8d5458fcb800b98fffa1" title=" " alt="" coords="5,5,153,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,44,153,41,153,35,188,42"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#a42e21194294ed7b76486e0b76a4b40c6" title=" " alt="" coords="5,72,153,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,77,153,85,152,79,188,76"/>
+</map>

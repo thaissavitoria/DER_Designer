@@ -1,0 +1,9 @@
+<map id="RelationshipConnectionLine::getCardinalityPosition" name="RelationshipConnectionLine::getCardinalityPosition">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,189,99"/>
+<area shape="rect" id="Node000002" href="$class_connection_line.html#a1bc3513a7e6738cc886e185e5475e734" title=" " alt="" coords="237,5,444,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,53,269,35,264,38,189,58"/>
+<area shape="rect" id="Node000003" href="$class_connection_line.html#a45cb92cee71431ee04cfd1c5fba50acd" title=" " alt="" coords="258,56,423,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,75,245,77,240,78,190,80"/>
+<area shape="rect" id="Node000004" href="$class_relationship_connection_line.html#ab1dca8f109978ef13f02cb26801d31a9" title=" " alt="" coords="249,123,432,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,97,248,117,243,119,177,102"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="RelationshipRenderer::setupDefaultStyle" name="RelationshipRenderer::setupDefaultStyle">
+<area shape="rect" id="Node000001" title=" " alt="" coords="208,5,354,48"/>
+<area shape="rect" id="Node000002" href="$class_relationship_renderer.html#af19f86d2752ca4a30dae1bdff4bb3ff6" title=" " alt="" coords="5,5,160,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,27,160,29,160,24,195,26"/>
+</map>

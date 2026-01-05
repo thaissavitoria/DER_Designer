@@ -1,0 +1,14 @@
+<map id="ElementGraphicsItem::mouseMoveEvent" name="ElementGraphicsItem::mouseMoveEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,153,81"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a6742e9d215c1199d6e8b6a2550aad2c9" title=" " alt="" coords="404,5,551,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,51,389,32,387,37,153,57"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#a15c1c0390715f724886f2c4f842bd7c0" title=" " alt="" coords="201,68,356,111"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,68,188,75,182,76,153,73"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="348,65,396,52,391,54,349,70"/>
+<area shape="rect" id="Node000004" href="$class_element_graphics_item.html#a92ce5533958fd649032d962af0793ce6" title=" " alt="" coords="404,72,551,115"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="356,88,391,91,386,92,357,94"/>
+<area shape="rect" id="Node000006" href="$class_element_graphics_item.html#a70e12e4f6a93b670383d13bfee3dcc37" title=" " alt="" coords="404,139,551,181"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="341,109,404,133,398,133,340,114"/>
+<area shape="rect" id="Node000005" href="$class_element_renderer_factory.html#a12321affc185c8014f16d846c14e507e" title=" " alt="" coords="599,72,766,115"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="552,91,586,93,581,94,552,96"/>
+</map>

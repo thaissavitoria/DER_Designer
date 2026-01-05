@@ -1,0 +1,14 @@
+<map id="Entity::preferredSize" name="Entity::preferredSize">
+<area shape="rect" id="Node000001" title=" " alt="" coords="296,68,436,95"/>
+<area shape="rect" id="Node000002" href="$class_entity.html#a34cdf84f2657fd59a07265c37d94c88d" title=" " alt="" coords="5,5,103,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="323,61,287,47,247,35,172,23,104,20,103,15,172,18,249,29,289,42,328,61"/>
+<area shape="rect" id="Node000003" href="$class_entity.html#ae562b28c015c3e376453d4b6dcf34f73" title=" " alt="" coords="5,119,103,145"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="293,98,248,109,103,129,103,124,248,104,287,99"/>
+<area shape="rect" id="Node000004" href="$class_entity.html#a832667fda0ef14f127465d2837132244" title=" " alt="" coords="151,68,248,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="278,82,249,84,248,79,283,81"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="151,63,87,35,87,30,155,60"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="147,100,95,121,94,116,142,101"/>
+<area shape="poly" id="edge7_Node000004_Node000004" title=" " alt="" coords="222,53,215,49,199,47,185,49,177,53,175,59,179,68,174,67,169,59,173,50,183,44,199,41,217,44,228,53"/>
+<area shape="rect" id="Node000005" href="$class_entity.html#a31504f27be637a877dec58aab9815109" title=" " alt="" coords="5,68,103,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="133,82,103,84,102,79,138,80"/>
+</map>

@@ -1,0 +1,18 @@
+<map id="ConnectionGraphicsItem" name="ConnectionGraphicsItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="167,1324,365,1852"/>
+<area shape="rect" id="Node000006" href="$class_bezier_control_point.html" title=" " alt="" coords="42,1945,195,2185"/>
+<area shape="poly" id="edge9_Node000006_Node000001" title=" " alt="" coords="166,1840,157,1854,146,1862,134,1866,124,1869,116,1877,106,1902,100,1929,95,1928,100,1901,112,1875,121,1864,133,1861,143,1858,154,1850,169,1835"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="153,5,212,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,92,155,278,143,412,133,565,128,731,129,905,139,1080,159,1252,175,1324,169,1324,154,1252,134,1081,124,905,123,731,128,564,138,411,150,277,175,87"/>
+<area shape="rect" id="Node000004" href="$class_connection_line.html" title=" " alt="" coords="169,649,363,1252"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="183,87,192,293,210,556,221,650,216,650,205,556,187,293,183,92"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html" title=" " alt="" coords="220,124,433,556"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="204,85,225,124,220,125,205,90"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="388,916,486,985"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="430,998,406,1136,367,1301,360,1325,355,1323,362,1299,401,1135,428,1003"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="267,1249,269,1308,264,1307,266,1254"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="305,553,300,633,295,632,305,558"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="192,1989,217,1956,236,1920,254,1871,257,1866,241,1922,221,1959,197,1992"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="5,1553,143,1623"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="75,1635,83,1766,95,1921,99,1946,93,1945,90,1922,78,1766,75,1640"/>
+</map>

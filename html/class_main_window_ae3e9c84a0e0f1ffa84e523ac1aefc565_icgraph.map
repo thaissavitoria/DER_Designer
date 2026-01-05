@@ -1,0 +1,15 @@
+<map id="MainWindow::loadDiagramConnections" name="MainWindow::loadDiagramConnections">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1394,5,1645,32"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a8fdec0badace6652ddf9e9e7654dd1f2" title=" " alt="" coords="1114,5,1346,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1376,19,1347,21,1347,16,1381,19"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a288b768c3c21a9171bdc56fe845ece8b" title=" " alt="" coords="913,5,1066,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1096,19,1066,21,1066,16,1101,19"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aaf455232cccaa422fc4c371fa99bff84" title=" " alt="" coords="671,5,865,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="894,19,865,21,865,16,900,19"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a2305527bb5d827ae07967ea1c86ee6fb" title=" " alt="" coords="431,5,623,32"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="653,19,624,21,624,16,658,19"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a3a304253c9e7caeef028f75358bf1fd5" title=" " alt="" coords="233,5,383,32"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="413,19,383,21,383,16,418,19"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,5,185,32"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="214,19,185,21,185,16,220,19"/>
+</map>

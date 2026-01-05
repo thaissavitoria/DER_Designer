@@ -1,0 +1,14 @@
+<map id="ElementGraphicsItem" name="ElementGraphicsItem">
+<area shape="rect" id="Node000001" title="Graphic item that represents a BasicElement in the QGraphicsView." alt="" coords="177,884,393,1444"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,433,104,503"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,515,80,651,97,732,119,811,147,887,180,963,175,963,142,889,113,813,92,733,75,652,59,520"/>
+<area shape="rect" id="Node000003" href="$class_i_element_observer.html" title=" " alt="" coords="128,412,320,524"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="231,536,263,884,258,884,229,541"/>
+<area shape="rect" id="Node000004" href="$class_basic_element.html" title="Abstract base class for all ERD elements (Model only)." alt="" coords="344,124,514,812"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="359,809,349,868,344,867,357,814"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="507,5,565,75"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="525,86,517,129,512,127,523,91"/>
+<area shape="rect" id="Node000006" href="$class_connection_point.html" title=" " alt="" coords="539,252,752,684"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="549,86,593,252,588,252,548,91"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="582,681,558,750,529,813,470,916,405,1013,401,1009,466,913,524,811,553,748,580,686"/>
+</map>

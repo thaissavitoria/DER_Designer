@@ -1,0 +1,100 @@
+\doxysection{IElement\+Renderer Class Reference}
+\hypertarget{class_i_element_renderer}{}\label{class_i_element_renderer}\index{IElementRenderer@{IElementRenderer}}
+
+
+{\ttfamily \#include $<$Element\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for IElement\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_i_element_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for IElement\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_i_element_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}{\texorpdfstring{$\sim$}{\string~}\+IElement\+Renderer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{render}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect)=0
+\item 
+virtual bool \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{is\+In\+Element\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QPointF \&point)=0
+\item 
+virtual QRectF \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{selection\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{render\+Selection}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect)=0
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_i_element_renderer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}\index{IElementRenderer@{IElementRenderer}!````~IElementRenderer@{\texorpdfstring{$\sim$}{\string~}IElementRenderer}}
+\index{````~IElementRenderer@{\texorpdfstring{$\sim$}{\string~}IElementRenderer}!IElementRenderer@{IElementRenderer}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IElementRenderer()}{\string~IElementRenderer()}}
+{\footnotesize\ttfamily \label{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a} 
+virtual IElement\+Renderer\+::\texorpdfstring{$\sim$}{\string~}\+IElement\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_i_element_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}\index{IElementRenderer@{IElementRenderer}!isInElementRect@{isInElementRect}}
+\index{isInElementRect@{isInElementRect}!IElementRenderer@{IElementRenderer}}
+\doxysubsubsection{\texorpdfstring{isInElementRect()}{isInElementRect()}}
+{\footnotesize\ttfamily \label{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc} 
+virtual bool IElement\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QPointF \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_renderer_a9b78289101166ca718edc4204a696475}{Attribute\+Renderer}}, \mbox{\hyperlink{class_entity_renderer_a41cb5b901d024e3827de122ed649c98c}{Entity\+Renderer}}, and \mbox{\hyperlink{class_relationship_renderer_a543e7804a1ba65429372b0caeab2ac06}{Relationship\+Renderer}}.
+
+\Hypertarget{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}\index{IElementRenderer@{IElementRenderer}!render@{render}}
+\index{render@{render}!IElementRenderer@{IElementRenderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376} 
+virtual void IElement\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba}{Attribute\+Renderer}}, \mbox{\hyperlink{class_entity_renderer_a0d7b8738930b0de5f743d604fb9cdadf}{Entity\+Renderer}}, and \mbox{\hyperlink{class_relationship_renderer_ab8b5947fc5ebceb0a55072d85452376c}{Relationship\+Renderer}}.
+
+\Hypertarget{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}\index{IElementRenderer@{IElementRenderer}!renderSelection@{renderSelection}}
+\index{renderSelection@{renderSelection}!IElementRenderer@{IElementRenderer}}
+\doxysubsubsection{\texorpdfstring{renderSelection()}{renderSelection()}}
+{\footnotesize\ttfamily \label{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850} 
+virtual void IElement\+Renderer\+::render\+Selection (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d}{Attribute\+Renderer}}, \mbox{\hyperlink{class_entity_renderer_a7cf1c8d1d06c8304705af66c23009a8e}{Entity\+Renderer}}, and \mbox{\hyperlink{class_relationship_renderer_ac9c727da6b99061b14e0421efbf534d4}{Relationship\+Renderer}}.
+
+\Hypertarget{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}\index{IElementRenderer@{IElementRenderer}!selectionRect@{selectionRect}}
+\index{selectionRect@{selectionRect}!IElementRenderer@{IElementRenderer}}
+\doxysubsubsection{\texorpdfstring{selectionRect()}{selectionRect()}}
+{\footnotesize\ttfamily \label{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92} 
+virtual QRectF IElement\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4}{Attribute\+Renderer}}, \mbox{\hyperlink{class_entity_renderer_afdb9604daa3feb4b7282e04a4d1996f8}{Entity\+Renderer}}, and \mbox{\hyperlink{class_relationship_renderer_a9e5ee3ddcaa8017ec5a3c3ed5c7212b2}{Relationship\+Renderer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/viewer/\mbox{\hyperlink{_element_renderer_8h}{Element\+Renderer.\+h}}\end{DoxyCompactItemize}

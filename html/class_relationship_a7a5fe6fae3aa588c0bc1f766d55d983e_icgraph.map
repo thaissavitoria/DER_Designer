@@ -1,0 +1,7 @@
+<map id="Relationship::addEnd" name="Relationship::addEnd">
+<area shape="rect" id="Node000001" title=" " alt="" coords="266,31,411,57"/>
+<area shape="rect" id="Node000002" href="$class_relationship.html#af14ba497de57d4e14557eb4450fb730b" title=" " alt="" coords="30,5,193,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,35,194,30,194,25,253,34"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a8a3265678249b08f424e17fbfa8d0de5" title=" " alt="" coords="5,56,218,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,54,218,60,218,55,253,53"/>
+</map>

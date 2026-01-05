@@ -1,0 +1,9 @@
+<map id="ElementGraphicsItem::paint" name="ElementGraphicsItem::paint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,153,48"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a633fa954259daffed25643ebd0d2b342" title=" " alt="" coords="201,5,369,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,24,188,26,182,27,153,29"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#aba16bb9e988fba3ef75a81587c6e75db" title=" " alt="" coords="417,5,588,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="369,24,404,27,399,27,369,29"/>
+<area shape="rect" id="Node000004" href="$class_connection_point.html#a6bf5d1a8e9fbea5999a77aeb0f5ada2a" title=" " alt="" coords="636,5,811,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="589,24,624,27,618,27,589,29"/>
+</map>

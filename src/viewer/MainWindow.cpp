@@ -58,6 +58,7 @@ MainWindow::MainWindow(QWidget* parent)
     , m_isModified(false)
 {
     setupUI();
+    setupAutoSave();
     connectSignals();
     updateWindowTitle();
     updateStatusBar("Pronto");
@@ -97,31 +98,53 @@ void MainWindow::createMenuBar()
 
 void MainWindow::createFileMenu()
 {
-    m_fileMenu = m_menuBar->addMenu("&Arquivo");
+  m_fileMenu = m_menuBar->addMenu("&Arquivo");
 
-    QAction* newAction = createAction("&Novo", QKeySequence::New, "Criar um novo diagrama DER", m_fileMenu);
-    connect(newAction, &QAction::triggered, this, &MainWindow::newFile);
+  QAction* newAction = createAction("&Novo", QKeySequence::New, "Criar um novo diagrama DER", m_fileMenu);
+  connect(newAction, &QAction::triggered, this, &MainWindow::newFile);
 
-    QAction* openAction = createAction("&Abrir...", QKeySequence::Open, "Abrir um diagrama DER existente", m_fileMenu);
-    connect(openAction, &QAction::triggered, this, &MainWindow::openFile);
+  QAction* openAction = createAction("&Abrir...", QKeySequence::Open, "Abrir um diagrama DER existente", m_fileMenu);
+  connect(openAction, &QAction::triggered, this, &MainWindow::openFile);
 
-    m_fileMenu->addSeparator();
+  m_fileMenu->addSeparator();
 
-    QAction* saveAction = createAction("&Salvar", QKeySequence::Save, "Salvar o diagrama atual", m_fileMenu);
-    connect(saveAction, &QAction::triggered, this, &MainWindow::saveFile);
+  QAction* saveAction = createAction("&Salvar", QKeySequence::Save, "Salvar o diagrama atual", m_fileMenu);
+  connect(saveAction, &QAction::triggered, this, &MainWindow::saveFile);
 
-    QAction* saveAsAction = createAction("Salvar &Como...", QKeySequence::SaveAs, "Salvar o diagrama com um novo nome", m_fileMenu);
-    connect(saveAsAction, &QAction::triggered, this, &MainWindow::saveAsFile);
+  QAction* saveAsAction = createAction("Salvar &Como...", QKeySequence::SaveAs, "Salvar o diagrama com um novo nome", m_fileMenu);
+  connect(saveAsAction, &QAction::triggered, this, &MainWindow::saveAsFile);
 
-    m_fileMenu->addSeparator();
+  m_fileMenu->addSeparator();
 
-    QAction* exportAction = createAction("&Exportar...", QKeySequence::UnknownKey, "Exportar diagrama para imagem", m_fileMenu);
-    connect(exportAction, &QAction::triggered, this, &MainWindow::exportDiagram);
+  QAction* autoSaveAction = new QAction("Salvamento &Automático", this);
+  autoSaveAction->setCheckable(true);
+  autoSaveAction->setChecked(m_autoSaveEnabled);
+  autoSaveAction->setStatusTip("Ativar/desativar salvamento automático");
+  connect(
+    autoSaveAction,
+    &QAction::toggled,
+    this,
+    [this](bool checked) {
+      m_autoSaveEnabled = checked;
+      if (checked) {
+        startAutoSave();
+      }
+      else {
+        stopAutoSave();
+      }
+    }
+  );
+  m_fileMenu->addAction(autoSaveAction);
 
-    m_fileMenu->addSeparator();
+  m_fileMenu->addSeparator();
 
-    QAction* exitAction = createAction("Sai&r", QKeySequence::Quit, "Sair da aplicação", m_fileMenu);
-    connect(exitAction, &QAction::triggered, this, &MainWindow::exitApplication);
+  QAction* exportAction = createAction("&Exportar...", QKeySequence::UnknownKey, "Exportar diagrama para imagem", m_fileMenu);
+  connect(exportAction, &QAction::triggered, this, &MainWindow::exportDiagram);
+
+  m_fileMenu->addSeparator();
+
+  QAction* exitAction = createAction("Sai&r", QKeySequence::Quit, "Sair da aplicação", m_fileMenu);
+  connect(exitAction, &QAction::triggered, this, &MainWindow::exitApplication);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -1959,6 +1982,137 @@ QTreeWidgetItem* MainWindow::createLineEditPropertyItem(
   m_propertyWidgets[propertyKey] = lineEdit;
 
   return item;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::setupAutoSave()
+{
+  m_autoSaveTimer = new QTimer(this);
+  m_autoSaveEnabled = true;
+  m_autoSaveInterval = 150000;
+
+  const QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
+  m_autoSaveDirectory = appDataPath + "/autosave_DERDesigner";
+
+  const QDir autoSaveDir(m_autoSaveDirectory);
+  if (!autoSaveDir.exists()) {
+    autoSaveDir.mkpath(".");
+  }
+
+  connect(
+    m_autoSaveTimer,
+    &QTimer::timeout,
+    this,
+    &MainWindow::onAutoSaveTriggered
+  );
+
+  if (m_autoSaveEnabled) {
+    startAutoSave();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::startAutoSave()
+{
+  if (m_autoSaveEnabled && !m_autoSaveTimer->isActive()) {
+    m_autoSaveTimer->start(m_autoSaveInterval);
+    updateStatusBar("Salvamento automático ativado");
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::stopAutoSave()
+{
+  if (m_autoSaveTimer->isActive()) {
+    m_autoSaveTimer->stop();
+    updateStatusBar("Salvamento automático desativado");
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+QString MainWindow::generateAutoSaveFileName() const
+{
+  QString baseFileName;
+
+  if (!m_currentFileName.isEmpty()) {
+    const QFileInfo fileInfo(m_currentFileName);
+    baseFileName = fileInfo.baseName();
+  }
+  else {
+    baseFileName = "untitled";
+  }
+
+  const QString timestamp = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss");
+  const QString autoSaveFileName = QString("%1/%2_autosave_%3.der")
+    .arg(m_autoSaveDirectory)
+    .arg(baseFileName)
+    .arg(timestamp);
+
+  return autoSaveFileName;
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::performAutoSave()
+{
+  if (!m_diagramScene) {
+    return;
+  }
+
+  QList<BasicElement*> elements = m_diagramScene->getAllElements();
+
+  if (elements.isEmpty()) {
+    return;
+  }
+
+  QString autoSaveFileName = generateAutoSaveFileName();
+  QList<ConnectionLine*> connections = m_diagramScene->getAllConnections();
+
+  const bool success = JsonHelper::saveDiagramToFile(
+    autoSaveFileName,
+    elements,
+    connections
+  );
+
+  if (success) {
+    cleanOldAutoSaveFiles();
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::cleanOldAutoSaveFiles()
+{
+  QDir autoSaveDir(m_autoSaveDirectory);
+  QStringList filters;
+  filters << "*_autosave_*.der";
+
+  QFileInfoList autoSaveFiles = autoSaveDir.entryInfoList(
+    filters,
+    QDir::Files,
+    QDir::Time | QDir::Reversed
+  );
+
+  const int maxAutoSaveFiles = 10;
+
+  if (autoSaveFiles.size() > maxAutoSaveFiles) {
+    for (int i = maxAutoSaveFiles; i < autoSaveFiles.size(); ++i) {
+      QFile::remove(autoSaveFiles[i].absoluteFilePath());
+      }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+
+void MainWindow::onAutoSaveTriggered()
+{
+  if (m_isModified && m_autoSaveEnabled) {
+    performAutoSave();
+  }
 }
 
 //----------------------------------------------------------------------------------------------

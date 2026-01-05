@@ -1,0 +1,103 @@
+\doxysection{Connection\+Graphics\+Item.\+h}
+\hypertarget{_connection_graphics_item_8h_source}{}\label{_connection_graphics_item_8h_source}\index{src/viewer/ConnectionGraphicsItem.h@{src/viewer/ConnectionGraphicsItem.h}}
+\mbox{\hyperlink{_connection_graphics_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONNECTIONGRAPHICSITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONNECTIONGRAPHICSITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGraphicsItem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCore/QObject>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_line_8h}{model/ConnectionLine.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_point_8h}{model/ConnectionPoint.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bezier_control_point_8h}{viewer/BezierControlPoint.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_graphics_item_ab32d398765f9a4cd314e866585ac273d}{ConnectionGraphicsItem}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QGraphicsItem}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_INTERFACES(QGraphicsItem)}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_connection_graphics_item_ab32d398765f9a4cd314e866585ac273d}{ConnectionGraphicsItem}}(}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection,}
+\DoxyCodeLine{00019\ \ \ \ \ QGraphicsItem*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00020\ \ \ );}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_connection_graphics_item_a483aaf1b7f1dc4f19a279e56c1adaf74}{\string~ConnectionGraphicsItem}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ QRectF\ \mbox{\hyperlink{class_connection_graphics_item_a639f7d483dce705302df25100eeb92bd}{boundingRect}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_aa15031a5befb8eb5f1287e55ce484aa2}{paint}}(}
+\DoxyCodeLine{00027\ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem*\ option,}
+\DoxyCodeLine{00029\ \ \ \ \ QWidget*\ widget\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00030\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ QPainterPath\ \mbox{\hyperlink{class_connection_graphics_item_aeea9fd05b92eeba219efbf363460347c}{shape}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a93b41feaf23c07cf95c3cbe3977a6972}{updateControlPointPosition}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ type,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ position}
+\DoxyCodeLine{00037\ \ \ );}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a195ab4989aef887425e7acb78b885d9e}{setSelected}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ selected}
+\DoxyCodeLine{00041\ \ \ );}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a41db61e82f8d487dd757ddf97d5ea93c}{mousePressEvent}}(}
+\DoxyCodeLine{00045\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00046\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a6ebcea5bba8dcae648979ac7d0679290}{hoverEnterEvent}}(}
+\DoxyCodeLine{00049\ \ \ \ \ QGraphicsSceneHoverEvent*\ event}
+\DoxyCodeLine{00050\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_acf379ab2e8f912dfddccbecd5a317705}{hoverLeaveEvent}}(}
+\DoxyCodeLine{00053\ \ \ \ \ QGraphicsSceneHoverEvent*\ event}
+\DoxyCodeLine{00054\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_ae9e946d48f378aea3604fe67c95fe9a6}{updateFromConnection}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ QPainterPath\ \mbox{\hyperlink{class_connection_graphics_item_ae9707a652e7e27ec333eaed6699b430b}{createStraightPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ QPainterPath\ \mbox{\hyperlink{class_connection_graphics_item_a3384a6134ae5a7526fc01382a58ac982}{createOrthogonalPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ QPainterPath\ \mbox{\hyperlink{class_connection_graphics_item_ab2ce5adc2d399026c9393fca5d8b6714}{createBezierPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a0e5a08b33a79f09561ec2a6d9348a292}{createSimpleOrthogonalPath}}(}
+\DoxyCodeLine{00065\ \ \ \ \ QPainterPath\&\ path,}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ startPos,}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ endPos}
+\DoxyCodeLine{00068\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a893317615dd09c41cceec37be3ad9f6f}{createOrthogonalPathWithDirections}}(}
+\DoxyCodeLine{00071\ \ \ \ \ QPainterPath\&\ path,}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ startPos,}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ endPos,}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ startDirection,}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ endDirection}
+\DoxyCodeLine{00076\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ QPointF\ \mbox{\hyperlink{class_connection_graphics_item_aff69c763accf5e57bbc119acdf8597ad}{calculateControlPointFromDirection}}(}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ position,}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ direction,}
+\DoxyCodeLine{00081\ \ \ \ \ qreal\ distance}
+\DoxyCodeLine{00082\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_ae2812529f5397be162547beaef4b9c51}{connectToConnection}}();}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_a72e7dac6ba526930e9c71d2aac9b9fd2}{disconnectFromConnection}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_acd3aab83b4725e368ad626e9fd1b553d}{createControlPoints}}();}
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_graphics_item_aadc87896a249eaf4a8b7fdcc76745e34}{updateControlPointsPosition}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ \mbox{\hyperlink{class_connection_graphics_item_a4645354208aaef4d10b5a65e31934412}{m\_connection}};}
+\DoxyCodeLine{00091\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connection_graphics_item_a7610cefc973ae419698549031b3c5641}{m\_isHovered}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{class_bezier_control_point}{BezierControlPoint}}*\ \mbox{\hyperlink{class_connection_graphics_item_ae197c90375a6c8468bb4d226c1a5b4f9}{m\_controlPoint1}};}
+\DoxyCodeLine{00094\ \ \ \mbox{\hyperlink{class_bezier_control_point}{BezierControlPoint}}*\ \mbox{\hyperlink{class_connection_graphics_item_a32f12eff6a3cf7c5352d4a871aa4aab7}{m\_controlPoint2}};}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONNECTIONGRAPHICSITEM\_H}}
+
+\end{DoxyCode}

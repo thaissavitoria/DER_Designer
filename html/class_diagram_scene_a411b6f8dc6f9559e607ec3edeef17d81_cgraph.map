@@ -1,0 +1,5 @@
+<map id="DiagramScene::startConnection" name="DiagramScene::startConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,213,40"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#ad905b329fbff554ff7491d63df6bb24c" title=" " alt="" coords="261,5,439,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,24,248,27,242,27,213,29"/>
+</map>

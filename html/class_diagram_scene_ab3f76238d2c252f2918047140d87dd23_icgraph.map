@@ -1,0 +1,10 @@
+<map id="DiagramScene::addElement" name="DiagramScene::addElement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="538,31,722,57"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a7875efc4949e17967d9e11786b146cc9" title=" " alt="" coords="265,5,483,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="520,33,483,32,483,27,525,33"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a61e7061e5add947d09ad87feaf2b8dc1" title=" " alt="" coords="258,56,490,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="525,54,491,60,490,55,520,55"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="5,31,210,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="246,31,210,37,210,32,252,30"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="239,57,210,56,210,51,245,57"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="DiagramScene::updateSelectionRect" name="DiagramScene::updateSelectionRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="274,5,510,32"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a2c4148955112e8ed8d3832b73bd3848b" title=" " alt="" coords="5,5,226,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,19,226,21,226,16,261,19"/>
+</map>

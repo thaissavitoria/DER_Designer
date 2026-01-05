@@ -1,0 +1,318 @@
+\doxysection{Connection\+Point Class Reference}
+\hypertarget{class_connection_point}{}\label{class_connection_point}\index{ConnectionPoint@{ConnectionPoint}}
+
+
+{\ttfamily \#include $<$Connection\+Point.\+h$>$}
+
+
+
+Inheritance diagram for Connection\+Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_connection_point__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Connection\+Point\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_connection_point__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connection_point_a851668ae19e97658f1818a40ea375f65}{relative\+Position\+Changed}} (const QPointF \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_connection_point_a7fce3d362ed6cd28ba0c5f8b922bf187}{direction\+Changed}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} new\+Direction)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260}{Connection\+Point}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_connection_point_a0f121fa5e4550e19d922a2ee96875dd3}{Connection\+Point}} (const QPointF \&\mbox{\hyperlink{class_connection_point_af0bad03f28dd4f928c4c790786550545}{relative\+Position}}, \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_connection_point_a53d812b0d58e7e8f41c1fcfcf4f92432}{\texorpdfstring{$\sim$}{\string~}\+Connection\+Point}} ()
+\item 
+QString \mbox{\hyperlink{class_connection_point_a263a2313345f2e31653126ff19a6fbd6}{id}} () const
+\item 
+QPointF \mbox{\hyperlink{class_connection_point_a1b110863d3e4459d6f147f44f49d765d}{relative\+Position}} () const
+\item 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_ad165f753b8456e4787e2fcf7ab42aa30}{direction}} () const
+\item 
+void \mbox{\hyperlink{class_connection_point_a7e530af071de5451e2e7f187deb1e87b}{set\+Relative\+Position}} (const QPointF \&position)
+\item 
+void \mbox{\hyperlink{class_connection_point_a8dfb25f39755ca37472021781eda3b7a}{set\+Direction}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}})
+\item 
+QPointF \mbox{\hyperlink{class_connection_point_a6bf5d1a8e9fbea5999a77aeb0f5ada2a}{absolute\+Position}} (const QPointF \&element\+Position, const QSizeF \&element\+Size) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_connection_point_a201a6b72c0e5b146cfff3cabc8bbd502}{direction\+To\+String}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}})
+\item 
+static \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_abb6864dff7e1b41b1663c550b6c93470}{direction\+From\+String}} (const QString \&direction\+String)
+\item 
+static QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_connection_point_a9de406389d93810151498693037eeb95}{create\+Default\+Connection\+Points}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_connection_point_acecee69edeb25463341448fa98b583e4}{id}}
+\item 
+QPointF \mbox{\hyperlink{class_connection_point_af0bad03f28dd4f928c4c790786550545}{relative\+Position}}
+\item 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_connection_point_a8977265b0868dad361fcbeec5a89bdeb}{add\+Conection\+Point}} (QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \&list, const QPointF \&\mbox{\hyperlink{class_connection_point_af0bad03f28dd4f928c4c790786550545}{relative\+Position}}, \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}}, QObject \texorpdfstring{$\ast$}{*}parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_connection_point_a673642132e8a329b1ece3cecbaf33e69}{m\+\_\+id}}
+\item 
+QPointF \mbox{\hyperlink{class_connection_point_a21ed6f7eaff6b53bd7f1aaf2ab368e30}{m\+\_\+relative\+Position}}
+\item 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} \mbox{\hyperlink{class_connection_point_a739ee59f938bee0ff4e13856ea843103}{m\+\_\+direction}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_connection_point_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260}\index{ConnectionPoint@{ConnectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\index{ConnectionPoint@{ConnectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{ConnectionPoint()}{ConnectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260} 
+Connection\+Point\+::\+Connection\+Point (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_a0f121fa5e4550e19d922a2ee96875dd3}\index{ConnectionPoint@{ConnectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\index{ConnectionPoint@{ConnectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{ConnectionPoint()}{ConnectionPoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_connection_point_a0f121fa5e4550e19d922a2ee96875dd3} 
+Connection\+Point\+::\+Connection\+Point (\begin{DoxyParamCaption}\item[{const QPointF \&}]{relative\+Position}{, }\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{direction}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\Hypertarget{class_connection_point_a53d812b0d58e7e8f41c1fcfcf4f92432}\index{ConnectionPoint@{ConnectionPoint}!````~ConnectionPoint@{\texorpdfstring{$\sim$}{\string~}ConnectionPoint}}
+\index{````~ConnectionPoint@{\texorpdfstring{$\sim$}{\string~}ConnectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}ConnectionPoint()}{\string~ConnectionPoint()}}
+{\footnotesize\ttfamily \label{class_connection_point_a53d812b0d58e7e8f41c1fcfcf4f92432} 
+Connection\+Point\+::\texorpdfstring{$\sim$}{\string~}\+Connection\+Point (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_connection_point_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_connection_point_a6bf5d1a8e9fbea5999a77aeb0f5ada2a}\index{ConnectionPoint@{ConnectionPoint}!absolutePosition@{absolutePosition}}
+\index{absolutePosition@{absolutePosition}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{absolutePosition()}{absolutePosition()}}
+{\footnotesize\ttfamily \label{class_connection_point_a6bf5d1a8e9fbea5999a77aeb0f5ada2a} 
+QPointF Connection\+Point\+::absolute\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{element\+Position}{, }\item[{const QSizeF \&}]{element\+Size}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a6bf5d1a8e9fbea5999a77aeb0f5ada2a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_a8977265b0868dad361fcbeec5a89bdeb}\index{ConnectionPoint@{ConnectionPoint}!addConectionPoint@{addConectionPoint}}
+\index{addConectionPoint@{addConectionPoint}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{addConectionPoint()}{addConectionPoint()}}
+{\footnotesize\ttfamily \label{class_connection_point_a8977265b0868dad361fcbeec5a89bdeb} 
+void Connection\+Point\+::add\+Conection\+Point (\begin{DoxyParamCaption}\item[{QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \&}]{list}{, }\item[{const QPointF \&}]{relative\+Position}{, }\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{direction}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a8977265b0868dad361fcbeec5a89bdeb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a8977265b0868dad361fcbeec5a89bdeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_a9de406389d93810151498693037eeb95}\index{ConnectionPoint@{ConnectionPoint}!createDefaultConnectionPoints@{createDefaultConnectionPoints}}
+\index{createDefaultConnectionPoints@{createDefaultConnectionPoints}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{createDefaultConnectionPoints()}{createDefaultConnectionPoints()}}
+{\footnotesize\ttfamily \label{class_connection_point_a9de406389d93810151498693037eeb95} 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ Connection\+Point\+::create\+Default\+Connection\+Points (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a9de406389d93810151498693037eeb95_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a9de406389d93810151498693037eeb95_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_ad165f753b8456e4787e2fcf7ab42aa30}\index{ConnectionPoint@{ConnectionPoint}!direction@{direction}}
+\index{direction@{direction}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{direction()}{direction()}}
+{\footnotesize\ttfamily \label{class_connection_point_ad165f753b8456e4787e2fcf7ab42aa30} 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} Connection\+Point\+::direction (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_point_a7fce3d362ed6cd28ba0c5f8b922bf187}\index{ConnectionPoint@{ConnectionPoint}!directionChanged@{directionChanged}}
+\index{directionChanged@{directionChanged}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{directionChanged}{directionChanged}}
+{\footnotesize\ttfamily \label{class_connection_point_a7fce3d362ed6cd28ba0c5f8b922bf187} 
+void Connection\+Point\+::direction\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{new\+Direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a7fce3d362ed6cd28ba0c5f8b922bf187_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_abb6864dff7e1b41b1663c550b6c93470}\index{ConnectionPoint@{ConnectionPoint}!directionFromString@{directionFromString}}
+\index{directionFromString@{directionFromString}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{directionFromString()}{directionFromString()}}
+{\footnotesize\ttfamily \label{class_connection_point_abb6864dff7e1b41b1663c550b6c93470} 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} Connection\+Point\+::direction\+From\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{direction\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_connection_point_a201a6b72c0e5b146cfff3cabc8bbd502}\index{ConnectionPoint@{ConnectionPoint}!directionToString@{directionToString}}
+\index{directionToString@{directionToString}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{directionToString()}{directionToString()}}
+{\footnotesize\ttfamily \label{class_connection_point_a201a6b72c0e5b146cfff3cabc8bbd502} 
+QString Connection\+Point\+::direction\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{direction}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_connection_point_a263a2313345f2e31653126ff19a6fbd6}\index{ConnectionPoint@{ConnectionPoint}!id@{id}}
+\index{id@{id}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_connection_point_a263a2313345f2e31653126ff19a6fbd6} 
+QString Connection\+Point\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_point_a1b110863d3e4459d6f147f44f49d765d}\index{ConnectionPoint@{ConnectionPoint}!relativePosition@{relativePosition}}
+\index{relativePosition@{relativePosition}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{relativePosition()}{relativePosition()}}
+{\footnotesize\ttfamily \label{class_connection_point_a1b110863d3e4459d6f147f44f49d765d} 
+QPointF Connection\+Point\+::relative\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_connection_point_a851668ae19e97658f1818a40ea375f65}\index{ConnectionPoint@{ConnectionPoint}!relativePositionChanged@{relativePositionChanged}}
+\index{relativePositionChanged@{relativePositionChanged}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{relativePositionChanged}{relativePositionChanged}}
+{\footnotesize\ttfamily \label{class_connection_point_a851668ae19e97658f1818a40ea375f65} 
+void Connection\+Point\+::relative\+Position\+Changed (\begin{DoxyParamCaption}\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a851668ae19e97658f1818a40ea375f65_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_a8dfb25f39755ca37472021781eda3b7a}\index{ConnectionPoint@{ConnectionPoint}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily \label{class_connection_point_a8dfb25f39755ca37472021781eda3b7a} 
+void Connection\+Point\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{direction}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a8dfb25f39755ca37472021781eda3b7a_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_connection_point_a7e530af071de5451e2e7f187deb1e87b}\index{ConnectionPoint@{ConnectionPoint}!setRelativePosition@{setRelativePosition}}
+\index{setRelativePosition@{setRelativePosition}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{setRelativePosition()}{setRelativePosition()}}
+{\footnotesize\ttfamily \label{class_connection_point_a7e530af071de5451e2e7f187deb1e87b} 
+void Connection\+Point\+::set\+Relative\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{position}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_connection_point_a7e530af071de5451e2e7f187deb1e87b_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_connection_point_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_connection_point_a739ee59f938bee0ff4e13856ea843103}\index{ConnectionPoint@{ConnectionPoint}!m\_direction@{m\_direction}}
+\index{m\_direction@{m\_direction}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{m\_direction}{m\_direction}}
+{\footnotesize\ttfamily \label{class_connection_point_a739ee59f938bee0ff4e13856ea843103} 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} Connection\+Point\+::m\+\_\+direction\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_point_a673642132e8a329b1ece3cecbaf33e69}\index{ConnectionPoint@{ConnectionPoint}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily \label{class_connection_point_a673642132e8a329b1ece3cecbaf33e69} 
+QString Connection\+Point\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_connection_point_a21ed6f7eaff6b53bd7f1aaf2ab368e30}\index{ConnectionPoint@{ConnectionPoint}!m\_relativePosition@{m\_relativePosition}}
+\index{m\_relativePosition@{m\_relativePosition}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{m\_relativePosition}{m\_relativePosition}}
+{\footnotesize\ttfamily \label{class_connection_point_a21ed6f7eaff6b53bd7f1aaf2ab368e30} 
+QPointF Connection\+Point\+::m\+\_\+relative\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_connection_point_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}\index{ConnectionPoint@{ConnectionPoint}!direction@{direction}}
+\index{direction@{direction}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{direction}{direction}}
+{\footnotesize\ttfamily \label{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e} 
+\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} Connection\+Point\+::direction\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_connection_point_acecee69edeb25463341448fa98b583e4}\index{ConnectionPoint@{ConnectionPoint}!id@{id}}
+\index{id@{id}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_connection_point_acecee69edeb25463341448fa98b583e4} 
+QString Connection\+Point\+::id\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_connection_point_af0bad03f28dd4f928c4c790786550545}\index{ConnectionPoint@{ConnectionPoint}!relativePosition@{relativePosition}}
+\index{relativePosition@{relativePosition}!ConnectionPoint@{ConnectionPoint}}
+\doxysubsubsection{\texorpdfstring{relativePosition}{relativePosition}}
+{\footnotesize\ttfamily \label{class_connection_point_af0bad03f28dd4f928c4c790786550545} 
+QPointF Connection\+Point\+::relative\+Position\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_connection_point_8h}{Connection\+Point.\+h}}\item 
+src/model/\mbox{\hyperlink{_connection_point_8cpp}{Connection\+Point.\+cpp}}\end{DoxyCompactItemize}

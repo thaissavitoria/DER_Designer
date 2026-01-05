@@ -1,0 +1,150 @@
+\doxysection{Connection\+Line.\+h}
+\hypertarget{_connection_line_8h_source}{}\label{_connection_line_8h_source}\index{src/model/ConnectionLine.h@{src/model/ConnectionLine.h}}
+\mbox{\hyperlink{_connection_line_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CONNECTIONLINE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CONNECTIONLINE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCore/QPointF>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtCore/QString>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtCore/QUuid>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtGui/QColor>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_point}{ConnectionPoint}};}
+\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basic_element}{BasicElement}};}
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene}{DiagramScene}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ \{}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5ab6bd418b8879851e86bcaccd553b74db}{Straight}}\ =\ 0,}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5a7b2e80981e360c8634aef96cbcb62e57}{Orthogonal}},}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5a31aa08a905ffdb74542a88cb7320c69d}{Bezier}}}
+\DoxyCodeLine{00020\ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}{ConnectionLine}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00025\ \{}
+\DoxyCodeLine{00026\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00027\ \ \ \ \ Q\_PROPERTY(QString\ \textcolor{keywordtype}{id}\ READ\ \textcolor{keywordtype}{id}\ CONSTANT)}
+\DoxyCodeLine{00028\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}{startPoint}}\ READ\ \mbox{\hyperlink{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}{startPoint}}\ NOTIFY\ \mbox{\hyperlink{class_connection_line_afcc2bd845912903497ccaa97e67b8a89}{startPointChanged}})}
+\DoxyCodeLine{00029\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_af191985b0222d2730f6a976d7810eccf}{endPoint}}\ READ\ \mbox{\hyperlink{class_connection_line_af191985b0222d2730f6a976d7810eccf}{endPoint}}\ NOTIFY\ \mbox{\hyperlink{class_connection_line_aac502857bfb1af787f061a04ab4243be}{endPointChanged}})}
+\DoxyCodeLine{00030\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ \mbox{\hyperlink{class_connection_line_a0420dd7947a15f0786b7145cd51751f2}{lineType}}\ READ\ \mbox{\hyperlink{class_connection_line_a0420dd7947a15f0786b7145cd51751f2}{lineType}}\ WRITE\ \mbox{\hyperlink{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b}{setLineType}}\ NOTIFY\ \mbox{\hyperlink{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8}{lineTypeChanged}})}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ public:}
+\DoxyCodeLine{00033\ \ \ explicit\ \mbox{\hyperlink{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}{ConnectionLine}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a3d014be3cb8c254a140432126ce9ca06}{startPoint}},}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_af191985b0222d2730f6a976d7810eccf}{endPoint}},}
+\DoxyCodeLine{00036\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keywordtype}{nullptr}}
+\DoxyCodeLine{00037\ \ \ );}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ virtual\ \string~\mbox{\hyperlink{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}{ConnectionLine}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ QString\ \textcolor{keywordtype}{id}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_aa48b87cfdcc2381779e8dd40dab5d2fa}{m\_id}};\ \}}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a7d884269ce26bed2969d22ed9da477f7}{startPoint}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a56ebd8ae8064e139525d7348871d2f20}{m\_startPoint}};\ \}}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a7cd51b649ecd27412ad7bee221392d65}{endPoint}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a4415edbaec9d8cf922d193c156dab9fd}{m\_endPoint}};\ \}}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ \mbox{\hyperlink{class_connection_line_ad348ea8a7ba25d73d956eb6d88ffd62b}{lineType}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a0cb31126cae95ba9356aa5b8e54d144e}{m\_lineType}};\ \}}
+\DoxyCodeLine{00045\ \ \ qreal\ \mbox{\hyperlink{class_connection_line_aacfed243a999c948c87dab84ebc508aa}{lineWidth}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a1c41061928f13a02d13193a81189ea61}{m\_lineWidth}};\ \}}
+\DoxyCodeLine{00046\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a82777aed1a351c0a6e8aaa4a26d72f53}{control1Offset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a3b5c6511dbd93335139e7719ec92ee1f}{m\_control1Offset}};\ \}}
+\DoxyCodeLine{00047\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a8b8d36df15a0c555bbe217c2894d9124}{control2Offset}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a21ba212775788287ee5ae3579e95ff36}{m\_control2Offset}};\ \}}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connection_line_a49272dd3b8eaa41b367344449e973266}{hasCustomControlPoints}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_connection_line_a5f649087a13d7d1552b1dd638fb09fff}{m\_hasCustomControlPoints}};\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_aabbf15273d5fb94dad38aa8e4e1c861b}{setLineType}}(}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ type}
+\DoxyCodeLine{00052\ \ \ );}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a7983d6ddbc5414ad75bfc9e16b78ea90}{setLineWidth}}(}
+\DoxyCodeLine{00055\ \ \ \ \ qreal\ width}
+\DoxyCodeLine{00056\ \ \ );}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a1e6c91e7c182b1c750edf0264f44a60a}{setStartPoint}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ point}
+\DoxyCodeLine{00060\ \ \ );}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a2e68f5087725c547599796c887bc9c8b}{setEndPoint}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ point}
+\DoxyCodeLine{00064\ \ \ );}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_ac4df5ba24b4ce7ec2cd3c380677b686b}{setControl1Offset}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ offset}
+\DoxyCodeLine{00068\ \ \ );}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a30ed3d644d4d183ef6adf97110ac5bb5}{setControl2Offset}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ offset}
+\DoxyCodeLine{00072\ \ \ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_ad4d40dee4bb82aff5b1967a1ca93b069}{setHasCustomControlPoints}}(}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ hasCustom}
+\DoxyCodeLine{00076\ \ \ );}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a78a97a15e4daad8d684b22e2a37a2e11}{resetControlPoints}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connection_line_aea85162c28f293b1df0cce97d57bb471}{isValid}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a45cb92cee71431ee04cfd1c5fba50acd}{getStartPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a1bc3513a7e6738cc886e185e5475e734}{getEndPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ \mbox{\hyperlink{class_connection_line_ad957be37b7bbb9250366225fd357a5a6}{getStartElement}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ \mbox{\hyperlink{class_connection_line_ab11952b505976244aabc575e0ec7b118}{getEndElement}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_connection_line_a5c583f6668558fa28129e310efebc192}{lineTypeToString}}(}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ type}
+\DoxyCodeLine{00090\ \ \ );}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ \mbox{\hyperlink{class_connection_line_a7d16c976218b3490e7a74b1c8f50bec4}{lineTypeFromString}}(}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ typeString}
+\DoxyCodeLine{00094\ \ \ );}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{virtual}\ QVariantMap\ \mbox{\hyperlink{class_connection_line_a89b03bf381274e4504b1cde0f32972ee}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connection_line_ae3606c18d99a61f056d37a755a9d14c0}{deserialize}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ QVariantMap\&\ data}
+\DoxyCodeLine{00100\ \ \ );}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ signals:}
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_afcc2bd845912903497ccaa97e67b8a89}{startPointChanged}}(}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ newStartPoint}
+\DoxyCodeLine{00105\ \ \ );}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_aac502857bfb1af787f061a04ab4243be}{endPointChanged}}(}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ newEndPoint}
+\DoxyCodeLine{00109\ \ \ );}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a7af2a1f9fc1a9ddb362634ecaa926ae8}{lineTypeChanged}}(}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ newType}
+\DoxyCodeLine{00113\ \ \ );}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a3c8e72d1084c985add08c5e37d54835f}{lineWidthChanged}}(}
+\DoxyCodeLine{00116\ \ \ \ \ qreal\ newWidth}
+\DoxyCodeLine{00117\ \ \ );}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a93e2b3868595cc0ac41de6c0f36c2365}{controlPointsChanged}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a9de44ae385d7941f3aa79da06e97d510}{connectionChanged}}();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a4bce34a3f2fb1fd7145de2d9100c9173}{onElementPositionChanged}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a53c863c51a284a7a8e6b35bc34bd2d34}{onConnectionPointChanged}}();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_connection_line_a657559dca679d5fd04ae565b442b6a8b}{ConnectionLine}})}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ QString\ \mbox{\hyperlink{class_connection_line_aa48b87cfdcc2381779e8dd40dab5d2fa}{m\_id}};}
+\DoxyCodeLine{00132\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a56ebd8ae8064e139525d7348871d2f20}{m\_startPoint}};}
+\DoxyCodeLine{00133\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_connection_line_a4415edbaec9d8cf922d193c156dab9fd}{m\_endPoint}};}
+\DoxyCodeLine{00134\ \ \ \mbox{\hyperlink{_connection_line_8h_a27a39e0dc43e506d88ea5044abfb6cb5}{ConnectionLineType}}\ \mbox{\hyperlink{class_connection_line_a0cb31126cae95ba9356aa5b8e54d144e}{m\_lineType}};}
+\DoxyCodeLine{00135\ \ \ qreal\ \mbox{\hyperlink{class_connection_line_a1c41061928f13a02d13193a81189ea61}{m\_lineWidth}};}
+\DoxyCodeLine{00136\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a3b5c6511dbd93335139e7719ec92ee1f}{m\_control1Offset}};}
+\DoxyCodeLine{00137\ \ \ QPointF\ \mbox{\hyperlink{class_connection_line_a21ba212775788287ee5ae3579e95ff36}{m\_control2Offset}};}
+\DoxyCodeLine{00138\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_connection_line_a5f649087a13d7d1552b1dd638fb09fff}{m\_hasCustomControlPoints}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_a836aef7faf5a4fb8a5a10bfc71dbabe3}{connectToPoints}}();}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_line_addb05490f4f92e4cc5bf8ae58c56f89b}{disconnectFromPoints}}();}
+\DoxyCodeLine{00142\ \};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONNECTIONLINE\_H}}
+
+\end{DoxyCode}

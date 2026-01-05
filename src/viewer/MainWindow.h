@@ -22,6 +22,7 @@
 #include <QtWidgets/QTreeWidgetItem>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include <QtCore/QTimer>
 
 #include "DiagramView.h"
 #include "DraggableButton.h"
@@ -112,6 +113,8 @@ private slots:
 
   void onAddAttributeOnTreeClicked();
   void onRemoveAttributeOnTreeClicked();
+
+  void onAutoSaveTriggered();
 
 private:
   void setupUI();
@@ -229,7 +232,6 @@ private:
 
   QList<QIcon> getConnectionLineTypeIcons();
 
-
   QTreeWidgetItem* createCheckBoxPropertyItem(
     QTreeWidgetItem* parent,
     const QString& propertyName,
@@ -316,6 +318,18 @@ private:
   bool m_isModified;
 
   std::map<QString, QWidget*> m_propertyWidgets;
+
+  QTimer* m_autoSaveTimer;
+  bool m_autoSaveEnabled;
+  int m_autoSaveInterval;
+  QString m_autoSaveDirectory;
+
+  void setupAutoSave();
+  void startAutoSave();
+  void stopAutoSave();
+  QString generateAutoSaveFileName() const;
+  void performAutoSave();
+  void cleanOldAutoSaveFiles();
 };
 
 #endif // MAINWINDOW_H

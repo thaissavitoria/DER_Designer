@@ -1,0 +1,5 @@
+<map id="ElementGraphicsItem::getConnectionPointRect" name="ElementGraphicsItem::getConnectionPointRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,177,48"/>
+<area shape="rect" id="Node000002" href="$class_connection_point.html#a6bf5d1a8e9fbea5999a77aeb0f5ada2a" title=" " alt="" coords="225,5,399,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,24,212,26,207,27,177,29"/>
+</map>

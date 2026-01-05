@@ -1,0 +1,7 @@
+<map id="Relationship::setIsIdentifying" name="Relationship::setIsIdentifying">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,196,57"/>
+<area shape="rect" id="Node000002" href="$class_relationship.html#a84b991b40e46679df51608b7924ea5f2" title=" " alt="" coords="259,5,430,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,31,246,29,241,30,197,37"/>
+<area shape="rect" id="Node000003" href="$class_basic_element.html#a596caee40cdd00a0aacce49689b63f92" title=" " alt="" coords="244,56,446,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="196,51,231,57,225,57,196,57"/>
+</map>

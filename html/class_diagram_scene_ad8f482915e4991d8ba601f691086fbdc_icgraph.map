@@ -1,0 +1,15 @@
+<map id="DiagramScene::removeAttributeFromParents" name="DiagramScene::removeAttributeFromParents">
+<area shape="rect" id="Node000001" title=" " alt="" coords="771,48,979,91"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#ae531fa5ccfc6393d5a60f956a652118d" title=" " alt="" coords="517,56,723,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="753,69,724,72,724,67,758,69"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a0c02f289dea7872eae24bb2c0f91d5ea" title=" " alt="" coords="270,5,462,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="532,53,436,35,437,30,537,52"/>
+<area shape="rect" id="Node000005" href="$class_diagram_scene.html#a03a8b712a0872e8f6290c059de956505" title=" " alt="" coords="265,56,466,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="499,70,467,72,467,67,504,69"/>
+<area shape="rect" id="Node000007" href="$class_diagram_scene.html#affc06437d827ac64a996cd13690a49c6" title=" " alt="" coords="263,107,469,133"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="537,86,437,109,436,103,532,87"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a189b7f9e32b70c751124cffce8d63c8c" title=" " alt="" coords="5,5,215,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="252,19,216,21,215,16,257,18"/>
+<area shape="rect" id="Node000006" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="8,56,212,83"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="247,70,213,72,212,67,252,69"/>
+</map>

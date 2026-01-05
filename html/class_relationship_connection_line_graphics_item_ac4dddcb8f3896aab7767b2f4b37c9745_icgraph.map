@@ -1,0 +1,13 @@
+<map id="RelationshipConnectionLineGraphicsItem::getCardinalityBoundingRect" name="RelationshipConnectionLineGraphicsItem::getCardinalityBoundingRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="553,72,822,115"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line_graphics_item.html#adc343576fe3be22eab58974f20616a1c" title=" " alt="" coords="293,5,480,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="571,68,480,50,480,45,576,68"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line_graphics_item.html#aa04530bd3108ddbc839528eca4f0696c" title=" " alt="" coords="268,72,505,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="535,94,506,96,505,91,540,93"/>
+<area shape="rect" id="Node000006" href="$class_relationship_connection_line_graphics_item.html#afc1acb4a0cf1004d31bd2b89bc394d7d" title=" " alt="" coords="295,139,478,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="576,118,479,142,478,137,571,119"/>
+<area shape="rect" id="Node000004" href="$class_relationship_connection_line_graphics_item.html#aa089aa4bc0be538db8480577f3a6647c" title=" " alt="" coords="10,39,215,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="250,78,216,75,215,70,255,76"/>
+<area shape="rect" id="Node000005" href="$class_relationship_connection_line_graphics_item.html#ab7d7310d11b41a9a2e032687312b56c8" title=" " alt="" coords="5,105,220,148"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="249,110,220,116,219,111,255,109"/>
+</map>

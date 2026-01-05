@@ -1,0 +1,18 @@
+<map id="BezierControlPoint" name="BezierControlPoint">
+<area shape="rect" id="Node000001" title=" " alt="" coords="445,831,598,1071"/>
+<area shape="rect" id="Node000003" href="$class_connection_graphics_item.html" title=" " alt="" coords="249,1345,447,1873"/>
+<area shape="poly" id="edge9_Node000003_Node000001" title=" " alt="" coords="498,1068,468,1164,446,1210,420,1254,404,1266,397,1270,391,1277,369,1330,364,1328,387,1275,394,1266,401,1261,416,1250,441,1208,463,1162,495,1073"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="453,305,591,375"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="523,387,524,832,519,831,521,392"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="445,1449,475,1386,498,1321,511,1262,519,1203,527,1090,529,1085,524,1203,516,1263,503,1322,480,1388,450,1452"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="72,5,131,75"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="89,92,52,281,32,417,16,572,9,739,14,912,23,999,36,1085,55,1169,79,1251,111,1325,154,1395,203,1458,252,1514,247,1515,199,1462,150,1398,107,1328,74,1253,49,1171,31,1086,17,1000,9,912,3,739,10,571,26,416,47,280,90,87"/>
+<area shape="rect" id="Node000006" href="$class_connection_line.html" title=" " alt="" coords="89,649,283,1252"/>
+<area shape="poly" id="edge6_Node000006_Node000004" title=" " alt="" coords="103,87,112,293,130,556,141,650,135,650,124,556,106,293,102,92"/>
+<area shape="rect" id="Node000007" href="$class_connection_point.html" title=" " alt="" coords="139,124,352,556"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="124,85,144,124,139,125,125,90"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="307,916,406,985"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="357,998,354,1346,349,1345,354,1003"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="238,1249,257,1321,259,1329,253,1329,251,1322,237,1254"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="225,553,220,633,214,632,224,558"/>
+</map>

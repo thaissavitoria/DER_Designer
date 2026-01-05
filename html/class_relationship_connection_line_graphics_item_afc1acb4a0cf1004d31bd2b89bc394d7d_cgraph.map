@@ -1,0 +1,19 @@
+<map id="RelationshipConnectionLineGraphicsItem::shape" name="RelationshipConnectionLineGraphicsItem::shape">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,189,81"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line_graphics_item.html#ac4dddcb8f3896aab7767b2f4b37c9745" title=" " alt="" coords="237,5,506,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,46,224,44,219,46,190,51"/>
+<area shape="rect" id="Node000003" href="$class_connection_graphics_item.html#aeea9fd05b92eeba219efbf363460347c" title=" " alt="" coords="289,72,454,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="189,68,276,80,271,82,189,74"/>
+<area shape="rect" id="Node000004" href="$class_connection_graphics_item.html#ab2ce5adc2d399026c9393fca5d8b6714" title=" " alt="" coords="554,5,719,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="454,70,505,57,536,52,542,51,507,63,455,76"/>
+<area shape="rect" id="Node000006" href="$class_connection_graphics_item.html#a3384a6134ae5a7526fc01382a58ac982" title=" " alt="" coords="554,72,719,115"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="454,91,541,93,536,94,455,96"/>
+<area shape="rect" id="Node000009" href="$class_connection_graphics_item.html#ae9707a652e7e27ec333eaed6699b430b" title=" " alt="" coords="554,139,719,181"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="455,111,542,136,536,136,454,117"/>
+<area shape="rect" id="Node000005" href="$class_connection_graphics_item.html#aff69c763accf5e57bbc119acdf8597ad" title=" " alt="" coords="770,5,1006,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="720,24,757,26,752,27,720,29"/>
+<area shape="rect" id="Node000007" href="$class_connection_graphics_item.html#a893317615dd09c41cceec37be3ad9f6f" title=" " alt="" coords="767,72,1009,115"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="720,91,755,93,749,94,720,96"/>
+<area shape="rect" id="Node000008" href="$class_connection_graphics_item.html#a0e5a08b33a79f09561ec2a6d9348a292" title=" " alt="" coords="790,139,986,181"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="720,113,793,134,788,134,719,118"/>
+</map>

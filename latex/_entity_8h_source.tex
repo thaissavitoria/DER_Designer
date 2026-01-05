@@ -1,0 +1,62 @@
+\doxysection{Entity.\+h}
+\hypertarget{_entity_8h_source}{}\label{_entity_8h_source}\index{src/model/Entity.h@{src/model/Entity.h}}
+\mbox{\hyperlink{_entity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTITY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_basic_element_8h}{BasicElement.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_attribute_8h}{Attribute.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{BasicElement}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}(}
+\DoxyCodeLine{00013\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00014\ \ \ );}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}(}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}},}
+\DoxyCodeLine{00018\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00019\ \ \ );}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}(}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}},}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ isWeak,}
+\DoxyCodeLine{00024\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00025\ \ \ );}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}(}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}}\&\ otherEntity}
+\DoxyCodeLine{00029\ \ \ );}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\string~Entity}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ QSizeF\ \mbox{\hyperlink{class_entity_a90cbf09ab7b4a01c3f236e5b409fdd24}{minimumSize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ QSizeF\ \mbox{\hyperlink{class_entity_a237af8c74037b83ace59083cf9af53f4}{preferredSize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ std::unique\_ptr<BasicElement>\ \mbox{\hyperlink{class_entity_a749efc704ed51e89d53a7f88840524ce}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ QString\ \mbox{\hyperlink{class_entity_a070f4727e2491b322a53ad32e4fb197e}{typeDisplayName}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_aaf7ad42d5f1d6979779b4c13c07f8ce6}{isWeakEntity}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_adaacdcaca759f96c7c5a294f75307ef0}{setIsWeakEntity}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ isWeak}
+\DoxyCodeLine{00045\ \ \ );}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ QVariantMap\ \mbox{\hyperlink{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32}{serialize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_ab38972d0a706fc31d67d0e22343c70e6}{deserialize}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ QVariantMap\&\ data}
+\DoxyCodeLine{00050\ \ \ );}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_ab4abb89080ebd5bb36e20a911dc534ca}{m\_isWeakEntity}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ENTITY\_H}}
+
+\end{DoxyCode}

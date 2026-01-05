@@ -1,0 +1,11 @@
+<map id="DraggableButton::DraggableButton" name="DraggableButton::DraggableButton">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,191,65"/>
+<area shape="rect" id="Node000002" href="$class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a" title=" " alt="" coords="239,5,439,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,32,226,30,221,32,192,37"/>
+<area shape="rect" id="Node000003" href="$class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd" title=" " alt="" coords="247,56,430,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="191,51,234,58,229,58,191,56"/>
+<area shape="rect" id="Node000004" href="$class_draggable_button.html#a7fd40b89abec8f870befc9944cc08fd1" title=" " alt="" coords="487,31,710,57"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,58,474,56,469,57,431,63"/>
+<area shape="rect" id="Node000005" href="$class_draggable_button.html#a0eb58733d3624401783dfa00b17ed66a" title=" " alt="" coords="500,81,697,108"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="431,76,488,84,482,84,431,81"/>
+</map>

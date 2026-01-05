@@ -1,0 +1,7 @@
+<map id="DiagramView::dropEvent" name="DiagramView::dropEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,172,57"/>
+<area shape="rect" id="Node000002" href="$class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4" title=" " alt="" coords="229,5,432,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,33,216,30,211,31,173,38"/>
+<area shape="rect" id="Node000003" href="$class_diagram_view.html#a144bbc2c3b9ee55e31ec25d4a4665506" title=" " alt="" coords="220,56,441,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,50,207,56,201,56,172,55"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="QuickAccessToolbar::QuickAccessToolbar" name="QuickAccessToolbar::QuickAccessToolbar">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,205,155,248"/>
+<area shape="rect" id="Node000002" href="$class_quick_access_toolbar.html#a9e7b41af686d1b6db9993d80e8390053" title=" " alt="" coords="203,172,344,215"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,211,189,207,185,210,156,216"/>
+<area shape="rect" id="Node000009" href="$class_quick_access_toolbar.html#aa81ab086f3f156e257c61050927b8fea" title=" " alt="" coords="203,239,344,281"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="155,237,190,244,185,246,156,242"/>
+<area shape="rect" id="Node000003" href="$class_quick_access_toolbar.html#a75e787a5ac9594c43bea4cbaa36c67d0" title=" " alt="" coords="392,5,537,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="288,170,330,115,359,85,390,58,400,55,395,58,394,62,362,89,334,119,291,173"/>
+<area shape="rect" id="Node000004" href="$class_quick_access_toolbar.html#a95925c4900144d5faa1a4516ea7d2874" title=" " alt="" coords="394,72,535,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,169,391,124,404,120,399,123,393,129,313,174"/>
+<area shape="rect" id="Node000005" href="$class_quick_access_toolbar.html#ae2051a27933a2022dc2b6c5cc8ef4b63" title=" " alt="" coords="394,139,535,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="344,178,381,174,376,176,345,184"/>
+<area shape="rect" id="Node000006" href="$class_quick_access_toolbar.html#aa9d56b4b5e0885c23f4101b066bbde9d" title=" " alt="" coords="394,205,535,248"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="344,203,382,211,376,212,345,208"/>
+<area shape="rect" id="Node000007" href="$class_quick_access_toolbar.html#a3d84253b27fe73b9aeefdd3388da9ce4" title=" " alt="" coords="394,272,535,315"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="323,213,345,224,393,258,403,265,398,264,391,262,343,229,323,218"/>
+<area shape="rect" id="Node000008" href="$class_quick_access_toolbar.html#acb9dd70de40aa7efa692172a3322a3b8" title=" " alt="" coords="394,339,535,381"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="330,213,346,225,364,251,371,276,377,300,394,325,397,330,392,328,390,328,372,302,365,277,359,253,342,228,329,218"/>
+</map>

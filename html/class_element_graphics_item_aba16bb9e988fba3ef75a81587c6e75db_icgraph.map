@@ -1,0 +1,19 @@
+<map id="ElementGraphicsItem::getConnectionPointRect" name="ElementGraphicsItem::getConnectionPointRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="678,139,850,181"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a778f08249305dd4301855fefea15ce81" title=" " alt="" coords="466,72,626,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="675,134,618,118,619,113,681,134"/>
+<area shape="rect" id="Node000007" href="$class_element_graphics_item.html#a633fa954259daffed25643ebd0d2b342" title=" " alt="" coords="462,139,630,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="660,160,631,163,631,157,666,160"/>
+<area shape="rect" id="Node000009" href="$class_element_graphics_item.html#aa40f357c133099eb418ef7f06dbbd02a" title=" " alt="" coords="472,205,620,248"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="681,186,619,207,618,202,675,187"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#a793602d06f108dd05e8e103aa703974b" title=" " alt="" coords="234,5,381,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,68,381,50,381,45,456,67"/>
+<area shape="rect" id="Node000004" href="$class_element_graphics_item.html#acccf7d3285160c3f826d7b407c51ebc9" title=" " alt="" coords="201,72,414,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="448,94,415,96,414,91,454,93"/>
+<area shape="rect" id="Node000005" href="$class_element_graphics_item.html#acb0b801fcece8d5458fcb800b98fffa1" title=" " alt="" coords="5,39,153,81"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="183,77,154,73,152,68,188,74"/>
+<area shape="rect" id="Node000006" href="$class_element_graphics_item.html#abedc932a8098839741d3dc217be990e8" title=" " alt="" coords="5,105,153,148"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="183,112,154,118,152,113,188,110"/>
+<area shape="rect" id="Node000008" href="$class_element_graphics_item.html#ae433ba5283fb30f272458f1970a46d06" title=" " alt="" coords="234,139,381,181"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="444,160,382,163,381,157,449,160"/>
+</map>

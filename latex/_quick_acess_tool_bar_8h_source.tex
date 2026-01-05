@@ -1,0 +1,47 @@
+\doxysection{Quick\+Acess\+Tool\+Bar.\+h}
+\hypertarget{_quick_acess_tool_bar_8h_source}{}\label{_quick_acess_tool_bar_8h_source}\index{src/viewer/QuickAcessToolBar.h@{src/viewer/QuickAcessToolBar.h}}
+\mbox{\hyperlink{_quick_acess_tool_bar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ QUICKACESSTOOLBAR\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ QUICKACESSTOOLBAR\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QToolBar>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QMenu>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QIcon>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QCursor>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_quick_access_toolbar_af2146dbbe3237bb43e290ff1a36039c6}{QuickAccessToolbar}}\ :\ \textcolor{keyword}{public}\ QToolBar\ \{}
+\DoxyCodeLine{00013\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_quick_access_toolbar_af2146dbbe3237bb43e290ff1a36039c6}{QuickAccessToolbar}}(}
+\DoxyCodeLine{00017\ \ \ \ \ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00018\ \ \ );}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_aa9d56b4b5e0885c23f4101b066bbde9d}{onNewAction}}();}
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_acb9dd70de40aa7efa692172a3322a3b8}{onSaveAction}}();}
+\DoxyCodeLine{00023\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_a3d84253b27fe73b9aeefdd3388da9ce4}{onOpenAction}}();}
+\DoxyCodeLine{00024\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_ae2051a27933a2022dc2b6c5cc8ef4b63}{onHelpAction}}();}
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_a95925c4900144d5faa1a4516ea7d2874}{onAboutAction}}();}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_aa81ab086f3f156e257c61050927b8fea}{setupToolbar}}();}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quick_access_toolbar_a9e7b41af686d1b6db9993d80e8390053}{addDefaultActions}}();}
+\DoxyCodeLine{00030\ \ \ \ \ }
+\DoxyCodeLine{00031\ \ \ QAction*\ \mbox{\hyperlink{class_quick_access_toolbar_a75e787a5ac9594c43bea4cbaa36c67d0}{addActionToToolBar}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ QIcon\&\ icon,}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ actionName,}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ toolTip,}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ statusTip}
+\DoxyCodeLine{00036\ \ \ );}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{class_main_window}{MainWindow}}*\ \mbox{\hyperlink{class_quick_access_toolbar_a62a196197cc241cc37f4ec1df632d804}{m\_mainWindow}};}
+\DoxyCodeLine{00039\ \};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QUICKACESSTOOLBAR\_H}}
+
+\end{DoxyCode}

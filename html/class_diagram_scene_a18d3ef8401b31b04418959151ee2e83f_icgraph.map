@@ -1,0 +1,5 @@
+<map id="DiagramScene::createSelectionRect" name="DiagramScene::createSelectionRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="242,13,475,40"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a6847af7972303267f22e84ae1011c255" title=" " alt="" coords="5,5,194,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,27,194,29,194,24,229,26"/>
+</map>

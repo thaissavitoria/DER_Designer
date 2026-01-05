@@ -1,0 +1,11 @@
+<map id="RelationshipConnectionLineGraphicsItem::mousePressEvent" name="RelationshipConnectionLineGraphicsItem::mousePressEvent">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,220,81"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line_graphics_item.html#aa04530bd3108ddbc839528eca4f0696c" title=" " alt="" coords="268,5,505,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,44,255,42,250,44,221,50"/>
+<area shape="rect" id="Node000004" href="$class_connection_graphics_item.html#a41db61e82f8d487dd757ddf97d5ea93c" title=" " alt="" coords="304,72,469,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="220,70,291,81,286,82,220,76"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line_graphics_item.html#ac4dddcb8f3896aab7767b2f4b37c9745" title=" " alt="" coords="553,5,822,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="505,24,540,26,535,27,505,29"/>
+<area shape="rect" id="Node000005" href="$class_connection_graphics_item.html#a195ab4989aef887425e7acb78b885d9e" title=" " alt="" coords="605,72,770,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="469,91,592,93,587,93,469,96"/>
+</map>

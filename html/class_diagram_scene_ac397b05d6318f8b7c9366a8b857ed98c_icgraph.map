@@ -1,0 +1,27 @@
+<map id="DiagramScene::connectionSelected" name="DiagramScene::connectionSelected">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1084,81,1262,124"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a530f6e2b54bdff761f3f478120187201" title=" " alt="" coords="845,44,1010,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1066,84,1003,74,1003,69,1071,83"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a2b55d6646f19908d66e5c5eda455744e" title=" " alt="" coords="819,115,1036,141"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1066,114,1036,120,1036,114,1071,113"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="8,115,212,141"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="848,41,734,24,587,10,506,8,424,12,342,21,263,39,223,54,186,75,129,116,125,112,183,71,221,49,262,34,342,16,424,6,506,3,587,5,735,19,853,40"/>
+<area shape="rect" id="Node000005" href="$class_diagram_scene.html#a9341fab75d7299e330baae13993bed28" title=" " alt="" coords="558,140,756,167"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="801,140,757,147,756,142,806,139"/>
+<area shape="rect" id="Node000010" href="$class_diagram_scene.html#ad46a8dc374895fd670f50f30f2c2acbd" title=" " alt="" coords="543,245,771,272"/>
+<area shape="poly" id="edge11_Node000004_Node000010" title=" " alt="" coords="886,148,688,247,686,242,881,149"/>
+<area shape="rect" id="Node000012" href="$class_diagram_scene.html#a2f6effb6da25d1974e33776ef4046f87" title=" " alt="" coords="549,89,765,116"/>
+<area shape="poly" id="edge13_Node000004_Node000012" title=" " alt="" coords="801,117,766,116,766,110,806,116"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="540,159,408,162,262,156,180,145,180,139,263,151,408,157,545,158"/>
+<area shape="rect" id="Node000006" href="$class_diagram_scene.html#a0c02f289dea7872eae24bb2c0f91d5ea" title=" " alt="" coords="283,216,475,243"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="593,171,432,218,430,213,588,172"/>
+<area shape="rect" id="Node000008" href="$class_diagram_scene.html#a6847af7972303267f22e84ae1011c255" title=" " alt="" coords="285,48,473,91"/>
+<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="564,136,542,131,518,118,494,105,463,94,463,89,496,100,520,113,544,126,569,136"/>
+<area shape="rect" id="Node000009" href="$class_diagram_scene.html#a61e7061e5add947d09ad87feaf2b8dc1" title=" " alt="" coords="263,115,495,141"/>
+<area shape="poly" id="edge9_Node000005_Node000009" title=" " alt="" coords="540,143,495,141,495,136,546,143"/>
+<area shape="rect" id="Node000007" href="$class_diagram_scene.html#a189b7f9e32b70c751124cffce8d63c8c" title=" " alt="" coords="5,216,215,243"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="265,230,215,232,215,227,270,229"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="245,129,213,131,212,126,250,127"/>
+<area shape="rect" id="Node000011" href="$class_diagram_scene.html#a542ad58dab0f10f2825e0d69deabebe7" title=" " alt="" coords="278,267,480,309"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="530,272,480,280,480,275,525,273"/>
+</map>

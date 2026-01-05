@@ -1,0 +1,365 @@
+\doxysection{Entity Class Reference}
+\hypertarget{class_entity}{}\label{class_entity}\index{Entity@{Entity}}
+
+
+{\ttfamily \#include $<$Entity.\+h$>$}
+
+
+
+Inheritance diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_entity__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Entity\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_entity__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_entity_a832667fda0ef14f127465d2837132244}{Entity}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_entity_ae562b28c015c3e376453d4b6dcf34f73}{Entity}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_entity_a34cdf84f2657fd59a07265c37d94c88d}{Entity}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}, const bool is\+Weak, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_entity_a31504f27be637a877dec58aab9815109}{Entity}} (const \mbox{\hyperlink{class_entity}{Entity}} \&other\+Entity)
+\item 
+virtual \mbox{\hyperlink{class_entity_ac479d009ddde62dfb378ca0a70d81307}{\texorpdfstring{$\sim$}{\string~}\+Entity}} ()=default
+\item 
+QSizeF \mbox{\hyperlink{class_entity_a90cbf09ab7b4a01c3f236e5b409fdd24}{minimum\+Size}} () const override
+\item 
+QSizeF \mbox{\hyperlink{class_entity_a237af8c74037b83ace59083cf9af53f4}{preferred\+Size}} () const override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ \mbox{\hyperlink{class_entity_a749efc704ed51e89d53a7f88840524ce}{clone}} () const override
+\item 
+QString \mbox{\hyperlink{class_entity_a070f4727e2491b322a53ad32e4fb197e}{type\+Display\+Name}} () const override
+\item 
+bool \mbox{\hyperlink{class_entity_aaf7ad42d5f1d6979779b4c13c07f8ce6}{is\+Weak\+Entity}} () const
+\item 
+void \mbox{\hyperlink{class_entity_adaacdcaca759f96c7c5a294f75307ef0}{set\+Is\+Weak\+Entity}} (const bool is\+Weak)
+\item 
+QVariant\+Map \mbox{\hyperlink{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32}{serialize}} () const
+\item 
+bool \mbox{\hyperlink{class_entity_ab38972d0a706fc31d67d0e22343c70e6}{deserialize}} (const QVariant\+Map \&data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{Basic\+Element}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7}{Basic\+Element}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \&other\+Element)
+\item 
+virtual \mbox{\hyperlink{class_basic_element_a8563bf8f19b314b1d28149e9add8e220}{\texorpdfstring{$\sim$}{\string~}\+Basic\+Element}} ()
+\item 
+QString \mbox{\hyperlink{class_basic_element_ad7e7f3a262991d5ab415843feae7e0dc}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_basic_element_abdf7ef7b79c416bbd70e464f94b5fbaf}{name}} () const
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a8aa03ed75e7eaa11fe054fe29b86b160}{type}} () const
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a11b7bec801ecfff87fa6bb2898b2033f}{position}} () const
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_a542adbf85a58c5c9bf17975964d7e446}{size}} () const
+\item 
+QRectF \mbox{\hyperlink{class_basic_element_a105ea9f996799c88e65af3c377481051}{bounding\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a42ea6812e7627bb99af54cab547aa803}{set\+Name}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab14524060d1b8fbbba753207029c6d7d}{set\+Position}} (const QPointF \&\mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7}{set\+Size}} (const QSizeF \&\mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}})
+\item 
+void \mbox{\hyperlink{class_basic_element_a28d9895b6930a1be49e7375181848e77}{set\+Position}} (qreal x, qreal y)
+\item 
+void \mbox{\hyperlink{class_basic_element_ae089b8cb8d8fe983d587035412b0de67}{set\+Size}} (qreal width, qreal height)
+\item 
+void \mbox{\hyperlink{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5}{move}} (const QPointF \&delta)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5897e9fd991c828e58cc7e9299f00844}{resize}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a13661eba40c8decbb0ac50aa42695351}{add\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_basic_element_a6b6d87307328e617498ac1b1787afb97}{remove\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4}{connection\+Points}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4}{add\+Connection\+Point}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}connection\+Point)
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_basic_element_a70598cf89581cc6e308dafaa69551934}{get\+Connection\+Point\+By\+Direction}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} connection\+Direction)
+\item 
+void \mbox{\hyperlink{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8}{create\+Default\+Connection\+Points}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_basic_element_acbb703934f3bbff401ac5bf3c060dd4e}{is\+Valid}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a893f3f8a8c5e1d7b1df490fa2d76cffb}{add\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+bool \mbox{\hyperlink{class_basic_element_ab09956c3e9528e16d15643c798bc69b0}{remove\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+QList$<$ QString $>$ \mbox{\hyperlink{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76}{get\+Attribute\+Ids}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716}{clear\+Attributes\+Ids}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_entity_ab4abb89080ebd5bb36e20a911dc534ca}{m\+\_\+is\+Weak\+Entity}} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7}{name\+Changed}} (const QString \&new\+Name)
+\item 
+void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5af654d8bb5e16b44121f69c832037b8}{size\+Changed}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a968047d6f013c43f621f18ee12f97785}{property\+Changed}} (const QString \&key, const QVariant \&value)
+\item 
+void \mbox{\hyperlink{class_basic_element_ad1b7a593fb82e872041b342abd157088}{element\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
+\item 
+static \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a0674caf961f3fbb13e2194f595a28a11}{element\+Type\+From\+String}} (const QString \&type\+String)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a596caee40cdd00a0aacce49689b63f92}{notify\+Observers}} ()
+\item 
+void \mbox{\hyperlink{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856}{notify\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42}{on\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7}{on\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2}{on\+Size\+Changed}} (const QSizeF \&old\+Size, const QSizeF \&new\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_basic_element_acca1cabc35946209fcc643e7889eb043}{id}}
+\item 
+QString \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}}
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_entity_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_entity_a832667fda0ef14f127465d2837132244}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily \label{class_entity_a832667fda0ef14f127465d2837132244} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_a832667fda0ef14f127465d2837132244_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=262pt]{class_entity_a832667fda0ef14f127465d2837132244_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_ae562b28c015c3e376453d4b6dcf34f73}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily \label{class_entity_ae562b28c015c3e376453d4b6dcf34f73} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_ae562b28c015c3e376453d4b6dcf34f73_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_a34cdf84f2657fd59a07265c37d94c88d}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \label{class_entity_a34cdf84f2657fd59a07265c37d94c88d} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const bool}]{is\+Weak}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_a34cdf84f2657fd59a07265c37d94c88d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_a31504f27be637a877dec58aab9815109}\index{Entity@{Entity}!Entity@{Entity}}
+\index{Entity@{Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{Entity()}{Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \label{class_entity_a31504f27be637a877dec58aab9815109} 
+Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entity}{Entity}} \&}]{other\+Entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_a31504f27be637a877dec58aab9815109_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_ac479d009ddde62dfb378ca0a70d81307}\index{Entity@{Entity}!````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}}
+\index{````~Entity@{\texorpdfstring{$\sim$}{\string~}Entity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Entity()}{\string~Entity()}}
+{\footnotesize\ttfamily \label{class_entity_ac479d009ddde62dfb378ca0a70d81307} 
+virtual Entity\+::\texorpdfstring{$\sim$}{\string~}\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_entity_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_entity_a749efc704ed51e89d53a7f88840524ce}\index{Entity@{Entity}!clone@{clone}}
+\index{clone@{clone}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_entity_a749efc704ed51e89d53a7f88840524ce} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ Entity\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_a689196dfba02bd50ee11771a4da27de5}{Basic\+Element}}.
+
+\Hypertarget{class_entity_ab38972d0a706fc31d67d0e22343c70e6}\index{Entity@{Entity}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_entity_ab38972d0a706fc31d67d0e22343c70e6} 
+bool Entity\+::deserialize (\begin{DoxyParamCaption}\item[{const QVariant\+Map \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_a2584be00dd464aa45874efe1615abbed}{Basic\+Element}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_entity_ab38972d0a706fc31d67d0e22343c70e6_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_aaf7ad42d5f1d6979779b4c13c07f8ce6}\index{Entity@{Entity}!isWeakEntity@{isWeakEntity}}
+\index{isWeakEntity@{isWeakEntity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{isWeakEntity()}{isWeakEntity()}}
+{\footnotesize\ttfamily \label{class_entity_aaf7ad42d5f1d6979779b4c13c07f8ce6} 
+bool Entity\+::is\+Weak\+Entity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_entity_a90cbf09ab7b4a01c3f236e5b409fdd24}\index{Entity@{Entity}!minimumSize@{minimumSize}}
+\index{minimumSize@{minimumSize}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{minimumSize()}{minimumSize()}}
+{\footnotesize\ttfamily \label{class_entity_a90cbf09ab7b4a01c3f236e5b409fdd24} 
+QSizeF Entity\+::minimum\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_a2cb2eb803daa35380908948215f8d468}{Basic\+Element}}.
+
+\Hypertarget{class_entity_a237af8c74037b83ace59083cf9af53f4}\index{Entity@{Entity}!preferredSize@{preferredSize}}
+\index{preferredSize@{preferredSize}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{preferredSize()}{preferredSize()}}
+{\footnotesize\ttfamily \label{class_entity_a237af8c74037b83ace59083cf9af53f4} 
+QSizeF Entity\+::preferred\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_aab702308a56f2cdbfb17652351e5fd94}{Basic\+Element}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_entity_a237af8c74037b83ace59083cf9af53f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32}\index{Entity@{Entity}!serialize@{serialize}}
+\index{serialize@{serialize}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32} 
+QVariant\+Map Entity\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f}{Basic\+Element}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_adaacdcaca759f96c7c5a294f75307ef0}\index{Entity@{Entity}!setIsWeakEntity@{setIsWeakEntity}}
+\index{setIsWeakEntity@{setIsWeakEntity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{setIsWeakEntity()}{setIsWeakEntity()}}
+{\footnotesize\ttfamily \label{class_entity_adaacdcaca759f96c7c5a294f75307ef0} 
+void Entity\+::set\+Is\+Weak\+Entity (\begin{DoxyParamCaption}\item[{const bool}]{is\+Weak}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_entity_adaacdcaca759f96c7c5a294f75307ef0_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_entity_a070f4727e2491b322a53ad32e4fb197e}\index{Entity@{Entity}!typeDisplayName@{typeDisplayName}}
+\index{typeDisplayName@{typeDisplayName}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}
+{\footnotesize\ttfamily \label{class_entity_a070f4727e2491b322a53ad32e4fb197e} 
+QString Entity\+::type\+Display\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0}{Basic\+Element}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_entity_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_entity_ab4abb89080ebd5bb36e20a911dc534ca}\index{Entity@{Entity}!m\_isWeakEntity@{m\_isWeakEntity}}
+\index{m\_isWeakEntity@{m\_isWeakEntity}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{m\_isWeakEntity}{m\_isWeakEntity}}
+{\footnotesize\ttfamily \label{class_entity_ab4abb89080ebd5bb36e20a911dc534ca} 
+bool Entity\+::m\+\_\+is\+Weak\+Entity = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_entity_8h}{Entity.\+h}}\item 
+src/model/\mbox{\hyperlink{_entity_8cpp}{Entity.\+cpp}}\end{DoxyCompactItemize}

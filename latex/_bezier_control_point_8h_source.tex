@@ -1,0 +1,62 @@
+\doxysection{Bezier\+Control\+Point.\+h}
+\hypertarget{_bezier_control_point_8h_source}{}\label{_bezier_control_point_8h_source}\index{src/viewer/BezierControlPoint.h@{src/viewer/BezierControlPoint.h}}
+\mbox{\hyperlink{_bezier_control_point_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BEZIERCONTROLPOINT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BEZIERCONTROLPOINT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGraphicsEllipseItem>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtGui/QPen>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtGui/QBrush>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_graphics_item}{ConnectionGraphicsItem}};}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ \{}
+\DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7a26a93452c823021a302743432ed365b4}{Control1}},}
+\DoxyCodeLine{00012\ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7a6e3b57e6a6c864a82d251fffb66702f2}{Control2}}}
+\DoxyCodeLine{00013\ \};}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bezier_control_point_a3ead5ea69fd25cc18dfc2af6bf41bb8c}{BezierControlPoint}}\ :\ \textcolor{keyword}{public}\ QGraphicsEllipseItem}
+\DoxyCodeLine{00016\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_bezier_control_point_a3ead5ea69fd25cc18dfc2af6bf41bb8c}{BezierControlPoint}}(}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_connection_graphics_item}{ConnectionGraphicsItem}}*\ parent,}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ type}
+\DoxyCodeLine{00021\ \ \ );}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ \mbox{\hyperlink{class_bezier_control_point_af6aae1f0d9522a072faf2f42f9a2447a}{controlPointType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_a6123346a0446efca1a37b94ea5dcebcb}{updatePosition}}(}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ position}
+\DoxyCodeLine{00027\ \ \ );}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_a77470b323df632d3339819143cde7d0b}{mousePressEvent}}(}
+\DoxyCodeLine{00031\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00032\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_a54dc8138313ba5d2051c1954ee8a075d}{mouseMoveEvent}}(}
+\DoxyCodeLine{00035\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00036\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_aa5778ab3e36d16564c2cc776bf299f98}{mouseReleaseEvent}}(}
+\DoxyCodeLine{00039\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00040\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_a3601adf334b87dd29547ecbf811a7c2c}{hoverEnterEvent}}(}
+\DoxyCodeLine{00043\ \ \ \ \ QGraphicsSceneHoverEvent*\ event}
+\DoxyCodeLine{00044\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bezier_control_point_a41b582f267c74ff618d5411c890b2691}{hoverLeaveEvent}}(}
+\DoxyCodeLine{00047\ \ \ \ \ QGraphicsSceneHoverEvent*\ event}
+\DoxyCodeLine{00048\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{class_connection_graphics_item}{ConnectionGraphicsItem}}*\ \mbox{\hyperlink{class_bezier_control_point_a6a444954a7ea7cdca5a489df62b89a6a}{m\_connectionItem}};}
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ \mbox{\hyperlink{class_bezier_control_point_afee2845491d0b910c45bd4257196d425}{m\_type}};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_bezier_control_point_a4631ef883e50d440aa6970298332e8de}{m\_isDragging}};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ BEZIERCONTROLPOINT\_H}}
+
+\end{DoxyCode}

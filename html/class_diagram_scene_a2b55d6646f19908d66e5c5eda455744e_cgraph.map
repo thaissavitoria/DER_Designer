@@ -1,0 +1,9 @@
+<map id="DiagramScene::selectConnection" name="DiagramScene::selectConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,222,107"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a5f3d68221bac825f2b027d638d25fa49" title=" " alt="" coords="290,5,468,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,77,279,51,274,54,171,82"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#ac397b05d6318f8b7c9366a8b857ed98c" title=" " alt="" coords="290,72,468,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="222,91,277,93,272,94,223,96"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a7dbb09a9acecc803601560e50ad720ea" title=" " alt="" coords="270,139,489,165"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,105,303,134,298,136,177,110"/>
+</map>

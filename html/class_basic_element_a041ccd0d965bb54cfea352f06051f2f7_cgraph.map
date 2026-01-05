@@ -1,0 +1,18 @@
+<map id="BasicElement::BasicElement" name="BasicElement::BasicElement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,72,197,99"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html#a85cccd7db0e46e4e2b646365cd6c66a9" title=" " alt="" coords="245,97,436,124"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,93,232,99,226,99,197,98"/>
+<area shape="rect" id="Node000003" href="$class_basic_element.html#a028ebc6c9de8f0b90af0e7daef9549f8" title=" " alt="" coords="484,39,672,81"/>
+<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="197,78,470,63,468,68,197,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="406,94,466,84,472,83,407,99"/>
+<area shape="rect" id="Node000008" href="$class_basic_element.html#a01a6511d922708fe0042474740109152" title=" " alt="" coords="486,105,670,148"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="437,114,473,119,468,119,437,120"/>
+<area shape="rect" id="Node000004" href="$class_basic_element.html#a0357bfa9b1ef06dd1c9d64bcb00813f4" title=" " alt="" coords="723,5,921,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="672,44,711,42,705,43,673,50"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html#a9de406389d93810151498693037eeb95" title=" " alt="" coords="720,72,924,115"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="673,70,707,77,702,77,673,76"/>
+<area shape="rect" id="Node000006" href="$class_connection_point.html#a8977265b0868dad361fcbeec5a89bdeb" title=" " alt="" coords="972,72,1177,115"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="924,91,959,93,954,93,924,96"/>
+<area shape="rect" id="Node000007" href="$class_connection_point.html#ac498b99d7f91805fea3eab19f2e8b260" title=" " alt="" coords="1225,72,1416,115"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1178,91,1212,93,1206,93,1178,96"/>
+</map>

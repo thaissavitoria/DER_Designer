@@ -1,0 +1,9 @@
+<map id="MainWindow::createSidePanel" name="MainWindow::createSidePanel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="661,13,861,40"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a87f94def1c8d92ef141ffb6a20cf3900" title=" " alt="" coords="431,5,613,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="643,27,614,29,614,24,649,27"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a3a304253c9e7caeef028f75358bf1fd5" title=" " alt="" coords="233,13,383,40"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="413,27,383,29,383,24,418,27"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,13,185,40"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,27,185,29,185,24,220,26"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="MainWindow::onAddRelationshipClicked" name="MainWindow::onAddRelationshipClicked">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,27,219,69"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a51ab21a1be4a1389a00bdb35feee8d64" title=" " alt="" coords="267,5,468,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,33,254,31,249,33,220,38"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a90cfbcf2e0f2549760a60f184ee0acbf" title=" " alt="" coords="272,56,462,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,58,259,64,254,65,219,63"/>
+</map>

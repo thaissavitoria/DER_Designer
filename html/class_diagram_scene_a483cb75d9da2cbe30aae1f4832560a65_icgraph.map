@@ -1,0 +1,11 @@
+<map id="DiagramScene::cancelConnection" name="DiagramScene::cancelConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="523,56,742,83"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a0c02f289dea7872eae24bb2c0f91d5ea" title=" " alt="" coords="273,5,465,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="542,53,442,35,442,30,547,52"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a8a3265678249b08f424e17fbfa8d0de5" title=" " alt="" coords="263,56,475,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="505,70,476,72,475,67,510,69"/>
+<area shape="rect" id="Node000005" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="267,107,471,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="547,86,442,109,442,103,542,86"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a189b7f9e32b70c751124cffce8d63c8c" title=" " alt="" coords="5,5,215,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="255,19,215,21,214,16,260,18"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="ConnectionLine::disconnectFromPoints" name="ConnectionLine::disconnectFromPoints">
+<area shape="rect" id="Node000001" title=" " alt="" coords="271,5,453,48"/>
+<area shape="rect" id="Node000002" href="$class_connection_line.html#a19d458f8acd7c91d1f08c49e17e26095" title=" " alt="" coords="5,13,223,40"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,27,223,29,223,24,258,27"/>
+</map>

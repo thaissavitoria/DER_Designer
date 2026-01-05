@@ -1,0 +1,9 @@
+<map id="DiagramScene::duplicateSelected" name="DiagramScene::duplicateSelected">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,224,61"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#ab3f76238d2c252f2918047140d87dd23" title=" " alt="" coords="272,5,456,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,33,259,31,254,32,225,38"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#aef557b645a95aaa376592146d4c6c60e" title=" " alt="" coords="272,56,456,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="224,58,259,65,254,65,224,64"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#ad97223f92ae9cce97857ac5c45c1a3b6" title=" " alt="" coords="504,5,702,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,16,491,18,486,19,457,21"/>
+</map>

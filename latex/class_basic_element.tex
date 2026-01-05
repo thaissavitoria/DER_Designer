@@ -1,0 +1,855 @@
+\doxysection{Basic\+Element Class Reference}
+\hypertarget{class_basic_element}{}\label{class_basic_element}\index{BasicElement@{BasicElement}}
+
+
+Abstract base class for all ERD elements (Model only).  
+
+
+
+
+{\ttfamily \#include $<$Basic\+Element.\+h$>$}
+
+
+
+Inheritance diagram for Basic\+Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_basic_element__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Basic\+Element\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_basic_element__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7}{name\+Changed}} (const QString \&new\+Name)
+\item 
+void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5af654d8bb5e16b44121f69c832037b8}{size\+Changed}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a968047d6f013c43f621f18ee12f97785}{property\+Changed}} (const QString \&key, const QVariant \&value)
+\item 
+void \mbox{\hyperlink{class_basic_element_ad1b7a593fb82e872041b342abd157088}{element\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{Basic\+Element}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7}{Basic\+Element}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \&other\+Element)
+\item 
+virtual \mbox{\hyperlink{class_basic_element_a8563bf8f19b314b1d28149e9add8e220}{\texorpdfstring{$\sim$}{\string~}\+Basic\+Element}} ()
+\item 
+QString \mbox{\hyperlink{class_basic_element_ad7e7f3a262991d5ab415843feae7e0dc}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_basic_element_abdf7ef7b79c416bbd70e464f94b5fbaf}{name}} () const
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a8aa03ed75e7eaa11fe054fe29b86b160}{type}} () const
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a11b7bec801ecfff87fa6bb2898b2033f}{position}} () const
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_a542adbf85a58c5c9bf17975964d7e446}{size}} () const
+\item 
+QRectF \mbox{\hyperlink{class_basic_element_a105ea9f996799c88e65af3c377481051}{bounding\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a42ea6812e7627bb99af54cab547aa803}{set\+Name}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab14524060d1b8fbbba753207029c6d7d}{set\+Position}} (const QPointF \&\mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7}{set\+Size}} (const QSizeF \&\mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}})
+\item 
+void \mbox{\hyperlink{class_basic_element_a28d9895b6930a1be49e7375181848e77}{set\+Position}} (qreal x, qreal y)
+\item 
+void \mbox{\hyperlink{class_basic_element_ae089b8cb8d8fe983d587035412b0de67}{set\+Size}} (qreal width, qreal height)
+\item 
+void \mbox{\hyperlink{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5}{move}} (const QPointF \&delta)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5897e9fd991c828e58cc7e9299f00844}{resize}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a13661eba40c8decbb0ac50aa42695351}{add\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_basic_element_a6b6d87307328e617498ac1b1787afb97}{remove\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4}{connection\+Points}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4}{add\+Connection\+Point}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}connection\+Point)
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_basic_element_a70598cf89581cc6e308dafaa69551934}{get\+Connection\+Point\+By\+Direction}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} connection\+Direction)
+\item 
+void \mbox{\hyperlink{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8}{create\+Default\+Connection\+Points}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_basic_element_acbb703934f3bbff401ac5bf3c060dd4e}{is\+Valid}} () const
+\item 
+virtual QVariant\+Map \mbox{\hyperlink{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f}{serialize}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_basic_element_a2584be00dd464aa45874efe1615abbed}{deserialize}} (const QVariant\+Map \&data)
+\item 
+virtual QSizeF \mbox{\hyperlink{class_basic_element_a2cb2eb803daa35380908948215f8d468}{minimum\+Size}} () const =0
+\item 
+virtual QSizeF \mbox{\hyperlink{class_basic_element_aab702308a56f2cdbfb17652351e5fd94}{preferred\+Size}} () const =0
+\item 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ \mbox{\hyperlink{class_basic_element_a689196dfba02bd50ee11771a4da27de5}{clone}} () const =0
+\item 
+virtual QString \mbox{\hyperlink{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0}{type\+Display\+Name}} () const =0
+\item 
+void \mbox{\hyperlink{class_basic_element_a893f3f8a8c5e1d7b1df490fa2d76cffb}{add\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+bool \mbox{\hyperlink{class_basic_element_ab09956c3e9528e16d15643c798bc69b0}{remove\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+QList$<$ QString $>$ \mbox{\hyperlink{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76}{get\+Attribute\+Ids}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716}{clear\+Attributes\+Ids}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
+\item 
+static \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a0674caf961f3fbb13e2194f595a28a11}{element\+Type\+From\+String}} (const QString \&type\+String)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a596caee40cdd00a0aacce49689b63f92}{notify\+Observers}} ()
+\item 
+void \mbox{\hyperlink{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856}{notify\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42}{on\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7}{on\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2}{on\+Size\+Changed}} (const QSizeF \&old\+Size, const QSizeF \&new\+Size)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_basic_element_acca1cabc35946209fcc643e7889eb043}{id}}
+\item 
+QString \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}}
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_basic_element_a7a139a6a25d5fd4b4f41af6ef62b9ecc}{m\+\_\+id}}
+\item 
+QString \mbox{\hyperlink{class_basic_element_ad476426e82fc08ed8e295e6aaff7d109}{m\+\_\+name}}
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_abfe0f40e84d013cf01268a69b393c448}{m\+\_\+type}}
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_ad6c63789c90de25e53ceb5e3835c7f46}{m\+\_\+position}}
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_a59f61ff5c8159208f474bb20b059ba34}{m\+\_\+size}}
+\item 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_basic_element_a256e8e4fab456c8b9dd3912fcfebb516}{m\+\_\+connection\+Points}}
+\item 
+QList$<$ \mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_basic_element_a7f1bc2c97fb5e1e013843d63cd637d38}{m\+\_\+observers}}
+\item 
+QList$<$ QString $>$ \mbox{\hyperlink{class_basic_element_aba019844ad7809e7f0d0892f5e07d29c}{m\+\_\+attribute\+Ids}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for all ERD elements (Model only). 
+
+This class implements the MVC pattern as the Model, providing\+:
+\begin{DoxyItemize}
+\item Basic properties common to all elements
+\item Change notification system (Observer Pattern)
+\item Data validation
+\item Serialization/\+Deserialization – to facilitate conversion to JSON
+\item Connection points for line connecting mechanism 
+\end{DoxyItemize}
+
+\label{doc-constructors}
+\Hypertarget{class_basic_element_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}\index{BasicElement@{BasicElement}!BasicElement@{BasicElement}}
+\index{BasicElement@{BasicElement}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{BasicElement()}{BasicElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9} 
+Basic\+Element\+::\+Basic\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}}}]{type}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7}\index{BasicElement@{BasicElement}!BasicElement@{BasicElement}}
+\index{BasicElement@{BasicElement}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{BasicElement()}{BasicElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7} 
+Basic\+Element\+::\+Basic\+Element (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \&}]{other\+Element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a8563bf8f19b314b1d28149e9add8e220}\index{BasicElement@{BasicElement}!````~BasicElement@{\texorpdfstring{$\sim$}{\string~}BasicElement}}
+\index{````~BasicElement@{\texorpdfstring{$\sim$}{\string~}BasicElement}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}BasicElement()}{\string~BasicElement()}}
+{\footnotesize\ttfamily \label{class_basic_element_a8563bf8f19b314b1d28149e9add8e220} 
+Basic\+Element\+::\texorpdfstring{$\sim$}{\string~}\+Basic\+Element (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_basic_element_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_basic_element_a893f3f8a8c5e1d7b1df490fa2d76cffb}\index{BasicElement@{BasicElement}!addAttributeId@{addAttributeId}}
+\index{addAttributeId@{addAttributeId}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{addAttributeId()}{addAttributeId()}}
+{\footnotesize\ttfamily \label{class_basic_element_a893f3f8a8c5e1d7b1df490fa2d76cffb} 
+void Basic\+Element\+::add\+Attribute\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{attribute\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4}\index{BasicElement@{BasicElement}!addConnectionPoint@{addConnectionPoint}}
+\index{addConnectionPoint@{addConnectionPoint}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{addConnectionPoint()}{addConnectionPoint()}}
+{\footnotesize\ttfamily \label{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4} 
+void Basic\+Element\+::add\+Connection\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}}]{connection\+Point}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a13661eba40c8decbb0ac50aa42695351}\index{BasicElement@{BasicElement}!addObserver@{addObserver}}
+\index{addObserver@{addObserver}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{addObserver()}{addObserver()}}
+{\footnotesize\ttfamily \label{class_basic_element_a13661eba40c8decbb0ac50aa42695351} 
+void Basic\+Element\+::add\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_basic_element_a105ea9f996799c88e65af3c377481051}\index{BasicElement@{BasicElement}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily \label{class_basic_element_a105ea9f996799c88e65af3c377481051} 
+QRectF Basic\+Element\+::bounding\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a105ea9f996799c88e65af3c377481051_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716}\index{BasicElement@{BasicElement}!clearAttributesIds@{clearAttributesIds}}
+\index{clearAttributesIds@{clearAttributesIds}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{clearAttributesIds()}{clearAttributesIds()}}
+{\footnotesize\ttfamily \label{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716} 
+void Basic\+Element\+::clear\+Attributes\+Ids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a689196dfba02bd50ee11771a4da27de5}\index{BasicElement@{BasicElement}!clone@{clone}}
+\index{clone@{clone}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_basic_element_a689196dfba02bd50ee11771a4da27de5} 
+virtual std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ Basic\+Element\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_a0bc96a0f97c199dab6ee36a9617eed82}{Attribute}}, \mbox{\hyperlink{class_entity_a749efc704ed51e89d53a7f88840524ce}{Entity}}, and \mbox{\hyperlink{class_relationship_aabd453d15034de03e3d9a655a6622ae9}{Relationship}}.
+
+\Hypertarget{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4}\index{BasicElement@{BasicElement}!connectionPoints@{connectionPoints}}
+\index{connectionPoints@{connectionPoints}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{connectionPoints()}{connectionPoints()}}
+{\footnotesize\ttfamily \label{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4} 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ Basic\+Element\+::connection\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8}\index{BasicElement@{BasicElement}!createDefaultConnectionPoints@{createDefaultConnectionPoints}}
+\index{createDefaultConnectionPoints@{createDefaultConnectionPoints}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{createDefaultConnectionPoints()}{createDefaultConnectionPoints()}}
+{\footnotesize\ttfamily \label{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8} 
+void Basic\+Element\+::create\+Default\+Connection\+Points (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a2584be00dd464aa45874efe1615abbed}\index{BasicElement@{BasicElement}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_basic_element_a2584be00dd464aa45874efe1615abbed} 
+bool Basic\+Element\+::deserialize (\begin{DoxyParamCaption}\item[{const QVariant\+Map \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_attribute_a598a04fe32a1046a6d55bbd3b227c023}{Attribute}}, \mbox{\hyperlink{class_entity_ab38972d0a706fc31d67d0e22343c70e6}{Entity}}, and \mbox{\hyperlink{class_relationship_af14ba497de57d4e14557eb4450fb730b}{Relationship}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a2584be00dd464aa45874efe1615abbed_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_ad1b7a593fb82e872041b342abd157088}\index{BasicElement@{BasicElement}!elementChanged@{elementChanged}}
+\index{elementChanged@{elementChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{elementChanged}{elementChanged}}
+{\footnotesize\ttfamily \label{class_basic_element_ad1b7a593fb82e872041b342abd157088} 
+void Basic\+Element\+::element\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ad1b7a593fb82e872041b342abd157088_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a0674caf961f3fbb13e2194f595a28a11}\index{BasicElement@{BasicElement}!elementTypeFromString@{elementTypeFromString}}
+\index{elementTypeFromString@{elementTypeFromString}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{elementTypeFromString()}{elementTypeFromString()}}
+{\footnotesize\ttfamily \label{class_basic_element_a0674caf961f3fbb13e2194f595a28a11} 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} Basic\+Element\+::element\+Type\+From\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{type\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_basic_element_a01a6511d922708fe0042474740109152}\index{BasicElement@{BasicElement}!elementTypeToString@{elementTypeToString}}
+\index{elementTypeToString@{elementTypeToString}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{elementTypeToString()}{elementTypeToString()}}
+{\footnotesize\ttfamily \label{class_basic_element_a01a6511d922708fe0042474740109152} 
+QString Basic\+Element\+::element\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a01a6511d922708fe0042474740109152_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76}\index{BasicElement@{BasicElement}!getAttributeIds@{getAttributeIds}}
+\index{getAttributeIds@{getAttributeIds}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{getAttributeIds()}{getAttributeIds()}}
+{\footnotesize\ttfamily \label{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76} 
+QList$<$ QString $>$ Basic\+Element\+::get\+Attribute\+Ids (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a70598cf89581cc6e308dafaa69551934}\index{BasicElement@{BasicElement}!getConnectionPointByDirection@{getConnectionPointByDirection}}
+\index{getConnectionPointByDirection@{getConnectionPointByDirection}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{getConnectionPointByDirection()}{getConnectionPointByDirection()}}
+{\footnotesize\ttfamily \label{class_basic_element_a70598cf89581cc6e308dafaa69551934} 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} Basic\+Element\+::get\+Connection\+Point\+By\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}}}]{connection\+Direction}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a70598cf89581cc6e308dafaa69551934_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_ad7e7f3a262991d5ab415843feae7e0dc}\index{BasicElement@{BasicElement}!id@{id}}
+\index{id@{id}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily \label{class_basic_element_ad7e7f3a262991d5ab415843feae7e0dc} 
+QString Basic\+Element\+::id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_basic_element_acbb703934f3bbff401ac5bf3c060dd4e}\index{BasicElement@{BasicElement}!isValid@{isValid}}
+\index{isValid@{isValid}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily \label{class_basic_element_acbb703934f3bbff401ac5bf3c060dd4e} 
+bool Basic\+Element\+::is\+Valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\Hypertarget{class_basic_element_a2cb2eb803daa35380908948215f8d468}\index{BasicElement@{BasicElement}!minimumSize@{minimumSize}}
+\index{minimumSize@{minimumSize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{minimumSize()}{minimumSize()}}
+{\footnotesize\ttfamily \label{class_basic_element_a2cb2eb803daa35380908948215f8d468} 
+virtual QSizeF Basic\+Element\+::minimum\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_a4e5ab9af13854731c0bffad3d1b89677}{Attribute}}, \mbox{\hyperlink{class_entity_a90cbf09ab7b4a01c3f236e5b409fdd24}{Entity}}, and \mbox{\hyperlink{class_relationship_a315bb8b7234821cccb61deb437f4752d}{Relationship}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a2cb2eb803daa35380908948215f8d468_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5}\index{BasicElement@{BasicElement}!move@{move}}
+\index{move@{move}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily \label{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5} 
+void Basic\+Element\+::move (\begin{DoxyParamCaption}\item[{const QPointF \&}]{delta}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_abdf7ef7b79c416bbd70e464f94b5fbaf}\index{BasicElement@{BasicElement}!name@{name}}
+\index{name@{name}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_basic_element_abdf7ef7b79c416bbd70e464f94b5fbaf} 
+QString Basic\+Element\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7}\index{BasicElement@{BasicElement}!nameChanged@{nameChanged}}
+\index{nameChanged@{nameChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{nameChanged}{nameChanged}}
+{\footnotesize\ttfamily \label{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7} 
+void Basic\+Element\+::name\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a596caee40cdd00a0aacce49689b63f92}\index{BasicElement@{BasicElement}!notifyObservers@{notifyObservers}}
+\index{notifyObservers@{notifyObservers}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{notifyObservers()}{notifyObservers()}}
+{\footnotesize\ttfamily \label{class_basic_element_a596caee40cdd00a0aacce49689b63f92} 
+void Basic\+Element\+::notify\+Observers (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a596caee40cdd00a0aacce49689b63f92_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856}\index{BasicElement@{BasicElement}!notifyPositionChanged@{notifyPositionChanged}}
+\index{notifyPositionChanged@{notifyPositionChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{notifyPositionChanged()}{notifyPositionChanged()}}
+{\footnotesize\ttfamily \label{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856} 
+void Basic\+Element\+::notify\+Position\+Changed (\begin{DoxyParamCaption}\item[{const QPointF \&}]{old\+Position}{, }\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42}\index{BasicElement@{BasicElement}!onNameChanged@{onNameChanged}}
+\index{onNameChanged@{onNameChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{onNameChanged()}{onNameChanged()}}
+{\footnotesize\ttfamily \label{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42} 
+void Basic\+Element\+::on\+Name\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{old\+Name}{, }\item[{const QString \&}]{new\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7}\index{BasicElement@{BasicElement}!onPositionChanged@{onPositionChanged}}
+\index{onPositionChanged@{onPositionChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{onPositionChanged()}{onPositionChanged()}}
+{\footnotesize\ttfamily \label{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7} 
+void Basic\+Element\+::on\+Position\+Changed (\begin{DoxyParamCaption}\item[{const QPointF \&}]{old\+Position}{, }\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2}\index{BasicElement@{BasicElement}!onSizeChanged@{onSizeChanged}}
+\index{onSizeChanged@{onSizeChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{onSizeChanged()}{onSizeChanged()}}
+{\footnotesize\ttfamily \label{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2} 
+void Basic\+Element\+::on\+Size\+Changed (\begin{DoxyParamCaption}\item[{const QSizeF \&}]{old\+Size}{, }\item[{const QSizeF \&}]{new\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a11b7bec801ecfff87fa6bb2898b2033f}\index{BasicElement@{BasicElement}!position@{position}}
+\index{position@{position}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily \label{class_basic_element_a11b7bec801ecfff87fa6bb2898b2033f} 
+QPointF Basic\+Element\+::position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}\index{BasicElement@{BasicElement}!positionChanged@{positionChanged}}
+\index{positionChanged@{positionChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{positionChanged}{positionChanged}}
+{\footnotesize\ttfamily \label{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524} 
+void Basic\+Element\+::position\+Changed (\begin{DoxyParamCaption}\item[{const QPointF \&}]{new\+Position}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_aab702308a56f2cdbfb17652351e5fd94}\index{BasicElement@{BasicElement}!preferredSize@{preferredSize}}
+\index{preferredSize@{preferredSize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{preferredSize()}{preferredSize()}}
+{\footnotesize\ttfamily \label{class_basic_element_aab702308a56f2cdbfb17652351e5fd94} 
+virtual QSizeF Basic\+Element\+::preferred\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_a9fbfd8cb51abe1f5b3e85333eb3ba55a}{Attribute}}, \mbox{\hyperlink{class_entity_a237af8c74037b83ace59083cf9af53f4}{Entity}}, and \mbox{\hyperlink{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867}{Relationship}}.
+
+\Hypertarget{class_basic_element_a968047d6f013c43f621f18ee12f97785}\index{BasicElement@{BasicElement}!propertyChanged@{propertyChanged}}
+\index{propertyChanged@{propertyChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{propertyChanged}{propertyChanged}}
+{\footnotesize\ttfamily \label{class_basic_element_a968047d6f013c43f621f18ee12f97785} 
+void Basic\+Element\+::property\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{key}{, }\item[{const QVariant \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_basic_element_ab09956c3e9528e16d15643c798bc69b0}\index{BasicElement@{BasicElement}!removeAttributeId@{removeAttributeId}}
+\index{removeAttributeId@{removeAttributeId}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{removeAttributeId()}{removeAttributeId()}}
+{\footnotesize\ttfamily \label{class_basic_element_ab09956c3e9528e16d15643c798bc69b0} 
+bool Basic\+Element\+::remove\+Attribute\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{attribute\+Id}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_basic_element_a6b6d87307328e617498ac1b1787afb97}\index{BasicElement@{BasicElement}!removeObserver@{removeObserver}}
+\index{removeObserver@{removeObserver}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{removeObserver()}{removeObserver()}}
+{\footnotesize\ttfamily \label{class_basic_element_a6b6d87307328e617498ac1b1787afb97} 
+void Basic\+Element\+::remove\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}}]{observer}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_basic_element_a5897e9fd991c828e58cc7e9299f00844}\index{BasicElement@{BasicElement}!resize@{resize}}
+\index{resize@{resize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily \label{class_basic_element_a5897e9fd991c828e58cc7e9299f00844} 
+void Basic\+Element\+::resize (\begin{DoxyParamCaption}\item[{const QSizeF \&}]{new\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a5897e9fd991c828e58cc7e9299f00844_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f}\index{BasicElement@{BasicElement}!serialize@{serialize}}
+\index{serialize@{serialize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f} 
+QVariant\+Map Basic\+Element\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_attribute_ae8c14a45321be32454ef200c5be0591c}{Attribute}}, \mbox{\hyperlink{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32}{Entity}}, and \mbox{\hyperlink{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}{Relationship}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a42ea6812e7627bb99af54cab547aa803}\index{BasicElement@{BasicElement}!setName@{setName}}
+\index{setName@{setName}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily \label{class_basic_element_a42ea6812e7627bb99af54cab547aa803} 
+void Basic\+Element\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a42ea6812e7627bb99af54cab547aa803_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a42ea6812e7627bb99af54cab547aa803_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_ab14524060d1b8fbbba753207029c6d7d}\index{BasicElement@{BasicElement}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_ab14524060d1b8fbbba753207029c6d7d} 
+void Basic\+Element\+::set\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{position}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ab14524060d1b8fbbba753207029c6d7d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ab14524060d1b8fbbba753207029c6d7d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a28d9895b6930a1be49e7375181848e77}\index{BasicElement@{BasicElement}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_a28d9895b6930a1be49e7375181848e77} 
+void Basic\+Element\+::set\+Position (\begin{DoxyParamCaption}\item[{qreal}]{x}{, }\item[{qreal}]{y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a28d9895b6930a1be49e7375181848e77_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7}\index{BasicElement@{BasicElement}!setSize@{setSize}}
+\index{setSize@{setSize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7} 
+void Basic\+Element\+::set\+Size (\begin{DoxyParamCaption}\item[{const QSizeF \&}]{size}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_ae089b8cb8d8fe983d587035412b0de67}\index{BasicElement@{BasicElement}!setSize@{setSize}}
+\index{setSize@{setSize}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_basic_element_ae089b8cb8d8fe983d587035412b0de67} 
+void Basic\+Element\+::set\+Size (\begin{DoxyParamCaption}\item[{qreal}]{width}{, }\item[{qreal}]{height}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_ae089b8cb8d8fe983d587035412b0de67_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a542adbf85a58c5c9bf17975964d7e446}\index{BasicElement@{BasicElement}!size@{size}}
+\index{size@{size}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_basic_element_a542adbf85a58c5c9bf17975964d7e446} 
+QSizeF Basic\+Element\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_basic_element_a5af654d8bb5e16b44121f69c832037b8}\index{BasicElement@{BasicElement}!sizeChanged@{sizeChanged}}
+\index{sizeChanged@{sizeChanged}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{sizeChanged}{sizeChanged}}
+{\footnotesize\ttfamily \label{class_basic_element_a5af654d8bb5e16b44121f69c832037b8} 
+void Basic\+Element\+::size\+Changed (\begin{DoxyParamCaption}\item[{const QSizeF \&}]{new\+Size}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_a5af654d8bb5e16b44121f69c832037b8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_basic_element_a8aa03ed75e7eaa11fe054fe29b86b160}\index{BasicElement@{BasicElement}!type@{type}}
+\index{type@{type}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \label{class_basic_element_a8aa03ed75e7eaa11fe054fe29b86b160} 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} Basic\+Element\+::type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0}\index{BasicElement@{BasicElement}!typeDisplayName@{typeDisplayName}}
+\index{typeDisplayName@{typeDisplayName}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}
+{\footnotesize\ttfamily \label{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0} 
+virtual QString Basic\+Element\+::type\+Display\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_attribute_adda991fc97159877bcb620f608bb9ba6}{Attribute}}, \mbox{\hyperlink{class_entity_a070f4727e2491b322a53ad32e4fb197e}{Entity}}, and \mbox{\hyperlink{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}{Relationship}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_basic_element_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_basic_element_aba019844ad7809e7f0d0892f5e07d29c}\index{BasicElement@{BasicElement}!m\_attributeIds@{m\_attributeIds}}
+\index{m\_attributeIds@{m\_attributeIds}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_attributeIds}{m\_attributeIds}}
+{\footnotesize\ttfamily \label{class_basic_element_aba019844ad7809e7f0d0892f5e07d29c} 
+QList$<$QString$>$ Basic\+Element\+::m\+\_\+attribute\+Ids\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_a256e8e4fab456c8b9dd3912fcfebb516}\index{BasicElement@{BasicElement}!m\_connectionPoints@{m\_connectionPoints}}
+\index{m\_connectionPoints@{m\_connectionPoints}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_connectionPoints}{m\_connectionPoints}}
+{\footnotesize\ttfamily \label{class_basic_element_a256e8e4fab456c8b9dd3912fcfebb516} 
+QList$<$\mbox{\hyperlink{class_connection_point}{Connection\+Point}}\texorpdfstring{$\ast$}{*}$>$ Basic\+Element\+::m\+\_\+connection\+Points\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_a7a139a6a25d5fd4b4f41af6ef62b9ecc}\index{BasicElement@{BasicElement}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily \label{class_basic_element_a7a139a6a25d5fd4b4f41af6ef62b9ecc} 
+QString Basic\+Element\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_ad476426e82fc08ed8e295e6aaff7d109}\index{BasicElement@{BasicElement}!m\_name@{m\_name}}
+\index{m\_name@{m\_name}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_name}{m\_name}}
+{\footnotesize\ttfamily \label{class_basic_element_ad476426e82fc08ed8e295e6aaff7d109} 
+QString Basic\+Element\+::m\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_a7f1bc2c97fb5e1e013843d63cd637d38}\index{BasicElement@{BasicElement}!m\_observers@{m\_observers}}
+\index{m\_observers@{m\_observers}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_observers}{m\_observers}}
+{\footnotesize\ttfamily \label{class_basic_element_a7f1bc2c97fb5e1e013843d63cd637d38} 
+QList$<$\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}}\texorpdfstring{$\ast$}{*}$>$ Basic\+Element\+::m\+\_\+observers\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_ad6c63789c90de25e53ceb5e3835c7f46}\index{BasicElement@{BasicElement}!m\_position@{m\_position}}
+\index{m\_position@{m\_position}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_position}{m\_position}}
+{\footnotesize\ttfamily \label{class_basic_element_ad6c63789c90de25e53ceb5e3835c7f46} 
+QPointF Basic\+Element\+::m\+\_\+position\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_a59f61ff5c8159208f474bb20b059ba34}\index{BasicElement@{BasicElement}!m\_size@{m\_size}}
+\index{m\_size@{m\_size}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_size}{m\_size}}
+{\footnotesize\ttfamily \label{class_basic_element_a59f61ff5c8159208f474bb20b059ba34} 
+QSizeF Basic\+Element\+::m\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_basic_element_abfe0f40e84d013cf01268a69b393c448}\index{BasicElement@{BasicElement}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \label{class_basic_element_abfe0f40e84d013cf01268a69b393c448} 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} Basic\+Element\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\label{doc-property-members}
+\Hypertarget{class_basic_element_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_basic_element_acca1cabc35946209fcc643e7889eb043}\index{BasicElement@{BasicElement}!id@{id}}
+\index{id@{id}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily \label{class_basic_element_acca1cabc35946209fcc643e7889eb043} 
+QString Basic\+Element\+::id\hspace{0.3cm}{\ttfamily [read]}}
+
+\Hypertarget{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}\index{BasicElement@{BasicElement}!name@{name}}
+\index{name@{name}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \label{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360} 
+QString Basic\+Element\+::name\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}\index{BasicElement@{BasicElement}!position@{position}}
+\index{position@{position}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \label{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759} 
+QPointF Basic\+Element\+::position\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}\index{BasicElement@{BasicElement}!size@{size}}
+\index{size@{size}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \label{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d} 
+QSizeF Basic\+Element\+::size\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\Hypertarget{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}\index{BasicElement@{BasicElement}!type@{type}}
+\index{type@{type}!BasicElement@{BasicElement}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \label{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a} 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} Basic\+Element\+::type\hspace{0.3cm}{\ttfamily [read]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_basic_element_8h}{Basic\+Element.\+h}}\item 
+src/model/\mbox{\hyperlink{_basic_element_8cpp}{Basic\+Element.\+cpp}}\end{DoxyCompactItemize}

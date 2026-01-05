@@ -1,0 +1,7 @@
+<map id="RelationshipConnectionLineGraphicsItem::boundingRect" name="RelationshipConnectionLineGraphicsItem::boundingRect">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,193,81"/>
+<area shape="rect" id="Node000002" href="$class_connection_graphics_item.html#a639f7d483dce705302df25100eeb92bd" title=" " alt="" coords="293,5,458,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,46,280,38,275,39,193,51"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line_graphics_item.html#ac4dddcb8f3896aab7767b2f4b37c9745" title=" " alt="" coords="241,72,510,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,69,228,75,223,75,193,74"/>
+</map>

@@ -1,0 +1,23 @@
+<map id="DiagramScene::removeElement" name="DiagramScene::removeElement">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,212,73"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#ad8f482915e4991d8ba601f691086fbdc" title=" " alt="" coords="260,5,467,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,44,247,41,242,43,213,49"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a0d026405c431d3aca9494d64296bb956" title=" " alt="" coords="260,72,466,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,71,247,77,242,79,212,76"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a40c9b85a9f304007a227b9db63178d08" title=" " alt="" coords="516,55,738,81"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="467,81,503,80,498,81,468,86"/>
+<area shape="rect" id="Node000005" href="$class_diagram_scene.html#a5d546daf9d3a3d5155b611ec31c4dccb" title=" " alt="" coords="515,105,739,132"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="467,101,502,106,497,107,467,106"/>
+<area shape="rect" id="Node000006" href="$class_diagram_scene.html#af24fc3dc11041bb31e4f0627f0a09e75" title=" " alt="" coords="799,131,1001,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="740,130,786,138,781,138,740,135"/>
+<area shape="rect" id="Node000010" href="$class_diagram_scene.html#a244ffcbacfc985e542579c0e112cfd52" title=" " alt="" coords="787,64,1013,107"/>
+<area shape="poly" id="edge9_Node000005_Node000010" title=" " alt="" coords="740,102,775,101,769,101,740,108"/>
+<area shape="rect" id="Node000007" href="$class_connection_line.html#ab11952b505976244aabc575e0ec7b118" title=" " alt="" coords="1061,131,1269,157"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1001,146,1048,147,1043,148,1002,152"/>
+<area shape="rect" id="Node000008" href="$class_connection_line.html#ad957be37b7bbb9250366225fd357a5a6" title=" " alt="" coords="1082,64,1248,107"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="987,127,1064,110,1070,109,988,133"/>
+<area shape="rect" id="Node000009" href="$class_connection_line.html#aea85162c28f293b1df0cce97d57bb471" title=" " alt="" coords="1086,181,1244,208"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="1002,166,1074,180,1069,180,1001,171"/>
+<area shape="poly" id="edge10_Node000010_Node000007" title=" " alt="" coords="1000,105,1089,127,1084,127,999,110"/>
+<area shape="poly" id="edge11_Node000010_Node000008" title=" " alt="" coords="1013,83,1069,85,1064,86,1013,88"/>
+</map>

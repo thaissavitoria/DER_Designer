@@ -1,0 +1,79 @@
+\doxysection{Relationship\+Connection\+Line\+Graphics\+Item.\+h}
+\hypertarget{_relationship_connection_line_graphics_item_8h_source}{}\label{_relationship_connection_line_graphics_item_8h_source}\index{src/viewer/RelationshipConnectionLineGraphicsItem.h@{src/viewer/RelationshipConnectionLineGraphicsItem.h}}
+\mbox{\hyperlink{_relationship_connection_line_graphics_item_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ RELATIONSHIPCONNECTIONGRAPHICSITEM\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ RELATIONSHIPCONNECTIONGRAPHICSITEM\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_graphics_item_8h}{ConnectionGraphicsItem.h}}"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_connection_line}{RelationshipConnectionLine}};}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_connection_line_graphics_item_a55839fb084501f42fc8a6e7f08cff4ba}{RelationshipConnectionLineGraphicsItem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_connection_graphics_item_ab32d398765f9a4cd314e866585ac273d}{ConnectionGraphicsItem}}}
+\DoxyCodeLine{00011\ \{}
+\DoxyCodeLine{00012\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_a55839fb084501f42fc8a6e7f08cff4ba}{RelationshipConnectionLineGraphicsItem}}(}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_relationship_connection_line}{RelationshipConnectionLine}}*\ connection,}
+\DoxyCodeLine{00017\ \ \ \ \ QGraphicsItem*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00018\ \ \ );}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_a6d17613e72e91ae4c9fa46dfec77220c}{\string~RelationshipConnectionLineGraphicsItem}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_a4c6ae57b385298b1fadf364b34d03829}{paint}}(}
+\DoxyCodeLine{00023\ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem*\ option,}
+\DoxyCodeLine{00025\ \ \ \ \ QWidget*\ widget\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00026\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ QRectF\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_adc343576fe3be22eab58974f20616a1c}{boundingRect}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ QPainterPath\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_afc1acb4a0cf1004d31bd2b89bc394d7d}{shape}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_ab7d7310d11b41a9a2e032687312b56c8}{mousePressEvent}}(}
+\DoxyCodeLine{00034\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00035\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_aab5ec9ceb0843b43d05ce46efe3fb7b4}{mouseMoveEvent}}(}
+\DoxyCodeLine{00038\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00039\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_ab7f661ae199b3d9af1f8a3bae6c6578e}{mouseReleaseEvent}}(}
+\DoxyCodeLine{00042\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00043\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_aa089aa4bc0be538db8480577f3a6647c}{hoverMoveEvent}}(}
+\DoxyCodeLine{00046\ \ \ \ \ QGraphicsSceneHoverEvent*\ event}
+\DoxyCodeLine{00047\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00050\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ qreal\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_a39e17394189b1f5743aa63694f12768e}{CARDINALITY\_FONT\_SIZE}}\ =\ 12.0;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{class_relationship_connection_line}{RelationshipConnectionLine}}*\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_ae8f3cd0fd369f7f0546045139ee0e70b}{m\_relationshipConnection}};}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_ac52b7c0d5f7d93453e4725717c58d664}{m\_isDraggingCardinality}};}
+\DoxyCodeLine{00054\ \ \ QPointF\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_a0b4f4f36cabc306c7a354b5cc2cf3349}{m\_dragStartOffset}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_aaa1cdc4e98f9e99905c28c35eddbd515}{paintDoubleLine}}(}
+\DoxyCodeLine{00057\ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ start,}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ end}
+\DoxyCodeLine{00060\ \ \ );}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_aad965087c38d493bb3281d96d961b05f}{paintCardinality}}(}
+\DoxyCodeLine{00063\ \ \ \ \ QPainter*\ painter}
+\DoxyCodeLine{00064\ \ \ );}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ QRectF\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_ac4dddcb8f3896aab7767b2f4b37c9745}{getCardinalityBoundingRect}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_connection_line_graphics_item_aa04530bd3108ddbc839528eca4f0696c}{isPointNearCardinality}}(}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point}
+\DoxyCodeLine{00070\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RELATIONSHIPCONNECTIONGRAPHICSITEM\_H}}
+
+\end{DoxyCode}

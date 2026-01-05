@@ -1,0 +1,91 @@
+\doxysection{Diagram\+View.\+h}
+\hypertarget{_diagram_view_8h_source}{}\label{_diagram_view_8h_source}\index{src/viewer/DiagramView.h@{src/viewer/DiagramView.h}}
+\mbox{\hyperlink{_diagram_view_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAMVIEW\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAMVIEW\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGraphicsView>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtGui/QDragEnterEvent>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtGui/QDragMoveEvent>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtGui/QDropEvent>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtGui/QWheelEvent>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene}{DiagramScene}};}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_view_a5887dca34f466c18f74de9626d3ba98a}{DiagramView}}\ :\ \textcolor{keyword}{public}\ QGraphicsView}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_diagram_view_a5887dca34f466c18f74de9626d3ba98a}{DiagramView}}(}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00020\ \ \ \ \ );}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_diagram_view_a0e592e8a9bfffa080804374052504075}{\string~DiagramView}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_acd7bb72b879a10043d61ad439d7badd6}{zoomIn}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a3c4b587e191fbe21304dce51c8065270}{zoomOut}}();}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809}{resetZoom}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b}{setZoomLevel}}(}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ qreal\ zoomLevel}
+\DoxyCodeLine{00028\ \ \ \ \ );}
+\DoxyCodeLine{00029\ \ \ \ \ qreal\ \mbox{\hyperlink{class_diagram_view_a8139f511ae2986efdce4477673b4510a}{getZoomLevel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_aa5ab01046da74451f7f9dbd2861f0436}{dragEnterEvent}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ QDragEnterEvent*\ event}
+\DoxyCodeLine{00034\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc}{dragMoveEvent}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ QDragMoveEvent*\ event}
+\DoxyCodeLine{00038\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e}{dropEvent}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ QDropEvent*\ event}
+\DoxyCodeLine{00042\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a29f569db14078b94495ae3827b9f1b50}{wheelEvent}}(}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ QWheelEvent*\ event}
+\DoxyCodeLine{00046\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a181f6f529703f839d52d6017fdca1245}{drawBackground}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00051\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ signals:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4}{elementDropped}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementType,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ position}
+\DoxyCodeLine{00057\ \ \ \ \ );}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506}{isValidElementType}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementType}
+\DoxyCodeLine{00062\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_a2820070673c09fe2114f3d93b15eb61e}{applyZoom}}(}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ qreal\ scaleFactor,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ centerPoint\ =\ QPointF()}
+\DoxyCodeLine{00067\ \ \ \ \ );}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_view_ace5b2051dde25580fa674166d9b1a442}{drawGrid}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00072\ \ \ \ \ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ \mbox{\hyperlink{class_diagram_view_a7a247c7b7961c4cff2fa622062e5f4c1}{MIN\_ZOOM}}\ =\ 0.1;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ \mbox{\hyperlink{class_diagram_view_a2a53df11097b99850c6e53e3ce8ca669}{MAX\_ZOOM}}\ =\ 5.0;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ \mbox{\hyperlink{class_diagram_view_ac781989fa99a8069e4e8d60f57b33d11}{ZOOM\_STEP}}\ =\ 1.25;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ \mbox{\hyperlink{class_diagram_view_a17daee2a852ef9d1b524b49084e650b1}{DEFAULT\_ZOOM}}\ =\ 1.0;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ \mbox{\hyperlink{class_diagram_view_a5169ff341b2a0ac130c41380b67d9edd}{GRID\_SIZE}}\ =\ 30.0;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ qreal\ \mbox{\hyperlink{class_diagram_view_a091ed511d5cc4f6d7bd0e510ae63f790}{m\_currentZoom}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_view_a1c4950b39b13705517561f2c6db152ae}{m\_gridVisible}}\ =\ \textcolor{keyword}{true};\ \textcolor{comment}{/*implementar\ grid\ on\ off\ depois?*/}}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAMVIEW\_H}}
+
+\end{DoxyCode}

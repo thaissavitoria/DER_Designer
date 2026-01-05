@@ -1,0 +1,365 @@
+\doxysection{Attribute\+Renderer Class Reference}
+\hypertarget{class_attribute_renderer}{}\label{class_attribute_renderer}\index{AttributeRenderer@{AttributeRenderer}}
+
+
+{\ttfamily \#include $<$Attribute\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for Attribute\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_attribute_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Attribute\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_attribute_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b}{Attribute\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba}{render}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect) override
+\item 
+bool \mbox{\hyperlink{class_attribute_renderer_a9b78289101166ca718edc4204a696475}{is\+In\+Element\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QPointF \&point) override
+\item 
+QRectF \mbox{\hyperlink{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4}{selection\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element) override
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d}{render\+Selection}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_element_renderer}{IElement\+Renderer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}{\texorpdfstring{$\sim$}{\string~}\+IElement\+Renderer}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_a1214697be0865498258ec1deabd16faf}{setup\+Default\+Style}} ()
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b}{render\+By\+Attribute\+Type}} (QPainter \texorpdfstring{$\ast$}{*}painter, const class \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, const QRectF \&rect)
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966}{render\+Normal\+Attribute}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect)
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d}{render\+Derived\+Attribute}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect)
+\item 
+void \mbox{\hyperlink{class_attribute_renderer_a70053a97233d7db614e6a593319aa721}{render\+Multivalued\+Attribute}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect)
+\item 
+QRectF \mbox{\hyperlink{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23}{get\+Text\+Rect}} (const QRectF \&element\+Rect) const
+\item 
+bool \mbox{\hyperlink{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34}{is\+Point\+In\+Ellipse}} (const QPointF \&point, const QRectF \&ellipse\+Rect) const
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f}{get\+Pen\+Style}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPen \mbox{\hyperlink{class_attribute_renderer_aa5dda1523293676fb834e637073b8d3e}{m\+\_\+border\+Pen}}
+\item 
+QPen \mbox{\hyperlink{class_attribute_renderer_a59e6a58cf9ac4d43629db680f0540c35}{m\+\_\+derived\+Pen}}
+\item 
+QBrush \mbox{\hyperlink{class_attribute_renderer_a60dd0a22f49f01241e1e8b86f0baf732}{m\+\_\+fill\+Brush}}
+\item 
+QBrush \mbox{\hyperlink{class_attribute_renderer_a14d8c04317513839045364bccef0c10b}{m\+\_\+selection\+Brush}}
+\item 
+QFont \mbox{\hyperlink{class_attribute_renderer_a6562320b1e84e5c22881bdd5232105c7}{m\+\_\+text\+Font}}
+\item 
+QFont \mbox{\hyperlink{class_attribute_renderer_a56e223635bb7646088304cd50bca7103}{m\+\_\+primary\+Key\+Font}}
+\item 
+QPen \mbox{\hyperlink{class_attribute_renderer_a82593554fc5b7cf532e446f3c2a7181e}{m\+\_\+text\+Pen}}
+\item 
+QPen \mbox{\hyperlink{class_attribute_renderer_a1776534869bdfeb2514054d47a3ab2f9}{m\+\_\+selection\+Pen}}
+\item 
+qreal \mbox{\hyperlink{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62b}{m\+\_\+text\+Margin}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_attribute_renderer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b}\index{AttributeRenderer@{AttributeRenderer}!AttributeRenderer@{AttributeRenderer}}
+\index{AttributeRenderer@{AttributeRenderer}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{AttributeRenderer()}{AttributeRenderer()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b} 
+Attribute\+Renderer\+::\+Attribute\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_attribute_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f}\index{AttributeRenderer@{AttributeRenderer}!getPenStyle@{getPenStyle}}
+\index{getPenStyle@{getPenStyle}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{getPenStyle()}{getPenStyle()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f} 
+Qt\+::\+Pen\+Style Attribute\+Renderer\+::get\+Pen\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23}\index{AttributeRenderer@{AttributeRenderer}!getTextRect@{getTextRect}}
+\index{getTextRect@{getTextRect}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{getTextRect()}{getTextRect()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23} 
+QRectF Attribute\+Renderer\+::get\+Text\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{element\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a9b78289101166ca718edc4204a696475}\index{AttributeRenderer@{AttributeRenderer}!isInElementRect@{isInElementRect}}
+\index{isInElementRect@{isInElementRect}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{isInElementRect()}{isInElementRect()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a9b78289101166ca718edc4204a696475} 
+bool Attribute\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QPointF \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_a9b78289101166ca718edc4204a696475_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34}\index{AttributeRenderer@{AttributeRenderer}!isPointInEllipse@{isPointInEllipse}}
+\index{isPointInEllipse@{isPointInEllipse}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{isPointInEllipse()}{isPointInEllipse()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34} 
+bool Attribute\+Renderer\+::is\+Point\+In\+Ellipse (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point}{, }\item[{const QRectF \&}]{ellipse\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba}\index{AttributeRenderer@{AttributeRenderer}!render@{render}}
+\index{render@{render}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba} 
+void Attribute\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_aebf435fb6670b52050e735bc3e078eba_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b}\index{AttributeRenderer@{AttributeRenderer}!renderByAttributeType@{renderByAttributeType}}
+\index{renderByAttributeType@{renderByAttributeType}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{renderByAttributeType()}{renderByAttributeType()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b} 
+void Attribute\+Renderer\+::render\+By\+Attribute\+Type (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const class \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d}\index{AttributeRenderer@{AttributeRenderer}!renderDerivedAttribute@{renderDerivedAttribute}}
+\index{renderDerivedAttribute@{renderDerivedAttribute}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{renderDerivedAttribute()}{renderDerivedAttribute()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d} 
+void Attribute\+Renderer\+::render\+Derived\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a70053a97233d7db614e6a593319aa721}\index{AttributeRenderer@{AttributeRenderer}!renderMultivaluedAttribute@{renderMultivaluedAttribute}}
+\index{renderMultivaluedAttribute@{renderMultivaluedAttribute}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{renderMultivaluedAttribute()}{renderMultivaluedAttribute()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a70053a97233d7db614e6a593319aa721} 
+void Attribute\+Renderer\+::render\+Multivalued\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_a70053a97233d7db614e6a593319aa721_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966}\index{AttributeRenderer@{AttributeRenderer}!renderNormalAttribute@{renderNormalAttribute}}
+\index{renderNormalAttribute@{renderNormalAttribute}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{renderNormalAttribute()}{renderNormalAttribute()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966} 
+void Attribute\+Renderer\+::render\+Normal\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d}\index{AttributeRenderer@{AttributeRenderer}!renderSelection@{renderSelection}}
+\index{renderSelection@{renderSelection}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{renderSelection()}{renderSelection()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d} 
+void Attribute\+Renderer\+::render\+Selection (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a9f073c7b9149b53e79979e6d009bc75d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4}\index{AttributeRenderer@{AttributeRenderer}!selectionRect@{selectionRect}}
+\index{selectionRect@{selectionRect}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{selectionRect()}{selectionRect()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4} 
+QRectF Attribute\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_renderer_ac49ce03aeca93d9d70c6cddffc5bc7f4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_attribute_renderer_a1214697be0865498258ec1deabd16faf}\index{AttributeRenderer@{AttributeRenderer}!setupDefaultStyle@{setupDefaultStyle}}
+\index{setupDefaultStyle@{setupDefaultStyle}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{setupDefaultStyle()}{setupDefaultStyle()}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a1214697be0865498258ec1deabd16faf} 
+void Attribute\+Renderer\+::setup\+Default\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_attribute_renderer_a1214697be0865498258ec1deabd16faf_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_attribute_renderer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_attribute_renderer_aa5dda1523293676fb834e637073b8d3e}\index{AttributeRenderer@{AttributeRenderer}!m\_borderPen@{m\_borderPen}}
+\index{m\_borderPen@{m\_borderPen}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_borderPen}{m\_borderPen}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_aa5dda1523293676fb834e637073b8d3e} 
+QPen Attribute\+Renderer\+::m\+\_\+border\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a59e6a58cf9ac4d43629db680f0540c35}\index{AttributeRenderer@{AttributeRenderer}!m\_derivedPen@{m\_derivedPen}}
+\index{m\_derivedPen@{m\_derivedPen}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_derivedPen}{m\_derivedPen}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a59e6a58cf9ac4d43629db680f0540c35} 
+QPen Attribute\+Renderer\+::m\+\_\+derived\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a60dd0a22f49f01241e1e8b86f0baf732}\index{AttributeRenderer@{AttributeRenderer}!m\_fillBrush@{m\_fillBrush}}
+\index{m\_fillBrush@{m\_fillBrush}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_fillBrush}{m\_fillBrush}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a60dd0a22f49f01241e1e8b86f0baf732} 
+QBrush Attribute\+Renderer\+::m\+\_\+fill\+Brush\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a56e223635bb7646088304cd50bca7103}\index{AttributeRenderer@{AttributeRenderer}!m\_primaryKeyFont@{m\_primaryKeyFont}}
+\index{m\_primaryKeyFont@{m\_primaryKeyFont}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_primaryKeyFont}{m\_primaryKeyFont}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a56e223635bb7646088304cd50bca7103} 
+QFont Attribute\+Renderer\+::m\+\_\+primary\+Key\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a14d8c04317513839045364bccef0c10b}\index{AttributeRenderer@{AttributeRenderer}!m\_selectionBrush@{m\_selectionBrush}}
+\index{m\_selectionBrush@{m\_selectionBrush}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_selectionBrush}{m\_selectionBrush}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a14d8c04317513839045364bccef0c10b} 
+QBrush Attribute\+Renderer\+::m\+\_\+selection\+Brush\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a1776534869bdfeb2514054d47a3ab2f9}\index{AttributeRenderer@{AttributeRenderer}!m\_selectionPen@{m\_selectionPen}}
+\index{m\_selectionPen@{m\_selectionPen}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_selectionPen}{m\_selectionPen}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a1776534869bdfeb2514054d47a3ab2f9} 
+QPen Attribute\+Renderer\+::m\+\_\+selection\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a6562320b1e84e5c22881bdd5232105c7}\index{AttributeRenderer@{AttributeRenderer}!m\_textFont@{m\_textFont}}
+\index{m\_textFont@{m\_textFont}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textFont}{m\_textFont}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a6562320b1e84e5c22881bdd5232105c7} 
+QFont Attribute\+Renderer\+::m\+\_\+text\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62b}\index{AttributeRenderer@{AttributeRenderer}!m\_textMargin@{m\_textMargin}}
+\index{m\_textMargin@{m\_textMargin}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textMargin}{m\_textMargin}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62b} 
+qreal Attribute\+Renderer\+::m\+\_\+text\+Margin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_attribute_renderer_a82593554fc5b7cf532e446f3c2a7181e}\index{AttributeRenderer@{AttributeRenderer}!m\_textPen@{m\_textPen}}
+\index{m\_textPen@{m\_textPen}!AttributeRenderer@{AttributeRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textPen}{m\_textPen}}
+{\footnotesize\ttfamily \label{class_attribute_renderer_a82593554fc5b7cf532e446f3c2a7181e} 
+QPen Attribute\+Renderer\+::m\+\_\+text\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/viewer/\mbox{\hyperlink{_attribute_renderer_8h}{Attribute\+Renderer.\+h}}\item 
+src/viewer/\mbox{\hyperlink{_attribute_renderer_8cpp}{Attribute\+Renderer.\+cpp}}\end{DoxyCompactItemize}

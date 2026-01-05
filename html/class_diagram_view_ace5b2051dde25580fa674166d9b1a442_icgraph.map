@@ -1,0 +1,5 @@
+<map id="DiagramView::drawGrid" name="DiagramView::drawGrid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="258,5,417,32"/>
+<area shape="rect" id="Node000002" href="$class_diagram_view.html#a181f6f529703f839d52d6017fdca1245" title=" " alt="" coords="5,5,210,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,19,210,21,210,16,245,19"/>
+</map>

@@ -1,0 +1,21 @@
+<map id="ConnectionLine::resetControlPoints" name="ConnectionLine::resetControlPoints">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,127,196,169"/>
+<area shape="rect" id="Node000002" href="$class_connection_line.html#a9de44ae385d7941f3aa79da06e97d510" title=" " alt="" coords="250,93,432,136"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,132,237,129,232,130,197,137"/>
+<area shape="rect" id="Node000009" href="$class_connection_line.html#a93e2b3868595cc0ac41de6c0f36c2365" title=" " alt="" coords="244,160,439,203"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="196,159,231,165,226,166,196,164"/>
+<area shape="rect" id="Node000003" href="$class_connection_line.html#a657559dca679d5fd04ae565b442b6a8b" title=" " alt="" coords="487,101,696,128"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,112,474,114,469,115,433,117"/>
+<area shape="rect" id="Node000004" href="$class_connection_line.html#a836aef7faf5a4fb8a5a10bfc71dbabe3" title=" " alt="" coords="744,93,924,136"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="697,112,731,114,726,115,697,117"/>
+<area shape="rect" id="Node000005" href="$class_connection_line.html#a53c863c51a284a7a8e6b35bc34bd2d34" title=" " alt="" coords="976,5,1175,48"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="887,90,971,58,987,54,993,53,973,62,888,95"/>
+<area shape="rect" id="Node000006" href="$class_connection_line.html#a4bce34a3f2fb1fd7145de2d9100c9173" title=" " alt="" coords="985,189,1166,232"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="880,134,973,175,991,184,986,183,971,180,879,139"/>
+<area shape="rect" id="Node000007" href="$class_basic_element.html#a02183bafd7c80f9f1f99a9b9f1631524" title=" " alt="" coords="972,72,1179,99"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="924,101,959,99,954,100,925,106"/>
+<area shape="rect" id="Node000008" href="$class_connection_point.html#a851668ae19e97658f1818a40ea375f65" title=" " alt="" coords="992,123,1159,165"/>
+<area shape="poly" id="edge9_Node000004_Node000008" title=" " alt="" coords="924,123,979,132,974,132,924,128"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="972,36,752,60,487,92,448,98,447,93,487,87,751,55,978,35"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="982,201,758,178,487,143,448,136,448,131,487,137,759,173,987,201"/>
+</map>

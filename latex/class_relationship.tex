@@ -1,0 +1,421 @@
+\doxysection{Relationship Class Reference}
+\hypertarget{class_relationship}{}\label{class_relationship}\index{Relationship@{Relationship}}
+
+
+{\ttfamily \#include $<$Relationship.\+h$>$}
+
+
+
+Inheritance diagram for Relationship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_relationship__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Relationship\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_relationship__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}} (QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_relationship_a6fabfd34f6c221f7bec03e1f0b617ac1}{Relationship}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}, const bool \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{is\+Identifying}}=false, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_relationship_ae16e241e774fd09db9bf40992c97b8b8}{Relationship}} (const \mbox{\hyperlink{class_relationship}{Relationship}} \&other\+Atrribute)
+\item 
+virtual \mbox{\hyperlink{class_relationship_acb02069426a6288347e7347ee527a0ff}{\texorpdfstring{$\sim$}{\string~}\+Relationship}} ()=default
+\item 
+QSizeF \mbox{\hyperlink{class_relationship_a315bb8b7234821cccb61deb437f4752d}{minimum\+Size}} () const override
+\item 
+QSizeF \mbox{\hyperlink{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867}{preferred\+Size}} () const override
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ \mbox{\hyperlink{class_relationship_aabd453d15034de03e3d9a655a6622ae9}{clone}} () const override
+\item 
+QString \mbox{\hyperlink{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}{type\+Display\+Name}} () const override
+\item 
+QList$<$ \mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_relationship_ad8f596505d98d14c6563064814427752}{ends}} () const
+\item 
+void \mbox{\hyperlink{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e}{add\+End}} (\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*}end)
+\item 
+void \mbox{\hyperlink{class_relationship_ae234f139c6133293412b347462b1079e}{remove\+End}} (\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*}end)
+\item 
+void \mbox{\hyperlink{class_relationship_a6ab176617d7183a41cee95a1d2d0348f}{clear\+Ends}} ()
+\item 
+\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_relationship_aef6d7118eeff8f2a942b3ca581497696}{find\+End\+By\+Entity\+Id}} (const QString \&entity\+Id) const
+\item 
+bool \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{is\+Identifying}} () const
+\item 
+void \mbox{\hyperlink{class_relationship_afd48f436e1a081b800d28a68078bfe08}{set\+Is\+Identifying}} (const bool \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{is\+Identifying}})
+\item 
+QVariant\+Map \mbox{\hyperlink{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}{serialize}} () const override
+\item 
+bool \mbox{\hyperlink{class_relationship_af14ba497de57d4e14557eb4450fb730b}{deserialize}} (const QVariant\+Map \&data) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{Basic\+Element}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+\mbox{\hyperlink{class_basic_element_a041ccd0d965bb54cfea352f06051f2f7}{Basic\+Element}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \&other\+Element)
+\item 
+virtual \mbox{\hyperlink{class_basic_element_a8563bf8f19b314b1d28149e9add8e220}{\texorpdfstring{$\sim$}{\string~}\+Basic\+Element}} ()
+\item 
+QString \mbox{\hyperlink{class_basic_element_ad7e7f3a262991d5ab415843feae7e0dc}{id}} () const
+\item 
+QString \mbox{\hyperlink{class_basic_element_abdf7ef7b79c416bbd70e464f94b5fbaf}{name}} () const
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a8aa03ed75e7eaa11fe054fe29b86b160}{type}} () const
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a11b7bec801ecfff87fa6bb2898b2033f}{position}} () const
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_a542adbf85a58c5c9bf17975964d7e446}{size}} () const
+\item 
+QRectF \mbox{\hyperlink{class_basic_element_a105ea9f996799c88e65af3c377481051}{bounding\+Rect}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a42ea6812e7627bb99af54cab547aa803}{set\+Name}} (const QString \&\mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab14524060d1b8fbbba753207029c6d7d}{set\+Position}} (const QPointF \&\mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}})
+\item 
+void \mbox{\hyperlink{class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7}{set\+Size}} (const QSizeF \&\mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}})
+\item 
+void \mbox{\hyperlink{class_basic_element_a28d9895b6930a1be49e7375181848e77}{set\+Position}} (qreal x, qreal y)
+\item 
+void \mbox{\hyperlink{class_basic_element_ae089b8cb8d8fe983d587035412b0de67}{set\+Size}} (qreal width, qreal height)
+\item 
+void \mbox{\hyperlink{class_basic_element_add857c56cf407a3f2c3b4221d84c18a5}{move}} (const QPointF \&delta)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5897e9fd991c828e58cc7e9299f00844}{resize}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a13661eba40c8decbb0ac50aa42695351}{add\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+void \mbox{\hyperlink{class_basic_element_a6b6d87307328e617498ac1b1787afb97}{remove\+Observer}} (\mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}} \texorpdfstring{$\ast$}{*}observer)
+\item 
+QList$<$ \mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_basic_element_a482ffd2c58ecdc8bba5bfeaadf8f26d4}{connection\+Points}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a0357bfa9b1ef06dd1c9d64bcb00813f4}{add\+Connection\+Point}} (\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*}connection\+Point)
+\item 
+\mbox{\hyperlink{class_connection_point}{Connection\+Point}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_basic_element_a70598cf89581cc6e308dafaa69551934}{get\+Connection\+Point\+By\+Direction}} (\mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{Connection\+Direction}} connection\+Direction)
+\item 
+void \mbox{\hyperlink{class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8}{create\+Default\+Connection\+Points}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_basic_element_acbb703934f3bbff401ac5bf3c060dd4e}{is\+Valid}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a893f3f8a8c5e1d7b1df490fa2d76cffb}{add\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+bool \mbox{\hyperlink{class_basic_element_ab09956c3e9528e16d15643c798bc69b0}{remove\+Attribute\+Id}} (const QString \&attribute\+Id)
+\item 
+QList$<$ QString $>$ \mbox{\hyperlink{class_basic_element_a876a8bbd6cf7e731e640aae745ca6a76}{get\+Attribute\+Ids}} () const
+\item 
+void \mbox{\hyperlink{class_basic_element_a7d4ba0dde91dbc91f7560297ae3e1716}{clear\+Attributes\+Ids}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}{m\+\_\+is\+Identifying}}
+\item 
+QList$<$ \mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}{m\+\_\+ends}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a6f92f7b59a12584c3156fb10ff989de7}{name\+Changed}} (const QString \&new\+Name)
+\item 
+void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
+\item 
+void \mbox{\hyperlink{class_basic_element_a5af654d8bb5e16b44121f69c832037b8}{size\+Changed}} (const QSizeF \&new\+Size)
+\item 
+void \mbox{\hyperlink{class_basic_element_a968047d6f013c43f621f18ee12f97785}{property\+Changed}} (const QString \&key, const QVariant \&value)
+\item 
+void \mbox{\hyperlink{class_basic_element_ad1b7a593fb82e872041b342abd157088}{element\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
+\item 
+static \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_a0674caf961f3fbb13e2194f595a28a11}{element\+Type\+From\+String}} (const QString \&type\+String)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_basic_element_a596caee40cdd00a0aacce49689b63f92}{notify\+Observers}} ()
+\item 
+void \mbox{\hyperlink{class_basic_element_a84f8dd62eabbe3dded6bacf42a783856}{notify\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_abbbba80c62762cb0ff0866e4aa650b42}{on\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7}{on\+Position\+Changed}} (const QPointF \&old\+Position, const QPointF \&new\+Position)
+\item 
+virtual void \mbox{\hyperlink{class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2}{on\+Size\+Changed}} (const QSizeF \&old\+Size, const QSizeF \&new\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_basic_element_acca1cabc35946209fcc643e7889eb043}{id}}
+\item 
+QString \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}}
+\item 
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}}
+\item 
+QPointF \mbox{\hyperlink{class_basic_element_a0fdfba7d88ec13f4dc8984e0de153759}{position}}
+\item 
+QSizeF \mbox{\hyperlink{class_basic_element_ab3ec6bd13d73b18c450d8026ff3f3b1d}{size}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_relationship_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_relationship_a7029bae7f63e705126cf2776602e0b52}\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{Relationship()}{Relationship()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_relationship_a7029bae7f63e705126cf2776602e0b52} 
+Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a7029bae7f63e705126cf2776602e0b52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a7029bae7f63e705126cf2776602e0b52_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_a6fabfd34f6c221f7bec03e1f0b617ac1}\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{Relationship()}{Relationship()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_relationship_a6fabfd34f6c221f7bec03e1f0b617ac1} 
+Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const bool}]{is\+Identifying}{ = {\ttfamily false}, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a6fabfd34f6c221f7bec03e1f0b617ac1_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_ae16e241e774fd09db9bf40992c97b8b8}\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\index{Relationship@{Relationship}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{Relationship()}{Relationship()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_relationship_ae16e241e774fd09db9bf40992c97b8b8} 
+Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_relationship}{Relationship}} \&}]{other\+Atrribute}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_ae16e241e774fd09db9bf40992c97b8b8_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_acb02069426a6288347e7347ee527a0ff}\index{Relationship@{Relationship}!````~Relationship@{\texorpdfstring{$\sim$}{\string~}Relationship}}
+\index{````~Relationship@{\texorpdfstring{$\sim$}{\string~}Relationship}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Relationship()}{\string~Relationship()}}
+{\footnotesize\ttfamily \label{class_relationship_acb02069426a6288347e7347ee527a0ff} 
+virtual Relationship\+::\texorpdfstring{$\sim$}{\string~}\+Relationship (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_relationship_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e}\index{Relationship@{Relationship}!addEnd@{addEnd}}
+\index{addEnd@{addEnd}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{addEnd()}{addEnd()}}
+{\footnotesize\ttfamily \label{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e} 
+void Relationship\+::add\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*}}]{end}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_a6ab176617d7183a41cee95a1d2d0348f}\index{Relationship@{Relationship}!clearEnds@{clearEnds}}
+\index{clearEnds@{clearEnds}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{clearEnds()}{clearEnds()}}
+{\footnotesize\ttfamily \label{class_relationship_a6ab176617d7183a41cee95a1d2d0348f} 
+void Relationship\+::clear\+Ends (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a6ab176617d7183a41cee95a1d2d0348f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_aabd453d15034de03e3d9a655a6622ae9}\index{Relationship@{Relationship}!clone@{clone}}
+\index{clone@{clone}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \label{class_relationship_aabd453d15034de03e3d9a655a6622ae9} 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} $>$ Relationship\+::clone (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_a689196dfba02bd50ee11771a4da27de5}{Basic\+Element}}.
+
+\Hypertarget{class_relationship_af14ba497de57d4e14557eb4450fb730b}\index{Relationship@{Relationship}!deserialize@{deserialize}}
+\index{deserialize@{deserialize}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{deserialize()}{deserialize()}}
+{\footnotesize\ttfamily \label{class_relationship_af14ba497de57d4e14557eb4450fb730b} 
+bool Relationship\+::deserialize (\begin{DoxyParamCaption}\item[{const QVariant\+Map \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_a2584be00dd464aa45874efe1615abbed}{Basic\+Element}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_af14ba497de57d4e14557eb4450fb730b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_ad8f596505d98d14c6563064814427752}\index{Relationship@{Relationship}!ends@{ends}}
+\index{ends@{ends}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{ends()}{ends()}}
+{\footnotesize\ttfamily \label{class_relationship_ad8f596505d98d14c6563064814427752} 
+QList$<$ \mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*} $>$ Relationship\+::ends (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{class_relationship_aef6d7118eeff8f2a942b3ca581497696}\index{Relationship@{Relationship}!findEndByEntityId@{findEndByEntityId}}
+\index{findEndByEntityId@{findEndByEntityId}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{findEndByEntityId()}{findEndByEntityId()}}
+{\footnotesize\ttfamily \label{class_relationship_aef6d7118eeff8f2a942b3ca581497696} 
+\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*} Relationship\+::find\+End\+By\+Entity\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{entity\+Id}{}\end{DoxyParamCaption}) const}
+
+\Hypertarget{class_relationship_a84b991b40e46679df51608b7924ea5f2}\index{Relationship@{Relationship}!isIdentifying@{isIdentifying}}
+\index{isIdentifying@{isIdentifying}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{isIdentifying()}{isIdentifying()}}
+{\footnotesize\ttfamily \label{class_relationship_a84b991b40e46679df51608b7924ea5f2} 
+bool Relationship\+::is\+Identifying (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a84b991b40e46679df51608b7924ea5f2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_a315bb8b7234821cccb61deb437f4752d}\index{Relationship@{Relationship}!minimumSize@{minimumSize}}
+\index{minimumSize@{minimumSize}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{minimumSize()}{minimumSize()}}
+{\footnotesize\ttfamily \label{class_relationship_a315bb8b7234821cccb61deb437f4752d} 
+QSizeF Relationship\+::minimum\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_a2cb2eb803daa35380908948215f8d468}{Basic\+Element}}.
+
+\Hypertarget{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867}\index{Relationship@{Relationship}!preferredSize@{preferredSize}}
+\index{preferredSize@{preferredSize}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{preferredSize()}{preferredSize()}}
+{\footnotesize\ttfamily \label{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867} 
+QSizeF Relationship\+::preferred\+Size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_aab702308a56f2cdbfb17652351e5fd94}{Basic\+Element}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_ae234f139c6133293412b347462b1079e}\index{Relationship@{Relationship}!removeEnd@{removeEnd}}
+\index{removeEnd@{removeEnd}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{removeEnd()}{removeEnd()}}
+{\footnotesize\ttfamily \label{class_relationship_ae234f139c6133293412b347462b1079e} 
+void Relationship\+::remove\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfstring{$\ast$}{*}}]{end}{}\end{DoxyParamCaption})}
+
+\Hypertarget{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}\index{Relationship@{Relationship}!serialize@{serialize}}
+\index{serialize@{serialize}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily \label{class_relationship_a61fd3cf9518d2e93e4d0629269a37334} 
+QVariant\+Map Relationship\+::serialize (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f}{Basic\+Element}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_a61fd3cf9518d2e93e4d0629269a37334_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_afd48f436e1a081b800d28a68078bfe08}\index{Relationship@{Relationship}!setIsIdentifying@{setIsIdentifying}}
+\index{setIsIdentifying@{setIsIdentifying}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{setIsIdentifying()}{setIsIdentifying()}}
+{\footnotesize\ttfamily \label{class_relationship_afd48f436e1a081b800d28a68078bfe08} 
+void Relationship\+::set\+Is\+Identifying (\begin{DoxyParamCaption}\item[{const bool}]{is\+Identifying}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_afd48f436e1a081b800d28a68078bfe08_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}\index{Relationship@{Relationship}!typeDisplayName@{typeDisplayName}}
+\index{typeDisplayName@{typeDisplayName}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}
+{\footnotesize\ttfamily \label{class_relationship_a0b4a9caae8b075cc96fb732666e66a01} 
+QString Relationship\+::type\+Display\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_basic_element_aa5ae2ba261410dcf01c30ef24adf4ab0}{Basic\+Element}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{class_relationship_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}\index{Relationship@{Relationship}!m\_ends@{m\_ends}}
+\index{m\_ends@{m\_ends}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{m\_ends}{m\_ends}}
+{\footnotesize\ttfamily \label{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388} 
+QList$<$\mbox{\hyperlink{class_relationship_end}{Relationship\+End}}\texorpdfstring{$\ast$}{*}$>$ Relationship\+::m\+\_\+ends\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}\index{Relationship@{Relationship}!m\_isIdentifying@{m\_isIdentifying}}
+\index{m\_isIdentifying@{m\_isIdentifying}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{m\_isIdentifying}{m\_isIdentifying}}
+{\footnotesize\ttfamily \label{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f} 
+bool Relationship\+::m\+\_\+is\+Identifying\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_relationship_8h}{Relationship.\+h}}\item 
+src/model/\mbox{\hyperlink{_relationship_8cpp}{Relationship.\+cpp}}\end{DoxyCompactItemize}

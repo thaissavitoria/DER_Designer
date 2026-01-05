@@ -1,0 +1,309 @@
+\doxysection{Relationship\+Renderer Class Reference}
+\hypertarget{class_relationship_renderer}{}\label{class_relationship_renderer}\index{RelationshipRenderer@{RelationshipRenderer}}
+
+
+{\ttfamily \#include $<$Relationship\+Renderer.\+h$>$}
+
+
+
+Inheritance diagram for Relationship\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_relationship_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Relationship\+Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{class_relationship_renderer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_relationship_renderer_af19f86d2752ca4a30dae1bdff4bb3ff6}{Relationship\+Renderer}} ()
+\item 
+void \mbox{\hyperlink{class_relationship_renderer_ab8b5947fc5ebceb0a55072d85452376c}{render}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect) override
+\item 
+bool \mbox{\hyperlink{class_relationship_renderer_a543e7804a1ba65429372b0caeab2ac06}{is\+In\+Element\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QPointF \&point) override
+\item 
+QRectF \mbox{\hyperlink{class_relationship_renderer_a9e5ee3ddcaa8017ec5a3c3ed5c7212b2}{selection\+Rect}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element) override
+\item 
+void \mbox{\hyperlink{class_relationship_renderer_ac9c727da6b99061b14e0421efbf534d4}{render\+Selection}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_element_renderer}{IElement\+Renderer}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}{\texorpdfstring{$\sim$}{\string~}\+IElement\+Renderer}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_relationship_renderer_a683532f0595b37b728561fa0cfd797c3}{setup\+Default\+Style}} ()
+\item 
+void \mbox{\hyperlink{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5}{render\+Diamond}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect, const bool is\+Identifying)
+\item 
+QRectF \mbox{\hyperlink{class_relationship_renderer_a8777d0473d147984f37a57374f0677e9}{get\+Text\+Rect}} (const QRectF \&element\+Rect) const
+\item 
+bool \mbox{\hyperlink{class_relationship_renderer_a4770db8be6d8166044ded1c635415782}{is\+Point\+In\+Diamond}} (const QPointF \&point, const QRectF \&diamond\+Rect) const
+\item 
+QPolygonF \mbox{\hyperlink{class_relationship_renderer_ac9bfbee5561e8a5b6ccf0919b7a5ba25}{get\+Diamond\+Polygon}} (const QRectF \&rect) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPen \mbox{\hyperlink{class_relationship_renderer_adb5a6659c2ccff822c4312e517d7f5b6}{m\+\_\+border\+Pen}}
+\item 
+QBrush \mbox{\hyperlink{class_relationship_renderer_aff9f21609f36630a19b4775c8e2f3ff2}{m\+\_\+fill\+Brush}}
+\item 
+QBrush \mbox{\hyperlink{class_relationship_renderer_a82cb514340fbc4e0d27cda7638d0af2e}{m\+\_\+selection\+Brush}}
+\item 
+QFont \mbox{\hyperlink{class_relationship_renderer_a02307ca568c85d83aba1d350faba1f16}{m\+\_\+text\+Font}}
+\item 
+QPen \mbox{\hyperlink{class_relationship_renderer_a65fbcd53c61fb660acb690f846977f77}{m\+\_\+text\+Pen}}
+\item 
+QPen \mbox{\hyperlink{class_relationship_renderer_a09fafcce949474e9cae02087131be4f1}{m\+\_\+selection\+Pen}}
+\item 
+qreal \mbox{\hyperlink{class_relationship_renderer_acc3a14fa9eaa3003e40cf3e5dd5ab89c}{m\+\_\+text\+Margin}}
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_relationship_renderer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_relationship_renderer_af19f86d2752ca4a30dae1bdff4bb3ff6}\index{RelationshipRenderer@{RelationshipRenderer}!RelationshipRenderer@{RelationshipRenderer}}
+\index{RelationshipRenderer@{RelationshipRenderer}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{RelationshipRenderer()}{RelationshipRenderer()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_af19f86d2752ca4a30dae1bdff4bb3ff6} 
+Relationship\+Renderer\+::\+Relationship\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_relationship_renderer_af19f86d2752ca4a30dae1bdff4bb3ff6_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_relationship_renderer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_relationship_renderer_ac9bfbee5561e8a5b6ccf0919b7a5ba25}\index{RelationshipRenderer@{RelationshipRenderer}!getDiamondPolygon@{getDiamondPolygon}}
+\index{getDiamondPolygon@{getDiamondPolygon}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{getDiamondPolygon()}{getDiamondPolygon()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_ac9bfbee5561e8a5b6ccf0919b7a5ba25} 
+QPolygonF Relationship\+Renderer\+::get\+Diamond\+Polygon (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_renderer_ac9bfbee5561e8a5b6ccf0919b7a5ba25_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a8777d0473d147984f37a57374f0677e9}\index{RelationshipRenderer@{RelationshipRenderer}!getTextRect@{getTextRect}}
+\index{getTextRect@{getTextRect}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{getTextRect()}{getTextRect()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a8777d0473d147984f37a57374f0677e9} 
+QRectF Relationship\+Renderer\+::get\+Text\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{element\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_a8777d0473d147984f37a57374f0677e9_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a543e7804a1ba65429372b0caeab2ac06}\index{RelationshipRenderer@{RelationshipRenderer}!isInElementRect@{isInElementRect}}
+\index{isInElementRect@{isInElementRect}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{isInElementRect()}{isInElementRect()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a543e7804a1ba65429372b0caeab2ac06} 
+bool Relationship\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QPointF \&}]{point}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_renderer_a543e7804a1ba65429372b0caeab2ac06_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a4770db8be6d8166044ded1c635415782}\index{RelationshipRenderer@{RelationshipRenderer}!isPointInDiamond@{isPointInDiamond}}
+\index{isPointInDiamond@{isPointInDiamond}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{isPointInDiamond()}{isPointInDiamond()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a4770db8be6d8166044ded1c635415782} 
+bool Relationship\+Renderer\+::is\+Point\+In\+Diamond (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point}{, }\item[{const QRectF \&}]{diamond\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_a4770db8be6d8166044ded1c635415782_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_a4770db8be6d8166044ded1c635415782_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_ab8b5947fc5ebceb0a55072d85452376c}\index{RelationshipRenderer@{RelationshipRenderer}!render@{render}}
+\index{render@{render}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_ab8b5947fc5ebceb0a55072d85452376c} 
+void Relationship\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_renderer_ab8b5947fc5ebceb0a55072d85452376c_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5}\index{RelationshipRenderer@{RelationshipRenderer}!renderDiamond@{renderDiamond}}
+\index{renderDiamond@{renderDiamond}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{renderDiamond()}{renderDiamond()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5} 
+void Relationship\+Renderer\+::render\+Diamond (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{, }\item[{const bool}]{is\+Identifying}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_ac9c727da6b99061b14e0421efbf534d4}\index{RelationshipRenderer@{RelationshipRenderer}!renderSelection@{renderSelection}}
+\index{renderSelection@{renderSelection}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{renderSelection()}{renderSelection()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_ac9c727da6b99061b14e0421efbf534d4} 
+void Relationship\+Renderer\+::render\+Selection (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_relationship_renderer_ac9c727da6b99061b14e0421efbf534d4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a9e5ee3ddcaa8017ec5a3c3ed5c7212b2}\index{RelationshipRenderer@{RelationshipRenderer}!selectionRect@{selectionRect}}
+\index{selectionRect@{selectionRect}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{selectionRect()}{selectionRect()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a9e5ee3ddcaa8017ec5a3c3ed5c7212b2} 
+QRectF Relationship\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{IElement\+Renderer}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_relationship_renderer_a9e5ee3ddcaa8017ec5a3c3ed5c7212b2_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_relationship_renderer_a683532f0595b37b728561fa0cfd797c3}\index{RelationshipRenderer@{RelationshipRenderer}!setupDefaultStyle@{setupDefaultStyle}}
+\index{setupDefaultStyle@{setupDefaultStyle}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{setupDefaultStyle()}{setupDefaultStyle()}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a683532f0595b37b728561fa0cfd797c3} 
+void Relationship\+Renderer\+::setup\+Default\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_relationship_renderer_a683532f0595b37b728561fa0cfd797c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_relationship_renderer_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_relationship_renderer_adb5a6659c2ccff822c4312e517d7f5b6}\index{RelationshipRenderer@{RelationshipRenderer}!m\_borderPen@{m\_borderPen}}
+\index{m\_borderPen@{m\_borderPen}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_borderPen}{m\_borderPen}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_adb5a6659c2ccff822c4312e517d7f5b6} 
+QPen Relationship\+Renderer\+::m\+\_\+border\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_aff9f21609f36630a19b4775c8e2f3ff2}\index{RelationshipRenderer@{RelationshipRenderer}!m\_fillBrush@{m\_fillBrush}}
+\index{m\_fillBrush@{m\_fillBrush}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_fillBrush}{m\_fillBrush}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_aff9f21609f36630a19b4775c8e2f3ff2} 
+QBrush Relationship\+Renderer\+::m\+\_\+fill\+Brush\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_a82cb514340fbc4e0d27cda7638d0af2e}\index{RelationshipRenderer@{RelationshipRenderer}!m\_selectionBrush@{m\_selectionBrush}}
+\index{m\_selectionBrush@{m\_selectionBrush}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_selectionBrush}{m\_selectionBrush}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a82cb514340fbc4e0d27cda7638d0af2e} 
+QBrush Relationship\+Renderer\+::m\+\_\+selection\+Brush\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_a09fafcce949474e9cae02087131be4f1}\index{RelationshipRenderer@{RelationshipRenderer}!m\_selectionPen@{m\_selectionPen}}
+\index{m\_selectionPen@{m\_selectionPen}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_selectionPen}{m\_selectionPen}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a09fafcce949474e9cae02087131be4f1} 
+QPen Relationship\+Renderer\+::m\+\_\+selection\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_a02307ca568c85d83aba1d350faba1f16}\index{RelationshipRenderer@{RelationshipRenderer}!m\_textFont@{m\_textFont}}
+\index{m\_textFont@{m\_textFont}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textFont}{m\_textFont}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a02307ca568c85d83aba1d350faba1f16} 
+QFont Relationship\+Renderer\+::m\+\_\+text\+Font\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_acc3a14fa9eaa3003e40cf3e5dd5ab89c}\index{RelationshipRenderer@{RelationshipRenderer}!m\_textMargin@{m\_textMargin}}
+\index{m\_textMargin@{m\_textMargin}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textMargin}{m\_textMargin}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_acc3a14fa9eaa3003e40cf3e5dd5ab89c} 
+qreal Relationship\+Renderer\+::m\+\_\+text\+Margin\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_relationship_renderer_a65fbcd53c61fb660acb690f846977f77}\index{RelationshipRenderer@{RelationshipRenderer}!m\_textPen@{m\_textPen}}
+\index{m\_textPen@{m\_textPen}!RelationshipRenderer@{RelationshipRenderer}}
+\doxysubsubsection{\texorpdfstring{m\_textPen}{m\_textPen}}
+{\footnotesize\ttfamily \label{class_relationship_renderer_a65fbcd53c61fb660acb690f846977f77} 
+QPen Relationship\+Renderer\+::m\+\_\+text\+Pen\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/viewer/\mbox{\hyperlink{_relationship_renderer_8h}{Relationship\+Renderer.\+h}}\item 
+src/viewer/\mbox{\hyperlink{_relationship_renderer_8cpp}{Relationship\+Renderer.\+cpp}}\end{DoxyCompactItemize}

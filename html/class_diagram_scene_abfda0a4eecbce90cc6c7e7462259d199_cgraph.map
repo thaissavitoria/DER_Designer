@@ -1,0 +1,19 @@
+<map id="DiagramScene::removeConnection" name="DiagramScene::removeConnection">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,230,57"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#afbab910f080e6085c7e216f922c14d81" title=" " alt="" coords="289,5,491,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,31,276,29,271,30,231,36"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a5d546daf9d3a3d5155b611ec31c4dccb" title=" " alt="" coords="278,56,502,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,52,265,57,259,58,230,57"/>
+<area shape="rect" id="Node000004" href="$class_diagram_scene.html#af24fc3dc11041bb31e4f0627f0a09e75" title=" " alt="" coords="562,81,764,124"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="503,80,549,88,543,89,503,86"/>
+<area shape="rect" id="Node000008" href="$class_diagram_scene.html#a244ffcbacfc985e542579c0e112cfd52" title=" " alt="" coords="550,15,775,57"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="502,53,537,51,532,52,503,58"/>
+<area shape="rect" id="Node000005" href="$class_connection_line.html#ab11952b505976244aabc575e0ec7b118" title=" " alt="" coords="823,81,1032,108"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="764,97,811,98,805,98,764,102"/>
+<area shape="rect" id="Node000006" href="$class_connection_line.html#ad957be37b7bbb9250366225fd357a5a6" title=" " alt="" coords="845,15,1010,57"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="750,78,827,61,832,60,751,83"/>
+<area shape="rect" id="Node000007" href="$class_connection_line.html#aea85162c28f293b1df0cce97d57bb471" title=" " alt="" coords="849,132,1006,159"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="764,116,837,130,831,130,764,122"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="762,55,852,77,846,77,762,61"/>
+<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="776,33,832,36,827,36,776,39"/>
+</map>

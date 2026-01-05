@@ -1,0 +1,13 @@
+<map id="ConnectionLine::getEndPosition" name="ConnectionLine::getEndPosition">
+<area shape="rect" id="Node000001" title=" " alt="" coords="468,80,675,107"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line.html#ac28ef7637b655779039935347f4ddc23" title=" " alt="" coords="237,5,420,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,76,409,51,409,46,508,75"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line.html#aca1719d455dd0003fde92039bc03e21d" title=" " alt="" coords="237,72,420,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="450,94,421,96,420,91,455,93"/>
+<area shape="rect" id="Node000004" href="$class_relationship_connection_line.html#aa30d5092e409b8f272239e8e9b64717a" title=" " alt="" coords="237,139,420,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="508,111,410,141,408,135,503,112"/>
+<area shape="rect" id="Node000005" href="$class_relationship_connection_line.html#ae096b0c8c07ce5d7d5bd8acfad489f1a" title=" " alt="" coords="5,105,189,148"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="219,145,189,143,189,137,224,144"/>
+<area shape="rect" id="Node000006" href="$class_relationship_connection_line.html#a7d0bf30aa0fbd51b9a085894e445069d" title=" " alt="" coords="5,172,189,215"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="219,176,190,183,189,177,224,175"/>
+</map>

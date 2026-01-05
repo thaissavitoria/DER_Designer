@@ -1,0 +1,9 @@
+<map id="MainWindow::loadDiagramElements" name="MainWindow::loadDiagramElements">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,43,238,69"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a5d72b4827a74753adad180ace8109842" title=" " alt="" coords="317,5,505,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,42,304,37,299,38,239,47"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#ae3e9c84a0e0f1ffa84e523ac1aefc565" title=" " alt="" coords="286,72,536,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="238,65,273,71,268,71,238,70"/>
+<area shape="rect" id="Node000004" href="$class_basic_element.html#a70598cf89581cc6e308dafaa69551934" title=" " alt="" coords="584,64,778,107"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="537,83,571,85,566,85,537,88"/>
+</map>

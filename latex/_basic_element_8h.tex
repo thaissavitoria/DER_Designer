@@ -1,0 +1,101 @@
+\doxysection{src/model/\+Basic\+Element.h File Reference}
+\hypertarget{_basic_element_8h}{}\label{_basic_element_8h}\index{src/model/BasicElement.h@{src/model/BasicElement.h}}
+{\ttfamily \#include $<$Qt\+Core/\+QHash$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QObject$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QPointF$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QRectF$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QString$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QSizeF$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QUuid$>$}\newline
+{\ttfamily \#include $<$Qt\+Core/\+QVariant$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include "{}Connection\+Point.\+h"{}}\newline
+Include dependency graph for Basic\+Element.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_basic_element_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_basic_element_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_i_element_observer}{IElement\+Observer}}
+\item 
+class \mbox{\hyperlink{class_basic_element}{Basic\+Element}}
+\begin{DoxyCompactList}\small\item\em Abstract base class for all ERD elements (Model only). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \{ \newline
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}} = 0
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea1a434befae3f49ae09347ded52032f6f}{Entity}}
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea4f3857835c54b6bb6317e15ca3255ac1}{Weak\+Entity}}
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf2bbdf9f72c085adc4d0404e370f0f4c}{Attribute}}
+, \newline
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea77a0bdabc5ac25d97cc3ee291bc04884}{Key\+Attribute}}
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea5b30e7e474106ae429cef73e252ddfd4}{Derived\+Attribute}}
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf72ffc1172b40321284db77fb4f3d216}{Multivalued\+Attribute}}
+, \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeafbc97786af4bf30dc5b07809a950792c}{Relationship}}
+, \newline
+\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaeb9fa813d289080260b85ac0537ffb1d}{Identifying\+Relationship}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{_basic_element_8h_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}\index{BasicElement.h@{BasicElement.h}!ElementType@{ElementType}}
+\index{ElementType@{ElementType}!BasicElement.h@{BasicElement.h}}
+\doxysubsubsection{\texorpdfstring{ElementType}{ElementType}}
+{\footnotesize\ttfamily \label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae} 
+enum class \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!Unknown@{Unknown}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea88183b946cc5f0e8c96b2e66e1c74a7e}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea88183b946cc5f0e8c96b2e66e1c74a7e} 
+Unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Entity@{Entity}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!Entity@{Entity}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea1a434befae3f49ae09347ded52032f6f}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea1a434befae3f49ae09347ded52032f6f} 
+Entity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WeakEntity@{WeakEntity}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!WeakEntity@{WeakEntity}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea4f3857835c54b6bb6317e15ca3255ac1}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea4f3857835c54b6bb6317e15ca3255ac1} 
+Weak\+Entity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Attribute@{Attribute}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!Attribute@{Attribute}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf2bbdf9f72c085adc4d0404e370f0f4c}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf2bbdf9f72c085adc4d0404e370f0f4c} 
+Attribute&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KeyAttribute@{KeyAttribute}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!KeyAttribute@{KeyAttribute}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea77a0bdabc5ac25d97cc3ee291bc04884}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea77a0bdabc5ac25d97cc3ee291bc04884} 
+Key\+Attribute&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DerivedAttribute@{DerivedAttribute}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!DerivedAttribute@{DerivedAttribute}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea5b30e7e474106ae429cef73e252ddfd4}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aea5b30e7e474106ae429cef73e252ddfd4} 
+Derived\+Attribute&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MultivaluedAttribute@{MultivaluedAttribute}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!MultivaluedAttribute@{MultivaluedAttribute}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf72ffc1172b40321284db77fb4f3d216}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaf72ffc1172b40321284db77fb4f3d216} 
+Multivalued\+Attribute&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Relationship@{Relationship}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!Relationship@{Relationship}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeafbc97786af4bf30dc5b07809a950792c}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeafbc97786af4bf30dc5b07809a950792c} 
+Relationship&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IdentifyingRelationship@{IdentifyingRelationship}!BasicElement.h@{BasicElement.h}}\index{BasicElement.h@{BasicElement.h}!IdentifyingRelationship@{IdentifyingRelationship}}}\Hypertarget{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaeb9fa813d289080260b85ac0537ffb1d}\label{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01aeaeb9fa813d289080260b85ac0537ffb1d} 
+Identifying\+Relationship&\\
+\hline
+
+\end{DoxyEnumFields}

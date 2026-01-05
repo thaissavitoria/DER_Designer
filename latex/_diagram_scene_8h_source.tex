@@ -1,0 +1,254 @@
+\doxysection{Diagram\+Scene.\+h}
+\hypertarget{_diagram_scene_8h_source}{}\label{_diagram_scene_8h_source}\index{src/controller/DiagramScene.h@{src/controller/DiagramScene.h}}
+\mbox{\hyperlink{_diagram_scene_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAMSCENE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAMSCENE\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QHash>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtWidgets/QGraphicsScene>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_basic_element_8h}{model/BasicElement.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_line_8h}{model/ConnectionLine.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_element_graphics_item_8h}{viewer/ElementGraphicsItem.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bezier_control_point_8h}{viewer/BezierControlPoint.h}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_attribute}{Attribute}};}
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_graphics_item}{ConnectionGraphicsItem}};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity}{Entity}};}
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship}{Relationship}};}
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_connection_line}{RelationshipConnectionLine}};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene_a00866b5c8cc0afccf2db22e524400e61}{DiagramScene}}\ :\ \textcolor{keyword}{public}\ QGraphicsScene}
+\DoxyCodeLine{00023\ \{}
+\DoxyCodeLine{00024\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_diagram_scene_a00866b5c8cc0afccf2db22e524400e61}{DiagramScene}}(}
+\DoxyCodeLine{00028\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00029\ \ \ );}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_diagram_scene_a189b7f9e32b70c751124cffce8d63c8c}{\string~DiagramScene}}();}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ab3f76238d2c252f2918047140d87dd23}{addElement}}(}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00035\ \ \ );}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ae531fa5ccfc6393d5a60f956a652118d}{removeElement}}(}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00039\ \ \ );}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ae531fa5ccfc6393d5a60f956a652118d}{removeElement}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementId}
+\DoxyCodeLine{00043\ \ \ );}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ \mbox{\hyperlink{class_diagram_scene_a4da4018bb57166e46104700d2847c41d}{findElement}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id}}
+\DoxyCodeLine{00047\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \mbox{\hyperlink{class_element_graphics_item}{ElementGraphicsItem}}*\ \mbox{\hyperlink{class_diagram_scene_a45f18c15840085ffda39cfc9229a15ee}{findGraphicsItem}}(}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementId}
+\DoxyCodeLine{00051\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \mbox{\hyperlink{class_element_graphics_item}{ElementGraphicsItem}}*\ \mbox{\hyperlink{class_diagram_scene_a45f18c15840085ffda39cfc9229a15ee}{findGraphicsItem}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00055\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a795592348d4dcbd78d984db93c2fbedb}{addConnection}}(}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00059\ \ \ );}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a4d84b4d068e1c3ee53f9f9f8c6e7a94f}{addRelationshipConnection}}(}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_relationship_connection_line}{RelationshipConnectionLine}}*\ connection}
+\DoxyCodeLine{00063\ \ \ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a5d546daf9d3a3d5155b611ec31c4dccb}{removeConnection}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00067\ \ \ );}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a5d546daf9d3a3d5155b611ec31c4dccb}{removeConnection}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ connectionId}
+\DoxyCodeLine{00071\ \ \ );}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ \mbox{\hyperlink{class_diagram_scene_afbab910f080e6085c7e216f922c14d81}{findConnection}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id}}
+\DoxyCodeLine{00075\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a411b6f8dc6f9559e607ec3edeef17d81}{startConnection}}(}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ startPoint}
+\DoxyCodeLine{00079\ \ \ );}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a8a3265678249b08f424e17fbfa8d0de5}{finishConnection}}(}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ endPoint}
+\DoxyCodeLine{00083\ \ \ );}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a483cb75d9da2cbe30aae1f4832560a65}{cancelConnection}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_aa86baf842b30733709e85943661d6298}{updateConnectionControlPoint}}(}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection,}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{ControlPointType}}\ type,}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ offset}
+\DoxyCodeLine{00091\ \ \ );}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ QList<BasicElement*>\ \mbox{\hyperlink{class_diagram_scene_a3e3d3f675078f28665609dfed61d2326}{getAllElements}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ QList<BasicElement*>\ \mbox{\hyperlink{class_diagram_scene_aef557b645a95aaa376592146d4c6c60e}{getSelectedElements}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ QList<ConnectionLine*>\ \mbox{\hyperlink{class_diagram_scene_a40c9b85a9f304007a227b9db63178d08}{getAllConnections}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ QSet<ConnectionLine*>\ \mbox{\hyperlink{class_diagram_scene_a496c60851a94026b46ba80b647e4eb47}{getSelectedConnections}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809}{selectElement}}(}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{00101\ \ \ );}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809}{selectElement}}(}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementId,}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{00106\ \ \ );}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e}{selectConnection}}(}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection,}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{00111\ \ \ );}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e}{selectConnection}}(}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ connectionId,}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{bool}\ selected\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{00116\ \ \ );}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a9341fab75d7299e330baae13993bed28}{clearSelection}}();}
+\DoxyCodeLine{00119\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a530f6e2b54bdff761f3f478120187201}{selectAll}}();}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a03a8b712a0872e8f6290c059de956505}{deleteSelected}}();}
+\DoxyCodeLine{00122\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a7875efc4949e17967d9e11786b146cc9}{duplicateSelected}}();}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a99cbe05259c61eebf9cc8d67947f6dca}{copySelected}}();}
+\DoxyCodeLine{00124\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a61e7061e5add947d09ad87feaf2b8dc1}{pasteFromClipboard}}();}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_scene_a278b8a78450dd9f1754bfa77e8eb1041}{isCreatingConnection}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_diagram_scene_a5017a7972d41fd71d999b647f0ab4c02}{m\_isCreatingConnection}};\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a0c02f289dea7872eae24bb2c0f91d5ea}{clearDiagram}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_scene_a864058ae3b62e0964304e1db4352c643}{exportToImage}}(}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ filePath,}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ format\ =\ \textcolor{stringliteral}{"{}PNG"{}},}
+\DoxyCodeLine{00133\ \ \ \ \ qreal\ scaleFactor\ =\ 1.0}
+\DoxyCodeLine{00134\ \ \ );}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ QImage\ \mbox{\hyperlink{class_diagram_scene_ae46bba1013d9d45ea78d27b998176a79}{renderToImage}}(}
+\DoxyCodeLine{00137\ \ \ \ \ qreal\ scaleFactor\ =\ 1.0}
+\DoxyCodeLine{00138\ \ \ );}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00141\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a6847af7972303267f22e84ae1011c255}{mousePressEvent}}(}
+\DoxyCodeLine{00142\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00143\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a2c4148955112e8ed8d3832b73bd3848b}{mouseMoveEvent}}(}
+\DoxyCodeLine{00146\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00147\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a542ad58dab0f10f2825e0d69deabebe7}{mouseReleaseEvent}}(}
+\DoxyCodeLine{00150\ \ \ \ \ QGraphicsSceneMouseEvent*\ event}
+\DoxyCodeLine{00151\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a074e1181353b257a18ea2d243b459a47}{keyPressEvent}}(}
+\DoxyCodeLine{00154\ \ \ \ \ QKeyEvent*\ event}
+\DoxyCodeLine{00155\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ signals:}
+\DoxyCodeLine{00158\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ad97223f92ae9cce97857ac5c45c1a3b6}{elementAdded}}(}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00160\ \ \ );}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a15719115f3f2f26120243d71999dcfea}{elementSelected}}(}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00164\ \ \ );}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a065ce2ec3d83e05c486ae418eaf6320f}{elementDeselected}}(}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00168\ \ \ );}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ac397b05d6318f8b7c9366a8b857ed98c}{connectionSelected}}(}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00172\ \ \ );}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a5f3d68221bac825f2b027d638d25fa49}{connectionDeselected}}(}
+\DoxyCodeLine{00175\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00176\ \ \ );}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a7dbb09a9acecc803601560e50ad720ea}{selectionChanged}}();}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ad905b329fbff554ff7491d63df6bb24c}{connectionStarted}}(}
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ startPoint}
+\DoxyCodeLine{00182\ \ \ );}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a12b2e24143d976ca11461361876b3892}{connectionCancelled}}();}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00187\ \ \ QHash<BasicElement*,\ ElementGraphicsItem*>\ \mbox{\hyperlink{class_diagram_scene_a0c77b9ea0d84276e65cf57f1c9bfbbdf}{m\_elementToItem}};}
+\DoxyCodeLine{00188\ \ \ QHash<QString,\ BasicElement*>\ \mbox{\hyperlink{class_diagram_scene_a175366ea82d553e421e5f25cf7d2fbfa}{m\_elements}};}
+\DoxyCodeLine{00189\ \ \ QHash<ConnectionLine*,\ ConnectionGraphicsItem*>\ \mbox{\hyperlink{class_diagram_scene_af5050d643c4164b5b81e6c7f614e2503}{m\_connectionToItem}};}
+\DoxyCodeLine{00190\ \ \ QHash<QString,\ ConnectionLine*>\ \mbox{\hyperlink{class_diagram_scene_a174acf0279ad2eb272bed72451a7da3b}{m\_connections}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_scene_aa33f3a4900413127b6c1469a02cc1d44}{m\_selectionRectActive}};}
+\DoxyCodeLine{00193\ \ \ QPointF\ \mbox{\hyperlink{class_diagram_scene_af15200d2a5ff966135ddf6f5d3e831fc}{m\_selectionStartPoint}};}
+\DoxyCodeLine{00194\ \ \ QGraphicsRectItem*\ \mbox{\hyperlink{class_diagram_scene_aacce123c052164291bbe465ac5a1040a}{m\_selectionRect}};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_scene_a5017a7972d41fd71d999b647f0ab4c02}{m\_isCreatingConnection}};}
+\DoxyCodeLine{00197\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_diagram_scene_aa9849388256d2dfaac8e4642cf9d18c8}{m\_connectionStartPoint}};}
+\DoxyCodeLine{00198\ \ \ QGraphicsLineItem*\ \mbox{\hyperlink{class_diagram_scene_aab8e1a2e821c2b30a23796d6481642c9}{m\_temporaryConnectionLine}};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ QList<BasicElement*>\ \mbox{\hyperlink{class_diagram_scene_a780cb841e3cc2d88606c2cf55594bc89}{m\_clipboardElements}};}
+\DoxyCodeLine{00201\ \ \ QSet<ConnectionLine*>\ \mbox{\hyperlink{class_diagram_scene_a62725959534068975eee410c14a0a109}{m\_clipboardConnections}};}
+\DoxyCodeLine{00202\ \ \ QHash<QString,\ QString>\ \mbox{\hyperlink{class_diagram_scene_aff2f6c9b417d2fe53ad2c0631b067e66}{m\_clipboardIdMap}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_aa65295bd6eaa03a99414a94c535e7839}{updateSelectionRect}}(}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ currentPoint}
+\DoxyCodeLine{00206\ \ \ );}
+\DoxyCodeLine{00207\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ad46a8dc374895fd670f50f30f2c2acbd}{finishSelectionRect}}();}
+\DoxyCodeLine{00208\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a18d3ef8401b31b04418959151ee2e83f}{createSelectionRect}}();}
+\DoxyCodeLine{00209\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_aefcfbcad98610038563584daf41c6baf}{destroySelectionRect}}();}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a834e3046fec311dc1612c333247df839}{updateTemporaryConnection}}(}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ endPosition}
+\DoxyCodeLine{00213\ \ \ );}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a244ffcbacfc985e542579c0e112cfd52}{handleRelationshipDisconnection}}(}
+\DoxyCodeLine{00216\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00217\ \ \ );}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_af24fc3dc11041bb31e4f0627f0a09e75}{handleAttributeDisconnection}}(}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00221\ \ \ );}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_scene_a22fbf72c48c41d8cc10d1fb80496fb82}{isRelationshipToEntityConnection}}(}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ startElement,}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ endElement,}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{class_relationship}{Relationship}}**\ outRelationship,}
+\DoxyCodeLine{00227\ \ \ \ \ \mbox{\hyperlink{class_entity}{Entity}}**\ outEntity}
+\DoxyCodeLine{00228\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a0d026405c431d3aca9494d64296bb956}{removeElementConnections}}(}
+\DoxyCodeLine{00231\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00232\ \ \ );}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_ad8f482915e4991d8ba601f691086fbdc}{removeAttributeFromParents}}(}
+\DoxyCodeLine{00235\ \ \ \ \ \mbox{\hyperlink{class_attribute}{Attribute}}*\ attribute}
+\DoxyCodeLine{00236\ \ \ );}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_scene_a355fffd036fbfb751f2d9ada2b9eacf5}{handleAttributeConnection}}(}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00240\ \ \ );}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ \mbox{\hyperlink{class_diagram_scene_a9413548fb3f634a36e7c6e5e03f48692}{findConnectionPointInClonedElement}}(}
+\DoxyCodeLine{00243\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ clonedElement,}
+\DoxyCodeLine{00244\ \ \ \ \ \mbox{\hyperlink{class_connection_point}{ConnectionPoint}}*\ originalPoint}
+\DoxyCodeLine{00245\ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAMSCENE\_H}}
+
+\end{DoxyCode}

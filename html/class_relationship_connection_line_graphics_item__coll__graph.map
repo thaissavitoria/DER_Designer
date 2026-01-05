@@ -1,0 +1,26 @@
+<map id="RelationshipConnectionLineGraphicsItem" name="RelationshipConnectionLineGraphicsItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="244,2375,438,2791"/>
+<area shape="rect" id="Node000002" href="$class_connection_graphics_item.html" title=" " alt="" coords="384,1753,582,2281"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="436,2294,423,2351,416,2376,412,2374,418,2350,433,2298"/>
+<area shape="rect" id="Node000007" href="$class_bezier_control_point.html" title=" " alt="" coords="544,2463,697,2703"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="583,2268,594,2305,607,2375,616,2447,611,2445,602,2376,589,2306,582,2273"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="338,5,397,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="396,85,414,123,484,352,534,548,567,724,585,891,590,1059,583,1239,569,1443,547,1682,539,1754,534,1753,542,1681,563,1443,578,1239,584,1059,580,891,562,725,529,549,479,353,409,125,396,90"/>
+<area shape="rect" id="Node000005" href="$class_connection_line.html" title=" " alt="" coords="216,1079,410,1681"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="375,87,381,124,401,385,412,590,413,688,410,794,387,1055,384,1079,379,1079,382,1054,404,794,408,688,407,590,395,386,376,124,375,93"/>
+<area shape="rect" id="Node000006" href="$class_connection_point.html" title=" " alt="" coords="153,124,366,556"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="350,91,340,125,335,124,351,86"/>
+<area shape="rect" id="Node000010" href="$class_relationship_end.html" title=" " alt="" coords="5,580,188,1055"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="321,46,279,53,229,67,181,90,161,106,143,126,111,176,87,230,69,287,57,346,51,406,48,466,54,580,49,580,43,466,45,406,52,345,64,286,82,228,106,173,139,122,157,102,179,86,227,62,278,48,325,42"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="434,1345,533,1415"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="484,1427,486,1754,481,1753,483,1432"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="373,1678,388,1729,390,1737,385,1737,383,1730,372,1684"/>
+<area shape="rect" id="Node000009" href="$class_relationship_connection_line.html" title=" " alt="" coords="156,1783,358,2252"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="286,1694,280,1783,275,1782,285,1699"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="271,553,299,1062,294,1062,270,558"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="542,2478,508,2418,483,2351,474,2301,475,2296,488,2350,513,2416,547,2478"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="691,1983,828,2052"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="761,2065,754,2197,744,2274,727,2351,709,2409,685,2465,681,2461,704,2407,722,2350,739,2274,749,2196,758,2069"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="249,2249,261,2350,263,2358,258,2357,256,2351,248,2254"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="62,1057,53,1197,50,1356,53,1438,60,1520,71,1602,87,1681,114,1763,150,1842,145,1843,109,1765,82,1682,66,1602,55,1521,48,1438,45,1356,48,1197,62,1052"/>
+</map>

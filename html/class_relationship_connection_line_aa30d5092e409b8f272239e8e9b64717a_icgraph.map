@@ -1,0 +1,7 @@
+<map id="RelationshipConnectionLine::isCardinalityOffsetValid" name="RelationshipConnectionLine::isCardinalityOffsetValid">
+<area shape="rect" id="Node000001" title=" " alt="" coords="237,39,420,81"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line.html#ae096b0c8c07ce5d7d5bd8acfad489f1a" title=" " alt="" coords="5,5,189,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,45,189,43,189,37,224,44"/>
+<area shape="rect" id="Node000003" href="$class_relationship_connection_line.html#a7d0bf30aa0fbd51b9a085894e445069d" title=" " alt="" coords="5,72,189,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,76,190,83,189,77,224,75"/>
+</map>

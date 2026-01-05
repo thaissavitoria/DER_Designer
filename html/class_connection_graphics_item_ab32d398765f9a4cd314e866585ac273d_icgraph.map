@@ -1,0 +1,5 @@
+<map id="ConnectionGraphicsItem::ConnectionGraphicsItem" name="ConnectionGraphicsItem::ConnectionGraphicsItem">
+<area shape="rect" id="Node000001" title=" " alt="" coords="299,13,472,56"/>
+<area shape="rect" id="Node000002" href="$class_relationship_connection_line_graphics_item.html#a55839fb084501f42fc8a6e7f08cff4ba" title=" " alt="" coords="5,5,251,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="280,35,251,37,251,32,286,34"/>
+</map>

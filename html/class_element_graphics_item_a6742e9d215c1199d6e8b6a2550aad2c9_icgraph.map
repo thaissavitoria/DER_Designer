@@ -1,0 +1,12 @@
+<map id="ElementGraphicsItem::element" name="ElementGraphicsItem::element">
+<area shape="rect" id="Node000001" title=" " alt="" coords="439,93,586,136"/>
+<area shape="rect" id="Node000002" href="$class_element_graphics_item.html#a15c1c0390715f724886f2c4f842bd7c0" title=" " alt="" coords="218,5,374,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,87,350,51,351,46,447,87"/>
+<area shape="rect" id="Node000003" href="$class_element_graphics_item.html#a215ad3b183b805a08039ce7929a0e1d0" title=" " alt="" coords="5,35,153,77"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="422,105,153,69,153,63,425,101"/>
+<area shape="rect" id="Node000004" href="$class_element_graphics_item.html#a155beaa7e5efea78ef1a0d8d04928b23" title=" " alt="" coords="222,123,370,165"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="421,127,370,137,369,131,427,126"/>
+<area shape="rect" id="Node000005" href="$class_element_graphics_item.html#aa6e5a05f4d5ca39fd4a033808b09cd0e" title=" " alt="" coords="201,189,391,232"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="462,143,392,180,363,191,362,186,390,175,457,144"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,41,154,48,152,44,205,38"/>
+</map>

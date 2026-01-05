@@ -1,0 +1,59 @@
+\doxysection{Entity\+Renderer.\+h}
+\hypertarget{_entity_renderer_8h_source}{}\label{_entity_renderer_8h_source}\index{src/viewer/EntityRenderer.h@{src/viewer/EntityRenderer.h}}
+\mbox{\hyperlink{_entity_renderer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ENTITYRENDERER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ENTITYRENDERER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_element_renderer_8h}{ElementRenderer.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtGui/QFont>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtGui/QBrush>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtGui/QPen>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_entity_renderer_a443dd53e40ee0ba00fd8cea3a09f2f59}{EntityRenderer}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_element_renderer}{IElementRenderer}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_entity_renderer_a443dd53e40ee0ba00fd8cea3a09f2f59}{EntityRenderer}}();}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_renderer_a0d7b8738930b0de5f743d604fb9cdadf}{render}}(}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00018\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_entity_renderer_a41cb5b901d024e3827de122ed649c98c}{isInElementRect}}(}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point}
+\DoxyCodeLine{00023\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ QRectF\ \mbox{\hyperlink{class_entity_renderer_afdb9604daa3feb4b7282e04a4d1996f8}{selectionRect}}(}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00027\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_renderer_a7cf1c8d1d06c8304705af66c23009a8e}{renderSelection}}(}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00033\ \ \ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00036\ \ \ \ \ QPen\ \mbox{\hyperlink{class_entity_renderer_a99d09210f79295ad888ef8b20f491dd7}{m\_borderPen}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ QBrush\ \mbox{\hyperlink{class_entity_renderer_a05161923f9a8d8e5a9b766a7e87c53fb}{m\_fillBrush}};}
+\DoxyCodeLine{00039\ \ \ \ \ QBrush\ \mbox{\hyperlink{class_entity_renderer_a072c8129c17b2d77e2e78a97ebc2ee56}{m\_selectionBrush}};}
+\DoxyCodeLine{00040\ \ \ \ \ QFont\ \mbox{\hyperlink{class_entity_renderer_ab66d0f3b2924197ad76ebccc46e65016}{m\_textFont}};}
+\DoxyCodeLine{00041\ \ \ \ \ QPen\ \mbox{\hyperlink{class_entity_renderer_ac528a0c3ea0aa72701ee922070b8cd3f}{m\_textPen}};}
+\DoxyCodeLine{00042\ \ \ \ \ QPen\ \mbox{\hyperlink{class_entity_renderer_a9e0185e78aa1656da867049026d87b3b}{m\_selectionPen}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ qreal\ \mbox{\hyperlink{class_entity_renderer_a368d93baba3e9ce0ff3a2d255b5a8c45}{m\_textMargin}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_entity_renderer_a31f9cb14accf339045d2154fcaaa3729}{setupDefaultStyle}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ QRectF\ \mbox{\hyperlink{class_entity_renderer_aa9aa440f3c5bbe2303106b6db47f9273}{getTextRect}}(}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ elementRect}
+\DoxyCodeLine{00050\ \ \ \ \ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ENTITYRENDERER\_H}}
+
+\end{DoxyCode}
