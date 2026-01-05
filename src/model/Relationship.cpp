@@ -36,7 +36,7 @@ Relationship::Relationship(
   const Relationship& otherAtrribute
 )
   : BasicElement(otherAtrribute),
-    m_isIdentifying(otherAtrribute.m_isIdentifying)
+  m_isIdentifying(otherAtrribute.m_isIdentifying)
 {
 }
 
@@ -122,7 +122,7 @@ bool Relationship::deserialize(
 
 QString Relationship::typeDisplayName() const
 {
-  if(m_isIdentifying){
+  if (m_isIdentifying) {
     return "Relacionamento Identificador";
   }
 
@@ -160,8 +160,8 @@ RelationshipEnd* Relationship::findEndByEntityId(
   const QString& entityId
 ) const
 {
-  for(RelationshipEnd* end : m_ends){
-    if(end->entityId() == entityId){
+  for (RelationshipEnd* end : m_ends) {
+    if (end->entityId() == entityId) {
       return end;
     }
   }

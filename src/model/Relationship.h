@@ -8,6 +8,18 @@
 
 // -----------------------------------------------------------------------------------------------------
 
+/**
+ * @brief Represents a relationship element in an ERD diagram
+ *
+ * This class extends BasicElement to represent relationships in Entity-Relationship diagrams
+ * following Peter Chen's notation. It provides:
+ * - Management of relationship ends connecting to entities
+ * - Cardinality and participation constraints for each end
+ * - Support for relationship attributes through attribute IDs (from BasicElement)
+ * - Serialization of relationship structure and constraints
+ * - Type identification for rendering and behavior
+ */
+
 class Relationship : public BasicElement
 {
   Q_OBJECT
