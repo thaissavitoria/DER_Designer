@@ -13,7 +13,7 @@ class MainWindow;
 /**
  * @brief Quick access toolbar for some ERD diagram operations
  *
- * This class provides a customizable toolbar with quick access to frequently used
+ * This class provides a customizable toolbar with quick access to some frequently used
  * actions in the ERD Designer application. It extends QToolBar to provide:
  * - Quick access to common file operations (New, Open, Save)
  * - Help and About actions for user assistance
