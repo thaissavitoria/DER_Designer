@@ -13,17 +13,17 @@ std::unique_ptr<IElementRenderer> ElementRendererFactory::createRenderer(
 )
 {
   switch (type) {
-    case ElementType::Entity:
-      return std::make_unique<EntityRenderer>();
+  case ElementType::Entity:
+    return std::make_unique<EntityRenderer>();
 
-    case ElementType::Attribute:
-        return std::make_unique<AttributeRenderer>();
+  case ElementType::Attribute:
+    return std::make_unique<AttributeRenderer>();
 
-    case ElementType::Relationship:
-      return std::make_unique<RelationshipRenderer>();
+  case ElementType::Relationship:
+    return std::make_unique<RelationshipRenderer>();
 
-    default:
-      return nullptr;
+  default:
+    return nullptr;
   }
 }
 
