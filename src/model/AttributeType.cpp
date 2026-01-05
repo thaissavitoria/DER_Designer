@@ -54,15 +54,3 @@ QStringList AttributeType::getAllAttributeTypeStrings()
 }
 
 //----------------------------------------------------------------------------------------------
-
-QList<AttributeType::Type> AttributeType::getAllAttributeTypes()
-{
-  QList<Type> types;
-  types << Type::Normal;
-  types << Type::Derived;
-  types << Type::Multivalued;
-  types << Type::Composite;
-  return types;
-}
-
-//----------------------------------------------------------------------------------------------
