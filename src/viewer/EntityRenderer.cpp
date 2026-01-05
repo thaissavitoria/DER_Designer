@@ -10,7 +10,7 @@
 // -----------------------------------------------------------------------------------------------------
 
 EntityRenderer::EntityRenderer()
-:
+  :
   m_textMargin(8.0)
 {
   setupDefaultStyle();
@@ -20,98 +20,98 @@ EntityRenderer::EntityRenderer()
 
 void EntityRenderer::setupDefaultStyle()
 {
-    m_borderPen = QPen(Qt::black, 1.5, Qt::SolidLine);
-    m_fillBrush = QBrush(Qt::white);
-    m_textPen = QPen(Qt::black);
-    m_textFont = QFont("Arial", 10);
-    m_selectionPen = QPen(Qt::blue, 1.5, Qt::SolidLine);
-    m_selectionBrush = QBrush(QColor(0, 0, 225, 20));
+  m_borderPen = QPen(Qt::black, 1.5, Qt::SolidLine);
+  m_fillBrush = QBrush(Qt::white);
+  m_textPen = QPen(Qt::black);
+  m_textFont = QFont("Arial", 10);
+  m_selectionPen = QPen(Qt::blue, 1.5, Qt::SolidLine);
+  m_selectionBrush = QBrush(QColor(0, 0, 225, 20));
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void EntityRenderer::render(
-    QPainter* painter, 
-    const BasicElement* element, 
-    const QRectF& rect
+  QPainter* painter,
+  const BasicElement* element,
+  const QRectF& rect
 )
 {
-    if (!painter || !element) return;
+  if (!painter || !element) return;
 
-    painter->save();
-    painter->setRenderHint(QPainter::Antialiasing, true);
-    painter->setPen(m_borderPen);
-    painter->setBrush(m_fillBrush);
+  painter->save();
+  painter->setRenderHint(QPainter::Antialiasing, true);
+  painter->setPen(m_borderPen);
+  painter->setBrush(m_fillBrush);
 
-    painter->drawRect(rect);
-    
-    if(dynamic_cast<const Entity*>(element)->isWeakEntity()) {
-      qreal margin = 4.0;
-      QRectF innerRect = rect.adjusted(margin, margin, -margin, -margin);
-      painter->drawRect(innerRect);
-    }
+  painter->drawRect(rect);
 
-    painter->setPen(m_textPen);
-    painter->setFont(m_textFont);
+  if (dynamic_cast<const Entity*>(element)->isWeakEntity()) {
+    qreal margin = 4.0;
+    QRectF innerRect = rect.adjusted(margin, margin, -margin, -margin);
+    painter->drawRect(innerRect);
+  }
 
-    QRectF textRect = getTextRect(rect);
-    painter->drawText(textRect, Qt::AlignCenter | Qt::TextWordWrap, element->name());
+  painter->setPen(m_textPen);
+  painter->setFont(m_textFont);
 
-    painter->restore();
+  QRectF textRect = getTextRect(rect);
+  painter->drawText(textRect, Qt::AlignCenter | Qt::TextWordWrap, element->name());
+
+  painter->restore();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 bool EntityRenderer::isInElementRect(
-    const BasicElement* element, 
-    const QPointF& point
+  const BasicElement* element,
+  const QPointF& point
 )
 {
-    if (!element) return false;
+  if (!element) return false;
 
-    QRectF rect = element->boundingRect();
-    return rect.contains(point);
+  QRectF rect = element->boundingRect();
+  return rect.contains(point);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QRectF EntityRenderer::selectionRect(
-    const BasicElement* element
+  const BasicElement* element
 )
 {
-    if (!element) return QRectF();
+  if (!element) return QRectF();
 
-    QRectF rect = element->boundingRect();
-    qreal margin = 2.0;
+  QRectF rect = element->boundingRect();
+  qreal margin = 2.0;
 
-    return rect.adjusted(-margin, -margin, margin, margin);
+  return rect.adjusted(-margin, -margin, margin, margin);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void EntityRenderer::renderSelection(
-    QPainter* painter, 
-    const BasicElement* element, 
-    const QRectF& rect
+  QPainter* painter,
+  const BasicElement* element,
+  const QRectF& rect
 )
 {
-    if (!painter || !element) return;
+  if (!painter || !element) return;
 
-    painter->save();
-    painter->setRenderHint(QPainter::Antialiasing, true);
+  painter->save();
+  painter->setRenderHint(QPainter::Antialiasing, true);
 
-    painter->setPen(m_selectionPen);
-    painter->setBrush(m_selectionBrush);
-    painter->drawRect(rect);
+  painter->setPen(m_selectionPen);
+  painter->setBrush(m_selectionBrush);
+  painter->drawRect(rect);
 
-    painter->restore();
+  painter->restore();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QRectF EntityRenderer::getTextRect(const QRectF& elementRect) const
 {
-    return elementRect.adjusted(m_textMargin, m_textMargin, -m_textMargin, -m_textMargin);
+  return elementRect.adjusted(m_textMargin, m_textMargin, -m_textMargin, -m_textMargin);
 }
 
 // -----------------------------------------------------------------------------------------------------
