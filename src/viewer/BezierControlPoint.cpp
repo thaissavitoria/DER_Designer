@@ -33,13 +33,6 @@ BezierControlPoint::BezierControlPoint(
 
 //----------------------------------------------------------------------------------------------
 
-ControlPointType BezierControlPoint::controlPointType() const
-{
-  return m_type;
-}
-
-//----------------------------------------------------------------------------------------------
-
 void BezierControlPoint::updatePosition(
   const QPointF& position
 )

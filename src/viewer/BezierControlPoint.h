@@ -7,10 +7,31 @@
 
 class ConnectionGraphicsItem;
 
+// -----------------------------------------------------------------------------------------------------
+
+/**
+ * @brief Enumeration for Bezier control point types
+ *
+ * Identifies which control point is being manipulated in a Bezier curve:
+ */
 enum class ControlPointType {
   Control1,
   Control2
 };
+
+// -----------------------------------------------------------------------------------------------------
+
+/**
+ * @brief Interactive control point for Bezier curve manipulation in connections
+ *
+ * This class provides a visual and interactive control point for adjusting Bezier
+ * curves in connection lines. It extends QGraphicsEllipseItem to provide:
+ * - Visual representation as a draggable ellipse handle
+ * - Mouse interaction for dragging and repositioning
+ * - Hover effects for visual feedback
+ * - Communication with parent ConnectionGraphicsItem to update curve shape
+ * - Type identification (Control1 or Control2) for proper curve calculation
+ */
 
 class BezierControlPoint : public QGraphicsEllipseItem
 {
@@ -19,8 +40,6 @@ public:
     ConnectionGraphicsItem* parent,
     ControlPointType type
   );
-
-  ControlPointType controlPointType() const;
 
   void updatePosition(
     const QPointF& position
