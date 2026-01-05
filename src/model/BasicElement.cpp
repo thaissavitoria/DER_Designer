@@ -7,17 +7,17 @@
 // -----------------------------------------------------------------------------------------------------
 
 BasicElement::BasicElement(
-    ElementType type,
-    QObject* parent
+  ElementType type,
+  QObject* parent
 )
-    : QObject(parent)
-    , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
-    , m_type(type)
-    , m_position(0, 0)
-    , m_size(100, 50)
-    , m_name(elementTypeToString(type))
+  : QObject(parent)
+  , m_id(QUuid::createUuid().toString(QUuid::WithoutBraces))
+  , m_type(type)
+  , m_position(0, 0)
+  , m_size(100, 50)
+  , m_name(elementTypeToString(type))
 {
-    createDefaultConnectionPoints();
+  createDefaultConnectionPoints();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -39,288 +39,232 @@ BasicElement::BasicElement(
 
 BasicElement::~BasicElement()
 {
-    m_observers.clear();
-    m_connectionPoints.clear();
+  m_observers.clear();
+  m_connectionPoints.clear();
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::setName(
-    const QString& name
+  const QString& name
 )
 {
-    if (m_name != name) {
-        QString oldName = m_name;
-        m_name = name;
-        onNameChanged(oldName, name);
-        emit nameChanged(name);
-        emit elementChanged();
-        notifyObservers();
-    }
+  if (m_name != name) {
+    QString oldName = m_name;
+    m_name = name;
+    notifyObservers();
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::setPosition(
-    const QPointF& position
+  const QPointF& position
 )
 {
-    if (m_position != position) {
-        QPointF oldPosition = m_position;
-        m_position = position;
-        onPositionChanged(oldPosition, position);
-        emit positionChanged(position);
-        emit elementChanged();
-        notifyPositionChanged(oldPosition, position);
-    }
+  if (m_position != position) {
+    QPointF oldPosition = m_position;
+    m_position = position;
+    emit positionChanged(position);
+    notifyPositionChanged(oldPosition, position);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::setSize(
-    const QSizeF& size
+  const QSizeF& size
 )
 {
-    QSizeF newSize = size;
-    QSizeF minSize = minimumSize();
+  QSizeF newSize = size;
+  QSizeF minSize = minimumSize();
 
-    if (newSize.width() < minSize.width()) {
-        newSize.setWidth(minSize.width());
-    }
-    if (newSize.height() < minSize.height()) {
-        newSize.setHeight(minSize.height());
-    }
+  if (newSize.width() < minSize.width()) {
+    newSize.setWidth(minSize.width());
+  }
+  if (newSize.height() < minSize.height()) {
+    newSize.setHeight(minSize.height());
+  }
 
-    if (m_size != newSize) {
-        QSizeF oldSize = m_size;
-        m_size = newSize;
-        onSizeChanged(oldSize, newSize);
-        emit sizeChanged(newSize);
-        emit elementChanged();
-        notifyObservers();
-    }
+  if (m_size != newSize) {
+    QSizeF oldSize = m_size;
+    m_size = newSize;
+    notifyObservers();
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::move(
-    const QPointF& delta
+  const QPointF& delta
 )
 {
-    setPosition(m_position + delta);
+  setPosition(m_position + delta);
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::addObserver(
-    IElementObserver* observer
+  IElementObserver* observer
 )
 {
-    if (observer && !m_observers.contains(observer)) {
-        m_observers.append(observer);
-    }
+  if (observer && !m_observers.contains(observer)) {
+    m_observers.append(observer);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::removeObserver(
-    IElementObserver* observer
+  IElementObserver* observer
 )
 {
-    m_observers.removeOne(observer);
+  m_observers.removeOne(observer);
 }
 
 //----------------------------------------------------------------------------------------------
 
 bool BasicElement::isValid() const
 {
-    return !m_name.isEmpty() &&
-        m_size.width() > 0 &&
-        m_size.height() > 0 &&
-        m_type != ElementType::Unknown;
+  return !m_name.isEmpty() &&
+    m_size.width() > 0 &&
+    m_size.height() > 0 &&
+    m_type != ElementType::Unknown;
 }
 
 //----------------------------------------------------------------------------------------------
 
 QVariantMap BasicElement::serialize() const
 {
-    QVariantMap data;
+  QVariantMap data;
 
-    data["id"] = m_id;
-    data["name"] = m_name;
-    data["type"] = static_cast<int>(m_type);
+  data["id"] = m_id;
+  data["name"] = m_name;
+  data["type"] = static_cast<int>(m_type);
 
-    data["positionX"] = m_position.x();
-    data["positionY"] = m_position.y();
+  data["positionX"] = m_position.x();
+  data["positionY"] = m_position.y();
 
-    data["width"] = m_size.width();
-    data["height"] = m_size.height();
+  data["width"] = m_size.width();
+  data["height"] = m_size.height();
 
-    if (!m_attributeIds.isEmpty()) {
-      QVariantList attributesList;
-      for (const QString& attrId : m_attributeIds) {
-        attributesList.append(attrId);
-      }
-      data["attributeIds"] = attributesList;
+  if (!m_attributeIds.isEmpty()) {
+    QVariantList attributesList;
+    for (const QString& attrId : m_attributeIds) {
+      attributesList.append(attrId);
     }
+    data["attributeIds"] = attributesList;
+  }
 
-    return data;
+  return data;
 }
 
 //----------------------------------------------------------------------------------------------
 
 bool BasicElement::deserialize(
-    const QVariantMap& data
+  const QVariantMap& data
 )
 {
-    try {
-        if (data.contains("id")) {
-            m_id = data["id"].toString();
-        }
-
-        if (data.contains("name")) {
-            m_name = data["name"].toString();
-        }
-
-        if (data.contains("type")) {
-            m_type = static_cast<ElementType>(data["type"].toInt());
-        }
-
-        if (data.contains("positionX") && data.contains("positionY")) {
-          qreal x = data["positionX"].toDouble();
-          qreal y = data["positionY"].toDouble();
-          m_position = QPointF(x, y);
-        }
-
-        if (data.contains("width") && data.contains("height")) {
-          qreal width = data["width"].toDouble();
-          qreal height = data["height"].toDouble();
-          m_size = QSizeF(width, height);
-        }
-
-        m_attributeIds.clear();
-
-        if (data.contains("attributeIds")) {
-          QVariantList attributesList = data["attributeIds"].toList();
-          for (const QVariant& attrVariant : attributesList) {
-            QString attrId = attrVariant.toString();
-            if (!attrId.isEmpty()) {
-              m_attributeIds.append(attrId);
-            }
-          }
-        }
-
-        return true;
+  try {
+    if (data.contains("id")) {
+      m_id = data["id"].toString();
     }
-    catch (...) {
-        qWarning() << "Erro ao deserializar elemento" << m_id;
-        return false;
+
+    if (data.contains("name")) {
+      m_name = data["name"].toString();
     }
+
+    if (data.contains("type")) {
+      m_type = static_cast<ElementType>(data["type"].toInt());
+    }
+
+    if (data.contains("positionX") && data.contains("positionY")) {
+      qreal x = data["positionX"].toDouble();
+      qreal y = data["positionY"].toDouble();
+      m_position = QPointF(x, y);
+    }
+
+    if (data.contains("width") && data.contains("height")) {
+      qreal width = data["width"].toDouble();
+      qreal height = data["height"].toDouble();
+      m_size = QSizeF(width, height);
+    }
+
+    m_attributeIds.clear();
+
+    if (data.contains("attributeIds")) {
+      QVariantList attributesList = data["attributeIds"].toList();
+      for (const QVariant& attrVariant : attributesList) {
+        QString attrId = attrVariant.toString();
+        if (!attrId.isEmpty()) {
+          m_attributeIds.append(attrId);
+        }
+      }
+    }
+
+    return true;
+  }
+  catch (...) {
+    qWarning() << "Erro ao deserializar elemento" << m_id;
+    return false;
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::notifyObservers()
 {
-    QList<IElementObserver*> observers = m_observers;
-    for (IElementObserver* observer : observers) {
-        if (m_observers.contains(observer)) {
-            observer->onElementChanged(this);
-        }
+  QList<IElementObserver*> observers = m_observers;
+  for (IElementObserver* observer : observers) {
+    if (m_observers.contains(observer)) {
+      observer->onElementChanged(this);
     }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::notifyPositionChanged(
-    const QPointF& oldPosition,
-    const QPointF& newPosition
-)
-{
-    QList<IElementObserver*> observers = m_observers;
-    for (IElementObserver* observer : observers) {
-        if (m_observers.contains(observer)) {
-            observer->onElementPositionChanged(this, oldPosition, newPosition);
-        }
-    }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::onNameChanged(
-    const QString& oldName,
-    const QString& newName
-)
-{
-    Q_UNUSED(oldName)
-    Q_UNUSED(newName)
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::onPositionChanged(
-    const QPointF& oldPosition,
-    const QPointF& newPosition
-)
-{
-    Q_UNUSED(oldPosition)
-    Q_UNUSED(newPosition)
-}
-
-//----------------------------------------------------------------------------------------------
-
-void BasicElement::onSizeChanged(
-    const QSizeF& oldSize,
-    const QSizeF& newSize
-)
-{
-    Q_UNUSED(oldSize)
-    Q_UNUSED(newSize)
-}
-
-//----------------------------------------------------------------------------------------------
-QString BasicElement::elementTypeToString(
-  ElementType type
-)
-{
-  switch (type) {
-    case ElementType::Entity:
-      return "Entity";
-    case ElementType::Relationship:
-      return "Relationship";
-    default:
-      return "Unknown";
   }
 }
 
 //----------------------------------------------------------------------------------------------
 
-ElementType BasicElement::elementTypeFromString(
-    const QString& typeString
+void BasicElement::notifyPositionChanged(
+  const QPointF& oldPosition,
+  const QPointF& newPosition
 )
 {
-    if (typeString == "Entity")
-      return ElementType::Entity;
-    if(typeString == "Attribute")
-      return ElementType::Attribute;
-    if (typeString == "Relationship")
-      return ElementType::Relationship;
+  QList<IElementObserver*> observers = m_observers;
+  for (IElementObserver* observer : observers) {
+    if (m_observers.contains(observer)) {
+      observer->onElementPositionChanged(this, oldPosition, newPosition);
+    }
+  }
+}
 
-    return ElementType::Unknown;
+//----------------------------------------------------------------------------------------------
+
+QString BasicElement::elementTypeToString(
+  ElementType type
+)
+{
+  switch (type) {
+  case ElementType::Entity:
+    return "Entity";
+  case ElementType::Relationship:
+    return "Relationship";
+  default:
+    return "Unknown";
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void BasicElement::addConnectionPoint(
-    ConnectionPoint* connectionPoint
+  ConnectionPoint* connectionPoint
 )
 {
-    if (!connectionPoint || m_connectionPoints.contains(connectionPoint)) {
-        return;
-    }
-    
-    connectionPoint->setParent(this);
-    m_connectionPoints.append(connectionPoint);
+  if (!connectionPoint || m_connectionPoints.contains(connectionPoint)) {
+    return;
+  }
+
+  connectionPoint->setParent(this);
+  m_connectionPoints.append(connectionPoint);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -329,7 +273,7 @@ ConnectionPoint* BasicElement::getConnectionPointByDirection(
   ConnectionDirection connectionDirection
 )
 {
-  for(ConnectionPoint* point : m_connectionPoints) {
+  for (ConnectionPoint* point : m_connectionPoints) {
     if (point->direction() == connectionDirection) {
       return point;
     }
@@ -342,15 +286,15 @@ ConnectionPoint* BasicElement::getConnectionPointByDirection(
 
 void BasicElement::createDefaultConnectionPoints()
 {
-    for (auto connectionPoint : m_connectionPoints) {
-        connectionPoint->deleteLater();
-    }
-    m_connectionPoints.clear();
-    
-    auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints(this);
-    for (auto point : defaultPoints) {
-        addConnectionPoint(point);
-    }
+  for (auto connectionPoint : m_connectionPoints) {
+    connectionPoint->deleteLater();
+  }
+  m_connectionPoints.clear();
+
+  auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints(this);
+  for (auto point : defaultPoints) {
+    addConnectionPoint(point);
+  }
 }
 
 //----------------------------------------------------------------------------------------------

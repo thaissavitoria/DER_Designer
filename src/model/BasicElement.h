@@ -17,15 +17,15 @@
 // -----------------------------------------------------------------------------------------------------
 
 enum class ElementType {
-    Unknown = 0,
-    Entity,
-    WeakEntity,
-    Attribute,
-    KeyAttribute,
-    DerivedAttribute,
-    MultivaluedAttribute,
-    Relationship,
-    IdentifyingRelationship
+  Unknown = 0,
+  Entity,
+  WeakEntity,
+  Attribute,
+  KeyAttribute,
+  DerivedAttribute,
+  MultivaluedAttribute,
+  Relationship,
+  IdentifyingRelationship
 };
 
 // -----------------------------------------------------------------------------------------------------
@@ -33,15 +33,17 @@ enum class ElementType {
 class IElementObserver
 {
 public:
-    virtual ~IElementObserver() = default;
-    virtual void onElementChanged(
-        const class BasicElement* element
-    ) = 0;
-    virtual void onElementPositionChanged(
-        const class BasicElement* element,
-        const QPointF& oldPosition,
-        const QPointF& newPosition
-    ) = 0;
+  virtual ~IElementObserver() = default;
+
+  virtual void onElementChanged(
+    const class BasicElement* element
+  ) = 0;
+
+  virtual void onElementPositionChanged(
+    const class BasicElement* element,
+    const QPointF& oldPosition,
+    const QPointF& newPosition
+  ) = 0;
 };
 
 // -----------------------------------------------------------------------------------------------------
@@ -49,168 +51,150 @@ public:
 /**
  * @brief Abstract base class for all ERD elements (Model only)
  *
- * This class implements the MVC pattern as the Model, providing:
+ * This class provides:
  * - Basic properties common to all elements
  * - Change notification system (Observer Pattern)
- * - Data validation
  * - Serialization/Deserialization – to facilitate conversion to JSON
  * - Connection points for line connecting mechanism
  */
 class BasicElement : public QObject
 {
-    Q_OBJECT
-        Q_PROPERTY(QString id READ id CONSTANT)
-        Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
-        Q_PROPERTY(ElementType type READ type CONSTANT)
-        Q_PROPERTY(QPointF position READ position WRITE setPosition NOTIFY positionChanged)
-        Q_PROPERTY(QSizeF size READ size WRITE setSize NOTIFY sizeChanged)
+  Q_OBJECT
+    Q_PROPERTY(QString id READ id CONSTANT)
+    Q_PROPERTY(QString name READ name WRITE setName)
+    Q_PROPERTY(ElementType type READ type CONSTANT)
+    Q_PROPERTY(QPointF position READ position WRITE setPosition NOTIFY positionChanged)
 
 public:
-    explicit BasicElement(
-        ElementType type,
-        QObject* parent = nullptr
-    );
+  explicit BasicElement(
+    ElementType type,
+    QObject* parent = nullptr
+  );
 
-    explicit BasicElement(
-      const BasicElement& otherElement
-    );
+  explicit BasicElement(
+    const BasicElement& otherElement
+  );
 
-    virtual ~BasicElement();
+  virtual ~BasicElement();
 
-    QString id() const { return m_id; }
-    QString name() const { return m_name; }
-    ElementType type() const { return m_type; }
-    QPointF position() const { return m_position; }
-    QSizeF size() const { return m_size; }
-    QRectF boundingRect() const { return QRectF(m_position, m_size); }
+  QString id() const { return m_id; }
+  QString name() const { return m_name; }
+  ElementType type() const { return m_type; }
+  QPointF position() const { return m_position; }
+  QSizeF size() const { return m_size; }
+  QRectF boundingRect() const { return QRectF(m_position, m_size); }
+  QList<ConnectionPoint*> connectionPoints() const { return m_connectionPoints; }
 
-    void setName(
-        const QString& name
-    );
-    void setPosition(
-        const QPointF& position
-    );
-    void setSize(
-        const QSizeF& size
-    );
-    void setPosition(
-        qreal x,
-        qreal y
-    ) {
-        setPosition(QPointF(x, y));
-    }
-    void setSize(
-        qreal width,
-        qreal height
-    ) {
-        setSize(QSizeF(width, height));
-    }
-    void move(
-        const QPointF& delta
-    );
-    void resize(
-        const QSizeF& newSize
-    ) {
-        setSize(newSize);
-    }
+  void setName(
+    const QString& name
+  );
 
-    void addObserver(
-        IElementObserver* observer
-    );
-    void removeObserver(
-        IElementObserver* observer
-    );
+  void setPosition(
+    const QPointF& position
+  );
 
-    QList<ConnectionPoint*> connectionPoints() const { return m_connectionPoints; }
-    
-    void addConnectionPoint(
-        ConnectionPoint* connectionPoint
-    );
+  void setSize(
+    const QSizeF& size
+  );
 
-    ConnectionPoint* getConnectionPointByDirection(
-      ConnectionDirection connectionDirection
-    );
-    
-    void createDefaultConnectionPoints();
+  void setPosition(
+    qreal x,
+    qreal y
+  )
+  {
+    setPosition(QPointF(x, y));
+  }
 
-    virtual bool isValid() const;
+  void setSize(
+    qreal width,
+    qreal height
+  ) 
+  {
+    setSize(QSizeF(width, height));
+  }
 
-    virtual QVariantMap serialize() const;
-    virtual bool deserialize(
-        const QVariantMap& data
-    );
+  void move(
+    const QPointF& delta
+  );
 
-    virtual QSizeF minimumSize() const = 0;
-    virtual QSizeF preferredSize() const = 0;
-    virtual std::unique_ptr<BasicElement> clone() const = 0;
-    virtual QString typeDisplayName() const = 0;
+  void resize(
+    const QSizeF& newSize
+  ) 
+  {
+    setSize(newSize);
+  }
 
-    static QString elementTypeToString(
-        ElementType type
-    );
-    static ElementType elementTypeFromString(
-        const QString& typeString
-    );
+  void addObserver(
+    IElementObserver* observer
+  );
 
-    void addAttributeId(
-      const QString& attributeId
-    );
+  void removeObserver(
+    IElementObserver* observer
+  );
 
-    bool removeAttributeId(
-      const QString& attributeId
-    );
+  void addConnectionPoint(
+    ConnectionPoint* connectionPoint
+  );
 
-    QList<QString> getAttributeIds() const;
+  ConnectionPoint* getConnectionPointByDirection(
+    ConnectionDirection connectionDirection
+  );
 
-    void clearAttributesIds();
+  void createDefaultConnectionPoints();
+
+  virtual bool isValid() const;
+
+  virtual QVariantMap serialize() const;
+  virtual bool deserialize(
+    const QVariantMap& data
+  );
+
+  virtual QSizeF minimumSize() const = 0;
+  virtual QSizeF preferredSize() const = 0;
+  virtual std::unique_ptr<BasicElement> clone() const = 0;
+  virtual QString typeDisplayName() const = 0;
+
+  static QString elementTypeToString(
+    ElementType type
+  );
+
+  void addAttributeId(
+    const QString& attributeId
+  );
+
+  bool removeAttributeId(
+    const QString& attributeId
+  );
+
+  QList<QString> getAttributeIds() const;
+
+  void clearAttributesIds();
 
 protected:
-    void notifyObservers();
-    void notifyPositionChanged(
-        const QPointF& oldPosition,
-        const QPointF& newPosition
-    );
-    virtual void onNameChanged(
-        const QString& oldName,
-        const QString& newName
-    );
-    virtual void onPositionChanged(
-        const QPointF& oldPosition,
-        const QPointF& newPosition
-    );
-    virtual void onSizeChanged(
-        const QSizeF& oldSize,
-        const QSizeF& newSize
-    );
+  void notifyObservers();
+
+  void notifyPositionChanged(
+    const QPointF& oldPosition,
+    const QPointF& newPosition
+  );
 
 signals:
-    void nameChanged(
-        const QString& newName
-    );
-    void positionChanged(
-        const QPointF& newPosition
-    );
-    void sizeChanged(
-        const QSizeF& newSize
-    );
-    void propertyChanged(
-        const QString& key,
-        const QVariant& value
-    );
-    void elementChanged();
+  void positionChanged(
+    const QPointF& newPosition
+  );
 
 private:
-    QString m_id;
-    QString m_name;
-    ElementType m_type;
-    QPointF m_position;
-    QSizeF m_size;
+  QString m_id;
+  QString m_name;
+  ElementType m_type;
+  QPointF m_position;
+  QSizeF m_size;
 
-    QList<ConnectionPoint*> m_connectionPoints;
+  QList<ConnectionPoint*> m_connectionPoints;
 
-    QList<IElementObserver*> m_observers;
+  QList<IElementObserver*> m_observers;
 
-    QList<QString> m_attributeIds;
+  QList<QString> m_attributeIds;
 };
 
 #endif // BASICELEMENT_H

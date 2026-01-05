@@ -116,7 +116,6 @@ void Attribute::setAttributeType(
 
     m_attributeType = type;
     emit attributeTypeChanged(type);
-    emit elementChanged();
   }
 }
 
@@ -143,7 +142,6 @@ void Attribute::setPrimaryKey(
   if (m_isPrimaryKey != isPrimary) {
     m_isPrimaryKey = isPrimary;
     emit primaryKeyChanged(isPrimary);
-    emit elementChanged();
   }
 }
 
