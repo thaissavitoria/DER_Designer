@@ -4,6 +4,18 @@
 #include "BasicElement.h"
 #include "AttributeType.h"
 
+/**
+ * @brief Represents an attribute element in an ERD diagram
+ *
+ * This class extends BasicElement to represent attributes in Entity-Relationship diagrams
+ * following Peter Chen's notation. It provides:
+ * - Different attribute types (normal, derived, multivalued, composite)
+ * - Primary key designation
+ * - Support for composite attributes with sub-attributes
+ * - Type-specific rendering properties
+ * - Serialization for persistence
+ */
+
 class Attribute : public BasicElement
 {
   Q_OBJECT
@@ -61,15 +73,6 @@ public:
   bool deserialize(
     const QVariantMap& data
   ) override;
-
-signals:
-  void attributeTypeChanged(
-    AttributeType::Type newType
-  );
-
-  void primaryKeyChanged(
-    bool isPrimary
-  );
 
 private:
   AttributeType::Type m_attributeType;
