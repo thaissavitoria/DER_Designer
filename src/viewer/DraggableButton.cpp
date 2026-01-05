@@ -23,16 +23,6 @@ DraggableButton::DraggableButton(
 
 //----------------------------------------------------------------------------------------------
 
-void DraggableButton::setElementType(
-  const QString& elementType
-)
-{
-  m_elementType = elementType;
-  setupIcon();
-}
-
-//----------------------------------------------------------------------------------------------
-
 void DraggableButton::setupIcon()
 {
   QString iconPath = getIconPath();
@@ -173,7 +163,7 @@ void DraggableButton::mouseMoveEvent(
 
   Q_UNUSED(dropAction)
 
-  m_dragging = false;
+    m_dragging = false;
 }
 
 //----------------------------------------------------------------------------------------------
