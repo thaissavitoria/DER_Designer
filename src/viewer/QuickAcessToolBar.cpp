@@ -9,9 +9,9 @@
 
 QuickAccessToolbar::QuickAccessToolbar(
   QWidget* parent
-) : 
-  QToolBar(parent), 
-  m_mainWindow(qobject_cast<MainWindow*>(parent)) 
+) :
+  QToolBar(parent),
+  m_mainWindow(qobject_cast<MainWindow*>(parent))
 {
   setupToolbar();
   addDefaultActions();
@@ -19,7 +19,7 @@ QuickAccessToolbar::QuickAccessToolbar(
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::setupToolbar() 
+void QuickAccessToolbar::setupToolbar()
 {
   setMovable(false);
   setFloatable(false);
@@ -29,8 +29,8 @@ void QuickAccessToolbar::setupToolbar()
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::addDefaultActions() 
-{  
+void QuickAccessToolbar::addDefaultActions()
+{
   QAction* newAction = addActionToToolBar(style()->standardIcon(QStyle::SP_FileIcon), "Novo", "Criar novo diagrama", "Criar um novo diagrama DER");
   connect(newAction, &QAction::triggered, this, &QuickAccessToolbar::onNewAction);
 
@@ -56,7 +56,7 @@ QAction* QuickAccessToolbar::addActionToToolBar(
   const QString& actionName,
   const QString& toolTip,
   const QString& statusTip
-) 
+)
 {
   QAction* newAction = addAction(icon, actionName);
   newAction->setToolTip(toolTip);
@@ -66,7 +66,7 @@ QAction* QuickAccessToolbar::addActionToToolBar(
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::onNewAction() 
+void QuickAccessToolbar::onNewAction()
 {
   if (m_mainWindow) {
     m_mainWindow->newFile();
@@ -75,7 +75,7 @@ void QuickAccessToolbar::onNewAction()
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::onSaveAction() 
+void QuickAccessToolbar::onSaveAction()
 {
   if (m_mainWindow) {
     m_mainWindow->saveFile();
@@ -84,7 +84,7 @@ void QuickAccessToolbar::onSaveAction()
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::onOpenAction() 
+void QuickAccessToolbar::onOpenAction()
 {
   if (m_mainWindow) {
     m_mainWindow->openFile();
@@ -93,7 +93,7 @@ void QuickAccessToolbar::onOpenAction()
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::onHelpAction() 
+void QuickAccessToolbar::onHelpAction()
 {
   if (m_mainWindow) {
     m_mainWindow->showHelp();
@@ -102,7 +102,7 @@ void QuickAccessToolbar::onHelpAction()
 
 //----------------------------------------------------------------------------------------------
 
-void QuickAccessToolbar::onAboutAction() 
+void QuickAccessToolbar::onAboutAction()
 {
   if (m_mainWindow) {
     m_mainWindow->showAbout();

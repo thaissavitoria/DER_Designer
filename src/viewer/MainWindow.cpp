@@ -1778,7 +1778,7 @@ void MainWindow::showAbout()
 {
     QMessageBox::about(this, "Sobre DER Designer",
         "<h3>DER Designer</h3>"
-        "<p>Thaissa Vitoria G.D. de Sousa, Prof.Dr. Andre L. Maravilha Silva</p>"
+        "<p>Thaissa Vitoria G.D. de Sousa, Prof. Dr. Andre L. Maravilha Silva, Prof. Me. Eduardo Gabriel Reis Miranda</p>"
         "<p>Ferramenta para criação de Diagramas Entidade-Relacionamento "
         "baseados na notação de Peter Chen.</p>"
         "<p>Desenvolvido com Qt e C++.</p>"
