@@ -24,7 +24,6 @@ void RelationshipEnd::setEntityId(
 {
   if (m_entityId != entityId) {
     m_entityId = entityId;
-    emit entityIdChanged(m_entityId);
   }
 }
 
