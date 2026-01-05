@@ -4,6 +4,18 @@
 #include "BasicElement.h"
 #include "Attribute.h"
 
+// -----------------------------------------------------------------------------------------------------
+
+/**
+ * @brief Represents an entity element in an ERD diagram
+ *
+ * This class extends BasicElement to represent entities in Entity-Relationship diagrams
+ * following Peter Chen's notation. It provides:
+ * - Support for associated attributes through attribute IDs (from BasicElement)
+ * - Serialization for persistence
+ * - Type identification for rendering and behavior
+ */
+
 class Entity : public BasicElement
 {
   Q_OBJECT
@@ -39,10 +51,6 @@ public:
   QString typeDisplayName() const override;
 
   bool isWeakEntity() const;
-
-  void setIsWeakEntity(
-    const bool isWeak
-  );
 
   QVariantMap serialize() const;
   bool deserialize(

@@ -38,10 +38,10 @@ Entity::Entity(
   : BasicElement(
     ElementType::Entity,
     parent
-  )
+  ),
+  m_isWeakEntity(isWeak)
 {
   setName(name);
-  setIsWeakEntity(isWeak);
   setSize(preferredSize());
 }
 
@@ -94,15 +94,6 @@ bool Entity::isWeakEntity() const
 
 //----------------------------------------------------------------------------------------------
 
-void Entity::setIsWeakEntity(
-  const bool isWeak
-)
-{
-  m_isWeakEntity = isWeak;
-}
-
-//----------------------------------------------------------------------------------------------
-
 QVariantMap Entity::serialize() const
 {
   QVariantMap data = BasicElement::serialize();
@@ -127,7 +118,6 @@ bool Entity::deserialize(
     return true;
   }
   catch (...) {
-    qWarning() << "Erro ao deserializar entity" << id();
     return false;
   }
 }
