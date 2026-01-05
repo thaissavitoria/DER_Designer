@@ -50,18 +50,6 @@ void ConnectionPoint::setRelativePosition(
 
 // -----------------------------------------------------------------------------------------------------
 
-void ConnectionPoint::setDirection(
-  ConnectionDirection direction
-)
-{
-  if (m_direction != direction) {
-    m_direction = direction;
-    emit directionChanged(m_direction);
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
-
 QPointF ConnectionPoint::absolutePosition(
   const QPointF& elementPosition,
   const QSizeF& elementSize
@@ -71,34 +59,6 @@ QPointF ConnectionPoint::absolutePosition(
   absolute.setX(elementPosition.x() + (m_relativePosition.x() * elementSize.width()));
   absolute.setY(elementPosition.y() + (m_relativePosition.y() * elementSize.height()));
   return absolute;
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-QString ConnectionPoint::directionToString(
-  ConnectionDirection direction
-)
-{
-  switch (direction) {
-  case ConnectionDirection::Top: return "Top";
-  case ConnectionDirection::Bottom: return "Bottom";
-  case ConnectionDirection::Left: return "Left";
-  case ConnectionDirection::Right: return "Right";
-  default: return "";
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-ConnectionDirection ConnectionPoint::directionFromString(
-  const QString& directionString
-)
-{
-  if (directionString == "Top") return ConnectionDirection::Top;
-  if (directionString == "Bottom") return ConnectionDirection::Bottom;
-  if (directionString == "Left") return ConnectionDirection::Left;
-  if (directionString == "Right") return ConnectionDirection::Right;
-  return ConnectionDirection::Top;
 }
 
 // -----------------------------------------------------------------------------------------------------
