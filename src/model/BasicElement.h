@@ -140,7 +140,7 @@ public:
     ConnectionDirection connectionDirection
   );
 
-  void createDefaultConnectionPoints();
+  void createAndAddDefaultConnectionPoints();
 
   virtual bool isValid() const;
 

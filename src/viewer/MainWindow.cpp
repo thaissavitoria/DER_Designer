@@ -35,63 +35,66 @@
 // -----------------------------------------------------------------------------------------------------
 
 MainWindow::MainWindow(QWidget* parent)
-    : QMainWindow(parent)
-    , m_centralWidget(nullptr)
-    , m_mainLayout(nullptr)
-    , m_mainSplitter(nullptr)
-    , m_diagramWidget(nullptr)
-    , m_diagramLayout(nullptr)
-    , m_diagramScene(nullptr)
-    , m_graphicsView(nullptr)
-    , m_sideTabWidget(nullptr)
-    , m_drawingTab(nullptr)
-    , m_propertiesTab(nullptr)
-    , m_drawingLayout(nullptr)
-    , m_drawingLabel(nullptr)
-    , m_propertiesLayout(nullptr)
-    , m_propertiesTree(nullptr)
-    , m_menuBar(nullptr)
-    , m_fileMenu(nullptr)
-    , m_helpMenu(nullptr)
-    , m_statusBar(nullptr)
-    , m_statusLabel(nullptr)
-    , m_isModified(false)
+  : QMainWindow(parent)
+  , m_centralWidget(nullptr)
+  , m_mainLayout(nullptr)
+  , m_mainSplitter(nullptr)
+  , m_diagramWidget(nullptr)
+  , m_diagramLayout(nullptr)
+  , m_diagramScene(nullptr)
+  , m_graphicsView(nullptr)
+  , m_sideTabWidget(nullptr)
+  , m_drawingTab(nullptr)
+  , m_propertiesTab(nullptr)
+  , m_drawingLayout(nullptr)
+  , m_drawingLabel(nullptr)
+  , m_propertiesLayout(nullptr)
+  , m_propertiesTree(nullptr)
+  , m_menuBar(nullptr)
+  , m_fileMenu(nullptr)
+  , m_helpMenu(nullptr)
+  , m_statusBar(nullptr)
+  , m_statusLabel(nullptr)
+  , m_isModified(false)
+  , m_autoSaveTimer(new QTimer(this))
+  , m_autoSaveEnabled(true)
+  , m_autoSaveInterval(150000)
 {
-    setupUI();
-    setupAutoSave();
-    connectSignals();
-    updateWindowTitle();
-    updateStatusBar("Pronto");
+  setupUI();
+  setupAutoSave();
+  connectSignals();
+  updateWindowTitle();
+  updateStatusBar("Pronto");
 
-    resize(1200, 800);
+  resize(1200, 800);
 
-    setWindowState(Qt::WindowMaximized);
+  setWindowState(Qt::WindowMaximized);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::setupUI()
 {
-    createMenuBar();
-    createStatusBar();
-    createCentralWidget();
+  createMenuBar();
+  createStatusBar();
+  createCentralWidget();
 
-    setWindowTitle("DER Designer");
-    setMinimumSize(800, 600);
+  setWindowTitle("DER Designer");
+  setMinimumSize(800, 600);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::createMenuBar()
 {
-    m_menuBar = menuBar();
+  m_menuBar = menuBar();
 
-    auto quickAccess = new QuickAccessToolbar(this);
+  auto quickAccess = new QuickAccessToolbar(this);
 
-    addToolBar(Qt::TopToolBarArea, quickAccess);
+  addToolBar(Qt::TopToolBarArea, quickAccess);
 
-    createFileMenu();
-    createHelpMenu();
+  createFileMenu();
+  createHelpMenu();
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -151,189 +154,189 @@ void MainWindow::createFileMenu()
 
 void MainWindow::createHelpMenu()
 {
-    m_helpMenu = m_menuBar->addMenu("&Ajuda");
+  m_helpMenu = m_menuBar->addMenu("&Ajuda");
 
-    QAction* helpAction = createAction("&Ajuda", QKeySequence::HelpContents, "Mostrar ajuda da aplicação", m_helpMenu);
-    connect(helpAction, &QAction::triggered, this, &MainWindow::showHelp);
+  QAction* helpAction = createAction("&Ajuda", QKeySequence::HelpContents, "Mostrar ajuda da aplicação", m_helpMenu);
+  connect(helpAction, &QAction::triggered, this, &MainWindow::showHelp);
 
-    m_helpMenu->addSeparator();
+  m_helpMenu->addSeparator();
 
-    QAction* aboutAction = createAction("&Sobre", QKeySequence::UnknownKey, "Sobre o DER Designer", m_helpMenu);
-    connect(aboutAction, &QAction::triggered, this, &MainWindow::showAbout);
+  QAction* aboutAction = createAction("&Sobre", QKeySequence::UnknownKey, "Sobre o DER Designer", m_helpMenu);
+  connect(aboutAction, &QAction::triggered, this, &MainWindow::showAbout);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QAction* MainWindow::createAction(
-    const QString& text,
-    QKeySequence shortcut,
-    const QString& statusTip,
-    QMenu* parentMenu
+  const QString& text,
+  QKeySequence shortcut,
+  const QString& statusTip,
+  QMenu* parentMenu
 )
 {
-    auto action = new QAction(text, this);
-    action->setShortcut(shortcut);
-    action->setStatusTip(statusTip);
-    parentMenu->addAction(action);
-    return action;
+  auto action = new QAction(text, this);
+  action->setShortcut(shortcut);
+  action->setStatusTip(statusTip);
+  parentMenu->addAction(action);
+  return action;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::createStatusBar()
 {
-    m_statusBar = statusBar();
-    m_statusLabel = new QLabel();
-    m_statusBar->addWidget(m_statusLabel);
+  m_statusBar = statusBar();
+  m_statusLabel = new QLabel();
+  m_statusBar->addWidget(m_statusLabel);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::createCentralWidget()
 {
-    m_centralWidget = new QWidget();
-    setCentralWidget(m_centralWidget);
+  m_centralWidget = new QWidget();
+  setCentralWidget(m_centralWidget);
 
-    m_mainLayout = new QHBoxLayout(m_centralWidget);
-    m_mainLayout->setContentsMargins(5, 5, 5, 5);
-    m_mainLayout->setSpacing(5);
+  m_mainLayout = new QHBoxLayout(m_centralWidget);
+  m_mainLayout->setContentsMargins(5, 5, 5, 5);
+  m_mainLayout->setSpacing(5);
 
-    m_mainSplitter = new QSplitter(Qt::Horizontal);
-    m_mainLayout->addWidget(m_mainSplitter);
+  m_mainSplitter = new QSplitter(Qt::Horizontal);
+  m_mainLayout->addWidget(m_mainSplitter);
 
-    createDiagramArea();
-    createSidePanel();
+  createDiagramArea();
+  createSidePanel();
 
-    m_mainSplitter->setStretchFactor(0, 3); // Diagram area
-    m_mainSplitter->setStretchFactor(1, 1); // Side panel
+  m_mainSplitter->setStretchFactor(0, 3); // Diagram area
+  m_mainSplitter->setStretchFactor(1, 1); // Side panel
 
-    QList<int> initialSizes;
-    initialSizes << 900 << 300;
-    m_mainSplitter->setSizes(initialSizes);
+  QList<int> initialSizes;
+  initialSizes << 900 << 300;
+  m_mainSplitter->setSizes(initialSizes);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::createSidePanel()
 {
-    m_sideTabWidget = new QTabWidget();
-    m_sideTabWidget->setTabPosition(QTabWidget::North);
-    m_sideTabWidget->setMaximumWidth(350);
-    m_sideTabWidget->setMinimumWidth(250);
+  m_sideTabWidget = new QTabWidget();
+  m_sideTabWidget->setTabPosition(QTabWidget::North);
+  m_sideTabWidget->setMaximumWidth(350);
+  m_sideTabWidget->setMinimumWidth(250);
 
-    m_drawingTab = new QWidget();
-    m_drawingLayout = new QVBoxLayout(m_drawingTab);
-    m_drawingLayout->setContentsMargins(10, 10, 10, 10);
-    m_drawingLayout->setSpacing(10);
+  m_drawingTab = new QWidget();
+  m_drawingLayout = new QVBoxLayout(m_drawingTab);
+  m_drawingLayout->setContentsMargins(10, 10, 10, 10);
+  m_drawingLayout->setSpacing(10);
 
-    auto entityBtn = new DraggableButton("Entity");
-    connect(entityBtn, &QPushButton::clicked, this, &MainWindow::onAddEntityClicked);
-    m_drawingLayout->addWidget(entityBtn);
+  auto entityBtn = new DraggableButton("Entity");
+  connect(entityBtn, &QPushButton::clicked, this, &MainWindow::onAddEntityClicked);
+  m_drawingLayout->addWidget(entityBtn);
 
-    auto attributeBtn = new DraggableButton("Attribute");
-    connect(attributeBtn, &QPushButton::clicked, this, &MainWindow::onAddAttributeClicked);
-    m_drawingLayout->addWidget(attributeBtn);
+  auto attributeBtn = new DraggableButton("Attribute");
+  connect(attributeBtn, &QPushButton::clicked, this, &MainWindow::onAddAttributeClicked);
+  m_drawingLayout->addWidget(attributeBtn);
 
-    auto relationshipBtn = new DraggableButton("Relationship");
-    connect(relationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddRelationshipClicked);
-    m_drawingLayout->addWidget(relationshipBtn);
+  auto relationshipBtn = new DraggableButton("Relationship");
+  connect(relationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddRelationshipClicked);
+  m_drawingLayout->addWidget(relationshipBtn);
 
-    auto weakEntityBtn = new DraggableButton("WeakEntity");
-    connect(weakEntityBtn, &QPushButton::clicked, this, &MainWindow::onAddWeakEntityClicked);
-    m_drawingLayout->addWidget(weakEntityBtn);
+  auto weakEntityBtn = new DraggableButton("WeakEntity");
+  connect(weakEntityBtn, &QPushButton::clicked, this, &MainWindow::onAddWeakEntityClicked);
+  m_drawingLayout->addWidget(weakEntityBtn);
 
-    auto identifyingRelationshipBtn = new DraggableButton("IdentifyingRelationship");
-    connect(identifyingRelationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddIdentifyingRelationshipClicked);
-    m_drawingLayout->addWidget(identifyingRelationshipBtn);
+  auto identifyingRelationshipBtn = new DraggableButton("IdentifyingRelationship");
+  connect(identifyingRelationshipBtn, &QPushButton::clicked, this, &MainWindow::onAddIdentifyingRelationshipClicked);
+  m_drawingLayout->addWidget(identifyingRelationshipBtn);
 
-    m_drawingLayout->addStretch();
+  m_drawingLayout->addStretch();
 
-    m_sideTabWidget->addTab(m_drawingTab, "Desenho");
+  m_sideTabWidget->addTab(m_drawingTab, "Desenho");
 
-    m_propertiesTab = new QWidget();
-    m_propertiesLayout = new QVBoxLayout(m_propertiesTab);
-    m_propertiesLayout->setContentsMargins(10, 10, 10, 10);
-    m_propertiesLayout->setSpacing(5);
+  m_propertiesTab = new QWidget();
+  m_propertiesLayout = new QVBoxLayout(m_propertiesTab);
+  m_propertiesLayout->setContentsMargins(10, 10, 10, 10);
+  m_propertiesLayout->setSpacing(5);
 
-    auto propertiesLabel = new QLabel("Propriedades:");
-    propertiesLabel->setStyleSheet("font-weight: bold;");
-    m_propertiesLayout->addWidget(propertiesLabel);
+  auto propertiesLabel = new QLabel("Propriedades:");
+  propertiesLabel->setStyleSheet("font-weight: bold;");
+  m_propertiesLayout->addWidget(propertiesLabel);
 
-    m_propertiesTree = new QTreeWidget();
-    m_propertiesTree->setHeaderLabels(QStringList() << "Propriedade" << "Valor");
-    m_propertiesTree->setAlternatingRowColors(true);
-    m_propertiesTree->setRootIsDecorated(false);
+  m_propertiesTree = new QTreeWidget();
+  m_propertiesTree->setHeaderLabels(QStringList() << "Propriedade" << "Valor");
+  m_propertiesTree->setAlternatingRowColors(true);
+  m_propertiesTree->setRootIsDecorated(false);
 
-    m_propertiesLayout->addWidget(m_propertiesTree);
+  m_propertiesLayout->addWidget(m_propertiesTree);
 
-    m_sideTabWidget->addTab(m_propertiesTab, "Propriedades");
+  m_sideTabWidget->addTab(m_propertiesTab, "Propriedades");
 
-    m_mainSplitter->addWidget(m_sideTabWidget);
+  m_mainSplitter->addWidget(m_sideTabWidget);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 QPushButton* MainWindow::createPushButton(
-    const QString& text, 
-    const QString& iconPath 
+  const QString& text,
+  const QString& iconPath
 )
 {
-    auto button = new QPushButton(text);
-    if (!iconPath.isEmpty()) {
-        QIcon icon(iconPath);
-        button->setIcon(icon);
-    }
-    return button;
+  auto button = new QPushButton(text);
+  if (!iconPath.isEmpty()) {
+    QIcon icon(iconPath);
+    button->setIcon(icon);
+  }
+  return button;
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::closeEvent(QCloseEvent* event)
 {
-    if (m_isModified) {
-        QMessageBox::StandardButton ret = QMessageBox::warning(this,
-            "DER Designer",
-            "O diagrama foi modificado.\n"
-            "Deseja salvar as alterações?",
-            QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+  if (m_isModified) {
+    QMessageBox::StandardButton ret = QMessageBox::warning(this,
+      "DER Designer",
+      "O diagrama foi modificado.\n"
+      "Deseja salvar as alterações?",
+      QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
 
-        if (ret == QMessageBox::Save) {
-            saveFile();
-            event->accept();
-        }
-        else if (ret == QMessageBox::Cancel) {
-            event->ignore();
-            return;
-        }
+    if (ret == QMessageBox::Save) {
+      saveFile();
+      event->accept();
     }
-    event->accept();
+    else if (ret == QMessageBox::Cancel) {
+      event->ignore();
+      return;
+    }
+  }
+  event->accept();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::newFile()
 {
-    if (m_isModified) {
-        QMessageBox::StandardButton ret = QMessageBox::warning(this,
-            "DER Designer",
-            "O diagrama atual foi modificado.\n"
-            "Deseja salvar as alterações?",
-            QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+  if (m_isModified) {
+    QMessageBox::StandardButton ret = QMessageBox::warning(this,
+      "DER Designer",
+      "O diagrama atual foi modificado.\n"
+      "Deseja salvar as alterações?",
+      QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
 
-        if (ret == QMessageBox::Save) {
-            saveFile();
-        }
-        else if (ret == QMessageBox::Cancel) {
-            return;
-        }
+    if (ret == QMessageBox::Save) {
+      saveFile();
     }
+    else if (ret == QMessageBox::Cancel) {
+      return;
+    }
+  }
 
-    m_diagramScene->clearDiagram();
+  m_diagramScene->clearDiagram();
 
-    m_currentFileName.clear();
-    m_isModified = false;
-    updateWindowTitle();
-    updateStatusBar("Novo diagrama criado");
+  m_currentFileName.clear();
+  m_isModified = false;
+  updateWindowTitle();
+  updateStatusBar("Novo diagrama criado");
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -567,7 +570,7 @@ bool MainWindow::loadDiagramConnections(
             QVariantMap connectionData = connectionJson.toVariantMap();
             relConnection->deserialize(connectionData);
             m_diagramScene->addRelationshipConnection(relConnection);
-           }
+          }
         }
       }
     }
@@ -650,80 +653,80 @@ void MainWindow::exportDiagram()
 
 void MainWindow::exitApplication()
 {
-    close();
+  close();
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::createDiagramArea()
 {
-    m_diagramWidget = new QWidget();
-    m_diagramLayout = new QVBoxLayout(m_diagramWidget);
-    m_diagramLayout->setContentsMargins(0, 0, 0, 0);
-    m_diagramLayout->setSpacing(0);
+  m_diagramWidget = new QWidget();
+  m_diagramLayout = new QVBoxLayout(m_diagramWidget);
+  m_diagramLayout->setContentsMargins(0, 0, 0, 0);
+  m_diagramLayout->setSpacing(0);
 
-    m_diagramScene = new DiagramScene(this);
+  m_diagramScene = new DiagramScene(this);
 
-    m_graphicsView = new DiagramView(m_diagramScene);  
-    m_graphicsView->setBackgroundBrush(QColor(245, 245, 245));
+  m_graphicsView = new DiagramView(m_diagramScene);
+  m_graphicsView->setBackgroundBrush(QColor(245, 245, 245));
 
-    connect(m_graphicsView, &DiagramView::elementDropped, this, &MainWindow::onElementDropped);
+  connect(m_graphicsView, &DiagramView::elementDropped, this, &MainWindow::onElementDropped);
 
-    m_diagramLayout->addWidget(m_graphicsView);
-    m_mainSplitter->addWidget(m_diagramWidget);
+  m_diagramLayout->addWidget(m_graphicsView);
+  m_mainSplitter->addWidget(m_diagramWidget);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::onElementDropped(
-    const QString& elementType,
-    const QPointF& position
+  const QString& elementType,
+  const QPointF& position
 )
 {
-    BasicElement* element = nullptr;
+  BasicElement* element = nullptr;
 
-    if (elementType == "Entity") {
-      element = new Entity("Entidade");
-    }
-    else if (elementType == "WeakEntity") {
-      element = new Entity("Entidade Fraca", true);
-    }
-    else if (elementType == "Attribute") {
-      element = new Attribute("Atributo");
-    }
-    else if (elementType == "Relationship") {
-      element = new Relationship("Relacionamento");
-    }
-    else if (elementType == "IdentifyingRelationship") {
-      element = new Relationship("Rel. Identificador", true);
-    }
+  if (elementType == "Entity") {
+    element = new Entity("Entidade");
+  }
+  else if (elementType == "WeakEntity") {
+    element = new Entity("Entidade Fraca", true);
+  }
+  else if (elementType == "Attribute") {
+    element = new Attribute("Atributo");
+  }
+  else if (elementType == "Relationship") {
+    element = new Relationship("Relacionamento");
+  }
+  else if (elementType == "IdentifyingRelationship") {
+    element = new Relationship("Rel. Identificador", true);
+  }
 
-    if (element) {
-        element->setPosition(position);
-        m_diagramScene->addElement(element);
+  if (element) {
+    element->setPosition(position);
+    m_diagramScene->addElement(element);
 
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar(QString("%1 adicionado na posição (%2, %3)")
-            .arg(elementType)
-            .arg(position.x(), 0, 'f', 1)
-            .arg(position.y(), 0, 'f', 1));
-    }
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar(QString("%1 adicionado na posição (%2, %3)")
+      .arg(elementType)
+      .arg(position.x(), 0, 'f', 1)
+      .arg(position.y(), 0, 'f', 1));
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::connectSignals()
 {
-    connect(m_sideTabWidget, &QTabWidget::currentChanged, this, &MainWindow::onTabChanged);
+  connect(m_sideTabWidget, &QTabWidget::currentChanged, this, &MainWindow::onTabChanged);
 
-    if (m_diagramScene) {
-        connect(m_diagramScene, &DiagramScene::selectionChanged, this, &MainWindow::onSelectionChanged);
-    }
+  if (m_diagramScene) {
+    connect(m_diagramScene, &DiagramScene::selectionChanged, this, &MainWindow::onSelectionChanged);
+  }
 
-    if (m_propertiesTree) {
-        connect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
-    }
+  if (m_propertiesTree) {
+    connect(m_propertiesTree, &QTreeWidget::itemChanged, this, &MainWindow::onPropertyValueChanged);
+  }
 }
 
 //----------------------------------------------------------------------------------------------
@@ -771,14 +774,14 @@ void MainWindow::updatePropertiesPanel()
 
 void MainWindow::clearPropertiesPanel()
 {
-    if (m_propertiesTree) {
-        m_propertiesTree->clear();
-    }
-    
-    for (auto pair : m_propertyWidgets) {
-      pair.second->deleteLater();
-    }
-    m_propertyWidgets.clear();
+  if (m_propertiesTree) {
+    m_propertiesTree->clear();
+  }
+
+  for (auto pair : m_propertyWidgets) {
+    pair.second->deleteLater();
+  }
+  m_propertyWidgets.clear();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -975,9 +978,9 @@ void MainWindow::ConnectBasicElementsWithConnectionLine(
   BasicElement* startElement,
   BasicElement* endElement
 )
-{ 
+{
   const bool isRelationshipEntityConnection = startElement->type() == ElementType::Relationship && endElement->type() == ElementType::Entity ||
-                                              startElement->type() == ElementType::Entity && endElement->type() == ElementType::Relationship;
+    startElement->type() == ElementType::Entity && endElement->type() == ElementType::Relationship;
 
   if (isRelationshipEntityConnection) {
     return;
@@ -1098,55 +1101,56 @@ void MainWindow::populateAttributeList(
 //----------------------------------------------------------------------------------------------
 
 QTreeWidgetItem* MainWindow::createPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QVariant& value,
-    const QString& propertyKey,
-    bool editable
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  const QVariant& value,
+  const QString& propertyKey,
+  bool editable
 )
 {
-    auto item = new QTreeWidgetItem(parent);
-    item->setText(0, propertyName);
-    item->setText(1, value.toString());
-    item->setData(0, Qt::UserRole, propertyKey);
-    
-    if (editable) {
-        item->setFlags(item->flags() | Qt::ItemIsEditable);
-    } else {
-        item->setFlags(item->flags() & ~Qt::ItemIsEditable);
-    }
-    
-    return item;
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setText(1, value.toString());
+  item->setData(0, Qt::UserRole, propertyKey);
+
+  if (editable) {
+    item->setFlags(item->flags() | Qt::ItemIsEditable);
+  }
+  else {
+    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+  }
+
+  return item;
 }
 
 //----------------------------------------------------------------------------------------------
 
 QTreeWidgetItem* MainWindow::createComboBoxPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QStringList& options,
-    const QString& currentValue,
-    const QString& propertyKey
+  QTreeWidgetItem* parent,
+  const QString& propertyName,
+  const QStringList& options,
+  const QString& currentValue,
+  const QString& propertyKey
 )
 {
-    auto item = new QTreeWidgetItem(parent);
-    item->setText(0, propertyName);
-    item->setText(1, currentValue);
-    item->setData(0, Qt::UserRole, propertyKey);
-    item->setFlags(item->flags() & ~Qt::ItemIsEditable);
+  auto item = new QTreeWidgetItem(parent);
+  item->setText(0, propertyName);
+  item->setText(1, currentValue);
+  item->setData(0, Qt::UserRole, propertyKey);
+  item->setFlags(item->flags() & ~Qt::ItemIsEditable);
 
-    auto comboBox = new QComboBox();
-    comboBox->addItems(options);
-    comboBox->setCurrentText(currentValue);
-    comboBox->setProperty("propertyKey", propertyKey);
-    
-    connect(comboBox, QOverload<const QString&>::of(&QComboBox::currentTextChanged),
-            this, &MainWindow::onComboBoxChanged);
-    
-    m_propertiesTree->setItemWidget(item, 1, comboBox);
-    m_propertyWidgets[propertyKey] = comboBox;
-    
-    return item;
+  auto comboBox = new QComboBox();
+  comboBox->addItems(options);
+  comboBox->setCurrentText(currentValue);
+  comboBox->setProperty("propertyKey", propertyKey);
+
+  connect(comboBox, QOverload<const QString&>::of(&QComboBox::currentTextChanged),
+    this, &MainWindow::onComboBoxChanged);
+
+  m_propertiesTree->setItemWidget(item, 1, comboBox);
+  m_propertyWidgets[propertyKey] = comboBox;
+
+  return item;
 }
 
 //----------------------------------------------------------------------------------------------
@@ -1347,7 +1351,7 @@ bool MainWindow::handleAttributePropertyChange(
 )
 {
   QStringList parts = propertyType.split("_");
-  if (parts.size() < 3 ) {
+  if (parts.size() < 3) {
     return false;
   }
 
@@ -1442,7 +1446,7 @@ void MainWindow::updatesAfterChangingProperty(
 
 void MainWindow::updateElementGraphicsItem(
   BasicElement* element
-) 
+)
 {
   if (ElementGraphicsItem* graphicsItem = m_diagramScene->findGraphicsItem(element)) {
     graphicsItem->update();
@@ -1642,65 +1646,66 @@ void MainWindow::onLineEditChanged(
 //----------------------------------------------------------------------------------------------
 
 void MainWindow::updatePropertyItemText(
-    const QString& propertyKey,
-    const QString& value
+  const QString& propertyKey,
+  const QString& value
 )
 {
-    for (int i = 0; i < m_propertiesTree->topLevelItemCount(); ++i) {
-        QTreeWidgetItem* group = m_propertiesTree->topLevelItem(i);
-        for (int j = 0; j < group->childCount(); ++j) {
-            QTreeWidgetItem* child = group->child(j);
-            if (child->data(0, Qt::UserRole).toString() == propertyKey) {
-                child->setText(1, value);
-                return;
-            }
-        }
+  for (int i = 0; i < m_propertiesTree->topLevelItemCount(); ++i) {
+    QTreeWidgetItem* group = m_propertiesTree->topLevelItem(i);
+    for (int j = 0; j < group->childCount(); ++j) {
+      QTreeWidgetItem* child = group->child(j);
+      if (child->data(0, Qt::UserRole).toString() == propertyKey) {
+        child->setText(1, value);
+        return;
+      }
     }
+  }
 }
 
 //----------------------------------------------------------------------------------------------
 
 void MainWindow::onAddEntityClicked()
 {
-    if (!m_diagramScene) {
-        return;
-    }
+  if (!m_diagramScene) {
+    return;
+  }
 
-    QPointF pos =  QPointF(0, 0);
+  QPointF pos = QPointF(0, 0);
 
-    auto entity = new Entity("Entidade");
+  auto entity = new Entity("Entidade");
 
   m_diagramScene->addElement(entity);
-    if (entity) {
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Entidade adicionada");
-    } else {
-        updateStatusBar("Falha ao adicionar entidade");
-    }
+  if (entity) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Entidade adicionada");
+  }
+  else {
+    updateStatusBar("Falha ao adicionar entidade");
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::onAddAttributeClicked()
 {
-    if (!m_diagramScene) {
-        return;
-    }
+  if (!m_diagramScene) {
+    return;
+  }
 
-    QPointF pos = QPointF(0, 0);
+  QPointF pos = QPointF(0, 0);
 
-    auto attribute = new Attribute("Atributo");
+  auto attribute = new Attribute("Atributo");
 
-    m_diagramScene->addElement(attribute);
-    if (attribute) {
-        m_isModified = true;
-        updateWindowTitle();
-        updateStatusBar("Atributo adicionado");
-    }
-    else {
-        updateStatusBar("Falha ao adicionar atributo");
-    }
+  m_diagramScene->addElement(attribute);
+  if (attribute) {
+    m_isModified = true;
+    updateWindowTitle();
+    updateStatusBar("Atributo adicionado");
+  }
+  else {
+    updateStatusBar("Falha ao adicionar atributo");
+  }
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -1776,61 +1781,61 @@ void MainWindow::onAddIdentifyingRelationshipClicked()
 
 void MainWindow::showAbout()
 {
-    QMessageBox::about(this, "Sobre DER Designer",
-        "<h3>DER Designer</h3>"
-        "<p>Thaissa Vitoria G.D. de Sousa, Prof. Dr. Andre L. Maravilha Silva, Prof. Me. Eduardo Gabriel Reis Miranda</p>"
-        "<p>Ferramenta para criação de Diagramas Entidade-Relacionamento "
-        "baseados na notação de Peter Chen.</p>"
-        "<p>Desenvolvido com Qt e C++.</p>"
-        "<p>Versão 1.0</p>");
+  QMessageBox::about(this, "Sobre DER Designer",
+    "<h3>DER Designer</h3>"
+    "<p>Thaissa Vitoria G.D. de Sousa, Prof. Dr. Andre L. Maravilha Silva, Prof. Me. Eduardo Gabriel Reis Miranda</p>"
+    "<p>Ferramenta para criação de Diagramas Entidade-Relacionamento "
+    "baseados na notação de Peter Chen.</p>"
+    "<p>Desenvolvido com Qt e C++.</p>"
+    "<p>Versão 1.0</p>");
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::showHelp()
 {
-    QMessageBox::information(this, "Ajuda",
-        "<h3>Como usar o DER Designer</h3>"
-        "<p><b>Aba Desenho:</b> Selecione os elementos para adicionar ao diagrama.</p>"
-        "<p><b>Aba Propriedades:</b> Visualize e edite propriedades do elemento selecionado.</p>"
-        "<p><b>Área de Desenho:</b> Clique e arraste para criar e posicionar elementos.</p>"
-        "<p><b>Menu Arquivo:</b> Criar, abrir, salvar e exportar diagramas.</p>");
+  QMessageBox::information(this, "Ajuda",
+    "<h3>Como usar o DER Designer</h3>"
+    "<p><b>Aba Desenho:</b> Selecione os elementos para adicionar ao diagrama.</p>"
+    "<p><b>Aba Propriedades:</b> Visualize e edite propriedades do elemento selecionado.</p>"
+    "<p><b>Área de Desenho:</b> Clique e arraste para criar e posicionar elementos.</p>"
+    "<p><b>Menu Arquivo:</b> Criar, abrir, salvar e exportar diagramas.</p>");
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::onTabChanged(int index)
 {
-    QString tabName = m_sideTabWidget->tabText(index);
-    updateStatusBar("Aba ativa: " + tabName);
+  QString tabName = m_sideTabWidget->tabText(index);
+  updateStatusBar("Aba ativa: " + tabName);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::onTabCloseRequested(int index)
 {
-    Q_UNUSED(index)
+  Q_UNUSED(index)
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::updateWindowTitle()
 {
-    QString title = "DER Designer";
-    if (!m_currentFileName.isEmpty()) {
-        title += " - " + QFileInfo(m_currentFileName).baseName();
-    }
-    if (m_isModified) {
-        title += " *";
-    }
-    setWindowTitle(title);
+  QString title = "DER Designer";
+  if (!m_currentFileName.isEmpty()) {
+    title += " - " + QFileInfo(m_currentFileName).baseName();
+  }
+  if (m_isModified) {
+    title += " *";
+  }
+  setWindowTitle(title);
 }
 
 // -----------------------------------------------------------------------------------------------------
 
 void MainWindow::updateStatusBar(const QString& message)
 {
-    m_statusLabel->setText(message);
+  m_statusLabel->setText(message);
 }
 
 // -----------------------------------------------------------------------------------------------------
@@ -1988,10 +1993,6 @@ QTreeWidgetItem* MainWindow::createLineEditPropertyItem(
 
 void MainWindow::setupAutoSave()
 {
-  m_autoSaveTimer = new QTimer(this);
-  m_autoSaveEnabled = true;
-  m_autoSaveInterval = 150000;
-
   const QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation);
   m_autoSaveDirectory = appDataPath + "/autosave_DERDesigner";
 
@@ -2102,7 +2103,7 @@ void MainWindow::cleanOldAutoSaveFiles()
   if (autoSaveFiles.size() > maxAutoSaveFiles) {
     for (int i = maxAutoSaveFiles; i < autoSaveFiles.size(); ++i) {
       QFile::remove(autoSaveFiles[i].absoluteFilePath());
-      }
+    }
   }
 }
 

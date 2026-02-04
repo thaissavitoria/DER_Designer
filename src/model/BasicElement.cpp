@@ -17,7 +17,7 @@ BasicElement::BasicElement(
   , m_size(100, 50)
   , m_name(elementTypeToString(type))
 {
-  createDefaultConnectionPoints();
+  createAndAddDefaultConnectionPoints();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ BasicElement::BasicElement(
   , m_size(otherElement.m_size)
   , m_name(otherElement.m_name)
 {
-  createDefaultConnectionPoints();
+  createAndAddDefaultConnectionPoints();
 }
 
 //----------------------------------------------------------------------------------------------
@@ -284,14 +284,14 @@ ConnectionPoint* BasicElement::getConnectionPointByDirection(
 
 //----------------------------------------------------------------------------------------------
 
-void BasicElement::createDefaultConnectionPoints()
+void BasicElement::createAndAddDefaultConnectionPoints()
 {
   for (auto connectionPoint : m_connectionPoints) {
     connectionPoint->deleteLater();
   }
   m_connectionPoints.clear();
 
-  auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints(this);
+  auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints();
   for (auto point : defaultPoints) {
     addConnectionPoint(point);
   }

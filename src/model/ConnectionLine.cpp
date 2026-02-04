@@ -69,8 +69,7 @@ void ConnectionLine::setStartPoint(
 {
   if (m_startPoint != point) {
     if (m_startPoint) {
-      auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
-      if (startElement) {
+      if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())) {
         disconnect(startElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
       }
@@ -81,8 +80,7 @@ void ConnectionLine::setStartPoint(
     m_startPoint = point;
 
     if (m_startPoint) {
-      auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
-      if (startElement) {
+      if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())) {
         connect(startElement, &BasicElement::positionChanged,
           this, &ConnectionLine::onElementPositionChanged);
       }
@@ -279,8 +277,7 @@ ConnectionLineType ConnectionLine::lineTypeFromString(
 void ConnectionLine::connectToPoints()
 {
   if (m_startPoint) {
-    auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent());
-    if (startElement) {
+    if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())){
       connect(startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
     }
@@ -289,8 +286,7 @@ void ConnectionLine::connectToPoints()
   }
 
   if (m_endPoint) {
-    auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent());
-    if (endElement) {
+    if (auto endElement = qobject_cast<BasicElement*>(m_endPoint->parent())) {
       connect(endElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
     }

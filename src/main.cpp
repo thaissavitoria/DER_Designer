@@ -16,6 +16,5 @@ int main(
     MainWindow window;
     window.show();
 
-
     return app.exec();
 }

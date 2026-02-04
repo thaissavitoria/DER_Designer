@@ -20,7 +20,7 @@ public:
   static QString elementToJson(
     const BasicElement* element
   );
-    
+
   static QJsonObject elementToJsonObject(
     const BasicElement* element
   );
@@ -28,12 +28,12 @@ public:
   static QJsonObject connectionToJsonObject(
     const ConnectionLine* connection
   );
-    
+
   static bool elementFromJson(
     BasicElement* element,
     const QString& jsonString
   );
-    
+
   static bool elementFromJsonObject(
     BasicElement* element,
     const QJsonObject& jsonObject

@@ -112,7 +112,7 @@ QJsonObject JsonHelper::diagramToJsonObject(
 
   QJsonArray elementsArray;
   for (BasicElement* element : elements) {
-    if(element && element->isValid()) {
+    if (element && element->isValid()) {
       QJsonObject elementJson = elementToJsonObject(element);
       elementsArray.append(elementJson);
       serializedIds.insert(element->id());
