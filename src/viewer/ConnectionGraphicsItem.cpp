@@ -25,6 +25,7 @@ ConnectionGraphicsItem::ConnectionGraphicsItem(
     connectToConnection();
     setAcceptHoverEvents(true);
     setFlag(QGraphicsItem::ItemIsSelectable, true);
+    setZValue(-1);
     createControlPoints();
     updateFromConnection();
   }
@@ -183,7 +184,7 @@ QPainterPath ConnectionGraphicsItem::shape() const
   }
 
   QPainterPathStroker stroker;
-  stroker.setWidth(qMax(m_connection->lineWidth() + 4, 8.0));
+  stroker.setWidth(qMax(m_connection->lineWidth() + 2, 6.0));
   stroker.setCapStyle(Qt::RoundCap);
   stroker.setJoinStyle(Qt::RoundJoin);
 

@@ -29,6 +29,7 @@ ElementGraphicsItem::ElementGraphicsItem(
         setFlag(QGraphicsItem::ItemIsSelectable, true);
         setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
         setAcceptHoverEvents(true);
+        setZValue(1);
     }
 }
 
@@ -125,12 +126,11 @@ void ElementGraphicsItem::renderConnectionPoints(
         QRectF pointRect = getConnectionPointRect(point);
 
         if (point == m_hoveredConnectionPoint) {
-            painter->setPen(QPen(QColor(0, 100, 0), 2));
-            painter->setBrush(QBrush(QColor(34, 139, 34, 200)));
+            painter->setPen(QPen(QColor(0, 120, 215), 2));
+            painter->setBrush(QBrush(QColor(0, 120, 215, 220)));
         } else {
-            // normal
-            painter->setPen(QPen(QColor(34, 139, 34), 1));
-            painter->setBrush(QBrush(QColor(34, 139, 34,100)));
+            painter->setPen(QPen(QColor(34, 139, 34), 1.5));
+            painter->setBrush(QBrush(QColor(34, 139, 34, 150)));
         }
 
         painter->drawEllipse(pointRect);
@@ -170,7 +170,7 @@ QRectF ElementGraphicsItem::getConnectionPointRect(
     if (!connectionPoint || !m_element) return QRectF();
 
     QPointF absolutePos = connectionPoint->absolutePosition(QPointF(0, 0), m_element->size());
-    qreal size = (connectionPoint == m_hoveredConnectionPoint) ? 10.0 : 8.0;
+    qreal size = (connectionPoint == m_hoveredConnectionPoint) ? 12.0 : 8.0;
     
     return QRectF(absolutePos.x() - size/2, absolutePos.y() - size/2, size, size);
 }
