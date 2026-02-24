@@ -1020,6 +1020,7 @@ void DiagramScene::handleRelationshipDisconnection(
 }
 
 // -----------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------
 
 void DiagramScene::handleAttributeDisconnection(
   ConnectionLine* connection
@@ -1039,18 +1040,20 @@ void DiagramScene::handleAttributeDisconnection(
   auto attribute = qobject_cast<Attribute*>(startElement);
 
   bool attributeChildIsEndElement = false;
-  if(!attribute || attribute->parent() != endElement) {
+  if (!attribute || attribute->parent() != endElement) {
     attributeChildIsEndElement = true;
     attribute = qobject_cast<Attribute*>(endElement);
   }
 
-  attribute->setParent(nullptr);
+  if (attribute) {
+    attribute->setParent(nullptr);
 
-  if (attributeChildIsEndElement) {
-    startElement->removeAttributeId(attribute->id());
-  }
-  else {
-    endElement->removeAttributeId(attribute->id());
+    if (attributeChildIsEndElement) {
+      startElement->removeAttributeId(attribute->id());
+    }
+    else {
+      endElement->removeAttributeId(attribute->id());
+    }
   }
 }
 
