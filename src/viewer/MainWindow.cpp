@@ -2058,61 +2058,69 @@ QString MainWindow::generateAutoSaveFileName() const
 
 //----------------------------------------------------------------------------------------------
 
-void MainWindow::performAutoSave()
+bool MainWindow::saveToMainFile()
 {
-  if (!m_diagramScene) {
-    return;
+  if (m_currentFileName.isEmpty() || !m_diagramScene) {
+    return false;
   }
 
   QList<BasicElement*> elements = m_diagramScene->getAllElements();
-
-  if (elements.isEmpty()) {
-    return;
-  }
-
-  QString autoSaveFileName = generateAutoSaveFileName();
   QList<ConnectionLine*> connections = m_diagramScene->getAllConnections();
 
   const bool success = JsonHelper::saveDiagramToFile(
-    autoSaveFileName,
+    m_currentFileName,
     elements,
     connections
   );
 
   if (success) {
-    cleanOldAutoSaveFiles();
+    m_isModified = false;
+    updateWindowTitle();
   }
+
+  return success;
 }
 
 //----------------------------------------------------------------------------------------------
 
-void MainWindow::cleanOldAutoSaveFiles()
+bool MainWindow::saveVersionBackup()
 {
-  QDir autoSaveDir(m_autoSaveDirectory);
-  QStringList filters;
-  filters << "*_autosave_*.json";
+  if (!m_diagramScene) {
+    return false;
+  }
 
-  QFileInfoList autoSaveFiles = autoSaveDir.entryInfoList(
-    filters,
-    QDir::Files,
-    QDir::Time | QDir::Reversed
+  QList<BasicElement*> elements = m_diagramScene->getAllElements();
+
+  if (elements.isEmpty()) {
+    return false;
+  }
+
+  QString versionFileName = generateAutoSaveFileName();
+  QList<ConnectionLine*> connections = m_diagramScene->getAllConnections();
+
+  const bool success = JsonHelper::saveDiagramToFile(
+    versionFileName,
+    elements,
+    connections
   );
 
-  const int maxAutoSaveFiles = 10;
-
-  if (autoSaveFiles.size() > maxAutoSaveFiles) {
-    for (int i = maxAutoSaveFiles; i < autoSaveFiles.size(); ++i) {
-      QFile::remove(autoSaveFiles[i].absoluteFilePath());
-    }
-  }
+  return success;
 }
 
 //----------------------------------------------------------------------------------------------
 
 void MainWindow::onAutoSaveTriggered()
 {
-  if (m_isModified && m_autoSaveEnabled) {
-    performAutoSave();
+  if (!m_autoSaveEnabled || !m_diagramScene || m_diagramScene->getAllElements().isEmpty()) {
+    return;
+  }
+
+  if (!m_currentFileName.isEmpty() && m_isModified) {
+    saveToMainFile();
+  }
+
+  if (m_isModified) {
+    saveVersionBackup();
   }
 }
 

@@ -328,8 +328,8 @@ private:
   void startAutoSave();
   void stopAutoSave();
   QString generateAutoSaveFileName() const;
-  void performAutoSave();
-  void cleanOldAutoSaveFiles();
+  bool saveToMainFile();
+  bool saveVersionBackup();
 };
 
 #endif // MAINWINDOW_H
