@@ -402,6 +402,13 @@ void ConnectionGraphicsItem::updateFromConnection()
 
   prepareGeometryChange();
   updateControlPointsPosition();
+
+  if (m_controlPoint1 && m_controlPoint2) {
+    const bool shouldShowControlPoints = (m_connection->lineType() == ConnectionLineType::Bezier) && isSelected();
+    m_controlPoint1->setVisible(shouldShowControlPoints);
+    m_controlPoint2->setVisible(shouldShowControlPoints);
+  }
+
   update();
 }
 
