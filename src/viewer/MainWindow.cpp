@@ -364,7 +364,7 @@ void MainWindow::openFile()
     this,
     "Abrir Diagrama DER",
     "",
-    "Arquivos DER (*.der);;Todos os arquivos (*)"
+    "Arquivos JSON (*.json);;Todos os arquivos (*)"
   );
 
   if (fileName.isEmpty()) {
@@ -593,7 +593,7 @@ bool MainWindow::loadDiagramConnections(
 void MainWindow::saveAsFile()
 {
   QString fileName = QFileDialog::getSaveFileName(this,
-    "Salvar Diagrama DER", "", "Arquivos DER (*.der);;Todos os arquivos (*)");
+    "Salvar Diagrama DER", "", "Arquivos JSON (*.json);;Todos os arquivos (*)");
 
   if (!fileName.isEmpty()) {
     m_currentFileName = fileName;
@@ -2048,7 +2048,7 @@ QString MainWindow::generateAutoSaveFileName() const
   }
 
   const QString timestamp = QDateTime::currentDateTime().toString("yyyyMMdd_HHmmss");
-  const QString autoSaveFileName = QString("%1/%2_autosave_%3.der")
+  const QString autoSaveFileName = QString("%1/%2_autosave_%3.json")
     .arg(m_autoSaveDirectory)
     .arg(baseFileName)
     .arg(timestamp);
@@ -2090,7 +2090,7 @@ void MainWindow::cleanOldAutoSaveFiles()
 {
   QDir autoSaveDir(m_autoSaveDirectory);
   QStringList filters;
-  filters << "*_autosave_*.der";
+  filters << "*_autosave_*.json";
 
   QFileInfoList autoSaveFiles = autoSaveDir.entryInfoList(
     filters,
