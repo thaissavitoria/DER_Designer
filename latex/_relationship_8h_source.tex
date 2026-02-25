@@ -12,68 +12,69 @@
 \DoxyCodeLine{00008\ }
 \DoxyCodeLine{00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{BasicElement}}}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \ \ Q\_OBJECT}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
-\DoxyCodeLine{00017\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
-\DoxyCodeLine{00018\ \ \ );}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}},}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}\ =\ \textcolor{keyword}{false},}
-\DoxyCodeLine{00023\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
-\DoxyCodeLine{00024\ \ \ );}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}\&\ otherAtrribute}
-\DoxyCodeLine{00028\ \ \ );}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_relationship_acb02069426a6288347e7347ee527a0ff}{\string~Relationship}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_basic_element_a85cccd7db0e46e4e2b646365cd6c66a9}{BasicElement}}}
+\DoxyCodeLine{00024\ \{}
+\DoxyCodeLine{00025\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
+\DoxyCodeLine{00029\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00030\ \ \ );}
 \DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ QSizeF\ \mbox{\hyperlink{class_relationship_a315bb8b7234821cccb61deb437f4752d}{minimumSize}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ QSizeF\ \mbox{\hyperlink{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867}{preferredSize}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ std::unique\_ptr<BasicElement>\ \mbox{\hyperlink{class_relationship_aabd453d15034de03e3d9a655a6622ae9}{clone}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_basic_element_a95892a3b1ba8089d28f7e33a4187a360}{name}},}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}\ =\ \textcolor{keyword}{false},}
+\DoxyCodeLine{00035\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00036\ \ \ );}
 \DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ QString\ \mbox{\hyperlink{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}{typeDisplayName}}()\ \textcolor{keyword}{const\ override};}
-\DoxyCodeLine{00039\ }
-\DoxyCodeLine{00040\ \ \ QList<RelationshipEnd*>\ \mbox{\hyperlink{class_relationship_ad8f596505d98d14c6563064814427752}{ends}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}{m\_ends}};\ \}}
+\DoxyCodeLine{00038\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}(}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_relationship_a7029bae7f63e705126cf2776602e0b52}{Relationship}}\&\ otherAtrribute}
+\DoxyCodeLine{00040\ \ \ );}
 \DoxyCodeLine{00041\ }
-\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e}{addEnd}}(}
-\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ end}
-\DoxyCodeLine{00044\ \ \ );}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_relationship_acb02069426a6288347e7347ee527a0ff}{\string~Relationship}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ QSizeF\ \mbox{\hyperlink{class_relationship_a315bb8b7234821cccb61deb437f4752d}{minimumSize}}()\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_ae234f139c6133293412b347462b1079e}{removeEnd}}(}
-\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ end}
-\DoxyCodeLine{00048\ \ \ );}
+\DoxyCodeLine{00046\ \ \ QSizeF\ \mbox{\hyperlink{class_relationship_afdc74fcf0c54abc297ee3c6239d9a867}{preferredSize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ std::unique\_ptr<BasicElement>\ \mbox{\hyperlink{class_relationship_aabd453d15034de03e3d9a655a6622ae9}{clone}}()\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00049\ }
-\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_a6ab176617d7183a41cee95a1d2d0348f}{clearEnds}}();}
+\DoxyCodeLine{00050\ \ \ QString\ \mbox{\hyperlink{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}{typeDisplayName}}()\ \textcolor{keyword}{const\ override};}
 \DoxyCodeLine{00051\ }
-\DoxyCodeLine{00052\ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ \mbox{\hyperlink{class_relationship_aef6d7118eeff8f2a942b3ca581497696}{findEndByEntityId}}(}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ entityId}
-\DoxyCodeLine{00054\ \ \ )\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}{m\_isIdentifying}};\ \}}
+\DoxyCodeLine{00052\ \ \ QList<RelationshipEnd*>\ \mbox{\hyperlink{class_relationship_ad8f596505d98d14c6563064814427752}{ends}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}{m\_ends}};\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_a7a5fe6fae3aa588c0bc1f766d55d983e}{addEnd}}(}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ end}
+\DoxyCodeLine{00056\ \ \ );}
 \DoxyCodeLine{00057\ }
-\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_afd48f436e1a081b800d28a68078bfe08}{setIsIdentifying}}(}
-\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_ae234f139c6133293412b347462b1079e}{removeEnd}}(}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ end}
 \DoxyCodeLine{00060\ \ \ );}
 \DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ QVariantMap\ \mbox{\hyperlink{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_a6ab176617d7183a41cee95a1d2d0348f}{clearEnds}}();}
 \DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_af14ba497de57d4e14557eb4450fb730b}{deserialize}}(}
-\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ QVariantMap\&\ data}
-\DoxyCodeLine{00066\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \mbox{\hyperlink{class_relationship_end}{RelationshipEnd}}*\ \mbox{\hyperlink{class_relationship_aef6d7118eeff8f2a942b3ca581497696}{findEndByEntityId}}(}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ entityId}
+\DoxyCodeLine{00066\ \ \ )\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00067\ }
-\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}{m\_isIdentifying}};}
-\DoxyCodeLine{00070\ \ \ QList<RelationshipEnd*>\ \mbox{\hyperlink{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}{m\_ends}};}
-\DoxyCodeLine{00071\ \};}
-\DoxyCodeLine{00072\ }
-\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RELATIONSHIP\_H}}
+\DoxyCodeLine{00068\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}{m\_isIdentifying}};\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_afd48f436e1a081b800d28a68078bfe08}{setIsIdentifying}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a84b991b40e46679df51608b7924ea5f2}{isIdentifying}}}
+\DoxyCodeLine{00072\ \ \ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ QVariantMap\ \mbox{\hyperlink{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}{serialize}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_af14ba497de57d4e14557eb4450fb730b}{deserialize}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{const}\ QVariantMap\&\ data}
+\DoxyCodeLine{00078\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00081\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_a0b12c360255c5ee25073cc482bbd7d5f}{m\_isIdentifying}};}
+\DoxyCodeLine{00082\ \ \ QList<RelationshipEnd*>\ \mbox{\hyperlink{class_relationship_ad0f3a03b7882f59655cfdc245e1ca388}{m\_ends}};}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RELATIONSHIP\_H}}
 
 \end{DoxyCode}

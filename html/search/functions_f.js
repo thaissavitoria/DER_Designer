@@ -12,7 +12,5 @@ var searchData=
   ['populaterelationshipproperties_9',['populateRelationshipProperties',['../class_main_window.html#a1049a5796ac248f40a3b4110ed5faf77',1,'MainWindow']]],
   ['position_10',['position',['../class_basic_element.html#a11b7bec801ecfff87fa6bb2898b2033f',1,'BasicElement']]],
   ['positionchanged_11',['positionChanged',['../class_basic_element.html#a02183bafd7c80f9f1f99a9b9f1631524',1,'BasicElement']]],
-  ['preferredsize_12',['preferredSize',['../class_attribute.html#a9fbfd8cb51abe1f5b3e85333eb3ba55a',1,'Attribute::preferredSize()'],['../class_basic_element.html#aab702308a56f2cdbfb17652351e5fd94',1,'BasicElement::preferredSize()'],['../class_entity.html#a237af8c74037b83ace59083cf9af53f4',1,'Entity::preferredSize()'],['../class_relationship.html#afdc74fcf0c54abc297ee3c6239d9a867',1,'Relationship::preferredSize()']]],
-  ['primarykeychanged_13',['primaryKeyChanged',['../class_attribute.html#a3c9d142321c01521ec6b2e9655c7879d',1,'Attribute']]],
-  ['propertychanged_14',['propertyChanged',['../class_basic_element.html#a968047d6f013c43f621f18ee12f97785',1,'BasicElement']]]
+  ['preferredsize_12',['preferredSize',['../class_attribute.html#a9fbfd8cb51abe1f5b3e85333eb3ba55a',1,'Attribute::preferredSize()'],['../class_basic_element.html#aab702308a56f2cdbfb17652351e5fd94',1,'BasicElement::preferredSize()'],['../class_entity.html#a237af8c74037b83ace59083cf9af53f4',1,'Entity::preferredSize()'],['../class_relationship.html#afdc74fcf0c54abc297ee3c6239d9a867',1,'Relationship::preferredSize()']]]
 ];

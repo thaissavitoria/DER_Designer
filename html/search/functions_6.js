@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getallattributetypes_0',['getAllAttributeTypes',['../class_attribute_type.html#a8c918751ccc71ea3afee58456e4384f9',1,'AttributeType']]],
+  ['generateautosavefilename_0',['generateAutoSaveFileName',['../class_main_window.html#ae7ae4d876af9ec4b32587c25558e2e47',1,'MainWindow']]],
   ['getallattributetypestrings_1',['getAllAttributeTypeStrings',['../class_attribute_type.html#a1a152dc88508e77a81ec11ebbad6e542',1,'AttributeType']]],
   ['getallconnections_2',['getAllConnections',['../class_diagram_scene.html#a40c9b85a9f304007a227b9db63178d08',1,'DiagramScene']]],
   ['getallelements_3',['getAllElements',['../class_diagram_scene.html#a3e3d3f675078f28665609dfed61d2326',1,'DiagramScene']]],

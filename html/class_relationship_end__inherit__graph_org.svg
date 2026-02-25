@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Represents one end of a relationship in an ERD diagram.">
 <polygon fill="#999999" stroke="none" points="137.25,-356 0,-356 0,0 137.25,0 137.25,-356"/>
 <text xml:space="preserve" text-anchor="start" x="33" y="-342.5" font-family="Helvetica,sans-Serif" font-size="10.00">RelationshipEnd</text>
 <text xml:space="preserve" text-anchor="start" x="4" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>

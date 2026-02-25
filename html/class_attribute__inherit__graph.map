@@ -1,7 +1,7 @@
 <map id="Attribute" name="Attribute">
-<area shape="rect" id="Node000001" title=" " alt="" coords="22,859,158,1163"/>
-<area shape="rect" id="Node000002" href="$class_basic_element.html" title="Abstract base class for all ERD elements (Model only)." alt="" coords="5,123,175,811"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,823,93,859,88,859,90,828"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="61,5,120,75"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,87,93,123,88,123,90,92"/>
+<area shape="rect" id="Node000001" title="Represents an attribute element in an ERD diagram." alt="" coords="19,752,155,1056"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html" title="Abstract base class for all ERD elements (Model only)." alt="" coords="5,123,168,704"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,716,89,753,84,752,86,722"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="58,5,116,75"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="87,87,89,123,84,123,87,92"/>
 </map>

@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="class_i_element_renderer.html" target="_top" xlink:title=" ">
+<g id="a_Node000000"><a xlink:href="class_i_element_renderer.html" target="_top" xlink:title="Abstract interface for element rendering in ERD diagrams.">
 <polygon fill="white" stroke="#666666" points="94.75,-58 0,-58 0,-38 94.75,-38 94.75,-58"/>
 <text xml:space="preserve" text-anchor="middle" x="47.38" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">IElementRenderer</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="class_attribute_renderer.html" target="_top" xlink:title=" ">
+<g id="a_Node000001"><a xlink:href="class_attribute_renderer.html" target="_top" xlink:title="Renderer implementation for attribute elements in ERD diagrams.">
 <polygon fill="white" stroke="#666666" points="231.88,-96 139.38,-96 139.38,-76 231.88,-76 231.88,-96"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-82.5" font-family="Helvetica,sans-Serif" font-size="10.00">AttributeRenderer</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_entity_renderer.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_entity_renderer.html" target="_top" xlink:title="Renderer implementation for entity elements in ERD diagrams.">
 <polygon fill="white" stroke="#666666" points="226.25,-58 145,-58 145,-38 226.25,-38 226.25,-58"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">EntityRenderer</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_relationship_renderer.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_relationship_renderer.html" target="_top" xlink:title="Renderer implementation for relationship elements in ERD diagrams.">
 <polygon fill="white" stroke="#666666" points="240.5,-20 130.75,-20 130.75,0 240.5,0 240.5,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="185.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">RelationshipRenderer</text>
 </a>

@@ -2,12 +2,16 @@
 \hypertarget{class_element_renderer_factory}{}\label{class_element_renderer_factory}\index{ElementRendererFactory@{ElementRendererFactory}}
 
 
+Factory class for creating element renderers.  
+
+
+
+
 {\ttfamily \#include $<$Element\+Renderer.\+h$>$}
 
 
 
-Collaboration diagram for Element\+Renderer\+Factory\+:
-\nopagebreak
+Collaboration diagram for Element\+Renderer\+Factory\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,6 +25,19 @@ static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_element_renderer}{IEle
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Factory class for creating element renderers. 
+
+This factory class implements the Factory pattern to create appropriate renderer instances based on element type. It provides\+:
+\begin{DoxyItemize}
+\item Type-\/based renderer instantiation
+\item Centralized renderer creation logic
+\item Encapsulation of renderer concrete classes
+\item Easy extensibility for new element types
+\end{DoxyItemize}
+
+The factory ensures that each element type gets the correct renderer implementation (\doxylink{class_entity_renderer}{Entity\+Renderer}, \doxylink{class_attribute_renderer}{Attribute\+Renderer}, \doxylink{class_relationship_renderer}{Relationship\+Renderer}) without requiring client code to know about specific renderer classes. 
+
 \label{doc-func-members}
 \Hypertarget{class_element_renderer_factory_doc-func-members}
 \doxysubsection{Member Function Documentation}
@@ -30,8 +47,7 @@ static std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_element_renderer}{IEle
 {\footnotesize\ttfamily \label{class_element_renderer_factory_a12321affc185c8014f16d846c14e507e} 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_i_element_renderer}{IElement\+Renderer}} $>$ Element\+Renderer\+Factory\+::create\+Renderer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}}}]{type}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -141,6 +141,7 @@ Private Slots</h2></td></tr>
 <tr class="memitem:a0e7ca45ac830893108871185dda813a4" id="r_a0e7ca45ac830893108871185dda813a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e7ca45ac830893108871185dda813a4">onLineEditChanged</a> (const QString &amp;text)</td></tr>
 <tr class="memitem:ad34ae0349abf41aa739b75b85df74126" id="r_ad34ae0349abf41aa739b75b85df74126"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad34ae0349abf41aa739b75b85df74126">onAddAttributeOnTreeClicked</a> ()</td></tr>
 <tr class="memitem:a95674d4bfc5fc2aad6df1601f23b1793" id="r_a95674d4bfc5fc2aad6df1601f23b1793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95674d4bfc5fc2aad6df1601f23b1793">onRemoveAttributeOnTreeClicked</a> ()</td></tr>
+<tr class="memitem:aaf47b9efe07432c5b5e1695954bee116" id="r_aaf47b9efe07432c5b5e1695954bee116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf47b9efe07432c5b5e1695954bee116">onAutoSaveTriggered</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -183,6 +184,12 @@ Private Member Functions</h2></td></tr>
 <tr class="memitem:afb128eb2813b7cb7f68dc06d98edd91f" id="r_afb128eb2813b7cb7f68dc06d98edd91f"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_attribute.html">Attribute</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb128eb2813b7cb7f68dc06d98edd91f">getAttributesFromIds</a> (const QList&lt; QString &gt; &amp;attributeIds)</td></tr>
 <tr class="memitem:af380eeda83d30cd1ecb1419cfd5161d7" id="r_af380eeda83d30cd1ecb1419cfd5161d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af380eeda83d30cd1ecb1419cfd5161d7">updatesAfterChangingProperty</a> (<a class="el" href="class_basic_element.html">BasicElement</a> *element)</td></tr>
 <tr class="memitem:a64ff2a8c8158d4a8d2a8a58df70b5369" id="r_a64ff2a8c8158d4a8d2a8a58df70b5369"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64ff2a8c8158d4a8d2a8a58df70b5369">updateElementGraphicsItem</a> (<a class="el" href="class_basic_element.html">BasicElement</a> *element)</td></tr>
+<tr class="memitem:a7e65ffe1e01feb35cb7da90085d57f04" id="r_a7e65ffe1e01feb35cb7da90085d57f04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e65ffe1e01feb35cb7da90085d57f04">setupAutoSave</a> ()</td></tr>
+<tr class="memitem:a58d0f0988d7ad6c216bf8dac276f694a" id="r_a58d0f0988d7ad6c216bf8dac276f694a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58d0f0988d7ad6c216bf8dac276f694a">startAutoSave</a> ()</td></tr>
+<tr class="memitem:aee739ca28d89caa75e05d5462445432e" id="r_aee739ca28d89caa75e05d5462445432e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee739ca28d89caa75e05d5462445432e">stopAutoSave</a> ()</td></tr>
+<tr class="memitem:ae7ae4d876af9ec4b32587c25558e2e47" id="r_ae7ae4d876af9ec4b32587c25558e2e47"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7ae4d876af9ec4b32587c25558e2e47">generateAutoSaveFileName</a> () const</td></tr>
+<tr class="memitem:a101685dce06592fd3a51da45fc7be4ad" id="r_a101685dce06592fd3a51da45fc7be4ad"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a101685dce06592fd3a51da45fc7be4ad">saveToMainFile</a> ()</td></tr>
+<tr class="memitem:ab38b9b1c96adcb0bbbbaec5b3ff5ae19" id="r_ab38b9b1c96adcb0bbbbaec5b3ff5ae19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab38b9b1c96adcb0bbbbaec5b3ff5ae19">saveVersionBackup</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -208,6 +215,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ad0bc0a5557f65398eaa6c4063261b5fb" id="r_ad0bc0a5557f65398eaa6c4063261b5fb"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0bc0a5557f65398eaa6c4063261b5fb">m_currentFileName</a></td></tr>
 <tr class="memitem:a866fc7fc1b261bf9b28e01f420488142" id="r_a866fc7fc1b261bf9b28e01f420488142"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a866fc7fc1b261bf9b28e01f420488142">m_isModified</a></td></tr>
 <tr class="memitem:a29c050818c33a824d3fff2ce62364383" id="r_a29c050818c33a824d3fff2ce62364383"><td class="memItemLeft" align="right" valign="top">std::map&lt; QString, QWidget * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29c050818c33a824d3fff2ce62364383">m_propertyWidgets</a></td></tr>
+<tr class="memitem:a24d7dc7510c47b06ce6134ccab64b7f9" id="r_a24d7dc7510c47b06ce6134ccab64b7f9"><td class="memItemLeft" align="right" valign="top">QTimer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24d7dc7510c47b06ce6134ccab64b7f9">m_autoSaveTimer</a></td></tr>
+<tr class="memitem:a17b3f62e28b098f9397b5717a69bb932" id="r_a17b3f62e28b098f9397b5717a69bb932"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a17b3f62e28b098f9397b5717a69bb932">m_autoSaveEnabled</a></td></tr>
+<tr class="memitem:aaa4cea638ab76406756376022afa1e74" id="r_aaa4cea638ab76406756376022afa1e74"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa4cea638ab76406756376022afa1e74">m_autoSaveInterval</a></td></tr>
+<tr class="memitem:aed96de73cfaf3036426b6618a8e95eab" id="r_aed96de73cfaf3036426b6618a8e95eab"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed96de73cfaf3036426b6618a8e95eab">m_autoSaveDirectory</a></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a996c5a2b6f77944776856f08ec30858d" name="a996c5a2b6f77944776856f08ec30858d"></a>
@@ -656,7 +667,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ac15079a99bc4f9b1a66e1da16bcbd55d_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ac15079a99bc4f9b1a66e1da16bcbd55d_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1113,6 +1124,36 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a1d019681beef43511b35dec6f27d2077_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ae7ae4d876af9ec4b32587c25558e2e47" name="ae7ae4d876af9ec4b32587c25558e2e47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7ae4d876af9ec4b32587c25558e2e47">&#9670;&#160;</a></span>generateAutoSaveFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainWindow::generateAutoSaveFileName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ae7ae4d876af9ec4b32587c25558e2e47_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1628,6 +1669,41 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="aaf47b9efe07432c5b5e1695954bee116" name="aaf47b9efe07432c5b5e1695954bee116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf47b9efe07432c5b5e1695954bee116">&#9670;&#160;</a></span>onAutoSaveTriggered</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onAutoSaveTriggered </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aaf47b9efe07432c5b5e1695954bee116_cgraph.svg" width="100%" height="447"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aaf47b9efe07432c5b5e1695954bee116_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a47fd0b86ddb5829e3b0cb15908671670" name="a47fd0b86ddb5829e3b0cb15908671670"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a47fd0b86ddb5829e3b0cb15908671670">&#9670;&#160;</a></span>onCheckBoxChanged</h2>
 
@@ -1727,7 +1803,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a880a071072561df84782f84e0321da4e_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a880a071072561df84782f84e0321da4e_cgraph.svg" width="100%" height="444"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2277,6 +2353,111 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a101685dce06592fd3a51da45fc7be4ad" name="a101685dce06592fd3a51da45fc7be4ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101685dce06592fd3a51da45fc7be4ad">&#9670;&#160;</a></span>saveToMainFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::saveToMainFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a101685dce06592fd3a51da45fc7be4ad_cgraph.svg" width="100%" height="447"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a101685dce06592fd3a51da45fc7be4ad_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ab38b9b1c96adcb0bbbbaec5b3ff5ae19" name="ab38b9b1c96adcb0bbbbaec5b3ff5ae19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab38b9b1c96adcb0bbbbaec5b3ff5ae19">&#9670;&#160;</a></span>saveVersionBackup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::saveVersionBackup </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ab38b9b1c96adcb0bbbbaec5b3ff5ae19_cgraph.svg" width="100%" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ab38b9b1c96adcb0bbbbaec5b3ff5ae19_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a7e65ffe1e01feb35cb7da90085d57f04" name="a7e65ffe1e01feb35cb7da90085d57f04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e65ffe1e01feb35cb7da90085d57f04">&#9670;&#160;</a></span>setupAutoSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::setupAutoSave </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a7e65ffe1e01feb35cb7da90085d57f04_cgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a7e65ffe1e01feb35cb7da90085d57f04_icgraph.svg" width="432" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a3a304253c9e7caeef028f75358bf1fd5" name="a3a304253c9e7caeef028f75358bf1fd5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3a304253c9e7caeef028f75358bf1fd5">&#9670;&#160;</a></span>setupUI()</h2>
 
@@ -2368,6 +2549,76 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a3111788b36503e5ae8eabef2b32a6f62_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a58d0f0988d7ad6c216bf8dac276f694a" name="a58d0f0988d7ad6c216bf8dac276f694a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58d0f0988d7ad6c216bf8dac276f694a">&#9670;&#160;</a></span>startAutoSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::startAutoSave </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a58d0f0988d7ad6c216bf8dac276f694a_cgraph.svg" width="448" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a58d0f0988d7ad6c216bf8dac276f694a_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="aee739ca28d89caa75e05d5462445432e" name="aee739ca28d89caa75e05d5462445432e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee739ca28d89caa75e05d5462445432e">&#9670;&#160;</a></span>stopAutoSave()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::stopAutoSave </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aee739ca28d89caa75e05d5462445432e_cgraph.svg" width="447" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aee739ca28d89caa75e05d5462445432e_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -2567,6 +2818,94 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="aed96de73cfaf3036426b6618a8e95eab" name="aed96de73cfaf3036426b6618a8e95eab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed96de73cfaf3036426b6618a8e95eab">&#9670;&#160;</a></span>m_autoSaveDirectory</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString MainWindow::m_autoSaveDirectory</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a17b3f62e28b098f9397b5717a69bb932" name="a17b3f62e28b098f9397b5717a69bb932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17b3f62e28b098f9397b5717a69bb932">&#9670;&#160;</a></span>m_autoSaveEnabled</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MainWindow::m_autoSaveEnabled</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa4cea638ab76406756376022afa1e74" name="aaa4cea638ab76406756376022afa1e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa4cea638ab76406756376022afa1e74">&#9670;&#160;</a></span>m_autoSaveInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MainWindow::m_autoSaveInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a24d7dc7510c47b06ce6134ccab64b7f9" name="a24d7dc7510c47b06ce6134ccab64b7f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24d7dc7510c47b06ce6134ccab64b7f9">&#9670;&#160;</a></span>m_autoSaveTimer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QTimer* MainWindow::m_autoSaveTimer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac3e02f178aa7d38fe0d754f0ec8a711e" name="ac3e02f178aa7d38fe0d754f0ec8a711e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3e02f178aa7d38fe0d754f0ec8a711e">&#9670;&#160;</a></span>m_centralWidget</h2>
 

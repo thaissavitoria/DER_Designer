@@ -109,11 +109,7 @@ Collaboration diagram for BasicElement:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a6f92f7b59a12584c3156fb10ff989de7" id="r_a6f92f7b59a12584c3156fb10ff989de7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f92f7b59a12584c3156fb10ff989de7">nameChanged</a> (const QString &amp;newName)</td></tr>
 <tr class="memitem:a02183bafd7c80f9f1f99a9b9f1631524" id="r_a02183bafd7c80f9f1f99a9b9f1631524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02183bafd7c80f9f1f99a9b9f1631524">positionChanged</a> (const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:a5af654d8bb5e16b44121f69c832037b8" id="r_a5af654d8bb5e16b44121f69c832037b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5af654d8bb5e16b44121f69c832037b8">sizeChanged</a> (const QSizeF &amp;newSize)</td></tr>
-<tr class="memitem:a968047d6f013c43f621f18ee12f97785" id="r_a968047d6f013c43f621f18ee12f97785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a968047d6f013c43f621f18ee12f97785">propertyChanged</a> (const QString &amp;key, const QVariant &amp;value)</td></tr>
-<tr class="memitem:ad1b7a593fb82e872041b342abd157088" id="r_ad1b7a593fb82e872041b342abd157088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1b7a593fb82e872041b342abd157088">elementChanged</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -126,19 +122,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11b7bec801ecfff87fa6bb2898b2033f" id="r_a11b7bec801ecfff87fa6bb2898b2033f"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11b7bec801ecfff87fa6bb2898b2033f">position</a> () const</td></tr>
 <tr class="memitem:a542adbf85a58c5c9bf17975964d7e446" id="r_a542adbf85a58c5c9bf17975964d7e446"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a542adbf85a58c5c9bf17975964d7e446">size</a> () const</td></tr>
 <tr class="memitem:a105ea9f996799c88e65af3c377481051" id="r_a105ea9f996799c88e65af3c377481051"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a105ea9f996799c88e65af3c377481051">boundingRect</a> () const</td></tr>
+<tr class="memitem:a482ffd2c58ecdc8bba5bfeaadf8f26d4" id="r_a482ffd2c58ecdc8bba5bfeaadf8f26d4"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_connection_point.html">ConnectionPoint</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482ffd2c58ecdc8bba5bfeaadf8f26d4">connectionPoints</a> () const</td></tr>
 <tr class="memitem:a42ea6812e7627bb99af54cab547aa803" id="r_a42ea6812e7627bb99af54cab547aa803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42ea6812e7627bb99af54cab547aa803">setName</a> (const QString &amp;<a class="el" href="#a95892a3b1ba8089d28f7e33a4187a360">name</a>)</td></tr>
 <tr class="memitem:ab14524060d1b8fbbba753207029c6d7d" id="r_ab14524060d1b8fbbba753207029c6d7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab14524060d1b8fbbba753207029c6d7d">setPosition</a> (const QPointF &amp;<a class="el" href="#a0fdfba7d88ec13f4dc8984e0de153759">position</a>)</td></tr>
-<tr class="memitem:ab86c964c6ef9e8d7299efc263a0837e7" id="r_ab86c964c6ef9e8d7299efc263a0837e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86c964c6ef9e8d7299efc263a0837e7">setSize</a> (const QSizeF &amp;<a class="el" href="#ab3ec6bd13d73b18c450d8026ff3f3b1d">size</a>)</td></tr>
+<tr class="memitem:ab86c964c6ef9e8d7299efc263a0837e7" id="r_ab86c964c6ef9e8d7299efc263a0837e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab86c964c6ef9e8d7299efc263a0837e7">setSize</a> (const QSizeF &amp;<a class="el" href="#a542adbf85a58c5c9bf17975964d7e446">size</a>)</td></tr>
 <tr class="memitem:a28d9895b6930a1be49e7375181848e77" id="r_a28d9895b6930a1be49e7375181848e77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28d9895b6930a1be49e7375181848e77">setPosition</a> (qreal x, qreal y)</td></tr>
 <tr class="memitem:ae089b8cb8d8fe983d587035412b0de67" id="r_ae089b8cb8d8fe983d587035412b0de67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae089b8cb8d8fe983d587035412b0de67">setSize</a> (qreal width, qreal height)</td></tr>
 <tr class="memitem:add857c56cf407a3f2c3b4221d84c18a5" id="r_add857c56cf407a3f2c3b4221d84c18a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add857c56cf407a3f2c3b4221d84c18a5">move</a> (const QPointF &amp;delta)</td></tr>
 <tr class="memitem:a5897e9fd991c828e58cc7e9299f00844" id="r_a5897e9fd991c828e58cc7e9299f00844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5897e9fd991c828e58cc7e9299f00844">resize</a> (const QSizeF &amp;newSize)</td></tr>
 <tr class="memitem:a13661eba40c8decbb0ac50aa42695351" id="r_a13661eba40c8decbb0ac50aa42695351"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13661eba40c8decbb0ac50aa42695351">addObserver</a> (<a class="el" href="class_i_element_observer.html">IElementObserver</a> *observer)</td></tr>
 <tr class="memitem:a6b6d87307328e617498ac1b1787afb97" id="r_a6b6d87307328e617498ac1b1787afb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b6d87307328e617498ac1b1787afb97">removeObserver</a> (<a class="el" href="class_i_element_observer.html">IElementObserver</a> *observer)</td></tr>
-<tr class="memitem:a482ffd2c58ecdc8bba5bfeaadf8f26d4" id="r_a482ffd2c58ecdc8bba5bfeaadf8f26d4"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_connection_point.html">ConnectionPoint</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482ffd2c58ecdc8bba5bfeaadf8f26d4">connectionPoints</a> () const</td></tr>
 <tr class="memitem:a0357bfa9b1ef06dd1c9d64bcb00813f4" id="r_a0357bfa9b1ef06dd1c9d64bcb00813f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0357bfa9b1ef06dd1c9d64bcb00813f4">addConnectionPoint</a> (<a class="el" href="class_connection_point.html">ConnectionPoint</a> *connectionPoint)</td></tr>
 <tr class="memitem:a70598cf89581cc6e308dafaa69551934" id="r_a70598cf89581cc6e308dafaa69551934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connection_point.html">ConnectionPoint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70598cf89581cc6e308dafaa69551934">getConnectionPointByDirection</a> (<a class="el" href="_connection_point_8h.html#a0fde1ff3d073cb77237ea08eea64d963">ConnectionDirection</a> connectionDirection)</td></tr>
-<tr class="memitem:a028ebc6c9de8f0b90af0e7daef9549f8" id="r_a028ebc6c9de8f0b90af0e7daef9549f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a028ebc6c9de8f0b90af0e7daef9549f8">createDefaultConnectionPoints</a> ()</td></tr>
+<tr class="memitem:a78e2ce29aa5b2a9fae74cf435996ce8b" id="r_a78e2ce29aa5b2a9fae74cf435996ce8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e2ce29aa5b2a9fae74cf435996ce8b">createAndAddDefaultConnectionPoints</a> ()</td></tr>
 <tr class="memitem:acbb703934f3bbff401ac5bf3c060dd4e" id="r_acbb703934f3bbff401ac5bf3c060dd4e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbb703934f3bbff401ac5bf3c060dd4e">isValid</a> () const</td></tr>
 <tr class="memitem:a56f5f9a22723d2a99d87c7508b0bec7f" id="r_a56f5f9a22723d2a99d87c7508b0bec7f"><td class="memItemLeft" align="right" valign="top">virtual QVariantMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56f5f9a22723d2a99d87c7508b0bec7f">serialize</a> () const</td></tr>
 <tr class="memitem:a2584be00dd464aa45874efe1615abbed" id="r_a2584be00dd464aa45874efe1615abbed"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2584be00dd464aa45874efe1615abbed">deserialize</a> (const QVariantMap &amp;data)</td></tr>
@@ -154,15 +150,11 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a01a6511d922708fe0042474740109152" id="r_a01a6511d922708fe0042474740109152"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01a6511d922708fe0042474740109152">elementTypeToString</a> (<a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a> <a class="el" href="#adea459fb43e3af447bc9f9dc1c294f9a">type</a>)</td></tr>
-<tr class="memitem:a0674caf961f3fbb13e2194f595a28a11" id="r_a0674caf961f3fbb13e2194f595a28a11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0674caf961f3fbb13e2194f595a28a11">elementTypeFromString</a> (const QString &amp;typeString)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a596caee40cdd00a0aacce49689b63f92" id="r_a596caee40cdd00a0aacce49689b63f92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a596caee40cdd00a0aacce49689b63f92">notifyObservers</a> ()</td></tr>
 <tr class="memitem:a84f8dd62eabbe3dded6bacf42a783856" id="r_a84f8dd62eabbe3dded6bacf42a783856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84f8dd62eabbe3dded6bacf42a783856">notifyPositionChanged</a> (const QPointF &amp;oldPosition, const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:abbbba80c62762cb0ff0866e4aa650b42" id="r_abbbba80c62762cb0ff0866e4aa650b42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abbbba80c62762cb0ff0866e4aa650b42">onNameChanged</a> (const QString &amp;oldName, const QString &amp;newName)</td></tr>
-<tr class="memitem:aa4779b31234dc7c90ceddd5a3069b2e7" id="r_aa4779b31234dc7c90ceddd5a3069b2e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4779b31234dc7c90ceddd5a3069b2e7">onPositionChanged</a> (const QPointF &amp;oldPosition, const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:aafd52d1fae2f0b7666ae15bcbb3782c2" id="r_aafd52d1fae2f0b7666ae15bcbb3782c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aafd52d1fae2f0b7666ae15bcbb3782c2">onSizeChanged</a> (const QSizeF &amp;oldSize, const QSizeF &amp;newSize)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-properties" class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
@@ -170,7 +162,6 @@ Properties</h2></td></tr>
 <tr class="memitem:a95892a3b1ba8089d28f7e33a4187a360" id="r_a95892a3b1ba8089d28f7e33a4187a360"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95892a3b1ba8089d28f7e33a4187a360">name</a></td></tr>
 <tr class="memitem:adea459fb43e3af447bc9f9dc1c294f9a" id="r_adea459fb43e3af447bc9f9dc1c294f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adea459fb43e3af447bc9f9dc1c294f9a">type</a></td></tr>
 <tr class="memitem:a0fdfba7d88ec13f4dc8984e0de153759" id="r_a0fdfba7d88ec13f4dc8984e0de153759"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fdfba7d88ec13f4dc8984e0de153759">position</a></td></tr>
-<tr class="memitem:ab3ec6bd13d73b18c450d8026ff3f3b1d" id="r_ab3ec6bd13d73b18c450d8026ff3f3b1d"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3ec6bd13d73b18c450d8026ff3f3b1d">size</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-attribs" class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -185,10 +176,9 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract base class for all ERD elements (Model only). </p>
-<p>This class implements the MVC pattern as the Model, providing:</p><ul>
+<p>This class provides:</p><ul>
 <li>Basic properties common to all elements</li>
 <li>Change notification system (Observer Pattern)</li>
-<li>Data validation</li>
 <li>Serialization/Deserialization – to facilitate conversion to JSON</li>
 <li>Connection points for line connecting mechanism </li>
 </ul>
@@ -453,14 +443,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a028ebc6c9de8f0b90af0e7daef9549f8" name="a028ebc6c9de8f0b90af0e7daef9549f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a028ebc6c9de8f0b90af0e7daef9549f8">&#9670;&#160;</a></span>createDefaultConnectionPoints()</h2>
+<a id="a78e2ce29aa5b2a9fae74cf435996ce8b" name="a78e2ce29aa5b2a9fae74cf435996ce8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e2ce29aa5b2a9fae74cf435996ce8b">&#9670;&#160;</a></span>createAndAddDefaultConnectionPoints()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void BasicElement::createDefaultConnectionPoints </td>
+          <td class="memname">void BasicElement::createAndAddDefaultConnectionPoints </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -470,12 +460,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a78e2ce29aa5b2a9fae74cf435996ce8b_cgraph.svg" width="100%" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a028ebc6c9de8f0b90af0e7daef9549f8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a78e2ce29aa5b2a9fae74cf435996ce8b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -509,61 +499,6 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a2584be00dd464aa45874efe1615abbed_icgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-
-</div>
-</div>
-<a id="ad1b7a593fb82e872041b342abd157088" name="ad1b7a593fb82e872041b342abd157088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1b7a593fb82e872041b342abd157088">&#9670;&#160;</a></span>elementChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::elementChanged </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ad1b7a593fb82e872041b342abd157088_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a0674caf961f3fbb13e2194f595a28a11" name="a0674caf961f3fbb13e2194f595a28a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0674caf961f3fbb13e2194f595a28a11">&#9670;&#160;</a></span>elementTypeFromString()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a> BasicElement::elementTypeFromString </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>typeString</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -740,7 +675,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_add857c56cf407a3f2c3b4221d84c18a5_cgraph.svg" width="634" height="222"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_add857c56cf407a3f2c3b4221d84c18a5_cgraph.svg" width="632" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -767,36 +702,6 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6f92f7b59a12584c3156fb10ff989de7" name="a6f92f7b59a12584c3156fb10ff989de7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f92f7b59a12584c3156fb10ff989de7">&#9670;&#160;</a></span>nameChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::nameChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newName</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a6f92f7b59a12584c3156fb10ff989de7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -860,108 +765,6 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a84f8dd62eabbe3dded6bacf42a783856_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="abbbba80c62762cb0ff0866e4aa650b42" name="abbbba80c62762cb0ff0866e4aa650b42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abbbba80c62762cb0ff0866e4aa650b42">&#9670;&#160;</a></span>onNameChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::onNameChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>oldName</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newName</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_abbbba80c62762cb0ff0866e4aa650b42_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aa4779b31234dc7c90ceddd5a3069b2e7" name="aa4779b31234dc7c90ceddd5a3069b2e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4779b31234dc7c90ceddd5a3069b2e7">&#9670;&#160;</a></span>onPositionChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::onPositionChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QPointF &amp;</td>          <td class="paramname"><span class="paramname"><em>oldPosition</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QPointF &amp;</td>          <td class="paramname"><span class="paramname"><em>newPosition</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_aa4779b31234dc7c90ceddd5a3069b2e7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aafd52d1fae2f0b7666ae15bcbb3782c2" name="aafd52d1fae2f0b7666ae15bcbb3782c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafd52d1fae2f0b7666ae15bcbb3782c2">&#9670;&#160;</a></span>onSizeChanged()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::onSizeChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QSizeF &amp;</td>          <td class="paramname"><span class="paramname"><em>oldSize</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QSizeF &amp;</td>          <td class="paramname"><span class="paramname"><em>newSize</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_aafd52d1fae2f0b7666ae15bcbb3782c2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1048,35 +851,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a968047d6f013c43f621f18ee12f97785" name="a968047d6f013c43f621f18ee12f97785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a968047d6f013c43f621f18ee12f97785">&#9670;&#160;</a></span>propertyChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::propertyChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QVariant &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ab09956c3e9528e16d15643c798bc69b0" name="ab09956c3e9528e16d15643c798bc69b0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab09956c3e9528e16d15643c798bc69b0">&#9670;&#160;</a></span>removeAttributeId()</h2>
 
@@ -1136,7 +910,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a5897e9fd991c828e58cc7e9299f00844_cgraph.svg" width="615" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a5897e9fd991c828e58cc7e9299f00844_cgraph.svg" width="610" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1168,7 +942,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f_icgraph.svg" width="100%" height="546"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a56f5f9a22723d2a99d87c7508b0bec7f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1190,7 +964,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a42ea6812e7627bb99af54cab547aa803_cgraph.svg" width="434" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a42ea6812e7627bb99af54cab547aa803_cgraph.svg" width="424" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1217,7 +991,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ab14524060d1b8fbbba753207029c6d7d_cgraph.svg" width="443" height="222"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ab14524060d1b8fbbba753207029c6d7d_cgraph.svg" width="442" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1256,7 +1030,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a28d9895b6930a1be49e7375181848e77_cgraph.svg" width="666" height="222"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a28d9895b6930a1be49e7375181848e77_cgraph.svg" width="666" height="104"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1278,7 +1052,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7_cgraph.svg" width="422" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ab86c964c6ef9e8d7299efc263a0837e7_cgraph.svg" width="416" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1317,7 +1091,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ae089b8cb8d8fe983d587035412b0de67_cgraph.svg" width="624" height="240"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_ae089b8cb8d8fe983d587035412b0de67_cgraph.svg" width="618" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1344,35 +1118,10 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5af654d8bb5e16b44121f69c832037b8" name="a5af654d8bb5e16b44121f69c832037b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5af654d8bb5e16b44121f69c832037b8">&#9670;&#160;</a></span>sizeChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void BasicElement::sizeChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QSizeF &amp;</td>          <td class="paramname"><span class="paramname"><em>newSize</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a5af654d8bb5e16b44121f69c832037b8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_basic_element_a542adbf85a58c5c9bf17975964d7e446_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1667,28 +1416,6 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">QPointF BasicElement::position</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel read">read</span><span class="mlabel write">write</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab3ec6bd13d73b18c450d8026ff3f3b1d" name="ab3ec6bd13d73b18c450d8026ff3f3b1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab3ec6bd13d73b18c450d8026ff3f3b1d">&#9670;&#160;</a></span>size</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">QSizeF BasicElement::size</td>
         </tr>
       </table>
   </td>

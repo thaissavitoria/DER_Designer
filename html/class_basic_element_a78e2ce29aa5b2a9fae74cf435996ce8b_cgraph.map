@@ -1,0 +1,11 @@
+<map id="BasicElement::createAndAddDefaultConnectionPoints" name="BasicElement::createAndAddDefaultConnectionPoints">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,39,198,81"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html#a0357bfa9b1ef06dd1c9d64bcb00813f4" title=" " alt="" coords="249,5,446,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,44,235,41,230,43,199,50"/>
+<area shape="rect" id="Node000003" href="$class_connection_point.html#a828996f0bb02e9154b5d3af03f1734b8" title=" " alt="" coords="246,72,449,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,70,233,77,228,78,198,76"/>
+<area shape="rect" id="Node000004" href="$class_connection_point.html#a0bca0b4cf605278cb17d8052dc027932" title=" " alt="" coords="497,72,709,115"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="449,91,484,93,479,93,450,96"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html#ac498b99d7f91805fea3eab19f2e8b260" title=" " alt="" coords="757,72,949,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="710,91,744,93,739,93,710,96"/>
+</map>

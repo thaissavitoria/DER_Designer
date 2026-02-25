@@ -2,12 +2,16 @@
 \hypertarget{class_draggable_button}{}\label{class_draggable_button}\index{DraggableButton@{DraggableButton}}
 
 
+Draggable button for adding ERD elements to the diagram.  
+
+
+
+
 {\ttfamily \#include $<$Draggable\+Button.\+h$>$}
 
 
 
-Inheritance diagram for Draggable\+Button\+:
-\nopagebreak
+Inheritance diagram for Draggable\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Draggable\+Button\+:
 \end{figure}
 
 
-Collaboration diagram for Draggable\+Button\+:
-\nopagebreak
+Collaboration diagram for Draggable\+Button\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,11 +30,7 @@ Collaboration diagram for Draggable\+Button\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{Draggable\+Button}} (const QString \&\mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{element\+Type}}, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
-\item 
-void \mbox{\hyperlink{class_draggable_button_a7930aae31fb62a63f1ef119657eaeeec}{set\+Element\+Type}} (const QString \&\mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{element\+Type}})
-\item 
-QString \mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{element\+Type}} () const
+\mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{Draggable\+Button}} (const QString \&element\+Type, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -60,6 +59,21 @@ bool \mbox{\hyperlink{class_draggable_button_ac91e21a7d06302760daa9cb7a7336c8f}{
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Draggable button for adding ERD elements to the diagram. 
+
+This class extends QPush\+Button to provide drag-\/and-\/drop functionality for creating new ERD elements in the diagram. It supports\+:
+\begin{DoxyItemize}
+\item Drag-\/and-\/drop interaction for intuitive element placement
+\item Visual feedback during drag operations
+\item Element type identification (\doxylink{class_entity}{Entity}, \doxylink{class_attribute}{Attribute}, \doxylink{class_relationship}{Relationship})
+\item Icon-\/based visual representation of element types
+\item MIME data encoding for cross-\/widget drag operations
+\item Click-\/based element creation as alternative to drag-\/and-\/drop
+\end{DoxyItemize}
+
+The button initiates a drag operation when the user clicks and moves the mouse, allowing elements to be dropped onto the diagram view at specific positions. This provides an intuitive interface similar to drawing/diagramming applications. 
+
 \label{doc-constructors}
 \Hypertarget{class_draggable_button_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -69,8 +83,7 @@ bool \mbox{\hyperlink{class_draggable_button_ac91e21a7d06302760daa9cb7a7336c8f}{
 {\footnotesize\ttfamily \label{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af} 
 Draggable\+Button\+::\+Draggable\+Button (\begin{DoxyParamCaption}\item[{const QString \&}]{element\+Type}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -82,28 +95,13 @@ Here is the call graph for this function\+:
 \label{doc-func-members}
 \Hypertarget{class_draggable_button_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}\index{DraggableButton@{DraggableButton}!elementType@{elementType}}
-\index{elementType@{elementType}!DraggableButton@{DraggableButton}}
-\doxysubsubsection{\texorpdfstring{elementType()}{elementType()}}
-{\footnotesize\ttfamily \label{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a} 
-QString Draggable\+Button\+::element\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_draggable_button_a7fd40b89abec8f870befc9944cc08fd1}\index{DraggableButton@{DraggableButton}!getDisplayName@{getDisplayName}}
 \index{getDisplayName@{getDisplayName}!DraggableButton@{DraggableButton}}
 \doxysubsubsection{\texorpdfstring{getDisplayName()}{getDisplayName()}}
 {\footnotesize\ttfamily \label{class_draggable_button_a7fd40b89abec8f870befc9944cc08fd1} 
 QString Draggable\+Button\+::get\+Display\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,8 +114,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_draggable_button_a0eb58733d3624401783dfa00b17ed66a} 
 QString Draggable\+Button\+::get\+Icon\+Path (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -130,8 +127,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_draggable_button_a7460c76698623f8a3175d050254c0bde} 
 void Draggable\+Button\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -144,36 +140,20 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_draggable_button_af79bd14bb18414a74c7df9c2e0b1d26a} 
 void Draggable\+Button\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-\Hypertarget{class_draggable_button_a7930aae31fb62a63f1ef119657eaeeec}\index{DraggableButton@{DraggableButton}!setElementType@{setElementType}}
-\index{setElementType@{setElementType}!DraggableButton@{DraggableButton}}
-\doxysubsubsection{\texorpdfstring{setElementType()}{setElementType()}}
-{\footnotesize\ttfamily \label{class_draggable_button_a7930aae31fb62a63f1ef119657eaeeec} 
-void Draggable\+Button\+::set\+Element\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{element\+Type}{}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_draggable_button_a7930aae31fb62a63f1ef119657eaeeec_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_draggable_button_af9acff4c210ccdd94acac5847cddd0bd}\index{DraggableButton@{DraggableButton}!setupIcon@{setupIcon}}
 \index{setupIcon@{setupIcon}!DraggableButton@{DraggableButton}}
 \doxysubsubsection{\texorpdfstring{setupIcon()}{setupIcon()}}
 {\footnotesize\ttfamily \label{class_draggable_button_af9acff4c210ccdd94acac5847cddd0bd} 
 void Draggable\+Button\+::setup\+Icon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_draggable_button_af9acff4c210ccdd94acac5847cddd0bd_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

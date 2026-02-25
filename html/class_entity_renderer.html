@@ -92,6 +92,9 @@ $(function(){initNavTree('class_entity_renderer.html','','class_entity_renderer-
 </div><!--header-->
 <div class="contents">
 
+<p>Renderer implementation for entity elements in ERD diagrams.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_entity_renderer_8h_source.html">EntityRenderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for EntityRenderer:</div>
@@ -129,7 +132,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a9e0185e78aa1656da867049026d87b3b" id="r_a9e0185e78aa1656da867049026d87b3b"><td class="memItemLeft" align="right" valign="top">QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e0185e78aa1656da867049026d87b3b">m_selectionPen</a></td></tr>
 <tr class="memitem:a368d93baba3e9ce0ff3a2d255b5a8c45" id="r_a368d93baba3e9ce0ff3a2d255b5a8c45"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a368d93baba3e9ce0ff3a2d255b5a8c45">m_textMargin</a></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Renderer implementation for entity elements in ERD diagrams. </p>
+<p>This class implements the <a class="el" href="class_i_element_renderer.html" title="Abstract interface for element rendering in ERD diagrams.">IElementRenderer</a> interface to provide specialized rendering for entity elements following Peter Chen's ERD notation. It supports:</p><ul>
+<li>Regular entity representation (single rectangle)</li>
+<li>Weak entity representation (double rectangle with inner margin)</li>
+<li>Selection visualization</li>
+<li>Hit detection for user interaction</li>
+<li>Customizable fonts, pens, and brushes for visual styling </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a443dd53e40ee0ba00fd8cea3a09f2f59" name="a443dd53e40ee0ba00fd8cea3a09f2f59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a443dd53e40ee0ba00fd8cea3a09f2f59">&#9670;&#160;</a></span>EntityRenderer()</h2>
 

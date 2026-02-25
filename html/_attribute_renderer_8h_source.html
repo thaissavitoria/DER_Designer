@@ -100,111 +100,112 @@ $(function(){initNavTree('_attribute_renderer_8h_source.html','',''); });
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtGui/QPen&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// -----------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html">   11</a></span><span class="keyword">class </span><a class="code hl_function" href="class_attribute_renderer.html#a3982b8d6e2af9e8aacd2b8e7656bbb3b">AttributeRenderer</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_i_element_renderer.html">IElementRenderer</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="class_attribute_renderer.html#a3982b8d6e2af9e8aacd2b8e7656bbb3b">AttributeRenderer</a>();</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#aebf435fb6670b52050e735bc3e078eba">render</a>(</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        QPainter* painter,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_attribute_renderer.html#a9b78289101166ca718edc4204a696475">isInElementRect</a>(</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">const</span> QPointF&amp; point</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    QRectF <a class="code hl_function" href="class_attribute_renderer.html#ac49ce03aeca93d9d70c6cddffc5bc7f4">selectionRect</a>(</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a9f073c7b9149b53e79979e6d009bc75d">renderSelection</a>(</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        QPainter* painter,</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">   38</a></span>    QPen <a class="code hl_variable" href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">m_borderPen</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">   39</a></span>    QPen <a class="code hl_variable" href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">m_derivedPen</a>;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">   40</a></span>    QBrush <a class="code hl_variable" href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">m_fillBrush</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">   41</a></span>    QBrush <a class="code hl_variable" href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">m_selectionBrush</a>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">   42</a></span>    QFont <a class="code hl_variable" href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">m_textFont</a>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">   43</a></span>    QFont <a class="code hl_variable" href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">m_primaryKeyFont</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">   44</a></span>    QPen <a class="code hl_variable" href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">m_textPen</a>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">   45</a></span>    QPen <a class="code hl_variable" href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">m_selectionPen</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">   47</a></span>    qreal <a class="code hl_variable" href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">m_textMargin</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a1214697be0865498258ec1deabd16faf">setupDefaultStyle</a>();</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a813a87df76328eb14781b292b3d0637b">renderByAttributeType</a>(</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        QPainter* painter,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="class_attribute.html">Attribute</a>* attribute,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    );</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#afa445c318aa3e8a03922b71407b7a966">renderNormalAttribute</a>(</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        QPainter* painter,</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    );</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_attribute_renderer.html#a3982b8d6e2af9e8aacd2b8e7656bbb3b">AttributeRenderer</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_i_element_renderer.html">IElementRenderer</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_function" href="class_attribute_renderer.html#a3982b8d6e2af9e8aacd2b8e7656bbb3b">AttributeRenderer</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#aebf435fb6670b52050e735bc3e078eba">render</a>(</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    QPainter* painter,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_attribute_renderer.html#a9b78289101166ca718edc4204a696475">isInElementRect</a>(</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">const</span> QPointF&amp; point</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  QRectF <a class="code hl_function" href="class_attribute_renderer.html#ac49ce03aeca93d9d70c6cddffc5bc7f4">selectionRect</a>(</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a9f073c7b9149b53e79979e6d009bc75d">renderSelection</a>(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    QPainter* painter,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">   51</a></span>  QPen <a class="code hl_variable" href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">m_borderPen</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">   52</a></span>  QPen <a class="code hl_variable" href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">m_derivedPen</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">   53</a></span>  QBrush <a class="code hl_variable" href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">m_fillBrush</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">   54</a></span>  QBrush <a class="code hl_variable" href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">m_selectionBrush</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">   55</a></span>  QFont <a class="code hl_variable" href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">m_textFont</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">   56</a></span>  QFont <a class="code hl_variable" href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">m_primaryKeyFont</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">   57</a></span>  QPen <a class="code hl_variable" href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">m_textPen</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">   58</a></span>  QPen <a class="code hl_variable" href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">m_selectionPen</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">   60</a></span>  qreal <a class="code hl_variable" href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">m_textMargin</a>;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a00e90f989c1e81fb96fc7c84c17f2a9d">renderDerivedAttribute</a>(</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        QPainter* painter,</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    );</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a70053a97233d7db614e6a593319aa721">renderMultivaluedAttribute</a>(</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        QPainter* painter,</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    );</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    QRectF <a class="code hl_function" href="class_attribute_renderer.html#a6612518ecaa396432f7495f0ad814d23">getTextRect</a>(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keyword">const</span> QRectF&amp; elementRect</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_attribute_renderer.html#a75f9e50b38c8201a77a4239ac8b11a34">isPointInEllipse</a>(</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        <span class="keyword">const</span> QPointF&amp; point,</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">const</span> QRectF&amp; ellipseRect</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Qt::PenStyle <a class="code hl_function" href="class_attribute_renderer.html#a9dfc25f068a26abd2c53df3ef465404f">getPenStyle</a>(</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a1214697be0865498258ec1deabd16faf">setupDefaultStyle</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a813a87df76328eb14781b292b3d0637b">renderByAttributeType</a>(</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    QPainter* painter,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> <span class="keyword">class</span> <a class="code hl_class" href="class_attribute.html">Attribute</a>* attribute,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  );</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#afa445c318aa3e8a03922b71407b7a966">renderNormalAttribute</a>(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    QPainter* painter,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a00e90f989c1e81fb96fc7c84c17f2a9d">renderDerivedAttribute</a>(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    QPainter* painter,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  );</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_attribute_renderer.html#a70053a97233d7db614e6a593319aa721">renderMultivaluedAttribute</a>(</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    QPainter* painter,</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  );</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  QRectF <a class="code hl_function" href="class_attribute_renderer.html#a6612518ecaa396432f7495f0ad814d23">getTextRect</a>(</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">const</span> QRectF&amp; elementRect</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_attribute_renderer.html#a75f9e50b38c8201a77a4239ac8b11a34">isPointInEllipse</a>(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">const</span> QPointF&amp; point,</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> QRectF&amp; ellipseRect</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  Qt::PenStyle <a class="code hl_function" href="class_attribute_renderer.html#a9dfc25f068a26abd2c53df3ef465404f">getPenStyle</a>(</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> <a class="code hl_class" href="class_basic_element.html">BasicElement</a>* element</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>};</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif </span><span class="comment">// ATTRIBUTERENDERER_H</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">// ATTRIBUTERENDERER_H</span></div>
 <div class="ttc" id="a_element_renderer_8h_html"><div class="ttname"><a href="_element_renderer_8h.html">ElementRenderer.h</a></div></div>
-<div class="ttc" id="aclass_attribute_html"><div class="ttname"><a href="class_attribute.html">Attribute</a></div><div class="ttdef"><b>Definition</b> Attribute.h:8</div></div>
+<div class="ttc" id="aclass_attribute_html"><div class="ttname"><a href="class_attribute.html">Attribute</a></div><div class="ttdoc">Represents an attribute element in an ERD diagram.</div><div class="ttdef"><b>Definition</b> Attribute.h:20</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a00e90f989c1e81fb96fc7c84c17f2a9d"><div class="ttname"><a href="class_attribute_renderer.html#a00e90f989c1e81fb96fc7c84c17f2a9d">AttributeRenderer::renderDerivedAttribute</a></div><div class="ttdeci">void renderDerivedAttribute(QPainter *painter, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:106</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a1214697be0865498258ec1deabd16faf"><div class="ttname"><a href="class_attribute_renderer.html#a1214697be0865498258ec1deabd16faf">AttributeRenderer::setupDefaultStyle</a></div><div class="ttdeci">void setupDefaultStyle()</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:22</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a14d8c04317513839045364bccef0c10b"><div class="ttname"><a href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">AttributeRenderer::m_selectionBrush</a></div><div class="ttdeci">QBrush m_selectionBrush</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:41</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a1776534869bdfeb2514054d47a3ab2f9"><div class="ttname"><a href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">AttributeRenderer::m_selectionPen</a></div><div class="ttdeci">QPen m_selectionPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:45</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a14d8c04317513839045364bccef0c10b"><div class="ttname"><a href="class_attribute_renderer.html#a14d8c04317513839045364bccef0c10b">AttributeRenderer::m_selectionBrush</a></div><div class="ttdeci">QBrush m_selectionBrush</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:54</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a1776534869bdfeb2514054d47a3ab2f9"><div class="ttname"><a href="class_attribute_renderer.html#a1776534869bdfeb2514054d47a3ab2f9">AttributeRenderer::m_selectionPen</a></div><div class="ttdeci">QPen m_selectionPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:58</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a3982b8d6e2af9e8aacd2b8e7656bbb3b"><div class="ttname"><a href="class_attribute_renderer.html#a3982b8d6e2af9e8aacd2b8e7656bbb3b">AttributeRenderer::AttributeRenderer</a></div><div class="ttdeci">AttributeRenderer()</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:14</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a56e223635bb7646088304cd50bca7103"><div class="ttname"><a href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">AttributeRenderer::m_primaryKeyFont</a></div><div class="ttdeci">QFont m_primaryKeyFont</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:43</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a59e6a58cf9ac4d43629db680f0540c35"><div class="ttname"><a href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">AttributeRenderer::m_derivedPen</a></div><div class="ttdeci">QPen m_derivedPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:39</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a60dd0a22f49f01241e1e8b86f0baf732"><div class="ttname"><a href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">AttributeRenderer::m_fillBrush</a></div><div class="ttdeci">QBrush m_fillBrush</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:40</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a6562320b1e84e5c22881bdd5232105c7"><div class="ttname"><a href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">AttributeRenderer::m_textFont</a></div><div class="ttdeci">QFont m_textFont</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:42</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a56e223635bb7646088304cd50bca7103"><div class="ttname"><a href="class_attribute_renderer.html#a56e223635bb7646088304cd50bca7103">AttributeRenderer::m_primaryKeyFont</a></div><div class="ttdeci">QFont m_primaryKeyFont</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:56</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a59e6a58cf9ac4d43629db680f0540c35"><div class="ttname"><a href="class_attribute_renderer.html#a59e6a58cf9ac4d43629db680f0540c35">AttributeRenderer::m_derivedPen</a></div><div class="ttdeci">QPen m_derivedPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:52</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a60dd0a22f49f01241e1e8b86f0baf732"><div class="ttname"><a href="class_attribute_renderer.html#a60dd0a22f49f01241e1e8b86f0baf732">AttributeRenderer::m_fillBrush</a></div><div class="ttdeci">QBrush m_fillBrush</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:53</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a6562320b1e84e5c22881bdd5232105c7"><div class="ttname"><a href="class_attribute_renderer.html#a6562320b1e84e5c22881bdd5232105c7">AttributeRenderer::m_textFont</a></div><div class="ttdeci">QFont m_textFont</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:55</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a6612518ecaa396432f7495f0ad814d23"><div class="ttname"><a href="class_attribute_renderer.html#a6612518ecaa396432f7495f0ad814d23">AttributeRenderer::getTextRect</a></div><div class="ttdeci">QRectF getTextRect(const QRectF &amp;elementRect) const</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:193</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a70053a97233d7db614e6a593319aa721"><div class="ttname"><a href="class_attribute_renderer.html#a70053a97233d7db614e6a593319aa721">AttributeRenderer::renderMultivaluedAttribute</a></div><div class="ttdeci">void renderMultivaluedAttribute(QPainter *painter, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:118</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a75f9e50b38c8201a77a4239ac8b11a34"><div class="ttname"><a href="class_attribute_renderer.html#a75f9e50b38c8201a77a4239ac8b11a34">AttributeRenderer::isPointInEllipse</a></div><div class="ttdeci">bool isPointInEllipse(const QPointF &amp;point, const QRectF &amp;ellipseRect) const</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:202</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a813a87df76328eb14781b292b3d0637b"><div class="ttname"><a href="class_attribute_renderer.html#a813a87df76328eb14781b292b3d0637b">AttributeRenderer::renderByAttributeType</a></div><div class="ttdeci">void renderByAttributeType(QPainter *painter, const class Attribute *attribute, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:72</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_a82593554fc5b7cf532e446f3c2a7181e"><div class="ttname"><a href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">AttributeRenderer::m_textPen</a></div><div class="ttdeci">QPen m_textPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:44</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_a82593554fc5b7cf532e446f3c2a7181e"><div class="ttname"><a href="class_attribute_renderer.html#a82593554fc5b7cf532e446f3c2a7181e">AttributeRenderer::m_textPen</a></div><div class="ttdeci">QPen m_textPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:57</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a9b78289101166ca718edc4204a696475"><div class="ttname"><a href="class_attribute_renderer.html#a9b78289101166ca718edc4204a696475">AttributeRenderer::isInElementRect</a></div><div class="ttdeci">bool isInElementRect(const BasicElement *element, const QPointF &amp;point) override</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:135</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a9dfc25f068a26abd2c53df3ef465404f"><div class="ttname"><a href="class_attribute_renderer.html#a9dfc25f068a26abd2c53df3ef465404f">AttributeRenderer::getPenStyle</a></div><div class="ttdeci">Qt::PenStyle getPenStyle(const BasicElement *element) const</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:183</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_a9f073c7b9149b53e79979e6d009bc75d"><div class="ttname"><a href="class_attribute_renderer.html#a9f073c7b9149b53e79979e6d009bc75d">AttributeRenderer::renderSelection</a></div><div class="ttdeci">void renderSelection(QPainter *painter, const BasicElement *element, const QRectF &amp;rect) override</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:162</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_aa5dda1523293676fb834e637073b8d3e"><div class="ttname"><a href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">AttributeRenderer::m_borderPen</a></div><div class="ttdeci">QPen m_borderPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:38</div></div>
-<div class="ttc" id="aclass_attribute_renderer_html_aadfb4ef24402c0f836c58dd7b6ebd62b"><div class="ttname"><a href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">AttributeRenderer::m_textMargin</a></div><div class="ttdeci">qreal m_textMargin</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:47</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_aa5dda1523293676fb834e637073b8d3e"><div class="ttname"><a href="class_attribute_renderer.html#aa5dda1523293676fb834e637073b8d3e">AttributeRenderer::m_borderPen</a></div><div class="ttdeci">QPen m_borderPen</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:51</div></div>
+<div class="ttc" id="aclass_attribute_renderer_html_aadfb4ef24402c0f836c58dd7b6ebd62b"><div class="ttname"><a href="class_attribute_renderer.html#aadfb4ef24402c0f836c58dd7b6ebd62b">AttributeRenderer::m_textMargin</a></div><div class="ttdeci">qreal m_textMargin</div><div class="ttdef"><b>Definition</b> AttributeRenderer.h:60</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_ac49ce03aeca93d9d70c6cddffc5bc7f4"><div class="ttname"><a href="class_attribute_renderer.html#ac49ce03aeca93d9d70c6cddffc5bc7f4">AttributeRenderer::selectionRect</a></div><div class="ttdeci">QRectF selectionRect(const BasicElement *element) override</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:148</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_aebf435fb6670b52050e735bc3e078eba"><div class="ttname"><a href="class_attribute_renderer.html#aebf435fb6670b52050e735bc3e078eba">AttributeRenderer::render</a></div><div class="ttdeci">void render(QPainter *painter, const BasicElement *element, const QRectF &amp;rect) override</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:39</div></div>
 <div class="ttc" id="aclass_attribute_renderer_html_afa445c318aa3e8a03922b71407b7a966"><div class="ttname"><a href="class_attribute_renderer.html#afa445c318aa3e8a03922b71407b7a966">AttributeRenderer::renderNormalAttribute</a></div><div class="ttdeci">void renderNormalAttribute(QPainter *painter, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> AttributeRenderer.cpp:94</div></div>
-<div class="ttc" id="aclass_basic_element_html"><div class="ttname"><a href="class_basic_element.html">BasicElement</a></div><div class="ttdoc">Abstract base class for all ERD elements (Model only).</div><div class="ttdef"><b>Definition</b> BasicElement.h:60</div></div>
-<div class="ttc" id="aclass_i_element_renderer_html"><div class="ttname"><a href="class_i_element_renderer.html">IElementRenderer</a></div><div class="ttdef"><b>Definition</b> ElementRenderer.h:12</div></div>
+<div class="ttc" id="aclass_basic_element_html"><div class="ttname"><a href="class_basic_element.html">BasicElement</a></div><div class="ttdoc">Abstract base class for all ERD elements (Model only).</div><div class="ttdef"><b>Definition</b> BasicElement.h:61</div></div>
+<div class="ttc" id="aclass_i_element_renderer_html"><div class="ttname"><a href="class_i_element_renderer.html">IElementRenderer</a></div><div class="ttdoc">Abstract interface for element rendering in ERD diagrams.</div><div class="ttdef"><b>Definition</b> ElementRenderer.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

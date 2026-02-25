@@ -92,6 +92,9 @@ $(function(){initNavTree('class_attribute.html','','class_attribute-members'); }
 </div><!--header-->
 <div class="contents">
 
+<p>Represents an attribute element in an ERD diagram.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_attribute_8h_source.html">Attribute.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Attribute:</div>
@@ -104,17 +107,6 @@ Collaboration diagram for Attribute:</div>
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
-Signals</h2></td></tr>
-<tr class="memitem:acef960b4cb4bd5ddd2b0a2458dfff316" id="r_acef960b4cb4bd5ddd2b0a2458dfff316"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acef960b4cb4bd5ddd2b0a2458dfff316">attributeTypeChanged</a> (<a class="el" href="class_attribute_type.html#a9b0ab7ba46017f33de4ed7c711334b72">AttributeType::Type</a> newType)</td></tr>
-<tr class="memitem:a3c9d142321c01521ec6b2e9655c7879d" id="r_a3c9d142321c01521ec6b2e9655c7879d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c9d142321c01521ec6b2e9655c7879d">primaryKeyChanged</a> (bool isPrimary)</td></tr>
-<tr class="inherit_header signals_class_basic_element"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_class_basic_element')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_basic_element.html">BasicElement</a></td></tr>
-<tr class="memitem:a6f92f7b59a12584c3156fb10ff989de7 inherit signals_class_basic_element" id="r_a6f92f7b59a12584c3156fb10ff989de7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a6f92f7b59a12584c3156fb10ff989de7">nameChanged</a> (const QString &amp;newName)</td></tr>
-<tr class="memitem:a02183bafd7c80f9f1f99a9b9f1631524 inherit signals_class_basic_element" id="r_a02183bafd7c80f9f1f99a9b9f1631524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a02183bafd7c80f9f1f99a9b9f1631524">positionChanged</a> (const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:a5af654d8bb5e16b44121f69c832037b8 inherit signals_class_basic_element" id="r_a5af654d8bb5e16b44121f69c832037b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a5af654d8bb5e16b44121f69c832037b8">sizeChanged</a> (const QSizeF &amp;newSize)</td></tr>
-<tr class="memitem:a968047d6f013c43f621f18ee12f97785 inherit signals_class_basic_element" id="r_a968047d6f013c43f621f18ee12f97785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a968047d6f013c43f621f18ee12f97785">propertyChanged</a> (const QString &amp;key, const QVariant &amp;value)</td></tr>
-<tr class="memitem:ad1b7a593fb82e872041b342abd157088 inherit signals_class_basic_element" id="r_ad1b7a593fb82e872041b342abd157088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ad1b7a593fb82e872041b342abd157088">elementChanged</a> ()</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a119bae8069ee45c1e48122a79ea4b29e" id="r_a119bae8069ee45c1e48122a79ea4b29e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a119bae8069ee45c1e48122a79ea4b29e">Attribute</a> (QObject *parent=nullptr)</td></tr>
@@ -147,19 +139,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11b7bec801ecfff87fa6bb2898b2033f inherit pub_methods_class_basic_element" id="r_a11b7bec801ecfff87fa6bb2898b2033f"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a11b7bec801ecfff87fa6bb2898b2033f">position</a> () const</td></tr>
 <tr class="memitem:a542adbf85a58c5c9bf17975964d7e446 inherit pub_methods_class_basic_element" id="r_a542adbf85a58c5c9bf17975964d7e446"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a542adbf85a58c5c9bf17975964d7e446">size</a> () const</td></tr>
 <tr class="memitem:a105ea9f996799c88e65af3c377481051 inherit pub_methods_class_basic_element" id="r_a105ea9f996799c88e65af3c377481051"><td class="memItemLeft" align="right" valign="top">QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a105ea9f996799c88e65af3c377481051">boundingRect</a> () const</td></tr>
+<tr class="memitem:a482ffd2c58ecdc8bba5bfeaadf8f26d4 inherit pub_methods_class_basic_element" id="r_a482ffd2c58ecdc8bba5bfeaadf8f26d4"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_connection_point.html">ConnectionPoint</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a482ffd2c58ecdc8bba5bfeaadf8f26d4">connectionPoints</a> () const</td></tr>
 <tr class="memitem:a42ea6812e7627bb99af54cab547aa803 inherit pub_methods_class_basic_element" id="r_a42ea6812e7627bb99af54cab547aa803"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a42ea6812e7627bb99af54cab547aa803">setName</a> (const QString &amp;<a class="el" href="class_basic_element.html#a95892a3b1ba8089d28f7e33a4187a360">name</a>)</td></tr>
 <tr class="memitem:ab14524060d1b8fbbba753207029c6d7d inherit pub_methods_class_basic_element" id="r_ab14524060d1b8fbbba753207029c6d7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ab14524060d1b8fbbba753207029c6d7d">setPosition</a> (const QPointF &amp;<a class="el" href="class_basic_element.html#a0fdfba7d88ec13f4dc8984e0de153759">position</a>)</td></tr>
-<tr class="memitem:ab86c964c6ef9e8d7299efc263a0837e7 inherit pub_methods_class_basic_element" id="r_ab86c964c6ef9e8d7299efc263a0837e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ab86c964c6ef9e8d7299efc263a0837e7">setSize</a> (const QSizeF &amp;<a class="el" href="class_basic_element.html#ab3ec6bd13d73b18c450d8026ff3f3b1d">size</a>)</td></tr>
+<tr class="memitem:ab86c964c6ef9e8d7299efc263a0837e7 inherit pub_methods_class_basic_element" id="r_ab86c964c6ef9e8d7299efc263a0837e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ab86c964c6ef9e8d7299efc263a0837e7">setSize</a> (const QSizeF &amp;<a class="el" href="class_basic_element.html#a542adbf85a58c5c9bf17975964d7e446">size</a>)</td></tr>
 <tr class="memitem:a28d9895b6930a1be49e7375181848e77 inherit pub_methods_class_basic_element" id="r_a28d9895b6930a1be49e7375181848e77"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a28d9895b6930a1be49e7375181848e77">setPosition</a> (qreal x, qreal y)</td></tr>
 <tr class="memitem:ae089b8cb8d8fe983d587035412b0de67 inherit pub_methods_class_basic_element" id="r_ae089b8cb8d8fe983d587035412b0de67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ae089b8cb8d8fe983d587035412b0de67">setSize</a> (qreal width, qreal height)</td></tr>
 <tr class="memitem:add857c56cf407a3f2c3b4221d84c18a5 inherit pub_methods_class_basic_element" id="r_add857c56cf407a3f2c3b4221d84c18a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#add857c56cf407a3f2c3b4221d84c18a5">move</a> (const QPointF &amp;delta)</td></tr>
 <tr class="memitem:a5897e9fd991c828e58cc7e9299f00844 inherit pub_methods_class_basic_element" id="r_a5897e9fd991c828e58cc7e9299f00844"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a5897e9fd991c828e58cc7e9299f00844">resize</a> (const QSizeF &amp;newSize)</td></tr>
 <tr class="memitem:a13661eba40c8decbb0ac50aa42695351 inherit pub_methods_class_basic_element" id="r_a13661eba40c8decbb0ac50aa42695351"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a13661eba40c8decbb0ac50aa42695351">addObserver</a> (<a class="el" href="class_i_element_observer.html">IElementObserver</a> *observer)</td></tr>
 <tr class="memitem:a6b6d87307328e617498ac1b1787afb97 inherit pub_methods_class_basic_element" id="r_a6b6d87307328e617498ac1b1787afb97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a6b6d87307328e617498ac1b1787afb97">removeObserver</a> (<a class="el" href="class_i_element_observer.html">IElementObserver</a> *observer)</td></tr>
-<tr class="memitem:a482ffd2c58ecdc8bba5bfeaadf8f26d4 inherit pub_methods_class_basic_element" id="r_a482ffd2c58ecdc8bba5bfeaadf8f26d4"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_connection_point.html">ConnectionPoint</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a482ffd2c58ecdc8bba5bfeaadf8f26d4">connectionPoints</a> () const</td></tr>
 <tr class="memitem:a0357bfa9b1ef06dd1c9d64bcb00813f4 inherit pub_methods_class_basic_element" id="r_a0357bfa9b1ef06dd1c9d64bcb00813f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a0357bfa9b1ef06dd1c9d64bcb00813f4">addConnectionPoint</a> (<a class="el" href="class_connection_point.html">ConnectionPoint</a> *connectionPoint)</td></tr>
 <tr class="memitem:a70598cf89581cc6e308dafaa69551934 inherit pub_methods_class_basic_element" id="r_a70598cf89581cc6e308dafaa69551934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_connection_point.html">ConnectionPoint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a70598cf89581cc6e308dafaa69551934">getConnectionPointByDirection</a> (<a class="el" href="_connection_point_8h.html#a0fde1ff3d073cb77237ea08eea64d963">ConnectionDirection</a> connectionDirection)</td></tr>
-<tr class="memitem:a028ebc6c9de8f0b90af0e7daef9549f8 inherit pub_methods_class_basic_element" id="r_a028ebc6c9de8f0b90af0e7daef9549f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a028ebc6c9de8f0b90af0e7daef9549f8">createDefaultConnectionPoints</a> ()</td></tr>
+<tr class="memitem:a78e2ce29aa5b2a9fae74cf435996ce8b inherit pub_methods_class_basic_element" id="r_a78e2ce29aa5b2a9fae74cf435996ce8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a78e2ce29aa5b2a9fae74cf435996ce8b">createAndAddDefaultConnectionPoints</a> ()</td></tr>
 <tr class="memitem:acbb703934f3bbff401ac5bf3c060dd4e inherit pub_methods_class_basic_element" id="r_acbb703934f3bbff401ac5bf3c060dd4e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#acbb703934f3bbff401ac5bf3c060dd4e">isValid</a> () const</td></tr>
 <tr class="memitem:a893f3f8a8c5e1d7b1df490fa2d76cffb inherit pub_methods_class_basic_element" id="r_a893f3f8a8c5e1d7b1df490fa2d76cffb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a893f3f8a8c5e1d7b1df490fa2d76cffb">addAttributeId</a> (const QString &amp;attributeId)</td></tr>
 <tr class="memitem:ab09956c3e9528e16d15643c798bc69b0 inherit pub_methods_class_basic_element" id="r_ab09956c3e9528e16d15643c798bc69b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ab09956c3e9528e16d15643c798bc69b0">removeAttributeId</a> (const QString &amp;attributeId)</td></tr>
@@ -173,23 +165,29 @@ Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-inherited" class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header signals_class_basic_element"><td colspan="2" onclick="javascript:dynsection.toggleInherit('signals_class_basic_element')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Signals inherited from <a class="el" href="class_basic_element.html">BasicElement</a></td></tr>
+<tr class="memitem:a02183bafd7c80f9f1f99a9b9f1631524 inherit signals_class_basic_element" id="r_a02183bafd7c80f9f1f99a9b9f1631524"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a02183bafd7c80f9f1f99a9b9f1631524">positionChanged</a> (const QPointF &amp;newPosition)</td></tr>
 <tr class="inherit_header pub_static_methods_class_basic_element"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_static_methods_class_basic_element')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Static Public Member Functions inherited from <a class="el" href="class_basic_element.html">BasicElement</a></td></tr>
 <tr class="memitem:a01a6511d922708fe0042474740109152 inherit pub_static_methods_class_basic_element" id="r_a01a6511d922708fe0042474740109152"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a01a6511d922708fe0042474740109152">elementTypeToString</a> (<a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a> <a class="el" href="class_basic_element.html#adea459fb43e3af447bc9f9dc1c294f9a">type</a>)</td></tr>
-<tr class="memitem:a0674caf961f3fbb13e2194f595a28a11 inherit pub_static_methods_class_basic_element" id="r_a0674caf961f3fbb13e2194f595a28a11"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a0674caf961f3fbb13e2194f595a28a11">elementTypeFromString</a> (const QString &amp;typeString)</td></tr>
 <tr class="inherit_header pro_methods_class_basic_element"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_basic_element')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_basic_element.html">BasicElement</a></td></tr>
 <tr class="memitem:a596caee40cdd00a0aacce49689b63f92 inherit pro_methods_class_basic_element" id="r_a596caee40cdd00a0aacce49689b63f92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a596caee40cdd00a0aacce49689b63f92">notifyObservers</a> ()</td></tr>
 <tr class="memitem:a84f8dd62eabbe3dded6bacf42a783856 inherit pro_methods_class_basic_element" id="r_a84f8dd62eabbe3dded6bacf42a783856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a84f8dd62eabbe3dded6bacf42a783856">notifyPositionChanged</a> (const QPointF &amp;oldPosition, const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:abbbba80c62762cb0ff0866e4aa650b42 inherit pro_methods_class_basic_element" id="r_abbbba80c62762cb0ff0866e4aa650b42"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#abbbba80c62762cb0ff0866e4aa650b42">onNameChanged</a> (const QString &amp;oldName, const QString &amp;newName)</td></tr>
-<tr class="memitem:aa4779b31234dc7c90ceddd5a3069b2e7 inherit pro_methods_class_basic_element" id="r_aa4779b31234dc7c90ceddd5a3069b2e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#aa4779b31234dc7c90ceddd5a3069b2e7">onPositionChanged</a> (const QPointF &amp;oldPosition, const QPointF &amp;newPosition)</td></tr>
-<tr class="memitem:aafd52d1fae2f0b7666ae15bcbb3782c2 inherit pro_methods_class_basic_element" id="r_aafd52d1fae2f0b7666ae15bcbb3782c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#aafd52d1fae2f0b7666ae15bcbb3782c2">onSizeChanged</a> (const QSizeF &amp;oldSize, const QSizeF &amp;newSize)</td></tr>
 <tr class="inherit_header properties_class_basic_element"><td colspan="2" onclick="javascript:dynsection.toggleInherit('properties_class_basic_element')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Properties inherited from <a class="el" href="class_basic_element.html">BasicElement</a></td></tr>
 <tr class="memitem:acca1cabc35946209fcc643e7889eb043 inherit properties_class_basic_element" id="r_acca1cabc35946209fcc643e7889eb043"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#acca1cabc35946209fcc643e7889eb043">id</a></td></tr>
 <tr class="memitem:a95892a3b1ba8089d28f7e33a4187a360 inherit properties_class_basic_element" id="r_a95892a3b1ba8089d28f7e33a4187a360"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a95892a3b1ba8089d28f7e33a4187a360">name</a></td></tr>
 <tr class="memitem:adea459fb43e3af447bc9f9dc1c294f9a inherit properties_class_basic_element" id="r_adea459fb43e3af447bc9f9dc1c294f9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#adea459fb43e3af447bc9f9dc1c294f9a">type</a></td></tr>
 <tr class="memitem:a0fdfba7d88ec13f4dc8984e0de153759 inherit properties_class_basic_element" id="r_a0fdfba7d88ec13f4dc8984e0de153759"><td class="memItemLeft" align="right" valign="top">QPointF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#a0fdfba7d88ec13f4dc8984e0de153759">position</a></td></tr>
-<tr class="memitem:ab3ec6bd13d73b18c450d8026ff3f3b1d inherit properties_class_basic_element" id="r_ab3ec6bd13d73b18c450d8026ff3f3b1d"><td class="memItemLeft" align="right" valign="top">QSizeF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_basic_element.html#ab3ec6bd13d73b18c450d8026ff3f3b1d">size</a></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents an attribute element in an ERD diagram. </p>
+<p>This class extends <a class="el" href="class_basic_element.html" title="Abstract base class for all ERD elements (Model only).">BasicElement</a> to represent attributes in Entity-Relationship diagrams following Peter Chen's notation. It provides:</p><ul>
+<li>Different attribute types (normal, derived, multivalued, composite)</li>
+<li>Primary key designation</li>
+<li>Support for composite attributes with sub-attributes</li>
+<li>Type-specific rendering properties</li>
+<li>Serialization for persistence </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a119bae8069ee45c1e48122a79ea4b29e" name="a119bae8069ee45c1e48122a79ea4b29e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a119bae8069ee45c1e48122a79ea4b29e">&#9670;&#160;</a></span>Attribute() <span class="overload">[1/4]</span></h2>
 
@@ -215,7 +213,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a119bae8069ee45c1e48122a79ea4b29e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a119bae8069ee45c1e48122a79ea4b29e_cgraph.svg" width="100%" height="529"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -254,7 +252,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_add9e11d2b5f40d9d51bc7e4aeb4904db_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_add9e11d2b5f40d9d51bc7e4aeb4904db_cgraph.svg" width="100%" height="516"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -293,7 +291,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a069397c04d49d00d9c2f50d6cbe7abe6_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a069397c04d49d00d9c2f50d6cbe7abe6_cgraph.svg" width="100%" height="516"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -323,7 +321,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_af93ebaed48e35e2dbbf0abbb5ad5c688_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_af93ebaed48e35e2dbbf0abbb5ad5c688_cgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -372,36 +370,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a90636f3ba05f5fb99a4308a5ee357d21_icgraph.svg" width="542" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="acef960b4cb4bd5ddd2b0a2458dfff316" name="acef960b4cb4bd5ddd2b0a2458dfff316"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acef960b4cb4bd5ddd2b0a2458dfff316">&#9670;&#160;</a></span>attributeTypeChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Attribute::attributeTypeChanged </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_attribute_type.html#a9b0ab7ba46017f33de4ed7c711334b72">AttributeType::Type</a></td>          <td class="paramname"><span class="paramname"><em>newType</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_acef960b4cb4bd5ddd2b0a2458dfff316_icgraph.svg" width="386" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -631,36 +599,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3c9d142321c01521ec6b2e9655c7879d" name="a3c9d142321c01521ec6b2e9655c7879d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c9d142321c01521ec6b2e9655c7879d">&#9670;&#160;</a></span>primaryKeyChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Attribute::primaryKeyChanged </td>
-          <td>(</td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isPrimary</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a3c9d142321c01521ec6b2e9655c7879d_icgraph.svg" width="642" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="ae8c14a45321be32454ef200c5be0591c" name="ae8c14a45321be32454ef200c5be0591c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae8c14a45321be32454ef200c5be0591c">&#9670;&#160;</a></span>serialize()</h2>
 
@@ -710,7 +648,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_ad76b9eb27719dada6e85b73f0ffc8ac0_cgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_ad76b9eb27719dada6e85b73f0ffc8ac0_cgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -732,7 +670,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a8918add957134a18557a19f9939699f3_cgraph.svg" width="432" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_attribute_a8918add957134a18557a19f9939699f3_cgraph.svg" width="426" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>

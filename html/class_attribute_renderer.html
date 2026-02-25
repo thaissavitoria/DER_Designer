@@ -92,6 +92,9 @@ $(function(){initNavTree('class_attribute_renderer.html','','class_attribute_ren
 </div><!--header-->
 <div class="contents">
 
+<p>Renderer implementation for attribute elements in ERD diagrams.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_attribute_renderer_8h_source.html">AttributeRenderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for AttributeRenderer:</div>
@@ -137,7 +140,17 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a1776534869bdfeb2514054d47a3ab2f9" id="r_a1776534869bdfeb2514054d47a3ab2f9"><td class="memItemLeft" align="right" valign="top">QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1776534869bdfeb2514054d47a3ab2f9">m_selectionPen</a></td></tr>
 <tr class="memitem:aadfb4ef24402c0f836c58dd7b6ebd62b" id="r_aadfb4ef24402c0f836c58dd7b6ebd62b"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadfb4ef24402c0f836c58dd7b6ebd62b">m_textMargin</a></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Renderer implementation for attribute elements in ERD diagrams. </p>
+<p>This class implements the <a class="el" href="class_i_element_renderer.html" title="Abstract interface for element rendering in ERD diagrams.">IElementRenderer</a> interface to provide specialized rendering for attribute elements following Peter Chen's ERD notation. It supports:</p><ul>
+<li>Different visual representations for attribute types (normal, derived, multivalued, composite)</li>
+<li>Primary key indication with underlined text</li>
+<li>Ellipse-based rendering with type-specific styling</li>
+<li>Selection visualization</li>
+<li>Hit detection for interaction</li>
+<li>Customizable fonts, pens, and brushes for visual styling </li>
+</ul>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3982b8d6e2af9e8aacd2b8e7656bbb3b" name="a3982b8d6e2af9e8aacd2b8e7656bbb3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3982b8d6e2af9e8aacd2b8e7656bbb3b">&#9670;&#160;</a></span>AttributeRenderer()</h2>
 

@@ -92,6 +92,9 @@ $(function(){initNavTree('class_relationship_end.html','','class_relationship_en
 </div><!--header-->
 <div class="contents">
 
+<p>Represents one end of a relationship in an ERD diagram.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_relationship_end_8h_source.html">RelationshipEnd.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RelationshipEnd:</div>
@@ -106,7 +109,6 @@ Collaboration diagram for RelationshipEnd:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:ae5c187716cf79f513eb853370cf6248b" id="r_ae5c187716cf79f513eb853370cf6248b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5c187716cf79f513eb853370cf6248b">entityIdChanged</a> (const QString &amp;newEntityId)</td></tr>
 <tr class="memitem:a428833c0b2339ae098d4b81dae5ee06b" id="r_a428833c0b2339ae098d4b81dae5ee06b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a428833c0b2339ae098d4b81dae5ee06b">cardinalityChanged</a> (<a class="el" href="_relationship_end_8h.html#a8926bbad0c6fb22d1c85cb4fdcd286d5">Cardinality</a> newCardinality)</td></tr>
 <tr class="memitem:a6e9e40441ae8b3ce493d71756d692a0c" id="r_a6e9e40441ae8b3ce493d71756d692a0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e9e40441ae8b3ce493d71756d692a0c">totalParticipationChanged</a> (bool <a class="el" href="#a4b8fe7e35c2c6fd1055c072705ad134e">isTotalParticipation</a>)</td></tr>
 <tr class="memitem:aabe969de6fb68acfe7053465c004a74d" id="r_aabe969de6fb68acfe7053465c004a74d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabe969de6fb68acfe7053465c004a74d">customCardinalityTextChanged</a> (const QString &amp;newText)</td></tr>
@@ -144,7 +146,18 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:ae8aea4b5b3592d7bba00451f16c738e2" id="r_ae8aea4b5b3592d7bba00451f16c738e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8aea4b5b3592d7bba00451f16c738e2">m_isTotalParticipation</a></td></tr>
 <tr class="memitem:a7be2a4ffb1913ad31a121918f82946f0" id="r_a7be2a4ffb1913ad31a121918f82946f0"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7be2a4ffb1913ad31a121918f82946f0">m_customCardinalityText</a></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents one end of a relationship in an ERD diagram. </p>
+<p>This class manages the connection between a relationship and an entity, encapsulating the constraints and properties of that connection. It provides:</p><ul>
+<li><a class="el" href="class_entity.html" title="Represents an entity element in an ERD diagram.">Entity</a> identification through ID reference</li>
+<li><a class="el" href="_relationship_end_8h.html#a8926bbad0c6fb22d1c85cb4fdcd286d5" title="Enumeration for cardinality types in relationships.">Cardinality</a> constraints (One or Many)</li>
+<li>Participation constraints (total or partial)</li>
+<li>Custom text for cardinality display ("N", "M", ...)</li>
+<li>String conversion utilities for serialization</li>
+<li>Change notification system through Qt signals</li>
+</ul>
+<p>Each relationship can have multiple ends, typically two (binary relationship) or more (n-ary relationship), connecting different entities with their respective constraints following Peter Chen's ERD notation. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a025f4dc1629ff932c9aade81bcb1fb6a" name="a025f4dc1629ff932c9aade81bcb1fb6a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a025f4dc1629ff932c9aade81bcb1fb6a">&#9670;&#160;</a></span>RelationshipEnd()</h2>
 
@@ -415,36 +428,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ae5c187716cf79f513eb853370cf6248b" name="ae5c187716cf79f513eb853370cf6248b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c187716cf79f513eb853370cf6248b">&#9670;&#160;</a></span>entityIdChanged</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void RelationshipEnd::entityIdChanged </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>newEntityId</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_relationship_end_ae5c187716cf79f513eb853370cf6248b_icgraph.svg" width="414" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="a078f2d6b51f642e0241ec6a6c333fc9d" name="a078f2d6b51f642e0241ec6a6c333fc9d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a078f2d6b51f642e0241ec6a6c333fc9d">&#9670;&#160;</a></span>getDisplayCardinalityText()</h2>
 
@@ -555,11 +538,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f_cgraph.svg" width="414" height="54"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>

@@ -1,11 +1,5 @@
 <map id="BasicElement::setName" name="BasicElement::setName">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,81,169,108"/>
-<area shape="rect" id="Node000002" href="$class_basic_element.html#ad1b7a593fb82e872041b342abd157088" title=" " alt="" coords="218,5,426,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,78,216,41,246,35,241,37,218,47,121,83"/>
-<area shape="rect" id="Node000003" href="$class_basic_element.html#a6f92f7b59a12584c3156fb10ff989de7" title=" " alt="" coords="225,56,420,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="168,83,212,80,207,82,170,88"/>
-<area shape="rect" id="Node000004" href="$class_basic_element.html#a596caee40cdd00a0aacce49689b63f92" title=" " alt="" coords="221,107,424,133"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="169,101,208,107,203,108,169,106"/>
-<area shape="rect" id="Node000005" href="$class_basic_element.html#abbbba80c62762cb0ff0866e4aa650b42" title=" " alt="" coords="217,157,428,184"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="121,106,218,143,246,153,241,153,216,148,120,111"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,169,32"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html#a596caee40cdd00a0aacce49689b63f92" title=" " alt="" coords="217,5,419,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,16,204,19,199,19,169,21"/>
 </map>

@@ -99,55 +99,49 @@ $(function(){initNavTree('_draggable_button_8h_source.html','',''); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtGui/QMouseEvent&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtWidgets/QPushButton&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="class_draggable_button.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="class_draggable_button.html#aed3ee8454ee5a9d422776b86908b54af">DraggableButton</a> : <span class="keyword">public</span> QPushButton</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  Q_OBJECT</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_draggable_button.html#aed3ee8454ee5a9d422776b86908b54af">DraggableButton</a>(</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a">elementType</a>,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    QWidget* parent = <span class="keyword">nullptr</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  );</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#a7930aae31fb62a63f1ef119657eaeeec">setElementType</a>(</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">const</span> QString&amp; <a class="code hl_function" href="class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a">elementType</a></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  );</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a">   23</a></span>  QString <a class="code hl_function" href="class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a">elementType</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">m_elementType</a>; }</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#af79bd14bb18414a74c7df9c2e0b1d26a">mousePressEvent</a>(</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    QMouseEvent* event</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#a7460c76698623f8a3175d050254c0bde">mouseMoveEvent</a>(</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    QMouseEvent* event</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">   35</a></span>  QString <a class="code hl_variable" href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">m_elementType</a>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">   36</a></span>  QPoint <a class="code hl_variable" href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">m_dragStartPosition</a>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">   37</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">m_dragging</a>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd">setupIcon</a>();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  QString <a class="code hl_function" href="class_draggable_button.html#a0eb58733d3624401783dfa00b17ed66a">getIconPath</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  QString <a class="code hl_function" href="class_draggable_button.html#a7fd40b89abec8f870befc9944cc08fd1">getDisplayName</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// -----------------------------------------------------------------------------------------------------</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_draggable_button.html">   27</a></span><span class="keyword">class </span><a class="code hl_function" href="class_draggable_button.html#aed3ee8454ee5a9d422776b86908b54af">DraggableButton</a> : <span class="keyword">public</span> QPushButton</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Q_OBJECT</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_draggable_button.html#aed3ee8454ee5a9d422776b86908b54af">DraggableButton</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> QString&amp; elementType,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QWidget* parent = <span class="keyword">nullptr</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  );</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#af79bd14bb18414a74c7df9c2e0b1d26a">mousePressEvent</a>(</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QMouseEvent* event</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#a7460c76698623f8a3175d050254c0bde">mouseMoveEvent</a>(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QMouseEvent* event</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">   47</a></span>  QString <a class="code hl_variable" href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">m_elementType</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">   48</a></span>  QPoint <a class="code hl_variable" href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">m_dragStartPosition</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">   49</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">m_dragging</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd">setupIcon</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  QString <a class="code hl_function" href="class_draggable_button.html#a0eb58733d3624401783dfa00b17ed66a">getIconPath</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  QString <a class="code hl_function" href="class_draggable_button.html#a7fd40b89abec8f870befc9944cc08fd1">getDisplayName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
 </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// DRAGGABLEBUTTON_H</span></div>
-<div class="ttc" id="aclass_draggable_button_html_a0eb58733d3624401783dfa00b17ed66a"><div class="ttname"><a href="class_draggable_button.html#a0eb58733d3624401783dfa00b17ed66a">DraggableButton::getIconPath</a></div><div class="ttdeci">QString getIconPath() const</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:68</div></div>
-<div class="ttc" id="aclass_draggable_button_html_a148f80f4c1cb8afd81c353d0c947c37c"><div class="ttname"><a href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">DraggableButton::m_dragStartPosition</a></div><div class="ttdeci">QPoint m_dragStartPosition</div><div class="ttdef"><b>Definition</b> DraggableButton.h:36</div></div>
-<div class="ttc" id="aclass_draggable_button_html_a565586559a68f45a1f647c60da8f0acb"><div class="ttname"><a href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">DraggableButton::m_elementType</a></div><div class="ttdeci">QString m_elementType</div><div class="ttdef"><b>Definition</b> DraggableButton.h:35</div></div>
-<div class="ttc" id="aclass_draggable_button_html_a7460c76698623f8a3175d050254c0bde"><div class="ttname"><a href="class_draggable_button.html#a7460c76698623f8a3175d050254c0bde">DraggableButton::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *event) override</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:128</div></div>
-<div class="ttc" id="aclass_draggable_button_html_a7930aae31fb62a63f1ef119657eaeeec"><div class="ttname"><a href="class_draggable_button.html#a7930aae31fb62a63f1ef119657eaeeec">DraggableButton::setElementType</a></div><div class="ttdeci">void setElementType(const QString &amp;elementType)</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:26</div></div>
-<div class="ttc" id="aclass_draggable_button_html_a7fd40b89abec8f870befc9944cc08fd1"><div class="ttname"><a href="class_draggable_button.html#a7fd40b89abec8f870befc9944cc08fd1">DraggableButton::getDisplayName</a></div><div class="ttdeci">QString getDisplayName() const</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:91</div></div>
-<div class="ttc" id="aclass_draggable_button_html_aa3cbbdc5c060528b3f4e0670c5533f8a"><div class="ttname"><a href="class_draggable_button.html#aa3cbbdc5c060528b3f4e0670c5533f8a">DraggableButton::elementType</a></div><div class="ttdeci">QString elementType() const</div><div class="ttdef"><b>Definition</b> DraggableButton.h:23</div></div>
-<div class="ttc" id="aclass_draggable_button_html_ac91e21a7d06302760daa9cb7a7336c8f"><div class="ttname"><a href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">DraggableButton::m_dragging</a></div><div class="ttdeci">bool m_dragging</div><div class="ttdef"><b>Definition</b> DraggableButton.h:37</div></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#endif </span><span class="comment">// DRAGGABLEBUTTON_H</span></div>
+<div class="ttc" id="aclass_draggable_button_html_a0eb58733d3624401783dfa00b17ed66a"><div class="ttname"><a href="class_draggable_button.html#a0eb58733d3624401783dfa00b17ed66a">DraggableButton::getIconPath</a></div><div class="ttdeci">QString getIconPath() const</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:58</div></div>
+<div class="ttc" id="aclass_draggable_button_html_a148f80f4c1cb8afd81c353d0c947c37c"><div class="ttname"><a href="class_draggable_button.html#a148f80f4c1cb8afd81c353d0c947c37c">DraggableButton::m_dragStartPosition</a></div><div class="ttdeci">QPoint m_dragStartPosition</div><div class="ttdef"><b>Definition</b> DraggableButton.h:48</div></div>
+<div class="ttc" id="aclass_draggable_button_html_a565586559a68f45a1f647c60da8f0acb"><div class="ttname"><a href="class_draggable_button.html#a565586559a68f45a1f647c60da8f0acb">DraggableButton::m_elementType</a></div><div class="ttdeci">QString m_elementType</div><div class="ttdef"><b>Definition</b> DraggableButton.h:47</div></div>
+<div class="ttc" id="aclass_draggable_button_html_a7460c76698623f8a3175d050254c0bde"><div class="ttname"><a href="class_draggable_button.html#a7460c76698623f8a3175d050254c0bde">DraggableButton::mouseMoveEvent</a></div><div class="ttdeci">void mouseMoveEvent(QMouseEvent *event) override</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:118</div></div>
+<div class="ttc" id="aclass_draggable_button_html_a7fd40b89abec8f870befc9944cc08fd1"><div class="ttname"><a href="class_draggable_button.html#a7fd40b89abec8f870befc9944cc08fd1">DraggableButton::getDisplayName</a></div><div class="ttdeci">QString getDisplayName() const</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:81</div></div>
+<div class="ttc" id="aclass_draggable_button_html_ac91e21a7d06302760daa9cb7a7336c8f"><div class="ttname"><a href="class_draggable_button.html#ac91e21a7d06302760daa9cb7a7336c8f">DraggableButton::m_dragging</a></div><div class="ttdeci">bool m_dragging</div><div class="ttdef"><b>Definition</b> DraggableButton.h:49</div></div>
 <div class="ttc" id="aclass_draggable_button_html_aed3ee8454ee5a9d422776b86908b54af"><div class="ttname"><a href="class_draggable_button.html#aed3ee8454ee5a9d422776b86908b54af">DraggableButton::DraggableButton</a></div><div class="ttdeci">DraggableButton(const QString &amp;elementType, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:12</div></div>
-<div class="ttc" id="aclass_draggable_button_html_af79bd14bb18414a74c7df9c2e0b1d26a"><div class="ttname"><a href="class_draggable_button.html#af79bd14bb18414a74c7df9c2e0b1d26a">DraggableButton::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:114</div></div>
-<div class="ttc" id="aclass_draggable_button_html_af9acff4c210ccdd94acac5847cddd0bd"><div class="ttname"><a href="class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd">DraggableButton::setupIcon</a></div><div class="ttdeci">void setupIcon()</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:36</div></div>
+<div class="ttc" id="aclass_draggable_button_html_af79bd14bb18414a74c7df9c2e0b1d26a"><div class="ttname"><a href="class_draggable_button.html#af79bd14bb18414a74c7df9c2e0b1d26a">DraggableButton::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QMouseEvent *event) override</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:104</div></div>
+<div class="ttc" id="aclass_draggable_button_html_af9acff4c210ccdd94acac5847cddd0bd"><div class="ttname"><a href="class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd">DraggableButton::setupIcon</a></div><div class="ttdeci">void setupIcon()</div><div class="ttdef"><b>Definition</b> DraggableButton.cpp:26</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

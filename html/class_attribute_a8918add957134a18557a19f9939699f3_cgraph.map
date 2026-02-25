@@ -1,7 +1,5 @@
 <map id="Attribute::setPrimaryKey" name="Attribute::setPrimaryKey">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,170,57"/>
-<area shape="rect" id="Node000002" href="$class_basic_element.html#ad1b7a593fb82e872041b342abd157088" title=" " alt="" coords="218,5,426,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,33,205,31,200,32,170,38"/>
-<area shape="rect" id="Node000003" href="$class_attribute.html#a3c9d142321c01521ec6b2e9655c7879d" title=" " alt="" coords="224,56,420,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,50,211,57,205,57,170,56"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,170,32"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html#a596caee40cdd00a0aacce49689b63f92" title=" " alt="" coords="218,5,420,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,16,205,19,199,19,170,21"/>
 </map>

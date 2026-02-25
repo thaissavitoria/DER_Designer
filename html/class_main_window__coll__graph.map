@@ -1,17 +1,17 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="Node000001" title=" " alt="" coords="123,1575,354,2641"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,1031,101,1100"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,1112,82,1286,114,1502,127,1575,122,1575,109,1503,77,1286,59,1117"/>
-<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="124,628,352,1503"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,1500,241,1558,236,1557,238,1505"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="13,305,123,375"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="79,386,138,628,133,629,79,392"/>
-<area shape="rect" id="Node000005" href="$class_connection_point.html" title=" " alt="" coords="147,124,360,556"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="249,553,250,611,245,611,249,558"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="142,1511,335,2492"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,967,101,1036"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,1048,82,1222,114,1438,145,1592,139,1592,109,1439,76,1223,58,1053"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="124,564,352,1439"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,1436,241,1494,236,1494,238,1441"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="13,273,123,343"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,355,133,564,128,565,80,360"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="147,124,360,492"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="249,489,251,548,245,547,249,494"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="224,5,282,75"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="253,87,256,124,251,124,253,92"/>
-<area shape="rect" id="Node000007" href="$class_diagram_view.html" title=" " alt="" coords="376,817,522,1313"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="404,1311,360,1551,358,1558,353,1557,355,1550,403,1316"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="398,305,500,375"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="450,387,452,818,447,818,449,392"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="253,87,256,125,251,124,253,92"/>
+<area shape="rect" id="Node000007" href="$class_diagram_view.html" title=" " alt="" coords="376,753,522,1249"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="405,1247,360,1487,341,1573,336,1572,355,1486,403,1252"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="398,273,500,343"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="450,355,452,754,447,753,449,360"/>
 </map>

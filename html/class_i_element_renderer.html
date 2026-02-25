@@ -92,6 +92,9 @@ $(function(){initNavTree('class_i_element_renderer.html','','class_i_element_ren
 </div><!--header-->
 <div class="contents">
 
+<p>Abstract interface for element rendering in ERD diagrams.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_element_renderer_8h_source.html">ElementRenderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for IElementRenderer:</div>
@@ -112,7 +115,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7124333be4bea036e17b3729a666f92" id="r_ae7124333be4bea036e17b3729a666f92"><td class="memItemLeft" align="right" valign="top">virtual QRectF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae7124333be4bea036e17b3729a666f92">selectionRect</a> (const <a class="el" href="class_basic_element.html">BasicElement</a> *element)=0</td></tr>
 <tr class="memitem:a8b3668e9eccaf35fb682c0ed1712e850" id="r_a8b3668e9eccaf35fb682c0ed1712e850"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b3668e9eccaf35fb682c0ed1712e850">renderSelection</a> (QPainter *painter, const <a class="el" href="class_basic_element.html">BasicElement</a> *element, const QRectF &amp;rect)=0</td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract interface for element rendering in ERD diagrams. </p>
+<p>This interface defines the contract for rendering different types of ERD elements following the Strategy pattern. It provides:</p><ul>
+<li>Element-specific rendering implementation</li>
+<li>Hit detection for user interaction</li>
+<li>Selection visualization with custom styling</li>
+<li>Bounding rectangle calculation for selection areas</li>
+</ul>
+<p>Implementations of this interface handle the visual representation of entities, attributes, relationships, and other ERD elements according to Peter Chen's notation, allowing for consistent rendering across different element types while maintaining flexibility for type-specific visual characteristics. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad61c7280b29125cfda7bf883b991d62a" name="ad61c7280b29125cfda7bf883b991d62a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad61c7280b29125cfda7bf883b991d62a">&#9670;&#160;</a></span>~IElementRenderer()</h2>
 

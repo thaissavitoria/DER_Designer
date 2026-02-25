@@ -10,86 +10,82 @@
 \DoxyCodeLine{00006\ }
 \DoxyCodeLine{00007\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \{}
-\DoxyCodeLine{00010\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5a06c2cea18679d64399783748fa367bdd}{One}},\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 1}}
-\DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5a5ae7fb3197b6fd8c723c7766a5680e2e}{Many}}\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ M,N,\ etc}}
-\DoxyCodeLine{00012\ \};}
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}\ :\ \textcolor{keyword}{public}\ QObject}
-\DoxyCodeLine{00017\ \{}
-\DoxyCodeLine{00018\ \ \ Q\_OBJECT}
-\DoxyCodeLine{00019\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}\ READ\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f}{setEntityId}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_ae5c187716cf79f513eb853370cf6248b}{entityIdChanged}})}
-\DoxyCodeLine{00020\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}\ READ\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0}{setCardinality}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b}{cardinalityChanged}})}
-\DoxyCodeLine{00021\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}\ READ\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba}{setIsTotalParticipation}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_a6e9e40441ae8b3ce493d71756d692a0c}{totalParticipationChanged}})}
-\DoxyCodeLine{00022\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_relationship_end_ada23aafa23af05553f4bf72b623962b2}{customCardinalityText}}\ READ\ \mbox{\hyperlink{class_relationship_end_ada23aafa23af05553f4bf72b623962b2}{customCardinalityText}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863}{setCustomCardinalityText}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_aabe969de6fb68acfe7053465c004a74d}{customCardinalityTextChanged}})}
-\DoxyCodeLine{00023\ }
-\DoxyCodeLine{00024\ public:}
-\DoxyCodeLine{00025\ \ \ explicit\ \mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}(}
-\DoxyCodeLine{00026\ \ \ \ \ const\ QString\&\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}},}
-\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}},}
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}},}
-\DoxyCodeLine{00029\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keywordtype}{nullptr}}
-\DoxyCodeLine{00030\ \ \ );}
-\DoxyCodeLine{00031\ }
-\DoxyCodeLine{00032\ \ \ virtual\ \string~\mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}()\ =\ default;}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a79c97d811de42a721f0226820691a6ea}{m\_entityId}};\ \}}
-\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_aec5e255920eff43b541baa97e5aed95b}{cardinality}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a39c59199442c1539b2b82b7d692e943c}{m\_cardinality}};\ \}}
-\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a28a209d6ef5a95125227cbbbca0c1fdd}{isTotalParticipation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_ae8aea4b5b3592d7bba00451f16c738e2}{m\_isTotalParticipation}};\ \}}
-\DoxyCodeLine{00037\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_aa6f4314c2e3e1ec1cf9e40e2357db47e}{customCardinalityText}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f0}{m\_customCardinalityText}};\ \}}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f}{setEntityId}}(}
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}}
-\DoxyCodeLine{00041\ \ \ );}
-\DoxyCodeLine{00042\ }
-\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0}{setCardinality}}(}
-\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}}
-\DoxyCodeLine{00045\ \ \ );}
+\DoxyCodeLine{00016\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \{}
+\DoxyCodeLine{00017\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5a06c2cea18679d64399783748fa367bdd}{One}},}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5a5ae7fb3197b6fd8c723c7766a5680e2e}{Many}}}
+\DoxyCodeLine{00019\ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}\ READ\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f}{setEntityId}})}
+\DoxyCodeLine{00043\ \ \ \ \ Q\_PROPERTY(\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}\ READ\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0}{setCardinality}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b}{cardinalityChanged}})}
+\DoxyCodeLine{00044\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}\ READ\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba}{setIsTotalParticipation}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_a6e9e40441ae8b3ce493d71756d692a0c}{totalParticipationChanged}})}
+\DoxyCodeLine{00045\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_relationship_end_ada23aafa23af05553f4bf72b623962b2}{customCardinalityText}}\ READ\ \mbox{\hyperlink{class_relationship_end_ada23aafa23af05553f4bf72b623962b2}{customCardinalityText}}\ WRITE\ \mbox{\hyperlink{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863}{setCustomCardinalityText}}\ NOTIFY\ \mbox{\hyperlink{class_relationship_end_aabe969de6fb68acfe7053465c004a74d}{customCardinalityTextChanged}})}
 \DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba}{setIsTotalParticipation}}(}
-\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}}
-\DoxyCodeLine{00049\ \ \ );}
-\DoxyCodeLine{00050\ }
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863}{setCustomCardinalityText}}(}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ text}
+\DoxyCodeLine{00047\ public:}
+\DoxyCodeLine{00048\ \ \ explicit\ \mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}(}
+\DoxyCodeLine{00049\ \ \ \ \ const\ QString\&\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}},}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}},}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}},}
+\DoxyCodeLine{00052\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keywordtype}{nullptr}}
 \DoxyCodeLine{00053\ \ \ );}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a078f2d6b51f642e0241ec6a6c333fc9d}{getDisplayCardinalityText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ \ \ virtual\ \string~\mbox{\hyperlink{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a}{RelationshipEnd}}()\ =\ default;}
 \DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_relationship_end_ade5e4b523e171a836a92049c9d8dd473}{cardinalityToString}}(}
-\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}}
-\DoxyCodeLine{00059\ \ \ );}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae60260b5521feb7cc4c0014fbc704426}{cardinalityFromString}}(}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ cardinalityString}
-\DoxyCodeLine{00063\ \ \ );}
-\DoxyCodeLine{00064\ }
-\DoxyCodeLine{00065\ signals:}
-\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_ae5c187716cf79f513eb853370cf6248b}{entityIdChanged}}(}
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ newEntityId}
+\DoxyCodeLine{00057\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a79c97d811de42a721f0226820691a6ea}{m\_entityId}};\ \}}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_aec5e255920eff43b541baa97e5aed95b}{cardinality}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a39c59199442c1539b2b82b7d692e943c}{m\_cardinality}};\ \}}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a28a209d6ef5a95125227cbbbca0c1fdd}{isTotalParticipation}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_ae8aea4b5b3592d7bba00451f16c738e2}{m\_isTotalParticipation}};\ \}}
+\DoxyCodeLine{00060\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_aa6f4314c2e3e1ec1cf9e40e2357db47e}{customCardinalityText}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f0}{m\_customCardinalityText}};\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f}{setEntityId}}(}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_relationship_end_af8f2363a026437e2a788737121124fdc}{entityId}}}
+\DoxyCodeLine{00064\ \ \ );}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0}{setCardinality}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}}
 \DoxyCodeLine{00068\ \ \ );}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b}{cardinalityChanged}}(}
-\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ newCardinality}
+\DoxyCodeLine{00070\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba}{setIsTotalParticipation}}(}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}}
 \DoxyCodeLine{00072\ \ \ );}
 \DoxyCodeLine{00073\ }
-\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a6e9e40441ae8b3ce493d71756d692a0c}{totalParticipationChanged}}(}
-\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}}
+\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863}{setCustomCardinalityText}}(}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ text}
 \DoxyCodeLine{00076\ \ \ );}
 \DoxyCodeLine{00077\ }
-\DoxyCodeLine{00078\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_aabe969de6fb68acfe7053465c004a74d}{customCardinalityTextChanged}}(}
-\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ newText}
-\DoxyCodeLine{00080\ \ \ );}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00082\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00083\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a79c97d811de42a721f0226820691a6ea}{m\_entityId}};}
-\DoxyCodeLine{00084\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_a39c59199442c1539b2b82b7d692e943c}{m\_cardinality}};}
-\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_ae8aea4b5b3592d7bba00451f16c738e2}{m\_isTotalParticipation}};}
-\DoxyCodeLine{00086\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f0}{m\_customCardinalityText}};}
-\DoxyCodeLine{00087\ \};}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RELATIONSHIPEND\_H}}
+\DoxyCodeLine{00078\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a078f2d6b51f642e0241ec6a6c333fc9d}{getDisplayCardinalityText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_relationship_end_ade5e4b523e171a836a92049c9d8dd473}{cardinalityToString}}(}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae922909616666170dd4ce843a33a8b7d}{cardinality}}}
+\DoxyCodeLine{00082\ \ \ );}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_ae60260b5521feb7cc4c0014fbc704426}{cardinalityFromString}}(}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ cardinalityString}
+\DoxyCodeLine{00086\ \ \ );}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ signals:}
+\DoxyCodeLine{00089\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b}{cardinalityChanged}}(}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ newCardinality}
+\DoxyCodeLine{00091\ \ \ );}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_a6e9e40441ae8b3ce493d71756d692a0c}{totalParticipationChanged}}(}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_a4b8fe7e35c2c6fd1055c072705ad134e}{isTotalParticipation}}}
+\DoxyCodeLine{00095\ \ \ );}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_relationship_end_aabe969de6fb68acfe7053465c004a74d}{customCardinalityTextChanged}}(}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ newText}
+\DoxyCodeLine{00099\ \ \ );}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a79c97d811de42a721f0226820691a6ea}{m\_entityId}};}
+\DoxyCodeLine{00103\ \ \ \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}\ \mbox{\hyperlink{class_relationship_end_a39c59199442c1539b2b82b7d692e943c}{m\_cardinality}};}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_relationship_end_ae8aea4b5b3592d7bba00451f16c738e2}{m\_isTotalParticipation}};}
+\DoxyCodeLine{00105\ \ \ QString\ \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f0}{m\_customCardinalityText}};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RELATIONSHIPEND\_H}}
 
 \end{DoxyCode}

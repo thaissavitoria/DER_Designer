@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Renderer implementation for entity elements in ERD diagrams.">
 <polygon fill="#999999" stroke="none" points="105.38,-244 3.38,-244 3.38,0 105.38,0 105.38,-244"/>
 <text xml:space="preserve" text-anchor="start" x="21.75" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">EntityRenderer</text>
 <text xml:space="preserve" text-anchor="start" x="8.88" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
@@ -63,7 +63,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_i_element_renderer.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_i_element_renderer.html" target="_top" xlink:title="Abstract interface for element rendering in ERD diagrams.">
 <polygon fill="white" stroke="none" points="108.75,-396 0,-396 0,-280 108.75,-280 108.75,-396"/>
 <text xml:space="preserve" text-anchor="start" x="15" y="-382.5" font-family="Helvetica,sans-Serif" font-size="10.00">IElementRenderer</text>
 <text xml:space="preserve" text-anchor="start" x="52.88" y="-366.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>

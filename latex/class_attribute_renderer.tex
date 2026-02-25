@@ -2,12 +2,16 @@
 \hypertarget{class_attribute_renderer}{}\label{class_attribute_renderer}\index{AttributeRenderer@{AttributeRenderer}}
 
 
+Renderer implementation for attribute elements in ERD diagrams.  
+
+
+
+
 {\ttfamily \#include $<$Attribute\+Renderer.\+h$>$}
 
 
 
-Inheritance diagram for Attribute\+Renderer\+:
-\nopagebreak
+Inheritance diagram for Attribute\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Attribute\+Renderer\+:
 \end{figure}
 
 
-Collaboration diagram for Attribute\+Renderer\+:
-\nopagebreak
+Collaboration diagram for Attribute\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -84,6 +87,19 @@ qreal \mbox{\hyperlink{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Renderer implementation for attribute elements in ERD diagrams. 
+
+This class implements the \doxylink{class_i_element_renderer}{IElement\+Renderer} interface to provide specialized rendering for attribute elements following Peter Chen\textquotesingle{}s ERD notation. It supports\+:
+\begin{DoxyItemize}
+\item Different visual representations for attribute types (normal, derived, multivalued, composite)
+\item Primary key indication with underlined text
+\item Ellipse-\/based rendering with type-\/specific styling
+\item Selection visualization
+\item Hit detection for interaction
+\item Customizable fonts, pens, and brushes for visual styling 
+\end{DoxyItemize}
+
 \label{doc-constructors}
 \Hypertarget{class_attribute_renderer_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -93,8 +109,7 @@ qreal \mbox{\hyperlink{class_attribute_renderer_aadfb4ef24402c0f836c58dd7b6ebd62
 {\footnotesize\ttfamily \label{class_attribute_renderer_a3982b8d6e2af9e8aacd2b8e7656bbb3b} 
 Attribute\+Renderer\+::\+Attribute\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -112,8 +127,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a9dfc25f068a26abd2c53df3ef465404f} 
 Qt\+::\+Pen\+Style Attribute\+Renderer\+::get\+Pen\+Style (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -126,8 +140,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a6612518ecaa396432f7495f0ad814d23} 
 QRectF Attribute\+Renderer\+::get\+Text\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{element\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -144,8 +157,7 @@ bool Attribute\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\item
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,8 +170,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a75f9e50b38c8201a77a4239ac8b11a34} 
 bool Attribute\+Renderer\+::is\+Point\+In\+Ellipse (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point}{, }\item[{const QRectF \&}]{ellipse\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -176,8 +187,7 @@ void Attribute\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \tex
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -190,16 +200,14 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b} 
 void Attribute\+Renderer\+::render\+By\+Attribute\+Type (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const class \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_attribute_renderer_a813a87df76328eb14781b292b3d0637b_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,8 +220,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a00e90f989c1e81fb96fc7c84c17f2a9d} 
 void Attribute\+Renderer\+::render\+Derived\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -226,8 +233,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a70053a97233d7db614e6a593319aa721} 
 void Attribute\+Renderer\+::render\+Multivalued\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -240,8 +246,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_afa445c318aa3e8a03922b71407b7a966} 
 void Attribute\+Renderer\+::render\+Normal\+Attribute (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -258,8 +263,7 @@ void Attribute\+Renderer\+::render\+Selection (\begin{DoxyParamCaption}\item[{QP
 
 Implements \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -276,8 +280,7 @@ QRectF Attribute\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[{co
 
 Implements \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -290,8 +293,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_attribute_renderer_a1214697be0865498258ec1deabd16faf} 
 void Attribute\+Renderer\+::setup\+Default\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

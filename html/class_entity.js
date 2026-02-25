@@ -11,7 +11,6 @@ var class_entity =
     [ "minimumSize", "class_entity.html#a90cbf09ab7b4a01c3f236e5b409fdd24", null ],
     [ "preferredSize", "class_entity.html#a237af8c74037b83ace59083cf9af53f4", null ],
     [ "serialize", "class_entity.html#a8f633bc5c2eb2f16b85b9ca166b63a32", null ],
-    [ "setIsWeakEntity", "class_entity.html#adaacdcaca759f96c7c5a294f75307ef0", null ],
     [ "typeDisplayName", "class_entity.html#a070f4727e2491b322a53ad32e4fb197e", null ],
     [ "m_isWeakEntity", "class_entity.html#ab4abb89080ebd5bb36e20a911dc534ca", null ]
 ];

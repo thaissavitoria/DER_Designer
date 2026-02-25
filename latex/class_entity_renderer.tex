@@ -2,12 +2,16 @@
 \hypertarget{class_entity_renderer}{}\label{class_entity_renderer}\index{EntityRenderer@{EntityRenderer}}
 
 
+Renderer implementation for entity elements in ERD diagrams.  
+
+
+
+
 {\ttfamily \#include $<$Entity\+Renderer.\+h$>$}
 
 
 
-Inheritance diagram for Entity\+Renderer\+:
-\nopagebreak
+Inheritance diagram for Entity\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Entity\+Renderer\+:
 \end{figure}
 
 
-Collaboration diagram for Entity\+Renderer\+:
-\nopagebreak
+Collaboration diagram for Entity\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -68,6 +71,18 @@ qreal \mbox{\hyperlink{class_entity_renderer_a368d93baba3e9ce0ff3a2d255b5a8c45}{
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Renderer implementation for entity elements in ERD diagrams. 
+
+This class implements the \doxylink{class_i_element_renderer}{IElement\+Renderer} interface to provide specialized rendering for entity elements following Peter Chen\textquotesingle{}s ERD notation. It supports\+:
+\begin{DoxyItemize}
+\item Regular entity representation (single rectangle)
+\item Weak entity representation (double rectangle with inner margin)
+\item Selection visualization
+\item Hit detection for user interaction
+\item Customizable fonts, pens, and brushes for visual styling 
+\end{DoxyItemize}
+
 \label{doc-constructors}
 \Hypertarget{class_entity_renderer_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -77,8 +92,7 @@ qreal \mbox{\hyperlink{class_entity_renderer_a368d93baba3e9ce0ff3a2d255b5a8c45}{
 {\footnotesize\ttfamily \label{class_entity_renderer_a443dd53e40ee0ba00fd8cea3a09f2f59} 
 Entity\+Renderer\+::\+Entity\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -96,8 +110,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_entity_renderer_aa9aa440f3c5bbe2303106b6db47f9273} 
 QRectF Entity\+Renderer\+::get\+Text\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{element\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -114,8 +127,7 @@ bool Entity\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\item[{c
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -132,8 +144,7 @@ void Entity\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \texorp
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -160,8 +171,7 @@ QRectF Entity\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[{const
 
 Implements \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,8 +184,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_entity_renderer_a31f9cb14accf339045d2154fcaaa3729} 
 void Entity\+Renderer\+::setup\+Default\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

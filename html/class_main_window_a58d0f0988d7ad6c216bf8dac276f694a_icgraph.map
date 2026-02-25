@@ -1,0 +1,14 @@
+<map id="MainWindow::startAutoSave" name="MainWindow::startAutoSave">
+<area shape="rect" id="Node000001" title=" " alt="" coords="914,31,1101,57"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aaf455232cccaa422fc4c371fa99bff84" title=" " alt="" coords="672,5,866,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="896,32,866,32,866,26,901,32"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a7e65ffe1e01feb35cb7da90085d57f04" title=" " alt="" coords="431,56,624,83"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="901,50,625,67,625,62,896,50"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a2305527bb5d827ae07967ea1c86ee6fb" title=" " alt="" coords="432,5,624,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="654,19,624,21,624,16,659,19"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a3a304253c9e7caeef028f75358bf1fd5" title=" " alt="" coords="233,5,383,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="413,19,384,21,383,16,419,18"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="5,31,185,57"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="215,30,186,36,185,31,220,29"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="414,65,185,52,185,47,416,60"/>
+</map>

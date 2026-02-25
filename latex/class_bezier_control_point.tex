@@ -2,12 +2,16 @@
 \hypertarget{class_bezier_control_point}{}\label{class_bezier_control_point}\index{BezierControlPoint@{BezierControlPoint}}
 
 
+Interactive control point for Bezier curve manipulation in connections.  
+
+
+
+
 {\ttfamily \#include $<$Bezier\+Control\+Point.\+h$>$}
 
 
 
-Inheritance diagram for Bezier\+Control\+Point\+:
-\nopagebreak
+Inheritance diagram for Bezier\+Control\+Point\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Bezier\+Control\+Point\+:
 \end{figure}
 
 
-Collaboration diagram for Bezier\+Control\+Point\+:
-\nopagebreak
+Collaboration diagram for Bezier\+Control\+Point\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -28,8 +31,6 @@ Collaboration diagram for Bezier\+Control\+Point\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_bezier_control_point_a3ead5ea69fd25cc18dfc2af6bf41bb8c}{Bezier\+Control\+Point}} (\mbox{\hyperlink{class_connection_graphics_item}{Connection\+Graphics\+Item}} \texorpdfstring{$\ast$}{*}parent, \mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{Control\+Point\+Type}} type)
-\item 
-\mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{Control\+Point\+Type}} \mbox{\hyperlink{class_bezier_control_point_af6aae1f0d9522a072faf2f42f9a2447a}{control\+Point\+Type}} () const
 \item 
 void \mbox{\hyperlink{class_bezier_control_point_a6123346a0446efca1a37b94ea5dcebcb}{update\+Position}} (const QPointF \&position)
 \end{DoxyCompactItemize}
@@ -57,6 +58,18 @@ bool \mbox{\hyperlink{class_bezier_control_point_a4631ef883e50d440aa6970298332e8
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Interactive control point for Bezier curve manipulation in connections. 
+
+This class provides a visual and interactive control point for adjusting Bezier curves in connection lines. It extends QGraphics\+Ellipse\+Item to provide\+:
+\begin{DoxyItemize}
+\item Visual representation as a draggable ellipse handle
+\item Mouse interaction for dragging and repositioning
+\item Hover effects for visual feedback
+\item Communication with parent \doxylink{class_connection_graphics_item}{Connection\+Graphics\+Item} to update curve shape
+\item Type identification (Control1 or Control2) for proper curve calculation 
+\end{DoxyItemize}
+
 \label{doc-constructors}
 \Hypertarget{class_bezier_control_point_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -71,12 +84,6 @@ Bezier\+Control\+Point\+::\+Bezier\+Control\+Point (\begin{DoxyParamCaption}\ite
 \label{doc-func-members}
 \Hypertarget{class_bezier_control_point_doc-func-members}
 \doxysubsection{Member Function Documentation}
-\Hypertarget{class_bezier_control_point_af6aae1f0d9522a072faf2f42f9a2447a}\index{BezierControlPoint@{BezierControlPoint}!controlPointType@{controlPointType}}
-\index{controlPointType@{controlPointType}!BezierControlPoint@{BezierControlPoint}}
-\doxysubsubsection{\texorpdfstring{controlPointType()}{controlPointType()}}
-{\footnotesize\ttfamily \label{class_bezier_control_point_af6aae1f0d9522a072faf2f42f9a2447a} 
-\mbox{\hyperlink{_bezier_control_point_8h_a625ffe2e1201308523aa861fb74b01e7}{Control\+Point\+Type}} Bezier\+Control\+Point\+::control\+Point\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
-
 \Hypertarget{class_bezier_control_point_a3601adf334b87dd29547ecbf811a7c2c}\index{BezierControlPoint@{BezierControlPoint}!hoverEnterEvent@{hoverEnterEvent}}
 \index{hoverEnterEvent@{hoverEnterEvent}!BezierControlPoint@{BezierControlPoint}}
 \doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}

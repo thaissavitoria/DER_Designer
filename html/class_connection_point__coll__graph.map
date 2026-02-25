@@ -1,5 +1,5 @@
 <map id="ConnectionPoint" name="ConnectionPoint">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,123,218,555"/>
+<area shape="rect" id="Node000001" title="Represents a connection point on an ERD element for line attachment." alt="" coords="5,123,218,491"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="82,5,141,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,87,114,124,109,123,111,92"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,87,114,123,109,123,111,92"/>
 </map>

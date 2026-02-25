@@ -2,12 +2,16 @@
 \hypertarget{class_relationship_end}{}\label{class_relationship_end}\index{RelationshipEnd@{RelationshipEnd}}
 
 
+Represents one end of a relationship in an ERD diagram.  
+
+
+
+
 {\ttfamily \#include $<$Relationship\+End.\+h$>$}
 
 
 
-Inheritance diagram for Relationship\+End\+:
-\nopagebreak
+Inheritance diagram for Relationship\+End\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Relationship\+End\+:
 \end{figure}
 
 
-Collaboration diagram for Relationship\+End\+:
-\nopagebreak
+Collaboration diagram for Relationship\+End\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,8 +29,6 @@ Collaboration diagram for Relationship\+End\+:
 \end{figure}
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
-\item 
-void \mbox{\hyperlink{class_relationship_end_ae5c187716cf79f513eb853370cf6248b}{entity\+Id\+Changed}} (const QString \&new\+Entity\+Id)
 \item 
 void \mbox{\hyperlink{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b}{cardinality\+Changed}} (\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}} new\+Cardinality)
 \item 
@@ -91,6 +92,21 @@ QString \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Represents one end of a relationship in an ERD diagram. 
+
+This class manages the connection between a relationship and an entity, encapsulating the constraints and properties of that connection. It provides\+:
+\begin{DoxyItemize}
+\item \doxylink{class_entity}{Entity} identification through ID reference
+\item \doxylink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality} constraints (One or Many)
+\item Participation constraints (total or partial)
+\item Custom text for cardinality display ("{}\+N"{}, "{}\+M"{}, ...)
+\item String conversion utilities for serialization
+\item Change notification system through Qt signals
+\end{DoxyItemize}
+
+Each relationship can have multiple ends, typically two (binary relationship) or more (n-\/ary relationship), connecting different entities with their respective constraints following Peter Chen\textquotesingle{}s ERD notation. 
+
 \label{doc-constructors}
 \Hypertarget{class_relationship_end_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -100,8 +116,7 @@ QString \mbox{\hyperlink{class_relationship_end_a7be2a4ffb1913ad31a121918f82946f
 {\footnotesize\ttfamily \label{class_relationship_end_a025f4dc1629ff932c9aade81bcb1fb6a} 
 Relationship\+End\+::\+Relationship\+End (\begin{DoxyParamCaption}\item[{const QString \&}]{entity\+Id}{, }\item[{\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}}]{cardinality}{, }\item[{bool}]{is\+Total\+Participation}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -114,8 +129,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_a6d154449eb16dbd355d5147dd44f02c7} 
 virtual Relationship\+End\+::\texorpdfstring{$\sim$}{\string~}\+Relationship\+End (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,8 +153,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_a428833c0b2339ae098d4b81dae5ee06b} 
 void Relationship\+End\+::cardinality\+Changed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}}]{new\+Cardinality}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -153,8 +166,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_ae60260b5521feb7cc4c0014fbc704426} 
 \mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}} Relationship\+End\+::cardinality\+From\+String (\begin{DoxyParamCaption}\item[{const QString \&}]{cardinality\+String}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -167,8 +179,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_ade5e4b523e171a836a92049c9d8dd473} 
 QString Relationship\+End\+::cardinality\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}}]{cardinality}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -187,8 +198,7 @@ QString Relationship\+End\+::custom\+Cardinality\+Text (\begin{DoxyParamCaption}
 {\footnotesize\ttfamily \label{class_relationship_end_aabe969de6fb68acfe7053465c004a74d} 
 void Relationship\+End\+::custom\+Cardinality\+Text\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -201,20 +211,6 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_afeda2f515f29caa417bb1cee1594b769} 
 QString Relationship\+End\+::entity\+Id (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\Hypertarget{class_relationship_end_ae5c187716cf79f513eb853370cf6248b}\index{RelationshipEnd@{RelationshipEnd}!entityIdChanged@{entityIdChanged}}
-\index{entityIdChanged@{entityIdChanged}!RelationshipEnd@{RelationshipEnd}}
-\doxysubsubsection{\texorpdfstring{entityIdChanged}{entityIdChanged}}
-{\footnotesize\ttfamily \label{class_relationship_end_ae5c187716cf79f513eb853370cf6248b} 
-void Relationship\+End\+::entity\+Id\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Entity\+Id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
-
-Here is the caller graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_relationship_end_ae5c187716cf79f513eb853370cf6248b_icgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_relationship_end_a078f2d6b51f642e0241ec6a6c333fc9d}\index{RelationshipEnd@{RelationshipEnd}!getDisplayCardinalityText@{getDisplayCardinalityText}}
 \index{getDisplayCardinalityText@{getDisplayCardinalityText}!RelationshipEnd@{RelationshipEnd}}
 \doxysubsubsection{\texorpdfstring{getDisplayCardinalityText()}{getDisplayCardinalityText()}}
@@ -233,16 +229,14 @@ bool Relationship\+End\+::is\+Total\+Participation (\begin{DoxyParamCaption}{}{}
 {\footnotesize\ttfamily \label{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0} 
 void Relationship\+End\+::set\+Cardinality (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_relationship_end_8h_a8926bbad0c6fb22d1c85cb4fdcd286d5}{Cardinality}}}]{cardinality}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_relationship_end_a6bd7d9d24f01d1f9491880cf1f7025f0_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -255,16 +249,14 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863} 
 void Relationship\+End\+::set\+Custom\+Cardinality\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{text}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_relationship_end_a872cd032aa3a9e2c7f23f455d03c4863_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -277,30 +269,20 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f} 
 void Relationship\+End\+::set\+Entity\+Id (\begin{DoxyParamCaption}\item[{const QString \&}]{entity\+Id}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_relationship_end_ace7726af2ce1893c7e822c1e890f6c5f_cgraph}
-\end{center}
-\end{figure}
 \Hypertarget{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba}\index{RelationshipEnd@{RelationshipEnd}!setIsTotalParticipation@{setIsTotalParticipation}}
 \index{setIsTotalParticipation@{setIsTotalParticipation}!RelationshipEnd@{RelationshipEnd}}
 \doxysubsubsection{\texorpdfstring{setIsTotalParticipation()}{setIsTotalParticipation()}}
 {\footnotesize\ttfamily \label{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba} 
 void Relationship\+End\+::set\+Is\+Total\+Participation (\begin{DoxyParamCaption}\item[{bool}]{is\+Total\+Participation}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_relationship_end_a52a4e1035f4f5cc99ee5068ea6e002ba_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -313,8 +295,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_end_a6e9e40441ae8b3ce493d71756d692a0c} 
 void Relationship\+End\+::total\+Participation\+Changed (\begin{DoxyParamCaption}\item[{bool}]{is\+Total\+Participation}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

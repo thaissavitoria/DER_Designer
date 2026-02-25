@@ -92,6 +92,9 @@ $(function(){initNavTree('class_relationship_renderer.html','','class_relationsh
 </div><!--header-->
 <div class="contents">
 
+<p>Renderer implementation for relationship elements in ERD diagrams.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_relationship_renderer_8h_source.html">RelationshipRenderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for RelationshipRenderer:</div>
@@ -132,7 +135,16 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a09fafcce949474e9cae02087131be4f1" id="r_a09fafcce949474e9cae02087131be4f1"><td class="memItemLeft" align="right" valign="top">QPen&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a09fafcce949474e9cae02087131be4f1">m_selectionPen</a></td></tr>
 <tr class="memitem:acc3a14fa9eaa3003e40cf3e5dd5ab89c" id="r_acc3a14fa9eaa3003e40cf3e5dd5ab89c"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc3a14fa9eaa3003e40cf3e5dd5ab89c">m_textMargin</a></td></tr>
 </table>
-<a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Renderer implementation for relationship elements in ERD diagrams. </p>
+<p>This class implements the <a class="el" href="class_i_element_renderer.html" title="Abstract interface for element rendering in ERD diagrams.">IElementRenderer</a> interface to provide specialized rendering for relationship elements following Peter Chen's ERD notation. It supports:</p><ul>
+<li>Regular relationship representation (single diamond)</li>
+<li>Identifying relationship representation (double diamond with inner margin)</li>
+<li>Selection visualization</li>
+<li>Customizable fonts, pens, and brushes for visual styling</li>
+</ul>
+<p>The diamond shape is rendered using polygon geometry with four points (top, right, bottom, left) calculated from the element's bounding rectangle, providing the distinctive appearance of relationships in ER diagrams. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af19f86d2752ca4a30dae1bdff4bb3ff6" name="af19f86d2752ca4a30dae1bdff4bb3ff6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af19f86d2752ca4a30dae1bdff4bb3ff6">&#9670;&#160;</a></span>RelationshipRenderer()</h2>
 

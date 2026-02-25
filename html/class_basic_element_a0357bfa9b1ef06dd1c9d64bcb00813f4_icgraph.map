@@ -1,11 +1,11 @@
 <map id="BasicElement::addConnectionPoint" name="BasicElement::addConnectionPoint">
-<area shape="rect" id="Node000001" title=" " alt="" coords="942,249,1139,292"/>
-<area shape="rect" id="Node000002" href="$class_basic_element.html#a028ebc6c9de8f0b90af0e7daef9549f8" title=" " alt="" coords="705,249,894,292"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="923,271,895,273,894,268,929,270"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="946,249,1143,292"/>
+<area shape="rect" id="Node000002" href="$class_basic_element.html#a78e2ce29aa5b2a9fae74cf435996ce8b" title=" " alt="" coords="705,249,898,292"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="928,271,899,273,898,268,933,270"/>
 <area shape="rect" id="Node000003" href="$class_basic_element.html#a041ccd0d965bb54cfea352f06051f2f7" title=" " alt="" coords="227,5,418,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="744,242,598,163,417,66,354,35,353,30,419,62,601,158,749,241"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="746,242,599,163,417,66,354,35,353,30,419,62,602,158,751,241"/>
 <area shape="rect" id="Node000004" href="$class_basic_element.html#a85cccd7db0e46e4e2b646365cd6c66a9" title=" " alt="" coords="466,283,657,309"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="687,283,658,288,657,283,692,281"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="687,283,659,288,657,283,692,282"/>
 <area shape="poly" id="edge12_Node000004_Node000003" title=" " alt="" coords="539,270,503,217,464,152,451,122,444,98,435,75,416,53,388,35,387,30,420,49,440,73,449,96,456,121,468,149,508,214,545,270"/>
 <area shape="rect" id="Node000005" href="$class_attribute.html#af93ebaed48e35e2dbbf0abbb5ad5c688" title=" " alt="" coords="28,105,156,132"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="541,270,473,168,439,120,417,97,380,83,341,75,301,73,261,75,187,89,130,107,127,103,186,84,261,70,301,68,342,70,382,77,419,92,443,117,477,165,546,270"/>

@@ -2,12 +2,16 @@
 \hypertarget{class_relationship_renderer}{}\label{class_relationship_renderer}\index{RelationshipRenderer@{RelationshipRenderer}}
 
 
+Renderer implementation for relationship elements in ERD diagrams.  
+
+
+
+
 {\ttfamily \#include $<$Relationship\+Renderer.\+h$>$}
 
 
 
-Inheritance diagram for Relationship\+Renderer\+:
-\nopagebreak
+Inheritance diagram for Relationship\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Relationship\+Renderer\+:
 \end{figure}
 
 
-Collaboration diagram for Relationship\+Renderer\+:
-\nopagebreak
+Collaboration diagram for Relationship\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -74,6 +77,19 @@ qreal \mbox{\hyperlink{class_relationship_renderer_acc3a14fa9eaa3003e40cf3e5dd5a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Renderer implementation for relationship elements in ERD diagrams. 
+
+This class implements the \doxylink{class_i_element_renderer}{IElement\+Renderer} interface to provide specialized rendering for relationship elements following Peter Chen\textquotesingle{}s ERD notation. It supports\+:
+\begin{DoxyItemize}
+\item Regular relationship representation (single diamond)
+\item Identifying relationship representation (double diamond with inner margin)
+\item Selection visualization
+\item Customizable fonts, pens, and brushes for visual styling
+\end{DoxyItemize}
+
+The diamond shape is rendered using polygon geometry with four points (top, right, bottom, left) calculated from the element\textquotesingle{}s bounding rectangle, providing the distinctive appearance of relationships in ER diagrams. 
+
 \label{doc-constructors}
 \Hypertarget{class_relationship_renderer_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -83,8 +99,7 @@ qreal \mbox{\hyperlink{class_relationship_renderer_acc3a14fa9eaa3003e40cf3e5dd5a
 {\footnotesize\ttfamily \label{class_relationship_renderer_af19f86d2752ca4a30dae1bdff4bb3ff6} 
 Relationship\+Renderer\+::\+Relationship\+Renderer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -102,8 +117,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_renderer_ac9bfbee5561e8a5b6ccf0919b7a5ba25} 
 QPolygonF Relationship\+Renderer\+::get\+Diamond\+Polygon (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,8 +130,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_renderer_a8777d0473d147984f37a57374f0677e9} 
 QRectF Relationship\+Renderer\+::get\+Text\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{element\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -134,8 +147,7 @@ bool Relationship\+Renderer\+::is\+In\+Element\+Rect (\begin{DoxyParamCaption}\i
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -148,16 +160,14 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_renderer_a4770db8be6d8166044ded1c635415782} 
 bool Relationship\+Renderer\+::is\+Point\+In\+Diamond (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point}{, }\item[{const QRectF \&}]{diamond\+Rect}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=336pt]{class_relationship_renderer_a4770db8be6d8166044ded1c635415782_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,8 +184,7 @@ void Relationship\+Renderer\+::render (\begin{DoxyParamCaption}\item[{QPainter \
 
 Implements \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -188,16 +197,14 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5} 
 void Relationship\+Renderer\+::render\+Diamond (\begin{DoxyParamCaption}\item[{QPainter \texorpdfstring{$\ast$}{*}}]{painter}{, }\item[{const QRectF \&}]{rect}{, }\item[{const bool}]{is\+Identifying}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=336pt]{class_relationship_renderer_a9be2dbb4d772e69b5101c8cd762004c5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -214,8 +221,7 @@ void Relationship\+Renderer\+::render\+Selection (\begin{DoxyParamCaption}\item[
 
 Implements \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,8 +238,7 @@ QRectF Relationship\+Renderer\+::selection\+Rect (\begin{DoxyParamCaption}\item[
 
 Implements \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{IElement\+Renderer}}.
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -246,8 +251,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_relationship_renderer_a683532f0595b37b728561fa0cfd797c3} 
 void Relationship\+Renderer\+::setup\+Default\+Style (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

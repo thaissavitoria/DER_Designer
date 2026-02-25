@@ -10,41 +10,37 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtGui/QMouseEvent>}}
 \DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
 \DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{DraggableButton}}\ :\ \textcolor{keyword}{public}\ QPushButton}
-\DoxyCodeLine{00010\ \{}
-\DoxyCodeLine{00011\ \ \ Q\_OBJECT}
-\DoxyCodeLine{00012\ }
-\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{DraggableButton}}(}
-\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{elementType}},}
-\DoxyCodeLine{00016\ \ \ \ \ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr}}
-\DoxyCodeLine{00017\ \ \ );}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_a7930aae31fb62a63f1ef119657eaeeec}{setElementType}}(}
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{elementType}}}
-\DoxyCodeLine{00021\ \ \ );}
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_aa3cbbdc5c060528b3f4e0670c5533f8a}{elementType}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_draggable_button_a565586559a68f45a1f647c60da8f0acb}{m\_elementType}};\ \}}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \textcolor{keyword}{protected}:}
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_af79bd14bb18414a74c7df9c2e0b1d26a}{mousePressEvent}}(}
-\DoxyCodeLine{00027\ \ \ \ \ QMouseEvent*\ event}
-\DoxyCodeLine{00028\ \ \ )\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_a7460c76698623f8a3175d050254c0bde}{mouseMoveEvent}}(}
-\DoxyCodeLine{00031\ \ \ \ \ QMouseEvent*\ event}
-\DoxyCodeLine{00032\ \ \ )\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00035\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a565586559a68f45a1f647c60da8f0acb}{m\_elementType}};}
-\DoxyCodeLine{00036\ \ \ QPoint\ \mbox{\hyperlink{class_draggable_button_a148f80f4c1cb8afd81c353d0c947c37c}{m\_dragStartPosition}};}
-\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_draggable_button_ac91e21a7d06302760daa9cb7a7336c8f}{m\_dragging}};}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_af9acff4c210ccdd94acac5847cddd0bd}{setupIcon}}();}
-\DoxyCodeLine{00040\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a0eb58733d3624401783dfa00b17ed66a}{getIconPath}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a7fd40b89abec8f870befc9944cc08fd1}{getDisplayName}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00042\ \};}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRAGGABLEBUTTON\_H}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{DraggableButton}}\ :\ \textcolor{keyword}{public}\ QPushButton}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_draggable_button_aed3ee8454ee5a9d422776b86908b54af}{DraggableButton}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ elementType,}
+\DoxyCodeLine{00034\ \ \ \ \ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00035\ \ \ );}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_af79bd14bb18414a74c7df9c2e0b1d26a}{mousePressEvent}}(}
+\DoxyCodeLine{00039\ \ \ \ \ QMouseEvent*\ event}
+\DoxyCodeLine{00040\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_a7460c76698623f8a3175d050254c0bde}{mouseMoveEvent}}(}
+\DoxyCodeLine{00043\ \ \ \ \ QMouseEvent*\ event}
+\DoxyCodeLine{00044\ \ \ )\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00047\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a565586559a68f45a1f647c60da8f0acb}{m\_elementType}};}
+\DoxyCodeLine{00048\ \ \ QPoint\ \mbox{\hyperlink{class_draggable_button_a148f80f4c1cb8afd81c353d0c947c37c}{m\_dragStartPosition}};}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_draggable_button_ac91e21a7d06302760daa9cb7a7336c8f}{m\_dragging}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_draggable_button_af9acff4c210ccdd94acac5847cddd0bd}{setupIcon}}();}
+\DoxyCodeLine{00052\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a0eb58733d3624401783dfa00b17ed66a}{getIconPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ \ \ QString\ \mbox{\hyperlink{class_draggable_button_a7fd40b89abec8f870befc9944cc08fd1}{getDisplayName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRAGGABLEBUTTON\_H}}
 
 \end{DoxyCode}

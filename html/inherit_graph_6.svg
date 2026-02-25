@@ -20,7 +20,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="class_bezier_control_point.html" target="_top" xlink:title=" ">
+<g id="a_Node000001"><a xlink:href="class_bezier_control_point.html" target="_top" xlink:title="Interactive control point for Bezier curve manipulation in connections.">
 <polygon fill="white" stroke="#666666" points="245,-20 147.25,-20 147.25,0 245,0 245,-20"/>
 <text xml:space="preserve" text-anchor="middle" x="196.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">BezierControlPoint</text>
 </a>

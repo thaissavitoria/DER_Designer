@@ -12,42 +12,47 @@
 \DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basic_element}{BasicElement}};}
 \DoxyCodeLine{00009\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{ElementType}};}
 \DoxyCodeLine{00010\ }
-\DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_element_renderer}{IElementRenderer}}}
-\DoxyCodeLine{00012\ \{}
-\DoxyCodeLine{00013\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}{\string~IElementRenderer}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00015\ }
-\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{render}}(}
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
-\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
-\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
-\DoxyCodeLine{00020\ \ \ \ \ )\ =\ 0;}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{isInElementRect}}(}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point}
-\DoxyCodeLine{00025\ \ \ \ \ )\ =\ 0;}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ QRectF\ \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{selectionRect}}(}
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
-\DoxyCodeLine{00029\ \ \ \ \ )\ =\ 0;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{renderSelection}}(}
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ QPainter*\ painter,}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
-\DoxyCodeLine{00035\ \ \ \ \ )\ =\ 0;}
-\DoxyCodeLine{00036\ \};}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_element_renderer_factory}{ElementRendererFactory}}}
-\DoxyCodeLine{00040\ \{}
-\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IElementRenderer>\ \mbox{\hyperlink{class_element_renderer_factory_a12321affc185c8014f16d846c14e507e}{createRenderer}}(}
-\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{ElementType}}\ type}
-\DoxyCodeLine{00044\ \ \ \ \ );}
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ELEMENTRENDERER\_H}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_element_renderer}{IElementRenderer}}}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_element_renderer_ad61c7280b29125cfda7bf883b991d62a}{\string~IElementRenderer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_element_renderer_aa3da52358e44a1fd9713b544a5f09376}{render}}(}
+\DoxyCodeLine{00035\ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00038\ \ \ )\ =\ 0;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_element_renderer_aafb5ded65ccd39cb4d896677053277fc}{isInElementRect}}(}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ point}
+\DoxyCodeLine{00043\ \ \ )\ =\ 0;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ QRectF\ \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3729a666f92}{selectionRect}}(}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00047\ \ \ )\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{renderSelection}}(}
+\DoxyCodeLine{00050\ \ \ \ \ QPainter*\ painter,}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ QRectF\&\ rect}
+\DoxyCodeLine{00053\ \ \ )\ =\ 0;}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_element_renderer_factory}{ElementRendererFactory}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \textcolor{keyword}{static}\ std::unique\_ptr<IElementRenderer>\ \mbox{\hyperlink{class_element_renderer_factory_a12321affc185c8014f16d846c14e507e}{createRenderer}}(}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{ElementType}}\ type}
+\DoxyCodeLine{00078\ \ \ );}
+\DoxyCodeLine{00079\ \};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ELEMENTRENDERER\_H}}
 
 \end{DoxyCode}

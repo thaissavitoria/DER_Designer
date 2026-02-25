@@ -1,5 +1,5 @@
 <map id="AttributeRenderer" name="AttributeRenderer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,208,188,704"/>
-<area shape="rect" id="Node000002" href="$class_i_element_renderer.html" title=" " alt="" coords="24,5,169,160"/>
+<area shape="rect" id="Node000001" title="Renderer implementation for attribute elements in ERD diagrams." alt="" coords="5,208,188,704"/>
+<area shape="rect" id="Node000002" href="$class_i_element_renderer.html" title="Abstract interface for element rendering in ERD diagrams." alt="" coords="24,5,169,160"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,172,99,208,94,208,97,178"/>
 </map>

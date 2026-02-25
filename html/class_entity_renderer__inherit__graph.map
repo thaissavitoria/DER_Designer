@@ -1,5 +1,5 @@
 <map id="EntityRenderer" name="EntityRenderer">
-<area shape="rect" id="Node000001" title=" " alt="" coords="10,208,146,533"/>
-<area shape="rect" id="Node000002" href="$class_i_element_renderer.html" title=" " alt="" coords="5,5,150,160"/>
+<area shape="rect" id="Node000001" title="Renderer implementation for entity elements in ERD diagrams." alt="" coords="10,208,146,533"/>
+<area shape="rect" id="Node000002" href="$class_i_element_renderer.html" title="Abstract interface for element rendering in ERD diagrams." alt="" coords="5,5,150,160"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,172,80,208,75,208,78,178"/>
 </map>

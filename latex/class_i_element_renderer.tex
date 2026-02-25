@@ -2,12 +2,16 @@
 \hypertarget{class_i_element_renderer}{}\label{class_i_element_renderer}\index{IElementRenderer@{IElementRenderer}}
 
 
+Abstract interface for element rendering in ERD diagrams.  
+
+
+
+
 {\ttfamily \#include $<$Element\+Renderer.\+h$>$}
 
 
 
-Inheritance diagram for IElement\+Renderer\+:
-\nopagebreak
+Inheritance diagram for IElement\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for IElement\+Renderer\+:
 \end{figure}
 
 
-Collaboration diagram for IElement\+Renderer\+:
-\nopagebreak
+Collaboration diagram for IElement\+Renderer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -38,6 +41,19 @@ virtual QRectF \mbox{\hyperlink{class_i_element_renderer_ae7124333be4bea036e17b3
 virtual void \mbox{\hyperlink{class_i_element_renderer_a8b3668e9eccaf35fb682c0ed1712e850}{render\+Selection}} (QPainter \texorpdfstring{$\ast$}{*}painter, const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QRectF \&rect)=0
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Abstract interface for element rendering in ERD diagrams. 
+
+This interface defines the contract for rendering different types of ERD elements following the Strategy pattern. It provides\+:
+\begin{DoxyItemize}
+\item Element-\/specific rendering implementation
+\item Hit detection for user interaction
+\item Selection visualization with custom styling
+\item Bounding rectangle calculation for selection areas
+\end{DoxyItemize}
+
+Implementations of this interface handle the visual representation of entities, attributes, relationships, and other ERD elements according to Peter Chen\textquotesingle{}s notation, allowing for consistent rendering across different element types while maintaining flexibility for type-\/specific visual characteristics. 
 
 \label{doc-constructors}
 \Hypertarget{class_i_element_renderer_doc-constructors}

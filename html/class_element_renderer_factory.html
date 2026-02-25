@@ -92,6 +92,9 @@ $(function(){initNavTree('class_element_renderer_factory.html','','class_element
 </div><!--header-->
 <div class="contents">
 
+<p>Factory class for creating element renderers.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_element_renderer_8h_source.html">ElementRenderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for ElementRendererFactory:</div>
@@ -103,7 +106,16 @@ Collaboration diagram for ElementRendererFactory:</div>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a12321affc185c8014f16d846c14e507e" id="r_a12321affc185c8014f16d846c14e507e"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="class_i_element_renderer.html">IElementRenderer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a12321affc185c8014f16d846c14e507e">createRenderer</a> (<a class="el" href="_basic_element_8h.html#a16b11be27a8e9362dd122c4d879e01ae">ElementType</a> type)</td></tr>
 </table>
-<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Factory class for creating element renderers. </p>
+<p>This factory class implements the Factory pattern to create appropriate renderer instances based on element type. It provides:</p><ul>
+<li>Type-based renderer instantiation</li>
+<li>Centralized renderer creation logic</li>
+<li>Encapsulation of renderer concrete classes</li>
+<li>Easy extensibility for new element types</li>
+</ul>
+<p>The factory ensures that each element type gets the correct renderer implementation (<a class="el" href="class_entity_renderer.html" title="Renderer implementation for entity elements in ERD diagrams.">EntityRenderer</a>, <a class="el" href="class_attribute_renderer.html" title="Renderer implementation for attribute elements in ERD diagrams.">AttributeRenderer</a>, <a class="el" href="class_relationship_renderer.html" title="Renderer implementation for relationship elements in ERD diagrams.">RelationshipRenderer</a>) without requiring client code to know about specific renderer classes. </p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a12321affc185c8014f16d846c14e507e" name="a12321affc185c8014f16d846c14e507e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a12321affc185c8014f16d846c14e507e">&#9670;&#160;</a></span>createRenderer()</h2>
 

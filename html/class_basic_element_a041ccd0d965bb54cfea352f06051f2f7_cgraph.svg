@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1066;
+var viewWidth = 1075;
 var viewHeight = 115;
 var sectionId = 'dynsection-4';
 </script>
@@ -85,10 +85,10 @@ var sectionId = 'dynsection-4';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_basic_element.html#a028ebc6c9de8f0b90af0e7daef9549f8" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="500.25,-82 359,-82 359,-50 500.25,-50 500.25,-82"/>
-<text xml:space="preserve" text-anchor="start" x="367" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::createDefault</text>
-<text xml:space="preserve" text-anchor="middle" x="429.62" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoints</text>
+<g id="a_Node000003"><a xlink:href="class_basic_element.html#a78e2ce29aa5b2a9fae74cf435996ce8b" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="503.25,-82 359,-82 359,-50 503.25,-50 503.25,-82"/>
+<text xml:space="preserve" text-anchor="start" x="367" y="-68.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::createAndAdd</text>
+<text xml:space="preserve" text-anchor="middle" x="431.12" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">DefaultConnectionPoints</text>
 </a>
 </g>
 </g>
@@ -96,8 +96,8 @@ var sectionId = 'dynsection-4';
 <g id="edge8_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge8_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M143.91,-50.8C202.72,-53.94 286.24,-58.4 347.61,-61.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="347.12,-65.15 357.29,-62.19 347.49,-58.16 347.12,-65.15"/>
+<path fill="none" stroke="#63b8ff" d="M143.78,-50.78C202.42,-53.89 285.72,-58.32 347.37,-61.6"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="346.93,-65.08 357.1,-62.12 347.3,-58.09 346.93,-65.08"/>
 </a>
 </g>
 </g>
@@ -105,8 +105,8 @@ var sectionId = 'dynsection-4';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M300.91,-38.48C315.41,-41.61 331.71,-45.12 347.68,-48.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="346.67,-51.92 357.19,-50.61 348.15,-45.08 346.67,-51.92"/>
+<path fill="none" stroke="#63b8ff" d="M301.33,-38.48C315.7,-41.55 331.82,-45 347.66,-48.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="346.57,-51.73 357.09,-50.4 348.04,-44.88 346.57,-51.73"/>
 </a>
 </g>
 </g>
@@ -114,9 +114,9 @@ var sectionId = 'dynsection-4';
 <g id="Node000008" class="node">
 <title>Node8</title>
 <g id="a_Node000008"><a xlink:href="class_basic_element.html#a01a6511d922708fe0042474740109152" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="498.75,-32 360.5,-32 360.5,0 498.75,0 498.75,-32"/>
-<text xml:space="preserve" text-anchor="start" x="368.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::elementType</text>
-<text xml:space="preserve" text-anchor="middle" x="429.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToString</text>
+<polygon fill="white" stroke="#666666" points="500.25,-32 362,-32 362,0 500.25,0 500.25,-32"/>
+<text xml:space="preserve" text-anchor="start" x="370" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::elementType</text>
+<text xml:space="preserve" text-anchor="middle" x="431.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ToString</text>
 </a>
 </g>
 </g>
@@ -124,8 +124,8 @@ var sectionId = 'dynsection-4';
 <g id="edge7_Node000002_Node000008" class="edge">
 <title>Node2&#45;&gt;Node8</title>
 <g id="a_edge7_Node000002_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M323.48,-23.15C331.83,-22.59 340.39,-22 348.84,-21.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="349.03,-24.92 358.77,-20.75 348.55,-17.94 349.03,-24.92"/>
+<path fill="none" stroke="#63b8ff" d="M323.32,-23.21C332.23,-22.6 341.39,-21.99 350.43,-21.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="350.52,-24.88 360.26,-20.71 350.05,-17.89 350.52,-24.88"/>
 </a>
 </g>
 </g>
@@ -133,9 +133,9 @@ var sectionId = 'dynsection-4';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="class_basic_element.html#a0357bfa9b1ef06dd1c9d64bcb00813f4" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="686.5,-107 538.5,-107 538.5,-75 686.5,-75 686.5,-107"/>
-<text xml:space="preserve" text-anchor="start" x="546.5" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::addConnection</text>
-<text xml:space="preserve" text-anchor="middle" x="612.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
+<polygon fill="white" stroke="#666666" points="689.5,-107 541.5,-107 541.5,-75 689.5,-75 689.5,-107"/>
+<text xml:space="preserve" text-anchor="start" x="549.5" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::addConnection</text>
+<text xml:space="preserve" text-anchor="middle" x="615.5" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
 </a>
 </g>
 </g>
@@ -143,18 +143,18 @@ var sectionId = 'dynsection-4';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M500.56,-75.67C509.22,-76.86 518.16,-78.1 527.01,-79.32"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="526.28,-82.75 536.66,-80.66 527.24,-75.82 526.28,-82.75"/>
+<path fill="none" stroke="#63b8ff" d="M503.68,-75.81C512.22,-76.98 520.99,-78.18 529.69,-79.37"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="529.17,-82.84 539.55,-80.73 530.12,-75.9 529.17,-82.84"/>
 </a>
 </g>
 </g>
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_connection_point.html#a9de406389d93810151498693037eeb95" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="688.75,-57 536.25,-57 536.25,-25 688.75,-25 688.75,-57"/>
-<text xml:space="preserve" text-anchor="start" x="544.25" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::createDefault</text>
-<text xml:space="preserve" text-anchor="middle" x="612.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoints</text>
+<g id="a_Node000005"><a xlink:href="class_connection_point.html#a828996f0bb02e9154b5d3af03f1734b8" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="691.75,-57 539.25,-57 539.25,-25 691.75,-25 691.75,-57"/>
+<text xml:space="preserve" text-anchor="start" x="547.25" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::createDefault</text>
+<text xml:space="preserve" text-anchor="middle" x="615.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoints</text>
 </a>
 </g>
 </g>
@@ -162,18 +162,18 @@ var sectionId = 'dynsection-4';
 <g id="edge4_Node000003_Node000005" class="edge">
 <title>Node3&#45;&gt;Node5</title>
 <g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M500.56,-56.33C508.39,-55.25 516.45,-54.14 524.47,-53.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="524.83,-56.51 534.26,-51.68 523.87,-49.58 524.83,-56.51"/>
+<path fill="none" stroke="#63b8ff" d="M503.68,-56.19C511.55,-55.11 519.62,-54.01 527.65,-52.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="528.01,-56.39 537.44,-51.56 527.06,-49.45 528.01,-56.39"/>
 </a>
 </g>
 </g>
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_connection_point.html#a8977265b0868dad361fcbeec5a89bdeb" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="878.75,-57 724.75,-57 724.75,-25 878.75,-25 878.75,-57"/>
-<text xml:space="preserve" text-anchor="start" x="732.75" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::addConection</text>
-<text xml:space="preserve" text-anchor="middle" x="801.75" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
+<g id="a_Node000006"><a xlink:href="class_connection_point.html#a0bca0b4cf605278cb17d8052dc027932" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="887,-57 727.75,-57 727.75,-25 887,-25 887,-57"/>
+<text xml:space="preserve" text-anchor="start" x="735.75" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::addConnection</text>
+<text xml:space="preserve" text-anchor="middle" x="807.38" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
 </a>
 </g>
 </g>
@@ -181,8 +181,8 @@ var sectionId = 'dynsection-4';
 <g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
 <g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M689.12,-41C697.06,-41 705.17,-41 713.22,-41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="713.03,-44.5 723.03,-41 713.03,-37.5 713.03,-44.5"/>
+<path fill="none" stroke="#63b8ff" d="M692.09,-41C699.96,-41 708.02,-41 716.03,-41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="715.8,-44.5 725.8,-41 715.8,-37.5 715.8,-44.5"/>
 </a>
 </g>
 </g>
@@ -190,9 +190,9 @@ var sectionId = 'dynsection-4';
 <g id="Node000007" class="node">
 <title>Node7</title>
 <g id="a_Node000007"><a xlink:href="class_connection_point.html#ac498b99d7f91805fea3eab19f2e8b260" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1058.25,-57 914.75,-57 914.75,-25 1058.25,-25 1058.25,-57"/>
-<text xml:space="preserve" text-anchor="start" x="922.75" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::Connection</text>
-<text xml:space="preserve" text-anchor="middle" x="986.5" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
+<polygon fill="white" stroke="#666666" points="1066.5,-57 923,-57 923,-25 1066.5,-25 1066.5,-57"/>
+<text xml:space="preserve" text-anchor="start" x="931" y="-43.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::Connection</text>
+<text xml:space="preserve" text-anchor="middle" x="994.75" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>
 </a>
 </g>
 </g>
@@ -200,8 +200,8 @@ var sectionId = 'dynsection-4';
 <g id="edge6_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
 <g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M879.19,-41C887.01,-41 894.98,-41 902.87,-41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="902.81,-44.5 912.81,-41 902.81,-37.5 902.81,-44.5"/>
+<path fill="none" stroke="#63b8ff" d="M887.26,-41C895.14,-41 903.15,-41 911.07,-41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="911.06,-44.5 921.06,-41 911.06,-37.5 911.06,-44.5"/>
 </a>
 </g>
 </g>

@@ -2,12 +2,16 @@
 \hypertarget{class_quick_access_toolbar}{}\label{class_quick_access_toolbar}\index{QuickAccessToolbar@{QuickAccessToolbar}}
 
 
+Quick access toolbar for some ERD diagram operations.  
+
+
+
+
 {\ttfamily \#include $<$Quick\+Acess\+Tool\+Bar.\+h$>$}
 
 
 
-Inheritance diagram for Quick\+Access\+Toolbar\+:
-\nopagebreak
+Inheritance diagram for Quick\+Access\+Toolbar\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -16,8 +20,7 @@ Inheritance diagram for Quick\+Access\+Toolbar\+:
 \end{figure}
 
 
-Collaboration diagram for Quick\+Access\+Toolbar\+:
-\nopagebreak
+Collaboration diagram for Quick\+Access\+Toolbar\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -58,6 +61,16 @@ QAction \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_quick_access_toolbar_a
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Quick access toolbar for some ERD diagram operations. 
+
+This class provides a customizable toolbar with quick access to some frequently used actions in the ERD Designer application. It extends QTool\+Bar to provide\+:
+\begin{DoxyItemize}
+\item Quick access to common file operations (New, Open, Save)
+\item Help and About actions for user assistance
+\item Integration with \doxylink{class_main_window}{Main\+Window} for action execution 
+\end{DoxyItemize}
+
 \label{doc-constructors}
 \Hypertarget{class_quick_access_toolbar_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -67,8 +80,7 @@ QAction \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_quick_access_toolbar_a
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_af2146dbbe3237bb43e290ff1a36039c6} 
 Quick\+Access\+Toolbar\+::\+Quick\+Access\+Toolbar (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -86,8 +98,7 @@ Here is the call graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_a75e787a5ac9594c43bea4cbaa36c67d0} 
 QAction \texorpdfstring{$\ast$}{*} Quick\+Access\+Toolbar\+::add\+Action\+To\+Tool\+Bar (\begin{DoxyParamCaption}\item[{const QIcon \&}]{icon}{, }\item[{const QString \&}]{action\+Name}{, }\item[{const QString \&}]{tool\+Tip}{, }\item[{const QString \&}]{status\+Tip}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -100,16 +111,14 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_a9e7b41af686d1b6db9993d80e8390053} 
 void Quick\+Access\+Toolbar\+::add\+Default\+Actions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:
-\nopagebreak
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=331pt]{class_quick_access_toolbar_a9e7b41af686d1b6db9993d80e8390053_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -122,8 +131,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_a95925c4900144d5faa1a4516ea7d2874} 
 void Quick\+Access\+Toolbar\+::on\+About\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -136,8 +144,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_ae2051a27933a2022dc2b6c5cc8ef4b63} 
 void Quick\+Access\+Toolbar\+::on\+Help\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -150,8 +157,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_aa9d56b4b5e0885c23f4101b066bbde9d} 
 void Quick\+Access\+Toolbar\+::on\+New\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,8 +170,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_a3d84253b27fe73b9aeefdd3388da9ce4} 
 void Quick\+Access\+Toolbar\+::on\+Open\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -178,8 +183,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_acb9dd70de40aa7efa692172a3322a3b8} 
 void Quick\+Access\+Toolbar\+::on\+Save\+Action (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -192,8 +196,7 @@ Here is the caller graph for this function\+:
 {\footnotesize\ttfamily \label{class_quick_access_toolbar_aa81ab086f3f156e257c61050927b8fea} 
 void Quick\+Access\+Toolbar\+::setup\+Toolbar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

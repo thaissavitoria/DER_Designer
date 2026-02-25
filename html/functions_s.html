@@ -94,6 +94,8 @@ $(function(){initNavTree('functions_s.html','',''); });
 <li>saveAsFile()&#160;:&#160;<a class="el" href="class_main_window.html#ace1b7624a64f4d70513b86601e5846f9">MainWindow</a></li>
 <li>saveDiagramToFile()&#160;:&#160;<a class="el" href="class_json_helper.html#a7f720f1105f91b135fdfbcaf94e3f929">JsonHelper</a></li>
 <li>saveFile()&#160;:&#160;<a class="el" href="class_main_window.html#a464aaa4d378e7b2d814756a73d6e1ed6">MainWindow</a></li>
+<li>saveToMainFile()&#160;:&#160;<a class="el" href="class_main_window.html#a101685dce06592fd3a51da45fc7be4ad">MainWindow</a></li>
+<li>saveVersionBackup()&#160;:&#160;<a class="el" href="class_main_window.html#ab38b9b1c96adcb0bbbbaec5b3ff5ae19">MainWindow</a></li>
 <li>selectAll()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a530f6e2b54bdff761f3f478120187201">DiagramScene</a></li>
 <li>selectConnection()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a2b55d6646f19908d66e5c5eda455744e">DiagramScene</a></li>
 <li>selectElement()&#160;:&#160;<a class="el" href="class_diagram_scene.html#adffd7c14eb320f4e260f6fed731c1809">DiagramScene</a></li>
@@ -107,15 +109,12 @@ $(function(){initNavTree('functions_s.html','',''); });
 <li>setControl1Offset()&#160;:&#160;<a class="el" href="class_connection_line.html#ac4df5ba24b4ce7ec2cd3c380677b686b">ConnectionLine</a></li>
 <li>setControl2Offset()&#160;:&#160;<a class="el" href="class_connection_line.html#a30ed3d644d4d183ef6adf97110ac5bb5">ConnectionLine</a></li>
 <li>setCustomCardinalityText()&#160;:&#160;<a class="el" href="class_relationship_end.html#a872cd032aa3a9e2c7f23f455d03c4863">RelationshipEnd</a></li>
-<li>setDirection()&#160;:&#160;<a class="el" href="class_connection_point.html#a8dfb25f39755ca37472021781eda3b7a">ConnectionPoint</a></li>
 <li>setElementProperty()&#160;:&#160;<a class="el" href="class_property_command.html#ae105e0a173a3d4c69a9a6ba6582b644b">PropertyCommand</a></li>
-<li>setElementType()&#160;:&#160;<a class="el" href="class_draggable_button.html#a7930aae31fb62a63f1ef119657eaeeec">DraggableButton</a></li>
 <li>setEndPoint()&#160;:&#160;<a class="el" href="class_connection_line.html#a2e68f5087725c547599796c887bc9c8b">ConnectionLine</a></li>
 <li>setEntityId()&#160;:&#160;<a class="el" href="class_relationship_end.html#ace7726af2ce1893c7e822c1e890f6c5f">RelationshipEnd</a></li>
 <li>setHasCustomControlPoints()&#160;:&#160;<a class="el" href="class_connection_line.html#ad4d40dee4bb82aff5b1967a1ca93b069">ConnectionLine</a></li>
 <li>setIsIdentifying()&#160;:&#160;<a class="el" href="class_relationship.html#afd48f436e1a081b800d28a68078bfe08">Relationship</a></li>
 <li>setIsTotalParticipation()&#160;:&#160;<a class="el" href="class_relationship_end.html#a52a4e1035f4f5cc99ee5068ea6e002ba">RelationshipEnd</a></li>
-<li>setIsWeakEntity()&#160;:&#160;<a class="el" href="class_entity.html#adaacdcaca759f96c7c5a294f75307ef0">Entity</a></li>
 <li>setLineType()&#160;:&#160;<a class="el" href="class_connection_line.html#aabbf15273d5fb94dad38aa8e4e1c861b">ConnectionLine</a></li>
 <li>setLineWidth()&#160;:&#160;<a class="el" href="class_connection_line.html#a7983d6ddbc5414ad75bfc9e16b78ea90">ConnectionLine</a></li>
 <li>setName()&#160;:&#160;<a class="el" href="class_basic_element.html#a42ea6812e7627bb99af54cab547aa803">BasicElement</a></li>
@@ -126,6 +125,7 @@ $(function(){initNavTree('functions_s.html','',''); });
 <li>setSelected()&#160;:&#160;<a class="el" href="class_connection_graphics_item.html#a195ab4989aef887425e7acb78b885d9e">ConnectionGraphicsItem</a>, <a class="el" href="class_element_graphics_item.html#a84c808f98eb7db50d7a887263669a6b5">ElementGraphicsItem</a></li>
 <li>setSize()&#160;:&#160;<a class="el" href="class_basic_element.html#ab86c964c6ef9e8d7299efc263a0837e7">BasicElement</a></li>
 <li>setStartPoint()&#160;:&#160;<a class="el" href="class_connection_line.html#a1e6c91e7c182b1c750edf0264f44a60a">ConnectionLine</a></li>
+<li>setupAutoSave()&#160;:&#160;<a class="el" href="class_main_window.html#a7e65ffe1e01feb35cb7da90085d57f04">MainWindow</a></li>
 <li>setupDefaultStyle()&#160;:&#160;<a class="el" href="class_attribute_renderer.html#a1214697be0865498258ec1deabd16faf">AttributeRenderer</a>, <a class="el" href="class_entity_renderer.html#a31f9cb14accf339045d2154fcaaa3729">EntityRenderer</a>, <a class="el" href="class_relationship_renderer.html#a683532f0595b37b728561fa0cfd797c3">RelationshipRenderer</a></li>
 <li>setupIcon()&#160;:&#160;<a class="el" href="class_draggable_button.html#af9acff4c210ccdd94acac5847cddd0bd">DraggableButton</a></li>
 <li>setupRenderer()&#160;:&#160;<a class="el" href="class_element_graphics_item.html#a92ce5533958fd649032d962af0793ce6">ElementGraphicsItem</a></li>
@@ -135,11 +135,12 @@ $(function(){initNavTree('functions_s.html','',''); });
 <li>shape()&#160;:&#160;<a class="el" href="class_connection_graphics_item.html#aeea9fd05b92eeba219efbf363460347c">ConnectionGraphicsItem</a>, <a class="el" href="class_element_graphics_item.html#aa40f357c133099eb418ef7f06dbbd02a">ElementGraphicsItem</a>, <a class="el" href="class_relationship_connection_line_graphics_item.html#afc1acb4a0cf1004d31bd2b89bc394d7d">RelationshipConnectionLineGraphicsItem</a></li>
 <li>showAbout()&#160;:&#160;<a class="el" href="class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197">MainWindow</a></li>
 <li>showHelp()&#160;:&#160;<a class="el" href="class_main_window.html#a3111788b36503e5ae8eabef2b32a6f62">MainWindow</a></li>
-<li>size&#160;:&#160;<a class="el" href="class_basic_element.html#ab3ec6bd13d73b18c450d8026ff3f3b1d">BasicElement</a></li>
-<li>sizeChanged()&#160;:&#160;<a class="el" href="class_basic_element.html#a5af654d8bb5e16b44121f69c832037b8">BasicElement</a></li>
+<li>size()&#160;:&#160;<a class="el" href="class_basic_element.html#a542adbf85a58c5c9bf17975964d7e446">BasicElement</a></li>
+<li>startAutoSave()&#160;:&#160;<a class="el" href="class_main_window.html#a58d0f0988d7ad6c216bf8dac276f694a">MainWindow</a></li>
 <li>startConnection()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a411b6f8dc6f9559e607ec3edeef17d81">DiagramScene</a></li>
 <li>startPoint&#160;:&#160;<a class="el" href="class_connection_line.html#a3d014be3cb8c254a140432126ce9ca06">ConnectionLine</a></li>
 <li>startPointChanged()&#160;:&#160;<a class="el" href="class_connection_line.html#afcc2bd845912903497ccaa97e67b8a89">ConnectionLine</a></li>
+<li>stopAutoSave()&#160;:&#160;<a class="el" href="class_main_window.html#aee739ca28d89caa75e05d5462445432e">MainWindow</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
