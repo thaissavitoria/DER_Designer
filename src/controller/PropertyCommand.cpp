@@ -100,7 +100,7 @@ bool PropertyCommand::validateProperty(
     return validTypes.contains(typeString);
   }
   else if (propertyName == "isPrimaryKey" || propertyName == "isRequired") {
-    if (value.type() == QVariant::Bool) {
+    if (value.typeId() == QMetaType::Bool) {
       return true;
     }
     QString stringValue = value.toString().toLower().trimmed();

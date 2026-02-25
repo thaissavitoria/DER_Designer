@@ -73,7 +73,7 @@ void DiagramView::dropEvent(
     QString elementType = QString::fromUtf8(event->mimeData()->data("application/x-element-type"));
 
     if (isValidElementType(elementType)) {
-      QPointF scenePos = mapToScene(event->pos());
+      QPointF scenePos = mapToScene(event->position().toPoint());
       emit elementDropped(elementType, scenePos);
       event->acceptProposedAction();
       return;
