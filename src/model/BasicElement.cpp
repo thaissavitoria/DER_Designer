@@ -291,7 +291,7 @@ void BasicElement::createAndAddDefaultConnectionPoints()
   }
   m_connectionPoints.clear();
 
-  auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints();
+  auto defaultPoints = ConnectionPoint::createDefaultConnectionPoints(this);
   for (auto point : defaultPoints) {
     addConnectionPoint(point);
   }

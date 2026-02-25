@@ -1670,9 +1670,7 @@ void MainWindow::onAddEntityClicked()
     return;
   }
 
-  QPointF pos = QPointF(0, 0);
-
-  auto entity = new Entity("Entidade");
+  auto entity = new Entity("Entidade", m_diagramScene);
 
   m_diagramScene->addElement(entity);
   if (entity) {
@@ -1693,9 +1691,7 @@ void MainWindow::onAddAttributeClicked()
     return;
   }
 
-  QPointF pos = QPointF(0, 0);
-
-  auto attribute = new Attribute("Atributo");
+  auto attribute = new Attribute("Atributo", m_diagramScene);
 
   m_diagramScene->addElement(attribute);
   if (attribute) {
@@ -1716,18 +1712,16 @@ void MainWindow::onAddRelationshipClicked()
     return;
   }
 
-  QPointF pos = QPointF(0, 0);
-
-  auto relationship = new Relationship("Relacionamento");
+  auto relationship = new Relationship("Relacionamento", m_diagramScene);
 
   m_diagramScene->addElement(relationship);
   if (relationship) {
     m_isModified = true;
     updateWindowTitle();
-    updateStatusBar("Atributo adicionado");
+    updateStatusBar("Relacionamento adicionado");
   }
   else {
-    updateStatusBar("Falha ao adicionar atributo");
+    updateStatusBar("Falha ao adicionar relacionamento");
   }
 }
 
@@ -1739,9 +1733,7 @@ void MainWindow::onAddWeakEntityClicked()
     return;
   }
 
-  QPointF pos = QPointF(0, 0);
-
-  auto weakEntity = new Entity("Entidade Fraca", true);
+  auto weakEntity = new Entity("Entidade Fraca", true, m_diagramScene);
 
   m_diagramScene->addElement(weakEntity);
   if (weakEntity) {
@@ -1762,9 +1754,7 @@ void MainWindow::onAddIdentifyingRelationshipClicked()
     return;
   }
 
-  QPointF pos = QPointF(0, 0);
-
-  auto identifyingRel = new Relationship("Rel. Identificador", true);
+  auto identifyingRel = new Relationship("Rel. Identificador", true, m_diagramScene);
 
   m_diagramScene->addElement(identifyingRel);
   if (identifyingRel) {

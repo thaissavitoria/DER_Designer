@@ -67,7 +67,9 @@ public:
     const QSizeF& elementSize
   ) const;
 
-  static QList<ConnectionPoint*> createDefaultConnectionPoints();
+  static QList<ConnectionPoint*> createDefaultConnectionPoints(
+    QObject* parent
+  );
 
 signals:
   void relativePositionChanged(
@@ -78,7 +80,8 @@ private:
   static void addConnectionPoint(
     QList<ConnectionPoint*>& list,
     const QPointF& relativePosition,
-    ConnectionDirection direction
+    ConnectionDirection direction,
+    QObject* parent
   );
 
   QString m_id;

@@ -63,14 +63,16 @@ QPointF ConnectionPoint::absolutePosition(
 
 // -----------------------------------------------------------------------------------------------------
 
-QList<ConnectionPoint*> ConnectionPoint::createDefaultConnectionPoints()
+QList<ConnectionPoint*> ConnectionPoint::createDefaultConnectionPoints(
+  QObject* parent
+)
 {
   QList<ConnectionPoint*> points;
 
-  addConnectionPoint(points, QPointF(0.5, 0.0), ConnectionDirection::Top);
-  addConnectionPoint(points, QPointF(0.5, 1.0), ConnectionDirection::Bottom);
-  addConnectionPoint(points, QPointF(1.0, 0.5), ConnectionDirection::Left);
-  addConnectionPoint(points, QPointF(0.0, 0.5), ConnectionDirection::Right);
+  addConnectionPoint(points, QPointF(0.5, 0.0), ConnectionDirection::Top, parent);
+  addConnectionPoint(points, QPointF(0.5, 1.0), ConnectionDirection::Bottom, parent);
+  addConnectionPoint(points, QPointF(1.0, 0.5), ConnectionDirection::Left, parent);
+  addConnectionPoint(points, QPointF(0.0, 0.5), ConnectionDirection::Right, parent);
 
   return points;
 }
@@ -80,10 +82,11 @@ QList<ConnectionPoint*> ConnectionPoint::createDefaultConnectionPoints()
 void ConnectionPoint::addConnectionPoint(
   QList<ConnectionPoint*>& list,
   const QPointF& relativePosition,
-  ConnectionDirection direction
+  ConnectionDirection direction,
+  QObject* parent
 )
 {
-  auto point = new ConnectionPoint(relativePosition, direction);
+  auto point = new ConnectionPoint(relativePosition, direction, parent);
   list.append(point);
 }
 

@@ -116,10 +116,6 @@ void DiagramScene::removeElement(
 
   removeElementConnections(element);
 
-  for (QObject* child : element->children()) {
-    child->setParent(nullptr);
-  }
-
   if (ElementGraphicsItem* item = m_elementToItem.value(element, nullptr)) {
     removeItem(item);
     m_elementToItem.remove(element);
