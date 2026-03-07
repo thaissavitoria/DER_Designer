@@ -34,10 +34,13 @@ jobs:
           echo "Qt6_DIR=$HOME/Qt/6.9.3/linux_gcc_64/lib/cmake/Qt6" >> $GITHUB_ENV
           echo "CMAKE_PREFIX_PATH=$HOME/Qt/6.9.3/linux_gcc_64" >> $GITHUB_ENV
 
-      - name: Configure and build with script
+      - name: Configure and build
         run: |
-          chmod +x build.sh
-          ./build.sh
+          QT_PATH=/home/runner/Qt/6.9.3/linux_gcc_64
+          mkdir -p build-linux
+          cd build-linux
+          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$QT_PATH ..
+          cmake --build . -j$(nproc)
 
       - name: Download linuxdeploy and Qt plugin
         run: |
