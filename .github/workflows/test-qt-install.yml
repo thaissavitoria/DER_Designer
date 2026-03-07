@@ -14,6 +14,6 @@ jobs:
         shell: pwsh
         run: pip install aqtinstall
 
-      - name: List available architectures for 6.7.2
+      - name: List available architectures for 6.9.3
         shell: pwsh
-        run: python -m aqt list-qt windows desktop --arch 6.7.2
+        run: python -m aqt list-qt windows desktop --arch 6.9.3
