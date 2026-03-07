@@ -15,13 +15,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v4
-        with:
-          version: "6.7.*"
-          host: "windows"
-          target: "desktop"
-          arch: "win64_msvc2022_64"
+      - name: Install Qt via aqt (mirror estavel)
+        shell: pwsh
+        run: |
+          pip install aqtinstall
+          python -m aqt install-qt windows desktop 6.7.2 win64_msvc2022_64 `
+            --base https://ftp.fau.de/qtproject `
+            --outputdir D:\Qt
+
+      - name: Set Qt environment
+        shell: pwsh
+        run: |
+          echo "D:\Qt\6.7.2\msvc2022_64\bin" >> $env:GITHUB_PATH
+          echo "Qt6_DIR=D:\Qt\6.7.2\msvc2022_64\lib\cmake\Qt6" >> $env:GITHUB_ENV
+          echo "CMAKE_PREFIX_PATH=D:\Qt\6.7.2\msvc2022_64" >> $env:GITHUB_ENV
 
       - name: Configure and build with script
         shell: cmd
@@ -64,11 +71,4 @@ jobs:
         with:
           name: DERDesigner-windows
           path: DERDesigner-windows.zip
-          if-no-files-found: error
-
-      - name: Upload Windows EXE artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: DERDesigner-windows-exe
-          path: build/Release/DERDesigner.exe
           if-no-files-found: error
