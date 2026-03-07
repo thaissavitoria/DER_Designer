@@ -1,0 +1,17 @@
+name: Test Qt Install
+
+on:
+  push:
+    branches: ["test-qt-install"]
+  workflow_dispatch:
+
+jobs:
+  test-linux:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install aqt
+        run: pip install aqtinstall
+
+      - name: List available architectures for 6.9.3 Linux
+        run: python -m aqt list-qt linux desktop --arch 6.9.3
