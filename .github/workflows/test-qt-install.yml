@@ -1,6 +1,8 @@
 name: Test Qt Install
 
 on:
+  push:
+    branches: ["test-qt-install"]
   workflow_dispatch:
 
 jobs:
@@ -12,6 +14,6 @@ jobs:
         shell: pwsh
         run: pip install aqtinstall
 
-      - name: List available Qt versions
+      - name: List available architectures for 6.7.2
         shell: pwsh
-        run: python -m aqt list-qt windows desktop
+        run: python -m aqt list-qt windows desktop --arch 6.7.2
