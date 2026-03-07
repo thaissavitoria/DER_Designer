@@ -34,12 +34,20 @@ jobs:
           echo "Qt6_DIR=$HOME/Qt/6.9.3/linux_gcc_64/lib/cmake/Qt6" >> $GITHUB_ENV
           echo "CMAKE_PREFIX_PATH=$HOME/Qt/6.9.3/linux_gcc_64" >> $GITHUB_ENV
 
+      - name: Check Qt installation
+        run: |
+          echo "=== Listando $HOME/Qt ==="
+          ls $HOME/Qt || echo "Diretorio nao encontrado"
+          echo "=== Procurando Qt6Config.cmake ==="
+          find $HOME/Qt -name "Qt6Config.cmake" 2>/dev/null || echo "Nao encontrado"
+
       - name: Configure and build
         run: |
-          QT_PATH=/home/runner/Qt/6.9.3/linux_gcc_64
+          QT_PATH=$(find $HOME/Qt -name "Qt6Config.cmake" | head -1 | xargs dirname)
+          echo "Qt6_DIR=$QT_PATH"
           mkdir -p build-linux
           cd build-linux
-          cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=$QT_PATH ..
+          cmake -DCMAKE_BUILD_TYPE=Release -DQt6_DIR=$QT_PATH ..
           cmake --build . -j$(nproc)
 
       - name: Download linuxdeploy and Qt plugin
