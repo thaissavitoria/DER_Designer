@@ -24,15 +24,15 @@ jobs:
       - name: Install Qt via aqt (mirror estavel)
         run: |
           pip install aqtinstall
-          python -m aqt install-qt linux desktop 6.7.2 gcc_64 \
+          python -m aqt install-qt linux desktop 6.9.3 gcc_64 \
             --base https://ftp.fau.de/qtproject \
             --outputdir $HOME/Qt
 
       - name: Set Qt environment
         run: |
-          echo "$HOME/Qt/6.7.2/gcc_64/bin" >> $GITHUB_PATH
-          echo "Qt6_DIR=$HOME/Qt/6.7.2/gcc_64/lib/cmake/Qt6" >> $GITHUB_ENV
-          echo "CMAKE_PREFIX_PATH=$HOME/Qt/6.7.2/gcc_64" >> $GITHUB_ENV
+          echo "$HOME/Qt/6.9.3/gcc_64/bin" >> $GITHUB_PATH
+          echo "Qt6_DIR=$HOME/Qt/6.9.3/gcc_64/lib/cmake/Qt6" >> $GITHUB_ENV
+          echo "CMAKE_PREFIX_PATH=$HOME/Qt/6.9.3/gcc_64" >> $GITHUB_ENV
 
       - name: Configure and build with script
         run: |
@@ -47,8 +47,8 @@ jobs:
 
       - name: Package AppImage
         env:
-          QMAKE: /home/runner/Qt/6.7.2/gcc_64/bin/qmake
-          LD_LIBRARY_PATH: /home/runner/Qt/6.7.2/gcc_64/lib
+          QMAKE: /home/runner/Qt/6.9.3/gcc_64/bin/qmake
+          LD_LIBRARY_PATH: /home/runner/Qt/6.9.3/gcc_64/lib
         run: |
           mkdir -p AppDir/usr/bin
           cp build-linux/DERDesigner AppDir/usr/bin/

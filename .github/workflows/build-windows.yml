@@ -19,16 +19,16 @@ jobs:
         shell: pwsh
         run: |
           pip install aqtinstall
-          python -m aqt install-qt windows desktop 6.7.2 win64_msvc2022_64 `
+          python -m aqt install-qt windows desktop 6.9.3 win64_msvc2022_64 `
             --base https://ftp.fau.de/qtproject `
             --outputdir D:\Qt
 
       - name: Set Qt environment
         shell: pwsh
         run: |
-          echo "D:\Qt\6.7.2\msvc2022_64\bin" >> $env:GITHUB_PATH
-          echo "Qt6_DIR=D:\Qt\6.7.2\msvc2022_64\lib\cmake\Qt6" >> $env:GITHUB_ENV
-          echo "CMAKE_PREFIX_PATH=D:\Qt\6.7.2\msvc2022_64" >> $env:GITHUB_ENV
+          echo "D:\Qt\6.9.3\msvc2022_64\bin" >> $env:GITHUB_PATH
+          echo "Qt6_DIR=D:\Qt\6.9.3\msvc2022_64\lib\cmake\Qt6" >> $env:GITHUB_ENV
+          echo "CMAKE_PREFIX_PATH=D:\Qt\6.9.3\msvc2022_64" >> $env:GITHUB_ENV
 
       - name: Configure and build with script
         shell: cmd
