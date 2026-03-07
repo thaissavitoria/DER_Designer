@@ -2,8 +2,8 @@
 #include "model/Entity.h"
 #include "model/Relationship.h"
 #include "model/RelationshipConnectionLine.h"
-#include "viewer/ConnectionGraphicsItem.h"
-#include "viewer/RelationshipConnectionLineGraphicsItem.h"
+#include "view/ConnectionGraphicsItem.h"
+#include "view/RelationshipConnectionLineGraphicsItem.h"
 
 #include <QtCore/QDebug>
 #include <QtCore/QTimer>

@@ -1,6 +1,6 @@
 ﻿#include <QApplication>
 
-#include "viewer/MainWindow.h"
+#include "view/MainWindow.h"
 #include <QDir>
 
 int main(

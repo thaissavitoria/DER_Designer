@@ -16,13 +16,7 @@ if ! command -v cmake &> /dev/null; then
     exit 1
 fi
 
-if ! command -v qmake6 &> /dev/null && ! find /usr/lib -name "Qt6Core*" -o -name "qt6-config.cmake" 2>/dev/null | grep -q .; then
-    echo -e "${RED}Error: Qt6 development files may not be installed${NC}"
-    echo "Install with: sudo apt-get install qt6-base-dev qt6-tools-dev"
-    # Don't exit, let cmake try anyway
-fi
-
-BUILD_DIR="cmake-build-linux"
+BUILD_DIR="build-linux"
 
 if [ -d "$BUILD_DIR" ]; then
     echo -e "${YELLOW}Cleaning previous build...${NC}"
@@ -39,4 +33,4 @@ echo -e "${YELLOW}Building project...${NC}"
 cmake --build . -j$(nproc)
 
 echo -e "${GREEN}Build completed successfully!${NC}"
-echo -e "${GREEN}Executable: ./cmake-build-linux/DERDesigner${NC}"
+echo -e "${GREEN}Executable: ./build-linux/DERDesigner${NC}"

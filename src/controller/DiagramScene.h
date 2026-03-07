@@ -6,8 +6,8 @@
 
 #include "model/BasicElement.h"
 #include "model/ConnectionLine.h"
-#include "viewer/ElementGraphicsItem.h"
-#include "viewer/BezierControlPoint.h"
+#include "view/ElementGraphicsItem.h"
+#include "view/BezierControlPoint.h"
 
 //------------------------------------------------------------------------------
 

@@ -6,7 +6,7 @@
 
 #include "model/ConnectionLine.h"
 #include "model/ConnectionPoint.h"
-#include "viewer/BezierControlPoint.h"
+#include "view/BezierControlPoint.h"
 
 class ConnectionGraphicsItem : public QObject, public QGraphicsItem
 {
