@@ -1,18 +1,35 @@
 @echo off
 echo Configurando projeto Qt com CMake para Visual Studio...
 
-REM Criar diretÛrio de build se n„o existir
+set CI_MODE=0
+if /I "%GITHUB_ACTIONS%"=="true" set CI_MODE=1
+
+REM 
 if not exist "build" mkdir build
 cd build
 
-REM Configurar com CMake para Visual Studio
+REM 
 cmake .. -G "Visual Studio 17 2022" -A x64
 
-REM Verificar se a configuraÁ„o foi bem-sucedida
+REM 
 if %ERRORLEVEL% EQU 0 (
+    if %CI_MODE% EQU 1 (
+        echo.
+        echo Executando build Release para CI...
+        cmake --build . --config Release --parallel
+
+        if %ERRORLEVEL% NEQ 0 (
+            echo.
+            echo ====================================
+            echo ERRO na compilacao Release!
+            echo ====================================
+            exit /b 1
+        )
+    )
+
     echo.
     echo ====================================
-    echo ConfiguraÁ„o concluÌda com sucesso!
+    echo Configura√ß√£o conclu√≠da com sucesso!
     echo ====================================
     echo.
     echo Para compilar o projeto:
@@ -24,14 +41,14 @@ if %ERRORLEVEL% EQU 0 (
 ) else (
     echo.
     echo ====================================
-    echo ERRO na configuraÁ„o!
+    echo ERRO na configura√ß√£o!
     echo ====================================
     echo.
     echo Verifique se:
-    echo   1. Qt6 est· instalado e no PATH
-    echo   2. Visual Studio 2022 est· instalado
-    echo   3. CMake est· instalado e no PATH
+    echo   1. Qt6 est√° instalado e no PATH
+    echo   2. Visual Studio 2022 est√° instalado
+    echo   3. CMake est√° instalado e no PATH
     echo.
 )
 
-pause
+if %CI_MODE% EQU 0 pause

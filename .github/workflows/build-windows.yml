@@ -1,0 +1,74 @@
+name: Build Windows
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: "6.7.2"
+          host: "windows"
+          target: "desktop"
+          arch: "win64_msvc2022_64"
+
+      - name: Configure and build with script
+        shell: cmd
+        run: build.bat
+
+      - name: Deploy Qt dependencies
+        shell: pwsh
+        run: |
+          $exePath = "build/Release/DERDesigner.exe"
+          if (!(Test-Path $exePath)) {
+            throw "Executavel nao encontrado em $exePath"
+          }
+
+          $windeployqt = (Get-Command windeployqt -ErrorAction Stop).Source
+          & $windeployqt --release --compiler-runtime $exePath
+
+      - name: Package Windows artifact
+        shell: pwsh
+        run: |
+          $releaseDir = "build/Release"
+          $packageDir = "package-windows"
+
+          New-Item -ItemType Directory -Path $packageDir -Force | Out-Null
+          Copy-Item "$releaseDir/DERDesigner.exe" "$packageDir/" -Force
+
+          Get-ChildItem $releaseDir -Filter "*.dll" | ForEach-Object {
+            Copy-Item $_.FullName "$packageDir/" -Force
+          }
+
+          foreach ($dir in @("platforms", "styles", "imageformats", "iconengines", "translations")) {
+            if (Test-Path "$releaseDir/$dir") {
+              Copy-Item "$releaseDir/$dir" "$packageDir/$dir" -Recurse -Force
+            }
+          }
+
+          Compress-Archive -Path "$packageDir/*" -DestinationPath "DERDesigner-windows.zip" -Force
+
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DERDesigner-windows
+          path: DERDesigner-windows.zip
+          if-no-files-found: error
+
+      - name: Upload Windows EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: DERDesigner-windows-exe
+          path: build/Release/DERDesigner.exe
+          if-no-files-found: error
