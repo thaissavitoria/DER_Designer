@@ -1712,7 +1712,7 @@ void MainWindow::onAddRelationshipClicked()
     return;
   }
 
-  auto relationship = new Relationship("Relacionamento", m_diagramScene);
+  auto relationship = new Relationship("Relacionamento", false /*isIdentifying*/, m_diagramScene);
 
   m_diagramScene->addElement(relationship);
   if (relationship) {
@@ -1733,7 +1733,7 @@ void MainWindow::onAddWeakEntityClicked()
     return;
   }
 
-  auto weakEntity = new Entity("Entidade Fraca", true, m_diagramScene);
+  auto weakEntity = new Entity("Entidade Fraca", true /*isIdentifying*/, m_diagramScene);
 
   m_diagramScene->addElement(weakEntity);
   if (weakEntity) {
