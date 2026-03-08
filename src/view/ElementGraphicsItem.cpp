@@ -1,5 +1,5 @@
 ﻿#include "ElementGraphicsItem.h"
-#include "controller/DiagramScene.h"
+#include "view/DiagramScene.h"
 #include <QtGui/QPainter>
 #include <QtWidgets/QStyleOptionGraphicsItem>
 #include <QtWidgets/QGraphicsScene>

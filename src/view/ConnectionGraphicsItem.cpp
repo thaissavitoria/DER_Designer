@@ -7,7 +7,7 @@
 #include <QtGui/QPainterPath>
 #include <QtCore/QDebug>
 
-#include "controller/DiagramScene.h"
+#include "view/DiagramScene.h"
 
 //----------------------------------------------------------------------------------------------
 

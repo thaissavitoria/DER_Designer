@@ -1,5 +1,5 @@
 ﻿#include "DiagramView.h"
-#include "controller/DiagramScene.h"
+#include "view/DiagramScene.h"
 
 #include <QtCore/QMimeData>
 #include <QtGui/QDragEnterEvent>

@@ -1,5 +1,5 @@
 ﻿#include "MainWindow.h"
-#include "controller/PropertyCommand.h"
+#include "model/PropertyCommand.h"
 #include "model/JsonHelper.h"
 
 #include <QtCore/QDir>

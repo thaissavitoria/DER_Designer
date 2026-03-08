@@ -26,7 +26,7 @@
 
 #include "DiagramView.h"
 #include "DraggableButton.h"
-#include "controller/DiagramScene.h"
+#include "view/DiagramScene.h"
 #include "model/BasicElement.h"
 #include "model/ConnectionLine.h"
 

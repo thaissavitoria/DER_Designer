@@ -1,7 +1,7 @@
 ﻿#include "ConnectionLine.h"
 #include "ConnectionPoint.h"
 #include "BasicElement.h"
-#include "controller/DiagramScene.h"
+#include "view/DiagramScene.h"
 
 //----------------------------------------------------------------------------------------------
 
