@@ -181,3 +181,10 @@ void Relationship::setIsIdentifying(
 }
 
 //----------------------------------------------------------------------------------------------
+
+QString Relationship::stringElementType() const
+{
+  return m_isIdentifying ? "Relacionamento Identificador" : "Relacionamento";
+}
+
+//----------------------------------------------------------------------------------------------

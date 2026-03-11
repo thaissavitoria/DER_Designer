@@ -62,7 +62,7 @@ void DiagramScene::clearDiagram()
 {
   cancelConnection();
 
-  clearSelection();
+  clearSelection(false/*emitSignals*/);
 
   m_clipboardElements.clear();
   m_clipboardConnections.clear();
@@ -221,20 +221,23 @@ QList<BasicElement*> DiagramScene::getSelectedElements() const
 
 void DiagramScene::selectElement(
   BasicElement* element,
-  bool selected
+  const bool selected,
+  const bool emitSignals
 )
 {
   if (ElementGraphicsItem* item = findGraphicsItem(element)) {
     item->setSelected(selected);
 
-    if (selected) {
-      emit elementSelected(element);
-    }
-    else {
-      emit elementDeselected(element);
-    }
+    if (emitSignals) {
+      if (selected) {
+        emit elementSelected(element);
+      }
+      else {
+        emit elementDeselected(element);
+      }
 
-    emit selectionChanged();
+      emit selectionChanged();
+    }
   }
 }
 
@@ -242,65 +245,42 @@ void DiagramScene::selectElement(
 
 void DiagramScene::selectConnection(
   ConnectionLine* connection,
-  bool selected
+  const bool selected,
+  const bool emitSignals
 )
 {
   auto connectionItem = m_connectionToItem.value(connection, nullptr);
   if (connectionItem) {
     connectionItem->setSelected(selected);
 
-    if (selected) {
-      emit connectionSelected(connection);
-    }
-    else {
-      emit connectionDeselected(connection);
-    }
+    if (emitSignals) {
+      if (selected) {
+        emit connectionSelected(connection);
+      }
+      else {
+        emit connectionDeselected(connection);
+      }
 
-    emit selectionChanged();
+      emit selectionChanged();
+    }
   }
 }
 
 //----------------------------------------------------------------------------------------------
 
-void DiagramScene::selectConnection(
-  const QString& connectionId,
-  bool selected
+void DiagramScene::clearSelection(
+  const bool emitSignals
 )
-{
-  if (auto connection = findConnection(connectionId)) {
-    selectConnection(connection, selected);
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
-void DiagramScene::selectElement(
-  const QString& elementId,
-  bool selected
-)
-{
-  if (BasicElement* element = findElement(elementId)) {
-    selectElement(element, selected);
-  }
-}
-
-// -----------------------------------------------------------------------------------------------------
-
-void DiagramScene::clearSelection()
 {
   QList<BasicElement*> selectedElements = getSelectedElements();
   QSet<ConnectionLine*> selectedConnections = getSelectedConnections();
 
   for (BasicElement* element : selectedElements) {
-    selectElement(element, false);
+    selectElement(element, false /*selected*/, emitSignals);
   }
 
   for (ConnectionLine* connection : selectedConnections) {
-    selectConnection(connection, false);
-  }
-
-  if (!selectedElements.isEmpty() || !selectedConnections.isEmpty()) {
-    emit selectionChanged();
+    selectConnection(connection, false /*selected*/, emitSignals);
   }
 }
 

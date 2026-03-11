@@ -15,7 +15,7 @@ BasicElement::BasicElement(
   , m_type(type)
   , m_position(0, 0)
   , m_size(100, 50)
-  , m_name(elementTypeToString(type))
+  , m_name(stringElementType())
 {
   createAndAddDefaultConnectionPoints();
 }
@@ -239,22 +239,6 @@ void BasicElement::notifyPositionChanged(
 
 //----------------------------------------------------------------------------------------------
 
-QString BasicElement::elementTypeToString(
-  ElementType type
-)
-{
-  switch (type) {
-  case ElementType::Entity:
-    return "Entity";
-  case ElementType::Relationship:
-    return "Relationship";
-  default:
-    return "Unknown";
-  }
-}
-
-//----------------------------------------------------------------------------------------------
-
 void BasicElement::addConnectionPoint(
   ConnectionPoint* connectionPoint
 )
@@ -329,6 +313,13 @@ QList<QString> BasicElement::getAttributeIds() const
 void BasicElement::clearAttributesIds()
 {
   m_attributeIds.clear();
+}
+
+//----------------------------------------------------------------------------------------------
+
+QString BasicElement::stringElementType() const
+{
+  return "Elemento";
 }
 
 //----------------------------------------------------------------------------------------------

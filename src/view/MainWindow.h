@@ -1,45 +1,27 @@
 ﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QList>
-#include <QtCore/QHash>
-#include <QtCore/QPointer>
-#include <QtWidgets/QCheckBox>
-#include <QtWidgets/QComboBox>
-#include <QtWidgets/QGraphicsScene>
-#include <QtWidgets/QGraphicsView>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QLabel>
-#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
-#include <QtWidgets/QMenu>
-#include <QtWidgets/QMenuBar>
-#include <QtWidgets/QScrollArea>
 #include <QtWidgets/QSplitter>
-#include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
-#include <QtWidgets/QTreeWidget>
-#include <QtWidgets/QTreeWidgetItem>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
-#include <QtCore/QTimer>
 
 #include "DiagramView.h"
 #include "DraggableButton.h"
+#include "PropertiesPanel.h"
 #include "view/DiagramScene.h"
+#include "model/DiagramFileManager.h"
+#include "model/AutoSaveManager.h"
 #include "model/BasicElement.h"
 #include "model/ConnectionLine.h"
 
 // -----------------------------------------------------------------------------------------------------
-class Attribute;
 class QAction;
 class QMenu;
 class QMenuBar;
 class QPushButton;
 class QStatusBar;
 // -----------------------------------------------------------------------------------------------------
-
-class PropertiesPanel;
 
 class MainWindow : public QMainWindow
 {
@@ -74,45 +56,11 @@ private slots:
     const QPointF& position
   );
 
-  void onTabChanged(
-    int index
+  void onAddElementClicked(
+    ElementType elementType
   );
-
-  void onTabCloseRequested(
-    int index
-  );
-
-  void onAddEntityClicked();
-
-  void onAddAttributeClicked();
-
-  void onAddRelationshipClicked();
-
-  void onAddWeakEntityClicked();
-
-  void onAddIdentifyingRelationshipClicked();
 
   void onSelectionChanged();
-
-  void onPropertyValueChanged(
-    QTreeWidgetItem* item,
-    int column
-  );
-
-  void onComboBoxChanged(
-    const QString& value
-  );
-
-  void onCheckBoxChanged(
-    bool checked
-  );
-
-  void onLineEditChanged(
-    const QString& text
-  );
-
-  void onAddAttributeOnTreeClicked();
-  void onRemoveAttributeOnTreeClicked();
 
   void onAutoSaveTriggered();
 
@@ -128,9 +76,9 @@ private:
     QMenu* parentMenu
   );
 
-  QPushButton* createPushButton(
-    const QString& text,
-    const QString& iconPath = ""
+  DraggableButton* createDrawingButton(
+    const QString& elementTypeName,
+    ElementType elementType
   );
 
   void createHelpMenu();
@@ -153,141 +101,6 @@ private:
     const QString& message
   );
 
-  void updatePropertiesPanel();
-
-  void clearPropertiesPanel();
-
-  void populatePropertiesForElement(
-    BasicElement* element
-  );
-
-  void populatePropertiesForConnection(
-    ConnectionLine* connection
-  );
-
-  void populateAttributeProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
-  );
-
-  void populateEntityProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
-  );
-
-  void populateRelationshipProperties(
-    BasicElement* element,
-    QTreeWidgetItem* parent
-  );
-
-  QTreeWidgetItem* createPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QVariant& value,
-    const QString& propertyKey,
-    bool editable = true
-  );
-
-  QTreeWidgetItem* createComboBoxPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QStringList& options,
-    const QString& currentValue,
-    const QString& propertyKey
-  );
-
-  QTreeWidgetItem* createIconComboBoxPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QStringList& options,
-    const QList<QIcon>& icons,
-    const QString& currentValue,
-    const QString& propertyKey
-  );
-
-
-  QTreeWidgetItem* createButtonPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QString& buttonText,
-    const QString& propertyKey
-  );
-
-  void updatePropertyItemText(
-    const QString& propertyKey,
-    const QString& value
-  );
-
-  void populateAttributeList(
-    QTreeWidgetItem* parentItem,
-    const QList<Attribute*>& attributes,
-    const QString& propertyPrefix
-  );
-
-  bool handleAttributePropertyChange(
-    BasicElement* element,
-    const QString& propertyType,
-    const QVariant& newValue
-  );
-
-  QList<QIcon> getConnectionLineTypeIcons();
-
-  QTreeWidgetItem* createCheckBoxPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    bool currentValue,
-    const QString& propertyKey
-  );
-
-  bool handleRelationshipEndCardinalityChange(
-    BasicElement* element,
-    const QString& propertyKey,
-    const QString& value
-  );
-
-  bool handleRelationshipEndParticipationChange(
-    BasicElement* element,
-    const QString& propertyKey,
-    bool value
-  );
-
-  QTreeWidgetItem* createLineEditPropertyItem(
-    QTreeWidgetItem* parent,
-    const QString& propertyName,
-    const QString& currentValue,
-    const QString& propertyKey
-  );
-
-  void ConnectBasicElementsWithConnectionLine(
-    BasicElement* startElement,
-    BasicElement* endElement
-  );
-
-  bool loadDiagramElements(
-    const QJsonObject& diagramData
-  );
-
-  BasicElement* createElementByType(
-    ElementType elementType
-  );
-
-  bool loadDiagramConnections(
-    const QJsonArray& connectionsArray,
-    const QHash<QString, BasicElement*>& loadedElements
-  );
-
-  QList<Attribute*> getAttributesFromIds(
-    const QList<QString>& attributeIds
-  );
-
-  void updatesAfterChangingProperty(
-    BasicElement* element
-  );
-
-  void updateElementGraphicsItem(
-    BasicElement* element
-  );
-
   QWidget* m_centralWidget;
   QHBoxLayout* m_mainLayout;
   QSplitter* m_mainSplitter;
@@ -305,7 +118,7 @@ private:
   QLabel* m_drawingLabel;
 
   QVBoxLayout* m_propertiesLayout;
-  QTreeWidget* m_propertiesTree;
+  PropertiesPanel* m_propertiesPanel;
 
   QMenuBar* m_menuBar;
   QMenu* m_fileMenu;
@@ -314,22 +127,12 @@ private:
   QStatusBar* m_statusBar;
   QLabel* m_statusLabel;
 
-  QString m_currentFileName;
   bool m_isModified;
 
-  std::map<QString, QWidget*> m_propertyWidgets;
-
-  QTimer* m_autoSaveTimer;
-  bool m_autoSaveEnabled;
-  int m_autoSaveInterval;
-  QString m_autoSaveDirectory;
+  AutoSaveManager* m_autoSaveManager;
+  DiagramFileManager* m_fileManager;
 
   void setupAutoSave();
-  void startAutoSave();
-  void stopAutoSave();
-  QString generateAutoSaveFileName() const;
-  bool saveToMainFile();
-  bool saveVersionBackup();
 };
 
 #endif // MAINWINDOW_H

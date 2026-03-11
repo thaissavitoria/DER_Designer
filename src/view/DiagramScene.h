@@ -97,25 +97,20 @@ public:
 
   void selectElement(
     BasicElement* element,
-    bool selected = true
-  );
-
-  void selectElement(
-    const QString& elementId,
-    bool selected = true
+    const bool selected = true,
+    const bool emitSignals = true
   );
 
   void selectConnection(
     ConnectionLine* connection,
-    bool selected = true
+    const bool selected = true,
+    const bool emitSignals = true
   );
 
-  void selectConnection(
-    const QString& connectionId,
-    bool selected = true
+  void clearSelection(
+    const bool emitSignals = true
   );
 
-  void clearSelection();
   void selectAll();
 
   void deleteSelected();
