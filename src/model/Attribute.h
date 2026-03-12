@@ -74,6 +74,8 @@ public:
     const QVariantMap& data
   ) override;
 
+  QString stringElementType() const override;
+
 private:
   AttributeType::Type m_attributeType;
   bool m_isPrimaryKey;

@@ -154,9 +154,7 @@ public:
   virtual std::unique_ptr<BasicElement> clone() const = 0;
   virtual QString typeDisplayName() const = 0;
 
-  static QString elementTypeToString(
-    ElementType type
-  );
+  virtual QString stringElementType() const;
 
   void addAttributeId(
     const QString& attributeId

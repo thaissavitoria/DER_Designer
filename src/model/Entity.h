@@ -57,6 +57,8 @@ public:
     const QVariantMap& data
   );
 
+  QString stringElementType() const override;
+
 private:
   bool m_isWeakEntity = false;
 };

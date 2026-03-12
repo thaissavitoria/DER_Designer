@@ -77,6 +77,8 @@ public:
     const QVariantMap& data
   ) override;
 
+  QString stringElementType() const override;
+
 private:
   bool m_isIdentifying;
   QList<RelationshipEnd*> m_ends;

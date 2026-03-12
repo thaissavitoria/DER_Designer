@@ -277,12 +277,16 @@ ConnectionLineType ConnectionLine::lineTypeFromString(
 void ConnectionLine::connectToPoints()
 {
   if (m_startPoint) {
-    if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())){
+    if (auto startElement = qobject_cast<BasicElement*>(m_startPoint->parent())) {
       connect(startElement, &BasicElement::positionChanged,
         this, &ConnectionLine::onElementPositionChanged);
     }
     connect(m_startPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
+
+    connect(m_startPoint, &QObject::destroyed, this, [this]() {
+      m_startPoint = nullptr;
+      });
   }
 
   if (m_endPoint) {
@@ -292,6 +296,10 @@ void ConnectionLine::connectToPoints()
     }
     connect(m_endPoint, &ConnectionPoint::relativePositionChanged,
       this, &ConnectionLine::onConnectionPointChanged);
+
+    connect(m_endPoint, &QObject::destroyed, this, [this]() {
+      m_endPoint = nullptr;
+      });
   }
 }
 
@@ -317,7 +325,6 @@ void ConnectionLine::disconnectFromPoints()
       this, &ConnectionLine::onConnectionPointChanged);
   }
 }
-
 //----------------------------------------------------------------------------------------------
 
 void ConnectionLine::onElementPositionChanged()
