@@ -1030,7 +1030,7 @@ void PropertiesPanel::connectBasicElementsWithConnectionLine(
   auto startPoint = startElement->connectionPoints()[2];
   auto endPoint = endElement->connectionPoints()[3];
 
-  auto connection = new ConnectionLine(startPoint, endPoint);
+  auto connection = new ConnectionLine(startPoint, endPoint, this);
   m_scene->addConnection(connection);
 }
 

@@ -66,33 +66,9 @@ void DiagramScene::clearDiagram()
 
   m_clipboardElements.clear();
   m_clipboardConnections.clear();
-
-  for (auto it = m_connectionToItem.begin(); it != m_connectionToItem.end(); ++it) {
-    if (ConnectionGraphicsItem* item = it.value()) {
-      removeItem(item);
-      delete item;
-    }
-  }
-
   m_connectionToItem.clear();
-
-  for (auto it = m_connections.begin(); it != m_connections.end(); ++it) {
-    removeConnection(it.value());
-  }
-  m_connections.clear();
-
-  for (auto it = m_elementToItem.begin(); it != m_elementToItem.end(); ++it) {
-    if (ElementGraphicsItem* item = it.value()) {
-      removeItem(item);
-      delete item;
-    }
-  }
-
   m_elementToItem.clear();
-
-  for (auto it = m_elements.begin(); it != m_elements.end(); ++it) {
-    removeElement(it.value());
-  }
+  m_connections.clear();
   m_elements.clear();
 
   destroySelectionRect();

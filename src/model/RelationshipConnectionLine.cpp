@@ -217,6 +217,9 @@ void RelationshipConnectionLine::connectToRelationshipEnd()
       this, &RelationshipConnectionLine::onRelationshipEndChanged);
     connect(m_relationshipEnd, &RelationshipEnd::customCardinalityTextChanged,
       this, &RelationshipConnectionLine::onRelationshipEndChanged);
+    connect(m_relationshipEnd, &QObject::destroyed, this, [this]() {
+      m_relationshipEnd = nullptr;
+    });
   }
 }
 

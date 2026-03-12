@@ -250,7 +250,7 @@ bool DiagramSerializer::loadConnections(
             startPoint,
             endPoint,
             relationshipEnd,
-            nullptr
+            scene
           );
 
           QVariantMap connectionData = connectionJson.toVariantMap();
@@ -260,7 +260,7 @@ bool DiagramSerializer::loadConnections(
       }
     }
     else {
-      auto connection = new ConnectionLine(startPoint, endPoint);
+      auto connection = new ConnectionLine(startPoint, endPoint, scene);
 
       QVariantMap connectionData = connectionJson.toVariantMap();
       connection->deserialize(connectionData);
