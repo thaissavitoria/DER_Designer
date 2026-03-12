@@ -1,74 +1,41 @@
-name: Build Windows
+name: Windows Build
 
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-  workflow_dispatch:
 
 jobs:
   build-windows:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@v4
 
-      - name: Install Qt via aqt (mirror estavel)
-        shell: pwsh
-        run: |
-          pip install aqtinstall
-          python -m aqt install-qt windows desktop 6.9.3 win64_msvc2022_64 `
-            --base https://ftp.fau.de/qtproject `
-            --outputdir D:\Qt
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v4
+      with:
+        version: '6.9.3'
+        host: windows
+        target: desktop
+        arch: win64_msvc2022_64
 
-      - name: Set Qt environment
-        shell: pwsh
-        run: |
-          echo "D:\Qt\6.9.3\msvc2022_64\bin" >> $env:GITHUB_PATH
-          echo "Qt6_DIR=D:\Qt\6.9.3\msvc2022_64\lib\cmake\Qt6" >> $env:GITHUB_ENV
-          echo "CMAKE_PREFIX_PATH=D:\Qt\6.9.3\msvc2022_64" >> $env:GITHUB_ENV
+    - name: Configure CMake
+      run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
 
-      - name: Configure and build with script
-        shell: cmd
-        run: build.bat
+    - name: Build
+      run: cmake --build build --config Release
 
-      - name: Deploy Qt dependencies
-        shell: pwsh
-        run: |
-          $exePath = "build/Release/DERDesigner.exe"
-          if (!(Test-Path $exePath)) {
-            throw "Executavel nao encontrado em $exePath"
-          }
+    - name: Deploy Qt dependencies
+      run: |
+        mkdir package
+        copy build\Release\DERDesigner.exe package\
+        windeployqt --release package\DERDesigner.exe
 
-          $windeployqt = (Get-Command windeployqt -ErrorAction Stop).Source
-          & $windeployqt --release --compiler-runtime $exePath
-
-      - name: Package Windows artifact
-        shell: pwsh
-        run: |
-          $releaseDir = "build/Release"
-          $packageDir = "package-windows"
-
-          New-Item -ItemType Directory -Path $packageDir -Force | Out-Null
-          Copy-Item "$releaseDir/DERDesigner.exe" "$packageDir/" -Force
-
-          Get-ChildItem $releaseDir -Filter "*.dll" | ForEach-Object {
-            Copy-Item $_.FullName "$packageDir/" -Force
-          }
-
-          foreach ($dir in @("platforms", "styles", "imageformats", "iconengines", "translations")) {
-            if (Test-Path "$releaseDir/$dir") {
-              Copy-Item "$releaseDir/$dir" "$packageDir/$dir" -Recurse -Force
-            }
-          }
-
-          Compress-Archive -Path "$packageDir/*" -DestinationPath "DERDesigner-windows.zip" -Force
-
-      - name: Upload Windows artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: DERDesigner-windows
-          path: DERDesigner-windows.zip
-          if-no-files-found: error
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: DERDesigner-windows
+        path: package\
