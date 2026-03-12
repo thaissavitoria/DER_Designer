@@ -1,6 +1,13 @@
 name: Windows Build
 
 on:
+  workflow_call:
+    inputs:
+      package_zip:
+        description: "Create a ZIP package for release"
+        required: false
+        type: boolean
+        default: false
   push:
     branches: ["main"]
   pull_request:
@@ -34,8 +41,12 @@ jobs:
         copy build\Release\DERDesigner.exe package\
         windeployqt --release package\DERDesigner.exe
 
+    - name: Zip package
+      if: ${{ inputs.package_zip }}
+      run: Compress-Archive -Path package\* -DestinationPath DERDesigner-windows.zip
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
         name: DERDesigner-windows
-        path: package\
+        path: ${{ inputs.package_zip && 'DERDesigner-windows.zip' || 'package\\' }}
