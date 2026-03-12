@@ -1,0 +1,243 @@
+\doxysection{Diagram\+Serializer Class Reference}
+\hypertarget{class_diagram_serializer}{}\label{class_diagram_serializer}\index{DiagramSerializer@{DiagramSerializer}}
+
+
+Handles JSON serialization and deserialization of diagram elements.  
+
+
+
+
+{\ttfamily \#include $<$Diagram\+Serializer.\+h$>$}
+
+
+
+Collaboration diagram for Diagram\+Serializer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_diagram_serializer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QJson\+Object \mbox{\hyperlink{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e}{element\+To\+Json\+Object}} (const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+static QJson\+Object \mbox{\hyperlink{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff}{connection\+To\+Json\+Object}} (const \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}connection)
+\item 
+static QJson\+Object \mbox{\hyperlink{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608}{diagram\+To\+Json\+Object}} (const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&elements, const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&connections)
+\item 
+static bool \mbox{\hyperlink{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770}{save\+Diagram\+To\+File}} (const QString \&file\+Path, const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&elements, const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&connections)
+\item 
+static bool \mbox{\hyperlink{class_diagram_serializer_aa431be8e31fb618e3db3bf2c84988b5c}{load\+Diagram\+From\+File}} (const QString \&file\+Path, QJson\+Object \&diagram\+Data)
+\item 
+static bool \mbox{\hyperlink{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8}{load\+Diagram}} (const QJson\+Object \&diagram\+Data, \mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}scene)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diagram_serializer_a94cad7ecef475d3796e7c0cfea19e15a}{Diagram\+Serializer}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1}{load\+Elements}} (const QJson\+Array \&elements\+Array, \mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}scene, QHash$<$ QString, \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&loaded\+Elements)
+\item 
+static bool \mbox{\hyperlink{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb}{load\+Connections}} (const QJson\+Array \&connections\+Array, const QHash$<$ QString, \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&loaded\+Elements, \mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}scene)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles JSON serialization and deserialization of diagram elements. 
+
+Provides static utility methods to convert elements and connections to/from JSON, as well as saving and loading diagrams from files. 
+
+\label{doc-constructors}
+\Hypertarget{class_diagram_serializer_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_diagram_serializer_a94cad7ecef475d3796e7c0cfea19e15a}\index{DiagramSerializer@{DiagramSerializer}!DiagramSerializer@{DiagramSerializer}}
+\index{DiagramSerializer@{DiagramSerializer}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{DiagramSerializer()}{DiagramSerializer()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_a94cad7ecef475d3796e7c0cfea19e15a} 
+Diagram\+Serializer\+::\+Diagram\+Serializer (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_diagram_serializer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff}\index{DiagramSerializer@{DiagramSerializer}!connectionToJsonObject@{connectionToJsonObject}}
+\index{connectionToJsonObject@{connectionToJsonObject}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{connectionToJsonObject()}{connectionToJsonObject()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff} 
+QJson\+Object Diagram\+Serializer\+::connection\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608}\index{DiagramSerializer@{DiagramSerializer}!diagramToJsonObject@{diagramToJsonObject}}
+\index{diagramToJsonObject@{diagramToJsonObject}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{diagramToJsonObject()}{diagramToJsonObject()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608} 
+QJson\+Object Diagram\+Serializer\+::diagram\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{elements}{, }\item[{const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{connections}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e}\index{DiagramSerializer@{DiagramSerializer}!elementToJsonObject@{elementToJsonObject}}
+\index{elementToJsonObject@{elementToJsonObject}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{elementToJsonObject()}{elementToJsonObject()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e} 
+QJson\+Object Diagram\+Serializer\+::element\+To\+Json\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb}\index{DiagramSerializer@{DiagramSerializer}!loadConnections@{loadConnections}}
+\index{loadConnections@{loadConnections}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{loadConnections()}{loadConnections()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb} 
+bool Diagram\+Serializer\+::load\+Connections (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{connections\+Array}{, }\item[{const QHash$<$ QString, \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{loaded\+Elements}{, }\item[{\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8}\index{DiagramSerializer@{DiagramSerializer}!loadDiagram@{loadDiagram}}
+\index{loadDiagram@{loadDiagram}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{loadDiagram()}{loadDiagram()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8} 
+bool Diagram\+Serializer\+::load\+Diagram (\begin{DoxyParamCaption}\item[{const QJson\+Object \&}]{diagram\+Data}{, }\item[{\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_aa431be8e31fb618e3db3bf2c84988b5c}\index{DiagramSerializer@{DiagramSerializer}!loadDiagramFromFile@{loadDiagramFromFile}}
+\index{loadDiagramFromFile@{loadDiagramFromFile}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{loadDiagramFromFile()}{loadDiagramFromFile()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_aa431be8e31fb618e3db3bf2c84988b5c} 
+bool Diagram\+Serializer\+::load\+Diagram\+From\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path}{, }\item[{QJson\+Object \&}]{diagram\+Data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_diagram_serializer_aa431be8e31fb618e3db3bf2c84988b5c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1}\index{DiagramSerializer@{DiagramSerializer}!loadElements@{loadElements}}
+\index{loadElements@{loadElements}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{loadElements()}{loadElements()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1} 
+bool Diagram\+Serializer\+::load\+Elements (\begin{DoxyParamCaption}\item[{const QJson\+Array \&}]{elements\+Array}{, }\item[{\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{QHash$<$ QString, \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{loaded\+Elements}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770}\index{DiagramSerializer@{DiagramSerializer}!saveDiagramToFile@{saveDiagramToFile}}
+\index{saveDiagramToFile@{saveDiagramToFile}!DiagramSerializer@{DiagramSerializer}}
+\doxysubsubsection{\texorpdfstring{saveDiagramToFile()}{saveDiagramToFile()}}
+{\footnotesize\ttfamily \label{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770} 
+bool Diagram\+Serializer\+::save\+Diagram\+To\+File (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path}{, }\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{elements}{, }\item[{const QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{connections}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_diagram_serializer_8h}{Diagram\+Serializer.\+h}}\item 
+src/model/\mbox{\hyperlink{_diagram_serializer_8cpp}{Diagram\+Serializer.\+cpp}}\end{DoxyCompactItemize}

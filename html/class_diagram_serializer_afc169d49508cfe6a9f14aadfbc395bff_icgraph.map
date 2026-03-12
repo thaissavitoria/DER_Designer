@@ -1,0 +1,11 @@
+<map id="DiagramSerializer::connectionToJsonObject" name="DiagramSerializer::connectionToJsonObject">
+<area shape="rect" id="Node000001" title=" " alt="" coords="642,27,807,69"/>
+<area shape="rect" id="Node000002" href="$class_diagram_serializer.html#a957a2a2f28fe9d1d257ff01154872608" title=" " alt="" coords="447,27,594,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="624,48,595,51,594,45,629,48"/>
+<area shape="rect" id="Node000003" href="$class_diagram_serializer.html#af41f90138bda3c05cb4a37c709682770" title=" " alt="" coords="266,27,399,69"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="429,48,400,51,400,45,434,48"/>
+<area shape="rect" id="Node000004" href="$class_auto_save_manager.html#a23c137dda32115b244ed8422369cc2e0" title=" " alt="" coords="5,5,218,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,37,217,35,217,30,253,37"/>
+<area shape="rect" id="Node000005" href="$class_diagram_file_manager.html#a84a364087a0eecd1c416b05615fe1f0b" title=" " alt="" coords="41,56,182,99"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="248,59,183,71,182,65,253,58"/>
+</map>

@@ -1,5 +1,5 @@
 <map id="BasicElement" name="BasicElement">
-<area shape="rect" id="Node000001" title="Abstract base class for all ERD elements (Model only)." alt="" coords="5,123,168,704"/>
+<area shape="rect" id="Node000001" title="Abstract base class for all ERD elements (Model only)." alt="" coords="5,123,168,683"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="58,5,116,75"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,87,89,123,84,123,87,92"/>
 </map>

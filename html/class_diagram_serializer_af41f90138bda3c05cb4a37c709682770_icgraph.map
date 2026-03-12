@@ -1,0 +1,7 @@
+<map id="DiagramSerializer::saveDiagramToFile" name="DiagramSerializer::saveDiagramToFile">
+<area shape="rect" id="Node000001" title=" " alt="" coords="266,27,399,69"/>
+<area shape="rect" id="Node000002" href="$class_auto_save_manager.html#a23c137dda32115b244ed8422369cc2e0" title=" " alt="" coords="5,5,218,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,37,217,35,217,30,253,37"/>
+<area shape="rect" id="Node000003" href="$class_diagram_file_manager.html#a84a364087a0eecd1c416b05615fe1f0b" title=" " alt="" coords="41,56,182,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="248,59,183,71,182,65,253,58"/>
+</map>

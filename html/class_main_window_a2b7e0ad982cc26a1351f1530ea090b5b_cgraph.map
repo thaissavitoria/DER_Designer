@@ -1,0 +1,11 @@
+<map id="MainWindow::createDrawingButton" name="MainWindow::createDrawingButton">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,48,194,91"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a618482f2eb3e3a2eb8c5937f6374c79a" title=" " alt="" coords="242,48,431,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,67,229,69,224,70,194,72"/>
+<area shape="rect" id="Node000003" href="$class_element_factory.html#a84bb24abdffea9682c5c007bc7792927" title=" " alt="" coords="479,5,684,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,47,501,35,496,36,432,52"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a51ab21a1be4a1389a00bdb35feee8d64" title=" " alt="" coords="481,56,682,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="431,67,468,69,463,70,432,72"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a90cfbcf2e0f2549760a60f184ee0acbf" title=" " alt="" coords="486,107,677,149"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="429,89,477,103,472,102,428,94"/>
+</map>

@@ -141,7 +141,7 @@ var sectionId = 'dynsection-37';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_diagram_scene.html#a2b55d6646f19908d66e5c5eda455744e" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_diagram_scene.html#ac7268f1b5870d5c67f54057e6638bcec" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="378.5,-174 216.25,-174 216.25,-154 378.5,-154 378.5,-174"/>
 <text xml:space="preserve" text-anchor="middle" x="297.38" y="-160.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiagramScene::selectConnection</text>
 </a>
@@ -159,7 +159,7 @@ var sectionId = 'dynsection-37';
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_diagram_scene.html#adffd7c14eb320f4e260f6fed731c1809" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_diagram_scene.html#aa7d8cdf9568c51ab910df9d5630093b7" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="371.75,-114 223,-114 223,-94 371.75,-94 371.75,-114"/>
 <text xml:space="preserve" text-anchor="middle" x="297.38" y="-100.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiagramScene::selectElement</text>
 </a>

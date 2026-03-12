@@ -1,0 +1,25 @@
+<map id="AutoSaveManager::executeSave" name="AutoSaveManager::executeSave">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,80,218,107"/>
+<area shape="rect" id="Node000002" href="$class_auto_save_manager.html#a347aa8569b3722cdff6e6534dc85c0fe" title=" " alt="" coords="266,5,452,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,77,264,51,260,54,165,82"/>
+<area shape="rect" id="Node000003" href="$class_auto_save_manager.html#ae2c258d4bd9d41f4b3cafd1d0fbf89f6" title=" " alt="" coords="266,72,452,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,91,253,93,248,94,219,96"/>
+<area shape="rect" id="Node000004" href="$class_diagram_serializer.html#af41f90138bda3c05cb4a37c709682770" title=" " alt="" coords="292,139,426,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="164,105,280,137,275,139,164,110"/>
+<area shape="rect" id="Node000005" href="$class_diagram_serializer.html#a957a2a2f28fe9d1d257ff01154872608" title=" " alt="" coords="500,139,647,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="426,157,487,160,481,160,426,163"/>
+<area shape="rect" id="Node000006" href="$class_diagram_serializer.html#afc169d49508cfe6a9f14aadfbc395bff" title=" " alt="" coords="695,105,860,148"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="647,145,677,143,682,142,648,151"/>
+<area shape="rect" id="Node000011" href="$class_diagram_serializer.html#aebb8ae92fc17cafe0b0d08f92073661e" title=" " alt="" coords="704,172,851,215"/>
+<area shape="poly" id="edge10_Node000005_Node000011" title=" " alt="" coords="648,169,691,179,686,179,647,175"/>
+<area shape="rect" id="Node000007" href="$class_connection_line.html#a89b03bf381274e4504b1cde0f32972ee" title=" " alt="" coords="908,113,1075,140"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="860,124,895,127,889,127,860,129"/>
+<area shape="rect" id="Node000008" href="$class_connection_line.html#ab11952b505976244aabc575e0ec7b118" title=" " alt="" coords="1123,55,1331,81"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1046,110,1122,91,1151,86,1157,85,1124,96,1047,115"/>
+<area shape="rect" id="Node000009" href="$class_connection_line.html#ad957be37b7bbb9250366225fd357a5a6" title=" " alt="" coords="1144,105,1310,148"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="1075,124,1131,127,1126,127,1076,129"/>
+<area shape="rect" id="Node000010" href="$class_connection_line.html#aacfed243a999c948c87dab84ebc508aa" title=" " alt="" coords="1140,172,1314,199"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="1047,138,1124,157,1157,168,1151,168,1122,163,1046,143"/>
+<area shape="rect" id="Node000012" href="$class_basic_element.html#a56f5f9a22723d2a99d87c7508b0bec7f" title=" " alt="" coords="912,180,1070,207"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="851,191,899,193,894,193,852,196"/>
+</map>

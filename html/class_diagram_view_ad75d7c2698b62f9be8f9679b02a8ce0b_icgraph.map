@@ -1,0 +1,7 @@
+<map id="DiagramView::setZoomLevel" name="DiagramView::setZoomLevel">
+<area shape="rect" id="Node000001" title=" " alt="" coords="459,5,648,32"/>
+<area shape="rect" id="Node000002" href="$class_diagram_view.html#a2c1647bef1cfb2c5b5f45af153e5dafa" title=" " alt="" coords="250,5,411,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="441,19,411,21,411,16,446,19"/>
+<area shape="rect" id="Node000003" href="$class_diagram_view.html#a68669e887e54f7d24dd528dd78744745" title=" " alt="" coords="5,5,202,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="231,19,202,21,202,16,237,19"/>
+</map>

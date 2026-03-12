@@ -1,8 +1,8 @@
 <map id="ConnectionPoint::ConnectionPoint" name="ConnectionPoint::ConnectionPoint">
 <area shape="rect" id="Node000001" title=" " alt="" coords="1457,249,1649,292"/>
-<area shape="rect" id="Node000002" href="$class_connection_point.html#a0bca0b4cf605278cb17d8052dc027932" title=" " alt="" coords="1197,249,1409,292"/>
+<area shape="rect" id="Node000002" href="$class_connection_point.html#a7b8c2910eb504959c4211764a9abc2e8" title=" " alt="" coords="1197,249,1409,292"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1439,271,1410,273,1409,268,1444,270"/>
-<area shape="rect" id="Node000003" href="$class_connection_point.html#a828996f0bb02e9154b5d3af03f1734b8" title=" " alt="" coords="946,249,1149,292"/>
+<area shape="rect" id="Node000003" href="$class_connection_point.html#af57583f18ef35d9b3eafa83665e7ebe4" title=" " alt="" coords="946,249,1149,292"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1179,271,1150,273,1149,268,1184,270"/>
 <area shape="rect" id="Node000004" href="$class_basic_element.html#a78e2ce29aa5b2a9fae74cf435996ce8b" title=" " alt="" coords="705,249,898,292"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="928,271,898,273,897,268,933,270"/>

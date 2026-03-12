@@ -59,38 +59,40 @@ var sectionId = 'dynsection-1';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Represents an entity element in an ERD diagram.">
-<polygon fill="#999999" stroke="none" points="112.12,-228 10.12,-228 10.12,0 112.12,0 112.12,-228"/>
-<text xml:space="preserve" text-anchor="start" x="48.38" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity</text>
-<text xml:space="preserve" text-anchor="start" x="15.62" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_isWeakEntity</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">~Entity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">minimumSize()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">preferredSize()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">clone()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">typeDisplayName()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">isWeakEntity()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">serialize()</text>
-<text xml:space="preserve" text-anchor="start" x="14.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="24.12" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">deserialize()</text>
-<polygon fill="#666666" stroke="#666666" points="10.12,-210 10.12,-210 112.12,-210 112.12,-210 10.12,-210"/>
-<polygon fill="#666666" stroke="#666666" points="10.12,-194 10.12,-194 22.12,-194 22.12,-194 10.12,-194"/>
-<polygon fill="#666666" stroke="#666666" points="22.12,-194 22.12,-194 112.12,-194 112.12,-194 22.12,-194"/>
-<polygon fill="none" stroke="#666666" points="10.12,0 10.12,-228 112.12,-228 112.12,0 10.12,0"/>
+<polygon fill="#999999" stroke="none" points="113.62,-244 8.62,-244 8.62,0 113.62,0 113.62,-244"/>
+<text xml:space="preserve" text-anchor="start" x="48.38" y="-230.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity</text>
+<text xml:space="preserve" text-anchor="start" x="14.12" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-214.5" font-family="Helvetica,sans-Serif" font-size="10.00">m_isWeakEntity</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">Entity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-134.5" font-family="Helvetica,sans-Serif" font-size="10.00">~Entity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">minimumSize()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-102.5" font-family="Helvetica,sans-Serif" font-size="10.00">preferredSize()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-86.5" font-family="Helvetica,sans-Serif" font-size="10.00">clone()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">typeDisplayName()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-54.5" font-family="Helvetica,sans-Serif" font-size="10.00">isWeakEntity()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">serialize()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-22.5" font-family="Helvetica,sans-Serif" font-size="10.00">deserialize()</text>
+<text xml:space="preserve" text-anchor="start" x="12.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
+<text xml:space="preserve" text-anchor="start" x="22.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">stringElementType()</text>
+<polygon fill="#666666" stroke="#666666" points="8.62,-226 8.62,-226 113.62,-226 113.62,-226 8.62,-226"/>
+<polygon fill="#666666" stroke="#666666" points="8.62,-210 8.62,-210 20.62,-210 20.62,-210 8.62,-210"/>
+<polygon fill="#666666" stroke="#666666" points="20.62,-210 20.62,-210 113.62,-210 113.62,-210 20.62,-210"/>
+<polygon fill="none" stroke="#666666" points="8.62,0 8.62,-244 113.62,-244 113.62,0 8.62,0"/>
 </a>
 </g>
 </g>
@@ -98,7 +100,7 @@ var sectionId = 'dynsection-1';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="class_basic_element.html" target="_top" xlink:title="Abstract base class for all ERD elements (Model only).">
-<polygon fill="white" stroke="none" points="122.25,-700 0,-700 0,-264 122.25,-264 122.25,-700"/>
+<polygon fill="white" stroke="none" points="122.25,-700 0,-700 0,-280 122.25,-280 122.25,-700"/>
 <text xml:space="preserve" text-anchor="start" x="30.75" y="-686.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement</text>
 <text xml:space="preserve" text-anchor="start" x="4" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="14" y="-670.5" font-family="Helvetica,sans-Serif" font-size="10.00">id</text>
@@ -144,17 +146,15 @@ var sectionId = 'dynsection-1';
 <text xml:space="preserve" text-anchor="start" x="14" y="-350.5" font-family="Helvetica,sans-Serif" font-size="10.00">boundingRect()</text>
 <text xml:space="preserve" text-anchor="start" x="4" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text xml:space="preserve" text-anchor="start" x="14" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">connectionPoints()</text>
-<text xml:space="preserve" text-anchor="start" x="14" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 23 more...</text>
-<text xml:space="preserve" text-anchor="start" x="4" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
-<text xml:space="preserve" text-anchor="start" x="14" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">elementTypeToString()</text>
+<text xml:space="preserve" text-anchor="start" x="14" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 24 more...</text>
+<text xml:space="preserve" text-anchor="start" x="4.38" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
+<text xml:space="preserve" text-anchor="start" x="14" y="-302.5" font-family="Helvetica,sans-Serif" font-size="10.00">notifyObservers()</text>
 <text xml:space="preserve" text-anchor="start" x="4.38" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text xml:space="preserve" text-anchor="start" x="14" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">notifyObservers()</text>
-<text xml:space="preserve" text-anchor="start" x="4.38" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">#</text>
-<text xml:space="preserve" text-anchor="start" x="14" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">notifyPositionChanged()</text>
+<text xml:space="preserve" text-anchor="start" x="14" y="-286.5" font-family="Helvetica,sans-Serif" font-size="10.00">notifyPositionChanged()</text>
 <polygon fill="#666666" stroke="#666666" points="0,-682 0,-682 122.25,-682 122.25,-682 0,-682"/>
 <polygon fill="#666666" stroke="#666666" points="0,-490 0,-490 12,-490 12,-490 0,-490"/>
 <polygon fill="#666666" stroke="#666666" points="12,-490 12,-490 122.25,-490 122.25,-490 12,-490"/>
-<polygon fill="none" stroke="#666666" points="0,-264 0,-700 122.25,-700 122.25,-264 0,-264"/>
+<polygon fill="none" stroke="#666666" points="0,-280 0,-700 122.25,-700 122.25,-280 0,-280"/>
 </a>
 </g>
 </g>
@@ -162,8 +162,8 @@ var sectionId = 'dynsection-1';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node2&#45;&gt;Node1</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M61.12,-252.79C61.12,-244.21 61.12,-235.78 61.12,-227.57"/>
-<polygon fill="none" stroke="#63b8ff" points="57.63,-252.62 61.13,-262.62 64.63,-252.62 57.63,-252.62"/>
+<path fill="none" stroke="#63b8ff" d="M61.12,-268.84C61.12,-260.34 61.12,-251.95 61.12,-243.75"/>
+<polygon fill="none" stroke="#63b8ff" points="57.63,-268.56 61.13,-278.56 64.63,-268.56 57.63,-268.56"/>
 </a>
 </g>
 </g>
@@ -185,8 +185,8 @@ var sectionId = 'dynsection-1';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node3&#45;&gt;Node2</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M61.12,-724.93C61.12,-717.39 61.12,-708.94 61.12,-699.83"/>
-<polygon fill="none" stroke="#63b8ff" points="57.63,-724.82 61.13,-734.82 64.63,-724.82 57.63,-724.82"/>
+<path fill="none" stroke="#63b8ff" d="M61.12,-724.75C61.12,-717.27 61.12,-708.9 61.12,-699.9"/>
+<polygon fill="none" stroke="#63b8ff" points="57.63,-724.57 61.13,-734.57 64.63,-724.57 57.63,-724.57"/>
 </a>
 </g>
 </g>

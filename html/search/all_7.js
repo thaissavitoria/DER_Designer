@@ -2,10 +2,10 @@ var searchData=
 [
   ['handleattributeconnection_0',['handleAttributeConnection',['../class_diagram_scene.html#a355fffd036fbfb751f2d9ada2b9eacf5',1,'DiagramScene']]],
   ['handleattributedisconnection_1',['handleAttributeDisconnection',['../class_diagram_scene.html#af24fc3dc11041bb31e4f0627f0a09e75',1,'DiagramScene']]],
-  ['handleattributepropertychange_2',['handleAttributePropertyChange',['../class_main_window.html#a9ed390421f6755b891cfc651d173db7b',1,'MainWindow']]],
+  ['handleattributepropertychange_2',['handleAttributePropertyChange',['../class_properties_panel.html#a74d22cd1ca119cda9cc4ca00b853e88d',1,'PropertiesPanel']]],
   ['handlerelationshipdisconnection_3',['handleRelationshipDisconnection',['../class_diagram_scene.html#a244ffcbacfc985e542579c0e112cfd52',1,'DiagramScene']]],
-  ['handlerelationshipendcardinalitychange_4',['handleRelationshipEndCardinalityChange',['../class_main_window.html#aa69c4b7c558b2fb3922adf75af48330a',1,'MainWindow']]],
-  ['handlerelationshipendparticipationchange_5',['handleRelationshipEndParticipationChange',['../class_main_window.html#a96d575a529f7c24b1b5094b4b1e42742',1,'MainWindow']]],
+  ['handlerelationshipendcardinalitychange_4',['handleRelationshipEndCardinalityChange',['../class_properties_panel.html#aa82a2245c62f66554f277c64e643252c',1,'PropertiesPanel']]],
+  ['handlerelationshipendparticipationchange_5',['handleRelationshipEndParticipationChange',['../class_properties_panel.html#ac2741a5b2cb859b07534b8f7c786359b',1,'PropertiesPanel']]],
   ['hascustomcontrolpoints_6',['hasCustomControlPoints',['../class_connection_line.html#a49272dd3b8eaa41b367344449e973266',1,'ConnectionLine']]],
   ['hoveredconnectionpoint_7',['hoveredConnectionPoint',['../class_element_graphics_item.html#a072b72f86f836cd7ac5677bf258fc136',1,'ElementGraphicsItem']]],
   ['hoverenterevent_8',['hoverEnterEvent',['../class_bezier_control_point.html#a3601adf334b87dd29547ecbf811a7c2c',1,'BezierControlPoint::hoverEnterEvent()'],['../class_connection_graphics_item.html#a6ebcea5bba8dcae648979ac7d0679290',1,'ConnectionGraphicsItem::hoverEnterEvent()'],['../class_element_graphics_item.html#acb0b801fcece8d5458fcb800b98fffa1',1,'ElementGraphicsItem::hoverEnterEvent()']]],

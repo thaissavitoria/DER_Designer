@@ -1,0 +1,9 @@
+<map id="DiagramSerializer::loadElements" name="DiagramSerializer::loadElements">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,138,65"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#ab3f76238d2c252f2918047140d87dd23" title=" " alt="" coords="196,5,380,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,34,183,31,178,32,139,39"/>
+<area shape="rect" id="Node000004" href="$class_element_factory.html#a84bb24abdffea9682c5c007bc7792927" title=" " alt="" coords="186,56,391,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,49,173,55,168,56,138,54"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#ad97223f92ae9cce97857ac5c45c1a3b6" title=" " alt="" coords="439,5,637,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,16,426,18,421,19,381,21"/>
+</map>

@@ -49,7 +49,7 @@
 <script type="application/ecmascript">
 var viewWidth = 532;
 var viewHeight = 28;
-var sectionId = 'dynsection-67';
+var sectionId = 'dynsection-29';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -67,9 +67,9 @@ var sectionId = 'dynsection-67';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#a7e65ffe1e01feb35cb7da90085d57f04" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_main_window.html#adfa32feecffce3959c99d145fc8b4854" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="315.5,-20 170.5,-20 170.5,0 315.5,0 315.5,-20"/>
-<text xml:space="preserve" text-anchor="middle" x="243" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setupAutoSave</text>
+<text xml:space="preserve" text-anchor="middle" x="243" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::connectSignals</text>
 </a>
 </g>
 </g>

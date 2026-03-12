@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DER Designer: src/viewer/DiagramView.h Source File</title>
+<title>DER Designer: src/view/DiagramView.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -99,108 +99,116 @@ $(function(){initNavTree('_diagram_view_8h_source.html','',''); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QtGui/QDragMoveEvent&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QtGui/QDropEvent&gt;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QtGui/QWheelEvent&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">class </span><a class="code hl_class" href="class_diagram_scene.html">DiagramScene</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_diagram_view.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView</a> : <span class="keyword">public</span> QGraphicsView</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    Q_OBJECT</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView</a>(</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_class" href="class_diagram_scene.html">DiagramScene</a>* scene,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        QWidget* parent = <span class="keyword">nullptr</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    );</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a0e592e8a9bfffa080804374052504075">   21</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_diagram_view.html#a0e592e8a9bfffa080804374052504075">~DiagramView</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#acd7bb72b879a10043d61ad439d7badd6">zoomIn</a>();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a3c4b587e191fbe21304dce51c8065270">zoomOut</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a728e7fb5f9863df0dc1561e4b08d4809">resetZoom</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#ad75d7c2698b62f9be8f9679b02a8ce0b">setZoomLevel</a>(</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        qreal zoomLevel</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    );</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    qreal <a class="code hl_function" href="class_diagram_view.html#a8139f511ae2986efdce4477673b4510a">getZoomLevel</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#aa5ab01046da74451f7f9dbd2861f0436">dragEnterEvent</a>(</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        QDragEnterEvent* event</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#aa9951a6e1b8fddf2eee28f91d0a77cbc">dragMoveEvent</a>(</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        QDragMoveEvent* event</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a6d3626ec66c8ccda5d60f53e5ff46e1e">dropEvent</a>(</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        QDropEvent* event</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a29f569db14078b94495ae3827b9f1b50">wheelEvent</a>(</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        QWheelEvent* event</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a181f6f529703f839d52d6017fdca1245">drawBackground</a>(</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        QPainter* painter,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>signals:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4">   54</a></span>    <span class="keywordtype">void</span> <a class="code hl_signal" href="class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4">elementDropped</a>(</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">const</span> QString&amp; elementType,</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">const</span> QPointF&amp; position</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    );</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QtGui/QKeyEvent&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">class </span><a class="code hl_class" href="class_diagram_scene.html">DiagramScene</a>;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_diagram_view.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView</a> : <span class="keyword">public</span> QGraphicsView</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  Q_OBJECT</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView</a>(</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="class_diagram_scene.html">DiagramScene</a>* scene,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    QWidget* parent = <span class="keyword">nullptr</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  );</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a0e592e8a9bfffa080804374052504075">   22</a></span>  <span class="keyword">virtual</span> <a class="code hl_function" href="class_diagram_view.html#a0e592e8a9bfffa080804374052504075">~DiagramView</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#acd7bb72b879a10043d61ad439d7badd6">zoomIn</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a3c4b587e191fbe21304dce51c8065270">zoomOut</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a728e7fb5f9863df0dc1561e4b08d4809">resetZoom</a>();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a2c1647bef1cfb2c5b5f45af153e5dafa">fitToView</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#ad75d7c2698b62f9be8f9679b02a8ce0b">setZoomLevel</a>(</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    qreal zoomLevel</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  );</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  qreal <a class="code hl_function" href="class_diagram_view.html#a8139f511ae2986efdce4477673b4510a">getZoomLevel</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#aa5ab01046da74451f7f9dbd2861f0436">dragEnterEvent</a>(</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    QDragEnterEvent* event</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#aa9951a6e1b8fddf2eee28f91d0a77cbc">dragMoveEvent</a>(</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QDragMoveEvent* event</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a6d3626ec66c8ccda5d60f53e5ff46e1e">dropEvent</a>(</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QDropEvent* event</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a29f569db14078b94495ae3827b9f1b50">wheelEvent</a>(</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    QWheelEvent* event</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a68669e887e54f7d24dd528dd78744745">keyPressEvent</a>(</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    QKeyEvent* event</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  ) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a181f6f529703f839d52d6017fdca1245">drawBackground</a>(</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    QPainter* painter,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  ) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_diagram_view.html#a144bbc2c3b9ee55e31ec25d4a4665506">isValidElementType</a>(</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> QString&amp; elementType</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    ) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a2820070673c09fe2114f3d93b15eb61e">applyZoom</a>(</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        qreal scaleFactor,</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">const</span> QPointF&amp; centerPoint = QPointF()</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    );</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#ace5b2051dde25580fa674166d9b1a442">drawGrid</a>(</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        QPainter* painter,</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">const</span> QRectF&amp; rect</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    );</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">   74</a></span>    <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">MIN_ZOOM</a> = 0.1;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">   75</a></span>    <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">MAX_ZOOM</a> = 5.0;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">   76</a></span>    <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">ZOOM_STEP</a> = 1.25;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">   77</a></span>    <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">DEFAULT_ZOOM</a> = 1.0;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">   78</a></span>    <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">GRID_SIZE</a> = 30.0;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>signals:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4">   60</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4">elementDropped</a>(</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">const</span> QString&amp; elementType,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">const</span> QPointF&amp; position</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  );</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="class_diagram_view.html#a144bbc2c3b9ee55e31ec25d4a4665506">isValidElementType</a>(</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">const</span> QString&amp; elementType</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  ) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#a2820070673c09fe2114f3d93b15eb61e">applyZoom</a>(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    qreal scaleFactor,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keyword">const</span> QPointF&amp; centerPoint = QPointF()</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_diagram_view.html#ace5b2051dde25580fa674166d9b1a442">drawGrid</a>(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    QPainter* painter,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">const</span> QRectF&amp; rect</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  );</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">   80</a></span>    qreal <a class="code hl_variable" href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">m_currentZoom</a>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">   82</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">m_gridVisible</a> = <span class="keyword">true</span>; <span class="comment">/*implementar grid on off depois?*/</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">   80</a></span>  <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">MIN_ZOOM</a> = 0.1;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">   81</a></span>  <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">MAX_ZOOM</a> = 5.0;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">   82</a></span>  <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">ZOOM_STEP</a> = 1.25;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">   83</a></span>  <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">DEFAULT_ZOOM</a> = 1.0;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">   84</a></span>  <span class="keyword">const</span> qreal <a class="code hl_variable" href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">GRID_SIZE</a> = 30.0;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">   86</a></span>  qreal <a class="code hl_variable" href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">m_currentZoom</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">   88</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">m_gridVisible</a> = <span class="keyword">true</span>; <span class="comment">/*implementar grid on off depois?*/</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
 </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif </span><span class="comment">// DIAGRAMVIEW_H</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif </span><span class="comment">// DIAGRAMVIEW_H</span></div>
 <div class="ttc" id="aclass_diagram_scene_html"><div class="ttname"><a href="class_diagram_scene.html">DiagramScene</a></div><div class="ttdef"><b>Definition</b> DiagramScene.h:23</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a091ed511d5cc4f6d7bd0e510ae63f790"><div class="ttname"><a href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">DiagramView::m_currentZoom</a></div><div class="ttdeci">qreal m_currentZoom</div><div class="ttdef"><b>Definition</b> DiagramView.h:80</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a091ed511d5cc4f6d7bd0e510ae63f790"><div class="ttname"><a href="class_diagram_view.html#a091ed511d5cc4f6d7bd0e510ae63f790">DiagramView::m_currentZoom</a></div><div class="ttdeci">qreal m_currentZoom</div><div class="ttdef"><b>Definition</b> DiagramView.h:86</div></div>
 <div class="ttc" id="aclass_diagram_view_html_a0e592e8a9bfffa080804374052504075"><div class="ttname"><a href="class_diagram_view.html#a0e592e8a9bfffa080804374052504075">DiagramView::~DiagramView</a></div><div class="ttdeci">virtual ~DiagramView()=default</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a144bbc2c3b9ee55e31ec25d4a4665506"><div class="ttname"><a href="class_diagram_view.html#a144bbc2c3b9ee55e31ec25d4a4665506">DiagramView::isValidElementType</a></div><div class="ttdeci">bool isValidElementType(const QString &amp;elementType) const</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:209</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a17daee2a852ef9d1b524b49084e650b1"><div class="ttname"><a href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">DiagramView::DEFAULT_ZOOM</a></div><div class="ttdeci">const qreal DEFAULT_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:77</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a181f6f529703f839d52d6017fdca1245"><div class="ttname"><a href="class_diagram_view.html#a181f6f529703f839d52d6017fdca1245">DiagramView::drawBackground</a></div><div class="ttdeci">void drawBackground(QPainter *painter, const QRectF &amp;rect) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:104</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a1c4950b39b13705517561f2c6db152ae"><div class="ttname"><a href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">DiagramView::m_gridVisible</a></div><div class="ttdeci">bool m_gridVisible</div><div class="ttdef"><b>Definition</b> DiagramView.h:82</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a2820070673c09fe2114f3d93b15eb61e"><div class="ttname"><a href="class_diagram_view.html#a2820070673c09fe2114f3d93b15eb61e">DiagramView::applyZoom</a></div><div class="ttdeci">void applyZoom(qreal scaleFactor, const QPointF &amp;centerPoint=QPointF())</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:188</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a29f569db14078b94495ae3827b9f1b50"><div class="ttname"><a href="class_diagram_view.html#a29f569db14078b94495ae3827b9f1b50">DiagramView::wheelEvent</a></div><div class="ttdeci">void wheelEvent(QWheelEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:87</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a2a53df11097b99850c6e53e3ce8ca669"><div class="ttname"><a href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">DiagramView::MAX_ZOOM</a></div><div class="ttdeci">const qreal MAX_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:75</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a3c4b587e191fbe21304dce51c8065270"><div class="ttname"><a href="class_diagram_view.html#a3c4b587e191fbe21304dce51c8065270">DiagramView::zoomOut</a></div><div class="ttdeci">void zoomOut()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:151</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a5169ff341b2a0ac130c41380b67d9edd"><div class="ttname"><a href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">DiagramView::GRID_SIZE</a></div><div class="ttdeci">const qreal GRID_SIZE</div><div class="ttdef"><b>Definition</b> DiagramView.h:78</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a5887dca34f466c18f74de9626d3ba98a"><div class="ttname"><a href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView::DiagramView</a></div><div class="ttdeci">DiagramView(DiagramScene *scene, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:13</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a6d3626ec66c8ccda5d60f53e5ff46e1e"><div class="ttname"><a href="class_diagram_view.html#a6d3626ec66c8ccda5d60f53e5ff46e1e">DiagramView::dropEvent</a></div><div class="ttdeci">void dropEvent(QDropEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:67</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a728e7fb5f9863df0dc1561e4b08d4809"><div class="ttname"><a href="class_diagram_view.html#a728e7fb5f9863df0dc1561e4b08d4809">DiagramView::resetZoom</a></div><div class="ttdeci">void resetZoom()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:158</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a7a247c7b7961c4cff2fa622062e5f4c1"><div class="ttname"><a href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">DiagramView::MIN_ZOOM</a></div><div class="ttdeci">const qreal MIN_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:74</div></div>
-<div class="ttc" id="aclass_diagram_view_html_a8139f511ae2986efdce4477673b4510a"><div class="ttname"><a href="class_diagram_view.html#a8139f511ae2986efdce4477673b4510a">DiagramView::getZoomLevel</a></div><div class="ttdeci">qreal getZoomLevel() const</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:181</div></div>
-<div class="ttc" id="aclass_diagram_view_html_aa5ab01046da74451f7f9dbd2861f0436"><div class="ttname"><a href="class_diagram_view.html#aa5ab01046da74451f7f9dbd2861f0436">DiagramView::dragEnterEvent</a></div><div class="ttdeci">void dragEnterEvent(QDragEnterEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:31</div></div>
-<div class="ttc" id="aclass_diagram_view_html_aa9951a6e1b8fddf2eee28f91d0a77cbc"><div class="ttname"><a href="class_diagram_view.html#aa9951a6e1b8fddf2eee28f91d0a77cbc">DiagramView::dragMoveEvent</a></div><div class="ttdeci">void dragMoveEvent(QDragMoveEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:49</div></div>
-<div class="ttc" id="aclass_diagram_view_html_ac781989fa99a8069e4e8d60f57b33d11"><div class="ttname"><a href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">DiagramView::ZOOM_STEP</a></div><div class="ttdeci">const qreal ZOOM_STEP</div><div class="ttdef"><b>Definition</b> DiagramView.h:76</div></div>
-<div class="ttc" id="aclass_diagram_view_html_acd7bb72b879a10043d61ad439d7badd6"><div class="ttname"><a href="class_diagram_view.html#acd7bb72b879a10043d61ad439d7badd6">DiagramView::zoomIn</a></div><div class="ttdeci">void zoomIn()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:144</div></div>
-<div class="ttc" id="aclass_diagram_view_html_ace5b2051dde25580fa674166d9b1a442"><div class="ttname"><a href="class_diagram_view.html#ace5b2051dde25580fa674166d9b1a442">DiagramView::drawGrid</a></div><div class="ttdeci">void drawGrid(QPainter *painter, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:118</div></div>
-<div class="ttc" id="aclass_diagram_view_html_ad75d7c2698b62f9be8f9679b02a8ce0b"><div class="ttname"><a href="class_diagram_view.html#ad75d7c2698b62f9be8f9679b02a8ce0b">DiagramView::setZoomLevel</a></div><div class="ttdeci">void setZoomLevel(qreal zoomLevel)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:166</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a144bbc2c3b9ee55e31ec25d4a4665506"><div class="ttname"><a href="class_diagram_view.html#a144bbc2c3b9ee55e31ec25d4a4665506">DiagramView::isValidElementType</a></div><div class="ttdeci">bool isValidElementType(const QString &amp;elementType) const</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:259</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a17daee2a852ef9d1b524b49084e650b1"><div class="ttname"><a href="class_diagram_view.html#a17daee2a852ef9d1b524b49084e650b1">DiagramView::DEFAULT_ZOOM</a></div><div class="ttdeci">const qreal DEFAULT_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:83</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a181f6f529703f839d52d6017fdca1245"><div class="ttname"><a href="class_diagram_view.html#a181f6f529703f839d52d6017fdca1245">DiagramView::drawBackground</a></div><div class="ttdeci">void drawBackground(QPainter *painter, const QRectF &amp;rect) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:121</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a1c4950b39b13705517561f2c6db152ae"><div class="ttname"><a href="class_diagram_view.html#a1c4950b39b13705517561f2c6db152ae">DiagramView::m_gridVisible</a></div><div class="ttdeci">bool m_gridVisible</div><div class="ttdef"><b>Definition</b> DiagramView.h:88</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a2820070673c09fe2114f3d93b15eb61e"><div class="ttname"><a href="class_diagram_view.html#a2820070673c09fe2114f3d93b15eb61e">DiagramView::applyZoom</a></div><div class="ttdeci">void applyZoom(qreal scaleFactor, const QPointF &amp;centerPoint=QPointF())</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:238</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a29f569db14078b94495ae3827b9f1b50"><div class="ttname"><a href="class_diagram_view.html#a29f569db14078b94495ae3827b9f1b50">DiagramView::wheelEvent</a></div><div class="ttdeci">void wheelEvent(QWheelEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:88</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a2a53df11097b99850c6e53e3ce8ca669"><div class="ttname"><a href="class_diagram_view.html#a2a53df11097b99850c6e53e3ce8ca669">DiagramView::MAX_ZOOM</a></div><div class="ttdeci">const qreal MAX_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:81</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a2c1647bef1cfb2c5b5f45af153e5dafa"><div class="ttname"><a href="class_diagram_view.html#a2c1647bef1cfb2c5b5f45af153e5dafa">DiagramView::fitToView</a></div><div class="ttdeci">void fitToView()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:183</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a3c4b587e191fbe21304dce51c8065270"><div class="ttname"><a href="class_diagram_view.html#a3c4b587e191fbe21304dce51c8065270">DiagramView::zoomOut</a></div><div class="ttdeci">void zoomOut()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:168</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a5169ff341b2a0ac130c41380b67d9edd"><div class="ttname"><a href="class_diagram_view.html#a5169ff341b2a0ac130c41380b67d9edd">DiagramView::GRID_SIZE</a></div><div class="ttdeci">const qreal GRID_SIZE</div><div class="ttdef"><b>Definition</b> DiagramView.h:84</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a5887dca34f466c18f74de9626d3ba98a"><div class="ttname"><a href="class_diagram_view.html#a5887dca34f466c18f74de9626d3ba98a">DiagramView::DiagramView</a></div><div class="ttdeci">DiagramView(DiagramScene *scene, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:14</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a68669e887e54f7d24dd528dd78744745"><div class="ttname"><a href="class_diagram_view.html#a68669e887e54f7d24dd528dd78744745">DiagramView::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:106</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a6d3626ec66c8ccda5d60f53e5ff46e1e"><div class="ttname"><a href="class_diagram_view.html#a6d3626ec66c8ccda5d60f53e5ff46e1e">DiagramView::dropEvent</a></div><div class="ttdeci">void dropEvent(QDropEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:68</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a728e7fb5f9863df0dc1561e4b08d4809"><div class="ttname"><a href="class_diagram_view.html#a728e7fb5f9863df0dc1561e4b08d4809">DiagramView::resetZoom</a></div><div class="ttdeci">void resetZoom()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:175</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a7a247c7b7961c4cff2fa622062e5f4c1"><div class="ttname"><a href="class_diagram_view.html#a7a247c7b7961c4cff2fa622062e5f4c1">DiagramView::MIN_ZOOM</a></div><div class="ttdeci">const qreal MIN_ZOOM</div><div class="ttdef"><b>Definition</b> DiagramView.h:80</div></div>
+<div class="ttc" id="aclass_diagram_view_html_a8139f511ae2986efdce4477673b4510a"><div class="ttname"><a href="class_diagram_view.html#a8139f511ae2986efdce4477673b4510a">DiagramView::getZoomLevel</a></div><div class="ttdeci">qreal getZoomLevel() const</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:231</div></div>
+<div class="ttc" id="aclass_diagram_view_html_aa5ab01046da74451f7f9dbd2861f0436"><div class="ttname"><a href="class_diagram_view.html#aa5ab01046da74451f7f9dbd2861f0436">DiagramView::dragEnterEvent</a></div><div class="ttdeci">void dragEnterEvent(QDragEnterEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:32</div></div>
+<div class="ttc" id="aclass_diagram_view_html_aa9951a6e1b8fddf2eee28f91d0a77cbc"><div class="ttname"><a href="class_diagram_view.html#aa9951a6e1b8fddf2eee28f91d0a77cbc">DiagramView::dragMoveEvent</a></div><div class="ttdeci">void dragMoveEvent(QDragMoveEvent *event) override</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:50</div></div>
+<div class="ttc" id="aclass_diagram_view_html_ac781989fa99a8069e4e8d60f57b33d11"><div class="ttname"><a href="class_diagram_view.html#ac781989fa99a8069e4e8d60f57b33d11">DiagramView::ZOOM_STEP</a></div><div class="ttdeci">const qreal ZOOM_STEP</div><div class="ttdef"><b>Definition</b> DiagramView.h:82</div></div>
+<div class="ttc" id="aclass_diagram_view_html_acd7bb72b879a10043d61ad439d7badd6"><div class="ttname"><a href="class_diagram_view.html#acd7bb72b879a10043d61ad439d7badd6">DiagramView::zoomIn</a></div><div class="ttdeci">void zoomIn()</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:161</div></div>
+<div class="ttc" id="aclass_diagram_view_html_ace5b2051dde25580fa674166d9b1a442"><div class="ttname"><a href="class_diagram_view.html#ace5b2051dde25580fa674166d9b1a442">DiagramView::drawGrid</a></div><div class="ttdeci">void drawGrid(QPainter *painter, const QRectF &amp;rect)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:135</div></div>
+<div class="ttc" id="aclass_diagram_view_html_ad75d7c2698b62f9be8f9679b02a8ce0b"><div class="ttname"><a href="class_diagram_view.html#ad75d7c2698b62f9be8f9679b02a8ce0b">DiagramView::setZoomLevel</a></div><div class="ttdeci">void setZoomLevel(qreal zoomLevel)</div><div class="ttdef"><b>Definition</b> DiagramView.cpp:216</div></div>
 <div class="ttc" id="aclass_diagram_view_html_aff439ca64e209a13a5ca84de4307deb4"><div class="ttname"><a href="class_diagram_view.html#aff439ca64e209a13a5ca84de4307deb4">DiagramView::elementDropped</a></div><div class="ttdeci">void elementDropped(const QString &amp;elementType, const QPointF &amp;position)</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -208,7 +216,7 @@ $(function(){initNavTree('_diagram_view_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_0afc25342c548a63e1813d8fbde8101d.html">viewer</a></li><li class="navelem"><a href="_diagram_view_8h.html">DiagramView.h</a></li>
+    <li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a href="dir_b39b5091e8d1d2be4b7fc59d57749634.html">view</a></li><li class="navelem"><a href="_diagram_view_8h.html">DiagramView.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.15.0 </li>
   </ul>
 </div>

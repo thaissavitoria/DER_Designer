@@ -138,11 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aef557b645a95aaa376592146d4c6c60e" id="r_aef557b645a95aaa376592146d4c6c60e"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_basic_element.html">BasicElement</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef557b645a95aaa376592146d4c6c60e">getSelectedElements</a> () const</td></tr>
 <tr class="memitem:a40c9b85a9f304007a227b9db63178d08" id="r_a40c9b85a9f304007a227b9db63178d08"><td class="memItemLeft" align="right" valign="top">QList&lt; <a class="el" href="class_connection_line.html">ConnectionLine</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a40c9b85a9f304007a227b9db63178d08">getAllConnections</a> () const</td></tr>
 <tr class="memitem:a496c60851a94026b46ba80b647e4eb47" id="r_a496c60851a94026b46ba80b647e4eb47"><td class="memItemLeft" align="right" valign="top">QSet&lt; <a class="el" href="class_connection_line.html">ConnectionLine</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a496c60851a94026b46ba80b647e4eb47">getSelectedConnections</a> () const</td></tr>
-<tr class="memitem:adffd7c14eb320f4e260f6fed731c1809" id="r_adffd7c14eb320f4e260f6fed731c1809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adffd7c14eb320f4e260f6fed731c1809">selectElement</a> (<a class="el" href="class_basic_element.html">BasicElement</a> *element, bool selected=true)</td></tr>
-<tr class="memitem:a52f85570092aa1c3df464382efad08fa" id="r_a52f85570092aa1c3df464382efad08fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52f85570092aa1c3df464382efad08fa">selectElement</a> (const QString &amp;elementId, bool selected=true)</td></tr>
-<tr class="memitem:a2b55d6646f19908d66e5c5eda455744e" id="r_a2b55d6646f19908d66e5c5eda455744e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b55d6646f19908d66e5c5eda455744e">selectConnection</a> (<a class="el" href="class_connection_line.html">ConnectionLine</a> *connection, bool selected=true)</td></tr>
-<tr class="memitem:a2f6effb6da25d1974e33776ef4046f87" id="r_a2f6effb6da25d1974e33776ef4046f87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2f6effb6da25d1974e33776ef4046f87">selectConnection</a> (const QString &amp;connectionId, bool selected=true)</td></tr>
-<tr class="memitem:a9341fab75d7299e330baae13993bed28" id="r_a9341fab75d7299e330baae13993bed28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9341fab75d7299e330baae13993bed28">clearSelection</a> ()</td></tr>
+<tr class="memitem:aa7d8cdf9568c51ab910df9d5630093b7" id="r_aa7d8cdf9568c51ab910df9d5630093b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7d8cdf9568c51ab910df9d5630093b7">selectElement</a> (<a class="el" href="class_basic_element.html">BasicElement</a> *element, const bool selected=true, const bool emitSignals=true)</td></tr>
+<tr class="memitem:ac7268f1b5870d5c67f54057e6638bcec" id="r_ac7268f1b5870d5c67f54057e6638bcec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7268f1b5870d5c67f54057e6638bcec">selectConnection</a> (<a class="el" href="class_connection_line.html">ConnectionLine</a> *connection, const bool selected=true, const bool emitSignals=true)</td></tr>
+<tr class="memitem:add93af6ff55d3453051b8c057cd4bdcb" id="r_add93af6ff55d3453051b8c057cd4bdcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add93af6ff55d3453051b8c057cd4bdcb">clearSelection</a> (const bool emitSignals=true)</td></tr>
 <tr class="memitem:a530f6e2b54bdff761f3f478120187201" id="r_a530f6e2b54bdff761f3f478120187201"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a530f6e2b54bdff761f3f478120187201">selectAll</a> ()</td></tr>
 <tr class="memitem:a03a8b712a0872e8f6290c059de956505" id="r_a03a8b712a0872e8f6290c059de956505"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03a8b712a0872e8f6290c059de956505">deleteSelected</a> ()</td></tr>
 <tr class="memitem:a7875efc4949e17967d9e11786b146cc9" id="r_a7875efc4949e17967d9e11786b146cc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7875efc4949e17967d9e11786b146cc9">duplicateSelected</a> ()</td></tr>
@@ -270,7 +268,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a795592348d4dcbd78d984db93c2fbedb_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a795592348d4dcbd78d984db93c2fbedb_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -297,7 +295,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ab3f76238d2c252f2918047140d87dd23_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ab3f76238d2c252f2918047140d87dd23_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -319,7 +317,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a4d84b4d068e1c3ee53f9f9f8c6e7a94f_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a4d84b4d068e1c3ee53f9f9f8c6e7a94f_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -378,8 +376,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a9341fab75d7299e330baae13993bed28" name="a9341fab75d7299e330baae13993bed28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9341fab75d7299e330baae13993bed28">&#9670;&#160;</a></span>clearSelection()</h2>
+<a id="add93af6ff55d3453051b8c057cd4bdcb" name="add93af6ff55d3453051b8c057cd4bdcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add93af6ff55d3453051b8c057cd4bdcb">&#9670;&#160;</a></span>clearSelection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +385,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void DiagramScene::clearSelection </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>emitSignals</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -395,12 +393,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a9341fab75d7299e330baae13993bed28_cgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb_cgraph.svg" width="100%" height="582"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a9341fab75d7299e330baae13993bed28_icgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb_icgraph.svg" width="100%" height="454"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -460,7 +458,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a5f3d68221bac825f2b027d638d25fa49_icgraph.svg" width="100%" height="511"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a5f3d68221bac825f2b027d638d25fa49_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -490,7 +488,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ac397b05d6318f8b7c9366a8b857ed98c_icgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ac397b05d6318f8b7c9366a8b857ed98c_icgraph.svg" width="100%" height="546"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -691,7 +689,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ad97223f92ae9cce97857ac5c45c1a3b6_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ad97223f92ae9cce97857ac5c45c1a3b6_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -721,7 +719,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a065ce2ec3d83e05c486ae418eaf6320f_icgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a065ce2ec3d83e05c486ae418eaf6320f_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -751,7 +749,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a15719115f3f2f26120243d71999dcfea_icgraph.svg" width="100%" height="523"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a15719115f3f2f26120243d71999dcfea_icgraph.svg" width="100%" height="532"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -804,7 +802,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_afbab910f080e6085c7e216f922c14d81_icgraph.svg" width="486" height="88"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_afbab910f080e6085c7e216f922c14d81_icgraph.svg" width="486" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -865,7 +863,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a4da4018bb57166e46104700d2847c41d_icgraph.svg" width="100%" height="568"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a4da4018bb57166e46104700d2847c41d_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -909,7 +907,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a45f18c15840085ffda39cfc9229a15ee_icgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a45f18c15840085ffda39cfc9229a15ee_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -988,7 +986,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a40c9b85a9f304007a227b9db63178d08_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a40c9b85a9f304007a227b9db63178d08_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1084,7 +1082,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a355fffd036fbfb751f2d9ada2b9eacf5_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a355fffd036fbfb751f2d9ada2b9eacf5_icgraph.svg" width="100%" height="416"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1119,7 +1117,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_af24fc3dc11041bb31e4f0627f0a09e75_icgraph.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_af24fc3dc11041bb31e4f0627f0a09e75_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1154,7 +1152,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a244ffcbacfc985e542579c0e112cfd52_icgraph.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a244ffcbacfc985e542579c0e112cfd52_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1313,7 +1311,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a6847af7972303267f22e84ae1011c255_cgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a6847af7972303267f22e84ae1011c255_cgraph.svg" width="100%" height="582"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1400,7 +1398,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ad8f482915e4991d8ba601f691086fbdc_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ad8f482915e4991d8ba601f691086fbdc_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1427,7 +1425,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a5d546daf9d3a3d5155b611ec31c4dccb_icgraph.svg" width="100%" height="437"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a5d546daf9d3a3d5155b611ec31c4dccb_icgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1476,7 +1474,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ae531fa5ccfc6393d5a60f956a652118d_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ae531fa5ccfc6393d5a60f956a652118d_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1533,7 +1531,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a0d026405c431d3aca9494d64296bb956_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a0d026405c431d3aca9494d64296bb956_icgraph.svg" width="100%" height="366"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1587,8 +1585,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2b55d6646f19908d66e5c5eda455744e" name="a2b55d6646f19908d66e5c5eda455744e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b55d6646f19908d66e5c5eda455744e">&#9670;&#160;</a></span>selectConnection() <span class="overload">[1/2]</span></h2>
+<a id="ac7268f1b5870d5c67f54057e6638bcec" name="ac7268f1b5870d5c67f54057e6638bcec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7268f1b5870d5c67f54057e6638bcec">&#9670;&#160;</a></span>selectConnection()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1601,51 +1599,30 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e_cgraph.svg" width="495" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e_icgraph.svg" width="100%" height="511"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a2f6effb6da25d1974e33776ef4046f87" name="a2f6effb6da25d1974e33776ef4046f87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f6effb6da25d1974e33776ef4046f87">&#9670;&#160;</a></span>selectConnection() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DiagramScene::selectConnection </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>connectionId</em></span>, </td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>emitSignals</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a2f6effb6da25d1974e33776ef4046f87_cgraph.svg" width="100%" height="428"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec_cgraph.svg" width="495" height="171"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="adffd7c14eb320f4e260f6fed731c1809" name="adffd7c14eb320f4e260f6fed731c1809"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adffd7c14eb320f4e260f6fed731c1809">&#9670;&#160;</a></span>selectElement() <span class="overload">[1/2]</span></h2>
+<a id="aa7d8cdf9568c51ab910df9d5630093b7" name="aa7d8cdf9568c51ab910df9d5630093b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d8cdf9568c51ab910df9d5630093b7">&#9670;&#160;</a></span>selectElement()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1658,45 +1635,24 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809_icgraph.svg" width="100%" height="530"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a52f85570092aa1c3df464382efad08fa" name="a52f85570092aa1c3df464382efad08fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a52f85570092aa1c3df464382efad08fa">&#9670;&#160;</a></span>selectElement() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void DiagramScene::selectElement </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>elementId</em></span>, </td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>selected</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>emitSignals</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a52f85570092aa1c3df464382efad08fa_cgraph.svg" width="100%" height="485"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7_icgraph.svg" width="100%" height="504"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1726,7 +1682,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a7dbb09a9acecc803601560e50ad720ea_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_scene_a7dbb09a9acecc803601560e50ad720ea_icgraph.svg" width="100%" height="571"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -2132,8 +2088,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/controller/<a class="el" href="_diagram_scene_8h_source.html">DiagramScene.h</a></li>
-<li>src/controller/<a class="el" href="_diagram_scene_8cpp.html">DiagramScene.cpp</a></li>
+<li>src/view/<a class="el" href="_diagram_scene_8h_source.html">DiagramScene.h</a></li>
+<li>src/view/<a class="el" href="_diagram_scene_8cpp.html">DiagramScene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

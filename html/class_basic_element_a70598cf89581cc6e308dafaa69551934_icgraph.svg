@@ -47,9 +47,9 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1419;
+var viewWidth = 566;
 var viewHeight = 40;
-var sectionId = 'dynsection-15';
+var sectionId = 'dynsection-14';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -59,18 +59,19 @@ var sectionId = 'dynsection-15';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="1411.25,-32 1265.5,-32 1265.5,0 1411.25,0 1411.25,-32"/>
-<text xml:space="preserve" text-anchor="start" x="1273.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::getConnection</text>
-<text xml:space="preserve" text-anchor="middle" x="1338.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointByDirection</text>
+<polygon fill="#999999" stroke="#666666" points="558.25,-32 412.5,-32 412.5,0 558.25,0 558.25,-32"/>
+<text xml:space="preserve" text-anchor="start" x="420.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">BasicElement::getConnection</text>
+<text xml:space="preserve" text-anchor="middle" x="485.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointByDirection</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_main_window.html#ae3e9c84a0e0f1ffa84e523ac1aefc565" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1229.5,-26 1041.75,-26 1041.75,-6 1229.5,-6 1229.5,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="1135.62" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::loadDiagramConnections</text>
+<g id="a_Node000002"><a xlink:href="class_diagram_serializer.html#a92507b425e8c13399c6de5d85e7950fb" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="376.5,-32 277.25,-32 277.25,0 376.5,0 376.5,-32"/>
+<text xml:space="preserve" text-anchor="start" x="285.25" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiagramSerializer::</text>
+<text xml:space="preserve" text-anchor="middle" x="326.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">loadConnections</text>
 </a>
 </g>
 </g>
@@ -78,17 +79,18 @@ var sectionId = 'dynsection-15';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1253.75,-16C1245.86,-16 1237.82,-16 1229.85,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1253.67,-19.5 1263.67,-16 1253.67,-12.5 1253.67,-19.5"/>
+<path fill="none" stroke="#63b8ff" d="M400.8,-16C392.53,-16 384.35,-16 376.62,-16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="400.57,-19.5 410.57,-16 400.57,-12.5 400.57,-19.5"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_main_window.html#a8fdec0badace6652ddf9e9e7654dd1f2" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1005.75,-26 831.5,-26 831.5,-6 1005.75,-6 1005.75,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="918.62" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::loadDiagramElements</text>
+<g id="a_Node000003"><a xlink:href="class_diagram_serializer.html#a003be4c7f5d036e58e3fa047d1d9b0d8" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="241.25,-32 142,-32 142,0 241.25,0 241.25,-32"/>
+<text xml:space="preserve" text-anchor="start" x="150" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiagramSerializer::</text>
+<text xml:space="preserve" text-anchor="middle" x="191.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">loadDiagram</text>
 </a>
 </g>
 </g>
@@ -96,17 +98,18 @@ var sectionId = 'dynsection-15';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1029.99,-16C1022,-16 1013.99,-16 1006.13,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1029.75,-19.5 1039.75,-16 1029.75,-12.5 1029.75,-19.5"/>
+<path fill="none" stroke="#63b8ff" d="M265.69,-16C257.59,-16 249.36,-16 241.48,-16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="265.5,-19.5 275.5,-16 265.5,-12.5 265.5,-19.5"/>
 </a>
 </g>
 </g>
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_main_window.html#a288b768c3c21a9171bdc56fe845ece8b" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="795.5,-26 680.5,-26 680.5,-6 795.5,-6 795.5,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="738" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::openFile</text>
+<g id="a_Node000004"><a xlink:href="class_diagram_file_manager.html#a24c0e01d7ac53866944eb10948286ed9" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="106,-32 0,-32 0,0 106,0 106,-32"/>
+<text xml:space="preserve" text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">DiagramFileManager</text>
+<text xml:space="preserve" text-anchor="middle" x="53" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">::openDiagram</text>
 </a>
 </g>
 </g>
@@ -114,80 +117,8 @@ var sectionId = 'dynsection-15';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M819.93,-16C811.69,-16 803.55,-16 795.79,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="819.68,-19.5 829.68,-16 819.68,-12.5 819.68,-19.5"/>
-</a>
-</g>
-</g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_main_window.html#aaf455232cccaa422fc4c371fa99bff84" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="644.5,-26 499.5,-26 499.5,-6 644.5,-6 644.5,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="572" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::createFileMenu</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge4_Node000004_Node000005" class="edge">
-<title>Node4&#45;&gt;Node5</title>
-<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M668.7,-16C660.82,-16 652.75,-16 644.82,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="668.59,-19.5 678.59,-16 668.59,-12.5 668.59,-19.5"/>
-</a>
-</g>
-</g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_main_window.html#a2305527bb5d827ae07967ea1c86ee6fb" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="463.5,-26 319.25,-26 319.25,-6 463.5,-6 463.5,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="391.38" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::createMenuBar</text>
-</a>
-</g>
-</g>
-<!-- Node5&#45;&gt;Node6 -->
-<g id="edge5_Node000005_Node000006" class="edge">
-<title>Node5&#45;&gt;Node6</title>
-<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M487.84,-16C479.81,-16 471.72,-16 463.82,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="487.6,-19.5 497.6,-16 487.6,-12.5 487.6,-19.5"/>
-</a>
-</g>
-</g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_main_window.html#a3a304253c9e7caeef028f75358bf1fd5" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="283.25,-26 170.5,-26 170.5,-6 283.25,-6 283.25,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="226.88" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setupUI</text>
-</a>
-</g>
-</g>
-<!-- Node6&#45;&gt;Node7 -->
-<g id="edge6_Node000006_Node000007" class="edge">
-<title>Node6&#45;&gt;Node7</title>
-<g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M307.85,-16C299.59,-16 291.35,-16 283.46,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="307.59,-19.5 317.59,-16 307.59,-12.5 307.59,-19.5"/>
-</a>
-</g>
-</g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_main_window.html#a996c5a2b6f77944776856f08ec30858d" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="134.5,-26 0,-26 0,-6 134.5,-6 134.5,-26"/>
-<text xml:space="preserve" text-anchor="middle" x="67.25" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge7_Node000007_Node000008" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<g id="a_edge7_Node000007_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M158.85,-16C150.93,-16 142.85,-16 134.94,-16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="158.79,-19.5 168.79,-16 158.79,-12.5 158.79,-19.5"/>
+<path fill="none" stroke="#63b8ff" d="M130.17,-16C122.21,-16 114.1,-16 106.29,-16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="130.17,-19.5 140.17,-16 130.17,-12.5 130.17,-19.5"/>
 </a>
 </g>
 </g>

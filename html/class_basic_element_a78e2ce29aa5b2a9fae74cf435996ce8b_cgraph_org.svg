@@ -40,7 +40,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_connection_point.html#a828996f0bb02e9154b5d3af03f1734b8" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_connection_point.html#af57583f18ef35d9b3eafa83665e7ebe4" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="332.75,-32 180.25,-32 180.25,0 332.75,0 332.75,-32"/>
 <text xml:space="preserve" text-anchor="start" x="188.25" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::createDefault</text>
 <text xml:space="preserve" text-anchor="middle" x="256.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoints</text>
@@ -59,7 +59,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_connection_point.html#a0bca0b4cf605278cb17d8052dc027932" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_connection_point.html#a7b8c2910eb504959c4211764a9abc2e8" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="528,-32 368.75,-32 368.75,0 528,0 528,-32"/>
 <text xml:space="preserve" text-anchor="start" x="376.75" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">ConnectionPoint::addConnection</text>
 <text xml:space="preserve" text-anchor="middle" x="448.38" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">Point</text>

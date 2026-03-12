@@ -1,7 +1,25 @@
 var searchData=
 [
-  ['name_0',['name',['../class_basic_element.html#abdf7ef7b79c416bbd70e464f94b5fbaf',1,'BasicElement']]],
-  ['newfile_1',['newFile',['../class_main_window.html#a69f73b93cc05c89a9ae1be0161105982',1,'MainWindow']]],
-  ['notifyobservers_2',['notifyObservers',['../class_basic_element.html#a596caee40cdd00a0aacce49689b63f92',1,'BasicElement']]],
-  ['notifypositionchanged_3',['notifyPositionChanged',['../class_basic_element.html#a84f8dd62eabbe3dded6bacf42a783856',1,'BasicElement']]]
+  ['onaboutaction_0',['onAboutAction',['../class_quick_access_toolbar.html#a95925c4900144d5faa1a4516ea7d2874',1,'QuickAccessToolbar']]],
+  ['onaddattributeontreeclicked_1',['onAddAttributeOnTreeClicked',['../class_properties_panel.html#a55ae5c02e7d75c7bdc26281a148e8c5a',1,'PropertiesPanel']]],
+  ['onaddelementclicked_2',['onAddElementClicked',['../class_main_window.html#a618482f2eb3e3a2eb8c5937f6374c79a',1,'MainWindow']]],
+  ['onautosavetriggered_3',['onAutoSaveTriggered',['../class_main_window.html#aaf47b9efe07432c5b5e1695954bee116',1,'MainWindow']]],
+  ['oncheckboxchanged_4',['onCheckBoxChanged',['../class_properties_panel.html#a2800a2c7575a5fad6d923d9b64d982f8',1,'PropertiesPanel']]],
+  ['oncomboboxchanged_5',['onComboBoxChanged',['../class_properties_panel.html#aec82450a3daeb2614c2321e37897f1dd',1,'PropertiesPanel']]],
+  ['onconnectionpointchanged_6',['onConnectionPointChanged',['../class_connection_line.html#a53c863c51a284a7a8e6b35bc34bd2d34',1,'ConnectionLine']]],
+  ['onelementchanged_7',['onElementChanged',['../class_i_element_observer.html#a66546a8acf1ca03d2c9639bd3bf895f5',1,'IElementObserver::onElementChanged()'],['../class_element_graphics_item.html#a155beaa7e5efea78ef1a0d8d04928b23',1,'ElementGraphicsItem::onElementChanged()']]],
+  ['onelementdropped_8',['onElementDropped',['../class_main_window.html#a880a071072561df84782f84e0321da4e',1,'MainWindow']]],
+  ['onelementpositionchanged_9',['onElementPositionChanged',['../class_i_element_observer.html#a25dad770220cefbccc3dcca820e70fb2',1,'IElementObserver::onElementPositionChanged()'],['../class_connection_line.html#a4bce34a3f2fb1fd7145de2d9100c9173',1,'ConnectionLine::onElementPositionChanged()'],['../class_element_graphics_item.html#aa6e5a05f4d5ca39fd4a033808b09cd0e',1,'ElementGraphicsItem::onElementPositionChanged()']]],
+  ['onhelpaction_10',['onHelpAction',['../class_quick_access_toolbar.html#ae2051a27933a2022dc2b6c5cc8ef4b63',1,'QuickAccessToolbar']]],
+  ['onlineeditchanged_11',['onLineEditChanged',['../class_properties_panel.html#aec8130201106284c02f21903b516554d',1,'PropertiesPanel']]],
+  ['onnewaction_12',['onNewAction',['../class_quick_access_toolbar.html#aa9d56b4b5e0885c23f4101b066bbde9d',1,'QuickAccessToolbar']]],
+  ['onopenaction_13',['onOpenAction',['../class_quick_access_toolbar.html#a3d84253b27fe73b9aeefdd3388da9ce4',1,'QuickAccessToolbar']]],
+  ['onpropertyvaluechanged_14',['onPropertyValueChanged',['../class_properties_panel.html#a3cdc065abcd2f9e59558903073c0f23f',1,'PropertiesPanel']]],
+  ['onrelationshipendchanged_15',['onRelationshipEndChanged',['../class_relationship_connection_line.html#a5b1065964a03731df2da3883f650faa6',1,'RelationshipConnectionLine']]],
+  ['onremoveattributeontreeclicked_16',['onRemoveAttributeOnTreeClicked',['../class_properties_panel.html#a8a2ec0bcba44f3bbd0245d3a53ff49f7',1,'PropertiesPanel']]],
+  ['onsaveaction_17',['onSaveAction',['../class_quick_access_toolbar.html#acb9dd70de40aa7efa692172a3322a3b8',1,'QuickAccessToolbar']]],
+  ['onselectionchanged_18',['onSelectionChanged',['../class_main_window.html#a44791b85064ecff42c12429c6667e83b',1,'MainWindow']]],
+  ['ontimertriggered_19',['onTimerTriggered',['../class_auto_save_manager.html#afc210ecc4d92e0c5316d2565d8794f04',1,'AutoSaveManager']]],
+  ['opendiagram_20',['openDiagram',['../class_diagram_file_manager.html#a24c0e01d7ac53866944eb10948286ed9',1,'DiagramFileManager']]],
+  ['openfile_21',['openFile',['../class_main_window.html#a288b768c3c21a9171bdc56fe845ece8b',1,'MainWindow']]]
 ];

@@ -1,7 +1,5 @@
 <map id="DiagramScene::findConnection" name="DiagramScene::findConnection">
-<area shape="rect" id="Node000001" title=" " alt="" coords="278,31,480,57"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="278,5,480,32"/>
 <area shape="rect" id="Node000002" href="$class_diagram_scene.html#abfda0a4eecbce90cc6c7e7462259d199" title=" " alt="" coords="5,5,230,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,33,230,32,230,27,265,32"/>
-<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a2f6effb6da25d1974e33776ef4046f87" title=" " alt="" coords="9,56,226,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="259,56,226,61,226,56,265,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="259,19,230,21,230,16,265,19"/>
 </map>

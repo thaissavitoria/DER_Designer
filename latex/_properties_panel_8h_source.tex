@@ -1,0 +1,200 @@
+\doxysection{Properties\+Panel.\+h}
+\hypertarget{_properties_panel_8h_source}{}\label{_properties_panel_8h_source}\index{src/view/PropertiesPanel.h@{src/view/PropertiesPanel.h}}
+\mbox{\hyperlink{_properties_panel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ PROPERTIESPANEL\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ PROPERTIESPANEL\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtWidgets/QCheckBox>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtWidgets/QComboBox>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLabel>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QtWidgets/QLineEdit>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QtWidgets/QPushButton>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QtWidgets/QTreeWidget>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QtWidgets/QTreeWidgetItem>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QtWidgets/QVBoxLayout>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <QtWidgets/QWidget>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <QtGui/QIcon>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <QtGui/QPainter>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <QtGui/QPainterPath>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_basic_element_8h}{model/BasicElement.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_line_8h}{model/ConnectionLine.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_attribute}{Attribute}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene}{DiagramScene}};}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_properties_panel_a9866823e02faefceaae94fc0b0537707}{PropertiesPanel}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_properties_panel_a9866823e02faefceaae94fc0b0537707}{PropertiesPanel}}(}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene,}
+\DoxyCodeLine{00044\ \ \ \ \ QWidget*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00045\ \ \ );}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319}{refresh}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ QList<BasicElement*>\&\ selectedElements,}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{const}\ QSet<ConnectionLine*>\&\ selectedConnections}
+\DoxyCodeLine{00050\ \ \ );}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ signals:}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a060ca6b9ac3fed44c819b0cf52a5d128}{statusMessageRequested}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ message}
+\DoxyCodeLine{00055\ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_ac550ef47b11e8355213a77ebb795a3be}{diagramModified}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00060\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f}{onPropertyValueChanged}}(}
+\DoxyCodeLine{00061\ \ \ \ \ QTreeWidgetItem*\ item,}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ column}
+\DoxyCodeLine{00063\ \ \ );}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd}{onComboBoxChanged}}(}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ value}
+\DoxyCodeLine{00067\ \ \ );}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8}{onCheckBoxChanged}}(}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ checked}
+\DoxyCodeLine{00071\ \ \ );}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_aec8130201106284c02f21903b516554d}{onLineEditChanged}}(}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ text}
+\DoxyCodeLine{00075\ \ \ );}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a}{onAddAttributeOnTreeClicked}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7}{onRemoveAttributeOnTreeClicked}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a13a5af5f48d1b9ee08d51bac35481a55}{clearPanel}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a037586f897062f3915a123b9f2a82b91}{populateForElement}}(}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00086\ \ \ );}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d}{populateForConnection}}(}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00090\ \ \ );}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81}{populateAttributeProperties}}(}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_attribute}{Attribute}}*\ attribute,}
+\DoxyCodeLine{00094\ \ \ \ \ QTreeWidgetItem*\ parent}
+\DoxyCodeLine{00095\ \ \ );}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a6a4344308af5b2c993bc25981529239c}{populateEntityProperties}}(}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00099\ \ \ );}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2}{populateRelationshipProperties}}(}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00103\ \ \ );}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e}{populateAttributeList}}(}
+\DoxyCodeLine{00106\ \ \ \ \ QTreeWidgetItem*\ parentItem,}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{const}\ QList<Attribute*>\&\ attributes,}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyPrefix}
+\DoxyCodeLine{00109\ \ \ );}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ QList<Attribute*>\ \mbox{\hyperlink{class_properties_panel_ac411993d2f778064b93d4bf91c499c63}{getAttributesFromIds}}(}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{const}\ QList<QString>\&\ attributeIds}
+\DoxyCodeLine{00113\ \ \ );}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_ae1d543e17528af28a5db02ee62b7dcd5}{createPropertyItem}}(}
+\DoxyCodeLine{00116\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{const}\ QVariant\&\ value,}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey,}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ editable\ =\ \textcolor{keyword}{true}}
+\DoxyCodeLine{00121\ \ \ );}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47}{createComboBoxPropertyItem}}(}
+\DoxyCodeLine{00124\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{const}\ QStringList\&\ options,}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ currentValue,}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey}
+\DoxyCodeLine{00129\ \ \ );}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8}{createIconComboBoxPropertyItem}}(}
+\DoxyCodeLine{00132\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{const}\ QStringList\&\ options,}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{const}\ QList<QIcon>\&\ icons,}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ currentValue,}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey}
+\DoxyCodeLine{00138\ \ \ );}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_acfb41226221624e46767835caeea8abc}{createCheckBoxPropertyItem}}(}
+\DoxyCodeLine{00141\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ currentValue,}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey}
+\DoxyCodeLine{00145\ \ \ );}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc}{createLineEditPropertyItem}}(}
+\DoxyCodeLine{00148\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ currentValue,}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey}
+\DoxyCodeLine{00152\ \ \ );}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ QTreeWidgetItem*\ \mbox{\hyperlink{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f}{createButtonPropertyItem}}(}
+\DoxyCodeLine{00155\ \ \ \ \ QTreeWidgetItem*\ parent,}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyName,}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ buttonText,}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey}
+\DoxyCodeLine{00159\ \ \ );}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a7612fc903f0d07a774e46e396f415065}{updatePropertyItemText}}(}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey,}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ value}
+\DoxyCodeLine{00164\ \ \ );}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d}{handleAttributePropertyChange}}(}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyType,}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{const}\ QVariant\&\ newValue}
+\DoxyCodeLine{00170\ \ \ );}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_properties_panel_aa82a2245c62f66554f277c64e643252c}{handleRelationshipEndCardinalityChange}}(}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey,}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ value}
+\DoxyCodeLine{00176\ \ \ );}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b}{handleRelationshipEndParticipationChange}}(}
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element,}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ propertyKey,}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{bool}\ value}
+\DoxyCodeLine{00182\ \ \ );}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_a79618c5c820a40931c085d54be70bd34}{updatesAfterChangingProperty}}(}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00186\ \ \ );}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46}{connectBasicElementsWithConnectionLine}}(}
+\DoxyCodeLine{00189\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ startElement,}
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ endElement}
+\DoxyCodeLine{00191\ \ \ );}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ QList<QIcon>\ \mbox{\hyperlink{class_properties_panel_a210643268e9f0685ffd9c732a1b90428}{getConnectionLineTypeIcons}}();}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ \mbox{\hyperlink{class_properties_panel_a60f88328c193c282810ea8dde87f47a3}{m\_scene}};}
+\DoxyCodeLine{00196\ \ \ QVBoxLayout*\ \mbox{\hyperlink{class_properties_panel_a551d3696624b46fed19b39a180af4407}{m\_layout}};}
+\DoxyCodeLine{00197\ \ \ QTreeWidget*\ \mbox{\hyperlink{class_properties_panel_a12fae06cd413afd8c6e64628cce1f7ef}{m\_tree}};}
+\DoxyCodeLine{00198\ \ \ std::map<QString,\ QWidget*>\ \mbox{\hyperlink{class_properties_panel_ada2a01f10e73abb316c9dab0ba3b737e}{m\_propertyWidgets}};}
+\DoxyCodeLine{00199\ \};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PROPERTIESPANEL\_H}}
+
+\end{DoxyCode}

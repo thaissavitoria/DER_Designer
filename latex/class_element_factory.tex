@@ -1,0 +1,64 @@
+\doxysection{Element\+Factory Class Reference}
+\hypertarget{class_element_factory}{}\label{class_element_factory}\index{ElementFactory@{ElementFactory}}
+
+
+Factory for creating \doxylink{class_basic_element}{Basic\+Element} instances.  
+
+
+
+
+{\ttfamily \#include $<$Element\+Factory.\+h$>$}
+
+
+
+Collaboration diagram for Element\+Factory\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=167pt]{class_element_factory__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_factory_a84bb24abdffea9682c5c007bc7792927}{create\+Element}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} type, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+static \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_element_factory_a820ac8bd73e6f53e84adabe915c69dc6}{create\+Element}} (const QString \&type\+Name, QObject \texorpdfstring{$\ast$}{*}parent=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Factory for creating \doxylink{class_basic_element}{Basic\+Element} instances. 
+
+Centralizes element creation logic, decoupling the View from knowing which concrete subclass to instantiate. 
+
+\label{doc-func-members}
+\Hypertarget{class_element_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_element_factory_a820ac8bd73e6f53e84adabe915c69dc6}\index{ElementFactory@{ElementFactory}!createElement@{createElement}}
+\index{createElement@{createElement}!ElementFactory@{ElementFactory}}
+\doxysubsubsection{\texorpdfstring{createElement()}{createElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_element_factory_a820ac8bd73e6f53e84adabe915c69dc6} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Element\+Factory\+::create\+Element (\begin{DoxyParamCaption}\item[{const QString \&}]{type\+Name}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{class_element_factory_a84bb24abdffea9682c5c007bc7792927}\index{ElementFactory@{ElementFactory}!createElement@{createElement}}
+\index{createElement@{createElement}!ElementFactory@{ElementFactory}}
+\doxysubsubsection{\texorpdfstring{createElement()}{createElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_element_factory_a84bb24abdffea9682c5c007bc7792927} 
+\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Element\+Factory\+::create\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}}}]{type}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_element_factory_a84bb24abdffea9682c5c007bc7792927_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/model/\mbox{\hyperlink{_element_factory_8h}{Element\+Factory.\+h}}\item 
+src/model/\mbox{\hyperlink{_element_factory_8cpp}{Element\+Factory.\+cpp}}\end{DoxyCompactItemize}

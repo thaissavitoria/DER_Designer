@@ -1,21 +1,33 @@
 <map id="QuickAccessToolbar" name="QuickAccessToolbar">
-<area shape="rect" id="Node000001" title="Quick access toolbar for some ERD diagram operations." alt="" coords="30,2564,182,2804"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="53,1967,118,2036"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,2050,105,2564,100,2564,84,2052"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html" title=" " alt="" coords="142,1511,335,2492"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="144,2489,135,2548,130,2547,143,2494"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="5,967,101,1036"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="58,1048,82,1222,116,1438,145,1568,139,1569,111,1439,77,1223,59,1053"/>
-<area shape="rect" id="Node000005" href="$class_diagram_scene.html" title=" " alt="" coords="124,564,352,1439"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="239,1436,241,1494,236,1494,238,1441"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="13,273,123,343"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="79,355,133,564,128,565,80,360"/>
-<area shape="rect" id="Node000007" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="147,124,360,492"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="249,489,251,548,245,547,249,494"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="224,5,282,75"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="253,87,256,125,251,124,253,92"/>
-<area shape="rect" id="Node000009" href="$class_diagram_view.html" title=" " alt="" coords="376,753,522,1249"/>
-<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="405,1247,360,1487,341,1573,336,1572,355,1486,404,1252"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="398,273,500,343"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="450,355,452,754,447,753,449,360"/>
+<area shape="rect" id="Node000001" title="Quick access toolbar for some ERD diagram operations." alt="" coords="188,3375,340,3615"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="210,2828,275,2897"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,2911,262,3375,257,3375,242,2913"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html" title=" " alt="" coords="299,2423,460,3303"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="301,3298,291,3359,286,3357,298,3303"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,2047,101,2116"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="48,2128,49,2192,57,2265,66,2301,79,2336,98,2369,122,2397,141,2410,161,2414,203,2408,245,2402,267,2407,288,2421,302,2435,297,2437,285,2425,265,2412,245,2407,204,2413,161,2419,139,2415,118,2401,93,2372,74,2339,61,2303,52,2266,44,2193,48,2134"/>
+<area shape="rect" id="Node000005" href="$class_diagram_scene.html" title=" " alt="" coords="348,865,576,1740"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="463,1737,457,2063,440,2399,439,2406,434,2405,435,2398,452,2063,462,1743"/>
+<area shape="rect" id="Node000011" href="$class_properties_panel.html" title="Panel widget for viewing and editing properties of selected diagram elements." alt="" coords="176,1833,407,2329"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="366,1742,352,1817,347,1816,367,1737"/>
+<area shape="rect" id="Node000014" href="$class_diagram_file_manager.html" title="Constructs the file manager associated with a scene." alt="" coords="593,1983,753,2180"/>
+<area shape="poly" id="edge17_Node000014_Node000005" title=" " alt="" coords="562,1737,577,1787,635,1966,629,1967,572,1789,562,1743"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="241,273,351,343"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="304,355,392,866,387,866,304,360"/>
+<area shape="rect" id="Node000007" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="375,124,588,492"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="478,489,474,848,468,848,477,495"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="452,5,510,75"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="481,87,484,125,479,124,481,92"/>
+<area shape="rect" id="Node000013" href="$class_auto_save_manager.html" title="Manages automatic saving and backup versioning of diagrams." alt="" coords="64,516,246,841"/>
+<area shape="poly" id="edge14_Node000013_Node000008" title=" " alt="" coords="435,44,388,51,332,64,277,88,252,105,231,126,201,168,178,215,160,264,148,316,140,368,136,419,136,516,131,516,131,419,135,367,143,315,155,263,173,213,197,166,227,122,249,101,274,83,330,59,387,45,439,40"/>
+<area shape="poly" id="edge16_Node000014_Node000008" title=" " alt="" coords="523,57,567,84,587,102,602,123,628,176,643,224,649,268,648,311,639,403,635,455,636,516,655,945,666,1365,675,1983,670,1983,661,1365,649,945,631,516,630,455,634,402,643,311,644,269,638,225,623,178,598,125,583,105,564,88,525,62"/>
+<area shape="rect" id="Node000009" href="$class_diagram_view.html" title=" " alt="" coords="778,1812,924,2351"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="779,2323,768,2352,700,2468,623,2579,544,2679,474,2763,469,2760,540,2676,618,2576,695,2465,763,2349,776,2327"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="800,1268,901,1337"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="851,1349,853,1813,848,1812,850,1354"/>
+<area shape="poly" id="edge10_Node000003_Node000011" title=" " alt="" coords="311,2326,320,2398,321,2406,315,2406,315,2399,310,2332"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="262,1268,324,1337"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="293,1349,295,1834,290,1833,293,1355"/>
+<area shape="poly" id="edge13_Node000003_Node000013" title=" " alt="" coords="146,839,133,1225,123,1696,123,1921,129,2116,143,2265,154,2316,166,2349,179,2365,192,2375,224,2385,257,2395,274,2405,289,2421,293,2428,288,2429,284,2424,270,2409,255,2400,223,2390,190,2380,175,2369,162,2352,149,2318,138,2266,124,2116,118,1921,117,1696,128,1225,146,844"/>
+<area shape="poly" id="edge15_Node000003_Node000014" title=" " alt="" coords="639,2177,577,2352,469,2637,464,2635,572,2350,637,2182"/>
 </map>

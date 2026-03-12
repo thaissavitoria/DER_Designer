@@ -115,6 +115,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acd7bb72b879a10043d61ad439d7badd6" id="r_acd7bb72b879a10043d61ad439d7badd6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd7bb72b879a10043d61ad439d7badd6">zoomIn</a> ()</td></tr>
 <tr class="memitem:a3c4b587e191fbe21304dce51c8065270" id="r_a3c4b587e191fbe21304dce51c8065270"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c4b587e191fbe21304dce51c8065270">zoomOut</a> ()</td></tr>
 <tr class="memitem:a728e7fb5f9863df0dc1561e4b08d4809" id="r_a728e7fb5f9863df0dc1561e4b08d4809"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a728e7fb5f9863df0dc1561e4b08d4809">resetZoom</a> ()</td></tr>
+<tr class="memitem:a2c1647bef1cfb2c5b5f45af153e5dafa" id="r_a2c1647bef1cfb2c5b5f45af153e5dafa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c1647bef1cfb2c5b5f45af153e5dafa">fitToView</a> ()</td></tr>
 <tr class="memitem:ad75d7c2698b62f9be8f9679b02a8ce0b" id="r_ad75d7c2698b62f9be8f9679b02a8ce0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad75d7c2698b62f9be8f9679b02a8ce0b">setZoomLevel</a> (qreal zoomLevel)</td></tr>
 <tr class="memitem:a8139f511ae2986efdce4477673b4510a" id="r_a8139f511ae2986efdce4477673b4510a"><td class="memItemLeft" align="right" valign="top">qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8139f511ae2986efdce4477673b4510a">getZoomLevel</a> () const</td></tr>
 </table><table class="memberdecls">
@@ -124,6 +125,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa9951a6e1b8fddf2eee28f91d0a77cbc" id="r_aa9951a6e1b8fddf2eee28f91d0a77cbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9951a6e1b8fddf2eee28f91d0a77cbc">dragMoveEvent</a> (QDragMoveEvent *event) override</td></tr>
 <tr class="memitem:a6d3626ec66c8ccda5d60f53e5ff46e1e" id="r_a6d3626ec66c8ccda5d60f53e5ff46e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d3626ec66c8ccda5d60f53e5ff46e1e">dropEvent</a> (QDropEvent *event) override</td></tr>
 <tr class="memitem:a29f569db14078b94495ae3827b9f1b50" id="r_a29f569db14078b94495ae3827b9f1b50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29f569db14078b94495ae3827b9f1b50">wheelEvent</a> (QWheelEvent *event) override</td></tr>
+<tr class="memitem:a68669e887e54f7d24dd528dd78744745" id="r_a68669e887e54f7d24dd528dd78744745"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68669e887e54f7d24dd528dd78744745">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
 <tr class="memitem:a181f6f529703f839d52d6017fdca1245" id="r_a181f6f529703f839d52d6017fdca1245"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a181f6f529703f839d52d6017fdca1245">drawBackground</a> (QPainter *painter, const QRectF &amp;rect) override</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pri-methods" class="groupheader"><a id="pri-methods" name="pri-methods"></a>
@@ -424,6 +426,33 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a2c1647bef1cfb2c5b5f45af153e5dafa" name="a2c1647bef1cfb2c5b5f45af153e5dafa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1647bef1cfb2c5b5f45af153e5dafa">&#9670;&#160;</a></span>fitToView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramView::fitToView </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa_cgraph.svg" width="410" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa_icgraph.svg" width="416" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a8139f511ae2986efdce4477673b4510a" name="a8139f511ae2986efdce4477673b4510a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8139f511ae2986efdce4477673b4510a">&#9670;&#160;</a></span>getZoomLevel()</h2>
 
@@ -471,6 +500,36 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a68669e887e54f7d24dd528dd78744745" name="a68669e887e54f7d24dd528dd78744745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68669e887e54f7d24dd528dd78744745">&#9670;&#160;</a></span>keyPressEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DiagramView::keyPressEvent </td>
+          <td>(</td>
+          <td class="paramtype">QKeyEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_view_a68669e887e54f7d24dd528dd78744745_cgraph.svg" width="654" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a728e7fb5f9863df0dc1561e4b08d4809" name="a728e7fb5f9863df0dc1561e4b08d4809"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a728e7fb5f9863df0dc1561e4b08d4809">&#9670;&#160;</a></span>resetZoom()</h2>
 
@@ -502,6 +561,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b_icgraph.svg" width="654" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -735,8 +799,8 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/viewer/<a class="el" href="_diagram_view_8h_source.html">DiagramView.h</a></li>
-<li>src/viewer/<a class="el" href="_diagram_view_8cpp.html">DiagramView.cpp</a></li>
+<li>src/view/<a class="el" href="_diagram_view_8h_source.html">DiagramView.h</a></li>
+<li>src/view/<a class="el" href="_diagram_view_8cpp.html">DiagramView.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

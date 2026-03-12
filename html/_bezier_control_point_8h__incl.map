@@ -1,9 +1,9 @@
-<map id="src/viewer/BezierControlPoint.h" name="src/viewer/BezierControlPoint.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="208,5,372,48"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,220,123"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,48,155,92,153,87,242,49"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="244,96,336,123"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,47,292,82,288,79,288,51"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="360,96,463,123"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="322,46,382,87,377,87,320,51"/>
+<map id="src/view/BezierControlPoint.h" name="src/view/BezierControlPoint.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="193,5,387,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,220,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,32,158,76,157,71,256,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="244,80,336,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="292,31,292,66,288,63,288,34"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="360,80,463,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,30,380,72,374,72,310,35"/>
 </map>

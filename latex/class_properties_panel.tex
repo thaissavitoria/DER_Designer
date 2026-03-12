@@ -1,0 +1,784 @@
+\doxysection{Properties\+Panel Class Reference}
+\hypertarget{class_properties_panel}{}\label{class_properties_panel}\index{PropertiesPanel@{PropertiesPanel}}
+
+
+Panel widget for viewing and editing properties of selected diagram elements.  
+
+
+
+
+{\ttfamily \#include $<$Properties\+Panel.\+h$>$}
+
+
+
+Inheritance diagram for Properties\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_properties_panel__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Properties\+Panel\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_properties_panel__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_properties_panel_a060ca6b9ac3fed44c819b0cf52a5d128}{status\+Message\+Requested}} (const QString \&message)
+\item 
+void \mbox{\hyperlink{class_properties_panel_ac550ef47b11e8355213a77ebb795a3be}{diagram\+Modified}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_properties_panel_a9866823e02faefceaae94fc0b0537707}{Properties\+Panel}} (\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}scene, QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319}{refresh}} (const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&selected\+Elements, const QSet$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&selected\+Connections)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f}{on\+Property\+Value\+Changed}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}item, int column)
+\item 
+void \mbox{\hyperlink{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd}{on\+Combo\+Box\+Changed}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8}{on\+Check\+Box\+Changed}} (bool checked)
+\item 
+void \mbox{\hyperlink{class_properties_panel_aec8130201106284c02f21903b516554d}{on\+Line\+Edit\+Changed}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a}{on\+Add\+Attribute\+On\+Tree\+Clicked}} ()
+\item 
+void \mbox{\hyperlink{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7}{on\+Remove\+Attribute\+On\+Tree\+Clicked}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_properties_panel_a13a5af5f48d1b9ee08d51bac35481a55}{clear\+Panel}} ()
+\item 
+void \mbox{\hyperlink{class_properties_panel_a037586f897062f3915a123b9f2a82b91}{populate\+For\+Element}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+void \mbox{\hyperlink{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d}{populate\+For\+Connection}} (\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}connection)
+\item 
+void \mbox{\hyperlink{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81}{populate\+Attribute\+Properties}} (\mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}attribute, QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a6a4344308af5b2c993bc25981529239c}{populate\+Entity\+Properties}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+void \mbox{\hyperlink{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2}{populate\+Relationship\+Properties}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e}{populate\+Attribute\+List}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent\+Item, const QList$<$ \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} $>$ \&attributes, const QString \&property\+Prefix)
+\item 
+QList$<$ \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_properties_panel_ac411993d2f778064b93d4bf91c499c63}{get\+Attributes\+From\+Ids}} (const QList$<$ QString $>$ \&attribute\+Ids)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_ae1d543e17528af28a5db02ee62b7dcd5}{create\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, const QVariant \&value, const QString \&property\+Key, bool editable=true)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47}{create\+Combo\+Box\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, const QString\+List \&options, const QString \&current\+Value, const QString \&property\+Key)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8}{create\+Icon\+Combo\+Box\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, const QString\+List \&options, const QList$<$ QIcon $>$ \&icons, const QString \&current\+Value, const QString \&property\+Key)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_acfb41226221624e46767835caeea8abc}{create\+Check\+Box\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, bool current\+Value, const QString \&property\+Key)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc}{create\+Line\+Edit\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, const QString \&current\+Value, const QString \&property\+Key)
+\item 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f}{create\+Button\+Property\+Item}} (QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}parent, const QString \&property\+Name, const QString \&button\+Text, const QString \&property\+Key)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a7612fc903f0d07a774e46e396f415065}{update\+Property\+Item\+Text}} (const QString \&property\+Key, const QString \&value)
+\item 
+bool \mbox{\hyperlink{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d}{handle\+Attribute\+Property\+Change}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QString \&property\+Type, const QVariant \&new\+Value)
+\item 
+bool \mbox{\hyperlink{class_properties_panel_aa82a2245c62f66554f277c64e643252c}{handle\+Relationship\+End\+Cardinality\+Change}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QString \&property\+Key, const QString \&value)
+\item 
+bool \mbox{\hyperlink{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b}{handle\+Relationship\+End\+Participation\+Change}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const QString \&property\+Key, bool value)
+\item 
+void \mbox{\hyperlink{class_properties_panel_a79618c5c820a40931c085d54be70bd34}{updates\+After\+Changing\+Property}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element)
+\item 
+void \mbox{\hyperlink{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46}{connect\+Basic\+Elements\+With\+Connection\+Line}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}start\+Element, \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}end\+Element)
+\item 
+QList$<$ QIcon $>$ \mbox{\hyperlink{class_properties_panel_a210643268e9f0685ffd9c732a1b90428}{get\+Connection\+Line\+Type\+Icons}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a60f88328c193c282810ea8dde87f47a3}{m\+\_\+scene}}
+\item 
+QVBox\+Layout \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a551d3696624b46fed19b39a180af4407}{m\+\_\+layout}}
+\item 
+QTree\+Widget \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_properties_panel_a12fae06cd413afd8c6e64628cce1f7ef}{m\+\_\+tree}}
+\item 
+std\+::map$<$ QString, QWidget \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_properties_panel_ada2a01f10e73abb316c9dab0ba3b737e}{m\+\_\+property\+Widgets}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Panel widget for viewing and editing properties of selected diagram elements. 
+
+Displays a tree-\/based property editor that updates based on the current selection in the \doxylink{class_diagram_scene}{Diagram\+Scene}, supporting elements such as entities, relationships, and attributes, as well as connection lines. 
+
+\label{doc-constructors}
+\Hypertarget{class_properties_panel_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_properties_panel_a9866823e02faefceaae94fc0b0537707}\index{PropertiesPanel@{PropertiesPanel}!PropertiesPanel@{PropertiesPanel}}
+\index{PropertiesPanel@{PropertiesPanel}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{PropertiesPanel()}{PropertiesPanel()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a9866823e02faefceaae94fc0b0537707} 
+Properties\+Panel\+::\+Properties\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}} \texorpdfstring{$\ast$}{*}}]{scene}{, }\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a9866823e02faefceaae94fc0b0537707_cgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-func-members}
+\Hypertarget{class_properties_panel_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_properties_panel_a13a5af5f48d1b9ee08d51bac35481a55}\index{PropertiesPanel@{PropertiesPanel}!clearPanel@{clearPanel}}
+\index{clearPanel@{clearPanel}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{clearPanel()}{clearPanel()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a13a5af5f48d1b9ee08d51bac35481a55} 
+void Properties\+Panel\+::clear\+Panel (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a13a5af5f48d1b9ee08d51bac35481a55_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46}\index{PropertiesPanel@{PropertiesPanel}!connectBasicElementsWithConnectionLine@{connectBasicElementsWithConnectionLine}}
+\index{connectBasicElementsWithConnectionLine@{connectBasicElementsWithConnectionLine}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{connectBasicElementsWithConnectionLine()}{connectBasicElementsWithConnectionLine()}}
+{\footnotesize\ttfamily \label{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46} 
+void Properties\+Panel\+::connect\+Basic\+Elements\+With\+Connection\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{start\+Element}{, }\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{end\+Element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_afdbf8bbbf5225049cf87295d5151fb46_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f}\index{PropertiesPanel@{PropertiesPanel}!createButtonPropertyItem@{createButtonPropertyItem}}
+\index{createButtonPropertyItem@{createButtonPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createButtonPropertyItem()}{createButtonPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Button\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{const QString \&}]{button\+Text}{, }\item[{const QString \&}]{property\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a90cca2a241daa84841ee3e90d7768c8f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_acfb41226221624e46767835caeea8abc}\index{PropertiesPanel@{PropertiesPanel}!createCheckBoxPropertyItem@{createCheckBoxPropertyItem}}
+\index{createCheckBoxPropertyItem@{createCheckBoxPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createCheckBoxPropertyItem()}{createCheckBoxPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_acfb41226221624e46767835caeea8abc} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Check\+Box\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{bool}]{current\+Value}{, }\item[{const QString \&}]{property\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_acfb41226221624e46767835caeea8abc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_acfb41226221624e46767835caeea8abc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47}\index{PropertiesPanel@{PropertiesPanel}!createComboBoxPropertyItem@{createComboBoxPropertyItem}}
+\index{createComboBoxPropertyItem@{createComboBoxPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createComboBoxPropertyItem()}{createComboBoxPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Combo\+Box\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{const QString\+List \&}]{options}{, }\item[{const QString \&}]{current\+Value}{, }\item[{const QString \&}]{property\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a8fd53ec3c9f711c3354483e8bb4d0b47_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8}\index{PropertiesPanel@{PropertiesPanel}!createIconComboBoxPropertyItem@{createIconComboBoxPropertyItem}}
+\index{createIconComboBoxPropertyItem@{createIconComboBoxPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createIconComboBoxPropertyItem()}{createIconComboBoxPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Icon\+Combo\+Box\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{const QString\+List \&}]{options}{, }\item[{const QList$<$ QIcon $>$ \&}]{icons}{, }\item[{const QString \&}]{current\+Value}{, }\item[{const QString \&}]{property\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a32c2dab00c58ffdcb6a1e3cd829d03c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc}\index{PropertiesPanel@{PropertiesPanel}!createLineEditPropertyItem@{createLineEditPropertyItem}}
+\index{createLineEditPropertyItem@{createLineEditPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createLineEditPropertyItem()}{createLineEditPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Line\+Edit\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{const QString \&}]{current\+Value}{, }\item[{const QString \&}]{property\+Key}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a7bc224323f9c626842fdb6a89205c9bc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_ae1d543e17528af28a5db02ee62b7dcd5}\index{PropertiesPanel@{PropertiesPanel}!createPropertyItem@{createPropertyItem}}
+\index{createPropertyItem@{createPropertyItem}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{createPropertyItem()}{createPropertyItem()}}
+{\footnotesize\ttfamily \label{class_properties_panel_ae1d543e17528af28a5db02ee62b7dcd5} 
+QTree\+Widget\+Item \texorpdfstring{$\ast$}{*} Properties\+Panel\+::create\+Property\+Item (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{, }\item[{const QString \&}]{property\+Name}{, }\item[{const QVariant \&}]{value}{, }\item[{const QString \&}]{property\+Key}{, }\item[{bool}]{editable}{ = {\ttfamily true}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_ae1d543e17528af28a5db02ee62b7dcd5_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_ac550ef47b11e8355213a77ebb795a3be}\index{PropertiesPanel@{PropertiesPanel}!diagramModified@{diagramModified}}
+\index{diagramModified@{diagramModified}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{diagramModified}{diagramModified}}
+{\footnotesize\ttfamily \label{class_properties_panel_ac550ef47b11e8355213a77ebb795a3be} 
+void Properties\+Panel\+::diagram\+Modified (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_ac550ef47b11e8355213a77ebb795a3be_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_ac411993d2f778064b93d4bf91c499c63}\index{PropertiesPanel@{PropertiesPanel}!getAttributesFromIds@{getAttributesFromIds}}
+\index{getAttributesFromIds@{getAttributesFromIds}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{getAttributesFromIds()}{getAttributesFromIds()}}
+{\footnotesize\ttfamily \label{class_properties_panel_ac411993d2f778064b93d4bf91c499c63} 
+QList$<$ \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} $>$ Properties\+Panel\+::get\+Attributes\+From\+Ids (\begin{DoxyParamCaption}\item[{const QList$<$ QString $>$ \&}]{attribute\+Ids}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_ac411993d2f778064b93d4bf91c499c63_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a210643268e9f0685ffd9c732a1b90428}\index{PropertiesPanel@{PropertiesPanel}!getConnectionLineTypeIcons@{getConnectionLineTypeIcons}}
+\index{getConnectionLineTypeIcons@{getConnectionLineTypeIcons}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{getConnectionLineTypeIcons()}{getConnectionLineTypeIcons()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a210643268e9f0685ffd9c732a1b90428} 
+QList$<$ QIcon $>$ Properties\+Panel\+::get\+Connection\+Line\+Type\+Icons (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a210643268e9f0685ffd9c732a1b90428_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d}\index{PropertiesPanel@{PropertiesPanel}!handleAttributePropertyChange@{handleAttributePropertyChange}}
+\index{handleAttributePropertyChange@{handleAttributePropertyChange}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{handleAttributePropertyChange()}{handleAttributePropertyChange()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d} 
+bool Properties\+Panel\+::handle\+Attribute\+Property\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QString \&}]{property\+Type}{, }\item[{const QVariant \&}]{new\+Value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a74d22cd1ca119cda9cc4ca00b853e88d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_aa82a2245c62f66554f277c64e643252c}\index{PropertiesPanel@{PropertiesPanel}!handleRelationshipEndCardinalityChange@{handleRelationshipEndCardinalityChange}}
+\index{handleRelationshipEndCardinalityChange@{handleRelationshipEndCardinalityChange}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{handleRelationshipEndCardinalityChange()}{handleRelationshipEndCardinalityChange()}}
+{\footnotesize\ttfamily \label{class_properties_panel_aa82a2245c62f66554f277c64e643252c} 
+bool Properties\+Panel\+::handle\+Relationship\+End\+Cardinality\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QString \&}]{property\+Key}{, }\item[{const QString \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aa82a2245c62f66554f277c64e643252c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aa82a2245c62f66554f277c64e643252c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b}\index{PropertiesPanel@{PropertiesPanel}!handleRelationshipEndParticipationChange@{handleRelationshipEndParticipationChange}}
+\index{handleRelationshipEndParticipationChange@{handleRelationshipEndParticipationChange}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{handleRelationshipEndParticipationChange()}{handleRelationshipEndParticipationChange()}}
+{\footnotesize\ttfamily \label{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b} 
+bool Properties\+Panel\+::handle\+Relationship\+End\+Participation\+Change (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const QString \&}]{property\+Key}{, }\item[{bool}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_ac2741a5b2cb859b07534b8f7c786359b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a}\index{PropertiesPanel@{PropertiesPanel}!onAddAttributeOnTreeClicked@{onAddAttributeOnTreeClicked}}
+\index{onAddAttributeOnTreeClicked@{onAddAttributeOnTreeClicked}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onAddAttributeOnTreeClicked}{onAddAttributeOnTreeClicked}}
+{\footnotesize\ttfamily \label{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a} 
+void Properties\+Panel\+::on\+Add\+Attribute\+On\+Tree\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a55ae5c02e7d75c7bdc26281a148e8c5a_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8}\index{PropertiesPanel@{PropertiesPanel}!onCheckBoxChanged@{onCheckBoxChanged}}
+\index{onCheckBoxChanged@{onCheckBoxChanged}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onCheckBoxChanged}{onCheckBoxChanged}}
+{\footnotesize\ttfamily \label{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8} 
+void Properties\+Panel\+::on\+Check\+Box\+Changed (\begin{DoxyParamCaption}\item[{bool}]{checked}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a2800a2c7575a5fad6d923d9b64d982f8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd}\index{PropertiesPanel@{PropertiesPanel}!onComboBoxChanged@{onComboBoxChanged}}
+\index{onComboBoxChanged@{onComboBoxChanged}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onComboBoxChanged}{onComboBoxChanged}}
+{\footnotesize\ttfamily \label{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd} 
+void Properties\+Panel\+::on\+Combo\+Box\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aec82450a3daeb2614c2321e37897f1dd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_aec8130201106284c02f21903b516554d}\index{PropertiesPanel@{PropertiesPanel}!onLineEditChanged@{onLineEditChanged}}
+\index{onLineEditChanged@{onLineEditChanged}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onLineEditChanged}{onLineEditChanged}}
+{\footnotesize\ttfamily \label{class_properties_panel_aec8130201106284c02f21903b516554d} 
+void Properties\+Panel\+::on\+Line\+Edit\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{text}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aec8130201106284c02f21903b516554d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aec8130201106284c02f21903b516554d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f}\index{PropertiesPanel@{PropertiesPanel}!onPropertyValueChanged@{onPropertyValueChanged}}
+\index{onPropertyValueChanged@{onPropertyValueChanged}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onPropertyValueChanged}{onPropertyValueChanged}}
+{\footnotesize\ttfamily \label{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f} 
+void Properties\+Panel\+::on\+Property\+Value\+Changed (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{item}{, }\item[{int}]{column}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a3cdc065abcd2f9e59558903073c0f23f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7}\index{PropertiesPanel@{PropertiesPanel}!onRemoveAttributeOnTreeClicked@{onRemoveAttributeOnTreeClicked}}
+\index{onRemoveAttributeOnTreeClicked@{onRemoveAttributeOnTreeClicked}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{onRemoveAttributeOnTreeClicked}{onRemoveAttributeOnTreeClicked}}
+{\footnotesize\ttfamily \label{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7} 
+void Properties\+Panel\+::on\+Remove\+Attribute\+On\+Tree\+Clicked (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a8a2ec0bcba44f3bbd0245d3a53ff49f7_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e}\index{PropertiesPanel@{PropertiesPanel}!populateAttributeList@{populateAttributeList}}
+\index{populateAttributeList@{populateAttributeList}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateAttributeList()}{populateAttributeList()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e} 
+void Properties\+Panel\+::populate\+Attribute\+List (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent\+Item}{, }\item[{const QList$<$ \mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*} $>$ \&}]{attributes}{, }\item[{const QString \&}]{property\+Prefix}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a050a4a9040c7aeefde9c1377d2e1909e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81}\index{PropertiesPanel@{PropertiesPanel}!populateAttributeProperties@{populateAttributeProperties}}
+\index{populateAttributeProperties@{populateAttributeProperties}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateAttributeProperties()}{populateAttributeProperties()}}
+{\footnotesize\ttfamily \label{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81} 
+void Properties\+Panel\+::populate\+Attribute\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute}{, }\item[{QTree\+Widget\+Item \texorpdfstring{$\ast$}{*}}]{parent}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_acc5a2b4e63ea74eaa34853f1cec46b81_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a6a4344308af5b2c993bc25981529239c}\index{PropertiesPanel@{PropertiesPanel}!populateEntityProperties@{populateEntityProperties}}
+\index{populateEntityProperties@{populateEntityProperties}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateEntityProperties()}{populateEntityProperties()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a6a4344308af5b2c993bc25981529239c} 
+void Properties\+Panel\+::populate\+Entity\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a6a4344308af5b2c993bc25981529239c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a6a4344308af5b2c993bc25981529239c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d}\index{PropertiesPanel@{PropertiesPanel}!populateForConnection@{populateForConnection}}
+\index{populateForConnection@{populateForConnection}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateForConnection()}{populateForConnection()}}
+{\footnotesize\ttfamily \label{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d} 
+void Properties\+Panel\+::populate\+For\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_adbc7f8deb3a687706dc44ebbd7e39d9d_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a037586f897062f3915a123b9f2a82b91}\index{PropertiesPanel@{PropertiesPanel}!populateForElement@{populateForElement}}
+\index{populateForElement@{populateForElement}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateForElement()}{populateForElement()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a037586f897062f3915a123b9f2a82b91} 
+void Properties\+Panel\+::populate\+For\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a037586f897062f3915a123b9f2a82b91_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a037586f897062f3915a123b9f2a82b91_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2}\index{PropertiesPanel@{PropertiesPanel}!populateRelationshipProperties@{populateRelationshipProperties}}
+\index{populateRelationshipProperties@{populateRelationshipProperties}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{populateRelationshipProperties()}{populateRelationshipProperties()}}
+{\footnotesize\ttfamily \label{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2} 
+void Properties\+Panel\+::populate\+Relationship\+Properties (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_aeb116e2e51099f618b5d284e492bc0e2_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319}\index{PropertiesPanel@{PropertiesPanel}!refresh@{refresh}}
+\index{refresh@{refresh}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319} 
+void Properties\+Panel\+::refresh (\begin{DoxyParamCaption}\item[{const QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ \&}]{selected\+Elements}{, }\item[{const QSet$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \&}]{selected\+Connections}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a139ae0158b486c6004e15e0ddf36f319_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a060ca6b9ac3fed44c819b0cf52a5d128}\index{PropertiesPanel@{PropertiesPanel}!statusMessageRequested@{statusMessageRequested}}
+\index{statusMessageRequested@{statusMessageRequested}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{statusMessageRequested}{statusMessageRequested}}
+{\footnotesize\ttfamily \label{class_properties_panel_a060ca6b9ac3fed44c819b0cf52a5d128} 
+void Properties\+Panel\+::status\+Message\+Requested (\begin{DoxyParamCaption}\item[{const QString \&}]{message}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a060ca6b9ac3fed44c819b0cf52a5d128_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a7612fc903f0d07a774e46e396f415065}\index{PropertiesPanel@{PropertiesPanel}!updatePropertyItemText@{updatePropertyItemText}}
+\index{updatePropertyItemText@{updatePropertyItemText}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{updatePropertyItemText()}{updatePropertyItemText()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a7612fc903f0d07a774e46e396f415065} 
+void Properties\+Panel\+::update\+Property\+Item\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{property\+Key}{, }\item[{const QString \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a7612fc903f0d07a774e46e396f415065_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_properties_panel_a79618c5c820a40931c085d54be70bd34}\index{PropertiesPanel@{PropertiesPanel}!updatesAfterChangingProperty@{updatesAfterChangingProperty}}
+\index{updatesAfterChangingProperty@{updatesAfterChangingProperty}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{updatesAfterChangingProperty()}{updatesAfterChangingProperty()}}
+{\footnotesize\ttfamily \label{class_properties_panel_a79618c5c820a40931c085d54be70bd34} 
+void Properties\+Panel\+::updates\+After\+Changing\+Property (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a79618c5c820a40931c085d54be70bd34_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_properties_panel_a79618c5c820a40931c085d54be70bd34_icgraph}
+\end{center}
+\end{figure}
+
+
+\label{doc-variable-members}
+\Hypertarget{class_properties_panel_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_properties_panel_a551d3696624b46fed19b39a180af4407}\index{PropertiesPanel@{PropertiesPanel}!m\_layout@{m\_layout}}
+\index{m\_layout@{m\_layout}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{m\_layout}{m\_layout}}
+{\footnotesize\ttfamily \label{class_properties_panel_a551d3696624b46fed19b39a180af4407} 
+QVBox\+Layout\texorpdfstring{$\ast$}{*} Properties\+Panel\+::m\+\_\+layout\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_properties_panel_ada2a01f10e73abb316c9dab0ba3b737e}\index{PropertiesPanel@{PropertiesPanel}!m\_propertyWidgets@{m\_propertyWidgets}}
+\index{m\_propertyWidgets@{m\_propertyWidgets}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{m\_propertyWidgets}{m\_propertyWidgets}}
+{\footnotesize\ttfamily \label{class_properties_panel_ada2a01f10e73abb316c9dab0ba3b737e} 
+std\+::map$<$QString, QWidget\texorpdfstring{$\ast$}{*}$>$ Properties\+Panel\+::m\+\_\+property\+Widgets\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_properties_panel_a60f88328c193c282810ea8dde87f47a3}\index{PropertiesPanel@{PropertiesPanel}!m\_scene@{m\_scene}}
+\index{m\_scene@{m\_scene}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{m\_scene}{m\_scene}}
+{\footnotesize\ttfamily \label{class_properties_panel_a60f88328c193c282810ea8dde87f47a3} 
+\mbox{\hyperlink{class_diagram_scene}{Diagram\+Scene}}\texorpdfstring{$\ast$}{*} Properties\+Panel\+::m\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\Hypertarget{class_properties_panel_a12fae06cd413afd8c6e64628cce1f7ef}\index{PropertiesPanel@{PropertiesPanel}!m\_tree@{m\_tree}}
+\index{m\_tree@{m\_tree}!PropertiesPanel@{PropertiesPanel}}
+\doxysubsubsection{\texorpdfstring{m\_tree}{m\_tree}}
+{\footnotesize\ttfamily \label{class_properties_panel_a12fae06cd413afd8c6e64628cce1f7ef} 
+QTree\+Widget\texorpdfstring{$\ast$}{*} Properties\+Panel\+::m\+\_\+tree\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/view/\mbox{\hyperlink{_properties_panel_8h}{Properties\+Panel.\+h}}\item 
+src/view/\mbox{\hyperlink{_properties_panel_8cpp}{Properties\+Panel.\+cpp}}\end{DoxyCompactItemize}

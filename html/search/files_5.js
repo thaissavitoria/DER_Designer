@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['jsonhelper_2ecpp_0',['JsonHelper.cpp',['../_json_helper_8cpp.html',1,'']]],
-  ['jsonhelper_2eh_1',['JsonHelper.h',['../_json_helper_8h.html',1,'']]]
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow_2ecpp_1',['MainWindow.cpp',['../_main_window_8cpp.html',1,'']]],
+  ['mainwindow_2eh_2',['MainWindow.h',['../_main_window_8h.html',1,'']]]
 ];

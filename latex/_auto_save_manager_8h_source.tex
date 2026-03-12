@@ -1,0 +1,70 @@
+\doxysection{Auto\+Save\+Manager.\+h}
+\hypertarget{_auto_save_manager_8h_source}{}\label{_auto_save_manager_8h_source}\index{src/model/AutoSaveManager.h@{src/model/AutoSaveManager.h}}
+\mbox{\hyperlink{_auto_save_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ AUTOSAVEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ AUTOSAVEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCore/QString>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtCore/QTimer>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_connection_line_8h}{model/ConnectionLine.h}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_basic_element_8h}{model/BasicElement.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_auto_save_manager_a2d6ec6a7aca5011dc47b4bed3ada2e27}{AutoSaveManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_auto_save_manager_a2d6ec6a7aca5011dc47b4bed3ada2e27}{AutoSaveManager}}(}
+\DoxyCodeLine{00027\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00028\ \ \ );}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_abf0a685227c4726b5962cb3244f2f9d7}{setCurrentFileName}}(}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName}
+\DoxyCodeLine{00032\ \ \ );}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_abc8d58db920f869e8e594b4568e82e24}{setEnabled}}(}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ enabled}
+\DoxyCodeLine{00036\ \ \ );}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_auto_save_manager_a64fa6a667e2c42b620cb74935035da08}{isEnabled}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_auto_save_manager_abf65fc5461149885d9abf242227a7a8e}{m\_enabled}};\ \}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_ac80d3c995c6ac5ad70b0c0b4cf74b096}{start}}();}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_a78b573d8221a0b78a6a0045568f8a4cc}{stop}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_a23c137dda32115b244ed8422369cc2e0}{executeSave}}(}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ QList<BasicElement*>\&\ elements,}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{const}\ QList<ConnectionLine*>\&\ connections}
+\DoxyCodeLine{00046\ \ \ );}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ signals:}
+\DoxyCodeLine{00049\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_a3e160b131992a4a23c05feefbb0e2270}{saveRequested}}();}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_ae2c258d4bd9d41f4b3cafd1d0fbf89f6}{mainFileSaved}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_abab9c7e3bc7b6e74376ffcd639536ddb}{statusMessageRequested}}(}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ message}
+\DoxyCodeLine{00055\ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_auto_save_manager_afc210ecc4d92e0c5316d2565d8794f04}{onTimerTriggered}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00061\ \ \ QString\ \mbox{\hyperlink{class_auto_save_manager_a347aa8569b3722cdff6e6534dc85c0fe}{generateBackupFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ QTimer*\ \mbox{\hyperlink{class_auto_save_manager_a62e6b11b3ffc284e3e7cdcd3f0e04571}{m\_timer}};}
+\DoxyCodeLine{00064\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_auto_save_manager_abf65fc5461149885d9abf242227a7a8e}{m\_enabled}};}
+\DoxyCodeLine{00065\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_auto_save_manager_ae076d4fd83e97b6b945422f1a92eba0f}{m\_interval}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ QString\ \mbox{\hyperlink{class_auto_save_manager_aa282b4a0f9fe457239d2e20a4eefd190}{m\_currentFileName}};}
+\DoxyCodeLine{00068\ \ \ QString\ \mbox{\hyperlink{class_auto_save_manager_acb25dee60766629c050e535d4688239b}{m\_backupDirectory}};}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ AUTOSAVEMANAGER\_H}}
+\DoxyCodeLine{00072\ }
+
+\end{DoxyCode}

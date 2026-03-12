@@ -1,7 +1,7 @@
-<map id="src/controller/PropertyCommand.h" name="src/controller/PropertyCommand.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="128,5,349,32"/>
-<area shape="rect" id="Node000002" href="$_property_command_8cpp.html" title=" " alt="" coords="5,80,240,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,40,144,82,142,77,203,41"/>
-<area shape="rect" id="Node000003" href="$_main_window_8cpp.html" title=" " alt="" coords="264,80,448,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="272,38,338,79,333,79,271,43"/>
+<map id="src/model/PropertyCommand.h" name="src/model/PropertyCommand.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="126,5,328,32"/>
+<area shape="rect" id="Node000002" href="$_property_command_8cpp.html" title=" " alt="" coords="5,80,222,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,40,135,82,132,77,192,41"/>
+<area shape="rect" id="Node000003" href="$_properties_panel_8cpp.html" title=" " alt="" coords="246,80,437,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="260,38,324,79,319,79,259,43"/>
 </map>

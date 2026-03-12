@@ -11,7 +11,8 @@ Represents a relationship element in an ERD diagram.
 
 
 
-Inheritance diagram for Relationship\+:\nopagebreak
+Inheritance diagram for Relationship\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Relationship\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Relationship\+:\nopagebreak
+Collaboration diagram for Relationship\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -63,6 +65,8 @@ void \mbox{\hyperlink{class_relationship_afd48f436e1a081b800d28a68078bfe08}{set\
 QVariant\+Map \mbox{\hyperlink{class_relationship_a61fd3cf9518d2e93e4d0629269a37334}{serialize}} () const override
 \item 
 bool \mbox{\hyperlink{class_relationship_af14ba497de57d4e14557eb4450fb730b}{deserialize}} (const QVariant\+Map \&data) override
+\item 
+QString \mbox{\hyperlink{class_relationship_a635483cdfbffa33be91a201ba3aff578}{string\+Element\+Type}} () const override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
@@ -134,11 +138,6 @@ QList$<$ \mbox{\hyperlink{class_relationship_end}{Relationship\+End}} \texorpdfs
 \item 
 void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
-\begin{DoxyCompactItemize}
-\item 
-static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
-\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -180,7 +179,8 @@ This class extends \doxylink{class_basic_element}{Basic\+Element} to represent r
 {\footnotesize\ttfamily \label{class_relationship_a7029bae7f63e705126cf2776602e0b52} 
 Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -200,7 +200,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_relationship_a6fabfd34f6c221f7bec03e1f0b617ac1} 
 Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const bool}]{is\+Identifying}{ = {\ttfamily false}, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -213,7 +214,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_relationship_ae16e241e774fd09db9bf40992c97b8b8} 
 Relationship\+::\+Relationship (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_relationship}{Relationship}} \&}]{other\+Atrribute}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -372,6 +374,16 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_relationship_afd48f436e1a081b800d28a68078bfe08_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_relationship_a635483cdfbffa33be91a201ba3aff578}\index{Relationship@{Relationship}!stringElementType@{stringElementType}}
+\index{stringElementType@{stringElementType}!Relationship@{Relationship}}
+\doxysubsubsection{\texorpdfstring{stringElementType()}{stringElementType()}}
+{\footnotesize\ttfamily \label{class_relationship_a635483cdfbffa33be91a201ba3aff578} 
+QString Relationship\+::string\+Element\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_abb80391f2c11a0eb2fe2b21d53967450}{Basic\+Element}}.
+
 \Hypertarget{class_relationship_a0b4a9caae8b075cc96fb732666e66a01}\index{Relationship@{Relationship}!typeDisplayName@{typeDisplayName}}
 \index{typeDisplayName@{typeDisplayName}!Relationship@{Relationship}}
 \doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}

@@ -34,6 +34,7 @@ var class_basic_element =
     [ "setSize", "class_basic_element.html#ab86c964c6ef9e8d7299efc263a0837e7", null ],
     [ "setSize", "class_basic_element.html#ae089b8cb8d8fe983d587035412b0de67", null ],
     [ "size", "class_basic_element.html#a542adbf85a58c5c9bf17975964d7e446", null ],
+    [ "stringElementType", "class_basic_element.html#abb80391f2c11a0eb2fe2b21d53967450", null ],
     [ "type", "class_basic_element.html#a8aa03ed75e7eaa11fe054fe29b86b160", null ],
     [ "typeDisplayName", "class_basic_element.html#aa5ae2ba261410dcf01c30ef24adf4ab0", null ],
     [ "m_attributeIds", "class_basic_element.html#aba019844ad7809e7f0d0892f5e07d29c", null ],

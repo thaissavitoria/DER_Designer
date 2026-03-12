@@ -1,9 +1,9 @@
-<map id="src/viewer/MainWindow.h" name="src/viewer/MainWindow.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="132,5,303,32"/>
-<area shape="rect" id="Node000002" href="$main_8cpp.html" title=" " alt="" coords="5,88,102,115"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,42,80,90,78,85,177,37"/>
-<area shape="rect" id="Node000003" href="$_main_window_8cpp.html" title=" " alt="" coords="125,88,310,115"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,46,220,89,215,86,216,50"/>
-<area shape="rect" id="Node000004" href="$_quick_acess_tool_bar_8cpp.html" title=" " alt="" coords="334,80,514,123"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="264,35,373,79,368,80,264,41"/>
+<map id="src/view/MainWindow.h" name="src/view/MainWindow.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="132,5,292,32"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html" title=" " alt="" coords="5,80,102,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,41,82,82,80,77,169,37"/>
+<area shape="rect" id="Node000003" href="$_main_window_8cpp.html" title=" " alt="" coords="126,80,299,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,46,214,81,210,78,210,50"/>
+<area shape="rect" id="Node000004" href="$_quick_acess_toolbar_8cpp.html" title=" " alt="" coords="323,80,536,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="265,35,394,79,389,80,264,40"/>
 </map>

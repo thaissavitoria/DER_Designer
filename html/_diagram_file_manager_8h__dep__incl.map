@@ -1,0 +1,14 @@
+<map id="src/model/DiagramFileManager.h" name="src/model/DiagramFileManager.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="163,5,376,32"/>
+<area shape="rect" id="Node000002" href="$_diagram_file_manager_8cpp.html" title=" " alt="" coords="5,80,233,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,41,147,82,144,77,232,37"/>
+<area shape="rect" id="Node000003" href="$_main_window_8cpp.html" title=" " alt="" coords="172,155,346,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="270,46,262,155,258,153,265,49"/>
+<area shape="rect" id="Node000004" href="$_main_window_8h.html" title=" " alt="" coords="327,80,487,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="307,37,386,79,380,80,306,42"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="370,113,286,157,284,152,365,114"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html" title=" " alt="" coords="370,155,466,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="413,120,418,156,414,153,409,124"/>
+<area shape="rect" id="Node000006" href="$_quick_acess_toolbar_8cpp.html" title=" " alt="" coords="490,155,702,181"/>
+<area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="455,110,566,154,560,154,454,115"/>
+</map>

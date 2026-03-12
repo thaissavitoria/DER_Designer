@@ -19,6 +19,7 @@ var class_attribute =
     [ "serialize", "class_attribute.html#ae8c14a45321be32454ef200c5be0591c", null ],
     [ "setAttributeType", "class_attribute.html#ad76b9eb27719dada6e85b73f0ffc8ac0", null ],
     [ "setPrimaryKey", "class_attribute.html#a8918add957134a18557a19f9939699f3", null ],
+    [ "stringElementType", "class_attribute.html#ac3397eb9cb161a99bdad2e2b398c5eec", null ],
     [ "typeDisplayName", "class_attribute.html#adda991fc97159877bcb620f608bb9ba6", null ],
     [ "m_attributeType", "class_attribute.html#a76f247bd74875e5266dab6cd13203439", null ],
     [ "m_isPrimaryKey", "class_attribute.html#a808d70efb9bceb17342178944e835e2f", null ]

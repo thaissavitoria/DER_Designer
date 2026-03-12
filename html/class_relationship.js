@@ -16,6 +16,7 @@ var class_relationship =
     [ "removeEnd", "class_relationship.html#ae234f139c6133293412b347462b1079e", null ],
     [ "serialize", "class_relationship.html#a61fd3cf9518d2e93e4d0629269a37334", null ],
     [ "setIsIdentifying", "class_relationship.html#afd48f436e1a081b800d28a68078bfe08", null ],
+    [ "stringElementType", "class_relationship.html#a635483cdfbffa33be91a201ba3aff578", null ],
     [ "typeDisplayName", "class_relationship.html#a0b4a9caae8b075cc96fb732666e66a01", null ],
     [ "m_ends", "class_relationship.html#ad0f3a03b7882f59655cfdc245e1ca388", null ],
     [ "m_isIdentifying", "class_relationship.html#a0b12c360255c5ee25073cc482bbd7d5f", null ]

@@ -92,13 +92,13 @@ $(function(){initNavTree('functions_func_s.html','',''); });
 
 <h3 class="doxsection"><a id="index_s" name="index_s"></a>- s -</h3><ul>
 <li>saveAsFile()&#160;:&#160;<a class="el" href="class_main_window.html#ace1b7624a64f4d70513b86601e5846f9">MainWindow</a></li>
-<li>saveDiagramToFile()&#160;:&#160;<a class="el" href="class_json_helper.html#a7f720f1105f91b135fdfbcaf94e3f929">JsonHelper</a></li>
+<li>saveDiagram()&#160;:&#160;<a class="el" href="class_diagram_file_manager.html#a84a364087a0eecd1c416b05615fe1f0b">DiagramFileManager</a></li>
+<li>saveDiagramToFile()&#160;:&#160;<a class="el" href="class_diagram_serializer.html#af41f90138bda3c05cb4a37c709682770">DiagramSerializer</a></li>
 <li>saveFile()&#160;:&#160;<a class="el" href="class_main_window.html#a464aaa4d378e7b2d814756a73d6e1ed6">MainWindow</a></li>
-<li>saveToMainFile()&#160;:&#160;<a class="el" href="class_main_window.html#a101685dce06592fd3a51da45fc7be4ad">MainWindow</a></li>
-<li>saveVersionBackup()&#160;:&#160;<a class="el" href="class_main_window.html#ab38b9b1c96adcb0bbbbaec5b3ff5ae19">MainWindow</a></li>
+<li>saveRequested()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#a3e160b131992a4a23c05feefbb0e2270">AutoSaveManager</a></li>
 <li>selectAll()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a530f6e2b54bdff761f3f478120187201">DiagramScene</a></li>
-<li>selectConnection()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a2b55d6646f19908d66e5c5eda455744e">DiagramScene</a></li>
-<li>selectElement()&#160;:&#160;<a class="el" href="class_diagram_scene.html#adffd7c14eb320f4e260f6fed731c1809">DiagramScene</a></li>
+<li>selectConnection()&#160;:&#160;<a class="el" href="class_diagram_scene.html#ac7268f1b5870d5c67f54057e6638bcec">DiagramScene</a></li>
+<li>selectElement()&#160;:&#160;<a class="el" href="class_diagram_scene.html#aa7d8cdf9568c51ab910df9d5630093b7">DiagramScene</a></li>
 <li>selectionChanged()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a7dbb09a9acecc803601560e50ad720ea">DiagramScene</a></li>
 <li>selectionRect()&#160;:&#160;<a class="el" href="class_attribute_renderer.html#ac49ce03aeca93d9d70c6cddffc5bc7f4">AttributeRenderer</a>, <a class="el" href="class_entity_renderer.html#afdb9604daa3feb4b7282e04a4d1996f8">EntityRenderer</a>, <a class="el" href="class_i_element_renderer.html#ae7124333be4bea036e17b3729a666f92">IElementRenderer</a>, <a class="el" href="class_relationship_renderer.html#a9e5ee3ddcaa8017ec5a3c3ed5c7212b2">RelationshipRenderer</a></li>
 <li>serialize()&#160;:&#160;<a class="el" href="class_attribute.html#ae8c14a45321be32454ef200c5be0591c">Attribute</a>, <a class="el" href="class_basic_element.html#a56f5f9a22723d2a99d87c7508b0bec7f">BasicElement</a>, <a class="el" href="class_connection_line.html#a89b03bf381274e4504b1cde0f32972ee">ConnectionLine</a>, <a class="el" href="class_entity.html#a8f633bc5c2eb2f16b85b9ca166b63a32">Entity</a>, <a class="el" href="class_relationship.html#a61fd3cf9518d2e93e4d0629269a37334">Relationship</a>, <a class="el" href="class_relationship_connection_line.html#a842e00383d27f1078be5ca78ed1e34ec">RelationshipConnectionLine</a></li>
@@ -108,8 +108,10 @@ $(function(){initNavTree('functions_func_s.html','',''); });
 <li>setConnectionPointsVisible()&#160;:&#160;<a class="el" href="class_element_graphics_item.html#a86d44e191aadfab004d569382d8ee7bd">ElementGraphicsItem</a></li>
 <li>setControl1Offset()&#160;:&#160;<a class="el" href="class_connection_line.html#ac4df5ba24b4ce7ec2cd3c380677b686b">ConnectionLine</a></li>
 <li>setControl2Offset()&#160;:&#160;<a class="el" href="class_connection_line.html#a30ed3d644d4d183ef6adf97110ac5bb5">ConnectionLine</a></li>
+<li>setCurrentFileName()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#abf0a685227c4726b5962cb3244f2f9d7">AutoSaveManager</a></li>
 <li>setCustomCardinalityText()&#160;:&#160;<a class="el" href="class_relationship_end.html#a872cd032aa3a9e2c7f23f455d03c4863">RelationshipEnd</a></li>
 <li>setElementProperty()&#160;:&#160;<a class="el" href="class_property_command.html#ae105e0a173a3d4c69a9a6ba6582b644b">PropertyCommand</a></li>
+<li>setEnabled()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#abc8d58db920f869e8e594b4568e82e24">AutoSaveManager</a></li>
 <li>setEndPoint()&#160;:&#160;<a class="el" href="class_connection_line.html#a2e68f5087725c547599796c887bc9c8b">ConnectionLine</a></li>
 <li>setEntityId()&#160;:&#160;<a class="el" href="class_relationship_end.html#ace7726af2ce1893c7e822c1e890f6c5f">RelationshipEnd</a></li>
 <li>setHasCustomControlPoints()&#160;:&#160;<a class="el" href="class_connection_line.html#ad4d40dee4bb82aff5b1967a1ca93b069">ConnectionLine</a></li>
@@ -136,11 +138,13 @@ $(function(){initNavTree('functions_func_s.html','',''); });
 <li>showAbout()&#160;:&#160;<a class="el" href="class_main_window.html#aa3aa0f3ce42e748b931d6211921ea197">MainWindow</a></li>
 <li>showHelp()&#160;:&#160;<a class="el" href="class_main_window.html#a3111788b36503e5ae8eabef2b32a6f62">MainWindow</a></li>
 <li>size()&#160;:&#160;<a class="el" href="class_basic_element.html#a542adbf85a58c5c9bf17975964d7e446">BasicElement</a></li>
-<li>startAutoSave()&#160;:&#160;<a class="el" href="class_main_window.html#a58d0f0988d7ad6c216bf8dac276f694a">MainWindow</a></li>
+<li>start()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#ac80d3c995c6ac5ad70b0c0b4cf74b096">AutoSaveManager</a></li>
 <li>startConnection()&#160;:&#160;<a class="el" href="class_diagram_scene.html#a411b6f8dc6f9559e607ec3edeef17d81">DiagramScene</a></li>
 <li>startPoint()&#160;:&#160;<a class="el" href="class_connection_line.html#a7d884269ce26bed2969d22ed9da477f7">ConnectionLine</a></li>
 <li>startPointChanged()&#160;:&#160;<a class="el" href="class_connection_line.html#afcc2bd845912903497ccaa97e67b8a89">ConnectionLine</a></li>
-<li>stopAutoSave()&#160;:&#160;<a class="el" href="class_main_window.html#aee739ca28d89caa75e05d5462445432e">MainWindow</a></li>
+<li>statusMessageRequested()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#abab9c7e3bc7b6e74376ffcd639536ddb">AutoSaveManager</a>, <a class="el" href="class_diagram_file_manager.html#a14323a88d49512b33de80b3f781384ca">DiagramFileManager</a>, <a class="el" href="class_properties_panel.html#a060ca6b9ac3fed44c819b0cf52a5d128">PropertiesPanel</a></li>
+<li>stop()&#160;:&#160;<a class="el" href="class_auto_save_manager.html#a78b573d8221a0b78a6a0045568f8a4cc">AutoSaveManager</a></li>
+<li>stringElementType()&#160;:&#160;<a class="el" href="class_attribute.html#ac3397eb9cb161a99bdad2e2b398c5eec">Attribute</a>, <a class="el" href="class_basic_element.html#abb80391f2c11a0eb2fe2b21d53967450">BasicElement</a>, <a class="el" href="class_entity.html#a444744850e7ecdeb4c6f3a564328475e">Entity</a>, <a class="el" href="class_relationship.html#a635483cdfbffa33be91a201ba3aff578">Relationship</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

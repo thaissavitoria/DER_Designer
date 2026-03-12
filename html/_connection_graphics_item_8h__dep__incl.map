@@ -1,14 +1,14 @@
-<map id="src/viewer/ConnectionGraphicsItem.h" name="src/viewer/ConnectionGraphicsItem.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="110,5,314,48"/>
-<area shape="rect" id="Node000002" href="$_diagram_scene_8cpp.html" title=" " alt="" coords="45,195,256,221"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,45,51,65,32,80,16,97,8,117,16,137,31,156,51,171,97,193,92,195,48,176,27,160,11,140,3,117,11,95,28,76,48,61,97,40"/>
-<area shape="rect" id="Node000003" href="$_bezier_control_point_8cpp.html" title=" " alt="" coords="26,96,190,139"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="174,60,134,97,131,93,178,56"/>
-<area shape="rect" id="Node000004" href="$_connection_graphics_item_8cpp.html" title=" " alt="" coords="214,96,418,139"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="248,56,294,95,289,96,247,61"/>
-<area shape="rect" id="Node000005" href="$_relationship_connection_line_graphics_item_8h.html" title=" " alt="" coords="442,96,665,139"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="307,50,476,94,471,96,307,55"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="445,145,209,197,208,191,443,140"/>
-<area shape="rect" id="Node000006" href="$_relationship_connection_line_graphics_item_8cpp.html" title=" " alt="" coords="442,187,665,229"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="555,152,555,188,551,185,551,156"/>
+<map id="src/view/ConnectionGraphicsItem.h" name="src/view/ConnectionGraphicsItem.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="304,5,496,48"/>
+<area shape="rect" id="Node000002" href="$_bezier_control_point_8cpp.html" title=" " alt="" coords="5,104,214,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,55,152,106,150,101,319,51"/>
+<area shape="rect" id="Node000003" href="$_connection_graphics_item_8cpp.html" title=" " alt="" coords="237,96,430,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="378,59,351,98,347,94,373,62"/>
+<area shape="rect" id="Node000004" href="$_diagram_scene_8cpp.html" title=" " alt="" coords="374,195,560,221"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="424,59,444,95,460,150,468,196,463,193,455,151,439,97,422,64"/>
+<area shape="rect" id="Node000005" href="$_relationship_connection_line_graphics_item_8h.html" title=" " alt="" coords="505,96,717,139"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="464,52,564,95,559,96,463,57"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="567,147,488,197,486,192,562,148"/>
+<area shape="rect" id="Node000006" href="$_relationship_connection_line_graphics_item_8cpp.html" title=" " alt="" coords="583,187,796,229"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="640,148,674,187,669,186,638,153"/>
 </map>

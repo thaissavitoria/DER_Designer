@@ -1,0 +1,11 @@
+<map id="AutoSaveManager::saveRequested" name="AutoSaveManager::saveRequested">
+<area shape="rect" id="Node000001" title=" " alt="" coords="488,35,715,61"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#adfa32feecffce3959c99d145fc8b4854" title=" " alt="" coords="247,5,440,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="470,33,441,32,441,27,475,33"/>
+<area shape="rect" id="Node000004" href="$class_auto_save_manager.html#afc210ecc4d92e0c5316d2565d8794f04" title=" " alt="" coords="252,56,435,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="475,62,436,70,435,64,470,63"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a996c5a2b6f77944776856f08ec30858d" title=" " alt="" coords="12,5,192,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="228,19,192,21,192,16,234,18"/>
+<area shape="rect" id="Node000005" href="$class_auto_save_manager.html#a2d6ec6a7aca5011dc47b4bed3ada2e27" title=" " alt="" coords="5,56,199,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="233,78,199,80,199,75,238,77"/>
+</map>

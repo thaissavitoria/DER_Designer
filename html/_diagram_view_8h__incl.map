@@ -1,13 +1,15 @@
-<map id="src/viewer/DiagramView.h" name="src/viewer/DiagramView.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="389,5,562,32"/>
+<map id="src/view/DiagramView.h" name="src/view/DiagramView.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="480,5,642,32"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,80,184,107"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="410,35,177,79,176,74,408,30"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="480,35,192,80,191,74,479,30"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="208,80,370,107"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="446,32,337,76,335,71,441,33"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="516,32,352,78,351,73,511,33"/>
 <area shape="rect" id="Node000004" title=" " alt="" coords="394,80,558,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="478,31,478,66,474,63,474,34"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="549,32,503,72,501,68,544,33"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="582,80,714,107"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="506,30,607,74,601,73,505,35"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="577,30,624,71,619,69,575,35"/>
 <area shape="rect" id="Node000006" title=" " alt="" coords="738,80,878,107"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="534,30,738,76,732,76,534,35"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="605,30,753,75,747,75,604,35"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="902,80,1028,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="632,30,890,78,884,78,632,35"/>
 </map>

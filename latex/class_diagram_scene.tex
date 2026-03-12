@@ -6,7 +6,8 @@
 
 
 
-Inheritance diagram for Diagram\+Scene\+:\nopagebreak
+Inheritance diagram for Diagram\+Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -15,7 +16,8 @@ Inheritance diagram for Diagram\+Scene\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Diagram\+Scene\+:\nopagebreak
+Collaboration diagram for Diagram\+Scene\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -86,15 +88,11 @@ QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstr
 \item 
 QSet$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_diagram_scene_a496c60851a94026b46ba80b647e4eb47}{get\+Selected\+Connections}} () const
 \item 
-void \mbox{\hyperlink{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809}{select\+Element}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, bool selected=true)
+void \mbox{\hyperlink{class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7}{select\+Element}} (\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}element, const bool selected=true, const bool emit\+Signals=true)
 \item 
-void \mbox{\hyperlink{class_diagram_scene_a52f85570092aa1c3df464382efad08fa}{select\+Element}} (const QString \&element\+Id, bool selected=true)
+void \mbox{\hyperlink{class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec}{select\+Connection}} (\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}connection, const bool selected=true, const bool emit\+Signals=true)
 \item 
-void \mbox{\hyperlink{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e}{select\+Connection}} (\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}connection, bool selected=true)
-\item 
-void \mbox{\hyperlink{class_diagram_scene_a2f6effb6da25d1974e33776ef4046f87}{select\+Connection}} (const QString \&connection\+Id, bool selected=true)
-\item 
-void \mbox{\hyperlink{class_diagram_scene_a9341fab75d7299e330baae13993bed28}{clear\+Selection}} ()
+void \mbox{\hyperlink{class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb}{clear\+Selection}} (const bool emit\+Signals=true)
 \item 
 void \mbox{\hyperlink{class_diagram_scene_a530f6e2b54bdff761f3f478120187201}{select\+All}} ()
 \item 
@@ -198,7 +196,8 @@ Diagram\+Scene\+::\+Diagram\+Scene (\begin{DoxyParamCaption}\item[{QObject \texo
 {\footnotesize\ttfamily \label{class_diagram_scene_a189b7f9e32b70c751124cffce8d63c8c} 
 Diagram\+Scene\+::\texorpdfstring{$\sim$}{\string~}\+Diagram\+Scene (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -223,7 +222,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a795592348d4dcbd78d984db93c2fbedb_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -243,7 +243,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_ab3f76238d2c252f2918047140d87dd23_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -256,7 +257,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a4d84b4d068e1c3ee53f9f9f8c6e7a94f} 
 void Diagram\+Scene\+::add\+Relationship\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_relationship_connection_line}{Relationship\+Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -289,7 +291,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a0c02f289dea7872eae24bb2c0f91d5ea} 
 void Diagram\+Scene\+::clear\+Diagram (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -303,24 +306,26 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a0c02f289dea7872eae24bb2c0f91d5ea_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_diagram_scene_a9341fab75d7299e330baae13993bed28}\index{DiagramScene@{DiagramScene}!clearSelection@{clearSelection}}
+\Hypertarget{class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb}\index{DiagramScene@{DiagramScene}!clearSelection@{clearSelection}}
 \index{clearSelection@{clearSelection}!DiagramScene@{DiagramScene}}
 \doxysubsubsection{\texorpdfstring{clearSelection()}{clearSelection()}}
-{\footnotesize\ttfamily \label{class_diagram_scene_a9341fab75d7299e330baae13993bed28} 
-void Diagram\+Scene\+::clear\+Selection (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb} 
+void Diagram\+Scene\+::clear\+Selection (\begin{DoxyParamCaption}\item[{const bool}]{emit\+Signals}{ = {\ttfamily true}}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a9341fab75d7299e330baae13993bed28_cgraph}
+\includegraphics[width=350pt]{class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a9341fab75d7299e330baae13993bed28_icgraph}
+\includegraphics[width=350pt]{class_diagram_scene_add93af6ff55d3453051b8c057cd4bdcb_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_diagram_scene_a12b2e24143d976ca11461361876b3892}\index{DiagramScene@{DiagramScene}!connectionCancelled@{connectionCancelled}}
@@ -342,7 +347,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a5f3d68221bac825f2b027d638d25fa49} 
 void Diagram\+Scene\+::connection\+Deselected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -355,7 +361,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_ac397b05d6318f8b7c9366a8b857ed98c} 
 void Diagram\+Scene\+::connection\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -467,7 +474,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_ad97223f92ae9cce97857ac5c45c1a3b6} 
 void Diagram\+Scene\+::element\+Added (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -480,7 +488,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a065ce2ec3d83e05c486ae418eaf6320f} 
 void Diagram\+Scene\+::element\+Deselected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -493,7 +502,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a15719115f3f2f26120243d71999dcfea} 
 void Diagram\+Scene\+::element\+Selected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -519,7 +529,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_afbab910f080e6085c7e216f922c14d81} 
 \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} Diagram\+Scene\+::find\+Connection (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -552,7 +563,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a4da4018bb57166e46104700d2847c41d} 
 \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} Diagram\+Scene\+::find\+Element (\begin{DoxyParamCaption}\item[{const QString \&}]{id}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -578,7 +590,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a45f18c15840085ffda39cfc9229a15ee_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -604,7 +617,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_ad46a8dc374895fd670f50f30f2c2acbd} 
 void Diagram\+Scene\+::finish\+Selection\+Rect (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -624,7 +638,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a40c9b85a9f304007a227b9db63178d08} 
 QList$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ Diagram\+Scene\+::get\+All\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -643,7 +658,8 @@ QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{
 {\footnotesize\ttfamily \label{class_diagram_scene_a496c60851a94026b46ba80b647e4eb47} 
 QSet$<$ \mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*} $>$ Diagram\+Scene\+::get\+Selected\+Connections (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -656,7 +672,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_aef557b645a95aaa376592146d4c6c60e} 
 QList$<$ \mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*} $>$ Diagram\+Scene\+::get\+Selected\+Elements (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -676,7 +693,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a355fffd036fbfb751f2d9ada2b9eacf5_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -696,7 +714,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_af24fc3dc11041bb31e4f0627f0a09e75_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -716,7 +735,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a244ffcbacfc985e542579c0e112cfd52_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -748,7 +768,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a074e1181353b257a18ea2d243b459a47} 
 void Diagram\+Scene\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -774,7 +795,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a6847af7972303267f22e84ae1011c255} 
 void Diagram\+Scene\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -787,7 +809,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a542ad58dab0f10f2825e0d69deabebe7} 
 void Diagram\+Scene\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -800,7 +823,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a61e7061e5add947d09ad87feaf2b8dc1} 
 void Diagram\+Scene\+::paste\+From\+Clipboard (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -820,7 +844,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_ad8f482915e4991d8ba601f691086fbdc} 
 void Diagram\+Scene\+::remove\+Attribute\+From\+Parents (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_attribute}{Attribute}} \texorpdfstring{$\ast$}{*}}]{attribute}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -840,7 +865,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a5d546daf9d3a3d5155b611ec31c4dccb_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -873,7 +899,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_ae531fa5ccfc6393d5a60f956a652118d_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -906,7 +933,8 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a0d026405c431d3aca9494d64296bb956_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -946,70 +974,48 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_scene_a530f6e2b54bdff761f3f478120187201_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e}\index{DiagramScene@{DiagramScene}!selectConnection@{selectConnection}}
+\Hypertarget{class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec}\index{DiagramScene@{DiagramScene}!selectConnection@{selectConnection}}
 \index{selectConnection@{selectConnection}!DiagramScene@{DiagramScene}}
-\doxysubsubsection{\texorpdfstring{selectConnection()}{selectConnection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e} 
-void Diagram\+Scene\+::select\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{, }\item[{bool}]{selected}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{selectConnection()}{selectConnection()}}
+{\footnotesize\ttfamily \label{class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec} 
+void Diagram\+Scene\+::select\+Connection (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_connection_line}{Connection\+Line}} \texorpdfstring{$\ast$}{*}}]{connection}{, }\item[{const bool}]{selected}{ = {\ttfamily true}, }\item[{const bool}]{emit\+Signals}{ = {\ttfamily true}}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e_cgraph}
+\includegraphics[width=350pt]{class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a2b55d6646f19908d66e5c5eda455744e_icgraph}
+\includegraphics[width=350pt]{class_diagram_scene_ac7268f1b5870d5c67f54057e6638bcec_icgraph}
 \end{center}
 \end{figure}
-\Hypertarget{class_diagram_scene_a2f6effb6da25d1974e33776ef4046f87}\index{DiagramScene@{DiagramScene}!selectConnection@{selectConnection}}
-\index{selectConnection@{selectConnection}!DiagramScene@{DiagramScene}}
-\doxysubsubsection{\texorpdfstring{selectConnection()}{selectConnection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_diagram_scene_a2f6effb6da25d1974e33776ef4046f87} 
-void Diagram\+Scene\+::select\+Connection (\begin{DoxyParamCaption}\item[{const QString \&}]{connection\+Id}{, }\item[{bool}]{selected}{ = {\ttfamily true}}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a2f6effb6da25d1974e33776ef4046f87_cgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809}\index{DiagramScene@{DiagramScene}!selectElement@{selectElement}}
+\Hypertarget{class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7}\index{DiagramScene@{DiagramScene}!selectElement@{selectElement}}
 \index{selectElement@{selectElement}!DiagramScene@{DiagramScene}}
-\doxysubsubsection{\texorpdfstring{selectElement()}{selectElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \label{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809} 
-void Diagram\+Scene\+::select\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{bool}]{selected}{ = {\ttfamily true}}\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{selectElement()}{selectElement()}}
+{\footnotesize\ttfamily \label{class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7} 
+void Diagram\+Scene\+::select\+Element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_basic_element}{Basic\+Element}} \texorpdfstring{$\ast$}{*}}]{element}{, }\item[{const bool}]{selected}{ = {\ttfamily true}, }\item[{const bool}]{emit\+Signals}{ = {\ttfamily true}}\end{DoxyParamCaption})}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809_cgraph}
+\includegraphics[width=350pt]{class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_adffd7c14eb320f4e260f6fed731c1809_icgraph}
-\end{center}
-\end{figure}
-\Hypertarget{class_diagram_scene_a52f85570092aa1c3df464382efad08fa}\index{DiagramScene@{DiagramScene}!selectElement@{selectElement}}
-\index{selectElement@{selectElement}!DiagramScene@{DiagramScene}}
-\doxysubsubsection{\texorpdfstring{selectElement()}{selectElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \label{class_diagram_scene_a52f85570092aa1c3df464382efad08fa} 
-void Diagram\+Scene\+::select\+Element (\begin{DoxyParamCaption}\item[{const QString \&}]{element\+Id}{, }\item[{bool}]{selected}{ = {\ttfamily true}}\end{DoxyParamCaption})}
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_diagram_scene_a52f85570092aa1c3df464382efad08fa_cgraph}
+\includegraphics[width=350pt]{class_diagram_scene_aa7d8cdf9568c51ab910df9d5630093b7_icgraph}
 \end{center}
 \end{figure}
 \Hypertarget{class_diagram_scene_a7dbb09a9acecc803601560e50ad720ea}\index{DiagramScene@{DiagramScene}!selectionChanged@{selectionChanged}}
@@ -1018,7 +1024,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_diagram_scene_a7dbb09a9acecc803601560e50ad720ea} 
 void Diagram\+Scene\+::selection\+Changed (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1164,5 +1171,5 @@ QGraphics\+Line\+Item\texorpdfstring{$\ast$}{*} Diagram\+Scene\+::m\+\_\+tempora
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/controller/\mbox{\hyperlink{_diagram_scene_8h}{Diagram\+Scene.\+h}}\item 
-src/controller/\mbox{\hyperlink{_diagram_scene_8cpp}{Diagram\+Scene.\+cpp}}\end{DoxyCompactItemize}
+src/view/\mbox{\hyperlink{_diagram_scene_8h}{Diagram\+Scene.\+h}}\item 
+src/view/\mbox{\hyperlink{_diagram_scene_8cpp}{Diagram\+Scene.\+cpp}}\end{DoxyCompactItemize}

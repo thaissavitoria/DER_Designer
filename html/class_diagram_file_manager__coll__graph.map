@@ -1,0 +1,12 @@
+<map id="DiagramFileManager" name="DiagramFileManager">
+<area shape="rect" id="Node000001" title="Constructs the file manager associated with a scene." alt="" coords="5,1511,165,1708"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,109,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,89,88,1511,82,1511,77,90"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="102,124,314,492"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="102,85,123,124,118,125,103,91"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="102,564,330,1439"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,1436,113,1495,107,1493,121,1441"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="338,273,448,343"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="391,355,385,443,369,541,332,681,327,679,364,539,380,443,390,360"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="210,489,213,548,208,547,210,494"/>
+</map>

@@ -1,0 +1,65 @@
+\doxysection{Diagram\+File\+Manager.\+h}
+\hypertarget{_diagram_file_manager_8h_source}{}\label{_diagram_file_manager_8h_source}\index{src/model/DiagramFileManager.h@{src/model/DiagramFileManager.h}}
+\mbox{\hyperlink{_diagram_file_manager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAMFILEMANAGER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAMFILEMANAGER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QObject>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCore/QString>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene}{DiagramScene}};}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_file_manager_a9288947b7fe8d21c64cd60043d785360}{DiagramFileManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00018\ \{}
+\DoxyCodeLine{00019\ \ \ Q\_OBJECT}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_diagram_file_manager_a9288947b7fe8d21c64cd60043d785360}{DiagramFileManager}}(}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene,}
+\DoxyCodeLine{00024\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00025\ \ \ );}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \mbox{\hyperlink{class_diagram_file_manager_ab35026f99d226a6da07152ba2774be34}{\string~DiagramFileManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_file_manager_a34a65268899b28c2278a5a3857f1f1d5}{newDiagram}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_file_manager_a24c0e01d7ac53866944eb10948286ed9}{openDiagram}}(}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName}
+\DoxyCodeLine{00033\ \ \ );}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_file_manager_a84a364087a0eecd1c416b05615fe1f0b}{saveDiagram}}(}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName}
+\DoxyCodeLine{00037\ \ \ );}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_file_manager_af08299559bde483382e5ed2751f8820e}{exportDiagram}}(}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName,}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ format}
+\DoxyCodeLine{00042\ \ \ );}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ QString\ \mbox{\hyperlink{class_diagram_file_manager_a70afd0fe145503021d6961e87decfc99}{currentFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ signals:}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_file_manager_a14323a88d49512b33de80b3f781384ca}{statusMessageRequested}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ message}
+\DoxyCodeLine{00049\ \ \ );}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_file_manager_a7c532ee071e3dc487110f7c02d9cace6}{diagramLoaded}}(}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName}
+\DoxyCodeLine{00053\ \ \ );}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_diagram_file_manager_a4ac34241d55d8aeb7c124072ada54f40}{diagramSaved}}(}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ fileName}
+\DoxyCodeLine{00057\ \ \ );}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ \mbox{\hyperlink{class_diagram_file_manager_ade688fade99a41af8f60b71f4befc839}{m\_scene}};}
+\DoxyCodeLine{00061\ \ \ QString\ \mbox{\hyperlink{class_diagram_file_manager_a293eaba8dc791db348e029a521e2643b}{m\_currentFileName}};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAMFILEMANAGER\_H}}
+
+\end{DoxyCode}

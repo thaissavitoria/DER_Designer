@@ -53,27 +53,30 @@
 \DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ QSizeF\&\ elementSize}
 \DoxyCodeLine{00068\ \ \ )\ \textcolor{keyword}{const};}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{static}\ QList<ConnectionPoint*>\ \mbox{\hyperlink{class_connection_point_a828996f0bb02e9154b5d3af03f1734b8}{createDefaultConnectionPoints}}();}
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ signals:}
-\DoxyCodeLine{00073\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_point_a851668ae19e97658f1818a40ea375f65}{relativePositionChanged}}(}
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ newPosition}
-\DoxyCodeLine{00075\ \ \ );}
-\DoxyCodeLine{00076\ }
-\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00078\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_point_a0bca0b4cf605278cb17d8052dc027932}{addConnectionPoint}}(}
-\DoxyCodeLine{00079\ \ \ \ \ QList<ConnectionPoint*>\&\ list,}
-\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ \mbox{\hyperlink{class_connection_point_af0bad03f28dd4f928c4c790786550545}{relativePosition}},}
-\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}}}
-\DoxyCodeLine{00082\ \ \ );}
-\DoxyCodeLine{00083\ }
-\DoxyCodeLine{00084\ \ \ QString\ \mbox{\hyperlink{class_connection_point_a673642132e8a329b1ece3cecbaf33e69}{m\_id}};}
-\DoxyCodeLine{00085\ \ \ QPointF\ \mbox{\hyperlink{class_connection_point_a21ed6f7eaff6b53bd7f1aaf2ab368e30}{m\_relativePosition}};}
-\DoxyCodeLine{00086\ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ \mbox{\hyperlink{class_connection_point_a739ee59f938bee0ff4e13856ea843103}{m\_direction}};}
-\DoxyCodeLine{00087\ }
-\DoxyCodeLine{00088\ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260}{ConnectionPoint}})}
-\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{static}\ QList<ConnectionPoint*>\ \mbox{\hyperlink{class_connection_point_af57583f18ef35d9b3eafa83665e7ebe4}{createDefaultConnectionPoints}}(}
+\DoxyCodeLine{00071\ \ \ \ \ QObject*\ parent}
+\DoxyCodeLine{00072\ \ \ );}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ signals:}
+\DoxyCodeLine{00075\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_point_a851668ae19e97658f1818a40ea375f65}{relativePositionChanged}}(}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ newPosition}
+\DoxyCodeLine{00077\ \ \ );}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_connection_point_a7b8c2910eb504959c4211764a9abc2e8}{addConnectionPoint}}(}
+\DoxyCodeLine{00081\ \ \ \ \ QList<ConnectionPoint*>\&\ list,}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ QPointF\&\ \mbox{\hyperlink{class_connection_point_af0bad03f28dd4f928c4c790786550545}{relativePosition}},}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ \mbox{\hyperlink{class_connection_point_a5fd53cfdbe8871705ab120af92cbe46e}{direction}},}
+\DoxyCodeLine{00084\ \ \ \ \ QObject*\ parent}
+\DoxyCodeLine{00085\ \ \ );}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ QString\ \mbox{\hyperlink{class_connection_point_a673642132e8a329b1ece3cecbaf33e69}{m\_id}};}
+\DoxyCodeLine{00088\ \ \ QPointF\ \mbox{\hyperlink{class_connection_point_a21ed6f7eaff6b53bd7f1aaf2ab368e30}{m\_relativePosition}};}
+\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{_connection_point_8h_a0fde1ff3d073cb77237ea08eea64d963}{ConnectionDirection}}\ \mbox{\hyperlink{class_connection_point_a739ee59f938bee0ff4e13856ea843103}{m\_direction}};}
 \DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONNECTIONPOINT\_H}}
+\DoxyCodeLine{00091\ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_connection_point_ac498b99d7f91805fea3eab19f2e8b260}{ConnectionPoint}})}
+\DoxyCodeLine{00092\ \};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CONNECTIONPOINT\_H}}
 
 \end{DoxyCode}

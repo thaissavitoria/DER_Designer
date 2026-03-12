@@ -1,17 +1,29 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="Node000001" title=" " alt="" coords="142,1511,335,2492"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,967,101,1036"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,1048,82,1222,114,1438,145,1592,139,1592,109,1439,76,1223,58,1053"/>
-<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="124,564,352,1439"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="239,1436,241,1494,236,1494,238,1441"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="13,273,123,343"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="80,355,133,564,128,565,80,360"/>
-<area shape="rect" id="Node000005" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="147,124,360,492"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="249,489,251,548,245,547,249,494"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="224,5,282,75"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="253,87,256,125,251,124,253,92"/>
-<area shape="rect" id="Node000007" href="$class_diagram_view.html" title=" " alt="" coords="376,753,522,1249"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="405,1247,360,1487,341,1573,336,1572,355,1486,403,1252"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="398,273,500,343"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="450,355,452,754,447,753,449,360"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="305,2423,466,3303"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,2047,101,2116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="58,2128,82,2254,99,2326,122,2398,163,2492,210,2583,260,2669,307,2745,302,2746,255,2672,206,2586,158,2494,117,2400,94,2328,77,2255,59,2134"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="348,865,576,1740"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="462,1737,456,2063,440,2399,439,2407,434,2405,435,2399,451,2063,461,1742"/>
+<area shape="rect" id="Node000009" href="$class_properties_panel.html" title="Panel widget for viewing and editing properties of selected diagram elements." alt="" coords="176,1833,407,2329"/>
+<area shape="poly" id="edge10_Node000009_Node000003" title=" " alt="" coords="367,1737,352,1818,347,1816,366,1742"/>
+<area shape="rect" id="Node000012" href="$class_diagram_file_manager.html" title="Constructs the file manager associated with a scene." alt="" coords="593,1983,753,2180"/>
+<area shape="poly" id="edge15_Node000012_Node000003" title=" " alt="" coords="562,1737,577,1787,635,1966,629,1966,572,1789,561,1743"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="241,273,351,343"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="304,355,392,866,387,866,304,360"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="375,124,588,492"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="478,489,474,848,468,848,477,495"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="452,5,510,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="481,87,484,125,479,124,481,92"/>
+<area shape="rect" id="Node000011" href="$class_auto_save_manager.html" title="Manages automatic saving and backup versioning of diagrams." alt="" coords="64,516,246,841"/>
+<area shape="poly" id="edge12_Node000011_Node000006" title=" " alt="" coords="435,44,388,51,332,64,277,88,252,105,231,126,201,168,178,215,160,264,148,316,140,368,136,419,136,516,131,516,131,419,135,367,143,315,155,263,173,213,197,166,227,122,249,101,274,83,330,59,387,45,439,40"/>
+<area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="523,57,567,84,587,102,602,123,628,176,643,224,649,268,648,311,639,403,635,455,636,516,655,945,666,1365,675,1983,670,1983,661,1365,649,945,631,516,630,455,634,402,643,311,644,269,638,225,623,178,598,125,583,105,564,88,525,62"/>
+<area shape="rect" id="Node000007" href="$class_diagram_view.html" title=" " alt="" coords="778,1812,924,2351"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="779,2323,768,2352,701,2467,625,2578,548,2678,479,2762,475,2758,544,2675,621,2575,696,2464,763,2349,776,2327"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="800,1268,901,1337"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="851,1349,853,1813,848,1812,850,1354"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="310,2326,320,2398,321,2406,315,2406,315,2399,310,2332"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="262,1268,324,1337"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="293,1349,295,1834,290,1833,293,1355"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="147,838,137,1189,129,1625,130,1843,135,2046,147,2219,166,2350,192,2443,224,2535,262,2622,300,2702,294,2702,257,2624,219,2537,187,2444,161,2351,142,2219,130,2046,124,1843,123,1625,131,1189,147,844"/>
+<area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="639,2177,577,2352,474,2630,469,2627,572,2350,636,2182"/>
 </map>

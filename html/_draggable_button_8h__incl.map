@@ -1,5 +1,5 @@
-<map id="src/viewer/DraggableButton.h" name="src/viewer/DraggableButton.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="191,5,384,32"/>
+<map id="src/view/DraggableButton.h" name="src/view/DraggableButton.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="196,5,378,32"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,80,143,107"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,35,126,77,125,72,248,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="167,80,264,107"/>

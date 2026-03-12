@@ -11,7 +11,8 @@ Represents an entity element in an ERD diagram.
 
 
 
-Inheritance diagram for Entity\+:\nopagebreak
+Inheritance diagram for Entity\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Entity\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Entity\+:\nopagebreak
+Collaboration diagram for Entity\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -53,6 +55,8 @@ bool \mbox{\hyperlink{class_entity_aaf7ad42d5f1d6979779b4c13c07f8ce6}{is\+Weak\+
 QVariant\+Map \mbox{\hyperlink{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32}{serialize}} () const
 \item 
 bool \mbox{\hyperlink{class_entity_ab38972d0a706fc31d67d0e22343c70e6}{deserialize}} (const QVariant\+Map \&data)
+\item 
+QString \mbox{\hyperlink{class_entity_a444744850e7ecdeb4c6f3a564328475e}{string\+Element\+Type}} () const override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
@@ -122,11 +126,6 @@ bool \mbox{\hyperlink{class_entity_ab4abb89080ebd5bb36e20a911dc534ca}{m\+\_\+is\
 \item 
 void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
-\begin{DoxyCompactItemize}
-\item 
-static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
-\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -166,7 +165,8 @@ This class extends \doxylink{class_basic_element}{Basic\+Element} to represent e
 {\footnotesize\ttfamily \label{class_entity_a832667fda0ef14f127465d2837132244} 
 Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -186,7 +186,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_ae562b28c015c3e376453d4b6dcf34f73} 
 Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -199,7 +200,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_a34cdf84f2657fd59a07265c37d94c88d} 
 Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{const bool}]{is\+Weak}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -212,7 +214,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_entity_a31504f27be637a877dec58aab9815109} 
 Entity\+::\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_entity}{Entity}} \&}]{other\+Entity}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -307,6 +310,16 @@ Here is the call graph for this function\+:\nopagebreak
 \includegraphics[width=318pt]{class_entity_a8f633bc5c2eb2f16b85b9ca166b63a32_cgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_entity_a444744850e7ecdeb4c6f3a564328475e}\index{Entity@{Entity}!stringElementType@{stringElementType}}
+\index{stringElementType@{stringElementType}!Entity@{Entity}}
+\doxysubsubsection{\texorpdfstring{stringElementType()}{stringElementType()}}
+{\footnotesize\ttfamily \label{class_entity_a444744850e7ecdeb4c6f3a564328475e} 
+QString Entity\+::string\+Element\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_abb80391f2c11a0eb2fe2b21d53967450}{Basic\+Element}}.
+
 \Hypertarget{class_entity_a070f4727e2491b322a53ad32e4fb197e}\index{Entity@{Entity}!typeDisplayName@{typeDisplayName}}
 \index{typeDisplayName@{typeDisplayName}!Entity@{Entity}}
 \doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}

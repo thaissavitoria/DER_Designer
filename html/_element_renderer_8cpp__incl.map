@@ -1,5 +1,5 @@
-<map id="src/viewer/ElementRenderer.cpp" name="src/viewer/ElementRenderer.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="813,5,1024,32"/>
+<map id="src/view/ElementRenderer.cpp" name="src/view/ElementRenderer.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="818,5,1018,32"/>
 <area shape="rect" id="Node000002" href="$_element_renderer_8h.html" title=" " alt="" coords="878,155,1012,181"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="912,31,898,67,895,87,898,106,908,125,922,144,917,142,904,128,893,107,890,87,893,66,908,34"/>
 <area shape="rect" id="Node000006" href="$_entity_renderer_8h.html" title=" " alt="" coords="908,80,1027,107"/>

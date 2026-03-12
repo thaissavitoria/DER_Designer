@@ -6,20 +6,22 @@
 
 
 
-Inheritance diagram for Diagram\+View\+:\nopagebreak
+Inheritance diagram for Diagram\+View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=190pt]{class_diagram_view__inherit__graph}
+\includegraphics[height=550pt]{class_diagram_view__inherit__graph}
 \end{center}
 \end{figure}
 
 
-Collaboration diagram for Diagram\+View\+:\nopagebreak
+Collaboration diagram for Diagram\+View\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=190pt]{class_diagram_view__coll__graph}
+\includegraphics[height=550pt]{class_diagram_view__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsubsection*{Signals}
@@ -40,6 +42,8 @@ void \mbox{\hyperlink{class_diagram_view_a3c4b587e191fbe21304dce51c8065270}{zoom
 \item 
 void \mbox{\hyperlink{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809}{reset\+Zoom}} ()
 \item 
+void \mbox{\hyperlink{class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa}{fit\+To\+View}} ()
+\item 
 void \mbox{\hyperlink{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b}{set\+Zoom\+Level}} (qreal zoom\+Level)
 \item 
 qreal \mbox{\hyperlink{class_diagram_view_a8139f511ae2986efdce4477673b4510a}{get\+Zoom\+Level}} () const
@@ -54,6 +58,8 @@ void \mbox{\hyperlink{class_diagram_view_aa9951a6e1b8fddf2eee28f91d0a77cbc}{drag
 void \mbox{\hyperlink{class_diagram_view_a6d3626ec66c8ccda5d60f53e5ff46e1e}{drop\+Event}} (QDrop\+Event \texorpdfstring{$\ast$}{*}event) override
 \item 
 void \mbox{\hyperlink{class_diagram_view_a29f569db14078b94495ae3827b9f1b50}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event) override
+\item 
+void \mbox{\hyperlink{class_diagram_view_a68669e887e54f7d24dd528dd78744745}{key\+Press\+Event}} (QKey\+Event \texorpdfstring{$\ast$}{*}event) override
 \item 
 void \mbox{\hyperlink{class_diagram_view_a181f6f529703f839d52d6017fdca1245}{draw\+Background}} (QPainter \texorpdfstring{$\ast$}{*}painter, const QRectF \&rect) override
 \end{DoxyCompactItemize}
@@ -196,6 +202,28 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_view_aff439ca64e209a13a5ca84de4307deb4_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa}\index{DiagramView@{DiagramView}!fitToView@{fitToView}}
+\index{fitToView@{fitToView}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{fitToView()}{fitToView()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa} 
+void Diagram\+View\+::fit\+To\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a2c1647bef1cfb2c5b5f45af153e5dafa_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_diagram_view_a8139f511ae2986efdce4477673b4510a}\index{DiagramView@{DiagramView}!getZoomLevel@{getZoomLevel}}
 \index{getZoomLevel@{getZoomLevel}!DiagramView@{DiagramView}}
 \doxysubsubsection{\texorpdfstring{getZoomLevel()}{getZoomLevel()}}
@@ -215,6 +243,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_diagram_view_a144bbc2c3b9ee55e31ec25d4a4665506_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_diagram_view_a68669e887e54f7d24dd528dd78744745}\index{DiagramView@{DiagramView}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!DiagramView@{DiagramView}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily \label{class_diagram_view_a68669e887e54f7d24dd528dd78744745} 
+void Diagram\+View\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_a68669e887e54f7d24dd528dd78744745_cgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_diagram_view_a728e7fb5f9863df0dc1561e4b08d4809}\index{DiagramView@{DiagramView}!resetZoom@{resetZoom}}
 \index{resetZoom@{resetZoom}!DiagramView@{DiagramView}}
 \doxysubsubsection{\texorpdfstring{resetZoom()}{resetZoom()}}
@@ -227,6 +269,14 @@ void Diagram\+View\+::reset\+Zoom (\begin{DoxyParamCaption}{}{}\end{DoxyParamCap
 {\footnotesize\ttfamily \label{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b} 
 void Diagram\+View\+::set\+Zoom\+Level (\begin{DoxyParamCaption}\item[{qreal}]{zoom\+Level}{}\end{DoxyParamCaption})}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_diagram_view_ad75d7c2698b62f9be8f9679b02a8ce0b_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_diagram_view_a29f569db14078b94495ae3827b9f1b50}\index{DiagramView@{DiagramView}!wheelEvent@{wheelEvent}}
 \index{wheelEvent@{wheelEvent}!DiagramView@{DiagramView}}
 \doxysubsubsection{\texorpdfstring{wheelEvent()}{wheelEvent()}}
@@ -317,5 +367,5 @@ const qreal Diagram\+View\+::\+ZOOM\+\_\+\+STEP = 1.\+25\hspace{0.3cm}{\ttfamily
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-src/viewer/\mbox{\hyperlink{_diagram_view_8h}{Diagram\+View.\+h}}\item 
-src/viewer/\mbox{\hyperlink{_diagram_view_8cpp}{Diagram\+View.\+cpp}}\end{DoxyCompactItemize}
+src/view/\mbox{\hyperlink{_diagram_view_8h}{Diagram\+View.\+h}}\item 
+src/view/\mbox{\hyperlink{_diagram_view_8cpp}{Diagram\+View.\+cpp}}\end{DoxyCompactItemize}

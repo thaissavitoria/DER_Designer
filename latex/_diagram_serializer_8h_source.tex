@@ -1,0 +1,73 @@
+\doxysection{Diagram\+Serializer.\+h}
+\hypertarget{_diagram_serializer_8h_source}{}\label{_diagram_serializer_8h_source}\index{src/model/DiagramSerializer.h@{src/model/DiagramSerializer.h}}
+\mbox{\hyperlink{_diagram_serializer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DIAGRAMSERIALIZER\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DIAGRAMSERIALIZER\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QJsonArray>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtCore/QJsonDocument>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <QtCore/QJsonObject>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <QtCore/QString>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QtCore/QVariantMap>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_basic_element}{BasicElement}};}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_connection_line}{ConnectionLine}};}
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_scene}{DiagramScene}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_diagram_serializer_a94cad7ecef475d3796e7c0cfea19e15a}{DiagramSerializer}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{static}\ QJsonObject\ \mbox{\hyperlink{class_diagram_serializer_aebb8ae92fc17cafe0b0d08f92073661e}{elementToJsonObject}}(}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ element}
+\DoxyCodeLine{00030\ \ \ );}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keyword}{static}\ QJsonObject\ \mbox{\hyperlink{class_diagram_serializer_afc169d49508cfe6a9f14aadfbc395bff}{connectionToJsonObject}}(}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_connection_line}{ConnectionLine}}*\ connection}
+\DoxyCodeLine{00034\ \ \ );}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{static}\ QJsonObject\ \mbox{\hyperlink{class_diagram_serializer_a957a2a2f28fe9d1d257ff01154872608}{diagramToJsonObject}}(}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{const}\ QList<BasicElement*>\&\ elements,}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ QList<ConnectionLine*>\&\ connections}
+\DoxyCodeLine{00039\ \ \ );}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_serializer_af41f90138bda3c05cb4a37c709682770}{saveDiagramToFile}}(}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ filePath,}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ QList<BasicElement*>\&\ elements,}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ QList<ConnectionLine*>\&\ connections}
+\DoxyCodeLine{00045\ \ \ );}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_serializer_aa431be8e31fb618e3db3bf2c84988b5c}{loadDiagramFromFile}}(}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ filePath,}
+\DoxyCodeLine{00049\ \ \ \ \ QJsonObject\&\ diagramData}
+\DoxyCodeLine{00050\ \ \ );}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_serializer_a003be4c7f5d036e58e3fa047d1d9b0d8}{loadDiagram}}(}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{const}\ QJsonObject\&\ diagramData,}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene}
+\DoxyCodeLine{00055\ \ \ );}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{class_diagram_serializer_a94cad7ecef475d3796e7c0cfea19e15a}{DiagramSerializer}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_serializer_a2197514d6c716bf484314a2ee9a3d8c1}{loadElements}}(}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ QJsonArray\&\ elementsArray,}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene,}
+\DoxyCodeLine{00063\ \ \ \ \ QHash<QString,\ BasicElement*>\&\ loadedElements}
+\DoxyCodeLine{00064\ \ \ );}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_diagram_serializer_a92507b425e8c13399c6de5d85e7950fb}{loadConnections}}(}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ QJsonArray\&\ connectionsArray,}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ QHash<QString,\ BasicElement*>\&\ loadedElements,}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_diagram_scene}{DiagramScene}}*\ scene}
+\DoxyCodeLine{00070\ \ \ );}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIAGRAMSERIALIZER\_H}}
+
+\end{DoxyCode}

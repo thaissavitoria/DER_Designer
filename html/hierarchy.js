@@ -1,6 +1,8 @@
 var hierarchy =
 [
     [ "AttributeType", "class_attribute_type.html", null ],
+    [ "DiagramSerializer", "class_diagram_serializer.html", null ],
+    [ "ElementFactory", "class_element_factory.html", null ],
     [ "ElementRendererFactory", "class_element_renderer_factory.html", null ],
     [ "IElementObserver", "class_i_element_observer.html", [
       [ "ElementGraphicsItem", "class_element_graphics_item.html", null ]
@@ -10,7 +12,6 @@ var hierarchy =
       [ "EntityRenderer", "class_entity_renderer.html", null ],
       [ "RelationshipRenderer", "class_relationship_renderer.html", null ]
     ] ],
-    [ "JsonHelper", "class_json_helper.html", null ],
     [ "PropertyCommand", "class_property_command.html", null ],
     [ "QGraphicsEllipseItem", null, [
       [ "BezierControlPoint", "class_bezier_control_point.html", null ]
@@ -31,6 +32,7 @@ var hierarchy =
       [ "MainWindow", "class_main_window.html", null ]
     ] ],
     [ "QObject", null, [
+      [ "AutoSaveManager", "class_auto_save_manager.html", null ],
       [ "BasicElement", "class_basic_element.html", [
         [ "Attribute", "class_attribute.html", null ],
         [ "Entity", "class_entity.html", null ],
@@ -41,6 +43,7 @@ var hierarchy =
         [ "RelationshipConnectionLine", "class_relationship_connection_line.html", null ]
       ] ],
       [ "ConnectionPoint", "class_connection_point.html", null ],
+      [ "DiagramFileManager", "class_diagram_file_manager.html", null ],
       [ "RelationshipEnd", "class_relationship_end.html", null ]
     ] ],
     [ "QPushButton", null, [
@@ -48,5 +51,8 @@ var hierarchy =
     ] ],
     [ "QToolBar", null, [
       [ "QuickAccessToolbar", "class_quick_access_toolbar.html", null ]
+    ] ],
+    [ "QWidget", null, [
+      [ "PropertiesPanel", "class_properties_panel.html", null ]
     ] ]
 ];

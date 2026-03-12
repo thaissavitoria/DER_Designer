@@ -1,6 +1,6 @@
 <map id="DiagramScene::getSelectedConnections" name="DiagramScene::getSelectedConnections">
 <area shape="rect" id="Node000001" title=" " alt="" coords="792,216,977,259"/>
-<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a9341fab75d7299e330baae13993bed28" title=" " alt="" coords="545,115,742,141"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#add93af6ff55d3453051b8c057cd4bdcb" title=" " alt="" coords="545,115,742,141"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="819,209,675,144,676,139,825,209"/>
 <area shape="rect" id="Node000008" href="$class_diagram_scene.html#a99cbe05259c61eebf9cc8d67947f6dca" title=" " alt="" coords="546,224,741,251"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="774,237,741,240,741,235,779,237"/>

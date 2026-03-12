@@ -1,11 +1,11 @@
 <map id="BasicElement" name="BasicElement">
-<area shape="rect" id="Node000001" title="Abstract base class for all ERD elements (Model only)." alt="" coords="152,123,315,704"/>
-<area shape="rect" id="Node000003" href="$class_attribute.html" title="Represents an attribute element in an ERD diagram." alt="" coords="5,752,141,1056"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,675,125,753,120,752,146,680"/>
-<area shape="rect" id="Node000004" href="$class_entity.html" title="Represents an entity element in an ERD diagram." alt="" coords="165,752,301,1056"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,716,236,753,231,752,232,721"/>
-<area shape="rect" id="Node000005" href="$class_relationship.html" title="Represents a relationship element in an ERD diagram." alt="" coords="325,752,461,1056"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="320,675,347,753,341,752,319,680"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="204,5,263,75"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,87,236,123,231,123,233,92"/>
+<area shape="rect" id="Node000001" title="Abstract base class for all ERD elements (Model only)." alt="" coords="154,123,318,683"/>
+<area shape="rect" id="Node000003" href="$class_attribute.html" title="Represents an attribute element in an ERD diagram." alt="" coords="5,741,141,1045"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="151,660,126,743,121,741,149,665"/>
+<area shape="rect" id="Node000004" href="$class_entity.html" title="Represents an entity element in an ERD diagram." alt="" coords="166,731,306,1056"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="237,695,239,732,233,730,235,700"/>
+<area shape="rect" id="Node000005" href="$class_relationship.html" title="Represents a relationship element in an ERD diagram." alt="" coords="331,741,467,1045"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="323,660,351,742,346,742,321,665"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="207,5,265,75"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,87,239,123,233,122,236,92"/>
 </map>

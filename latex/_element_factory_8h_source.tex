@@ -1,0 +1,30 @@
+\doxysection{Element\+Factory.\+h}
+\hypertarget{_element_factory_8h_source}{}\label{_element_factory_8h_source}\index{src/model/ElementFactory.h@{src/model/ElementFactory.h}}
+\mbox{\hyperlink{_element_factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ELEMENTFACTORY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ELEMENTFACTORY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QtCore/QString>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_basic_element_8h}{model/BasicElement.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_element_factory}{ElementFactory}}}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00019\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ \mbox{\hyperlink{class_element_factory_a84bb24abdffea9682c5c007bc7792927}{createElement}}(}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{ElementType}}\ type,}
+\DoxyCodeLine{00021\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00022\ \ \ );}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_basic_element}{BasicElement}}*\ \mbox{\hyperlink{class_element_factory_a84bb24abdffea9682c5c007bc7792927}{createElement}}(}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ typeName,}
+\DoxyCodeLine{00026\ \ \ \ \ QObject*\ parent\ =\ \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{00027\ \ \ );}
+\DoxyCodeLine{00028\ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ELEMENTFACTORY\_H}}
+
+\end{DoxyCode}

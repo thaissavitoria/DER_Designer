@@ -1,0 +1,13 @@
+<map id="PropertiesPanel" name="PropertiesPanel">
+<area shape="rect" id="Node000001" title="Panel widget for viewing and editing properties of selected diagram elements." alt="" coords="5,1511,236,2007"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="69,967,130,1036"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,1049,117,1511,111,1511,99,1053"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html" title=" " alt="" coords="155,564,383,1439"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,1436,175,1495,170,1494,183,1441"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="157,273,266,343"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="216,355,235,564,230,564,215,360"/>
+<area shape="rect" id="Node000005" href="$class_connection_point.html" title="Represents a connection point on an ERD element for line attachment." alt="" coords="290,124,503,492"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="364,489,355,548,350,547,362,494"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="368,5,426,75"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="397,87,399,125,394,124,397,92"/>
+</map>

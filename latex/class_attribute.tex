@@ -11,7 +11,8 @@ Represents an attribute element in an ERD diagram.
 
 
 
-Inheritance diagram for Attribute\+:\nopagebreak
+Inheritance diagram for Attribute\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Attribute\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Attribute\+:\nopagebreak
+Collaboration diagram for Attribute\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -69,6 +71,8 @@ bool \mbox{\hyperlink{class_attribute_a54b53938a5bf3e1da4032612bcea4c73}{is\+Com
 QVariant\+Map \mbox{\hyperlink{class_attribute_ae8c14a45321be32454ef200c5be0591c}{serialize}} () const override
 \item 
 bool \mbox{\hyperlink{class_attribute_a598a04fe32a1046a6d55bbd3b227c023}{deserialize}} (const QVariant\+Map \&data) override
+\item 
+QString \mbox{\hyperlink{class_attribute_ac3397eb9cb161a99bdad2e2b398c5eec}{string\+Element\+Type}} () const override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
@@ -140,11 +144,6 @@ bool \mbox{\hyperlink{class_attribute_a808d70efb9bceb17342178944e835e2f}{m\+\_\+
 \item 
 void \mbox{\hyperlink{class_basic_element_a02183bafd7c80f9f1f99a9b9f1631524}{position\+Changed}} (const QPointF \&new\+Position)
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
-\begin{DoxyCompactItemize}
-\item 
-static QString \mbox{\hyperlink{class_basic_element_a01a6511d922708fe0042474740109152}{element\+Type\+To\+String}} (\mbox{\hyperlink{_basic_element_8h_a16b11be27a8e9362dd122c4d879e01ae}{Element\+Type}} \mbox{\hyperlink{class_basic_element_adea459fb43e3af447bc9f9dc1c294f9a}{type}})
-\end{DoxyCompactItemize}
 \doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_basic_element}{Basic\+Element}}}
 \begin{DoxyCompactItemize}
 \item 
@@ -186,7 +185,8 @@ This class extends \doxylink{class_basic_element}{Basic\+Element} to represent a
 {\footnotesize\ttfamily \label{class_attribute_a119bae8069ee45c1e48122a79ea4b29e} 
 Attribute\+::\+Attribute (\begin{DoxyParamCaption}\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -206,7 +206,8 @@ Here is the caller graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_attribute_add9e11d2b5f40d9d51bc7e4aeb4904db} 
 Attribute\+::\+Attribute (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -219,7 +220,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_attribute_a069397c04d49d00d9c2f50d6cbe7abe6} 
 Attribute\+::\+Attribute (\begin{DoxyParamCaption}\item[{const QString \&}]{name}{, }\item[{\mbox{\hyperlink{class_attribute_type_a9b0ab7ba46017f33de4ed7c711334b72}{Attribute\+Type\+::\+Type}}}]{type}{, }\item[{QObject \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -232,7 +234,8 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_attribute_af93ebaed48e35e2dbbf0abbb5ad5c688} 
 Attribute\+::\+Attribute (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_attribute}{Attribute}} \&}]{other\+Atrribute}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -256,7 +259,8 @@ virtual Attribute\+::\texorpdfstring{$\sim$}{\string~}\+Attribute (\begin{DoxyPa
 {\footnotesize\ttfamily \label{class_attribute_a90636f3ba05f5fb99a4308a5ee357d21} 
 \mbox{\hyperlink{class_attribute_type_a9b0ab7ba46017f33de4ed7c711334b72}{Attribute\+Type\+::\+Type}} Attribute\+::attribute\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -309,6 +313,14 @@ Here is the call graph for this function\+:\nopagebreak
 {\footnotesize\ttfamily \label{class_attribute_a54b53938a5bf3e1da4032612bcea4c73} 
 bool Attribute\+::is\+Composite\+Attribute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_a54b53938a5bf3e1da4032612bcea4c73_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_attribute_a36db5761f11d5b7bcfb3456c59010267}\index{Attribute@{Attribute}!isDerivedAttribute@{isDerivedAttribute}}
 \index{isDerivedAttribute@{isDerivedAttribute}!Attribute@{Attribute}}
 \doxysubsubsection{\texorpdfstring{isDerivedAttribute()}{isDerivedAttribute()}}
@@ -327,12 +339,28 @@ bool Attribute\+::is\+Multivalued\+Attribute (\begin{DoxyParamCaption}{}{}\end{D
 {\footnotesize\ttfamily \label{class_attribute_ace687ebc2e9fe481451ba0ec59d2ebcd} 
 bool Attribute\+::is\+Normal\+Attribute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_ace687ebc2e9fe481451ba0ec59d2ebcd_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_attribute_a6c696c43d85dcf751b511d1fa6401121}\index{Attribute@{Attribute}!isPrimaryKey@{isPrimaryKey}}
 \index{isPrimaryKey@{isPrimaryKey}!Attribute@{Attribute}}
 \doxysubsubsection{\texorpdfstring{isPrimaryKey()}{isPrimaryKey()}}
 {\footnotesize\ttfamily \label{class_attribute_a6c696c43d85dcf751b511d1fa6401121} 
 bool Attribute\+::is\+Primary\+Key (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_attribute_a6c696c43d85dcf751b511d1fa6401121_icgraph}
+\end{center}
+\end{figure}
 \Hypertarget{class_attribute_a4e5ab9af13854731c0bffad3d1b89677}\index{Attribute@{Attribute}!minimumSize@{minimumSize}}
 \index{minimumSize@{minimumSize}!Attribute@{Attribute}}
 \doxysubsubsection{\texorpdfstring{minimumSize()}{minimumSize()}}
@@ -410,6 +438,16 @@ Here is the caller graph for this function\+:\nopagebreak
 \includegraphics[width=350pt]{class_attribute_a8918add957134a18557a19f9939699f3_icgraph}
 \end{center}
 \end{figure}
+\Hypertarget{class_attribute_ac3397eb9cb161a99bdad2e2b398c5eec}\index{Attribute@{Attribute}!stringElementType@{stringElementType}}
+\index{stringElementType@{stringElementType}!Attribute@{Attribute}}
+\doxysubsubsection{\texorpdfstring{stringElementType()}{stringElementType()}}
+{\footnotesize\ttfamily \label{class_attribute_ac3397eb9cb161a99bdad2e2b398c5eec} 
+QString Attribute\+::string\+Element\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_basic_element_abb80391f2c11a0eb2fe2b21d53967450}{Basic\+Element}}.
+
 \Hypertarget{class_attribute_adda991fc97159877bcb620f608bb9ba6}\index{Attribute@{Attribute}!typeDisplayName@{typeDisplayName}}
 \index{typeDisplayName@{typeDisplayName}!Attribute@{Attribute}}
 \doxysubsubsection{\texorpdfstring{typeDisplayName()}{typeDisplayName()}}

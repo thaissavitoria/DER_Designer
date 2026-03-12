@@ -1,11 +1,17 @@
 <map id="DiagramScene::handleAttributeConnection" name="DiagramScene::handleAttributeConnection">
-<area shape="rect" id="Node000001" title=" " alt="" coords="788,23,991,65"/>
-<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a795592348d4dcbd78d984db93c2fbedb" title=" " alt="" coords="538,31,740,57"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="770,44,741,47,741,41,775,44"/>
-<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a8a3265678249b08f424e17fbfa8d0de5" title=" " alt="" coords="268,5,480,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="520,33,480,31,480,26,525,33"/>
-<area shape="rect" id="Node000004" href="$class_diagram_scene.html#a61e7061e5add947d09ad87feaf2b8dc1" title=" " alt="" coords="258,56,490,83"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="525,55,491,61,490,56,519,55"/>
-<area shape="rect" id="Node000005" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="5,56,210,83"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="239,69,210,72,210,67,245,69"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="978,56,1180,99"/>
+<area shape="rect" id="Node000002" href="$class_diagram_scene.html#a795592348d4dcbd78d984db93c2fbedb" title=" " alt="" coords="727,64,930,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="959,77,930,80,930,75,965,77"/>
+<area shape="rect" id="Node000003" href="$class_diagram_scene.html#a8a3265678249b08f424e17fbfa8d0de5" title=" " alt="" coords="457,5,669,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="748,60,679,47,628,35,628,30,680,41,754,60"/>
+<area shape="rect" id="Node000004" href="$class_diagram_serializer.html#a92507b425e8c13399c6de5d85e7950fb" title=" " alt="" coords="497,56,629,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="709,78,630,80,630,75,714,77"/>
+<area shape="rect" id="Node000007" href="$class_diagram_scene.html#a61e7061e5add947d09ad87feaf2b8dc1" title=" " alt="" coords="447,123,679,149"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="754,94,680,113,628,125,627,119,679,108,748,95"/>
+<area shape="rect" id="Node000005" href="$class_diagram_serializer.html#a003be4c7f5d036e58e3fa047d1d9b0d8" title=" " alt="" coords="231,56,363,99"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="479,78,364,80,363,75,484,77"/>
+<area shape="rect" id="Node000006" href="$class_diagram_file_manager.html#a24c0e01d7ac53866944eb10948286ed9" title=" " alt="" coords="5,56,147,99"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="213,78,148,80,147,75,217,76"/>
+<area shape="rect" id="Node000008" href="$class_diagram_scene.html#a074e1181353b257a18ea2d243b459a47" title=" " alt="" coords="195,123,399,149"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="429,136,400,139,400,133,434,136"/>
 </map>
